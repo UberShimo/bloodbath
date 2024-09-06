@@ -1,0 +1,1 @@
+draw_sprite_ext(Spr_P2_Portrait_Frame, 0, x, y, 1, 1, 0, global.p_colors[1], 0.5);

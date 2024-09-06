@@ -1,0 +1,1 @@
+other.meter = 100;

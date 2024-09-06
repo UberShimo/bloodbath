@@ -1,0 +1,84 @@
+TODO{
+	Make game sexi and funni
+	Frame rate drops for some reason at times?
+	Make Adventure mode
+	
+	When 8 players:
+	Push :: Execution Error - Variable Index [8] out of range [8] - -1.players(100417,8)
+ at gml_Script_anon_gml_Object_Obj_Match_Manager_Create_0_244_gml_Object_Obj_Match_Manager_Create_0 (line 21) -                                    players[j] = players[j+1];
+}
+
+Debug tips:
+Is hitbox mask same as sprite?
+Is hitbox collision Automatic per Frame?
+Is hurtbox collision Manual per Frame?
+All pressed buttons work with buffer numbers. Gotta use if(a_pressed > 0) to check the input.
+Keep an eye out for reset_buffers(), reset_physics().
+cancel eff works when things goes in this order:
+1. Set sprite
+2. Subtract from cancels
+3. Spawn cancel eff
+4. Set recover alarm etc...
+When checking attack input it has to get checked in this order:
+1. Air moves
+2. Half circle moves
+3. Quarter circle moves
+4. Normal ground moves
+
+Notes in notes:
+Dont use forward_down or backward_down as attack inputs
+"This Is Standard Naming"
+Action infos ends with a "."
+Hurtbox = sprite collision
+Attack collision = purple sprites
+We are not using particles since we cant manipulate it good enough. Slow mo, scaling per dmg etc...
+Dont fuck with image angle on attacks...
+
+
+Character stuff:
+
+Balanced:	Batman, Katana
+Power:		Boomhand, Greatsword
+Agility:	Claws, Baller
+Zoner:		Bow, Mage
+
+MOVES!:
+
+Batman{
+	Superball stuck in ground at times
+}
+
+Katana{
+	
+}
+
+Claws{
+	
+}
+
+Baller{
+	
+}
+
+Bow{
+	
+}
+
+Greatsword{
+	
+}
+
+Boomhand{
+	v<L has high friction when canceled.
+	Groundsmash hit effect sounds bad.
+}
+
+Cultist{
+	of  Step Event0
+	for object Parent_Character:
+	Unable to find instance for object index -4
+	 at gml_Script_anon_gml_Object_Obj_Cultist_Create_0_1425_gml_Object_Obj_Cultist_Create_0 (line 169) -               attack = instance_create_depth(circle.x, circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
+	 gml_Script_anon_gml_Object_Obj_Cultist_Create_0_1379_gml_Object_Obj_Cultist_Create_0 (line 170)
+	gml_Object_Parent_Character_Step_0 (line 18) -               action_trigger();
+	gml_Object_Obj_Cultist_Step_0 (line 1)
+}

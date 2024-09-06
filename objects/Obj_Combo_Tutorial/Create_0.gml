@@ -1,0 +1,1 @@
+Obj_Dojo_Manager.student.cancels = 2;

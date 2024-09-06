@@ -1,0 +1,1 @@
+draw_text_transformed_color(x, y, string(number), scale, scale, 0, color, color, color, color, image_alpha);

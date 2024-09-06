@@ -1,0 +1,1 @@
+play_winner_animation = true;
