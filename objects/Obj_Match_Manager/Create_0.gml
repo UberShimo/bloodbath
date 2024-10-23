@@ -19,13 +19,14 @@ global_time_reset_alarm = 0;
 // Methods
 // Kinda complicated actually...
 check_for_winner = function(){
+	// Get rid of loser
 	for(i = 0; i < player_amount; i++){
 		if(players[i].hearts <= 0){
 			instance_destroy(players[i]);
 			player_amount -= 1;
 				
 			if(i != player_amount){
-				for(j = i; j <= player_amount; j++){
+				for(j = i; j < player_amount; j++){
 					players[j] = players[j+1];
 				}
 			}

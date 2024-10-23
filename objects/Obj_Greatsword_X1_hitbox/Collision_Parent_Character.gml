@@ -1,6 +1,8 @@
 if(other.index != index){
 	other.x = x+16*image_xscale;
-	other.y = y;
+	// Calculate so opponent stay on ground
+	y_val = y+(spawner.character_height-other.character_height)/2;
+	other.y = y_val;
 	other.h_velocity = 0;
 	other.v_velocity = 0;
 	other.weight = 0;

@@ -12,6 +12,7 @@ v_launch = 0;
 
 is_parryable = false;
 is_sticky = true;
+is_final = true;
 extra_freeze_duration = 60;
 
 swing_sound = Snd_NOTHING;

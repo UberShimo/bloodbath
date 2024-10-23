@@ -3,9 +3,6 @@ TODO{
 	Frame rate drops for some reason at times?
 	Make Adventure mode
 	
-	When 8 players:
-	Push :: Execution Error - Variable Index [8] out of range [8] - -1.players(100417,8)
- at gml_Script_anon_gml_Object_Obj_Match_Manager_Create_0_244_gml_Object_Obj_Match_Manager_Create_0 (line 21) -                                    players[j] = players[j+1];
 }
 
 Debug tips:
