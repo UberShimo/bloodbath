@@ -1,5 +1,8 @@
 event_inherited();
 
+//Outline shader stuff
+texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
+
 spawner = noone;
 spawner_action = noone;
 time_reset_alarm = 0; // Time alarm
@@ -45,6 +48,7 @@ h_affecting = true; // Means that is knocks and pushes in horizontal velocity
 v_affecting = true; // Means that is knocks and pushes in vertical velocity
 is_collidable = true; // Goes through walls or not?
 is_initiated_by_character = true;
+hitfallable = true; // Mostly so you can hitfall moves that lift you up from ground
 
 // Methods
 initiate = function(initiator){

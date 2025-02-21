@@ -1,8 +1,17 @@
 x_draw = x+random_range(-shake_amount, shake_amount);
 y_draw = y+random_range(-shake_amount, shake_amount);
 
-// Draw self
+// Draw self (With shader shenenigans)
+// Smoke is suppose to hide you
+if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
+	shader_set(Shd_Outline);
+	var texture = sprite_get_texture(sprite_index, image_index);
+	var t_width = texture_get_texel_width(texture);
+	var t_height = texture_get_texel_height(texture);
+	shader_set_uniform_f(texel_handle, t_width, t_height);
+}
 draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+shader_reset();
 
 // Smoke is suppose to hide you
 if(!place_meeting(x, y, Obj_Boomhand_Smoke)){

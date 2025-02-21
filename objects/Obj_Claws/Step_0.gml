@@ -130,6 +130,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(down_backward_pressed){
 			action = "Claw Flurry";
+			h_velocity = -6*image_xscale;
 			sprite_index = Spr_Claws_Flurry_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

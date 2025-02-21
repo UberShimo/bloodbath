@@ -9,7 +9,7 @@ if(is_holding_ball){
 	ball.v_velocity = 0;
 }
 else{
-	weight = global.standard_weight;
+	weight = global.light_weight;
 }
 
 // ACTION!
@@ -236,7 +236,7 @@ else{
 }
 
 // Drop ball
-if(double_down_pressed && is_holding_ball){
+if(is_holding_ball && (double_down_pressed || action == "Dash")){
 	is_holding_ball = false;
 }
 

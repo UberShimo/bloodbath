@@ -4,7 +4,7 @@
   "name": "Spr_Katana_Portrait",
   "bbox_bottom": 127,
   "bbox_left": 0,
-  "bbox_right": 127,
+  "bbox_right": 126,
   "bbox_top": 16,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -20,6 +20,7 @@
   "height": 128,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b197e787-9d9a-441c-872a-834d5fbae048","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"22cd321b-864a-489f-81ef-7f197a55dee6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,

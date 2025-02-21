@@ -1,9 +1,15 @@
 TODO{
+	Going up on top of menu should take you to bottom of menu.
+	Dont gain meter when walking against respawning opponent.
+	Make so you can adjust outline color/alpha outside shader.
+	Make teams a thing? With different outline colors n shit.
 	Make game sexi and funni
 	Frame rate drops for some reason at times?
 	Make Adventure mode
-	
 }
+
+SLOGANS for trailer n stuff
+[	FAST	FREEFORM	FUN		INTENSE		PLAY HOW THE **** YOU WANT		GAMEPLAY	]
 
 Debug tips:
 Is hitbox mask same as sprite?

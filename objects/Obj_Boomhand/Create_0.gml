@@ -43,8 +43,6 @@ original_weight = weight;
 #endregion
 
 // Boomhand stuff
-smoke_max_cd = 8;
-smoke_cd = 0;
 roar_power = 0;
 roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )
 hook_charge = 0;
@@ -140,6 +138,8 @@ action_trigger = function(){
 			attack.damage += hook_charge*120;
 			attack.hit_stun += hook_charge*4;
 			attack.shake_amount += hook_charge*8;
+			h_velocity = hook_charge*24*image_xscale;
+			grip = 2;
 			shake_amount = 0;
 		
 			sprite_index = Spr_Boomhand_5S_recovery;

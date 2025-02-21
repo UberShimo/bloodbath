@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Claws_Dive_hitbox",
-    "path": "sprites/Spr_Claws_Dive_hitbox/Spr_Claws_Dive_hitbox.yy",
+    "name": "Spr_Claws_Deepdive_hitbox",
+    "path": "sprites/Spr_Claws_Deepdive_hitbox/Spr_Claws_Deepdive_hitbox.yy",
   },
   "spriteMaskId": null,
   "visible": false,

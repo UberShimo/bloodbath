@@ -12,6 +12,7 @@ v_launch = -10;
 
 is_launcher = true;
 is_sticky = true;
+hitfallable = false;
 effect = Obj_Boomhand_Burrow_hit_eff;
 
 swing_sound = Snd_Crack;

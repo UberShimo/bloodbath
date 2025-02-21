@@ -13,5 +13,6 @@ v_launch = -12;
 is_launcher = true;
 is_parryable = false;
 is_sticky = true;
+hitfallable = false;
 
 hit_sound = Snd_Hit2;

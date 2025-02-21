@@ -359,18 +359,19 @@ if(action == noone){
 			sprite_index = backward_spr;
 		}
 		else{
-			sprite_index = stand_spr;
-			
-			// Or maybe pose?
+			// Pose?
 			if(rs_up || rs_down || rs_right || rs_left){
-				if(rs_up){
+				if(rs_up && sprite_index != pose2_spr){
 					sprite_index = pose2_spr;
+					image_index = 0;
 				}
-				else if(rs_down){
+				else if(rs_down && sprite_index != pose3_spr){
 					sprite_index = pose3_spr;
+					image_index = 0;
 				}
-				else{
+				else if(!rs_up && !rs_down && sprite_index != pose1_spr){
 					sprite_index = pose1_spr;
+					image_index = 0;
 				}
 				// Face correct
 				if(rs_right){
@@ -379,6 +380,10 @@ if(action == noone){
 				else if(rs_left){
 					image_xscale = -1;
 				}
+			}
+			// Stand...
+			else{
+				sprite_index = stand_spr;
 			}
 		}
 	}

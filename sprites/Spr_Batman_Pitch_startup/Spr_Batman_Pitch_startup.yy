@@ -14,16 +14,18 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e008860c-6814-4fdf-8d46-54bf13cee184",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5813182a-6df5-4f86-bee7-950f5e907b87",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"813b37bc-aa0c-4c1b-b7dd-67f757a48416",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"42ff562e-baa7-42fc-8047-aa02db66f0ae",},
   ],
   "gridX": 32,
   "gridY": 32,
   "height": 128,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c587f2e7-9205-46b7-a076-fcbc57a69143","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b0b9e6f4-88c2-4569-85e1-52c3981d4cbc","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -58,8 +60,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Batman_Pitch_startup/Spr_Batman_Pitch_startup.yy",},},},"Disabled":false,"id":"6c76e745-4b63-4de5-8e78-03dc2f70ad54","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e008860c-6814-4fdf-8d46-54bf13cee184","path":"sprites/Spr_Batman_Pitch_startup/Spr_Batman_Pitch_startup.yy",},},},"Disabled":false,"id":"392b3bd2-3f91-4cbc-9d47-5a04cfacb5cb","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5813182a-6df5-4f86-bee7-950f5e907b87","path":"sprites/Spr_Batman_Pitch_startup/Spr_Batman_Pitch_startup.yy",},},},"Disabled":false,"id":"6020cac3-6ae9-42b7-a520-13ce384de5d6","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"813b37bc-aa0c-4c1b-b7dd-67f757a48416","path":"sprites/Spr_Batman_Pitch_startup/Spr_Batman_Pitch_startup.yy",},},},"Disabled":false,"id":"2c2c2c8a-6417-49e3-ac2c-09545fb24afa","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"42ff562e-baa7-42fc-8047-aa02db66f0ae","path":"sprites/Spr_Batman_Pitch_startup/Spr_Batman_Pitch_startup.yy",},},},"Disabled":false,"id":"f4b53c87-f47d-4c69-bf04-51cfaade23cd","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

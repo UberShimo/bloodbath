@@ -14,16 +14,18 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b0a29a09-1ead-4f01-b026-3711d254ba3f",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d6c2c490-12dc-4bdd-a953-f4ff56e5f068",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f7817c36-4e13-4df6-87cf-cc3eef12dccc",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a314fba8-f8c5-4248-8e2c-16912fb38e33",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"33738b72-5690-499b-98ae-d35837eeca4b",},
   ],
   "gridX": 32,
   "gridY": 32,
   "height": 128,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"23c69548-3a0f-4ea2-b25e-3f53d39ce7eb","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"06f9857a-ffb6-4ded-9b3b-c1e3ab796b6c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"61c76b8b-0c58-4e29-bea8-f736b2183fa3","blendMode":0,"displayName":"Layer 3","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"635841cd-0f0d-4030-a1a8-3e96593595c1","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"23c69548-3a0f-4ea2-b25e-3f53d39ce7eb","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"06f9857a-ffb6-4ded-9b3b-c1e3ab796b6c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -58,8 +60,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b0a29a09-1ead-4f01-b026-3711d254ba3f","path":"sprites/Spr_Claws_8L_startup/Spr_Claws_8L_startup.yy",},},},"Disabled":false,"id":"08570316-d1ca-4c2f-8f5b-7f63e3266dd0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d6c2c490-12dc-4bdd-a953-f4ff56e5f068","path":"sprites/Spr_Claws_8L_startup/Spr_Claws_8L_startup.yy",},},},"Disabled":false,"id":"bcc45391-089b-4169-ab5a-9bce4bdfbd70","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f7817c36-4e13-4df6-87cf-cc3eef12dccc","path":"sprites/Spr_Claws_8L_startup/Spr_Claws_8L_startup.yy",},},},"Disabled":false,"id":"0fb55905-230f-4d4a-8b5c-4571bea88328","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a314fba8-f8c5-4248-8e2c-16912fb38e33","path":"sprites/Spr_Claws_8L_startup/Spr_Claws_8L_startup.yy",},},},"Disabled":false,"id":"99d543ca-09ed-4531-af56-6f0eeb8e5b0e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"33738b72-5690-499b-98ae-d35837eeca4b","path":"sprites/Spr_Claws_8L_startup/Spr_Claws_8L_startup.yy",},},},"Disabled":false,"id":"84f7aa2a-3f34-4ef4-9815-b97207473c4d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

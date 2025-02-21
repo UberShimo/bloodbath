@@ -177,14 +177,14 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Dive"){
-		attack = instance_create_depth(x, y, 0, Obj_Claws_Deepdive_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Claws_Dive_hitbox);
 		attack.initiate(self);
 		
 		h_velocity = 8*image_xscale;
 		v_velocity = 16;
 		grip = 1;
 		
-		sprite_index = Spr_Claws_Deepdive_recovery;
+		sprite_index = Spr_Claws_Dive_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
@@ -194,7 +194,7 @@ action_trigger = function(){
 			attack.initiate(self);
 			
 			blink_h(8*image_xscale, false);
-			h_velocity = 3*image_xscale;
+			h_velocity = 6*image_xscale;
 		
 			sprite_index = Spr_Claws_Flurry_recovery;
 			image_index = 0;
@@ -207,9 +207,10 @@ action_trigger = function(){
 			attack.initiate(self);
 			
 			blink_h(8*image_xscale, false);
-			h_velocity = 3*image_xscale;
+			h_velocity = 6*image_xscale;
 			
 			if(multi_hit_action_index == 2){
+				h_velocity = 2*image_xscale;
 				v_velocity = -7;
 			}
 			

@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "Steps back.";
+info = "Startup can be canceled.";
 movement_input = Spr_EMPTY;
 button_input = Spr_S;
 image = Spr_Katana_5S_recovery;

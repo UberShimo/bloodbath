@@ -1,5 +1,8 @@
 event_inherited();
 
+//Outline shader stuff
+texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
+
 depth = -1;
 
 controller_index = -1;
@@ -166,29 +169,36 @@ reset_buffers = function(){
 }
 
 face_closest_enemy = function(){
-	closest_enemy = self;
-	enemy_distance = room_width;
+	// You are not alone...
+	if(instance_number(Parent_Character) > 1){
+		closest_enemy = self;
+		enemy_distance = room_width;
 	
-	// Loop through characters and find closest enemy
-	for(i = 0; i < instance_number(Parent_Character); i++){
-		if(instance_find(Parent_Character, i).index != index){
-			enemy = instance_find(Parent_Character, i);
-			temp_distance = abs(x-enemy.x);
-			if(temp_distance < enemy_distance){
-				enemy_distance = temp_distance;
-				closest_enemy = enemy;
+		// Loop through characters and find closest enemy
+		for(i = 0; i < instance_number(Parent_Character); i++){
+			if(instance_find(Parent_Character, i).index != index){
+				enemy = instance_find(Parent_Character, i);
+				temp_distance = abs(x-enemy.x);
+				if(temp_distance < enemy_distance){
+					enemy_distance = temp_distance;
+					closest_enemy = enemy;
+				}
 			}
 		}
-	}
 		
-	if(x < closest_enemy.x){
-		image_xscale = 1;
-	}
-	else{
-		image_xscale = -1;
-	}
+		if(x < closest_enemy.x){
+			image_xscale = 1;
+		}
+		else{
+			image_xscale = -1;
+		}
 	
-	if(faceback_hold){
+		if(faceback_hold){
+			image_xscale *= -1;
+		}
+	}
+	// You are alone...
+	else if(backward_hold){
 		image_xscale *= -1;
 	}
 }

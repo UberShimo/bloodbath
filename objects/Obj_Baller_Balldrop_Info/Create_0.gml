@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Just drop the ball.\nCan be done ANYTIME.";
+info = "Just drop the ball.\nCan be done ANYTIME.\nDashing also drops the ball.";
 movement_input = Spr_DD;
 button_input = Spr_EMPTY;
 image = Spr_Baller_Stand;

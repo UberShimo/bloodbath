@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "P1-8",
-    "path": "folders/Sprites/P1-8.yy",
+    "path": "folders/Sprites/Effects/P1-8.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

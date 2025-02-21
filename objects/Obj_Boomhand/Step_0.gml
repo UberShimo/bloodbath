@@ -131,6 +131,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
+		else if(down_forward_pressed && meter >= 15){
+			meter -= 15;
+			repeat(8){
+				instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);
+			}
+		}
 	}
 	reset_buffers();
 	
@@ -157,16 +163,6 @@ if(action == "Hook Charge"){
 		hook_charge += logic_time/max_charge_duration;
 		shake_amount += logic_time/15;
 	}
-}
-
-// Smoke logic
-if(rb_hold && down_hold && meter >= 4 && smoke_cd <= 0){
-	instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);
-	meter -= 4;
-	smoke_cd = smoke_max_cd;
-}
-if(smoke_cd > 0){
-	smoke_cd -= logic_time;
 }
 
 // Roar power

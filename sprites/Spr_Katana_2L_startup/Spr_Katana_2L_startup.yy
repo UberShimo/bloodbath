@@ -14,16 +14,18 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cda3e177-8185-4df5-a099-9f5922b589a4",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"93d24419-7875-4647-b480-41f10cd4a72e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"66f993fd-16e0-466f-8716-3d4105c0f187",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2780b7d8-fde9-4ab9-81a0-6a5bd68608d6",},
   ],
   "gridX": 32,
   "gridY": 32,
   "height": 128,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0ba7224c-3b53-4c0f-980b-332f5c701ec1","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"302dfe32-d09e-40c2-ab59-91581c9cdcdc","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -58,8 +60,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Katana_2L_startup/Spr_Katana_2L_startup.yy",},},},"Disabled":false,"id":"1044d531-302d-43ae-8e6c-c1aa17df0185","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cda3e177-8185-4df5-a099-9f5922b589a4","path":"sprites/Spr_Katana_2L_startup/Spr_Katana_2L_startup.yy",},},},"Disabled":false,"id":"731dc185-b1be-4a33-9e8f-09b64923035c","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"93d24419-7875-4647-b480-41f10cd4a72e","path":"sprites/Spr_Katana_2L_startup/Spr_Katana_2L_startup.yy",},},},"Disabled":false,"id":"67c12d52-e06b-4861-9247-9d7bb49ac46e","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"66f993fd-16e0-466f-8716-3d4105c0f187","path":"sprites/Spr_Katana_2L_startup/Spr_Katana_2L_startup.yy",},},},"Disabled":false,"id":"5e91ee49-534a-4117-aa0f-b4e3f4175146","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2780b7d8-fde9-4ab9-81a0-6a5bd68608d6","path":"sprites/Spr_Katana_2L_startup/Spr_Katana_2L_startup.yy",},},},"Disabled":false,"id":"e9f23b7b-2b7d-44f4-a760-5f7d9d04fb6c","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
