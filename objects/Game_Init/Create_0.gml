@@ -1,3 +1,5 @@
+	
+	global.FPS = 60;
 global.game_time = 1;
 global.screen_ratio = 1.78; // 16:9
 global.is_debugging = false;
@@ -74,14 +76,16 @@ global.battle_music_index = 0;
 // BG list
 global.BG_list = [
 	BG_Black,
+	BG_Trainingroom,
 	BG_Mauntains,
 	BG_Forest,
 	BG_Night,
 	BG_Sunset,
-	BG_Dungeon
+	BG_Dungeon,
+	BG_Street
 ]
-global.BG_index = 1;
-global.BG_darkness = 0.75; // % black
+global.BG_index = 2;
+global.BG_darkness = 0.5; // % black
 
 // Methods
 global.reset_controllers = function(){

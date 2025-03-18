@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "";
+info = "Swoosh forward with a sweep.";
 movement_input = Spr_DF;
 button_input = Spr_S;
 image = Spr_Katana_Sweep_recovery;

@@ -10,6 +10,7 @@ freeze_duration = 12;
 h_launch = 5;
 v_launch = -5;
 
+active_frames = 16;
 is_sticky = true;
 
 swing_sound = Snd_Light_Swing;

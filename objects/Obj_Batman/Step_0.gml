@@ -97,7 +97,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_backward_pressed){
+		else if(double_down_pressed){
 			action = "Headbutt";
 			is_unstoppable = true;
 			shake_amount = launcher_shake_amount;
@@ -128,8 +128,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			
-			audio_play_sound(Snd_AP1, 0, false);
 		}
 		else if(down_forward_pressed && meter >= 25){
 			action = "X";

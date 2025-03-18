@@ -23,7 +23,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(down_forward_pressed){
 			action = "Earth Start";
-			is_blocking = true;
 			grip = 0.2;
 			h_velocity = 4*image_xscale;
 			is_parrying = true;
@@ -34,7 +33,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(down_backward_pressed){
 			action = "Earth Start";
-			is_blocking = true;
 			grip = 0.2;
 			h_velocity = -4*image_xscale;
 			is_parrying = true;
@@ -78,15 +76,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_backward_pressed){
-			action = "Heaven Start";
-			
-			h_velocity = -8*image_xscale;
-			
-			sprite_index = Spr_Greatsword_Heaven_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
 		else if(double_down_pressed){
 			action = "Stomp";
 			pillar_distance = 120;
@@ -102,7 +91,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else{
 			action = "5L";
-			h_velocity += 3*image_xscale;
+			h_velocity += 4*image_xscale;
 			sprite_index = Spr_Greatsword_5L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -112,6 +101,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Greatsword_8S_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed){
+			action = "Sword Dunk";
+			h_velocity = 5*image_xscale;
+			grip = 0.2;
+			sprite_index = Spr_Greatsword_Sword_Dunk_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -171,7 +168,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	doing_action_by_canceling = false;
 }
 // Ughhhh stances...
-else if(action == "Earth"){
+else if(action == "Earth" || (action == "Earth F" && can_cancel)){
 	if(x_pressed){
 		action = "Earth F";
 		sprite_index = Spr_Greatsword_Earth_F_startup;
@@ -220,41 +217,9 @@ else if(action == "Ocean"){
 	}
 	reset_buffers();
 }
-else if(action == "Heaven"){
-	if(x_pressed){
-		action = "Heaven F";
-		sprite_index = Spr_Greatsword_Heaven_F_startup;
-		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
-		recover_alarm = 0;
-	}
-	else if(y_pressed){
-		action = "Heaven L";
-		
-		h_velocity = -3*image_xscale;
-		
-		sprite_index = Spr_Greatsword_Heaven_L_startup;
-		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
-		recover_alarm = 0;
-	}
-	else if(b_pressed){
-		action = "Heaven S";
-		shake_amount = launcher_shake_amount;
-		
-		h_velocity = 6*image_xscale;
-		grip = 0.25;
-		
-		sprite_index = Spr_Greatsword_Heaven_S_startup;
-		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
-		recover_alarm = 0;
-	}
-	reset_buffers();
-}
 
-// Movement during earth_L
-if(action == "Earth L" && recover_alarm > 16){
+// Movement during Ocean F
+if(action == "Ocean F" && recover_alarm > 16){
 	h_velocity = 0;
 	
 	if(forward_hold){

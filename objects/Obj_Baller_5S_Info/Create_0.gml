@@ -4,8 +4,8 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-hold_ok = true;
-info = "Throw ball if you have it.";
+hold_ok = false;
+info = "Throw ball if you have it.\nHold forward or backward\nto change trajectory.";
 movement_input = Spr_EMPTY;
 button_input = Spr_S;
 image = Spr_Baller_5S_recovery;

@@ -1,6 +1,6 @@
 // Looks if value exists in list. If not it returns -1
 legit_hit_check = other.index != index && ds_list_find_index(hitbox_list, other) == -1
-&& !is_invincible && !is_respawning && other.is_active && death_alarm <= 0;
+&& !is_invincible && !is_respawning && other.is_active && death_alarm <= 0 && !priority_struck;
 
 if(legit_hit_check){
 	reset_physics();
@@ -27,10 +27,10 @@ if(legit_hit_check){
 		
 		// Also all first code is calculated in vain if you get launched...
 		// Dont flinch against normal attacks if you are priority struck
-		if(!is_unstoppable && other.hit_stun > 0 && (!priority_struck || other.is_priority)){
+		if(!is_unstoppable && other.hit_stun > 0){
 			if(other.is_priority){
 				priority_struck = true;
-				alarm[9] = other.freeze_duration; // Priority struck alarm
+				priority_struck_alarm = other.priority_struck_duration;
 			}
 			
 			action = "Stunned";

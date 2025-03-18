@@ -21,6 +21,7 @@ meter_dash_buffer_duration = 8;
 forward_hold = false;
 backward_hold = false;
 down_hold = false;
+up_hold = false;
 forward_pressed = 0;
 backward_pressed = 0;
 down_pressed = 0;
@@ -82,7 +83,7 @@ cancels = 2;
 max_cancels = cancels;
 dash_cancel_max_amount = 0.75; // % based
 parry_duration = 48;
-parry_active_frames = 10;
+parry_active_frames = 10; // Counts down in real time even if time is slowed/has stopped
 is_parrying = false;
 is_unstoppable = false;
 is_invincible = false;
@@ -114,13 +115,6 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
-#region Physics values
-wall_bounce_limit = 6;
-ground_bounce_limit = 10;
-grounded = true;
-priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in time_alarm
-#endregion
-
 #region Stuff
 action = noone;
 last_action = noone; // Used for checking if cancel is legit
@@ -132,6 +126,10 @@ legit_hit_check = false;
 cancelable_recovery_frames = global.cancelable_recovery_frames;
 closest_enemy = self;
 multi_hit_action_index = 0; // When one move does many attacks this variable keeps track on what attack you are on
+wall_bounce_limit = 6;
+ground_bounce_limit = 10;
+grounded = true;
+priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in alarm[9]
 #endregion
 
 #region Alarms
@@ -143,6 +141,7 @@ time_reset_alarm = 0;
 respawn_alarm = 0;
 invincibility_alarm = 0;
 death_alarm = 0;
+priority_struck_alarm = 0;
 #endregion
 
 // Methods
@@ -169,8 +168,8 @@ reset_buffers = function(){
 }
 
 face_closest_enemy = function(){
-	// You are not alone...
-	if(instance_number(Parent_Character) > 1){
+	// You are not chaos mode or alone...
+	if(!global.chaos_mode && instance_number(Parent_Character) > 1){
 		closest_enemy = self;
 		enemy_distance = room_width;
 	
@@ -197,7 +196,7 @@ face_closest_enemy = function(){
 			image_xscale *= -1;
 		}
 	}
-	// You are alone...
+	// You are alone... Or in chaos mode!
 	else if(backward_hold){
 		image_xscale *= -1;
 	}
@@ -253,6 +252,10 @@ read_input = function(){
 	if(!down_held && down_hold){
 		down_pressed = buffer_duration;
 	}
+	
+	// Up hold
+	up_hold = gamepad_button_check(controller_index, gp_padu)
+	|| gamepad_axis_value(controller_index, gp_axislv) < -0.5;
 	
 	// Faceback hold
 	faceback_hold = gamepad_button_check(controller_index, gp_shoulderrb) || gamepad_button_check(controller_index, gp_shoulderlb);

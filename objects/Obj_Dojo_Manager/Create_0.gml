@@ -2,8 +2,11 @@ event_inherited();
 
 index = -1;
 student = noone;
+dummy = noone;
 time_switch_pressed = false;
+reset_positions_pressed = false;
 
+global.BG_index = 1; // Trainingroom
 play_music(Mu_Tutorial, global.music_volume);
 
 // Methods
@@ -27,6 +30,6 @@ else if(global.dojo_level == 2){
 	global.is_debugging = false;
 }
 else{
-	instance_create_depth(Obj_Blackboard_Position.x, Obj_Blackboard_Position.y, depth, Obj_Immortal_Dummy);
+	dummy = instance_create_depth(Spawner_P2.x, Spawner_P2.y, depth, Obj_Immortal_Dummy);
 	global.is_debugging = true;
 }

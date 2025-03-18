@@ -98,6 +98,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		if(!grounded){
 			if(is_holding_ball){
 				action = "8S";
+				// Lift if falling
+				if(v_velocity > -3){
+					v_velocity = -3;
+				}
 				sprite_index = Spr_Baller_8S_startup;
 				image_index = 0;
 				action_alarm = generate_sprite_frames(sprite_index);
@@ -110,6 +114,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				// Pull ball
 				else{
 					action = "Pull";
+					// Lift if falling
+					if(v_velocity > -3){
+						v_velocity = -3;
+					}
 					ball.h_velocity = 0;
 					ball.v_velocity = -5;
 					ball.y -= 6;
@@ -118,13 +126,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 					action_alarm = generate_sprite_frames(sprite_index);
 				}
 			}
-		}
-		else if(down_backward_pressed){
-			action = "Footsnatch";
-			shake_amount = launcher_shake_amount;
-			sprite_index = Spr_Baller_Footsnatch_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(down_hold){
 			action = "2S";
@@ -163,7 +164,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "ULTRA";
 			meter -= 50;
 			
-			is_holding_ball = false;
 			shake_amount = 4;
 			
 			sprite_index = Spr_Baller_ULTRA_startup;

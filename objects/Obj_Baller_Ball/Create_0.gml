@@ -10,6 +10,7 @@ cant_hurt_alarm = 0;
 // Ball things
 existing_hitbox = noone;
 is_returning = false;
+hitbox_list = ds_list_create();
 
 collide = function(){
 	h_velocity = 0;

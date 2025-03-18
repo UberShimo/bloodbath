@@ -101,12 +101,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(backward_hold){
-			action = "4L";
-			sprite_index = Spr_Cultist_4L_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
 		else{
 			action = "5L";
 			sprite_index = Spr_Cultist_5L_startup;

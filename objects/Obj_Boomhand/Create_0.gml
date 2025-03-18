@@ -28,10 +28,10 @@ dash_speed = 9;
 dash_blink = 20;
 dash_duration = 24;
 dash_grip = 1;
-jump_power = 10;
+jump_power = 11;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
-extra_jumps = 2;
+extra_jumps = 1;
 extra_jumps_left = extra_jumps;
 weight = global.standard_weight;
 max_fall_speed = 16;
@@ -44,8 +44,8 @@ original_weight = weight;
 
 // Boomhand stuff
 roar_power = 0;
-roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )
-hook_charge = 0;
+roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )... Takes 8 sec to fully cooldown atm...
+hook_charge = 0; // Actually not a hook tho...
 max_charge_duration = 180; // Frames
 
 
@@ -138,7 +138,7 @@ action_trigger = function(){
 			attack.damage += hook_charge*120;
 			attack.hit_stun += hook_charge*4;
 			attack.shake_amount += hook_charge*8;
-			h_velocity = hook_charge*24*image_xscale;
+			h_velocity = (6+hook_charge*16)*image_xscale;
 			grip = 2;
 			shake_amount = 0;
 		
@@ -148,23 +148,6 @@ action_trigger = function(){
 		}
 	}
 	// Special moves
-	else if(action == "Burrow"){
-		// Change sprite for sake of collision checking with blink_h();
-		// Otherwise you will teleport behind opponent since your sprite basically dont exist right now... 
-		sprite_index = stand_spr;
-		
-		blink_h(96*image_xscale, false);
-		
-		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Burrow_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 2*image_xscale;
-		v_velocity = -8;
-		
-		sprite_index = Spr_Boomhand_Burrow_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "Roar"){
 		roar_power += 0.36;
 		
@@ -173,8 +156,13 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Groundsmash"){
-		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_hitbox);
-		attack.initiate(self);
+		wave1 = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave);
+		wave1.initiate(self);
+		wave1.h_velocity = 32;
+		wave1 = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave);
+		wave1.initiate(self);
+		wave1.h_velocity = -32;
+		wave1.image_xscale = -1;
 		
 		sprite_index = Spr_Boomhand_Groundsmash_recovery;
 		image_index = 0;
@@ -204,15 +192,31 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Burrow"){
+		// Change sprite for sake of collision checking with blink_h();
+		// Otherwise you will teleport behind opponent since your sprite basically dont exist right now... 
+		sprite_index = stand_spr;
+		
+		blink_h(96*image_xscale, false);
+		
+		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Burrow_hitbox);
+		attack.initiate(self);
+		
+		h_velocity = 2*image_xscale;
+		v_velocity = -8;
+		
+		sprite_index = Spr_Boomhand_Burrow_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	// Meter moves
 	else if(action == "ULTRA"){
 		meter -= 50;
-		blink_h(32*image_xscale, false);
+		roar_power = 1;
 		
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_ULTRA_hitbox);
 		attack.initiate(self);
 		
-		h_velocity = 4*image_xscale;
 		is_unstoppable = false;
 		shake_amount = 0;
 		

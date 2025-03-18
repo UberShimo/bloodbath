@@ -4,7 +4,7 @@
   "name": "Spr_Greatsword_5S_hitbox",
   "bbox_bottom": 133,
   "bbox_left": 127,
-  "bbox_right": 202,
+  "bbox_right": 210,
   "bbox_top": 120,
   "bboxMode": 0,
   "collisionKind": 4,

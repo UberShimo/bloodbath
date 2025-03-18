@@ -94,14 +94,6 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "4L"){
-		attack = instance_create_depth(x, y, 0, Obj_Cultist_4L_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Cultist_4L_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Cultist_8S_hitbox);
 		attack.initiate(self);

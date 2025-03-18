@@ -7,11 +7,13 @@ is_projectile = true;
 is_cancelable = true;
 weight = 0.4;
 collision_check_distance = 16;
+hit_push = 0;
 
 is_active = false;
 h_spin = 0;
-
-image_blend = c_red;
+max_velocity = 16;
+priority_struck = false;
+priority_struck_alarm = 0;
 
 hitbox_list = ds_list_create();
 

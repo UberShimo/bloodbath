@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Spr_Duo_Input",
-  "bbox_bottom": 46,
+  "bbox_bottom": 52,
   "bbox_left": 10,
   "bbox_right": 53,
   "bbox_top": 27,

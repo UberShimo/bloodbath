@@ -6,7 +6,7 @@ texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
 spawner = noone;
 spawner_action = noone;
 time_reset_alarm = 0; // Time alarm
-freeze_amount = 0; // % in time (0.1 = 10% time speed)
+freeze_amount = 0; // % in time (0.1 = 10% time speedis_act)
 shake_amount = 0; // Shakes the opponent
 startup = 0; // 100% informational not used in logic
 recovery = 0; // 100% informational not used in logic
@@ -44,6 +44,7 @@ is_sticky = false; // Sticks to spawner
 is_cancelable = false; // Can cancel move even if you dont hit anything
 is_final = false; // Cannot be canceled into other moves (informational)
 is_priority = false; // Some attacks have sweetspot hitboxes that take some priorities for example
+priority_struck_duration = 8; // Time to be priority struck and unable to get hit by other hitboxes
 h_affecting = true; // Means that is knocks and pushes in horizontal velocity
 v_affecting = true; // Means that is knocks and pushes in vertical velocity
 is_collidable = true; // Goes through walls or not?

@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "An UNSTOPPABLE headbutt!";
-movement_input = Spr_DB;
+movement_input = Spr_DD;
 button_input = Spr_S;
 image = Spr_Batman_Headbutt_recovery;
 frame = 0;

@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Boomhand_Groundsmash_hit_eff",
-    "path": "sprites/Spr_Boomhand_Groundsmash_hit_eff/Spr_Boomhand_Groundsmash_hit_eff.yy",
+    "name": "Spr_Boomhand_Groundsmash_Shockwave",
+    "path": "sprites/Spr_Boomhand_Groundsmash_Shockwave/Spr_Boomhand_Groundsmash_Shockwave.yy",
   },
   "spriteMaskId": null,
   "visible": true,

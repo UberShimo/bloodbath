@@ -4,10 +4,12 @@ startup = generate_sprite_frames(Spr_Greatsword_Earth_L_startup); // 100% inform
 recovery = generate_sprite_frames(Spr_Greatsword_Earth_L_recovery); // 100% informational not used in logic
 
 damage = 7;
-hit_stun = 16;
+hit_stun = 20;
 hit_push = 8;
 freeze_duration = 8;
-h_launch = 3;
-v_launch = -3;
+h_launch = 4;
+v_launch = -6;
+
+is_launcher = true;
 
 swing_sound = Snd_Light_Swing;

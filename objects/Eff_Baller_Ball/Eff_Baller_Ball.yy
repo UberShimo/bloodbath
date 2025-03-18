@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Baller_Ball",
-    "path": "sprites/Spr_Baller_Ball/Spr_Baller_Ball.yy",
+    "name": "Spr_Ball",
+    "path": "sprites/Spr_Ball/Spr_Ball.yy",
   },
   "spriteMaskId": null,
   "visible": true,

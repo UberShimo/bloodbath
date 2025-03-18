@@ -42,7 +42,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed){
+		if(!grounded && down_forward_pressed){
 			action = "Fistdive";
 			
 			weight = 0.1;
@@ -64,13 +64,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_backward_pressed){
+		else if(down_forward_pressed){
 			action = "BackstepBOOM";
 			
 			h_velocity = -12*image_xscale;
 			grip = 1;
 			
-			sprite_index = Spr_Boomhand_Backstep_startup;
+			sprite_index = Spr_Boomhand_BackstepBOOM_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

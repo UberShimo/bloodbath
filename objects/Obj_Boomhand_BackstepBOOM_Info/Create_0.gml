@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Backstep then punch forward.";
-movement_input = Spr_DB;
+movement_input = Spr_DF;
 button_input = Spr_L;
 image = Spr_Boomhand_BackstepBOOM_recovery;
 frame = 0;

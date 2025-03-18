@@ -14,13 +14,15 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"72387f9d-3cd3-4e1c-b107-aa504f48758b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e118ecd7-c25c-4b2f-9cd6-5641a53ed2fa",},
   ],
   "gridX": 32,
   "gridY": 32,
   "height": 256,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ca860907-abfc-4eea-ad05-b027aaa2c240","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fd961eca-625b-436f-9f78-a6ea0d0a9872","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
   ],
@@ -57,7 +59,7 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Greatsword_ULTRA_more_smash/Spr_Greatsword_ULTRA_more_smash.yy",},},},"Disabled":false,"id":"c1c7324f-a772-475a-a1ce-e979730e36a6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"72387f9d-3cd3-4e1c-b107-aa504f48758b","path":"sprites/Spr_Greatsword_ULTRA_more_smash/Spr_Greatsword_ULTRA_more_smash.yy",},},},"Disabled":false,"id":"57721e8a-5d33-4926-a02a-41e76014581b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e118ecd7-c25c-4b2f-9cd6-5641a53ed2fa","path":"sprites/Spr_Greatsword_ULTRA_more_smash/Spr_Greatsword_ULTRA_more_smash.yy",},},},"Disabled":false,"id":"819dc3ff-6889-4cb6-8a5d-d379718a1b88","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

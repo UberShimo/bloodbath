@@ -1,5 +1,10 @@
-if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list, other) == -1){
+if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list, other) == -1 && !priority_struck){
 	index = other.index;
+	
+	if(other.hit_stun > 0 && other.is_priority){
+		priority_struck = true;
+		priority_struck_alarm = other.active_frames;
+	}
 	
 	// Shockwave
 	if(other.is_shockwave){
@@ -31,7 +36,9 @@ if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list,
 	
 	// little cheating for 5S tip
 	if(other.object_index == Obj_Batman_5S_tip_hitbox){
-		v_velocity *= 0.5;
+		max_velocity = 28;
+		h_velocity = 28*other.image_xscale;
+		v_velocity = -2;
 	}
 	
 	// Add damage to ball

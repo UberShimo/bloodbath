@@ -1,6 +1,6 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Boomhand_Backstep_startup); // 100% informational not used in logic
+startup = generate_sprite_frames(Spr_Boomhand_BackstepBOOM_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Boomhand_BackstepBOOM_recovery); // 100% informational not used in logic
 
 damage = 22;

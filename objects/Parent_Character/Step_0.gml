@@ -28,8 +28,9 @@ if(jump_alarm > 0){
 	}
 }
 
+// Parry duration count down in real time
 if(parry_alarm > 0){
-	parry_alarm -= logic_time;
+	parry_alarm -= 1;
 	
 	if(parry_alarm <= 0){
 		is_parrying = false;
@@ -124,6 +125,16 @@ if(invincibility_alarm > 0){
 		
 		is_invincible = false;
 		image_alpha = 1;
+	}
+}
+
+if(priority_struck_alarm > 0){
+	priority_struck_alarm -= logic_time;
+	
+	if(priority_struck_alarm <= 0){
+		priority_struck_alarm = 0;
+		
+		priority_struck = false;
 	}
 }
 #endregion

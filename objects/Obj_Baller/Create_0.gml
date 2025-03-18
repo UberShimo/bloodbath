@@ -48,6 +48,7 @@ ball = instance_create_depth(x, y, depth-1, Obj_Baller_Ball);
 ball.spawner = self;
 ball_explosion_max_cd = 90;
 ball_explosion_cd = ball_explosion_max_cd;
+ball_line_color = make_color_rgb(200, 180, 150);
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -128,17 +129,10 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "2S"){
-		if(b_hold && is_holding_ball){
-			is_holding_ball = false;
-			
-			ball.h_velocity = 2*image_xscale;
-			ball.v_velocity = -12;
-			ball.cant_hurt_alarm = 8;
-		}
-		else{
-			attack = instance_create_depth(x, y, 0, Obj_Baller_2S_hitbox);
-			attack.initiate(self);
-		}
+		blink_h(20*image_xscale, false);
+		
+		attack = instance_create_depth(x, y, 0, Obj_Baller_2S_hitbox);
+		attack.initiate(self);
 		
 		sprite_index = Spr_Baller_2S_recovery;
 		image_index = 0;
@@ -147,12 +141,16 @@ action_trigger = function(){
 	else if(action == "5S"){
 		is_holding_ball = false;
 		
-		if(b_hold){
+		if(forward_hold){
 			ball.h_velocity = 10*image_xscale;
-			ball.v_velocity = -5;
+			ball.v_velocity = -6;
+		}
+		else if(backward_hold){
+			ball.h_velocity = 3*image_xscale;
+			ball.v_velocity = -12;
 		}
 		else{
-			ball.h_velocity = 5*image_xscale;
+			ball.h_velocity = 6*image_xscale;
 			ball.v_velocity = -9;
 		}
 		
@@ -161,14 +159,6 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Footsnatch"){
-		attack = instance_create_depth(x, y, 0, Obj_Baller_Footsnatch_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Baller_Footsnatch_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "Upswing"){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_Upswing_hitbox);
 		attack.initiate(self);

@@ -1,15 +1,19 @@
 TODO{
+	Fix trippy shit happening under the stage.
+	Change all moves so its is always <v>, v> or vv input. (Except those that work fine backwards. Like Katana send clone, Greatsword Earth stance etc...)
 	Going up on top of menu should take you to bottom of menu.
+	Choosing character should put a better "P1" sign on it. The crystals suck...
 	Dont gain meter when walking against respawning opponent.
 	Make so you can adjust outline color/alpha outside shader.
 	Make teams a thing? With different outline colors n shit.
+	Go through all audio ffs
 	Make game sexi and funni
 	Frame rate drops for some reason at times?
 	Make Adventure mode
 }
 
 SLOGANS for trailer n stuff
-[	FAST	FREEFORM	FUN		INTENSE		PLAY HOW THE **** YOU WANT		GAMEPLAY	]
+[	FAST	FREEFORM	FUN		INTENSE		UNIQUE	PLAY HOW THE **** YOU WANT		GAMEPLAY	]
 
 Debug tips:
 Is hitbox mask same as sprite?
@@ -17,16 +21,27 @@ Is hitbox collision Automatic per Frame?
 Is hurtbox collision Manual per Frame?
 All pressed buttons work with buffer numbers. Gotta use if(a_pressed > 0) to check the input.
 Keep an eye out for reset_buffers(), reset_physics().
+
 cancel eff works when things goes in this order:
 1. Set sprite
 2. Subtract from cancels
 3. Spawn cancel eff
 4. Set recover alarm etc...
+
 When checking attack input it has to get checked in this order:
 1. Air moves
 2. Half circle moves
 3. Quarter circle moves
 4. Normal ground moves
+
+Sweetspot hitbox needs to have:
+is_priority = true;
+active_frames = 1;
+When spawning sweetspot hitbox:
+SPAWN_NORMAL_HITBOX
+[then]
+SPAWN_SWEETSPOT_HITBOX
+
 
 Notes in notes:
 Dont use forward_down or backward_down as attack inputs
@@ -64,19 +79,21 @@ Baller{
 }
 
 Bow{
-	
+	Change Boomerang to v>F then hold up/down to angle
 }
 
 Greatsword{
 	
 }
 
-Boomhand{
-	v<L has high friction when canceled.
-	Groundsmash hit effect sounds bad.
+Boomhand{)
+	
 }
 
 Cultist{
+	Dash should be same frames as normal. Not slower.
+	Change star to v>L then hold up/down to angle
+
 	of  Step Event0
 	for object Parent_Character:
 	Unable to find instance for object index -4
@@ -84,4 +101,56 @@ Cultist{
 	 gml_Script_anon_gml_Object_Obj_Cultist_Create_0_1379_gml_Object_Obj_Cultist_Create_0 (line 170)
 	gml_Object_Parent_Character_Step_0 (line 18) -               action_trigger();
 	gml_Object_Obj_Cultist_Step_0 (line 1)
+}
+
+NEW
+Rapier{
+	F: Quick swing
+	F<: Quick swing and step back
+	F>: Quick swing and step forward
+	Fv: Kick
+	F^: Spin rapier quick
+	
+	L: Stap forward
+	L<: Stab slightly up
+	L>: Stab feet
+	Lv: Stab upward
+	L^: Stab down
+	
+	v>L: Send back a projectile that launch forward after a delay.
+	
+	v>X: Stop time short duration and regain cancels. Can be done without cancels left. Cost 33%
+}
+
+NEW
+Scythe{
+	Has tripple jump
+	Moves slippy and has great air control.
+	Dash is teleport. Also slightly slower.
+	
+	5F: Spin hitting behind and front with scythe
+	5L: Push
+	5S: Pull descently fast
+	2S: Multi hit spin launcher
+	
+	v>L: Send accelerating bird that change direction when holding up/down.
+	vvF/L/S: Call down lightning after delay at position.
+	Hitting bird with lightning makes a horizontal splash.
+}
+
+NEW
+Shield{
+	Has longer parry duration
+}
+
+NEW
+Knife{
+	Has 1 extra cancel.
+	Dash is super fast.
+	Solid but relatively slow movement. Super quick dash.
+	Every hit gives a little DoT.
+
+	5S: Super strong stab behind.
+	
+	ULTRA: Charge then go sonic mode into the air. Can slightly control while airborne. Upon landing you can control instantly.
 }

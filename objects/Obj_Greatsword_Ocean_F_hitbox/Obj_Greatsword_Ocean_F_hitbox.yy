@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Greatsword_Ocean_F_hitbox1",
-    "path": "sprites/Spr_Greatsword_Ocean_F_hitbox1/Spr_Greatsword_Ocean_F_hitbox1.yy",
+    "name": "Spr_Greatsword_Ocean_F_hitbox",
+    "path": "sprites/Spr_Greatsword_Ocean_F_hitbox/Spr_Greatsword_Ocean_F_hitbox.yy",
   },
   "spriteMaskId": null,
   "visible": false,

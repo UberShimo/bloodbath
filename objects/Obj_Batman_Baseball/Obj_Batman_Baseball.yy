@@ -7,6 +7,7 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Parent_Attack","path":"objects/Parent_Attack/Parent_Attack.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Parent_Character","path":"objects/Parent_Character/Parent_Character.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":9,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -34,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Ball",
-    "path": "sprites/Spr_Ball/Spr_Ball.yy",
+    "name": "Spr_Baseball",
+    "path": "sprites/Spr_Baseball/Spr_Baseball.yy",
   },
   "spriteMaskId": null,
   "visible": true,

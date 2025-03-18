@@ -48,19 +48,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed){
-			action = "Quickdraw Up";
-			sprite_index = Spr_Katana_Quickdraw_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_backward_pressed){
-			action = "Quickdraw Straight";
-			sprite_index = Spr_Katana_Quickdraw_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Quickdraw Down";
+			action = "Quickdraw";
 			sprite_index = Spr_Katana_Quickdraw_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

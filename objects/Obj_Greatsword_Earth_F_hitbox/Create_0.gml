@@ -4,11 +4,11 @@ startup = generate_sprite_frames(Spr_Greatsword_Earth_F_startup); // 100% inform
 recovery = generate_sprite_frames(Spr_Greatsword_Earth_F_recovery); // 100% informational not used in logic
 
 damage = 4;
-hit_stun = 24;
-hit_push = 8;
+hit_stun = 32;
+hit_push = 2;
 freeze_duration = 8;
-h_launch = 3;
-v_launch = -3;
+h_launch = 1;
+v_launch = 3;
 
 is_sticky = true;
 

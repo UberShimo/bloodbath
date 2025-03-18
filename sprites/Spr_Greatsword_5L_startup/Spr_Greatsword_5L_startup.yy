@@ -14,16 +14,18 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a91db67b-cc71-4d12-9eaf-972d3f90787f",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f5f83760-c540-45f9-a69a-44f3a12ba1fd",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5c41a9b-5507-4551-95dd-2f0ecfd84edf",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d0609564-c88f-467a-892b-290ddbc11be4",},
   ],
   "gridX": 32,
   "gridY": 32,
   "height": 256,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e940ab0f-1f61-4395-a78e-cf950174dcfd","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7626a856-c038-4647-8d42-25f6e993a879","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -58,8 +60,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Greatsword_5L_startup/Spr_Greatsword_5L_startup.yy",},},},"Disabled":false,"id":"eed97208-1073-4648-aae2-65c7dd66e25d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a91db67b-cc71-4d12-9eaf-972d3f90787f","path":"sprites/Spr_Greatsword_5L_startup/Spr_Greatsword_5L_startup.yy",},},},"Disabled":false,"id":"c4878006-ebe3-4037-bba4-efa0b3991fca","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f5f83760-c540-45f9-a69a-44f3a12ba1fd","path":"sprites/Spr_Greatsword_5L_startup/Spr_Greatsword_5L_startup.yy",},},},"Disabled":false,"id":"99ebef0a-24d4-43b7-a36e-05f215a37db8","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a5c41a9b-5507-4551-95dd-2f0ecfd84edf","path":"sprites/Spr_Greatsword_5L_startup/Spr_Greatsword_5L_startup.yy",},},},"Disabled":false,"id":"ae1a06e2-2c68-4b51-bb75-6c55ae02e354","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d0609564-c88f-467a-892b-290ddbc11be4","path":"sprites/Spr_Greatsword_5L_startup/Spr_Greatsword_5L_startup.yy",},},},"Disabled":false,"id":"b4b794d1-379b-4838-a849-031780640f14","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

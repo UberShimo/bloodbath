@@ -1,5 +1,6 @@
 player_amount = 0;
 ui_pixel_size = 1.5;
+heart_size = 0.75; // % based
 global.game_time = 1; // Just reset time for safety
 play_winner_animation = false;
 winner_image = 0;

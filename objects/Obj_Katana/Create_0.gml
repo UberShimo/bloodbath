@@ -132,6 +132,24 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
+	else if(action == "Quickdraw"){
+		if(up_hold){
+			attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_UP_hitbox);
+			attack.initiate(self);
+		}
+		else if(down_hold){
+			attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_DOWN_hitbox);
+			attack.initiate(self);
+		}
+		else{
+			attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
+			attack.initiate(self);
+		}
+		
+		sprite_index = Spr_Katana_Quickdraw_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "Headsplitter"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_Headsplitter_hitbox);
 		attack.initiate(self);
@@ -171,30 +189,6 @@ action_trigger = function(){
 		
 		recover_alarm = dash_duration;
 	}
-	else if(action == "Quickdraw Straight"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Quickdraw Up"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_UP_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Quickdraw Down"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_DOWN_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	// Meter moves
 	else if(action == "X"){
 			clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
@@ -226,6 +220,7 @@ action_trigger = function(){
 				steps += 1;
 			}
 		}
+		
 		
 		attack = instance_create_depth(x, y, 0, Obj_Katana_ULTRA_hitbox);
 		// Attack is spawned behind you after dash/teleport

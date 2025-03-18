@@ -12,7 +12,6 @@ v_launch = -3;
 
 is_sticky = true;
 is_launcher = true;
-is_parryable = false;
 hit_effect_y = -8;
 
 hit_sound = Snd_Crack;

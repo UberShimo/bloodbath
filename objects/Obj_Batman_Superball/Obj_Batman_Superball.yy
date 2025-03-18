@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Ball",
-    "path": "sprites/Spr_Ball/Spr_Ball.yy",
+    "name": "Spr_Baseball",
+    "path": "sprites/Spr_Baseball/Spr_Baseball.yy",
   },
   "spriteMaskId": null,
   "visible": true,
