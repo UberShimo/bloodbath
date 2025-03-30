@@ -8,7 +8,7 @@ hit_stun = 20;
 hit_push = 6;
 freeze_duration = 8;
 h_launch = 0.5;
-v_launch = -5.5;
+v_launch = -7;
 
 is_launcher = true;
 hit_effect_y = -8;

@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Katana_Portrait",
   "bbox_bottom": 127,
-  "bbox_left": 17,
+  "bbox_left": 0,
   "bbox_right": 127,
   "bbox_top": 11,
   "bboxMode": 0,

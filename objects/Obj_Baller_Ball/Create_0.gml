@@ -13,10 +13,12 @@ is_returning = false;
 hitbox_list = ds_list_create();
 
 collide = function(){
+	// Effect
+	if(existing_hitbox != noone){
+		spawn_effect(x, y, 8, Eff_Spark, 1, 0.1, c_white, 0.5, 1, 0, -30, 210);
+		audio_play_sound(Snd_Knack, 0, false);
+	}
+	
 	h_velocity = 0;
 	v_velocity = 0;
-
-	if(existing_hitbox != noone && v_velocity > 6){
-		instance_create_depth(x, y, depth, Eff_Ball_Land);
-	}
 }

@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 hold_ok = true;
-info = "Boomerang. Arrows bounce on it!\nAngle depends on input.\nHold to make it stay longer.";
+info = "Throw BOOMERANG! Hold to make\nit stay longer. Quickly hold.\nUP or DOWN to change angle.";
 movement_input = Spr_F;
 button_input = Spr_Multi_Input;
 image = Spr_Bow_Boomerang_Throw_recovery;

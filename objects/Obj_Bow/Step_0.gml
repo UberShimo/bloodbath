@@ -17,21 +17,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
-		if(down_backward_pressed && has_boomerang){
-			action = "Boomerang Straight";
-			sprite_index = Spr_Bow_Boomerang_Throw_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_forward_pressed && has_boomerang){
-			action = "Boomerang Up";
-			sprite_index = Spr_Bow_Boomerang_Throw_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed && has_boomerang){
-			action = "Boomerang Down";
+	if(x_pressed){if(down_forward_pressed && has_boomerang){
+			action = "Boomerang";
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -69,7 +56,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_backward_pressed){
+		else if(forward_down_pressed){
 			action = "Aim Up";
 			hold_arrow = true;
 			aim_dir = 45;
@@ -104,17 +91,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
-			action = "8S";
-			sprite_index = Spr_Bow_8S_startup;
+		if(down_forward_pressed){
+			action = "Crosspin";
+			h_velocity = 9*image_xscale;
+			v_velocity = 0;
+			weight = 0.1;
+			velocity_friction = 0.25;
+			is_collidable = false;
+			sprite_index = Spr_Bow_Crosspin_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
-			action = "Crosspin";
-			h_velocity = 9*image_xscale;
-			is_collidable = false;
-			sprite_index = Spr_Bow_Crosspin_startup;
+		else if(!grounded){
+			action = "8S";
+			sprite_index = Spr_Bow_8S_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -136,6 +126,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		if(half_circle_forward_pressed && meter >= 100){
 			action = "ULTRA";
 			meter -= 50;
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
 			sprite_index = Spr_Bow_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
@@ -146,7 +139,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "X";
 			meter -= 25;
 			
-			sprite_index = Spr_Bow_Upstream_startup;
+			sprite_index = Spr_Bow_X_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Bow_5F_startup); // 100% informational not 
 recovery = generate_sprite_frames(Spr_Bow_5F_recovery); // 100% informational not used in logic
 
 damage = 6;
-hit_stun = 16;
+hit_stun = 20;
 hit_push = -5;
 freeze_duration = 8;
 h_launch = -1;

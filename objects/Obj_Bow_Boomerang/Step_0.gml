@@ -12,7 +12,12 @@ if(return_alarm <= 0){
 	is_returning = true;
 }
 
-if(is_returning){
+if(is_possessed){
+	dir = point_direction(x, y, target.x, target.y);
+	h_velocity += lengthdir_x(return_acceleration, dir);
+	v_velocity += lengthdir_y(return_acceleration, dir);
+}
+else if(is_returning){
 	dir = point_direction(x, y, spawner.x, spawner.y);
 	h_velocity += lengthdir_x(return_acceleration, dir);
 	v_velocity += lengthdir_y(return_acceleration, dir);

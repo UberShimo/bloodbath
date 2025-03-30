@@ -10,4 +10,5 @@ freeze_duration = 20;
 h_launch = 3;
 v_launch = 10;
 
-is_side_relevant = true;
+is_sticky = true;
+is_parryable = false;

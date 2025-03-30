@@ -334,6 +334,7 @@ read_input = function(){
 	
 reset_physics = function(){
 	grip = original_grip;
+	velocity_friction = 0;
 	extra_grip = 0;
 	weight = original_weight;
 	multi_hit_action_index = 0;

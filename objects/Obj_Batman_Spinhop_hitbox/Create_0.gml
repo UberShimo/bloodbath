@@ -7,7 +7,7 @@ damage = 14;
 hit_stun = 32;
 hit_push = 5;
 freeze_duration = 12;
-h_launch = 5;
-v_launch = 3;
+h_launch = 4;
+v_launch = 4;
 
 is_sticky = true;

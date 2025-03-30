@@ -10,7 +10,7 @@ freeze_duration = 16;
 h_launch = 0;
 v_launch = 0;
 
-active_frames = 0;
+is_projectile = true;
 is_parryable = false;
 
 swing_sound = Snd_NOTHING;

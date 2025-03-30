@@ -17,4 +17,9 @@ if(is_projectile){
 
 if(global.is_debugging){
 	draw_self();
+	
+	if(is_projectile){
+		draw_text(x, y-32, "h_vel:  " + string(h_velocity));
+		draw_text(x, y, "v_vel:  " + string(v_velocity));
+	}
 }

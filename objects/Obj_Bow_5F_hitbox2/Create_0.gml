@@ -1,7 +1,7 @@
 event_inherited();
 
 damage = 5;
-hit_stun = 16;
+hit_stun = 20;
 hit_push = 3;
 freeze_duration = 8;
 h_launch = 1;

@@ -8,7 +8,7 @@ hit_stun = 28;
 hit_push = 12;
 freeze_duration = 12;
 h_launch = 1;
-v_launch = -14;
+v_launch = -13;
 
 is_launcher = true;
 is_parryable = false;

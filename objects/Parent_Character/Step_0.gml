@@ -339,7 +339,7 @@ else if(v_velocity > 0){
 	}
 }
 // Grounded or not? also reset cancels
-if(position_meeting(x, y+ground_check, Parent_Collision) && v_velocity = 0){
+if(position_meeting(x, y+ground_check, Parent_Collision) && v_velocity == 0){
 	grounded = true;
 	
 	if(action == noone){
@@ -436,8 +436,10 @@ y_pressed--;
 lb_pressed--;
 rb_pressed--;
 down_forward_pressed--;
+forward_down_pressed--
 half_circle_forward_pressed--;
 down_backward_pressed--;
+backward_down_pressed--;
 half_circle_backward_pressed--;
 double_down_pressed--;
 meter_dash_lb_pressed--;

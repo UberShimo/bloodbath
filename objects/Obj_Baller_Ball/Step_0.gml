@@ -22,10 +22,6 @@ if(velocity > 7 && cant_hurt_alarm <= 0){
 	existing_hitbox.h_launch = abs(h_velocity/2);
 	existing_hitbox.v_launch = v_velocity/2;
 	
-	// Make it launcher?
-	if(v_velocity < -6){
-		existing_hitbox.is_launcher = true;
-	}
 	// Create effect
 	instance_create_depth(x, y, depth, Eff_Baller_Ball);
 }

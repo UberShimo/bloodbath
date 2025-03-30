@@ -1,12 +1,17 @@
 TODO{
 	Fix trippy shit happening under the stage.
+	Make so you can turn off debug in training room
+	Fix so walls looks good
 	Change all moves so its is always <v>, v> or vv input. (Except those that work fine backwards. Like Katana send clone, Greatsword Earth stance etc...)
+	Make hit_freeze and shake amount global values.
 	Going up on top of menu should take you to bottom of menu.
 	Choosing character should put a better "P1" sign on it. The crystals suck...
 	Dont gain meter when walking against respawning opponent.
 	Make so you can adjust outline color/alpha outside shader.
-	Make teams a thing? With different outline colors n shit.
+	Increase all fast moves Freeze duration
 	Go through all audio ffs
+	Make teams a thing? With different outline colors n shit.
+	Make the game crop images to save RAM?
 	Make game sexi and funni
 	Frame rate drops for some reason at times?
 	Make Adventure mode
@@ -71,28 +76,35 @@ Katana{
 }
 
 Claws{
-	
+	X: Should be able to do without cancels.
 }
 
 Baller{
 	
 }
 
-Bow{
-	Change Boomerang to v>F then hold up/down to angle
-}
-
 Greatsword{
 	
 }
 
-Boomhand{)
+Boomhand{
 	
 }
 
+Bow{
+	Dashing and attacking at same frame will lift you from ground while doing a grounded attack.
+}
+
 Cultist{
-	Dash should be same frames as normal. Not slower.
 	Change star to v>L then hold up/down to angle
+	
+	REMOVE SHADOW!
+	REMOVE MINE!
+	v>/v<F: Should pop your eye out from under robe.
+	X = Turn triangles into lots of bubbles that slightly freeze opponent or heal yourself.
+	vvF: Teleport to circle (same)
+	vvL: Implode circle
+	vvS: Pull circle
 
 	of  Step Event0
 	for object Parent_Character:
@@ -105,11 +117,14 @@ Cultist{
 
 NEW
 Rapier{
+	Dash has shorter duration.
+	Good grip.
+
 	F: Quick swing
 	F<: Quick swing and step back
 	F>: Quick swing and step forward
 	Fv: Kick
-	F^: Spin rapier quick
+	F^: Pathetic aerial kick.
 	
 	L: Stap forward
 	L<: Stab slightly up
@@ -117,15 +132,21 @@ Rapier{
 	Lv: Stab upward
 	L^: Stab down
 	
-	v>L: Send back a projectile that launch forward after a delay.
+	vS: Elegant jump with a rapier twist that then swing upward.
+	^S: Spin 3 times in air.
 	
-	v>X: Stop time short duration and regain cancels. Can be done without cancels left. Cost 33%
+	v>F: Quick dash stab that is final.
+	v>L: Slower dash stab.
+	v>S: Slowest dash stab that leaves as delayed stab afterwards.
+	
+	X: Stop time then regain cancels. Should be able to do without cancels.
+	ULTRA: Dissapear then slash through closest enemy.
 }
 
 NEW
 Scythe{
 	Has tripple jump
-	Moves slippy and has great air control.
+	Moves slippy and has great air control. Light weight.
 	Dash is teleport. Also slightly slower.
 	
 	5F: Spin hitting behind and front with scythe
@@ -133,24 +154,29 @@ Scythe{
 	5S: Pull descently fast
 	2S: Multi hit spin launcher
 	
-	v>L: Send accelerating bird that change direction when holding up/down.
+	v>L: Spawn accelerating bird that change direction when holding up/down.
 	vvF/L/S: Call down lightning after delay at position.
 	Hitting bird with lightning makes a horizontal splash.
+	
+	X: Pull with scythe that steal enemy HP. You can also hit your bird.
 }
 
 NEW
 Shield{
+	Is heavy.
 	Has longer parry duration
+	
+	vF: Gain slight momentum forward and skate on shield. Hold to stay on shield.
 }
 
 NEW
 Knife{
 	Has 1 extra cancel.
-	Dash is super fast.
 	Solid but relatively slow movement. Super quick dash.
-	Every hit gives a little DoT.
 
 	5S: Super strong stab behind.
+	
+	v>F: Lob a grenade that explode after delay. Cancelable.
 	
 	ULTRA: Charge then go sonic mode into the air. Can slightly control while airborne. Upon landing you can control instantly.
 }

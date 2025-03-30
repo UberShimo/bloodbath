@@ -4,33 +4,73 @@ event_inherited();
 if(is_projectile){
 	if(is_collidable){
 		dir = point_direction(0, 0, h_velocity, v_velocity);
+		// Distance check
 		if(collision_check_with_distance){
-			x_check = x+lengthdir_x(collision_check_distance, dir)*logic_time;
-			y_check = y+lengthdir_y(collision_check_distance, dir)*logic_time;
-		}
-		else{
-			x_check = x+h_velocity*logic_time;
-			y_check = y+v_velocity*logic_time;
-		}
-	
-		if(!position_meeting(x_check, y_check, Parent_Collision)){
-			move_step();
-		}
-		else{
-			x_check *= 0.1;
-			y_check *= 0.1;
-		
-			while(!place_meeting(x, y, Parent_Collision)){
+			x_check = lengthdir_x(collision_check_distance, dir)*logic_time;
+			y_check = lengthdir_y(collision_check_distance, dir)*logic_time;
+			
+			if(!position_meeting(x+x_check, y+y_check, Parent_Collision)){
 				move_step();
 			}
-			collide();
+			else{
+				x_check *= 0.1;
+				y_check *= 0.1;
+		
+				while(!position_meeting(x+x_check, y+y_check, Parent_Collision)){
+					x += x_check;
+					y += y_check;
+				}
+				collide();
+			}
+		}
+		// Normal check
+		else{
+			x_check = h_velocity*logic_time;
+			y_check = v_velocity*logic_time;
+			
+			if(!place_meeting(x+x_check, y+y_check, Parent_Collision)){
+				move_step();
+			}
+			else{
+				x = floor(x);
+				y = floor(y);
+				// Snap to collision
+				if(place_meeting(x+x_check, y, Parent_Collision)){
+					val = 1;
+					if(h_velocity < 0){
+						val = -1;
+					}
+					while(!place_meeting(x+val, y, Parent_Collision)){
+						x += val;
+					}
+				}
+				else{
+					x += x_check;
+				}
+				if(place_meeting(x, y+y_check, Parent_Collision)){
+					val = 1;
+					if(v_velocity < 0){
+						val = -1;
+					}
+					while(!place_meeting(x, y+val, Parent_Collision)){
+						y += val;
+					}
+				}
+				else{
+					y += y_check;
+				}
+				collide();
+			}
 		}
 	}
 	else{
 		move_step();
 	}
 	
-	v_velocity += weight*logic_time;
+	// Weight logic
+	if(!place_meeting(x, y+1, Parent_Collision) || !is_collidable){
+		v_velocity += weight*logic_time;
+	}
 	
 	// Duration
 	if(projectile_duration > 0){

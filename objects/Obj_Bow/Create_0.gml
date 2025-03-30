@@ -109,10 +109,6 @@ action_trigger = function(){
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Bow_8S_hitbox);
 		attack.initiate(self);
-		tip = instance_create_depth(x, y, 0, Obj_Bow_8S_tip_hitbox);
-		tip.initiate(self);
-		
-		v_velocity = -8;
 		
 		sprite_index = Spr_Bow_8S_recovery;
 		image_index = 0;
@@ -137,42 +133,21 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Boomerang Straight"){
+	else if(action == "Boomerang"){
 		attack = instance_create_depth(x, y, 0, Obj_Bow_Boomerang);
 		attack.initiate(self);
-		attack.h_velocity = 10*image_xscale;
 		
-		if(x_hold){
-			attack.return_alarm = 300;
+		if(up_hold){
+			attack.h_velocity = 9*image_xscale;
+			attack.v_velocity = -4;
 		}
-		
-		has_boomerang = false;
-		
-		sprite_index = Spr_Bow_Boomerang_Throw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Boomerang Up"){
-		attack = instance_create_depth(x, y, 0, Obj_Bow_Boomerang);
-		attack.initiate(self);
-		attack.h_velocity = 9*image_xscale;
-		attack.v_velocity = -4;
-		
-		if(x_hold){
-			attack.return_alarm = 300;
+		else if(down_hold){
+			attack.h_velocity = 9*image_xscale;
+			attack.v_velocity = 4;
 		}
-		
-		has_boomerang = false;
-		
-		sprite_index = Spr_Bow_Boomerang_Throw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Boomerang Down"){
-		attack = instance_create_depth(x, y, 0, Obj_Bow_Boomerang);
-		attack.initiate(self);
-		attack.h_velocity = 9*image_xscale;
-		attack.v_velocity = 4;
+		else{
+			attack.h_velocity = 10*image_xscale;
+		}
 		
 		if(x_hold){
 			attack.return_alarm = 300;
@@ -239,23 +214,21 @@ action_trigger = function(){
 	}
 	// Meter moves
 	else if(action == "X"){
-		attack = instance_create_depth(x, y, 0, Obj_Bow_Upstream);
-		attack.initiate(self);
-		attack.x += 88*image_xscale;
+		frog = instance_create_depth(x-16*image_xscale, y+28, 0, Obj_Bow_Frog);
+		frog.spawner = self;
+		frog.h_velocity = 2.5*image_xscale;
+		frog.image_xscale = image_xscale;
 		
-		if(rb_hold){
-			attack.x += 96*image_xscale;
-		}
-		
-		sprite_index = Spr_Bow_Upstream_recovery;
+		sprite_index = Spr_Bow_Stand;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = 1;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_ULTRA_Arrow);
 		attack.initiate(self);
 		attack.h_velocity = attack.max_speed*image_xscale;
+		attack.v_velocity = 1.5;
 		
 		sprite_index = Spr_Bow_ULTRA_recovery;
 		image_index = 0;
