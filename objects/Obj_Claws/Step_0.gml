@@ -134,6 +134,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Claws_Flurry_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
+			multi_hit_action_index = 0;
 		}
 		else if(down_forward_pressed){
 			action = "Rollkick";
@@ -156,6 +157,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Claws_5S_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
+			multi_hit_action_index = 0;
 		}
 	}
 	else if(rb_pressed){
@@ -171,7 +173,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			alarm[10] = 300;
 		}
 		// Quite the check...
-		else if(down_forward_pressed && meter >= 25 && ds_list_size(rewind_list) >= rewind_length-1){
+		else if((down_forward_pressed || down_backward_pressed) && meter >= 25 && ds_list_size(rewind_list) >= rewind_length-1){
 			action = "X";
 			meter -= 25;
 			

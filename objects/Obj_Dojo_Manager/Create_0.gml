@@ -5,6 +5,7 @@ student = noone;
 dummy = noone;
 time_switch_pressed = false;
 reset_positions_pressed = false;
+change_debug_pressed = false;
 
 global.BG_index = 1; // Trainingroom
 play_music(Mu_Tutorial, global.music_volume);

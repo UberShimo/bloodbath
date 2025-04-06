@@ -20,8 +20,3 @@ initiate = function(initiator){
 	eff = instance_create_depth(x, y, 1, Eff_Cancel);
 	eff.initiate(initiator);
 }
-
-shadow_initiate = function(shadow){
-	index = shadow.spawner.index;
-	spawner = shadow.spawner;
-}

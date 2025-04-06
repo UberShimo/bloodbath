@@ -135,14 +135,25 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5S"){
-		attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
-		attack.initiate(self);
+		if(multi_hit_action_index == 0){
+			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
+			attack.initiate(self);
+			
+			blink_h(12*image_xscale, false);
 		
-		h_velocity = 8*image_xscale;
+			sprite_index = Spr_Claws_5S_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = 9;
+			multi_hit_action_index += 1;
+		}
+		else if(multi_hit_action_index < 6){
+			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
+			attack.initiate(self);
 		
-		sprite_index = Spr_Claws_5S_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = 9;
+			multi_hit_action_index += 1;
+		}
 	}
 	// Special moves
 	else if(action == "H Ring Spawn"){
@@ -247,6 +258,7 @@ action_trigger = function(){
 	}
 	else if(action == "X"){
 		action = noone;
+		cancels += 1; // So you can use it even when out of cancels.
 		
 		eff = instance_create_depth(x, y, depth, Eff_Claws_Teleport);
 		eff.image_xscale = image_xscale;
@@ -256,7 +268,10 @@ action_trigger = function(){
 		ds_list_clear(rewind_list);
 		x = pos[0];
 		y = pos[1];
+		// Cacnels are back!
 		cancels = max_cancels;
+		effect = instance_create_depth(x, y, 1, Eff_Cancel);
+		effect.initiate(self);
 		face_closest_enemy();
 	}
 	else{

@@ -331,10 +331,10 @@ else if(v_velocity > 0){
 		// Harsh land
 		if(action != noone){
 			sprite_index = land_spr;
-			if(action_alarm > 0){
+			if(recover_alarm <= 0 && action_alarm > 0){
 				recover_alarm = action_alarm;
-				action_alarm = 0;
 			}
+			action_alarm = 0;
 		}
 	}
 }

@@ -5,7 +5,6 @@ spawner.v_velocity = -8;
 	
 effect = instance_create_depth(spawner.x, spawner.y, 1, Eff_Cancel);
 effect.initiate(spawner);
-effect.image_blend = c_aqua;
 	
 other.v_velocity = 6;
 other.is_returning = false;

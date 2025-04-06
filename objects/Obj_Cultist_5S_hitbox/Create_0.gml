@@ -5,7 +5,7 @@ recovery = generate_sprite_frames(Spr_Cultist_5S_recovery); // 100% informationa
 
 damage = 19;
 hit_stun = 24;
-hit_push = 8;
+hit_push = 4;
 freeze_duration = 16;
 h_launch = 4;
 v_launch = -4;

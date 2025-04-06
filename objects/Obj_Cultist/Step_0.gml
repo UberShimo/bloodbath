@@ -10,33 +10,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	reset_physics();
 	
 	if(x_pressed){
-		if(double_down_pressed){
-			action = "Circle Teleport";
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			
-			sprite_index = Spr_Cultist_Vortex_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(half_circle_backward_pressed && instance_exists(circle)){
-			if(circle.implode_alarm == 0){
-				action = "Circle Pullback";
-			
-				sprite_index = Spr_Cultist_Circlepull_startup;
-				image_index = 0;
-				action_alarm = generate_sprite_frames(sprite_index);
-			}
-		}
-		else if(down_forward_pressed){
+		if(down_forward_pressed){
 			action = "Circle Dash Forward";
 			
 			h_velocity = 0;
 			v_velocity = 0;
 			weight = 0;
 			
-			sprite_index = Spr_Cultist_Circledash_startup;
+			sprite_index = Spr_Cultist_Circledash_Forward_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -47,7 +28,17 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			v_velocity = 0;
 			weight = 0;
 			
-			sprite_index = Spr_Cultist_Circledash_startup;
+			sprite_index = Spr_Cultist_Circledash_Backward_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed){
+			action = "Circle Teleport";
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Cultist_Vortex_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -71,20 +62,16 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed){
-			action = "Falling Star";
-			sprite_index = Spr_Cultist_Starthrow_startup;
+		if(double_down_pressed
+		&& ((circle != noone && circle.implode_alarm == 0)
+		|| (meter_circle != noone && meter_circle.implode_alarm == 0))){
+			action = "Circle Implode";
+			sprite_index = Spr_Cultist_Circle_Pinch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(double_down_pressed){
-			action = "Rising Star";
-			sprite_index = Spr_Cultist_Starthrow_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_backward_pressed){
-			action = "Shooting Star";
+		else if(down_forward_pressed){
+			action = "Star Throw";
 			sprite_index = Spr_Cultist_Starthrow_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -94,6 +81,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Cultist_8L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
+			multi_hit_action_index = 0;
 		}
 		else if(down_hold){
 			action = "2L";
@@ -109,28 +97,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed){
-			action = "Spin";
-			sprite_index = Spr_Cultist_Spin_startup;
+		if(double_down_pressed
+		&& ((circle != noone && circle.implode_alarm == 0)
+		|| (meter_circle != noone && meter_circle.implode_alarm == 0))){
+			action = "Circle Pullback";
+			
+			sprite_index = Spr_Cultist_Circlepull_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_backward_pressed){
-			action = "Spin";
-			sprite_index = Spr_Cultist_Spin_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-			image_xscale *= -1;
 		}
 		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Cultist_8S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Plant Mine";
-			sprite_index = Spr_Cultist_Mine_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -149,7 +127,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(grounded && half_circle_forward_pressed && meter >= 100 && grounded){
+		if(grounded && half_circle_forward_pressed && meter >= 100){
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Cultist_ULTRA_startup;
@@ -157,6 +135,23 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+		}
+		else if((down_forward_pressed || down_backward_pressed) && meter >= 35){
+			action = "X";
+			meter -= 35
+			sprite_index = Spr_Cultist_X_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed && meter_circle != noone){
+			action = "Meter Circle Teleport";
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Cultist_Vortex_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
 	reset_buffers();
@@ -171,12 +166,4 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
-}
-
-// BITE!
-// Ugly input check but yeah... reset_buffers() kinda screw us here but it is needed
-if(gamepad_button_check_pressed(controller_index, gp_shoulderr) && down_hold && meter >= 25){
-	shadow.time_to_bite_buffer = buffer_duration;
-	meter -= 25;
-	reset_buffers();
 }

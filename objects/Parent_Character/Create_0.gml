@@ -365,6 +365,7 @@ save_current_state = function(){
 	last_h_velocity = h_velocity;
 	last_v_velocity = v_velocity;
 	last_grip = grip;
+	last_multi_hit_action_index = multi_hit_action_index;
 }
 
 do_cancel = function(){
@@ -393,6 +394,7 @@ cancel_the_cancel = function(){
 	v_velocity = last_v_velocity;
 	grip = last_grip;
 	shake_amount = 0;
+	multi_hit_action_index = last_multi_hit_action_index;
 	instance_destroy(cancel_effect);
 }
 

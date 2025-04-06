@@ -10,6 +10,5 @@ freeze_duration = 8;
 h_launch = 3;
 v_launch = -2;
 
-effect = Obj_Cultist_5L_hit_eff;
-
+is_sticky = true;
 swing_sound = Snd_Light_Swing;

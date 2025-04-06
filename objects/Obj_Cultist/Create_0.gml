@@ -24,16 +24,16 @@ max_speed = 5;
 acceleration = 0.1;
 grip = global.standard_grip;
 air_control = 0.1;
-dash_speed = 10;
+dash_speed = 9;
 dash_blink = 0;
 dash_duration = 24;
 dash_grip = 0.5;
-jump_power = 13;
+jump_power = 11;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
 extra_jumps_left = extra_jumps;
-weight = global.standard_weight;
+weight = global.light_weight;
 max_fall_speed = 16;
 character_width = 24;
 character_height = global.standard_height;
@@ -44,11 +44,7 @@ original_weight = weight;
 
 // Cultist stuff
 circle = noone;
-triangle = noone;
-shadow = instance_create_depth(x, y, depth-1, Obj_Cultist_Shadow);
-shadow.spawner = self;
-is_slowing_down_time = false;
-slow_amount = 0.25; // RB slowdown power. % based
+meter_circle = noone;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -57,6 +53,9 @@ action_trigger = function(){
 	if(action == "F"){
 		attack = instance_create_depth(x, y, 0, Obj_Cultist_F_hitbox);
 		attack.initiate(self);
+		
+		h_velocity = 0;
+		v_velocity = 0;
 		
 		sprite_index = Spr_Cultist_F_recovery;
 		image_index = 0;
@@ -71,12 +70,24 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "8L"){
-		attack = instance_create_depth(x, y, 0, Obj_Cultist_8L_hitbox);
-		attack.initiate(self);
+		if(multi_hit_action_index == 0){
+			multi_hit_action_index += 1;
+
+			attack = instance_create_depth(x, y, 0, Obj_Cultist_8L_hitbox);
+			attack.initiate(self);
 		
-		sprite_index = Spr_Cultist_8L_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+			sprite_index = Spr_Cultist_8L_recovery;
+			image_index = 0;
+			action_alarm = 8;
+			recover_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(multi_hit_action_index < 4){
+			attack = instance_create_depth(x, y, 0, Obj_Cultist_8L_hitbox);
+			attack.initiate(self);
+			
+			action_alarm = 8;
+			multi_hit_action_index += 1;
+		}
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Cultist_2L_hitbox);
@@ -119,25 +130,37 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Spin"){
-		attack = instance_create_depth(x, y, 0, Obj_Cultist_Spin_hitbox);
-		attack.initiate(self);
+	else if(action == "Circle Dash Forward"){
+		if(circle != noone){
+			spawn_effect(circle.x, circle.y, 1, Eff_Ring, 1, 0.1, c_red, 1, 1, 0.2);
+			instance_destroy(circle);
+		}
+		circle = instance_create_depth(x, y, depth-1, Obj_Cultist_Circle);
+		circle.initiate(self);
+		circle.image_blend = c_red;
 		
-		h_velocity = 4*image_xscale;
-		v_velocity = -4;
-		weight = 0.3;
-		sprite_index = Spr_Cultist_Spin_recovery;
+		is_collidable = false;
+		h_velocity = 10*image_xscale;
+		extra_grip = 0.5;
+		
+		sprite_index = Spr_Cultist_Circledash_Forward_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Lightning"){
-		attack = instance_create_depth(x+32*image_xscale, y, 0, Obj_Cultist_Lightning_hitbox);
-		attack.initiate(self);
+	else if(action == "Circle Dash Backward"){
+		if(circle != noone){
+			spawn_effect(circle.x, circle.y, 1, Eff_Ring, 1, 0.1, c_red, 1, 1, 0.2);
+			instance_destroy(circle);
+		}
+		circle = instance_create_depth(x, y, depth-1, Obj_Cultist_Circle);
+		circle.initiate(self);
+		circle.image_blend = c_red;
 		
-		h_velocity = 0;
-		v_velocity = -9;
+		is_collidable = false;
+		h_velocity = -10*image_xscale;
+		extra_grip = 0.5;
 		
-		sprite_index = Spr_Cultist_Lightning_recovery;
+		sprite_index = Spr_Cultist_Circledash_Backward_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
@@ -153,19 +176,55 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Circle Pullback"){
-		attack = instance_create_depth(circle.x, circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
-		attack.initiate(self);
-		eff = instance_create_depth(circle.x, circle.y, depth-1, Obj_Cultist_Circle_Pullback_hit_eff);
-		scale = point_distance(x, y, circle.x, circle.y)/sprite_get_width(Spr_Cultist_Circle_Pullback_hitbox);
-		dir = point_direction(circle.x, circle.y, x, y);
-		instance_destroy(circle);
-		circle = noone;
+	else if(action == "Circle Implode"){
+		if(circle != noone){
+			circle.sprite_index = Spr_Cultist_Circle_Implosion_startup;
+			circle.image_index = 0;
+			circle.implode_alarm = generate_sprite_frames(circle.sprite_index);
+			circle = noone;
+		}
+		if(meter_circle != noone){
+			meter_circle.sprite_index = Spr_Cultist_Circle_Implosion_startup;
+			meter_circle.image_index = 0;
+			meter_circle.implode_alarm = generate_sprite_frames(meter_circle.sprite_index);
+			meter_circle = noone;
+		}
 		
-		attack.image_xscale = scale;
-		attack.image_angle = dir;
-		eff.image_xscale = scale;
-		eff.image_angle = dir;
+		sprite_index = Spr_Cultist_Circle_Pinch_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Circle Pullback"){
+		if(circle != noone){
+			attack = instance_create_depth(circle.x, circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
+			attack.initiate(self);
+			eff = instance_create_depth(circle.x, circle.y, depth-1, Obj_Cultist_Circle_Pullback_hit_eff);
+			scale = point_distance(x, y, circle.x, circle.y)/sprite_get_width(Spr_Cultist_Circle_Pullback_hitbox);
+			dir = point_direction(circle.x, circle.y, x, y);
+			instance_destroy(circle);
+			circle = noone;
+		
+			attack.image_xscale = scale;
+			attack.image_angle = dir;
+			eff.image_blend = c_red;
+			eff.image_xscale = scale;
+			eff.image_angle = dir;
+		}
+		if(meter_circle != noone){
+			attack = instance_create_depth(meter_circle.x, meter_circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
+			attack.initiate(self);
+			eff = instance_create_depth(meter_circle.x, meter_circle.y, depth-1, Obj_Cultist_Circle_Pullback_hit_eff);
+			scale = point_distance(x, y, meter_circle.x, meter_circle.y)/sprite_get_width(Spr_Cultist_Circle_Pullback_hitbox);
+			dir = point_direction(meter_circle.x, meter_circle.y, x, y);
+			instance_destroy(meter_circle);
+			meter_circle = noone;
+		
+			attack.image_xscale = scale;
+			attack.image_angle = dir;
+			eff.image_blend = c_lime;
+			eff.image_xscale = scale;
+			eff.image_angle = dir;
+		}
 		
 		h_velocity = 0;
 		v_velocity = -1;
@@ -174,74 +233,59 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Circle Dash Forward"){
-		if(circle != noone){
-			instance_destroy(circle);
+	else if(action == "Star Throw"){
+		star = instance_create_depth(x, y, depth-1, Obj_Cultist_Star);
+		star.initiate(self);
+		star.image_blend = c_red;
+		
+		if(up_hold){
+			star.h_velocity = 1*image_xscale;
+			star.v_velocity = -3;
+			star.v_acc = 0.03;
 		}
-		circle = instance_create_depth(x, y, depth-1, Obj_Cultist_Circle);
-		circle.initiate(self);
-		
-		h_velocity = 10*image_xscale;
-		extra_grip = 0.5;
-		
-		sprite_index = Spr_Cultist_Circledash_Forward_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Circle Dash Backward"){
-		if(circle != noone){
-			instance_destroy(circle);
+		else if(down_hold){
+			star.h_velocity = 1*image_xscale;
+			star.v_velocity = 1;
+			star.v_acc = -0.01;
 		}
-		circle = instance_create_depth(x, y, depth-1, Obj_Cultist_Circle);
-		circle.initiate(self);
-		
-		h_velocity = -10*image_xscale;
-		extra_grip = 0.5;
-		
-		sprite_index = Spr_Cultist_Circledash_Backward_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Falling Star"){
-		star = instance_create_depth(x, y, depth-1, Obj_Cultist_Star);
-		star.initiate(self);
-		star.h_velocity = 1*image_xscale;
-		star.v_velocity = -3;
-		star.v_acc = 0.03;
+		else{
+			star.h_velocity = -2*image_xscale;
+			star.h_acc = 0.025*image_xscale;
+		}
 		
 		sprite_index = Spr_Cultist_Starthrow_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Rising Star"){
-		star = instance_create_depth(x, y, depth-1, Obj_Cultist_Star);
-		star.initiate(self);
-		star.h_velocity = 1*image_xscale;
-		star.v_velocity = 1;
-		star.v_acc = -0.01;
-		
-		sprite_index = Spr_Cultist_Starthrow_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Shooting Star"){
-		star = instance_create_depth(x, y, depth-1, Obj_Cultist_Star);
-		star.initiate(self);
-		star.h_velocity = -2*image_xscale;
-		star.h_acc = 0.025*image_xscale;
-		
-		sprite_index = Spr_Cultist_Starthrow_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Plant Mine"){
-		instance_create_depth(x+48*image_xscale, y, 0, Obj_Cultist_Mine);
-		
-		sprite_index = Spr_Cultist_Mine_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
+	else if(action == "X"){
+		if(meter_circle != noone){
+			spawn_effect(meter_circle.x, meter_circle.y, 1, Eff_Ring, 1, 0.1, c_lime, 1, 1, 0.2);
+			instance_destroy(meter_circle);
+		}
+		meter_circle = instance_create_depth(x, y-32, depth-1, Obj_Cultist_Circle);
+		meter_circle.initiate(self);
+		meter_circle.image_blend = c_lime;
+		meter_circle.weight = 0.01;
+		meter_circle.v_velocity = -0.2;
+		meter_circle.velocity_friction = 0;
+		
+		sprite_index = Spr_Cultist_X_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Meter Circle Teleport"){
+		if(instance_exists(meter_circle)){
+			x = meter_circle.x;
+			y = meter_circle.y;
+			instance_destroy(meter_circle);
+			meter_circle = noone;
+		}
+		
+		sprite_index = Spr_Cultist_Vortex_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		

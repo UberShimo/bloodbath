@@ -223,6 +223,8 @@ if(action == "Balldash" && action_alarm <= 0){
 		v_velocity *= 0.25;
 		// Regain cancels baby!
 		cancels = max_cancels;
+		effect = instance_create_depth(x, y, 1, Eff_Cancel);
+		effect.initiate(self);
 		
 		if(attack != noone){
 			instance_destroy(attack);

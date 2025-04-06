@@ -11,4 +11,3 @@ h_launch = 3;
 v_launch = 10;
 
 is_sticky = true;
-is_parryable = false;

@@ -204,7 +204,7 @@ action_trigger = function(){
 		
 			sprite_index = Spr_Greatsword_Ocean_F_recovery;
 			image_index = 0;
-			action_alarm = 8;
+			action_alarm = 16;
 			recover_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(multi_hit_action_index < 4){

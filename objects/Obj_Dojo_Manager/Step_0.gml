@@ -36,7 +36,16 @@ if(global.dojo_level == 0){
 		dummy.x = Spawner_P2.x;
 		dummy.y = Spawner_P2.y;
 	}
-	else if(!student.start_hold){
+	else if(!student.rs_down){
 		reset_positions_pressed = false;
+	}
+	
+	if(student.rs_up && !change_debug_pressed){
+		change_debug_pressed = true;
+	
+		global.is_debugging = !global.is_debugging;
+	}
+	else if(!student.rs_up){
+		change_debug_pressed = false;
 	}
 }

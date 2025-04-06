@@ -1,16 +1,19 @@
 TODO{
+	Hitfall is inconsistent.
 	Fix trippy shit happening under the stage.
-	Make so you can turn off debug in training room
 	Fix so walls looks good
 	Change all moves so its is always <v>, v> or vv input. (Except those that work fine backwards. Like Katana send clone, Greatsword Earth stance etc...)
 	Make hit_freeze and shake amount global values.
+	Increase all fast moves Freeze duration
 	Going up on top of menu should take you to bottom of menu.
 	Choosing character should put a better "P1" sign on it. The crystals suck...
 	Dont gain meter when walking against respawning opponent.
 	Make so you can adjust outline color/alpha outside shader.
-	Increase all fast moves Freeze duration
 	Go through all audio ffs
+	Give characters a name godammit...
+	Preview HEIGHT, WEIGHT and GRIP on characters.
 	Make teams a thing? With different outline colors n shit.
+	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)
 	Make the game crop images to save RAM?
 	Make game sexi and funni
 	Frame rate drops for some reason at times?
@@ -76,7 +79,7 @@ Katana{
 }
 
 Claws{
-	X: Should be able to do without cancels.
+	
 }
 
 Baller{
@@ -96,27 +99,11 @@ Bow{
 }
 
 Cultist{
-	Change star to v>L then hold up/down to angle
-	
-	REMOVE SHADOW!
-	REMOVE MINE!
-	v>/v<F: Should pop your eye out from under robe.
-	X = Turn triangles into lots of bubbles that slightly freeze opponent or heal yourself.
-	vvF: Teleport to circle (same)
-	vvL: Implode circle
-	vvS: Pull circle
-
-	of  Step Event0
-	for object Parent_Character:
-	Unable to find instance for object index -4
-	 at gml_Script_anon_gml_Object_Obj_Cultist_Create_0_1425_gml_Object_Obj_Cultist_Create_0 (line 169) -               attack = instance_create_depth(circle.x, circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
-	 gml_Script_anon_gml_Object_Obj_Cultist_Create_0_1379_gml_Object_Obj_Cultist_Create_0 (line 170)
-	gml_Object_Parent_Character_Step_0 (line 18) -               action_trigger();
-	gml_Object_Obj_Cultist_Step_0 (line 1)
+	Make circles bounce on eachother?
 }
 
 NEW
-Rapier{
+Rapier elegant with fabric covering the face{
 	Dash has shorter duration.
 	Good grip.
 
@@ -144,7 +131,7 @@ Rapier{
 }
 
 NEW
-Scythe{
+Scythe black and white / grey{
 	Has tripple jump
 	Moves slippy and has great air control. Light weight.
 	Dash is teleport. Also slightly slower.
@@ -166,11 +153,14 @@ Shield{
 	Is heavy.
 	Has longer parry duration
 	
+	F: Push shield forward.
 	vF: Gain slight momentum forward and skate on shield. Hold to stay on shield.
+	
+	5S swing shield forward giving you forward momentum.
 }
 
 NEW
-Knife{
+Cat with Knife{
 	Has 1 extra cancel.
 	Solid but relatively slow movement. Super quick dash.
 
