@@ -269,13 +269,14 @@ action_trigger = function(){
 		meter_circle.weight = 0.01;
 		meter_circle.v_velocity = -0.2;
 		meter_circle.velocity_friction = 0;
+		meter_circle.is_meter_circle = true;
 		
 		sprite_index = Spr_Cultist_X_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Meter Circle Teleport"){
-		if(instance_exists(meter_circle)){
+		if(meter_circle != noone){
 			x = meter_circle.x;
 			y = meter_circle.y;
 			instance_destroy(meter_circle);

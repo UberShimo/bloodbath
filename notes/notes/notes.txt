@@ -99,7 +99,7 @@ Bow{
 }
 
 Cultist{
-	Make circles bounce on eachother?
+	
 }
 
 NEW

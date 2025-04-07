@@ -1,19 +1,16 @@
 event_inherited();
 
-if(is_active){
-	// Calculate velocity
-	velocity = sqrt(power(h_velocity, 2)+power(v_velocity, 2));
-	
+if(is_active){	
 	// Slow the ball down
-	if(velocity > max_velocity){
+	if(general_velocity > max_velocity){
 		dir = point_direction(0, 0, h_velocity, v_velocity);
 		h_velocity = lengthdir_x(max_velocity, dir);
 		v_velocity = lengthdir_y(max_velocity, dir);
 	}
 	
 	// Stretch ball so it looks cooler
-	if(velocity > 4){
-		image_xscale = velocity/6;
+	if(general_velocity > 4){
+		image_xscale = general_velocity/6;
 		image_yscale = 0.75;
 		image_angle = point_direction(0, 0, h_velocity, v_velocity);
 	}

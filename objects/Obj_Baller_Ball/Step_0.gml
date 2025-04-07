@@ -1,7 +1,5 @@
 event_inherited();
 
-velocity = point_distance(0, 0, h_velocity, v_velocity);
-
 if(is_returning){
 	spd = 12;
 	dir = point_direction(x, y, spawner.x, spawner.y);
@@ -10,7 +8,7 @@ if(is_returning){
 }
 
 // Hurting ball
-if(velocity > 7 && cant_hurt_alarm <= 0){
+if(general_velocity > 7 && cant_hurt_alarm <= 0){
 	// Spawn da hitbox
 	if(existing_hitbox == noone){
 		existing_hitbox = instance_create_depth(x, y, depth, Obj_Baller_Ball_hitbox);

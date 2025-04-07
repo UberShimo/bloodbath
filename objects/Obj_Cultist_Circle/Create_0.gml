@@ -9,6 +9,7 @@ velocity_friction = 0.2;
 
 implode_alarm = 0;
 destroy_alarm = 0;
+is_meter_circle = false;
 
 hitbox_list = ds_list_create();
 

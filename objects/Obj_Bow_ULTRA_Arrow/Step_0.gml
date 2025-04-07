@@ -61,9 +61,7 @@ if(existing_hitbox != noone){
 }
 
 // Creating hitbox logic
-velocity = point_distance(0, 0, h_velocity, v_velocity);
-
-if(velocity > 8){
+if(general_velocity > 8){
 	// Spawn da hitbox
 	if(existing_hitbox == noone){
 		existing_hitbox = instance_create_depth(x, y, depth, Obj_Bow_ULTRA_hitbox);
