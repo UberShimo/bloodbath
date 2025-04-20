@@ -8,7 +8,11 @@ if(is_respawning){
 	v_velocity = 0;
 }
 
-ground_check = (character_height/2)+1;// +1 couse it works ok?
+// Always make sure there is a closest enemy before executing code
+find_closest_enemy();
+
+// A very slim rectangle check
+ground_check = collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false);
 
 #region alarms  V-----V
 if(action_alarm > 0){
@@ -68,6 +72,9 @@ if(death_alarm > 0){
 			is_controllable = false;
 			is_invincible = true;
 			is_respawning = true;
+			
+			// Clear hitbox list
+			ds_list_clear(hitbox_list);
 		}
 		
 		Obj_Match_Manager.check_for_winner();
@@ -157,7 +164,9 @@ if(action == noone){
 				h_velocity += (grip+acceleration)*image_xscale*logic_time;
 			}
 			// Gain meter by moving forward
-			meter += 10/60*logic_time; // 10 meter / second
+			if(!closest_enemy.is_respawning && closest_enemy != self){
+				meter += meter_gain_by_approaching*logic_time;
+			}
 		}
 		else if(abs(h_velocity) < max_speed){
 			// air_control*2 because it is also the grip variable
@@ -233,29 +242,21 @@ else{
 #endregion
 
 #region physics V-----V
+
 // H velocity
 val = h_velocity*logic_time;
-x_check = val;
-// Add character width to x_check
-if(val > 0){
-	x_check += (character_width/2);
-}
-else{
-	x_check -= (character_width/2);
-}
-// Move time
-if(!position_meeting(x+x_check, y, Parent_Collision)){
+// Check collision with rectangle
+if(!collision_rectangle(x-character_width/2+val, y-character_height/2, x+character_width/2+val, y+character_height/2, Parent_Collision, false, false) || goes_through_collision){
 	x += val;
 }
 // Collide logic
 else{
-	while(!position_meeting(x+x_check, y, Parent_Collision)){
-		if(val > 0){
-			x += 1;
-		}
-		else{
-			x -= 1;
-		}
+	x_check = 1;
+	if(val < 0){
+		x_check = -1;
+	}
+	while(!collision_rectangle(x-character_width/2+x_check, y-character_height/2, x+character_width/2+x_check, y+character_height/2, Parent_Collision, false, false)){
+		x += x_check;
 	}
 	// Wall bounce
 	if(action == "Stunned" && abs(h_velocity) > wall_bounce_limit){
@@ -292,12 +293,8 @@ else{
 
 // V velocity
 val = v_velocity*logic_time;
-// Hit roof
-if(position_meeting(x, y+val, Parent_Collision) && v_velocity < 0){
-	v_velocity = -v_velocity*0.1;
-}
-// Move vertical
-else if(!position_meeting(x, y+ground_check+val, Parent_Collision)){
+// Collision check with rectangle
+if(!collision_rectangle(x-character_width/2, y-character_height/2+val, x+character_width/2, y+character_height/2+val, Parent_Collision, false, false) || goes_through_collision){
 	y += val;
 	
 	// Gravity
@@ -312,10 +309,14 @@ else if(!position_meeting(x, y+ground_check+val, Parent_Collision)){
 	}
 	
 }
+// Bump roof
+else if(v_velocity < 0){
+	v_velocity = -v_velocity*0.1;
+}
 // Snap to ground
-else if(v_velocity > 0){
+else{
 	y = floor(y);
-	while(!position_meeting(x, y+ground_check, Parent_Collision)){
+	while(!collision_rectangle(x-character_width/2, y-character_height/2+1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false)){
 		y += 1;
 	}
 	// Ground bounce
@@ -339,7 +340,7 @@ else if(v_velocity > 0){
 	}
 }
 // Grounded or not? also reset cancels
-if(position_meeting(x, y+ground_check, Parent_Collision) && v_velocity == 0){
+if(ground_check && v_velocity == 0){
 	grounded = true;
 	
 	if(action == noone){
@@ -349,6 +350,16 @@ if(position_meeting(x, y+ground_check, Parent_Collision) && v_velocity == 0){
 }
 else{
 	grounded = false;
+}
+
+// Move outa wall if stuck
+if(collision_rectangle(x-character_width/2, y-character_height/2, x+character_width/2, y+character_height/2, Parent_Collision, false, false) && !goes_through_collision){
+	collision = collision_rectangle(x-character_width/2, y-character_height/2, x+character_width/2, y+character_height/2, Parent_Collision, false, false);
+	dir = point_direction(collision.x, collision.y, x, y);
+	while(collision_rectangle(x-character_width/2, y-character_height/2, x+character_width/2, y+character_height/2, Parent_Collision, false, false)){
+		x += lengthdir_x(1, dir);
+		y += lengthdir_y(1, dir);
+	}
 }
 #endregion
 
@@ -495,22 +506,26 @@ if(lb_pressed > 0 && ((action == noone && grounded || (action == "ULTRA" && acti
 	is_unstoppable = false; // Actually just for Boomhand ultra cancel...
 	
 	// Also cancel if its just an air dash
-	if(doing_action_by_canceling || (!grounded && (forward_hold || backward_hold))){
+	if(doing_action_by_canceling || !grounded){
 		do_cancel();
 	}
 	
 	// Dashes
-	if(forward_hold || backward_hold){
-		if(forward_hold){
-			sprite_index = dash_forward_spr;
-			h_velocity = dash_speed*image_xscale;
-			blink_h(dash_blink*image_xscale, true);
-			meter += 5;
-		}
-		else{
+	if(forward_hold || backward_hold || !grounded){
+		if(backward_hold){
 			sprite_index = dash_backward_spr;
 			h_velocity = -dash_speed*image_xscale;
 			blink_h(-dash_blink*image_xscale, true);
+		}
+		else{
+			sprite_index = dash_forward_spr;
+			h_velocity = dash_speed*image_xscale;
+			blink_h(dash_blink*image_xscale, true);
+			
+			// Gain meter when dashing toward enemy
+			if(!closest_enemy.is_respawning && closest_enemy != self){
+				meter += 5;
+			}
 		}
 	
 		action = "Dash";
@@ -546,7 +561,7 @@ if(meter > max_meter){
 
 // Fully charged effect
 if(meter == 100 && effect_counter >= 1){
-	spawn_effect(x, y, 1, Eff_Spark, 1, 0.1, c_lime, 1, 2)
+	spawn_effect(x, y, 1, Eff_Spark, 1, 0.1, c_lime, 1, 2, 0, 0, 360, 0, 1);
 }
 
 // Can respawn effect

@@ -6,10 +6,11 @@ recovery = generate_sprite_frames(Spr_Greatsword_8S_recovery); // 100% informati
 damage = 14;
 hit_stun = 28;
 hit_push = 4;
-freeze_duration = 24;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 2;
 v_launch = 10;
 
 is_sticky = true;
 
-hit_sound = Snd_Crack;
+hit_sound = Snd_Hit2;

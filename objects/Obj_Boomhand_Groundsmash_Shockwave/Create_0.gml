@@ -6,17 +6,16 @@ recovery = generate_sprite_frames(Spr_Boomhand_Groundsmash_recovery); // 100% in
 damage = 2;
 hit_stun = 20;
 hit_push = 0;
-freeze_duration = 2;
-extra_freeze_duration = 8;
+freeze_duration = global.light_freeze_duration;
+shake_impact = global.light_shake_impact;
 h_launch = 0;
 v_launch = 0;
 
 is_projectile = true;
 is_parryable = false;
 is_final = true;
-shake_amount = 2;
 
-swing_sound = Snd_Knack;
+swing_sound = Snd_Crack;
 
 collide = function(){
 	instance_destroy();

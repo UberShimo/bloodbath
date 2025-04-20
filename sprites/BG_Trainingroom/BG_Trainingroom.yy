@@ -14,6 +14,9 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cf98d36d-122b-4ccf-98ea-a395f03069d2",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3fcad054-eeac-4e58-b901-445d8db848c4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9b09bc1b-a1c1-4130-af6f-e20391e82a93",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ed4cd03b-7d3f-4c9d-a2e8-5d6f7d8b6439",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -28,8 +31,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "BGS",
-    "path": "folders/Sprites/BGS.yy",
+    "name": "BGs",
+    "path": "folders/Sprites/Arenas/BGs.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -46,7 +49,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 4.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -58,6 +61,9 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cf98d36d-122b-4ccf-98ea-a395f03069d2","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"136121a5-73f0-42f9-9d7f-5c6684951cfd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3fcad054-eeac-4e58-b901-445d8db848c4","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"563240b3-25f6-4f35-a6bd-5df642be0082","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9b09bc1b-a1c1-4130-af6f-e20391e82a93","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"3753a612-c783-4de6-97b0-f98c9785d819","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ed4cd03b-7d3f-4c9d-a2e8-5d6f7d8b6439","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"a69ff350-459c-4b5c-94f6-13ce484f721d","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -2,6 +2,9 @@ event_inherited();
 
 //Outline shader stuff
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
+outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
+
+outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 
 depth = -1;
 
@@ -36,6 +39,7 @@ y_hold = false;
 rb_pressed = 0;
 rb_hold = false;
 lb_pressed = 0;
+lb_hold = false;
 faceback_hold = false;
 start_hold = false;
 rs_up = false;
@@ -84,10 +88,13 @@ max_cancels = cancels;
 dash_cancel_max_amount = 0.75; // % based
 parry_duration = 48;
 parry_active_frames = 10; // Counts down in real time even if time is slowed/has stopped
+meter_gain_by_approaching = 10/60; // 10 meter / second
+meter_gain_by_dashing = 5;
 is_parrying = false;
 is_unstoppable = false;
 is_invincible = false;
 is_collidable = true;
+goes_through_collision = false; // SUPER rarely used since this is risky business
 // Variating stats
 start_speed = 3;
 max_speed = 6;
@@ -167,23 +174,12 @@ reset_buffers = function(){
 	double_down_pressed = 0;
 }
 
+// Slightly wierd function since it sometimes is used where you dont really face closest enemy...
 face_closest_enemy = function(){
-	// You are not chaos mode or alone...
-	if(!global.chaos_mode && instance_number(Parent_Character) > 1){
-		closest_enemy = self;
-		enemy_distance = room_width;
+	find_closest_enemy();
 	
-		// Loop through characters and find closest enemy
-		for(i = 0; i < instance_number(Parent_Character); i++){
-			if(instance_find(Parent_Character, i).index != index){
-				enemy = instance_find(Parent_Character, i);
-				temp_distance = abs(x-enemy.x);
-				if(temp_distance < enemy_distance){
-					enemy_distance = temp_distance;
-					closest_enemy = enemy;
-				}
-			}
-		}
+	// Normal facing action time
+	if(!global.chaos_mode && instance_number(Parent_Character) > 1){
 		
 		if(x < closest_enemy.x){
 			image_xscale = 1;
@@ -199,6 +195,28 @@ face_closest_enemy = function(){
 	// You are alone... Or in chaos mode!
 	else if(backward_hold){
 		image_xscale *= -1;
+		// CPU specific so it dont get stuck in turn around loop
+		if(is_CPU){
+			backward_hold = false;
+			forward_hold = true;
+		}
+	}
+}
+
+find_closest_enemy = function(){
+	closest_enemy = self;
+	enemy_distance = room_width;
+	
+	// Loop through characters and find closest enemy
+	for(i = 0; i < instance_number(Parent_Character); i++){
+		if(instance_find(Parent_Character, i).index != index){
+			enemy = instance_find(Parent_Character, i);
+			temp_distance = abs(x-enemy.x);
+			if(temp_distance < enemy_distance){
+				enemy_distance = temp_distance;
+				closest_enemy = enemy;
+			}
+		}
 	}
 }
 
@@ -295,6 +313,7 @@ read_input = function(){
 		lb_pressed = buffer_duration;
 		meter_dash_lb_pressed = meter_dash_buffer_duration;
 	}
+	lb_hold = gamepad_button_check(controller_index, gp_shoulderl);
 	
 	// Special inputs
 	if(down_pressed && !down_hold && forward_pressed){
@@ -329,7 +348,6 @@ read_input = function(){
 	rs_down = gamepad_axis_value(controller_index, gp_axisrv) > 0.5;
 	rs_right = gamepad_axis_value(controller_index, gp_axisrh) > 0.5;
 	rs_left = gamepad_axis_value(controller_index, gp_axisrh) < -0.5;
-		
 }
 	
 reset_physics = function(){
@@ -339,6 +357,7 @@ reset_physics = function(){
 	weight = original_weight;
 	multi_hit_action_index = 0;
 	is_collidable = true;
+	goes_through_collision = false;
 	object_time = 1;
 }
 
@@ -350,7 +369,7 @@ action_button_pressed = function(){
 }
 
 check_for_cancel = function(){
-	if(can_cancel && cancels > 0 && recover_alarm < cancelable_recovery_frames && action != "Stunned"){
+	if(can_cancel && cancels > 0 && recover_alarm < cancelable_recovery_frames && action != "Stunned" && !lb_hold){
 		doing_action_by_canceling = true;
 		return true;
 	}
@@ -370,7 +389,7 @@ save_current_state = function(){
 
 do_cancel = function(){
 	// Nerf h_velocity so dash cancel is more consistent
-	if(abs(h_velocity) > dash_speed*dash_cancel_max_amount){
+	if(abs(h_velocity) > dash_speed*dash_cancel_max_amount && action == "Dash"){
 		if(h_velocity > 0){
 			h_velocity = dash_speed*dash_cancel_max_amount;
 		}

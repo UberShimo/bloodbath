@@ -1,23 +1,11 @@
 TODO{
-	Hitfall is inconsistent.
-	Fix trippy shit happening under the stage.
-	Fix so walls looks good
-	Change all moves so its is always <v>, v> or vv input. (Except those that work fine backwards. Like Katana send clone, Greatsword Earth stance etc...)
-	Make hit_freeze and shake amount global values.
-	Increase all fast moves Freeze duration
-	Going up on top of menu should take you to bottom of menu.
-	Choosing character should put a better "P1" sign on it. The crystals suck...
-	Dont gain meter when walking against respawning opponent.
-	Make so you can adjust outline color/alpha outside shader.
-	Go through all audio ffs
-	Give characters a name godammit...
+	Update COVER!
 	Preview HEIGHT, WEIGHT and GRIP on characters.
 	Make teams a thing? With different outline colors n shit.
 	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)
+	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
-	Make game sexi and funni
-	Frame rate drops for some reason at times?
-	Make Adventure mode
+	Make Diabeto Studios intro
 }
 
 SLOGANS for trailer n stuff
@@ -52,7 +40,7 @@ SPAWN_SWEETSPOT_HITBOX
 
 
 Notes in notes:
-Dont use forward_down or backward_down as attack inputs
+Walls choose sprite by image_index (0: wall, 1: ground, 2: roof) (32x32 image size also)
 "This Is Standard Naming"
 Action infos ends with a "."
 Hurtbox = sprite collision
@@ -72,6 +60,7 @@ MOVES!:
 
 Batman{
 	Superball stuck in ground at times
+	Add "OUMPH" sound to 5S move
 }
 
 Katana{
@@ -83,7 +72,7 @@ Claws{
 }
 
 Baller{
-	
+	ULTRA should be smashing a hole in ground that spray meteors instead.
 }
 
 Greatsword{
@@ -91,11 +80,11 @@ Greatsword{
 }
 
 Boomhand{
-	
+	Make X sound like steam
 }
 
 Bow{
-	Dashing and attacking at same frame will lift you from ground while doing a grounded attack.
+	Make 2S sound like "BOINGGGG"?
 }
 
 Cultist{
@@ -157,6 +146,10 @@ Shield{
 	vF: Gain slight momentum forward and skate on shield. Hold to stay on shield.
 	
 	5S swing shield forward giving you forward momentum.
+	
+	vvF: Put out a circle that gives back cancels when dashed through.
+	vvL: Put out a circle that turns into shoulder bash when dashed through.
+	vvS: Put out a circle that makes you unstoppable when dashed through.
 }
 
 NEW

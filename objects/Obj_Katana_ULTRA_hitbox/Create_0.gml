@@ -7,11 +7,11 @@ damage = 50;
 hit_stun = 32;
 hit_push = 0;
 freeze_duration = 32;
+shake_impact = 12;
 h_launch = 1;
 v_launch = -2;
 
 active_frames = 2;
-shake_amount = 12;
 is_parryable = false;
 is_final = true;
 meter_gain_multiplier = 0;

@@ -1,32 +1,29 @@
 event_inherited();
 
-ground_check = (character_height/2)+1;
+// A very slim rectangle check
+ground_check = collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false);
 
 #region dashy moves V-----V
 // Dash
-if(dash_forward){
-	dash_forward = false;
-	
-	sprite_index = dash_forward_spr;
+if(dash_forward || dash_backward){
+	if(dash_forward){
+		dash_forward = false;
+		sprite_index = dash_forward_spr;
+		h_velocity = dash_speed*image_xscale;
+		blink_h(dash_blink*image_xscale, true);
+	}
+	else{
+		dash_backward = false;
+		sprite_index = dash_backward_spr;
+		h_velocity = -dash_speed*image_xscale;
+		blink_h(-dash_blink*image_xscale, true);
+	}
 	action = "Dash";
-	h_velocity = dash_speed*image_xscale;
-	x += dash_blink*image_xscale;
+	can_cancel = true;
+	is_collidable = false;
 	grip = dash_grip;
-	air_grip = dash_grip;
-	v_velocity = 0;
-	weight = weight/4;
-}
-else if(dash_backward){
-	dash_backward = false;
-	
-	sprite_index = dash_backward_spr;
-	action = "Dash";
-	h_velocity = -dash_speed*image_xscale;
-	x += -dash_blink*image_xscale;
-	grip = dash_grip;
-	air_grip = dash_grip;
-	v_velocity = 0;
-	weight = weight/4;
+	extra_grip = dash_grip;
+	recover_alarm = dash_duration;
 }
 #endregion
 
@@ -38,11 +35,4 @@ if(life_span > 0){
 		instance_create_depth(x, y, 0, Eff_Clone_Dissapear);
 		instance_destroy();
 	}
-}
-
-// Fully charged
-if(meter == 100){
-	eff = instance_create_depth(x, y, 1, Eff_Spark);
-	eff.image_blend = c_lime;
-	eff.image_xscale *= random_range(1, 2);
 }

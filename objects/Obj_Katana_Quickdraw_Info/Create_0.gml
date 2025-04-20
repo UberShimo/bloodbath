@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Quickdraw! Quickly hold\nUP or DOWN to angle the move.";
+info = "Quickdraw!";
 movement_input = Spr_DF;
 button_input = Spr_L;
 image = Spr_Katana_Quickdraw_recovery;

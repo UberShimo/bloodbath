@@ -6,8 +6,12 @@ recovery = generate_sprite_frames(Spr_Bow_8S_recovery); // 100% informational no
 damage = 12;
 hit_stun = 20;
 hit_push = 2;
-freeze_duration = 20;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 3;
 v_launch = 10;
 
+active_frames = 16
 is_sticky = true;
+
+hit_sound = Snd_Hit2;

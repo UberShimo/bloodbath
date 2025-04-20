@@ -18,6 +18,11 @@ collide = function(){
 	// Change direction
 	if(place_meeting(x+h_velocity, y, Parent_Collision)){
 		h_velocity = -h_velocity;
-		image_xscale = -image_xscale;
+		image_xscale *= -1;
 	}
+}
+
+// Get outa wall if stuck
+while(place_meeting(x, y, Parent_Collision)){
+	x += image_xscale;
 }

@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Batman_2S_recovery); // 100% informational
 damage = 12;
 hit_stun = 28;
 hit_push = 12;
-freeze_duration = 12;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 1;
 v_launch = -13;
 

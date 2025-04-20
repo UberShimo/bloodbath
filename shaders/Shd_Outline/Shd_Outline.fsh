@@ -2,11 +2,11 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 uniform vec2 inTexel;
+uniform vec4 outlineColor;
 
 void main()
 {
     vec4 pixelColor = v_vColour*texture2D(gm_BaseTexture, v_vTexcoord);
-	vec4 outlineColor = vec4(1.0, 1.0, 1.0, 0.3); // Red, Green, Blue, Alpha
 	vec2 outlineSize = inTexel*1.0; // Outline thickness
 	float alphaTolerence = 0.5;
 	

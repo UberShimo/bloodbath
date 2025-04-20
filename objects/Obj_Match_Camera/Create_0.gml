@@ -5,6 +5,8 @@ screen_adjustment_speed = 8; // Not used atm
 screen_extra_height = 64;
 camera_x = 0;
 camera_y = 0;
+camera_width = 0;
+camera_height = 0;
 camera_speed = 16;
 shake = 0;
 

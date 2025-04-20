@@ -6,6 +6,14 @@ if(is_controllable){
 	backward_hold = false;
 
 	reset_buffers();
+	// Start CPU choice while facing closest enemy
+	find_closest_enemy();
+	if(closest_enemy.x < x){
+		image_xscale = -1;
+	}
+	else{
+		image_xscale = 1;
+	}
 
 	if(irandom_range(1, 100) <= 50){ // 50% for movement
 		rng = irandom_range(1, 4);
@@ -28,22 +36,19 @@ if(is_controllable){
 		alarm[11] = 30;
 	}
 	else{ // Action
-		rng = irandom_range(1, 10);
+		rng = random_range(0, 1);
 	
-		if(rng == 1){
+		if(rng < 0.25){ // 25%
 			x_pressed = buffer_duration;
 		}
-		else if(rng == 2){
+		else if(rng < 0.5){ // 25%
 			y_pressed = buffer_duration;
 		}
-		else if(rng == 3){
+		else if(rng < 0.75){ // 25%
 			b_pressed = buffer_duration;
 		}
-		else if(rng == 4){
+		else if(rng < 1){ // 25%
 			lb_pressed = 2;
-		}
-		else if(rng == 5){
-			rb_pressed = 2;
 		}
 		else{
 			// Nothin

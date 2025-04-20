@@ -43,7 +43,15 @@ if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list,
 	
 	// Add damage to ball
 	damage += other.damage;
-	hit_stun += other.hit_stun;
+	if(other.hit_stun > hit_stun){
+		hit_stun = other.hit_stun;
+	}
+	if(other.freeze_duration > freeze_duration){
+		freeze_duration = other.freeze_duration;
+	}
+	if(other.shake_impact > shake_impact){
+		shake_impact = other.shake_impact;
+	}
 	
 	is_active = true;
 	weight = 0.5;

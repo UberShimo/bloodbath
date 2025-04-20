@@ -98,10 +98,10 @@ if(legit_hit_check){
 	#region Freeze time
 	if(other.freeze_duration > 0){
 		// Shake things up!
-		if(other.shake_amount > shake_amount){
-			shake_amount = other.shake_amount;
+		if(other.shake_impact > shake_amount){
+			shake_amount = other.shake_impact;
 			if(object_exists(Obj_Match_Camera)){
-				Obj_Match_Camera.shake = other.shake_amount/2;
+				Obj_Match_Camera.shake = other.shake_impact/2;
 			}
 		}
 		object_time = other.freeze_amount;

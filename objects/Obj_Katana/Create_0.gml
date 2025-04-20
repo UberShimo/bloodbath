@@ -133,18 +133,8 @@ action_trigger = function(){
 	}
 	// Special moves
 	else if(action == "Quickdraw"){
-		if(up_hold){
-			attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_UP_hitbox);
-			attack.initiate(self);
-		}
-		else if(down_hold){
-			attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_DOWN_hitbox);
-			attack.initiate(self);
-		}
-		else{
-			attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
-			attack.initiate(self);
-		}
+		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
+		attack.initiate(self);
 		
 		sprite_index = Spr_Katana_Quickdraw_recovery;
 		image_index = 0;
@@ -179,6 +169,14 @@ action_trigger = function(){
 		
 		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 		clone.initiate(self);
+		// Give clone your stats
+		clone.grip = grip;
+		clone.dash_speed = dash_speed;
+		clone.dash_blink = dash_blink;
+		clone.dash_duration = dash_duration;
+		clone.weight = 0;
+		clone.character_width = character_width;
+		clone.character_height = character_height;
 		
 		if(send_clone_backward){
 			clone.dash_backward = true;

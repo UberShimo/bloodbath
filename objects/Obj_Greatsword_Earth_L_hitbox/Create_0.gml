@@ -6,10 +6,11 @@ recovery = generate_sprite_frames(Spr_Greatsword_Earth_L_recovery); // 100% info
 damage = 7;
 hit_stun = 20;
 hit_push = 8;
-freeze_duration = 8;
+freeze_duration = global.medium_freeze_duration;
+shake_impact = global.medium_shake_impact;
 h_launch = 4;
 v_launch = -6;
 
 is_launcher = true;
 
-swing_sound = Snd_Light_Swing;
+swing_sound = Snd_Quick_Swing;

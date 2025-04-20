@@ -196,24 +196,14 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Ocean F"){
-		if(multi_hit_action_index == 0){
-			multi_hit_action_index += 1;
-			
-			attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_F_hitbox);
-			attack.initiate(self);
+		blink_h(16*image_xscale, false);
 		
-			sprite_index = Spr_Greatsword_Ocean_F_recovery;
-			image_index = 0;
-			action_alarm = 16;
-			recover_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(multi_hit_action_index < 4){
-			attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_F_hitbox);
-			attack.initiate(self);
-			
-			action_alarm = 16;
-			multi_hit_action_index += 1;
-		}
+		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_F_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Greatsword_Ocean_F_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Ocean L"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_L_hitbox);

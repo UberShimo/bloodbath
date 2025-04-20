@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Arena Layouts",
-    "path": "folders/Sprites/Arena Layouts.yy",
+    "path": "folders/Sprites/Arenas/Arena Layouts.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

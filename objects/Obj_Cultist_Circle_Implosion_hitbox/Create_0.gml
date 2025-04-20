@@ -6,16 +6,16 @@ recovery = generate_sprite_frames(Spr_Cultist_Circlepull_recovery); // 100% info
 damage = 4;
 hit_stun = 32;
 hit_push = 12;
-freeze_duration = 12;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 5;
 v_launch = -3;
 
-shake_amount = 2;
 is_launcher = true;
 is_shockwave = true;
 is_parryable = false;
 shockwave_power = -8;
 effect = Obj_Cultist_Circle_Implosion_hit_eff;
 
-swing_sound = Snd_NOTHING;
-hit_sound = Snd_NOTHING;
+swing_sound = Snd_Quick_Swing;
+hit_sound = Snd_Knack;

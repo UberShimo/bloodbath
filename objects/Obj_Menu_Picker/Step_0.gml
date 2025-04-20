@@ -1,10 +1,24 @@
 
 
-if(u_pressed && !position_meeting(x, y-move_distance, Parent_Collision)){
-	y -= move_distance;
+if(u_pressed){
+	if(!position_meeting(x, y-move_distance, Parent_Collision)){
+		y -= move_distance;
+	}
+	else{
+		while(!position_meeting(x, y+move_distance, Parent_Collision)){
+			y += move_distance;
+		}
+	}
 }
-else if(d_pressed && !position_meeting(x, y+move_distance, Parent_Collision)){
-	y += move_distance;
+else if(d_pressed){
+	if(!position_meeting(x, y+move_distance, Parent_Collision)){
+		y += move_distance;
+	}
+	else{
+		while(!position_meeting(x, y-move_distance, Parent_Collision)){
+			y -= move_distance;
+		}
+	}
 }
 
 // Pick

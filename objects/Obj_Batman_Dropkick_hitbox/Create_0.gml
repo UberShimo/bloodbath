@@ -6,10 +6,12 @@ recovery = generate_sprite_frames(Spr_Batman_Dropkick_recovery); // 100% informa
 damage = 18;
 hit_stun = 32;
 hit_push = 10;
-freeze_duration = 16;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 8;
 v_launch = 0;
 
 is_sticky = true;
 is_parryable = false;
-shake_amount = 1;
+
+swing_sound = Snd_Quick_Swing;

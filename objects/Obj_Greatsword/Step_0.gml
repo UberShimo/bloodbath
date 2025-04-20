@@ -168,7 +168,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	doing_action_by_canceling = false;
 }
 // Ughhhh stances...
-else if(action == "Earth" || (action == "Earth F" && can_cancel)){
+else if(action == "Earth"){
 	if(x_pressed){
 		action = "Earth F";
 		sprite_index = Spr_Greatsword_Earth_F_startup;
@@ -199,7 +199,6 @@ else if(action == "Ocean"){
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
 		recover_alarm = 0;
-		multi_hit_action_index = 0;
 	}
 	else if(y_pressed){
 		action = "Ocean L";

@@ -129,7 +129,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(double_down_pressed){
-			action = "Claw Flurry";
+			action = "Claw Dance";
 			h_velocity = -6*image_xscale;
 			sprite_index = Spr_Claws_Flurry_startup;
 			image_index = 0;
@@ -173,9 +173,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			alarm[10] = 300;
 		}
 		// Quite the check...
-		else if((down_forward_pressed || down_backward_pressed) && meter >= 25 && ds_list_size(rewind_list) >= rewind_length-1){
+		else if((down_forward_pressed || down_backward_pressed) && meter >= 15 && ds_list_size(rewind_list) >= rewind_length-1){
 			action = "X";
-			meter -= 25;
+			meter -= 15;
 			
 			sprite_index = Spr_Claws_Teleport_startup;
 			image_index = 0;

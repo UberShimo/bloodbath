@@ -6,9 +6,12 @@ recovery = generate_sprite_frames(Spr_Cultist_8L_recovery); // 100% informationa
 damage = 2;
 hit_stun = 12;
 hit_push = 1;
-freeze_duration = 8;
+freeze_duration = 4;
+shake_impact = global.medium_shake_impact;
 h_launch = 1;
 v_launch = -2;
 
 is_sticky = true;
-swing_sound = Snd_Light_Swing;
+hit_effect_y = 16;
+
+swing_sound = Snd_Quick_Swing;

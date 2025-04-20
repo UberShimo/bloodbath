@@ -4,8 +4,8 @@
   "name": "Spr_Dojo_Land",
   "bbox_bottom": 95,
   "bbox_left": 48,
-  "bbox_right": 71,
-  "bbox_top": 34,
+  "bbox_right": 73,
+  "bbox_top": 45,
   "bboxMode": 2,
   "collisionKind": 4,
   "collisionTolerance": 0,
@@ -21,6 +21,7 @@
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"10bcb264-2e53-4926-a69b-f908729192ba","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,

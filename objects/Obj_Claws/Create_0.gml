@@ -157,7 +157,8 @@ action_trigger = function(){
 	}
 	// Special moves
 	else if(action == "H Ring Spawn"){
-		if(ring1 != noone){
+		if(instance_exists(ring1)){
+			spawn_effect(ring1.x, ring1.y, 1, Eff_Ring, 1, 0.1, c_fuchsia, 1, 1, 0.2);
 			instance_destroy(ring1);
 		}
 		ring1 = instance_create_depth(x, y, 0, Obj_Claws_Skyring);
@@ -172,7 +173,8 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "V Ring Spawn"){
-		if(ring2 != noone){
+		if(instance_exists(ring2)){
+			spawn_effect(ring2.x, ring2.y, 1, Eff_Ring, 1, 0.1, c_fuchsia, 1, 1, 0.2);
 			instance_destroy(ring2);
 		}
 		ring2 = instance_create_depth(x, y, 0, Obj_Claws_Skyring);
@@ -199,7 +201,7 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action = "Claw Flurry"){
+	else if(action = "Claw Dance"){
 		if(multi_hit_action_index == 0){
 			attack = instance_create_depth(x, y, 0, Obj_Claws_Flurry_hitbox);
 			attack.initiate(self);

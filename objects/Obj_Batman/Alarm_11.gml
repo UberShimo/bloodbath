@@ -2,34 +2,42 @@ event_inherited();
 
 if(is_controllable){
 	// Special moves
-	rng = irandom_range(1, 10);
+	rng = random_range(0, 1);
 
-	if(meter >= 25 && irandom_range(1, 8) == 1){
+	// Super ball
+	if(meter >= 25 && irandom_range(1, 8) == 1){ // 12.5%
 		down_forward_pressed = buffer_duration;
 		rb_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){ // 50%
+			rb_hold = true;
+		}
 	}
-	else if(rng == 1){
+	// Pitch ball
+	else if(rng < 0.1){ // 10%
 		down_forward_pressed = buffer_duration;
 		x_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){ // 50%
+			x_hold = true;
+		}
 	}
-	else if(rng == 2){
-		double_down_pressed = buffer_duration;
-		b_pressed = buffer_duration;
-	}
-	else if(rng == 3){
+	// Spinhop
+	else if(rng < 0.2){ // 10%
 		down_forward_pressed = buffer_duration;
 		y_pressed = buffer_duration;
 	}
-	else if(rng == 4){
+	// Dropkick
+	else if(rng < 0.3){ // 10%
 		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
-	else if(rng == 5){
-		down_backward_pressed = buffer_duration;
+	// Headbutt
+	else if(rng < 0.4){ // 10%
+		double_down_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
 	
-	if(meter >= 100){
+	// ULTRA
+	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		down_backward_pressed = true;
 		half_circle_forward_pressed = true;
 	}

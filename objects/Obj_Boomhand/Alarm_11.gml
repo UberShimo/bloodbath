@@ -2,35 +2,35 @@ event_inherited();
 
 if(is_controllable){
 	// Special moves
-	rng = irandom_range(1, 10);
+	rng = random_range(0, 1);
 
-	rb_hold = false;
-	if(meter >= 10 && irandom_range(1, 8) == 1){
-		down_hold = true;
-		rb_hold = true;
+	if(meter >= 15 && irandom_range(1, 8) == 1){ // 12.5%
+		down_forward_pressed = buffer_duration;
+		rb_pressed = buffer_duration;
 	}
-	else if(rng == 1){
+	// Roar
+	else if(rng < 0.15){ // 15%
 		half_circle_forward_pressed = buffer_duration;
 		x_pressed = buffer_duration;
 	}
-	else if(rng == 2){
+	// Groundsmash
+	else if(rng < 0.25){ // 10%
 		double_down_pressed = buffer_duration;
 		x_pressed = buffer_duration;
 	}
-	else if(rng == 3){
+	// Punch move
+	else if(rng < 0.35){ // 10%
 		down_forward_pressed = buffer_duration;
 		y_pressed = buffer_duration;
 	}
-	else if(rng == 4){
-		down_backward_pressed = buffer_duration;
-		y_pressed = buffer_duration;
-	}
-	else if(rng == 5){
+	// Ground uppercut
+	else if(rng < 0.45){ // 10%
 		double_down_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
 	
-	if(meter >= 100){
+	// ULTRA
+	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		down_backward_pressed = true;
 		half_circle_forward_pressed = true;
 	}

@@ -11,6 +11,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	
 	if(x_pressed){
 		action = "F";
+		shake_amount = launcher_shake_amount;
 		sprite_index = Spr_Dojo_F_startup;
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);

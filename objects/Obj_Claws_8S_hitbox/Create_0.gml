@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Claws_8S_recovery); // 100% informational 
 damage = 10;
 hit_stun = 24;
 hit_push = 4;
-freeze_duration = 16;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 2;
 v_launch = 2;
 

@@ -7,7 +7,9 @@ is_projectile = true;
 is_cancelable = true;
 weight = 0.4;
 collision_check_distance = 16;
-hit_push = 0;
+hit_push = 1;
+h_launch = 1;
+v_launch = -1;
 
 is_active = false;
 h_spin = 0;

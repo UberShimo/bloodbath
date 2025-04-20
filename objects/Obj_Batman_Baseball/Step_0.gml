@@ -27,9 +27,6 @@ if(is_active){
 	
 	eff_scale = damage/20;
 	spawn_effect(x, y, 1, Eff_Splash, 0.5, 0.1, c_red, eff_scale, eff_scale);
-	
-	h_launch = h_velocity/8;
-	v_launch = v_velocity/8;
 }
 
 if(priority_struck_alarm > 0){

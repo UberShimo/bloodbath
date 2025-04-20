@@ -6,8 +6,11 @@ recovery = generate_sprite_frames(Spr_Greatsword_Ocean_L_recovery); // 100% info
 damage = 14;
 hit_stun = 16;
 hit_push = 7;
-freeze_duration = 12;
+freeze_duration = global.medium_freeze_duration;
+shake_impact = global.medium_shake_impact;
 h_launch = 5;
 v_launch = -4;
 
 is_sticky = true;
+
+swing_sound = Snd_Light_Swing;

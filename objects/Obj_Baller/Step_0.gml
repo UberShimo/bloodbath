@@ -30,6 +30,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			// Ball dash
 			else{
 				action = "Balldash";
+				goes_through_collision = true; // Crazy stuff
 				h_velocity = 0;
 				v_velocity = -4;
 				ball.h_velocity = 0;

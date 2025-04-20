@@ -3,15 +3,18 @@
   "resourceVersion": "1.0",
   "name": "P1_Preview",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Character Select",
-    "path": "folders/Objects/Character Select.yy",
+    "name": "Previews",
+    "path": "folders/Objects/Character Select/Previews.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Preview",
+    "path": "objects/Parent_Preview/Parent_Preview.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

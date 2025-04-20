@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Note",
-    "path": "sprites/Spr_Note/Spr_Note.yy",
+    "name": "Spr_Music",
+    "path": "sprites/Spr_Music/Spr_Music.yy",
   },
   "spriteMaskId": null,
   "visible": true,

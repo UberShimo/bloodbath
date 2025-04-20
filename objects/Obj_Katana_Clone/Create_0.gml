@@ -43,6 +43,7 @@ action_alarm = 0;
 cancels = 0;
 is_collidable = false;
 
+// Clone inputs
 dash_forward = false;
 dash_backward = false;
 

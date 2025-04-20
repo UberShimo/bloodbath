@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+
 if(other.d_pressed){
 	global.BG_index += 1;
 	if(global.BG_index > array_length(global.BG_list)-1){

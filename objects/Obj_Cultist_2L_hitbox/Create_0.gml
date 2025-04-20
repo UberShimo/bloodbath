@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Cultist_2L_recovery); // 100% informationa
 damage = 6;
 hit_stun = 20;
 hit_push = 6;
-freeze_duration = 8;
+freeze_duration = global.medium_freeze_duration;
+shake_impact = global.medium_shake_impact;
 h_launch = 1;
 v_launch = -5;
 

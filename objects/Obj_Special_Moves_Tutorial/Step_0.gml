@@ -1,19 +1,19 @@
 if(Obj_Dojo_Manager.student.object_index == Obj_Batman){
-	if(Obj_Dojo_Manager.student.action == "Pitch"){
+	if(Obj_Dojo_Manager.student.action == "Dropkick"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);
 		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
 		instance_destroy();
 	}
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Katana){
-	if(Obj_Dojo_Manager.student.action == "Quickdraw Straight"){
+	if(Obj_Dojo_Manager.student.action == "Quickdraw"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);
 		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
 		instance_destroy();
 	}
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Claws){
-	if(Obj_Dojo_Manager.student.action == "H Ring Spawn"){
+	if(Obj_Dojo_Manager.student.action == "Claw Dance"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);
 		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
 		instance_destroy();
@@ -27,7 +27,7 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Baller){
 	}
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Bow){
-	if(Obj_Dojo_Manager.student.action == "Boomerang Straight"){
+	if(Obj_Dojo_Manager.student.action == "Boomerang"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);
 		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
 		instance_destroy();
@@ -48,7 +48,7 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Boomhand){
 	}
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Cultist){
-	if(Obj_Dojo_Manager.student.action == "Shooting Star"){
+	if(Obj_Dojo_Manager.student.action == "Star Throw"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);
 		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
 		instance_destroy();

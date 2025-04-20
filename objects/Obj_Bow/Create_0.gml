@@ -167,6 +167,7 @@ action_trigger = function(){
 		spd = 32;
 		attack.h_velocity = lengthdir_x(spd, aim_dir)*image_xscale;
 		attack.v_velocity = lengthdir_y(spd, aim_dir);
+		attack.spd = spd; // Jump save speed for when it bounces
 		attack.image_xscale = image_xscale;
 		attack.image_angle = aim_dir*image_xscale;
 		

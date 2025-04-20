@@ -7,6 +7,7 @@ damage = 0;
 hit_stun = 1;
 hit_push = 0;
 freeze_duration = 1;
+shake_impact = 0;
 h_launch = 0;
 v_launch = 0;
 
@@ -15,5 +16,5 @@ is_sticky = true;
 is_final = true;
 extra_freeze_duration = 60;
 
-swing_sound = Snd_NOTHING;
+swing_sound = Snd_Quick_Swing;
 hit_sound = Snd_Knack;

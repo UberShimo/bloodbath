@@ -6,8 +6,8 @@ texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
 spawner = noone;
 spawner_action = noone;
 time_reset_alarm = 0; // Time alarm
-freeze_amount = 0; // % in time (0.1 = 10% time speedis_act)
-shake_amount = 0; // Shakes the opponent
+freeze_amount = 0; // % in time (0.1 = 10% time speed)
+shake_amount = 0; // How much you shake?
 startup = 0; // 100% informational not used in logic
 recovery = 0; // 100% informational not used in logic
 info = "";
@@ -19,6 +19,7 @@ h_launch = 0;
 v_launch = 0;
 freeze_duration = 1;
 extra_freeze_duration = 0;
+shake_impact = 0; // Shakes the opponent on impact
 swing_sound = Snd_Swing1;
 hit_sound = Snd_Hit1;
 // Characterizing stats

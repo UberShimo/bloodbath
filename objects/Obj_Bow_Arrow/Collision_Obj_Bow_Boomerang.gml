@@ -8,10 +8,7 @@ if(ds_list_find_index(hitbox_list, other) == -1){
 	}
 
 	// Bounce toward closest enemy
-	spawner_temp_x = spawner.x;
-	spawner.x = -room_width;
-	closest_enemy = instance_nearest(x, y, Parent_Character);
-	spawner.x = spawner_temp_x;
+	closest_enemy = spawner.closest_enemy;
 
 	dir = point_direction(x, y, closest_enemy.x, closest_enemy.y);
 

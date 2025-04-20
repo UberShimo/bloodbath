@@ -1,2 +1,2 @@
-animation_speed = sprite_get_speed(animation)/fps;
+animation_speed = sprite_get_speed(animation)/global.FPS;
 animation_frame += animation_speed;

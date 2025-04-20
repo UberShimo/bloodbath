@@ -6,12 +6,13 @@ recovery = generate_sprite_frames(Spr_Cultist_Circlepull_recovery); // 100% info
 damage = 4;
 hit_stun = 16;
 hit_push = 4;
-freeze_duration = 12;
+freeze_duration = global.light_freeze_duration;
+shake_impact = global.light_shake_impact;
 
 is_shockwave = true;
 is_parryable = false;
 shockwave_power = 4;
 effect = Obj_Greatsword_Splash_hit_eff;
 
-swing_sound = Snd_NOTHING;
-hit_sound = Snd_NOTHING;
+swing_sound = Snd_Quick_Swing;
+hit_sound = Snd_Knack;

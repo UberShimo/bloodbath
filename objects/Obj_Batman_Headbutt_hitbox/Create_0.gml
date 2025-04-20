@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Batman_Headbutt_recovery); // 100% informa
 damage = 13;
 hit_stun = 24;
 hit_push = 4;
-freeze_duration = 8;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 0;
 v_launch = 2;
 

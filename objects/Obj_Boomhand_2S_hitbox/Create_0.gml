@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Boomhand_2S_recovery); // 100% information
 damage = 2;
 hit_stun = 32;
 hit_push = 4;
-freeze_duration = 4;
+freeze_duration = global.medium_freeze_duration;
+shake_impact = global.medium_shake_impact;
 h_launch = 0.2;
 v_launch = -12;
 
@@ -15,4 +16,4 @@ hit_effect_scale = 0;
 is_parryable = false;
 
 swing_sound = Snd_Light_Swing;
-hit_sound = Snd_NOTHING;
+hit_sound = Snd_Swing1;

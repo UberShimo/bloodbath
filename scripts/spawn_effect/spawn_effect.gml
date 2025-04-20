@@ -1,4 +1,4 @@
-function spawn_effect(x_val, y_val, amount, effect, alpha = 1, fade = 0.01, color = c_white, min_scale = 1, max_scale = 1, grow = 0, min_angle = 0, max_angle = 360, random_position_amount = 0){
+function spawn_effect(x_val, y_val, amount, effect, alpha = 1, fade = 0.01, color = c_white, min_scale = 1, max_scale = 1, grow = 0, min_angle = 0, max_angle = 360, random_position_amount = 0, depth_val = -2){
 	repeat(amount){
 		if(random_position_amount > 0){
 			dir = random_range(0, 360);
@@ -6,7 +6,7 @@ function spawn_effect(x_val, y_val, amount, effect, alpha = 1, fade = 0.01, colo
 			x_val += lengthdir_x(length, dir);
 			y_val += lengthdir_y(length, dir);
 		}
-		eff = instance_create_depth(x_val, y_val, -1, effect);
+		eff = instance_create_depth(x_val, y_val, depth_val, effect);
 		eff.image_alpha = alpha;
 		eff.fade = fade;
 		eff.image_blend = color;

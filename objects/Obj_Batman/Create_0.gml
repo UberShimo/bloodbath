@@ -203,6 +203,18 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Curve X"){
+		ball = instance_create_depth(x+(12*image_xscale), y-6, 0, Obj_Batman_Superball);
+		ball.initiate(self);
+		ball.h_velocity = 3*image_xscale;
+		ball.v_velocity = -3;
+		ball.weight = 0.05;
+		ball.h_spin = -0.05*image_xscale;
+		
+		sprite_index = Spr_Batman_Pitch_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		attack = instance_create_depth(x, y, 0, Obj_Batman_ULTRA_hitbox);

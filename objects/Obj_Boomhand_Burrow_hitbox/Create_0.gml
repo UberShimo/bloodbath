@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Boomhand_Burrow_recovery); // 100% informa
 damage = 16;
 hit_stun = 32;
 hit_push = 12;
-freeze_duration = 12;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 1.5;
 v_launch = -10;
 

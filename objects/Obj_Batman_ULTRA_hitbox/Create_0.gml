@@ -3,14 +3,14 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Batman_ULTRA_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Batman_ULTRA_recovery); // 100% informational not used in logic
 
-damage = 60;
+damage = 50;
 hit_stun = 32;
 hit_push = 12;
-freeze_duration = 32;
+freeze_duration = 30;
+shake_impact = 8;
 h_launch = 4;
 v_launch = -2;
 
-shake_amount = 12;
 is_parryable = false;
 meter_gain_multiplier = 0;
 

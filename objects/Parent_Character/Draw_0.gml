@@ -9,6 +9,7 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 	var t_width = texture_get_texel_width(texture);
 	var t_height = texture_get_texel_height(texture);
 	shader_set_uniform_f(texel_handle, t_width, t_height);
+	shader_set_uniform_f(outline_handle, outline_color[0], outline_color[1], outline_color[2], outline_color[3]);
 }
 draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 shader_reset();
@@ -47,9 +48,9 @@ if(global.is_debugging){
 	if(action_text == "-4"){
 		action_text = "none";
 	}
-	draw_text(x, y-character_height-80, "cancels:  " + string(cancels));
-	draw_text(x, y-character_height-64, "h_vel:  " + string(h_velocity));
-	draw_text(x, y-character_height-48, "v_vel:  " + string(v_velocity));
+	draw_text(x, y-character_height-80, "grip:  " + string(grip));
+	draw_text(x, y-character_height-64, "cancels:  " + string(cancels));
+	draw_text(x, y-character_height-48, "velocity:  " + string(general_velocity));
 	draw_text(x, y-character_height-32, "startup:  " + string(action_alarm));
 	draw_text(x, y-character_height-16, "recovery:  " + string(recover_alarm));
 	draw_text(x, y-character_height, "action:  " + string(action_text));

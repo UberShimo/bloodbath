@@ -6,7 +6,8 @@ recovery = generate_sprite_frames(Spr_Katana_Headsplitter_recovery); // 100% inf
 damage = 22;
 hit_stun = 30;
 hit_push = 8;
-freeze_duration = 12;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 4;
 v_launch = 4;
 

@@ -23,7 +23,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(!grounded){
+		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8F";
 			sprite_index = Spr_Bow_8F_startup;
 			image_index = 0;
@@ -69,7 +69,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(!grounded){
+		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8L";
 			sprite_index = Spr_Bow_8L_startup;
 			image_index = 0;
@@ -95,14 +95,15 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Crosspin";
 			h_velocity = 9*image_xscale;
 			v_velocity = 0;
+			extra_grip = original_grip/3;
 			weight = 0.1;
-			velocity_friction = 0.25;
+			velocity_friction = 0.1;
 			is_collidable = false;
 			sprite_index = Spr_Bow_Crosspin_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(!grounded){
+		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8S";
 			sprite_index = Spr_Bow_8S_startup;
 			image_index = 0;
