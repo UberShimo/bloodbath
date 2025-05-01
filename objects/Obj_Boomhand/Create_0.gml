@@ -46,7 +46,7 @@ original_weight = weight;
 roar_power = 0;
 roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )... Takes 8 sec to fully cooldown atm...
 hook_charge = 0; // Actually not a hook tho...
-max_charge_duration = 180; // Frames
+max_charge_duration = 200; // Frames
 
 
 action_trigger = function(){
@@ -135,11 +135,11 @@ action_trigger = function(){
 			attack = instance_create_depth(x, y, 0, Obj_Boomhand_5S_hitbox);
 			attack.initiate(self);
 			// Buff hook based on hook_charge
-			attack.damage += hook_charge*120;
+			attack.damage += hook_charge*80;
 			attack.hit_stun += hook_charge*4;
 			attack.shake_amount += hook_charge*8;
 			h_velocity = (6+hook_charge*16)*image_xscale;
-			grip = 2;
+			grip = 1.6;
 			shake_amount = 0;
 		
 			sprite_index = Spr_Boomhand_5S_recovery;

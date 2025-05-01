@@ -40,15 +40,16 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 // Draw EXITING...
 if(exit_count > 0){
 	a = exit_count/exit_count_goal;
-	draw_text_color(x-32, y-character_height, "EXITING...", c, c, c, c, a);
+	draw_text_color(x-32, y-character_height, "EXITING", c, c, c, c, a);
 }
 
+// DEBUG
 if(global.is_debugging){
 	action_text = string(action);
 	if(action_text == "-4"){
 		action_text = "none";
 	}
-	draw_text(x, y-character_height-80, "grip:  " + string(grip));
+	draw_text(x, y-character_height-80, "grounded:  " + string(grounded));
 	draw_text(x, y-character_height-64, "cancels:  " + string(cancels));
 	draw_text(x, y-character_height-48, "velocity:  " + string(general_velocity));
 	draw_text(x, y-character_height-32, "startup:  " + string(action_alarm));

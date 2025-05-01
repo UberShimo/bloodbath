@@ -1,6 +1,6 @@
 event_inherited();
 
-damage = 20;
+damage = 30;
 hit_stun = 42;
 hit_push = 16;
 freeze_duration = 30;

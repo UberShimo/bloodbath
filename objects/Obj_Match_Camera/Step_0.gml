@@ -33,10 +33,29 @@ for(i = 0; i < array_length(characters); i++){
 	}
 }
 
-// Calculate correct camera width
-camera_width = biggest_x+extra_screen_size - (smallest_x-extra_screen_size);
-if(camera_width < min_screen_size){
-	camera_width = min_screen_size;
+// Adjust camera width... In a very smooth way!
+target_size = biggest_x+extra_screen_size - (smallest_x-extra_screen_size);
+if(target_size < min_screen_size){
+	target_size = min_screen_size;
+}
+else if(target_size > max_screen_size){
+	target_size = max_screen_size;
+}
+if(camera_width < target_size){
+	if(camera_width + camera_resize_speed > target_size){
+		camera_width = target_size;
+	}
+	else{
+		camera_width += camera_resize_speed;
+	}
+}
+if(camera_width > target_size){
+	if(camera_width - camera_resize_speed < target_size){
+		camera_width = target_size;
+	}
+	else{
+		camera_width -= camera_resize_speed;
+	}
 }
 camera_height = camera_width / global.screen_ratio;
 

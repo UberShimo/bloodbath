@@ -160,6 +160,8 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Aim Down"){
+		action = "Arrow Shot";
+		
 		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_Arrow);
 		attack.initiate(self);
 		// Calculate take off
@@ -183,6 +185,8 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Aim Up"){
+		action = "Arrow Shot";
+		
 		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_Arrow);
 		attack.initiate(self);
 		// Calculate take off

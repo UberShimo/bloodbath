@@ -1,10 +1,19 @@
 TODO{
-	Update COVER!
-	Preview HEIGHT, WEIGHT and GRIP on characters.
+	P2 going training mode crashes the game.
+	Update tutorial. Make it text instead of sprites.
+	Dash tutorial sux.
+	Force Training room BG in DOJO places.
+	Make so you can see immortal dummy HP in up right corner.
+	Remove "Duo_Input" from moves. just have "Spr_DF".
+	REMOVE all shit from the move lists... Just have "hit-cancelable", "cancelable", "non-cancelable" or "unparryable" on moves.
+	Choose stage type in character select.
+	Make Dojo man playable.
 	Make teams a thing? With different outline colors n shit.
 	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)
+	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
+	Add playtesters
 	Make Diabeto Studios intro
 }
 
@@ -64,7 +73,7 @@ Batman{
 }
 
 Katana{
-	
+	Nerf 2S and 8S.
 }
 
 Claws{
@@ -80,6 +89,8 @@ Greatsword{
 }
 
 Boomhand{
+	5S hits behind him.
+	Nerf 5S a little... hehe.
 	Make X sound like steam
 }
 
@@ -87,12 +98,12 @@ Bow{
 	Make 2S sound like "BOINGGGG"?
 }
 
-Cultist{
+Cultist CHARLOTTE{
 	
 }
 
 NEW
-Rapier elegant with fabric covering the face{
+Rapier elegant with fabric covering the face TANTAN{
 	Dash has shorter duration.
 	Good grip.
 
@@ -108,24 +119,25 @@ Rapier elegant with fabric covering the face{
 	Lv: Stab upward
 	L^: Stab down
 	
+	S: Step forward in a goofy way and a bent rapier. Release to slam down rapier forward in a elegant way!
 	vS: Elegant jump with a rapier twist that then swing upward.
 	^S: Spin 3 times in air.
 	
 	v>F: Quick dash stab that is final.
 	v>L: Slower dash stab.
-	v>S: Slowest dash stab that leaves as delayed stab afterwards.
+	v>S: Slowest dash stab that leaves a delayed stab afterwards.
 	
-	X: Stop time then regain cancels. Should be able to do without cancels.
-	ULTRA: Dissapear then slash through closest enemy.
+	X: Quick dash stab that leaves a delayed stab afterwards.
+	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
 }
 
 NEW
-Scythe black and white / grey{
-	Has tripple jump
+Scythe black and white / grey WILLIAM{
+	Has 2 extra jumps.
 	Moves slippy and has great air control. Light weight.
 	Dash is teleport. Also slightly slower.
 	
-	5F: Spin hitting behind and front with scythe
+	5F: Smack with handle.
 	5L: Push
 	5S: Pull descently fast
 	2S: Multi hit spin launcher
@@ -135,31 +147,56 @@ Scythe black and white / grey{
 	Hitting bird with lightning makes a horizontal splash.
 	
 	X: Pull with scythe that steal enemy HP. You can also hit your bird.
+	ULTRA: 
 }
 
 NEW
-Shield{
+Big round shield ANDERS{
 	Is heavy.
 	Has longer parry duration
 	
-	F: Push shield forward.
-	vF: Gain slight momentum forward and skate on shield. Hold to stay on shield.
+	5F: Push shield forward.
+	2F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable.
+	8F: Try grabbing above and then throw them down.
+	5L: Karate high kick.
+	2L: Heel kick downward.
+	8L. Swing kick below.
+	5S: Swing shield forward giving you forward momentum.
+	2S: Uppercut with shield.
+	8S: Slam downward giving your downward momentum.
 	
-	5S swing shield forward giving you forward momentum.
+	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
+	vvL: Put out a circle that turns into shoulder bash when dashed through. (Yellow)
+	vvS: Put out a circle that makes you unstoppable when dashed through. (Pink)
 	
-	vvF: Put out a circle that gives back cancels when dashed through.
-	vvL: Put out a circle that turns into shoulder bash when dashed through.
-	vvS: Put out a circle that makes you unstoppable when dashed through.
+	v>X: Make ground slippery.
+	vvX: Put out a circle that turns into bubbles when dashed through. (Green)
+	ULTRA: Jump up into the sky and start aiming. Then smash down and deal big damage! Unparryable.
 }
 
 NEW
-Cat with Knife{
+Rat with knife and green tip on tail SIMON{
 	Has 1 extra cancel.
 	Solid but relatively slow movement. Super quick dash.
 
+	5F: Quick slash.
+	2F: Quick low slash.
+	8F: Slash upward.
+	
+	5L: Quick stab slash and slight step forward.
+	sL: Slash stab over head. movign forward.
+	8L: Slash forward and launch yourself forward.
+	
 	5S: Super strong stab behind.
+	2S: Slash upward and launch yourself forward.
+	8S: Stab slash downward
 	
-	v>F: Lob a grenade that explode after delay. Cancelable.
+	v>F: Throw slightly angled knife that MARKS enemy. (Mark is a cross)
+	vvF: Deal small dmg to marked enemy. Unparryable. (Make cross with arms them slash)
+	v>L: Throw straight knife that MARKS enemy.
+	v>L: Teleport behind marked enemy. Cancelable.
+	vvS: Lob a grenade that explode after delay. Hold </> to change trajectory. Hold to lob harder. Cancelable.
 	
+	X: Quick long reaching tail whip.
 	ULTRA: Charge then go sonic mode into the air. Can slightly control while airborne. Upon landing you can control instantly.
 }

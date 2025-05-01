@@ -162,6 +162,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Send Clone"){
+		action = "Clone Sent";
 		sprite_index = stand_spr;
 		v_velocity = 0;
 		h_velocity = 0;

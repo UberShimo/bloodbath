@@ -11,9 +11,6 @@ if(is_respawning){
 // Always make sure there is a closest enemy before executing code
 find_closest_enemy();
 
-// A very slim rectangle check
-ground_check = collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false);
-
 #region alarms  V-----V
 if(action_alarm > 0){
 	action_alarm -= logic_time;
@@ -228,6 +225,12 @@ else if(a_pressed && extra_jumps_left > 0 && check_for_cancel()){
 if(action == noone && v_velocity < -jump_power*mini_jump_power && !a_hold){
 	v_velocity = -jump_power*mini_jump_power;
 }
+// Clip through platform when dropping through it
+if(platdrop_pressed && collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Obj_Platform, false, false)){
+	while(collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Obj_Platform, false, false)){
+		y += 1;
+	}
+}
 
 // Exit
 if(start_hold){
@@ -246,7 +249,7 @@ else{
 // H velocity
 val = h_velocity*logic_time;
 // Check collision with rectangle
-if(!collision_rectangle(x-character_width/2+val, y-character_height/2, x+character_width/2+val, y+character_height/2, Parent_Collision, false, false) || goes_through_collision){
+if(!check_collision(val, 0) || goes_through_collision){
 	x += val;
 }
 // Collide logic
@@ -255,7 +258,7 @@ else{
 	if(val < 0){
 		x_check = -1;
 	}
-	while(!collision_rectangle(x-character_width/2+x_check, y-character_height/2, x+character_width/2+x_check, y+character_height/2, Parent_Collision, false, false)){
+	while(!check_collision(x_check, 0)){
 		x += x_check;
 	}
 	// Wall bounce
@@ -271,8 +274,8 @@ else{
 
 // Grip logic
 val = 0;
-if(extra_grip > 0){
-	val = extra_grip*logic_time;
+if(air_grip > 0){
+	val = air_grip*logic_time;
 }
 else if(grounded){
 	val = grip*logic_time;
@@ -293,8 +296,8 @@ else{
 
 // V velocity
 val = v_velocity*logic_time;
-// Collision check with rectangle
-if(!collision_rectangle(x-character_width/2, y-character_height/2+val, x+character_width/2, y+character_height/2+val, Parent_Collision, false, false) || goes_through_collision){
+
+if((!check_collision(0, val) && !platform_check()) || goes_through_collision){
 	y += val;
 	
 	// Gravity
@@ -309,16 +312,21 @@ if(!collision_rectangle(x-character_width/2, y-character_height/2+val, x+charact
 	}
 	
 }
-// Bump roof
+// Snap to roof
 else if(v_velocity < 0){
-	v_velocity = -v_velocity*0.1;
+	y = floor(y);
+	while(!check_collision(0, -1)){
+		y -= 1;
+	}
+	v_velocity = -v_velocity*0.2;
 }
 // Snap to ground
 else{
 	y = floor(y);
-	while(!collision_rectangle(x-character_width/2, y-character_height/2+1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false)){
+	while(!ground_check()){
 		y += 1;
 	}
+	
 	// Ground bounce
 	if(action == "Stunned" && v_velocity > ground_bounce_limit){
 		v_velocity = -v_velocity*0.5;
@@ -340,7 +348,7 @@ else{
 	}
 }
 // Grounded or not? also reset cancels
-if(ground_check && v_velocity == 0){
+if(ground_check()){
 	grounded = true;
 	
 	if(action == noone){
@@ -353,10 +361,9 @@ else{
 }
 
 // Move outa wall if stuck
-if(collision_rectangle(x-character_width/2, y-character_height/2, x+character_width/2, y+character_height/2, Parent_Collision, false, false) && !goes_through_collision){
-	collision = collision_rectangle(x-character_width/2, y-character_height/2, x+character_width/2, y+character_height/2, Parent_Collision, false, false);
-	dir = point_direction(collision.x, collision.y, x, y);
-	while(collision_rectangle(x-character_width/2, y-character_height/2, x+character_width/2, y+character_height/2, Parent_Collision, false, false)){
+if(is_in_wall){
+	dir = point_direction(colliding_wall.x, colliding_wall.y, x, y);
+	while(check_collision()){
 		x += lengthdir_x(1, dir);
 		y += lengthdir_y(1, dir);
 	}
@@ -489,7 +496,7 @@ if(meter_dash_lb_pressed > 0 && meter_dash_rb_pressed > 0
 	is_collidable = false;
 	is_invincible = true;
 	grip = dash_grip;
-	extra_grip = dash_grip;
+	air_grip = dash_grip;
 	v_velocity = dash_lift;
 	weight = original_weight/4;
 	action_alarm = 0;
@@ -506,12 +513,12 @@ if(lb_pressed > 0 && ((action == noone && grounded || (action == "ULTRA" && acti
 	is_unstoppable = false; // Actually just for Boomhand ultra cancel...
 	
 	// Also cancel if its just an air dash
-	if(doing_action_by_canceling || !grounded){
+	if(doing_action_by_canceling || (!grounded && (forward_hold || backward_hold))){
 		do_cancel();
 	}
 	
 	// Dashes
-	if(forward_hold || backward_hold || !grounded){
+	if(forward_hold || backward_hold){
 		if(backward_hold){
 			sprite_index = dash_backward_spr;
 			h_velocity = -dash_speed*image_xscale;
@@ -532,13 +539,13 @@ if(lb_pressed > 0 && ((action == noone && grounded || (action == "ULTRA" && acti
 		can_cancel = true;
 		is_collidable = false;
 		grip = dash_grip;
-		extra_grip = dash_grip;
+		air_grip = dash_grip;
 		weight = original_weight/4;
 		v_velocity = dash_lift;
 		recover_alarm = dash_duration;
 	}
 	// Parry
-	else if(grounded && !(forward_hold || backward_hold)){
+	else if(grounded && !platdrop_hold){
 		action = "Parry";
 		
 		is_parrying = true;

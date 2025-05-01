@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Bow_8F_startup);
 recovery = generate_sprite_frames(Spr_Bow_8F_recovery);
 info = "Very long duration kick";
 
-damage = 4;
+damage = 5;
 hit_stun = 16;
 hit_push = 4;
 freeze_duration = global.light_freeze_duration;

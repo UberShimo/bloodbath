@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Batman_5S_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Batman_5S_recovery); // 100% informational not used in logic
 
-damage = 10;
+damage = 15;
 hit_stun = 20;
 hit_push = 12;
 freeze_duration = global.heavy_freeze_duration;

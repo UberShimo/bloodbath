@@ -55,6 +55,8 @@ half_circle_backward_pressed = 0;
 double_down_pressed = 0;
 meter_dash_lb_pressed = 0;
 meter_dash_rb_pressed = 0;
+platdrop_pressed = false;
+platdrop_hold = false;
 #endregion
 
 #region Sprites
@@ -101,7 +103,7 @@ max_speed = 6;
 acceleration = 0.1;
 grip = global.standard_grip; // Slippy: 0.3, Standard: 0.5, Steady: 0.7
 air_control = 0.1;
-extra_grip = 0; // Used for moves that give extra grip
+air_grip = 0; // This grip replaces original grip when above 0
 dash_speed = 12;
 dash_lift = 0; // Only used for Bow basically...
 dash_blink = 16;
@@ -137,6 +139,8 @@ wall_bounce_limit = 6;
 ground_bounce_limit = 10;
 grounded = true;
 priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in alarm[9]
+is_in_wall = false;
+colliding_wall = noone;
 #endregion
 
 #region Alarms
@@ -315,6 +319,20 @@ read_input = function(){
 	}
 	lb_hold = gamepad_button_check(controller_index, gp_shoulderl);
 	
+	// Platdrop
+	if(down_hold && gamepad_button_check_pressed(controller_index, gp_shoulderl)){
+		platdrop_pressed = true;
+	}
+	else{
+		platdrop_pressed = false;
+	}
+	if(lb_hold && down_hold){
+		platdrop_hold = true;
+	}
+	else{
+		platdrop_hold = false;
+	}
+	
 	// Special inputs
 	if(down_pressed && !down_hold && forward_pressed){
 		down_forward_pressed = buffer_duration;
@@ -353,7 +371,7 @@ read_input = function(){
 reset_physics = function(){
 	grip = original_grip;
 	velocity_friction = 0;
-	extra_grip = 0;
+	air_grip = 0;
 	weight = original_weight;
 	multi_hit_action_index = 0;
 	is_collidable = true;
@@ -439,4 +457,24 @@ blink_h = function(x_val, cross_up){
 			loops -= 1;
 		}
 	}
+}
+
+check_collision = function(h_vel = 0, v_vel = 0){
+	return collision_rectangle(x-character_width/2+h_vel, y-character_height/2+v_vel, x+character_width/2+h_vel, y+character_height/2+v_vel, Parent_Collision, false, false)
+}
+
+platform_check = function(){
+	platform = noone;
+	if(collision_rectangle(x-character_width/2, y, x+character_width/2, y+character_height/2+v_velocity, Obj_Platform, false, false)){
+		platform = collision_rectangle(x-character_width/2, y, x+character_width/2, y+character_height/2+v_velocity, Obj_Platform, false, false);
+		if(y+character_height/2 > platform.y+1){ // +1 margin works
+			return false;
+		}
+	}
+	return !platdrop_hold && v_velocity >= 0 && platform != noone;
+}
+
+ground_check = function(){
+	return collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false) // Slim rectangle check at feet
+	|| (!(platdrop_hold && action == noone) && v_velocity >= 0 && collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Obj_Platform, false, false)); // Slim rectangle check at feet
 }

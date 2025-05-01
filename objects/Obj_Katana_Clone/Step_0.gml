@@ -1,8 +1,5 @@
 event_inherited();
 
-// A very slim rectangle check
-ground_check = collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Parent_Collision, false, false);
-
 #region dashy moves V-----V
 // Dash
 if(dash_forward || dash_backward){
@@ -22,7 +19,7 @@ if(dash_forward || dash_backward){
 	can_cancel = true;
 	is_collidable = false;
 	grip = dash_grip;
-	extra_grip = dash_grip;
+	air_grip = dash_grip;
 	recover_alarm = dash_duration;
 }
 #endregion

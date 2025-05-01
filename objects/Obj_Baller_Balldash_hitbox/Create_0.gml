@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Baller_Balldash_startup);
 recovery = generate_sprite_frames(Spr_Baller_Balldash_recovery);
 
-damage = 3;
+damage = 5;
 hit_stun = 16;
 hit_push = 6;
 freeze_duration = global.medium_freeze_duration;

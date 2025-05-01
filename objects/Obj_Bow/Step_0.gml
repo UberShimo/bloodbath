@@ -95,7 +95,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Crosspin";
 			h_velocity = 9*image_xscale;
 			v_velocity = 0;
-			extra_grip = original_grip/3;
+			air_grip = original_grip/3;
 			weight = 0.1;
 			velocity_friction = 0.1;
 			is_collidable = false;

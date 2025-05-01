@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Katana_Headsplitter_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Katana_Headsplitter_recovery); // 100% informational not used in logic
 
-damage = 22;
+damage = 24;
 hit_stun = 30;
 hit_push = 8;
 freeze_duration = global.heavy_freeze_duration;

@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Boomhand_5S_hitbox",
   "bbox_bottom": 58,
-  "bbox_left": 64,
+  "bbox_left": 76,
   "bbox_right": 109,
   "bbox_top": 52,
   "bboxMode": 0,

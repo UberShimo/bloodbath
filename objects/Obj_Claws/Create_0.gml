@@ -28,7 +28,7 @@ dash_speed = 8;
 dash_blink = 20;
 dash_duration = 24;
 dash_grip = 0.6;
-jump_power = 14;
+jump_power = 13;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
@@ -117,8 +117,6 @@ action_trigger = function(){
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Claws_8S_hitbox);
 		attack.initiate(self);
-		tip = instance_create_depth(x, y, 0, Obj_Claws_8S_tip_hitbox);
-		tip.initiate(self);
 		
 		sprite_index = Spr_Claws_8S_recovery;
 		image_index = 0;
@@ -223,8 +221,8 @@ action_trigger = function(){
 			h_velocity = 6*image_xscale;
 			
 			if(multi_hit_action_index == 2){
-				h_velocity = 2*image_xscale;
-				v_velocity = -7;
+				h_velocity = 1.5*image_xscale;
+				v_velocity = -7.8;
 			}
 			
 			action_alarm = 16;

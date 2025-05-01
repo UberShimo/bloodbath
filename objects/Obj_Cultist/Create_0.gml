@@ -141,7 +141,7 @@ action_trigger = function(){
 		
 		is_collidable = false;
 		h_velocity = 10*image_xscale;
-		extra_grip = 0.5;
+		air_grip = 0.5;
 		
 		sprite_index = Spr_Cultist_Circledash_Forward_recovery;
 		image_index = 0;
@@ -158,7 +158,7 @@ action_trigger = function(){
 		
 		is_collidable = false;
 		h_velocity = -10*image_xscale;
-		extra_grip = 0.5;
+		air_grip = 0.5;
 		
 		sprite_index = Spr_Cultist_Circledash_Backward_recovery;
 		image_index = 0;

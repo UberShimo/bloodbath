@@ -4,10 +4,10 @@ startup = generate_sprite_frames(Spr_Greatsword_2L_startup); // 100% information
 recovery = generate_sprite_frames(Spr_Greatsword_2L_recovery); // 100% informational not used in logic
 
 damage = 14;
-hit_stun = 28;
+hit_stun = 36;
 hit_push = 8;
-freeze_duration = global.medium_freeze_duration;
-shake_impact = global.medium_shake_impact;
+freeze_duration = global.heavy_freeze_duration;
+shake_impact = global.heavy_shake_impact;
 h_launch = 2;
 v_launch = -8;
 

@@ -1,4 +1,4 @@
-if(is_collidable && other.is_collidable){
+if(is_collidable && other.is_collidable && !is_in_wall){
 	width_check = character_width/2;
 	// Left side
 	if(x < other.x && x > other.x-width_check && h_velocity > 0){

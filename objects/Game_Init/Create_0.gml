@@ -25,9 +25,9 @@ global.medium_shake_impact = 2;
 global.heavy_freeze_duration = 24;
 global.heavy_shake_impact = 4;
 
-global.slippy_grip = 0.3;
+global.slippy_grip = 0.4;
 global.standard_grip = 0.5;
-global.steady_grip = 0.7;
+global.steady_grip = 0.6;
 
 global.light_weight = 0.55;
 global.standard_weight = 0.7;

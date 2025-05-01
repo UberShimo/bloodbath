@@ -14,10 +14,8 @@ is_final = true;
 
 // Wave stuff
 collide = function(){
-	if(v_velocity > 0){
-		hitbox = instance_create_depth(x, y, depth, Obj_Greatsword_Splash_hitbox);
-		hitbox.initiate(self);
+	hitbox = instance_create_depth(x, y, depth, Obj_Greatsword_Splash_hitbox);
+	hitbox.initiate(self);
 	
-		instance_destroy()
-	}
+	instance_destroy()
 }

@@ -5,7 +5,7 @@ recovery = generate_sprite_frames(Spr_Greatsword_8L_recovery); // 100% informati
 
 damage = 14;
 hit_stun = 28;
-hit_push = 8;
+hit_push = 2;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;
 h_launch = 0;

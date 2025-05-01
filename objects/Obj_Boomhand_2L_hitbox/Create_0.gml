@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Boomhand_2L_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Boomhand_2L_recovery); // 100% informational not used in logic
 
-damage = 7;
+damage = 8;
 hit_stun = 16;
 hit_push = 6;
 freeze_duration = global.medium_freeze_duration;
