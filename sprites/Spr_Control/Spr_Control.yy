@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Tutorial texts",
-    "path": "folders/Sprites/DOJO/Tutorial texts.yy",
+    "name": "Tutorial controls",
+    "path": "folders/Sprites/DOJO/Tutorial controls.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

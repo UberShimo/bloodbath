@@ -4,6 +4,7 @@
   "name": "Obj_Move_Tutorial",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -11,7 +12,10 @@
     "name": "Basic Tutorial",
     "path": "folders/Objects/DOJO/Basic Tutorial.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Tutorial",
+    "path": "objects/Parent_Tutorial/Parent_Tutorial.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Move_Text",
-    "path": "sprites/Spr_Move_Text/Spr_Move_Text.yy",
+    "name": "Spr_Move_Control",
+    "path": "sprites/Spr_Move_Control/Spr_Move_Control.yy",
   },
   "spriteMaskId": null,
   "visible": true,

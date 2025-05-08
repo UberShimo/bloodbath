@@ -5,7 +5,6 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,7 +12,10 @@
     "name": "Basic Tutorial",
     "path": "folders/Objects/DOJO/Basic Tutorial.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Tutorial",
+    "path": "objects/Parent_Tutorial/Parent_Tutorial.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -30,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Parry_Text",
-    "path": "sprites/Spr_Parry_Text/Spr_Parry_Text.yy",
+    "name": "Spr_Parry_Control",
+    "path": "sprites/Spr_Parry_Control/Spr_Parry_Control.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -13,7 +13,10 @@
     "name": "Advanced Tutorial",
     "path": "folders/Objects/DOJO/Advanced Tutorial.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Tutorial",
+    "path": "objects/Parent_Tutorial/Parent_Tutorial.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -30,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Meter_Dash_Text",
-    "path": "sprites/Spr_Meter_Dash_Text/Spr_Meter_Dash_Text.yy",
+    "name": "Spr_Meter_Dash_Control",
+    "path": "sprites/Spr_Meter_Dash_Control/Spr_Meter_Dash_Control.yy",
   },
   "spriteMaskId": null,
   "visible": true,

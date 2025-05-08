@@ -12,7 +12,10 @@
     "name": "Advanced Tutorial",
     "path": "folders/Objects/DOJO/Advanced Tutorial.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Tutorial",
+    "path": "objects/Parent_Tutorial/Parent_Tutorial.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -29,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Combo_Text",
-    "path": "sprites/Spr_Combo_Text/Spr_Combo_Text.yy",
+    "name": "Spr_Combo_Control",
+    "path": "sprites/Spr_Combo_Control/Spr_Combo_Control.yy",
   },
   "spriteMaskId": null,
   "visible": true,

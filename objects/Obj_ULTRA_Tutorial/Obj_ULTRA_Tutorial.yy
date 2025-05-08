@@ -4,14 +4,18 @@
   "name": "Obj_ULTRA_Tutorial",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Basic Tutorial",
-    "path": "folders/Objects/DOJO/Basic Tutorial.yy",
+    "name": "Advanced Tutorial",
+    "path": "folders/Objects/DOJO/Advanced Tutorial.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Tutorial",
+    "path": "objects/Parent_Tutorial/Parent_Tutorial.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_ULTRA_Text",
-    "path": "sprites/Spr_ULTRA_Text/Spr_ULTRA_Text.yy",
+    "name": "Spr_ULTRA_Control",
+    "path": "sprites/Spr_ULTRA_Control/Spr_ULTRA_Control.yy",
   },
   "spriteMaskId": null,
   "visible": true,

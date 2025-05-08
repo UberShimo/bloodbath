@@ -15,8 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cf98d36d-122b-4ccf-98ea-a395f03069d2",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3fcad054-eeac-4e58-b901-445d8db848c4",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9b09bc1b-a1c1-4130-af6f-e20391e82a93",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ed4cd03b-7d3f-4c9d-a2e8-5d6f7d8b6439",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"51f88d03-956b-4936-ac60-bcad17dd4619",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"481d5814-42d8-4a39-9d12-354a3641d1f2",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -62,8 +62,8 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cf98d36d-122b-4ccf-98ea-a395f03069d2","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"136121a5-73f0-42f9-9d7f-5c6684951cfd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3fcad054-eeac-4e58-b901-445d8db848c4","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"563240b3-25f6-4f35-a6bd-5df642be0082","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9b09bc1b-a1c1-4130-af6f-e20391e82a93","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"3753a612-c783-4de6-97b0-f98c9785d819","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ed4cd03b-7d3f-4c9d-a2e8-5d6f7d8b6439","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"a69ff350-459c-4b5c-94f6-13ce484f721d","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"51f88d03-956b-4936-ac60-bcad17dd4619","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"67fddf31-d3e0-4ad9-a385-f871b667fd91","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"481d5814-42d8-4a39-9d12-354a3641d1f2","path":"sprites/BG_Trainingroom/BG_Trainingroom.yy",},},},"Disabled":false,"id":"1c375469-6e03-419b-b7c5-dc57f8a5f45c","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -15,6 +15,13 @@ for(i = 0; i < 8; i++){
 	players[i] = noone;
 }
 
+p1_ui_hp = 0;
+p1_ui_meter = 0;
+p1_ui_hearts = 0;
+p2_ui_hp = 0;
+p2_ui_meter = 0;
+p2_ui_hearts = 0;
+
 global_time_reset_alarm = 0;
 
 // Methods

@@ -9,7 +9,7 @@ if(is_holding_ball){
 	ball.v_velocity = 0;
 }
 else{
-	weight = global.light_weight;
+	weight = global.standard_weight;
 }
 
 // ACTION!

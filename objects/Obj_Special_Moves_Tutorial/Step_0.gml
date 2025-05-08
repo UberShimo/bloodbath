@@ -1,3 +1,4 @@
+
 if(Obj_Dojo_Manager.student.object_index == Obj_Batman){
 	if(Obj_Dojo_Manager.student.action == "Dropkick"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);

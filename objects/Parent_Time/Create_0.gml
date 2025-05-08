@@ -14,3 +14,9 @@ move_step = function(){
 	x += h_velocity*logic_time;
 	y += v_velocity*logic_time;
 }
+
+snap_to_ground = function(y_margin = 1){
+	while(!position_meeting(x, y+y_margin, Parent_Collision) && !position_meeting(x, y+y_margin, Obj_Platform)){
+		y += 1;
+	}
+}

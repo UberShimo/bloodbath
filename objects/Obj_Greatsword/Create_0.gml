@@ -128,6 +128,7 @@ action_trigger = function(){
 		pillar.index = index;
 		pillar.image_xscale = -image_xscale;
 		pillar.x += pillar_distance*image_xscale;
+		pillar.snap_to_ground(pillar.sprite_height/2);
 		
 		stomp = instance_create_depth(x, y, 0, Obj_Greatsword_Stomp_hitbox);
 		stomp.initiate(self);

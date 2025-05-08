@@ -1,20 +1,16 @@
 TODO{
-	P2 going training mode crashes the game.
-	Update tutorial. Make it text instead of sprites.
-	Dash tutorial sux.
-	Force Training room BG in DOJO places.
-	Make so you can see immortal dummy HP in up right corner.
+	Make all special moves turn aroundable.
 	Remove "Duo_Input" from moves. just have "Spr_DF".
 	REMOVE all shit from the move lists... Just have "hit-cancelable", "cancelable", "non-cancelable" or "unparryable" on moves.
 	Choose stage type in character select.
 	Make Dojo man playable.
 	Make teams a thing? With different outline colors n shit.
-	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
 	Add playtesters
 	Make Diabeto Studios intro
+	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)???
 }
 
 SLOGANS for trailer n stuff
@@ -68,16 +64,18 @@ Zoner:		Bow, Mage
 MOVES!:
 
 Batman{
+	Superball bounce off enemy ONCE! Also cost more meter.
 	Superball stuck in ground at times
 	Add "OUMPH" sound to 5S move
 }
 
 Katana{
-	Nerf 2S and 8S.
+	Make 8L slightly smaller and cancelable.
+	8S = Angled slash downward.
 }
 
 Claws{
-	
+	Hitting your mask should give a HYPERACTIVE burst. 
 }
 
 Baller{
@@ -85,12 +83,16 @@ Baller{
 }
 
 Greatsword{
-	
+	8S should be shockwave.
+	Hitting yourself with pillar should launch you.
+	Wave need gravity.
+	Wave deal no dmg on enemy?
 }
 
 Boomhand{
-	5S hits behind him.
-	Nerf 5S a little... hehe.
+	Make dash not go low.
+	8L = Backflip kick.
+	8S = Uppercut that launch you upward.
 	Make X sound like steam
 }
 
@@ -99,7 +101,9 @@ Bow{
 }
 
 Cultist CHARLOTTE{
-	
+	Make dash go lower.
+	8L: bigger and 3 hits going upward instead.
+	v>S = Fire blast forward pushing you backwards.
 }
 
 NEW
@@ -163,14 +167,13 @@ Big round shield ANDERS{
 	8L. Swing kick below.
 	5S: Swing shield forward giving you forward momentum.
 	2S: Uppercut with shield.
-	8S: Slam downward giving your downward momentum.
+	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
 	
 	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
 	vvL: Put out a circle that turns into shoulder bash when dashed through. (Yellow)
 	vvS: Put out a circle that makes you unstoppable when dashed through. (Pink)
 	
-	v>X: Make ground slippery.
-	vvX: Put out a circle that turns into bubbles when dashed through. (Green)
+	X: Increase your time speed for a short duration.
 	ULTRA: Jump up into the sky and start aiming. Then smash down and deal big damage! Unparryable.
 }
 
@@ -197,6 +200,7 @@ Rat with knife and green tip on tail SIMON{
 	v>L: Teleport behind marked enemy. Cancelable.
 	vvS: Lob a grenade that explode after delay. Hold </> to change trajectory. Hold to lob harder. Cancelable.
 	
-	X: Quick long reaching tail whip.
+	v>X: Quick long reaching tail whip.
+	vvX: Lob grenade that turn into bubbles instead. Keeping them at place for good amount.
 	ULTRA: Charge then go sonic mode into the air. Can slightly control while airborne. Upon landing you can control instantly.
 }

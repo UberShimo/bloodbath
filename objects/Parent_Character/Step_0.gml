@@ -226,7 +226,8 @@ if(action == noone && v_velocity < -jump_power*mini_jump_power && !a_hold){
 	v_velocity = -jump_power*mini_jump_power;
 }
 // Clip through platform when dropping through it
-if(platdrop_pressed && collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Obj_Platform, false, false)){
+if(platdrop_pressed && action == noone
+&& collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Obj_Platform, false, false)){
 	while(collision_rectangle(x-character_width/2, y+character_height/2-1, x+character_width/2, y+character_height/2+1, Obj_Platform, false, false)){
 		y += 1;
 	}
@@ -505,7 +506,8 @@ if(meter_dash_lb_pressed > 0 && meter_dash_rb_pressed > 0
 }
 // Parry / Dash
 // Awful amount of checks just to be able to pay cancels when dashing in air
-if(lb_pressed > 0 && ((action == noone && grounded || (action == "ULTRA" && action_alarm > 0))
+else if(lb_pressed > 0 && !down_hold
+&& ((action == noone && grounded || (action == "ULTRA" && action_alarm > 0))
 || check_for_cancel()
 || (!grounded && cancels > 0 && action == noone))){
 	read_input();

@@ -34,6 +34,7 @@ if(legit_hit_check){
 			}
 			
 			action = "Stunned";
+			is_collidable = false; // For not clipping through wall actually...
 			action_alarm = 0;
 			recover_alarm = other.hit_stun;
 			

@@ -1,4 +1,5 @@
 if(action == noone && grounded){
+	hits = 0;
 	combo_damage = 0;
 }
 
@@ -9,5 +10,6 @@ if(legit_hit_check){
 	eff.number = other.damage;
 	eff.v_velocity = -6;
 
+	hits += 1;
 	combo_damage += other.damage;
 }

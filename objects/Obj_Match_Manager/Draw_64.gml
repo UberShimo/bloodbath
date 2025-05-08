@@ -1,7 +1,4 @@
 if(!global.chaos_mode){
-	p1_ui_hp = 0;
-	p1_ui_meter = 0;
-	p1_ui_hearts = 0;
 	if(instance_exists(players[0])){
 		p1_ui_hp = players[0].HP/players[0].max_HP;
 		p1_ui_meter = players[0].meter/players[0].max_meter;
@@ -21,9 +18,6 @@ if(!global.chaos_mode){
 		draw_sprite_ext(Spr_Heart, 0, x_line-16*ui_pixel_size+32*i*ui_pixel_size*heart_size, 66*ui_pixel_size+corner_offset, ui_pixel_size*heart_size, ui_pixel_size*heart_size, 0, c_white, 1);
 	}
 	
-	p2_ui_hp = 0;
-	p2_ui_meter = 0;
-	p2_ui_hearts = 0;
 	if(instance_exists(players[1])){
 		p2_ui_hp = players[1].HP/players[1].max_HP;
 		p2_ui_meter = players[1].meter/players[1].max_meter;

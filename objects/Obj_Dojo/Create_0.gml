@@ -27,7 +27,7 @@ dash_speed = 12;
 dash_blink = 16;
 dash_duration = 24;
 dash_grip = 1;
-jump_power = 16;
+jump_power = 12;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 0;
@@ -42,9 +42,8 @@ original_weight = weight;
 #endregion
 
 // Dojo specific
-is_doing_F_loop = false;
-is_jumping = false;
-is_dumbly_attacking = false;
+HP = 200;
+max_HP = HP;
 
 action_trigger = function(){
 	// Normal moves

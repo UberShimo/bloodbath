@@ -7,7 +7,7 @@ time_switch_pressed = false;
 reset_positions_pressed = false;
 change_debug_pressed = false;
 
-global.BG_index = 1; // Trainingroom
+global.BG_index = array_length(global.BG_list)-1; // Trainingroom
 play_music(Mu_Tutorial, global.music_volume);
 
 // Methods
@@ -20,17 +20,8 @@ check_for_winner = function(){
 	}
 }
 
-if(global.dojo_level == 1){
-	instance_create_depth(Obj_Blackboard_Position.x, Obj_Blackboard_Position.y, 10, Obj_Move_Tutorial);
-	instance_create_depth(Obj_Blackboard_Position.x+128, Obj_Blackboard_Position.y, depth, Obj_Dojo);
-	global.is_debugging = false;
-}
-else if(global.dojo_level == 2){
-	instance_create_depth(Obj_Blackboard_Position.x, Obj_Blackboard_Position.y, 10, Obj_Special_Moves_Tutorial);
-	instance_create_depth(Obj_Blackboard_Position.x+128, Obj_Blackboard_Position.y, depth, Obj_Dojo);
-	global.is_debugging = false;
-}
-else{
-	dummy = instance_create_depth(Spawner_P2.x, Spawner_P2.y, depth, Obj_Immortal_Dummy);
-	global.is_debugging = true;
-}
+controller_x = 64;
+controller_y = 0;
+
+// Need short delay so stuff can be initiated
+alarm[1] = 2;

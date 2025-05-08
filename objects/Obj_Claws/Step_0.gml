@@ -3,6 +3,10 @@ if(is_hypermode){
 	meter = 0;
 }
 
+if(action == "Dive" && (x_hold || y_hold)){
+	platdrop_hold = true;
+}
+
 event_inherited();
 
 // ACTION!
