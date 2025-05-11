@@ -42,7 +42,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(!grounded && down_forward_pressed){
+		if(!grounded && (down_forward_pressed || down_backward_pressed)){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Fistdive";
 			
 			weight = 0.1;
@@ -64,7 +67,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "BackstepBOOM";
 			
 			h_velocity = -12*image_xscale;
@@ -131,7 +137,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(down_forward_pressed && meter >= 15){
+		else if(meter >= 15 && double_down_pressed){
 			meter -= 15;
 			repeat(8){
 				instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);

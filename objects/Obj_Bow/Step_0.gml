@@ -17,7 +17,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){if(down_forward_pressed && has_boomerang){
+	if(x_pressed){
+		if((down_forward_pressed || down_backward_pressed) && has_boomerang){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Boomerang";
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
@@ -43,7 +47,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Aim Down";
 			hold_arrow = true;
 			aim_dir = -45;
@@ -56,7 +63,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(forward_down_pressed){
+		else if(forward_down_pressed || backward_down_pressed){
+			if(backward_down_pressed){
+				image_xscale *= -1;
+			}
 			action = "Aim Up";
 			hold_arrow = true;
 			aim_dir = 45;
@@ -91,7 +101,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Crosspin";
 			h_velocity = 9*image_xscale;
 			v_velocity = 0;
@@ -136,7 +149,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(down_forward_pressed && meter >= 25 && grounded){
+		else if(meter >= 25 && grounded && (down_forward_pressed || down_backward_pressed)){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "X";
 			meter -= 25;
 			

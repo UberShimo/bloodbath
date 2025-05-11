@@ -16,7 +16,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
@@ -42,7 +45,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Spinhop";
 			
 			h_velocity = 2*image_xscale;
@@ -78,7 +84,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Dropkick";
 			shake_amount = launcher_shake_amount;
 			
@@ -129,7 +138,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(down_forward_pressed && meter >= 25){
+		else if(meter >= 25 && (down_forward_pressed || down_backward_pressed)){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "X";
 			meter -= 25;
 			sprite_index = Spr_Batman_Pitch_startup;

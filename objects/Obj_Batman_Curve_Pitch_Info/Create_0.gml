@@ -11,6 +11,4 @@ image = Spr_Batman_Pitch_recovery;
 extra_image = Spr_Baseball;
 extra_image_x = 32;
 extra_image_y = -32;
-extra_image_color = c_red;
-extra_image_scale = 0.5;
 frame = 0;

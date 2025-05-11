@@ -12,6 +12,5 @@ extra_image = Spr_Baseball;
 extra_image_x = 32;
 extra_image_y = -32;
 extra_image_color = c_lime;
-extra_image_scale = 0.5;
 frame = 0;
 meter_cost = 25;

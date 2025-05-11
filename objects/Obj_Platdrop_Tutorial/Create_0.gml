@@ -1,6 +1,7 @@
 event_inherited();
 
-text = "Drop through platform: DOWN + LB\n\nReach the flag!";
+text = "Fall through platform: DOWN + LB\n\n"+
+"Reach the flag!";
 
 flag = instance_create_depth(Spawner_P8.x, Spawner_P8.y+64, 5, Obj_Flag);
 

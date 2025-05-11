@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Character Select",
-    "path": "folders/Sprites/Character Select.yy",
+    "name": "Portrait Frames",
+    "path": "folders/Sprites/Character Select/Portrait Frames.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

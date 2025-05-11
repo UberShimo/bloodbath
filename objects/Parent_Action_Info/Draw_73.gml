@@ -22,25 +22,23 @@ draw_text(x+32+digit_offset, y+32*2+digit_offset, startup);
 draw_text(x+32*4+digit_offset, y+32*2+digit_offset, recovery);
 draw_text(x+32*4+digit_offset, y+32*3+digit_offset, hit_stun);
 
-if(is_projectile){
-	draw_sprite(Spr_Projectile_Symbol, 0, x+32*10, y+32*3);
-}
 if(!is_parryable){
-	draw_sprite(Spr_Unparryable_Symbol, 0, x+32*11, y+32*3);
+	draw_sprite(Spr_Unparryable_Symbol, 0, x+32*3, y+32*0);
 }
+
 if(is_cancelable){
-	draw_sprite(Spr_Cancelable_Symbol, 0, x+32*12, y+32*3);
+	draw_sprite(Spr_Cancelable_Symbol, 0, x+32*7, y+32*3);
 }
 else if(is_final){
-	draw_sprite(Spr_Final_Symbol, 0, x+32*13, y+32*3);
+	draw_sprite(Spr_Final_Symbol, 0, x+32*7, y+32*3);
 }
-// Not final or cancelable then show combo window
 else{
-	c_window = hit_stun-recovery+global.cancelable_recovery_frames;
-	
-	draw_text(x+32*8+digit_offset, y+32*3+digit_offset, string(c_window));
+	draw_sprite(Spr_HitCancelable_Symbol, 0, x+32*7, y+32*3);
 }
+
 if(meter_cost > 0){
-	draw_text(x+32*14+digit_offset-2, y+32*3+digit_offset, string(meter_cost));
-	draw_sprite(Spr_Metercost_Symbol, 0, x+32*15, y+32*3);
+	meter_image = floor(meter_cost/25);
+	c = c_lime;
+	draw_text_color(x+32*13+digit_offset-10, y+32*3+digit_offset-2, string(meter_cost), c, c, c, c, 1);
+	draw_sprite(Spr_Metercost_Symbol, meter_image, x+32*14, y+32*3);
 }

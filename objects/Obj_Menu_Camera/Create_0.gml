@@ -2,6 +2,7 @@ camera_start_x = camera_get_view_x(view_camera[0]);
 camera_start_y = camera_get_view_y(view_camera[0]);
 shake = 0;
 beat_alarm = 0;
+global.teams_mode = false; // Very inportant to disable teams mode since it creates lots of problems outside chaos mode.
 
 // Shake the main menu
 if(room == Main_Menu && global.do_bounce_thing_in_menu){

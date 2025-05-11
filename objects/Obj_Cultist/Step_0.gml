@@ -70,7 +70,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Star Throw";
 			sprite_index = Spr_Cultist_Starthrow_startup;
 			image_index = 0;
@@ -136,7 +139,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if((down_forward_pressed || down_backward_pressed) && meter >= 35){
+		else if(meter >= 35 && (down_forward_pressed || down_backward_pressed)){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "X";
 			meter -= 35
 			sprite_index = Spr_Cultist_X_startup;

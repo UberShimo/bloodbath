@@ -1,9 +1,4 @@
 TODO{
-	Make all special moves turn aroundable.
-	Remove "Duo_Input" from moves. just have "Spr_DF".
-	REMOVE all shit from the move lists... Just have "hit-cancelable", "cancelable", "non-cancelable" or "unparryable" on moves.
-	Choose stage type in character select.
-	Make Dojo man playable.
 	Make teams a thing? With different outline colors n shit.
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
@@ -76,9 +71,14 @@ Katana{
 
 Claws{
 	Hitting your mask should give a HYPERACTIVE burst. 
+	v>X = Send spikes along ground becoming bigger.
+	vvX = return to afterimage and gain HYPERACTIVITY burst.
+	Remove rollkick.
+	Penguin = v>S instead.
 }
 
 Baller{
+	v>X = Ball jump a little. CAN BE DONE ANYTIME!
 	ULTRA should be smashing a hole in ground that spray meteors instead.
 }
 
@@ -87,6 +87,7 @@ Greatsword{
 	Hitting yourself with pillar should launch you.
 	Wave need gravity.
 	Wave deal no dmg on enemy?
+	Xvv = Spawn pillar that follow closest enemy.
 }
 
 Boomhand{
@@ -150,7 +151,7 @@ Scythe black and white / grey WILLIAM{
 	vvF/L/S: Call down lightning after delay at position.
 	Hitting bird with lightning makes a horizontal splash.
 	
-	X: Pull with scythe that steal enemy HP. You can also hit your bird.
+	v>X: Create slomo field moving forward.
 	ULTRA: 
 }
 
@@ -191,7 +192,7 @@ Rat with knife and green tip on tail SIMON{
 	8L: Slash forward and launch yourself forward.
 	
 	5S: Super strong stab behind.
-	2S: Slash upward and launch yourself forward.
+	2S: Rollkick.
 	8S: Stab slash downward
 	
 	v>F: Throw slightly angled knife that MARKS enemy. (Mark is a cross)
@@ -201,6 +202,6 @@ Rat with knife and green tip on tail SIMON{
 	vvS: Lob a grenade that explode after delay. Hold </> to change trajectory. Hold to lob harder. Cancelable.
 	
 	v>X: Quick long reaching tail whip.
-	vvX: Lob grenade that turn into bubbles instead. Keeping them at place for good amount.
+	vvX: Lob grenade that turn into sparks instead. Keeping them at place for good amount.
 	ULTRA: Charge then go sonic mode into the air. Can slightly control while airborne. Upon landing you can control instantly.
 }

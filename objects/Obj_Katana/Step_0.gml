@@ -47,7 +47,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Quickdraw";
 			sprite_index = Spr_Katana_Quickdraw_startup;
 			image_index = 0;
@@ -87,7 +90,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Sweep";
 			
 			h_velocity += 6*image_xscale;
@@ -126,7 +132,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(down_forward_pressed && meter >= 25){
+		else if(meter >= 25 && (down_forward_pressed || down_backward_pressed)){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "X";
 			meter -= 25;
 			action_alarm = 1;

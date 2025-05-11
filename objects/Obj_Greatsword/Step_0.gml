@@ -21,20 +21,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
 			action = "Earth Start";
 			grip = 0.2;
 			h_velocity = 4*image_xscale;
-			is_parrying = true;
-			shake_amount = 2;
-			sprite_index = Spr_Greatsword_Earth_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_backward_pressed){
-			action = "Earth Start";
-			grip = 0.2;
-			h_velocity = -4*image_xscale;
+			if(down_backward_pressed){
+				h_velocity = -4*image_xscale;
+			}
 			is_parrying = true;
 			shake_amount = 2;
 			sprite_index = Spr_Greatsword_Earth_startup;
@@ -68,7 +61,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Ocean Start";
 			grip = 0.4;
 			h_velocity = 8*image_xscale;
@@ -104,7 +100,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "Sword Dunk";
 			h_velocity = 5*image_xscale;
 			grip = 0.2;
@@ -147,7 +146,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			multi_hit_action_index = 0;
 		}
-		else if(down_forward_pressed){
+		else if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "X";
 			sprite_index = Spr_Greatsword_X_startup;
 			image_index = 0;

@@ -10,7 +10,7 @@ if(l_pressed && !place_meeting(x-move_x_distance, y, Parent_Collision)){
 else if(r_pressed && !place_meeting(x+move_x_distance, y, Parent_Collision)){
 	x += move_x_distance;
 }
-else if(u_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu)){
+else if(u_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
 	if(!place_meeting(x+move_x_distance/2, y-move_y_distance, Parent_Collision)){
 		y -= move_y_distance;
 		x += move_x_distance/2;
@@ -20,7 +20,7 @@ else if(u_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y
 		x -= move_x_distance/2;
 	}
 }
-else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu)){
+else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
 	if(!place_meeting(x-move_x_distance/2, y+move_y_distance, Parent_Collision)){
 		y += move_y_distance;
 		x -= move_x_distance/2;
@@ -49,6 +49,26 @@ if(gamepad_button_check_pressed(controller_index, gp_face2)){
 	}
 }
 
+// Change team
+if(global.teams_mode){
+	if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
+		if(index > 0){
+			index -= 1;
+		}
+		else{
+			index = 7; // 7 is highest index
+		}
+	}
+	else if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
+		if(index < 7){ // 7 is highest index
+			index += 1;
+		}
+		else{
+			index = 0;
+		}
+	}
+}
+
 // Return to Main menu
 if(gamepad_button_check(controller_index, gp_face2)){
 	exit_count += 1;
@@ -63,7 +83,8 @@ else{
 
 // Show move list
 if(gamepad_button_check_pressed(controller_index, gp_face4)
-&& place_meeting(x, y, Parent_Character_Option)){
+&& place_meeting(x, y, Parent_Character_Option)
+&& room == Character_Select_Dojo){
 	option = instance_place(x, y, Parent_Character_Option);
 	global.priority_controller_index = controller_index;
 	room_goto(option.move_list_room);
@@ -89,7 +110,11 @@ if(gamepad_button_check_pressed(controller_index, gp_start)){
 			room_goto(Dojo_Place);
 		}
 		else{
-			room_goto(global.arena);
+			// Random stage
+			if(global.arena_index == 0){
+				global.arena_index = irandom_range(1, array_length(global.arena_list)-1);
+			}
+			room_goto(global.arena_list[global.arena_index]);
 		}
 	}
 }

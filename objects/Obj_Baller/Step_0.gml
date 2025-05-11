@@ -65,12 +65,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			action = "Upswing";
-			is_holding_ball = false;
-			
 			if(down_backward_pressed){
 				image_xscale *= -1;
 			}
+			action = "Upswing";
+			is_holding_ball = false;
 			
 			sprite_index = Spr_Baller_Upswing_startup;
 			image_index = 0;
@@ -173,7 +172,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(down_forward_pressed && meter >= 25 && ball_explosion_cd <= 0){
+		else if(meter >= 25 && double_down_pressed && ball_explosion_cd <= 0){
 			meter -= 25;
 			ball_explosion_cd = ball_explosion_max_cd;
 			

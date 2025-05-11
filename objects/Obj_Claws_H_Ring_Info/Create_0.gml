@@ -1,4 +1,4 @@
-hitbox = Obj_Blank_hitbox;
+hitbox = Obj_Claws_Skyring;
 
 event_inherited();
 

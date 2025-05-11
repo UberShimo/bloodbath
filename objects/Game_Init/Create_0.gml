@@ -5,8 +5,8 @@ global.screen_ratio = 1.78; // 16:9
 global.is_debugging = false;
 global.chaos_mode = false;
 global.dojo_mode = false;
+global.teams_mode = false;
 global.heart_amount = 3;
-global.arena = Arena_Normal;
 global.character_select = Character_Select_1v1;
 global.music_volume = 0.3;
 global.min_players = 2;
@@ -109,6 +109,44 @@ global.wall_images = [
 ]
 global.BG_index = 0;
 global.BG_darkness = 0.5; // % black
+#endregion
+
+#region Arenas
+global.arena_list = [
+	Dojo_Place,
+	Arena_Normal,
+	Arena_Extra_Platform,
+	Arena_Empty,
+	Arena_Small,
+	Arena_Hole,
+	Arena_Edges,
+	Arena_Floors,
+	Arena_Isymetrical_Platforms,
+	Arena_Highground,
+	Arena_Pillar,
+	Arena_Side_Holes,
+	Arena_Platform_Swarm,
+	Arena_Chandelier,
+	Arena_Rooms
+]
+global.arena_images = [
+	Spr_Random_Layout,
+	Spr_Normal_Layout,
+	Spr_Extra_Platform_Layout,
+	Spr_Empty_Layout,
+	Spr_Small_Layout,
+	Spr_Hole_Layout,
+	Spr_Edges_Layout,
+	Spr_Floors_Layout,
+	Spr_Isymettrical_Platforms_Layout,
+	Spr_Highground_Layout,
+	Spr_Pillar_Layout,
+	Spr_Side_Holes_Layout,
+	Spr_Platform_Swarm_Layout,
+	Spr_Chandelier_Layout,
+	Spr_Rooms_Layout
+]
+global.arena_index = 0;
 #endregion
 
 // Methods

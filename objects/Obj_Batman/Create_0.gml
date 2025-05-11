@@ -50,6 +50,8 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_8F_hitbox);
 		attack.initiate(self);
 		
+		v_velocity = -2;
+		
 		sprite_index = Spr_Batman_8F_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
