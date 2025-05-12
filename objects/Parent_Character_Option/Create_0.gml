@@ -20,7 +20,7 @@ clicked = function(clicker){
 			
 			tag = instance_create_depth(clicker.x, clicker.y, depth-1, Obj_Tag);
 			tag.index = clicker.index;
-			tag.color = global.p_colors[clicker.index];
+			tag.color = global.p_colors[clicker.index+global.team_change_value[clicker.index]];
 			clicker.tag = tag;
 			spawn_effect(x+option_width/2, y+option_height/2, 1, Eff_Picker_Rectangle, 1, 0.1, tag.color, 1, 1, 0.5, 0, 0);
 		}

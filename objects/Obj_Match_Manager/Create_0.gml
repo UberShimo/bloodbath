@@ -40,8 +40,19 @@ check_for_winner = function(){
 			}
 		}
 	}
+	// Check for winning team
+	team_win_found = false;
+	if(global.teams_mode){
+		team_win_found = true;
+		index_to_check = players[0].index;
+		for(i = 0; i < player_amount; i++){
+			if(players[i].index != index_to_check){
+				team_win_found = false;
+			}
+		}
+	}
 	// Got a winner!!!
-	if(player_amount == 1){
+	if(player_amount == 1 || team_win_found){
 		// Play winner animation alarm
 		alarm[10] = 60;
 		// Menu alarm

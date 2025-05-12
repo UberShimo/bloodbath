@@ -52,20 +52,24 @@ if(gamepad_button_check_pressed(controller_index, gp_face2)){
 // Change team
 if(global.teams_mode){
 	if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
-		if(index > 0){
-			index -= 1;
+		if(index+team_change > 0){
+			team_change -= 1;
 		}
 		else{
-			index = 7; // 7 is highest index
+			team_change = 7-index; // 7 is highest index
 		}
 	}
 	else if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
-		if(index < 7){ // 7 is highest index
-			index += 1;
+		if(index+team_change < 7){ // 7 is highest index
+			team_change += 1;
 		}
 		else{
-			index = 0;
+			team_change = -index;
 		}
+	}
+	global.team_change_value[index] = team_change;
+	if(instance_exists(tag)){
+		tag.color = global.p_colors[index+team_change];
 	}
 }
 

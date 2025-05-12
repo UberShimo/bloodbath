@@ -4,9 +4,15 @@ activation_timer = 120;
 
 if(global.picked_characters[index] != noone){
 	player = instance_create_depth(x, y, 0, global.picked_characters[index]);
-	player.index = index;
+	player.index = index+global.team_change_value[index];
 	player.controller_index = global.controller_indexes[index];
+	player.player_number = index+1;
 	player.player_color = player_color;
+	
+	if(global.teams_mode){
+		// Convert color to shader format.
+		player.outline_color = [color_get_red(player_color), color_get_green(player_color), color_get_blue(player_color), 1];
+	}
 	
 	player.alarm[1] = activation_timer; // "ACTIVATION" alarm
 	if(global.is_CPU[index] == true){

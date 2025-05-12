@@ -9,6 +9,7 @@ outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 depth = -1;
 
 controller_index = -1;
+player_number = 0; // The number that floats over your head
 is_controllable = false;
 is_respawning = false;
 is_CPU = false;

@@ -18,7 +18,7 @@ shader_reset();
 if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 	// Draw player number
 	c = player_color;
-	draw_text_transformed_color(x-8, y-character_height-32, string(index+1), 2, 2, 0, c, c, c, c, image_alpha);
+	draw_text_transformed_color(x-8, y-character_height-32, string(player_number), 2, 2, 0, c, c, c, c, image_alpha);
 
 	if(draw_mini_ui){
 		hp_bar_x = x-sprite_get_width(Spr_Mini_HP_Bar)/2;
@@ -39,6 +39,7 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 
 // Draw EXITING...
 if(exit_count > 0){
+	c = c_red;
 	a = exit_count/exit_count_goal;
 	draw_text_color(x-32, y-character_height, "EXITING", c, c, c, c, a);
 }

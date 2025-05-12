@@ -41,10 +41,10 @@ global.tall_height = 80;
 global.p_colors[0] = make_color_rgb(255, 0, 0);
 global.p_colors[1] = make_color_rgb(0, 255, 255);
 global.p_colors[2] = make_color_rgb(0, 255, 0);
-global.p_colors[3] = make_color_rgb(255, 0, 255);
-global.p_colors[4] = make_color_rgb(0, 0, 255);
-global.p_colors[5] = make_color_rgb(255, 255, 0);
-global.p_colors[6] = make_color_rgb(255, 102, 0);
+global.p_colors[3] = make_color_rgb(255, 255, 0);
+global.p_colors[4] = make_color_rgb(255, 102, 0);
+global.p_colors[5] = make_color_rgb(255, 0, 255);
+global.p_colors[6] = make_color_rgb(0, 0, 255);
 global.p_colors[7] = make_color_rgb(102, 102, 255);
 #endregion
 
@@ -53,6 +53,7 @@ for(i = 0; i < 8; i++){
 	global.picked_characters[i] = noone;
 	global.controller_indexes[i] = -1;
 	global.is_CPU[i] = false;
+	global.team_change_value[i] = 0;
 }
 
 #region Music list

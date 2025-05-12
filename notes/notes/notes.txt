@@ -1,5 +1,7 @@
 TODO{
-	Make teams a thing? With different outline colors n shit.
+	Tag dissapears when picking for CPU
+	You should not start match with people in same team in teams mode.
+	Change team for CPU otions when in Teams mode
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
