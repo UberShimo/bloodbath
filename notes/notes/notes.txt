@@ -1,11 +1,10 @@
 TODO{
-	Tag dissapears when picking for CPU
-	You should not start match with people in same team in teams mode.
-	Change team for CPU otions when in Teams mode
+	Rename "X" moves
+	Add playtesters
+	Update characters
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
-	Add playtesters
 	Make Diabeto Studios intro
 	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)???
 }
@@ -69,6 +68,7 @@ Batman{
 Katana{
 	Make 8L slightly smaller and cancelable.
 	8S = Angled slash downward.
+	vvX = Spawn clone that you teleport to it and regain cancels after delay.
 }
 
 Claws{
@@ -96,11 +96,14 @@ Boomhand{
 	Make dash not go low.
 	8L = Backflip kick.
 	8S = Uppercut that launch you upward.
+	v>X = Unstoppable elbow strike with great stun.
 	Make X sound like steam
 }
 
 Bow{
 	Make 2S sound like "BOINGGGG"?
+	v>X/>vX = Throw spear that sticks to what it hit and then return after delay leading dmg again. Has gravtity
+	vvX = Frog move
 }
 
 Cultist CHARLOTTE{

@@ -33,10 +33,5 @@ clicked = function(clicker){
 		clicker.connection = noone;
 		clicker.is_picking_for_cpu = false;
 		spawn_effect(x+option_width/2, y+option_height/2, 1, Eff_Picker_Rectangle, 1, 0.1, c_white, 1, 1, 0.5, 0, 0);
-		
-		if(clicker.tag != noone){
-			instance_destroy(clicker.tag);
-			clicker.tag = noone;
-		}
 	}
 }

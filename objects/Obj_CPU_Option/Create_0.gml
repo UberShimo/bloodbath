@@ -4,6 +4,7 @@ option_width = 64;
 option_height = 128;
 
 connection = noone;
+team_change = 0;
 
 clicked = function(clicker){
 	// Unpick character

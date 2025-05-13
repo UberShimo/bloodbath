@@ -7,3 +7,7 @@ if(connection != noone){
 	y_offset = sprite_get_height(sprite_index)/2;
 	draw_line(x+x_offset, y+y_offset, connection.x+x_offset, connection.y+y_offset);
 }
+
+if(global.teams_mode){
+	image_blend = global.p_colors[index+global.team_change_value[index]];
+}

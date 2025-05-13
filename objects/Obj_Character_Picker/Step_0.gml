@@ -51,25 +51,59 @@ if(gamepad_button_check_pressed(controller_index, gp_face2)){
 
 // Change team
 if(global.teams_mode){
+	// -
 	if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
-		if(index+team_change > 0){
-			team_change -= 1;
+		// Change for CPU
+		if(place_meeting(x, y, Obj_CPU_Option)){
+			option = instance_place(x, y, Obj_CPU_Option);
+			if(option.index+option.team_change > 0){
+				option.team_change -= 1;
+			}
+			else{
+				option.team_change = 7-option.index; // 7 is highest index
+			}
+			global.team_change_value[option.index] = option.team_change;
 		}
+		// Change for yourself
 		else{
-			team_change = 7-index; // 7 is highest index
+			if(index+team_change > 0){
+				team_change -= 1;
+			}
+			else{
+				team_change = 7-index; // 7 is highest index
+			}
+			global.team_change_value[index] = team_change;
+			if(instance_exists(tag)){
+				tag.color = global.p_colors[index+team_change];
+			}
 		}
 	}
+	// +
 	else if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
-		if(index+team_change < 7){ // 7 is highest index
-			team_change += 1;
+		// Change for CPU
+		if(place_meeting(x, y, Obj_CPU_Option)){
+			option = instance_place(x, y, Obj_CPU_Option);
+			if(option.index+option.team_change < 7){ // 7 is highest index
+				option.team_change += 1;
+			}
+			else{
+				option.team_change = -option.index;
+			}
+			global.team_change_value[option.index] = option.team_change;
 		}
+		// Change for yourself
 		else{
-			team_change = -index;
+			if(index+team_change < 7){ // 7 is highest index
+				team_change += 1;
+			}
+			else{
+				team_change = -index;
+			}
+			global.team_change_value[index] = team_change;
+			if(instance_exists(tag)){
+				tag.color = global.p_colors[index+team_change];
+			}
 		}
-	}
-	global.team_change_value[index] = team_change;
-	if(instance_exists(tag)){
-		tag.color = global.p_colors[index+team_change];
 	}
 }
 
@@ -107,6 +141,21 @@ if(gamepad_button_check_pressed(controller_index, gp_start)){
 	
 	if(player_count < global.min_players){
 		all_players_ready = false;
+	}
+	
+	// Check if all player are not on same team
+	if(global.teams_mode){
+		found_different_team = false;
+		for(i = 0; i < global.max_players; i++){
+			if(global.picked_characters[i] != noone){
+				if(i+global.team_change_value[i] != index+team_change){ // loop through other index+teamchange and compare it to your own
+					found_different_team = true;
+				}
+			}
+		}
+		if(!found_different_team){
+			all_players_ready = false;
+		}
 	}
 	
 	if(all_players_ready){
