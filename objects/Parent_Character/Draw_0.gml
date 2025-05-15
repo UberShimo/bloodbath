@@ -37,11 +37,17 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 	}
 }
 
-// Draw EXITING...
+// Draw EXIT...
 if(exit_count > 0){
-	c = c_red;
 	a = exit_count/exit_count_goal;
-	draw_text_color(x-32, y-character_height, "EXITING", c, c, c, c, a);
+	c = c_white;
+	// Draw white outline kinda
+	draw_text_color(x+exit_text_x+1, y-character_height+exit_text_y, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x-1, y-character_height+exit_text_y, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x, y-character_height+exit_text_y+1, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x, y-character_height+exit_text_y-1, "EXIT", c, c, c, c, a/2);
+	c = c_red;
+	draw_text_color(x+exit_text_x, y-character_height+exit_text_y, "EXIT", c, c, c, c, a);
 }
 
 // DEBUG

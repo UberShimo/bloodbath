@@ -189,23 +189,6 @@ action_trigger = function(){
 		recover_alarm = dash_duration;
 	}
 	// Meter moves
-	else if(action == "X"){
-			clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-			clone.HP = HP;
-			clone.meter = meter;
-			clone.index = index;
-			clone.hearts = hearts;
-			clone.player_color = player_color;
-			clone.image_xscale = image_xscale;
-			clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
-			clone.action = "Quickdraw";
-			clone.action_alarm = 90;
-			clone.life_span = 0;
-			clone.weight = 0;
-			clone.shake_amount = 2;
-			
-			recover_alarm = 1;
-	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		step_distance = 16;

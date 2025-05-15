@@ -29,6 +29,7 @@ if(is_active){
 	spawn_effect(x, y, 1, Eff_Splash, 0.5, 0.1, c_red, eff_scale, eff_scale);
 }
 
+// Alarms
 if(priority_struck_alarm > 0){
 	priority_struck_alarm -= logic_time;
 	
@@ -36,6 +37,13 @@ if(priority_struck_alarm > 0){
 		priority_struck_alarm = 0;
 		
 		priority_struck = false;
+	}
+}
+if(collision_protection > 0){
+	collision_protection -= logic_time;
+	
+	if(collision_protection <= 0){
+		collision_protection = 0;
 	}
 }
 

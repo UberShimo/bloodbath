@@ -13,4 +13,4 @@ extra_image_x = 24;
 extra_image_y = -32;
 extra_image_color = c_lime;
 frame = 0;
-meter_cost = 25;
+meter_cost = 40;

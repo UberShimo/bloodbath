@@ -9,6 +9,37 @@ if(grounded && lb_pressed > 0 && (action == noone || check_for_cancel())
 event_inherited();
 
 // ACTION!
+
+// Special clone creation
+if(action == noone && meter >= 25 && rb_pressed && (down_forward_pressed || down_backward_pressed || double_down_pressed)){
+	if(down_backward_pressed){
+		image_xscale *= -1;
+	}
+	meter -= 25;
+	
+	clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
+	clone.HP = HP;
+	clone.meter = meter;
+	clone.index = index;
+	clone.hearts = hearts;
+	clone.player_color = player_color;
+	clone.image_xscale = image_xscale;
+	clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
+	clone.action_alarm = 90;
+	clone.life_span = 0;
+	clone.weight = 0;
+	clone.shake_amount = 2;
+	
+	if(double_down_pressed){
+		clone.action = "Teleport Spawner";
+		clone.spawner = self;
+	}
+	else{
+		clone.action = "Quickdraw";
+	}
+	reset_buffers();
+}
+
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
 	
@@ -131,14 +162,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.5;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-		}
-		else if(meter >= 25 && (down_forward_pressed || down_backward_pressed)){
-			if(down_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "X";
-			meter -= 25;
-			action_alarm = 1;
 		}
 	}	
 	reset_buffers();

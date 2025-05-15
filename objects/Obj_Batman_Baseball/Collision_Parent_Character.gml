@@ -1,3 +1,3 @@
-if(other.index != index){
+if(other.index != index && collision_protection <= 0){
 	instance_destroy();
 }

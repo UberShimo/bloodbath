@@ -1,15 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Batman_X_Info",
+  "name": "Obj_Katana_Quickdraw_Clone_Info",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Batman",
-    "path": "folders/Objects/DOJO/Action Infos/Batman.yy",
+    "name": "Katana",
+    "path": "folders/Objects/DOJO/Action Infos/Katana.yy",
   },
   "parentObjectId": {
     "name": "Parent_Action_Info",

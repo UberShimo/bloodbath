@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Batman_Curve_X_Info",
+  "name": "Obj_Batman_2S_lower_hitbox",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Batman",
-    "path": "folders/Objects/DOJO/Action Infos/Batman.yy",
+    "name": "Hitboxes",
+    "path": "folders/Objects/Characters/Batman/Hitboxes.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Action_Info",
-    "path": "objects/Parent_Action_Info/Parent_Action_Info.yy",
+    "name": "Parent_Attack",
+    "path": "objects/Parent_Attack/Parent_Attack.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,9 +31,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Action_Info_Frame",
-    "path": "sprites/Spr_Action_Info_Frame/Spr_Action_Info_Frame.yy",
+    "name": "Spr_Batman_2S_lower_hitbox",
+    "path": "sprites/Spr_Batman_2S_lower_hitbox/Spr_Batman_2S_lower_hitbox.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

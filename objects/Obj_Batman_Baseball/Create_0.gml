@@ -16,6 +16,7 @@ h_spin = 0;
 max_velocity = 16;
 priority_struck = false;
 priority_struck_alarm = 0;
+collision_protection = 10; // 10 frames of cant hit opponent
 
 hitbox_list = ds_list_create();
 

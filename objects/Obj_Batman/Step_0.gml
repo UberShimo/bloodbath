@@ -138,19 +138,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 25 && (down_forward_pressed || down_backward_pressed)){
+		else if(meter >= 40 && (down_forward_pressed || down_backward_pressed)){
 			if(down_backward_pressed){
 				image_xscale *= -1;
 			}
-			action = "X";
-			meter -= 25;
+			action = "Superball";
+			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(double_down_pressed && meter >= 25){
-			action = "Curve X";
-			meter -= 25;
+		else if(double_down_pressed && meter >= 40){
+			action = "Curve Superball";
+			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

@@ -8,6 +8,7 @@ outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 
 depth = -1;
 
+#region Random stuff
 controller_index = -1;
 player_number = 0; // The number that floats over your head
 is_controllable = false;
@@ -17,6 +18,9 @@ exit_count = 0;
 exit_count_goal = 180;
 player_color = c_white;
 draw_mini_ui = global.chaos_mode;
+exit_text_x = -16;
+exit_text_y = 0;
+#endregion
 
 #region Initialize input values / buffers
 buffer_duration = 16;
@@ -125,7 +129,7 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
-#region Stuff
+#region Gameplay related
 action = noone;
 last_action = noone; // Used for checking if cancel is legit
 cancel_effect = noone;

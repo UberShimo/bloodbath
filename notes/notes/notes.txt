@@ -1,4 +1,5 @@
 TODO{
+	Game crash when P2 start Freeform mode alone
 	Rename "X" moves
 	Add playtesters
 	Update characters
@@ -59,16 +60,13 @@ Zoner:		Bow, Mage
 
 MOVES!:
 
-Batman{
-	Superball bounce off enemy ONCE! Also cost more meter.
-	Superball stuck in ground at times
-	Add "OUMPH" sound to 5S move
+Katana{
+	
 }
 
-Katana{
-	Make 8L slightly smaller and cancelable.
-	8S = Angled slash downward.
-	vvX = Spawn clone that you teleport to it and regain cancels after delay.
+Batman{
+	Superball stuck in ground at times
+	Add "OUMPH" sound to 5S move
 }
 
 Claws{

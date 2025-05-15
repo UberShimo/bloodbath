@@ -5,6 +5,7 @@ recovery = generate_sprite_frames(Spr_Batman_Pitch_recovery); // 100% informatio
 
 meter_gain_multiplier = 0;
 projectile_duration = 480; // 8 sec
+has_hit_enemy = false;
 
 image_blend = c_lime;
 

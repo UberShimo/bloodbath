@@ -117,6 +117,8 @@ action_trigger = function(){
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_2S_hitbox);
 		attack.initiate(self);
+		lower = instance_create_depth(x, y, 0, Obj_Batman_2S_lower_hitbox);
+		lower.initiate(self);
 		
 		sprite_index = Spr_Batman_2S_recovery;
 		image_index = 0;
@@ -191,7 +193,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
-	else if(action == "X"){
+	else if(action == "Superball"){
 		ball = instance_create_depth(x+(12*image_xscale), y-6, 0, Obj_Batman_Superball);
 		ball.initiate(self);
 		ball.h_velocity = 1*image_xscale;
@@ -205,7 +207,7 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Curve X"){
+	else if(action == "Curve Superball"){
 		ball = instance_create_depth(x+(12*image_xscale), y-6, 0, Obj_Batman_Superball);
 		ball.initiate(self);
 		ball.h_velocity = 3*image_xscale;

@@ -5,6 +5,8 @@ cpu_index = -1;
 is_picking_for_cpu = false;
 connection = noone; // This is the connection to CPU_Option
 tag = noone;
+exit_text_x = 20;
+exit_text_y = 2;
 exit_count = 0;
 exit_count_goal = 60;
 

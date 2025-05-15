@@ -1,15 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Katana_X_Info",
+  "name": "Obj_Batman_Superball_Info",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Katana",
-    "path": "folders/Objects/DOJO/Action Infos/Katana.yy",
+    "name": "Batman",
+    "path": "folders/Objects/DOJO/Action Infos/Batman.yy",
   },
   "parentObjectId": {
     "name": "Parent_Action_Info",
