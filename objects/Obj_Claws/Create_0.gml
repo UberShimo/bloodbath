@@ -46,6 +46,7 @@ original_weight = weight;
 ring1 = noone;
 ring2 = noone;
 is_hypermode = false;
+hypermode_alarm = 0;
 rewind_list = ds_list_create();
 rewind_length = 120;
 
@@ -240,23 +241,8 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Rollkick"){
-		attack = instance_create_depth(x, y, 0, Obj_Claws_Rollkick_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Claws_Rollkick_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	// Meter moves
-	else if(action == "ULTRA"){
-		shake_amount = 0;
-		
-		sprite_index = stand_spr;
-		image_index = 0;
-		recover_alarm = 1;
-	}
-	else if(action == "X"){
+	else if(action == "Rewind"){
 		action = noone;
 		cancels += 1; // So you can use it even when out of cancels.
 		

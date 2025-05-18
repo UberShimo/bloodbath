@@ -1,5 +1,7 @@
 TODO{
+Dojo man in tutorial is problematic.
 	Game crash when P2 start Freeform mode alone
+	Holding LB to not cancel on platform goes to shit when doing 2F/2L/2S moves.
 	Rename "X" moves
 	Add playtesters
 	Update characters
@@ -60,6 +62,10 @@ Zoner:		Bow, Mage
 
 MOVES!:
 
+Dojo man{
+	
+}
+
 Katana{
 	
 }
@@ -70,11 +76,7 @@ Batman{
 }
 
 Claws{
-	Hitting your mask should give a HYPERACTIVE burst. 
 	v>X = Send spikes along ground becoming bigger.
-	vvX = return to afterimage and gain HYPERACTIVITY burst.
-	Remove rollkick.
-	Penguin = v>S instead.
 }
 
 Baller{
@@ -86,8 +88,9 @@ Greatsword{
 	8S should be shockwave.
 	Hitting yourself with pillar should launch you.
 	Wave need gravity.
-	Wave deal no dmg on enemy?
-	Xvv = Spawn pillar that follow closest enemy.
+	Xvv = Stomp and spawn wave. Wave drags players along it.
+	Ocean S: Upswing into Earth stance.
+	Hitting wave with pillar turns it into bubbles.
 }
 
 Boomhand{
@@ -154,7 +157,8 @@ Scythe black and white / grey WILLIAM{
 	vvF/L/S: Call down lightning after delay at position.
 	Hitting bird with lightning makes a horizontal splash.
 	
-	v>X: Create slomo field moving forward.
+	v>X: Reap that steals HP. Can hit bird.
+	vvX: Create slomo field moving forward.
 	ULTRA: 
 }
 
@@ -195,7 +199,7 @@ Rat with knife and green tip on tail SIMON{
 	8L: Slash forward and launch yourself forward.
 	
 	5S: Super strong stab behind.
-	2S: Rollkick.
+	2S: Slide forward and swing knife upward. Quite small launch. Combos into 5S.
 	8S: Stab slash downward
 	
 	v>F: Throw slightly angled knife that MARKS enemy. (Mark is a cross)

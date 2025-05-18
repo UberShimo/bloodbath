@@ -30,10 +30,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "Spr_Claws_Rollkick_hitbox",
-    "path": "sprites/Spr_Claws_Rollkick_hitbox/Spr_Claws_Rollkick_hitbox.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": false,
 }

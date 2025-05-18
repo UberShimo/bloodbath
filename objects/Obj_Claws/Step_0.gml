@@ -1,6 +1,9 @@
 if(is_hypermode){
-	object_time = 3;
-	meter = 0;
+	object_time = 1.5;
+	if(effect_counter >= 1){
+		afterimage = instance_create_depth(x, y, depth+1, Eff_Afterimage);
+		afterimage.initiate(self, c_lime, 0.5, 0.05);
+	}
 }
 
 if(action == "Dive" && (x_hold || y_hold)){
@@ -10,6 +13,14 @@ if(action == "Dive" && (x_hold || y_hold)){
 event_inherited();
 
 // ACTION!
+if(rb_pressed && half_circle_forward_pressed && meter >= 100){
+	meter -= 100;
+	is_hypermode = true;
+	hypermode_alarm = 300; // 5 sec
+	spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 2);
+	reset_buffers();
+}
+		
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
 	
@@ -29,6 +40,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			x = ring1.x;
 			y = ring1.y;
 			instance_destroy(ring1);
+			spawn_effect(x, y, 6, Eff_Splash, 1, 0.05, c_fuchsia, 1.5, 3, 0);
 			sprite_index = Spr_Claws_Dive_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -69,6 +81,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			x = ring2.x;
 			y = ring2.y;
 			instance_destroy(ring2);
+			spawn_effect(x, y, 6, Eff_Splash, 1, 0.05, c_fuchsia, 1.5, 3, 0);
 			sprite_index = Spr_Claws_Dive_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -82,12 +95,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		else if(double_down_pressed){
 			action = "V Ring Spawn";
 			sprite_index = Spr_Claws_Skyring_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(half_circle_forward_pressed){
-			action = "Penguin";
-			sprite_index = Spr_Claws_Penguin_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -126,10 +133,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			if(down_backward_pressed){
 				image_xscale *= -1;
 			}
-			action = "Rollkick";
-			shake_amount = launcher_shake_amount;
-			h_velocity += 6*image_xscale;
-			sprite_index = Spr_Claws_Rollkick_startup;
+			action = "Penguin";
+			sprite_index = Spr_Claws_Penguin_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -150,25 +155,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(half_circle_forward_pressed && meter >= 100){
-			action = "ULTRA";
-			meter -= 100;
-			shake_amount = 16;
-			global.game_time = 0.5;
-			is_hypermode = true;
-			spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 2);
-			action_alarm = 4;
-			Obj_Match_Manager.global_time_reset_alarm = 300;
-			alarm[10] = 300;
-		}
 		// Quite the check...
-		else if(meter >= 15 && double_down_pressed && ds_list_size(rewind_list) >= rewind_length-1){
-			action = "X";
+		if(meter >= 15 && double_down_pressed && ds_list_size(rewind_list) >= rewind_length-1){
+			action = "Rewind";
 			meter -= 15;
 			
 			sprite_index = Spr_Claws_Teleport_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
+			
+			if(hypermode_alarm < 60){
+				hypermode_alarm = 60;
+				is_hypermode = true;
+			}
 		}
 	}
 	reset_buffers();
@@ -194,4 +193,14 @@ if(effect_counter >= 1){
 	
 	// Add new value at top of list
 	ds_list_add(rewind_list, [x, y, sprite_index, image_index, image_xscale]);
+}
+
+// Hypermode alarm
+if(hypermode_alarm > 0){
+	hypermode_alarm -= global.game_time;
+	
+	if(hypermode_alarm <= 0){
+		is_hypermode = false;
+		object_time = 1;
+	}
 }

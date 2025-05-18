@@ -1,21 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Claws_Skyring",
+  "name": "Obj_Claws_Rewind_Info",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Parent_Attack","path":"objects/Parent_Attack/Parent_Attack.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Claws",
-    "path": "folders/Objects/Characters/Claws.yy",
+    "path": "folders/Objects/DOJO/Action Infos/Claws.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Attack",
-    "path": "objects/Parent_Attack/Parent_Attack.yy",
+    "name": "Parent_Action_Info",
+    "path": "objects/Parent_Action_Info/Parent_Action_Info.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -33,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Claws_Skyring",
-    "path": "sprites/Spr_Claws_Skyring/Spr_Claws_Skyring.yy",
+    "name": "Spr_Action_Info_Frame",
+    "path": "sprites/Spr_Action_Info_Frame/Spr_Action_Info_Frame.yy",
   },
   "spriteMaskId": null,
   "visible": true,

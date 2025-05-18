@@ -1,7 +1,5 @@
 event_inherited();
 
-object_time = 1;
-logic_time = 1;
 fade = 0.02;
 
 // Cancel effect color
@@ -11,6 +9,7 @@ initiate = function(initiator){
 	sprite_index = initiator.sprite_index;
 	image_index = initiator.image_index;
 	image_xscale = initiator.image_xscale;
+	image_yscale = initiator.image_yscale;
 	
 	if(initiator.cancels == initiator.max_cancels){
 		draw_color = c_aqua;

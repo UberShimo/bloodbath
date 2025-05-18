@@ -1,21 +1,21 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Claws_Skyring",
+  "name": "Eff_Afterimage",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Parent_Attack","path":"objects/Parent_Attack/Parent_Attack.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Claws",
-    "path": "folders/Objects/Characters/Claws.yy",
+    "name": "Effects",
+    "path": "folders/Objects/Effects.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Attack",
-    "path": "objects/Parent_Attack/Parent_Attack.yy",
+    "name": "Parent_Effect",
+    "path": "objects/Parent_Effect/Parent_Effect.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,10 +32,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "Spr_Claws_Skyring",
-    "path": "sprites/Spr_Claws_Skyring/Spr_Claws_Skyring.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }
