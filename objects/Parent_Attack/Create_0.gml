@@ -26,7 +26,7 @@ hit_sound = Snd_Hit1;
 meter_gain = 0;
 meter_gain_multiplier = 1; // % based
 weight = 0;
-active_frames = 8;
+active_frames = 8; // Hitbox dissapears after those frames
 projectile_duration = 0; // Projectile dissapears after those frames
 hit_effect_scale = 1;
 hit_effect_time = 1;
@@ -57,6 +57,8 @@ initiate = function(initiator){
 	index = initiator.index;
 	spawner = initiator;
 	image_xscale *= initiator.image_xscale;
+	image_yscale *= initiator.image_yscale;
+	object_time = initiator.object_time;
 	
 	// Is initiated by a character?
 	is_initiated_by_character = object_is_ancestor(initiator.object_index, Parent_Character);
@@ -71,7 +73,7 @@ initiate = function(initiator){
 		if(is_final){
 			initiator.cancels = 0;
 			// Cancel eff
-			eff = instance_create_depth(x, y, 1, Eff_Cancel);
+			eff = instance_create_depth(initiator.x, initiator.y, 1, Eff_Cancel);
 			eff.initiate(initiator);
 		}
 	}
@@ -84,7 +86,7 @@ initiate = function(initiator){
 	
 	if(effect != Nothing){
 		eff = instance_create_depth(x, y, depth, effect);
-		eff.image_xscale = image_xscale;
+		eff.initiate(self);
 	}
 	
 	audio_play_sound(swing_sound, 0, false);

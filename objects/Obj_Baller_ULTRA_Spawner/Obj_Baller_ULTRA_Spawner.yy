@@ -31,7 +31,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "Spr_Cog",
+    "path": "sprites/Spr_Cog/Spr_Cog.yy",
+  },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

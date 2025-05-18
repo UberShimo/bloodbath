@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Spr_Katana_Headsplitter_hitbox",
-  "bbox_bottom": 124,
+  "bbox_bottom": 110,
   "bbox_left": 97,
   "bbox_right": 165,
   "bbox_top": 32,

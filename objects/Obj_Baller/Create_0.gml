@@ -45,7 +45,7 @@ original_weight = weight;
 // Baller related
 is_holding_ball = true;
 ball = instance_create_depth(x, y, depth-1, Obj_Baller_Ball);
-ball.spawner = self;
+ball.initiate(self);
 ball_explosion_max_cd = 90;
 ball_explosion_cd = ball_explosion_max_cd;
 ball_line_color = make_color_rgb(200, 180, 150);
@@ -194,13 +194,23 @@ action_trigger = function(){
 		image_index = 0;
 	}
 	// Meter moves
+	else if(action == "Charge Ball"){
+		ball_explosion_cd = ball_explosion_max_cd;
+			
+		obj = instance_create_depth(0, 0, ball.depth-1, Obj_Ball_Exploder);
+		obj.index = index;
+		obj.ball = ball;
+		
+		sprite_index = Spr_Baller_Charging_Ball_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "ULTRA"){
 		meter -= 50;
-		ult = instance_create_depth(0, 0, 0, Obj_Baller_ULTRA_Spawner);
+		
+		ult = instance_create_depth(x+12*image_xscale, y+32, 0, Obj_Baller_ULTRA_Spawner);
 		ult.spawner = self;
-		
-		shake_amount = 0;
-		
+			
 		sprite_index = Spr_Baller_ULTRA_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);

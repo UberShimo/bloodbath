@@ -13,6 +13,19 @@ else{
 }
 
 // ACTION!
+// Many checks...
+if(rb_pressed && meter >= 10 && !half_circle_forward_pressed && (down_forward_pressed || down_backward_pressed) && action != "Balldash" && !ball.is_returning){
+	meter -= 10;
+	is_holding_ball = false;
+	ball.h_velocity = 3*image_xscale;
+	if(down_backward_pressed){
+		ball.h_velocity *= -1;
+	}
+	ball.v_velocity = -6;
+	spawn_effect(ball.x, ball.y, 1, Eff_Ring, 1, 0.1, c_lime, 0.5, 0.5, 0.1);
+	reset_buffers();
+}
+
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
 	
@@ -173,11 +186,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(meter >= 25 && double_down_pressed && ball_explosion_cd <= 0){
+			action = "Charge Ball";
 			meter -= 25;
-			ball_explosion_cd = ball_explosion_max_cd;
 			
-			obj = instance_create_depth(0, 0, ball.depth-1, Obj_Ball_Exploder);
-			obj.ball = ball;
+			sprite_index = Spr_Baller_Charging_Ball_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
 	reset_buffers();

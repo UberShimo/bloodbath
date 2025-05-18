@@ -16,22 +16,19 @@ is_parryable = false;
 swing_sound = Snd_NOTHING;
 collision_check_with_distance = true;
 collision_check_distance = 16;
-
-h_velocity = random_range(-8, 8);
-v_velocity = 12;
+projectile_duration = 180; // 3 sec
+weight = 0.3;
 
 image_angle = point_direction(0, 0, h_velocity, v_velocity);
 
 collide = function(){
-	spawn_effect(x, y, 6, Eff_Splash, 1, 0.1, c_lime, 1, 2);
-	instance_destroy();
-}
-
-// Special initiate cuz image_xscale gets fukt up
-
-initiate = function(initiator){
-	index = initiator.index;
-	spawner = initiator;
-	
-	audio_play_sound(swing_sound, 0, false);
+	// Bounce
+	if(position_meeting(x+h_velocity, y, Parent_Collision)){
+		h_velocity *= -0.8;
+		x += h_velocity;
+	}
+	if(position_meeting(x, y+v_velocity, Parent_Collision)){
+		v_velocity *= -0.8;
+		y += v_velocity;
+	}
 }

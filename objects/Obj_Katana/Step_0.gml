@@ -11,7 +11,7 @@ event_inherited();
 // ACTION!
 
 // Special clone creation
-if(action == noone && meter >= 25 && rb_pressed && (down_forward_pressed || down_backward_pressed || double_down_pressed)){
+if(action == noone && meter >= 25 && rb_pressed && !half_circle_forward_pressed && (down_forward_pressed || down_backward_pressed || double_down_pressed)){
 	if(down_backward_pressed){
 		image_xscale *= -1;
 	}

@@ -1,10 +1,11 @@
 TODO{
-Dojo man in tutorial is problematic.
+	Dojo man in tutorial is problematic.
 	Game crash when P2 start Freeform mode alone
 	Holding LB to not cancel on platform goes to shit when doing 2F/2L/2S moves.
 	Rename "X" moves
 	Add playtesters
 	Update characters
+	Hit_effects are not time relative (not child of Parent_Time))
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
@@ -16,6 +17,7 @@ SLOGANS for trailer n stuff
 [	FAST	FREEFORM	FUN		INTENSE		UNIQUE	PLAY HOW THE **** YOU WANT		GAMEPLAY	]
 
 Debug tips:
+"index" actually means "team" in most cases....
 Is hitbox mask same as sprite?
 Is hitbox collision Automatic per Frame?
 Is hurtbox collision Manual per Frame?
@@ -76,20 +78,20 @@ Batman{
 }
 
 Claws{
-	v>X = Send spikes along ground becoming bigger.
+	
 }
 
 Baller{
-	v>X = Ball jump a little. CAN BE DONE ANYTIME!
-	ULTRA should be smashing a hole in ground that spray meteors instead.
+	
 }
 
 Greatsword{
+	UPDATE Pose 2 FFS
 	8S should be shockwave.
 	Hitting yourself with pillar should launch you.
 	Wave need gravity.
 	Xvv = Stomp and spawn wave. Wave drags players along it.
-	Ocean S: Upswing into Earth stance.
+	Ocean S: Slooow Upswing into Earth stance that regain cancels.
 	Hitting wave with pillar turns it into bubbles.
 }
 

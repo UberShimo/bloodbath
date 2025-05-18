@@ -13,7 +13,7 @@ if(general_velocity > 7 && cant_hurt_alarm <= 0){
 	if(existing_hitbox == noone){
 		existing_hitbox = instance_create_depth(x, y, depth, Obj_Baller_Ball_hitbox);
 		existing_hitbox.ball = self;
-		existing_hitbox.initiate(spawner); // Its not this ball that initiate the hitbox ok?
+		existing_hitbox.initiate(spawner);
 	}
 	// Make proper stats
 	existing_hitbox.hit_push = abs(h_velocity/2);

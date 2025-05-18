@@ -2,9 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "Obj_Cultist_Circle_Implosion_hit_eff",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
-  ],
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -12,8 +10,8 @@
     "path": "folders/Objects/Characters/Cultist/Hitboxes.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Time",
-    "path": "objects/Parent_Time/Parent_Time.yy",
+    "name": "Parent_Hit_Effect",
+    "path": "objects/Parent_Hit_Effect/Parent_Hit_Effect.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

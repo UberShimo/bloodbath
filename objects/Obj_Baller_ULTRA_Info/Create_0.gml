@@ -4,9 +4,9 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "ARMAGEDDON!!!\nDash to cancel ULTRA.";
+info = "Smash a hole in the ground\nthat spawns meteors!\nDash to cancel ULTRA.";
 movement_input = Spr_BDF;
 button_input = Spr_M;
-image = Spr_Baller_ULTRA_startup;
+image = Spr_Baller_ULTRA_recovery;
 frame = 0;
 meter_cost = 100;

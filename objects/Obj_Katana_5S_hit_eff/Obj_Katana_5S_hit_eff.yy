@@ -2,16 +2,17 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "Obj_Katana_5S_hit_eff",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
-  ],
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Hitboxes",
     "path": "folders/Objects/Characters/Katana/Hitboxes.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Parent_Hit_Effect",
+    "path": "objects/Parent_Hit_Effect/Parent_Hit_Effect.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

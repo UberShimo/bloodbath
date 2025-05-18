@@ -242,6 +242,14 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
+	else if(action == "Spikerise"){
+		attack = instance_create_depth(x+24*image_xscale, y+character_height/2*image_yscale, 0, Obj_Claws_Spike_Spawner);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Claws_Spikerise_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "Rewind"){
 		action = noone;
 		cancels += 1; // So you can use it even when out of cancels.
