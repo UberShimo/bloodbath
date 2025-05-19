@@ -171,6 +171,7 @@ action_trigger = function(){
 		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 		clone.initiate(self);
 		// Give clone your stats
+		clone.outline_color = outline_color;
 		clone.grip = grip;
 		clone.dash_speed = dash_speed;
 		clone.dash_blink = dash_blink;

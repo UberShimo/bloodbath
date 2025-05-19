@@ -1,7 +1,6 @@
 event_inherited();
 
-index = -1;
-spawner = noone;
+is_active = false;
 duration = 600; // 10 sec
 
 h_velocity = 0;

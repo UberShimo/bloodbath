@@ -252,7 +252,6 @@ action_trigger = function(){
 	}
 	else if(action == "Rewind"){
 		action = noone;
-		cancels += 1; // So you can use it even when out of cancels.
 		
 		eff = instance_create_depth(x, y, depth, Eff_Claws_Teleport);
 		eff.image_xscale = image_xscale;

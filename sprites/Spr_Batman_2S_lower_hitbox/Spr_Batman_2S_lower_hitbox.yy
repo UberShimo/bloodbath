@@ -4,7 +4,7 @@
   "name": "Spr_Batman_2S_lower_hitbox",
   "bbox_bottom": 96,
   "bbox_left": 37,
-  "bbox_right": 111,
+  "bbox_right": 88,
   "bbox_top": 76,
   "bboxMode": 0,
   "collisionKind": 4,

@@ -8,7 +8,7 @@ hit_stun = 28;
 hit_push = 12;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
-h_launch = 1;
+h_launch = 2;
 v_launch = -13;
 
 is_launcher = true;

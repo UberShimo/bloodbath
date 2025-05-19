@@ -4,6 +4,7 @@ if(grounded && lb_pressed > 0 && (action == noone || check_for_cancel())
 && (forward_hold || backward_hold)){
 	clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 	clone.initiate(self);
+	clone.outline_color = outline_color;
 }
 
 event_inherited();
@@ -23,6 +24,7 @@ if(action == noone && meter >= 25 && rb_pressed && !half_circle_forward_pressed 
 	clone.index = index;
 	clone.hearts = hearts;
 	clone.player_color = player_color;
+	clone.outline_color = outline_color;
 	clone.image_xscale = image_xscale;
 	clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
 	clone.action_alarm = 90;

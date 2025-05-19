@@ -13,8 +13,8 @@
     "path": "folders/Objects/Characters/Greatsword.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Time",
-    "path": "objects/Parent_Time/Parent_Time.yy",
+    "name": "Parent_Attack",
+    "path": "objects/Parent_Attack/Parent_Attack.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

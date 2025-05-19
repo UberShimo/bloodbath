@@ -1,11 +1,10 @@
 TODO{
 	Dojo man in tutorial is problematic.
 	Game crash when P2 start Freeform mode alone
-	Holding LB to not cancel on platform goes to shit when doing 2F/2L/2S moves.
 	Rename "X" moves
 	Add playtesters
 	Update characters
-	Hit_effects are not time relative (not child of Parent_Time))
+	Game freezez close to walls at times.
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
@@ -65,7 +64,7 @@ Zoner:		Bow, Mage
 MOVES!:
 
 Dojo man{
-	
+	Give a special move and an ULTRA move.
 }
 
 Katana{
@@ -73,7 +72,6 @@ Katana{
 }
 
 Batman{
-	Superball stuck in ground at times
 	Add "OUMPH" sound to 5S move
 }
 
@@ -86,7 +84,7 @@ Baller{
 }
 
 Greatsword{
-	UPDATE Pose 2 FFS
+	UPDATE Pose 2 FFS (Make him hump the sword)
 	8S should be shockwave.
 	Hitting yourself with pillar should launch you.
 	Wave need gravity.

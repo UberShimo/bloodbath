@@ -35,6 +35,10 @@ for(i = 0; i < array_length(characters); i++){
 
 // Adjust camera width... In a very smooth way!
 target_size = biggest_x+extra_screen_size - (smallest_x-extra_screen_size);
+// Use vertical camera adjustment?
+if((biggest_y+extra_screen_size - (smallest_y-extra_screen_size)) * global.screen_ratio > target_size){
+	target_size = (biggest_y+extra_screen_size - (smallest_y-extra_screen_size)) * global.screen_ratio;
+}
 if(target_size < min_screen_size){
 	target_size = min_screen_size;
 }

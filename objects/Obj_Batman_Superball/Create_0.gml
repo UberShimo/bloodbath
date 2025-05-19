@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Batman_Pitch_startup); // 100% informationa
 recovery = generate_sprite_frames(Spr_Batman_Pitch_recovery); // 100% informational not used in logic
 
 meter_gain_multiplier = 0;
-projectile_duration = 480; // 8 sec
+projectile_duration = 360; // 6 sec
 has_hit_enemy = false;
 
 image_blend = c_lime;

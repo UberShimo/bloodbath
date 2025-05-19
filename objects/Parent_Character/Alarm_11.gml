@@ -14,6 +14,14 @@ if(is_controllable){
 	else{
 		image_xscale = 1;
 	}
+	
+	if(place_meeting(x, y+2, Obj_Platform) && irandom_range(1, 2) == 1){
+		platdrop_pressed = true; // No buffer duration here
+		platdrop_hold = true;
+	}
+	else{
+		platdrop_hold = false;
+	}
 
 	if(irandom_range(1, 100) <= 50){ // 50% for movement
 		rng = irandom_range(1, 4);

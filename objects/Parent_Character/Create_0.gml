@@ -45,7 +45,6 @@ rb_pressed = 0;
 rb_hold = false;
 lb_pressed = 0;
 lb_hold = false;
-faceback_hold = false;
 start_hold = false;
 rs_up = false;
 rs_down = false;
@@ -62,6 +61,8 @@ meter_dash_lb_pressed = 0;
 meter_dash_rb_pressed = 0;
 platdrop_pressed = false;
 platdrop_hold = false;
+faceback_hold = false;
+cancel_prevent_hold = false;
 #endregion
 
 #region Sprites
@@ -146,6 +147,7 @@ grounded = true;
 priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in alarm[9]
 is_in_wall = false;
 colliding_wall = noone;
+character_push_away_amount = 8;
 #endregion
 
 #region Alarms
@@ -285,7 +287,10 @@ read_input = function(){
 	|| gamepad_axis_value(controller_index, gp_axislv) < -0.5;
 	
 	// Faceback hold
-	faceback_hold = gamepad_button_check(controller_index, gp_shoulderrb) || gamepad_button_check(controller_index, gp_shoulderlb);
+	faceback_hold = gamepad_button_check(controller_index, gp_shoulderlb);
+	
+	// Cancel prevent hold 
+	cancel_prevent_hold = gamepad_button_check(controller_index, gp_shoulderrb);
 	
 	// Start
 	start_hold = gamepad_button_check(controller_index, gp_start);
@@ -324,7 +329,7 @@ read_input = function(){
 	}
 	lb_hold = gamepad_button_check(controller_index, gp_shoulderl);
 	
-	// Platdrop
+	// Platdrop (this is one special since it doesnt use the buffer_duration)
 	if(down_hold && gamepad_button_check_pressed(controller_index, gp_shoulderl)){
 		platdrop_pressed = true;
 	}
@@ -392,7 +397,7 @@ action_button_pressed = function(){
 }
 
 check_for_cancel = function(){
-	if(can_cancel && cancels > 0 && recover_alarm < cancelable_recovery_frames && action != "Stunned" && !lb_hold){
+	if(can_cancel && cancels > 0 && recover_alarm < cancelable_recovery_frames && action != "Stunned" && !cancel_prevent_hold){
 		doing_action_by_canceling = true;
 		return true;
 	}

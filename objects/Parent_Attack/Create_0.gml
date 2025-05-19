@@ -2,6 +2,9 @@ event_inherited();
 
 //Outline shader stuff
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
+outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
+
+outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 
 spawner = noone;
 spawner_action = noone;
@@ -59,6 +62,7 @@ initiate = function(initiator){
 	image_xscale *= initiator.image_xscale;
 	image_yscale *= initiator.image_yscale;
 	object_time = initiator.object_time;
+	outline_color = initiator.outline_color;
 	
 	// Is initiated by a character?
 	is_initiated_by_character = object_is_ancestor(initiator.object_index, Parent_Character);

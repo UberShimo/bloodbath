@@ -14,3 +14,4 @@ v_launch = -4;
 is_priority = true;
 active_frames = 4;
 is_sticky = true;
+is_launcher = true;
