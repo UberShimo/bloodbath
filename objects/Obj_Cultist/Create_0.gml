@@ -194,11 +194,13 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	// This one uses hit_effect in very special way.
 	else if(action == "Circle Pullback"){
 		if(circle != noone){
 			attack = instance_create_depth(circle.x, circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
 			attack.initiate(self);
 			eff = instance_create_depth(circle.x, circle.y, depth-1, Obj_Cultist_Circle_Pullback_hit_eff);
+			eff.initiate(self);
 			scale = point_distance(x, y, circle.x, circle.y)/sprite_get_width(Spr_Cultist_Circle_Pullback_hitbox);
 			dir = point_direction(circle.x, circle.y, x, y);
 			instance_destroy(circle);
@@ -214,6 +216,7 @@ action_trigger = function(){
 			attack = instance_create_depth(meter_circle.x, meter_circle.y, 0, Obj_Cultist_Circle_Pullback_hitbox);
 			attack.initiate(self);
 			eff = instance_create_depth(meter_circle.x, meter_circle.y, depth-1, Obj_Cultist_Circle_Pullback_hit_eff);
+			eff.initiate(self);
 			scale = point_distance(x, y, meter_circle.x, meter_circle.y)/sprite_get_width(Spr_Cultist_Circle_Pullback_hitbox);
 			dir = point_direction(meter_circle.x, meter_circle.y, x, y);
 			instance_destroy(meter_circle);

@@ -129,11 +129,17 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	
-	// NOTHING HERE
-	
+	else if(action == "Special Move!"){
+		attack = instance_create_depth(x, y, 0, Obj_Bow_Arrow);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Batman_Pitch_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	// Meter moves
 	else if(action == "ULTRA"){
+		meter -= 50;
 		attack = instance_create_depth(x, y, 0, Obj_Batman_ULTRA_hitbox);
 		attack.initiate(self);
 		

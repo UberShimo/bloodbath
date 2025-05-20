@@ -52,7 +52,17 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
+			action = "Special Move!";
+			
+			sprite_index = Spr_Katana_Sweep_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Batman_8S_startup;
 			image_index = 0;
@@ -74,7 +84,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	else if(rb_pressed){
 		if(half_circle_forward_pressed && meter >= 100){
 			action = "ULTRA";
-			meter -= 100;
+			meter -= 50;
 			sprite_index = Spr_Batman_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;

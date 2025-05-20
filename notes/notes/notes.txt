@@ -1,9 +1,9 @@
 TODO{
-	Dojo man in tutorial is problematic.
 	Game crash when P2 start Freeform mode alone
 	Rename "X" moves
 	Add playtesters
 	Update characters
+	UPDATE CPU BEHAIVOUR
 	Game freezez close to walls at times.
 	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
@@ -105,12 +105,15 @@ Bow{
 	Make 2S sound like "BOINGGGG"?
 	v>X/>vX = Throw spear that sticks to what it hit and then return after delay leading dmg again. Has gravtity
 	vvX = Frog move
+	Boomerang stays forever if spawner dies.
 }
 
 Cultist CHARLOTTE{
+	Cant shoot star.
 	Make dash go lower.
 	8L: bigger and 3 hits going upward instead.
 	v>S = Fire blast forward pushing you backwards.
+	ULTRA shows wrong number over head.
 }
 
 NEW

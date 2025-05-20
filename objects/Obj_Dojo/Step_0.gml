@@ -17,16 +17,39 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		action_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(y_pressed){
-		action = "L";
-		sprite_index = Spr_Dojo_L_startup;
-		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
+			action = "Projectile";
+			sprite_index = Spr_Dojo_Stab_Projectile_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			action = "L";
+			sprite_index = Spr_Dojo_L_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
 	}
 	else if(b_pressed){
 		action = "S";
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(rb_pressed){
+		if(half_circle_forward_pressed && meter >= 100){
+			action = "ULTRA";
+			meter -= 50;
+			sprite_index = Spr_Dojo_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			multi_hit_action_index = 0;
+		}
 	}
 	reset_buffers();
 	
@@ -40,4 +63,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
+}
+
+// ULTRA movement
+if(action == "ULTRA"){
+	if(forward_hold){
+		h_velocity = max_speed*image_xscale;
+	}
+	else if(backward_hold){
+		h_velocity = -max_speed*image_xscale;
+	}
+	if(up_hold){
+		v_velocity = -max_speed;
+	}
+	else if(down_hold){
+		v_velocity = max_speed;
+	}
 }

@@ -9,7 +9,13 @@ bonus_text = "";
 button_spr = Spr_F;
 input_spr = Spr_DF;
 
-if(Obj_Dojo_Manager.student.object_index == Obj_Batman){
+if(Obj_Dojo_Manager.student.object_index == Obj_Dojo){
+	bonus_text = "Down > Forward > B\nTo fire projectile!";
+	button_spr = Spr_L;
+	input_spr = Spr_DF;
+	sprite_index = Spr_Special_DF_Y_Control;
+}
+else if(Obj_Dojo_Manager.student.object_index == Obj_Batman){
 	bonus_text = "Down > Forward > B\nTo Dropkick!";
 	button_spr = Spr_S;
 	input_spr = Spr_DF;

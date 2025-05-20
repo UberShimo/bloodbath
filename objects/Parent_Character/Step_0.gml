@@ -45,6 +45,7 @@ if(recover_alarm > 0){
 	if(recover_alarm <= 0){
 		sprite_index = stand_spr;
 		recover_alarm = 0;
+		action_alarm = 0;
 		action = noone;
 		is_unstoppable = false;
 		

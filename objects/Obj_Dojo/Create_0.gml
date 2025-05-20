@@ -46,6 +46,8 @@ HP = 200;
 max_HP = HP;
 
 action_trigger = function(){
+	shake_amount = 0;
+	
 	// Normal moves
 	if(action == "F"){
 		attack = instance_create_depth(x, y, 0, Obj_Dojo_F_hitbox);
@@ -70,6 +72,38 @@ action_trigger = function(){
 		sprite_index = Spr_Dojo_S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	// Special moves
+	else if(action == "Projectile"){
+		hitbox = instance_create_depth(x, y, 0, Obj_Dojo_Stab_Projectile_hitbox);
+		hitbox.initiate(self);
+		projectile = instance_create_depth(x+8*image_xscale, y-6, 0, Obj_Dojo_Projectile);
+		projectile.initiate(self);
+		projectile.h_velocity = 5*image_xscale;
+		
+		sprite_index = Spr_Dojo_Stab_Projectile_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	// Meter moves
+	else if(action == "ULTRA"){
+		if(multi_hit_action_index == 0){
+			meter -= 50;
+			attack = instance_create_depth(x, y, 0, Obj_Dojo_ULTRA_hitbox);
+			attack.initiate(self);
+		
+			sprite_index = Spr_Dojo_ULTRA_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index)*4;
+			action_alarm = 8;
+			multi_hit_action_index += 1;
+		}
+		else{
+			attack = instance_create_depth(x, y, 0, Obj_Dojo_ULTRA_hitbox);
+			attack.initiate(self);
+			action_alarm = 8;
+			multi_hit_action_index += 1;
+		}
 	}
 	else{
 		action = noone;
