@@ -2,6 +2,10 @@
 if(action == "ULTRA" || action == "More Smash"){
 	object_time = 1+0.3*multi_hit_action_index;
 }
+// Fix some wierd startup canceling on stance moves
+if(action == "Earth Start" || action == "Ocean Start"){
+	can_cancel = false; 
+}
 
 event_inherited();
 
@@ -150,8 +154,15 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			if(down_backward_pressed){
 				image_xscale *= -1;
 			}
-			action = "X";
-			sprite_index = Spr_Greatsword_X_startup;
+			action = "Grab";
+			sprite_index = Spr_Greatsword_Grab_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed && grounded && meter >= 20){
+			meter -= 20;
+			action = "Wavekick";
+			sprite_index = Spr_Greatsword_Wavekick_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -219,14 +230,3 @@ else if(action == "Ocean"){
 	reset_buffers();
 }
 
-// Movement during Ocean F
-if(action == "Ocean F" && recover_alarm > 16){
-	h_velocity = 0;
-	
-	if(forward_hold){
-		h_velocity = 3*image_xscale*logic_time;
-	}
-	else if(backward_hold){
-		h_velocity = -3*image_xscale*logic_time;
-	}
-}

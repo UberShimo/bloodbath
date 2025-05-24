@@ -29,6 +29,14 @@ if(jump_alarm > 0){
 	}
 }
 
+if(mini_jump_disabled_alarm > 0){
+	mini_jump_disabled_alarm -= logic_time;
+	
+	if(mini_jump_disabled_alarm <= 0){
+		mini_jump_disabled = false;
+	}
+}
+
 // Parry duration count down in real time
 if(parry_alarm > 0){
 	parry_alarm -= 1;
@@ -223,7 +231,7 @@ else if(a_pressed && extra_jumps_left > 0 && check_for_cancel()){
 	doing_action_by_canceling = false;
 }
 // Short jump
-if(action == noone && v_velocity < -jump_power*mini_jump_power && !a_hold){
+if(action == noone && !mini_jump_disabled && v_velocity < -jump_power*mini_jump_power && !a_hold){
 	v_velocity = -jump_power*mini_jump_power;
 }
 // Clip through platform when dropping through it

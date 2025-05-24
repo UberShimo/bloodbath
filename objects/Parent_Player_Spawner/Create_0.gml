@@ -24,9 +24,4 @@ if(global.picked_characters[index] != noone){
 		Obj_Match_Manager.players[Obj_Match_Manager.player_amount] = player;
 		Obj_Match_Manager.player_amount += 1;
 	}
-	
-	// Put P1 as student for Dojo Manager
-	if(index == 0 && instance_exists(Obj_Dojo_Manager)){
-		Obj_Dojo_Manager.student = player;
-	}
 }

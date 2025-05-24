@@ -1,5 +1,4 @@
 TODO{
-	Game crash when P2 start Freeform mode alone
 	Rename "X" moves
 	Add playtesters
 	Update characters
@@ -84,13 +83,7 @@ Baller{
 }
 
 Greatsword{
-	UPDATE Pose 2 FFS (Make him hump the sword)
-	8S should be shockwave.
-	Hitting yourself with pillar should launch you.
-	Wave need gravity.
-	Xvv = Stomp and spawn wave. Wave drags players along it.
-	Ocean S: Slooow Upswing into Earth stance that regain cancels.
-	Hitting wave with pillar turns it into bubbles.
+	
 }
 
 Boomhand{
@@ -175,7 +168,7 @@ Big round shield ANDERS{
 	8F: Try grabbing above and then throw them down.
 	5L: Karate high kick.
 	2L: Heel kick downward.
-	8L. Swing kick below.
+	8L. Cycle kick below. Hold to push yourself upward.
 	5S: Swing shield forward giving you forward momentum.
 	2S: Uppercut with shield.
 	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.

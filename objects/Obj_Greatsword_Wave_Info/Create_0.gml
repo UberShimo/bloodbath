@@ -1,11 +1,13 @@
-hitbox = Obj_Greatsword_Splash_hitbox;
+hitbox = Obj_Greatsword_Wave;
 
 event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "WAVE can be hit to regain cancels\nand slightly heal. Hitting it with\nPILLAR turns it into a BUBBLE.";
-movement_input = Spr_EMPTY;
-button_input = Spr_EMPTY;
-image = Spr_Greatsword_Wave;
-frame = 0;
+info = "Spawn a WAVE that drags players.\nHitting it with PILLAR\nturns it into a bubbles!";
+movement_input = Spr_DD;
+button_input = Spr_M;
+image = Spr_Greatsword_Wavekick_startup;
+frame = 2;
+
+meter_cost = 20;

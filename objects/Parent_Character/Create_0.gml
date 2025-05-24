@@ -148,6 +148,7 @@ priority_struck = false; // When you get hit by a priority hitbox. Sweetspots us
 is_in_wall = false;
 colliding_wall = noone;
 character_push_away_amount = 8;
+mini_jump_disabled = false; // Used so characters can properly get launched into air without losing v_velocity
 #endregion
 
 #region Alarms
@@ -160,6 +161,7 @@ respawn_alarm = 0;
 invincibility_alarm = 0;
 death_alarm = 0;
 priority_struck_alarm = 0;
+mini_jump_disabled_alarm = 0;
 #endregion
 
 // Methods

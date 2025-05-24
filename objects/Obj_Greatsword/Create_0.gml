@@ -28,7 +28,7 @@ dash_speed = 8;
 dash_blink = 0;
 dash_duration = 24;
 dash_grip = 0.3;
-jump_power = 13;
+jump_power = 12;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
@@ -125,7 +125,7 @@ action_trigger = function(){
 	// Special moves
 	else if(action == "Stomp"){
 		pillar = instance_create_depth(x, y, depth+1, Obj_Greatsword_Pillar);
-		pillar.index = index;
+		pillar.initiate(self);
 		pillar.image_xscale = -image_xscale;
 		pillar.x += pillar_distance*image_xscale;
 		pillar.snap_to_ground(pillar.sprite_height/2);
@@ -169,26 +169,28 @@ action_trigger = function(){
 	}
 	// Ughhhhh stance actions...
 	else if(action == "Earth F"){
+		blink_h(8*image_xscale, false);
+		
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Earth_F_hitbox);
 		attack.initiate(self);
-		
-		h_velocity = 3*image_xscale;
 		
 		sprite_index = Spr_Greatsword_Earth_F_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Earth L"){
-		blink_h(8*image_xscale, false);
-		
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Earth_L_hitbox);
 		attack.initiate(self);
+		
+		h_velocity = 8*image_xscale;
 		
 		sprite_index = Spr_Greatsword_Earth_L_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Earth S"){
+		blink_h(12*image_xscale, false);
+		
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Earth_S_hitbox);
 		attack.initiate(self);
 		
@@ -215,15 +217,27 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Ocean S"){
+		action = "Earth Start";
+		
+		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_S_hitbox);
+		attack.initiate(self);
+		
+		h_velocity = 3*image_xscale;
+		
+		sprite_index = Spr_Greatsword_Ocean_S_recovery;
+		image_index = 0;
+		action_alarm = generate_sprite_frames(sprite_index);
+	}
+	// Meter moves
+	else if(action == "Wavekick"){
 		wave = instance_create_depth(x, y, 0, Obj_Greatsword_Wave);
 		wave.initiate(self);
 		wave.h_velocity = 2*image_xscale;
 		
-		sprite_index = Spr_Greatsword_Ocean_S_recovery;
+		sprite_index = Spr_Greatsword_Wavekick_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	// Meter moves
 	else if(action == "ULTRA"){
 		meter = 0;
 		
@@ -255,16 +269,16 @@ action_trigger = function(){
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "X"){
-		attack = instance_create_depth(x, y, 0, Obj_Greatsword_X1_hitbox);
+	else if(action == "Grab"){
+		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Grab_hitbox1);
 		attack.initiate(self);
 		
-		sprite_index = Spr_Greatsword_X_whiff;
+		sprite_index = Spr_Greatsword_Grab_whiff;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "X2"){
-		attack = instance_create_depth(x, y, 0, Obj_Greatsword_X2_hitbox);
+	else if(action == "Grab Success"){
+		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Grab_hitbox2);
 		attack.initiate(self);
 		
 		reset_physics();

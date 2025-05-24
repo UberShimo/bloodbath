@@ -18,7 +18,7 @@ move_step = function(){
 snap_to_ground = function(y_margin = 1){
 	// Get outa ground of stuck in it
 	while(position_meeting(x, y, Parent_Collision)){
-		y -= 1;
+		y -= y_margin;
 	}
 	// The actual ground snapping
 	while(!position_meeting(x, y+y_margin, Parent_Collision) && !position_meeting(x, y+y_margin, Obj_Platform)){

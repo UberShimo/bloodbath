@@ -1,5 +1,5 @@
 /// @description Initiate stuff
-
+	
 if(global.dojo_level == 1){
 	instance_create_depth(Obj_Blackboard.x+controller_x, Obj_Blackboard.y+controller_y, 10, Obj_Move_Tutorial);
 	dummy = instance_create_depth(Obj_Blackboard.x+128, Obj_Blackboard.y, depth, Obj_Immortal_Dummy);

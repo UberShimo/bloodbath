@@ -11,6 +11,7 @@ shake_impact = global.heavy_shake_impact;
 h_launch = 2;
 v_launch = -8;
 
+is_sticky = true;
 hit_effect_y = -8;
 
 swing_sound = Snd_Light_Swing;

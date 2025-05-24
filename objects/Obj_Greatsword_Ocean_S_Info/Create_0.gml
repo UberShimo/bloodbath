@@ -1,13 +1,11 @@
-hitbox = Obj_Greatsword_Splash_hitbox;
+hitbox = Obj_Greatsword_Ocean_S_hitbox;
 
 event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "During OCEAN stance.\nSpawn a WAVE.";
+info = "During OCEAN stance.\nGoes into EARTH stance.";
 movement_input = Spr_EMPTY;
 button_input = Spr_S;
 image = Spr_Greatsword_Ocean_S_recovery;
-frame = 0;
-extra_image = Spr_Greatsword_Wave;
-extra_image_x = 16;
+frame = 1;

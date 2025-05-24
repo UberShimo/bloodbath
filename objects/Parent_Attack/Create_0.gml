@@ -6,6 +6,7 @@ outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
 
 outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 
+#region stats
 spawner = noone;
 spawner_action = noone;
 time_reset_alarm = 0; // Time alarm
@@ -54,6 +55,8 @@ v_affecting = true; // Means that is knocks and pushes in vertical velocity
 is_collidable = true; // Goes through walls or not?
 is_initiated_by_character = true;
 hitfallable = true; // Mostly so you can hitfall moves that lift you up from ground
+collides_with_platform = false;
+#endregion
 
 // Methods
 initiate = function(initiator){

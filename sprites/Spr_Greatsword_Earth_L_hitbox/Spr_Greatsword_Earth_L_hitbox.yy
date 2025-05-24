@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Spr_Greatsword_Earth_L_hitbox",
-  "bbox_bottom": 137,
+  "bbox_bottom": 157,
   "bbox_left": 128,
-  "bbox_right": 180,
+  "bbox_right": 145,
   "bbox_top": 101,
   "bboxMode": 0,
   "collisionKind": 4,
@@ -55,7 +55,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4794e8cc-2394-4b37-b0d8-c83c5fd1376c","path":"sprites/Spr_Greatsword_Earth_L_hitbox/Spr_Greatsword_Earth_L_hitbox.yy",},},},"Disabled":false,"id":"464dfe84-f102-4ebd-9025-3d8ef1643ffe","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4794e8cc-2394-4b37-b0d8-c83c5fd1376c","path":"sprites/Spr_Greatsword_Earth_L_hitbox/Spr_Greatsword_Earth_L_hitbox.yy",},},},"Disabled":false,"id":"a6ddd9af-cf4d-4abc-bc00-ef75595d937e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -8,9 +8,12 @@ hit_stun = 28;
 hit_push = 4;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
-h_launch = 2;
-v_launch = 10;
+h_launch = 0;
+v_launch = 0;
 
 is_sticky = true;
+is_launcher = true;
+is_shockwave = true;
+shockwave_power = 8;
 
 hit_sound = Snd_Hit2;

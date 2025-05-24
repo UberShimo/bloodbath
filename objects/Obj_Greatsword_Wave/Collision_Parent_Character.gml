@@ -1,8 +1,7 @@
 event_inherited();
 
-if(index != other.index){	
-	hitbox = instance_create_depth(x, y, depth, Obj_Greatsword_Splash_hitbox);
-	hitbox.initiate(self);
-	
-	instance_destroy()
+// Move players
+move_amount = h_velocity*logic_time*drag_along_amount;
+if(!place_meeting(other.x+move_amount, other.y, Parent_Collision)){
+	other.x += move_amount;
 }

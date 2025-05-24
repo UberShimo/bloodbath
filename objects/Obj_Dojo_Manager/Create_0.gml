@@ -25,3 +25,10 @@ controller_y = 0;
 
 // Need short delay so stuff can be initiated
 alarm[1] = 2;
+
+// Initiate student. First player in list.
+for(i = 0; student == noone; i++){
+	if(global.picked_characters[i] != noone){
+		student = global.picked_characters[i];
+	}
+}
