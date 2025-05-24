@@ -165,8 +165,6 @@ action_trigger = function(){
 	else if(action == "Spinhop"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_Spinhop_hitbox);
 		attack.initiate(self);
-		attack_top = instance_create_depth(x, y, 0, Obj_Batman_Spinhop_top_hitbox);
-		attack_top.initiate(self);
 		
 		h_velocity = -2*image_xscale;
 		v_velocity = -4;

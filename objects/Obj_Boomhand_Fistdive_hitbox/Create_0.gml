@@ -12,7 +12,7 @@ h_launch = 8;
 v_launch = 4;
 
 is_sticky = true;
-active_frames = 20;
+active_frames = 16;
 
 swing_sound = Snd_Light_Swing;
 hit_sound = Snd_Hit2;

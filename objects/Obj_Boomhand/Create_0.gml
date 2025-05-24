@@ -85,9 +85,6 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_8L_hitbox);
 		attack.initiate(self);
 		
-		h_velocity = 1.5*image_xscale;
-		v_velocity = -6;
-		
 		sprite_index = Spr_Boomhand_8L_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
@@ -113,6 +110,8 @@ action_trigger = function(){
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_8S_hitbox);
 		attack.initiate(self);
+		
+		v_velocity = -6;
 		
 		sprite_index = Spr_Boomhand_8S_recovery;
 		image_index = 0;
@@ -211,6 +210,16 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
+	else if(action == "Elbow"){
+		blink_h(48*image_xscale, false);
+		
+		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Elbow_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Boomhand_Elbow_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		roar_power = 1;

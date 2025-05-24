@@ -14,6 +14,7 @@ v_launch = 0;
 is_sticky = true;
 is_launcher = true;
 is_shockwave = true;
-shockwave_power = 8;
+shockwave_power = 9;
+shockwave_rotation = -30;
 
 hit_sound = Snd_Hit2;

@@ -69,6 +69,7 @@ if(legit_hit_check){
 				// Shockwave
 				if(other.is_shockwave){
 					dir = point_direction(other.x, other.y, x, y);
+					dir += other.shockwave_rotation*other.image_xscale;
 					h_velocity = lengthdir_x(other.shockwave_power, dir);
 					v_velocity = lengthdir_y(other.shockwave_power, dir);
 				}

@@ -42,6 +42,7 @@ is_active = true;
 is_parryable = true;
 is_shockwave = false; // Means opponent will be hit away from center of hitbox
 shockwave_power = 0; // How powerful launch the shockwave has
+shockwave_rotation = 0; // In case you dont want the shockwave to push straight out...
 is_launcher = false; // Launch opponent if they are hit
 is_projectile = false;
 is_side_relevant = false;

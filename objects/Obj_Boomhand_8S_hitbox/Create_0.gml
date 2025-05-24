@@ -8,9 +8,10 @@ hit_stun = 24;
 hit_push = 2;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
-h_launch = 3;
-v_launch = 10;
+h_launch = 2;
+v_launch = -9;
 
 is_sticky = true;
+is_launcher = true;
 
 hit_sound = Snd_Hit2;

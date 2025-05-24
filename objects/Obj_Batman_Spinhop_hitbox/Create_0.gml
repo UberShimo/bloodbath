@@ -5,12 +5,15 @@ recovery = generate_sprite_frames(Spr_Batman_Spinhop_recovery); // 100% informat
 
 damage = 14;
 hit_stun = 32;
-hit_push = 5;
+hit_push = 0;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;
-h_launch = 4;
-v_launch = 4;
+h_launch = 0;
+v_launch = 0;
 
 is_sticky = true;
+is_shockwave = true;
+shockwave_power = 6;
+shockwave_rotation = -20;
 
 swing_sound = Snd_Light_Swing;

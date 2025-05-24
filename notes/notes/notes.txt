@@ -4,7 +4,6 @@ TODO{
 	Update characters
 	UPDATE CPU BEHAIVOUR
 	Game freezez close to walls at times.
-	Dash cancel cant be spammed for some reason.
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make the game crop images to save RAM?
 	Make Diabeto Studios intro
@@ -87,10 +86,6 @@ Greatsword{
 }
 
 Boomhand{
-	Make dash not go low.
-	8L = Backflip kick.
-	8S = Uppercut that launch you upward.
-	v>X = Unstoppable elbow strike with great stun.
 	Make X sound like steam
 }
 
