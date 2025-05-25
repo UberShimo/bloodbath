@@ -1,8 +1,11 @@
 event_inherited();
 
-weight = 0.2;
+startup = generate_sprite_frames(Spr_Bow_Frogspawn_startup);
+recovery = 0;
+
 is_projectile = true;
 is_active = false;
+is_final = true;
 collision_check_with_distance = false;
 
 has_jumped = false;

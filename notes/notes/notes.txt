@@ -91,12 +91,9 @@ Boomhand{
 
 Bow{
 	Make 2S sound like "BOINGGGG"?
-	v>X/>vX = Throw spear that sticks to what it hit and then return after delay leading dmg again. Has gravtity
-	vvX = Frog move
-	Boomerang stays forever if spawner dies.
 }
 
-Cultist CHARLOTTE{
+Cultist{
 	Cant shoot star.
 	Make dash go lower.
 	8L: bigger and 3 hits going upward instead.

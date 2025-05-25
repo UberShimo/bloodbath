@@ -22,3 +22,9 @@ else if(is_returning){
 	h_velocity += lengthdir_x(return_acceleration, dir);
 	v_velocity += lengthdir_y(return_acceleration, dir);
 }
+
+// Spawner dead?
+if(spawner.HP <= 0){
+	spawner.has_boomerang = true;
+	instance_destroy();
+}

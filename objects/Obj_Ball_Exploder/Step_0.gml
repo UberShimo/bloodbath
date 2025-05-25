@@ -1,4 +1,5 @@
 event_inherited();
+
 action_alarm -= logic_time;
 
 if(action_alarm <= 0){

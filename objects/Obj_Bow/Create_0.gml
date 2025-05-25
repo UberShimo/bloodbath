@@ -49,8 +49,10 @@ hold_arrow = false;
 aim_height = 12;
 aim_dir = 0;
 aim_duration = generate_sprite_frames(Spr_Bow_Aim_Down_startup);
-wind_eff_counter = 0; // Used so eff dont fuck up in slowmo
-target = noone; // Used for seeking arrows
+hold_spear = false;
+spear_aim_height = 16;
+spear_aim_duration = generate_sprite_frames(Spr_Bow_Spearthrow_startup)-8; // -8 cuz you dont aim at the first frames
+target = noone; // Used for seeking arrow
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -218,7 +220,27 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
-	else if(action == "X"){
+	else if(action == "Spear Throw"){
+		action = "Spear Gone";
+		
+		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_Spear);
+		attack.initiate(self);
+		// Calculate take off
+		hold_spear = false;
+		spd = 16;
+		attack.h_velocity = lengthdir_x(spd, aim_dir)*image_xscale;
+		attack.v_velocity = lengthdir_y(spd, aim_dir);
+		attack.spd = spd; // Jump save speed for when it bounces
+		attack.image_xscale = image_xscale;
+		attack.image_angle = aim_dir*image_xscale;
+		
+		reset_physics();
+		
+		sprite_index = Spr_Bow_Spearthrow_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Spawn Frog"){
 		frog = instance_create_depth(x-16*image_xscale, y+28, 0, Obj_Bow_Frog);
 		frog.spawner = self;
 		frog.h_velocity = 2.5*image_xscale;
@@ -232,8 +254,8 @@ action_trigger = function(){
 		meter -= 50;
 		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_ULTRA_Arrow);
 		attack.initiate(self);
-		attack.h_velocity = attack.max_speed*image_xscale;
-		attack.v_velocity = 1.5;
+		attack.h_velocity = 3*image_xscale;
+		attack.target = closest_enemy;
 		
 		sprite_index = Spr_Bow_ULTRA_recovery;
 		image_index = 0;

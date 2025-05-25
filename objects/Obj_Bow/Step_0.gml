@@ -149,14 +149,29 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 25 && grounded && (down_forward_pressed || down_backward_pressed)){
+		else if(meter >= 50 && (down_forward_pressed || down_backward_pressed)){
 			if(down_backward_pressed){
 				image_xscale *= -1;
 			}
-			action = "X";
+			action = "Spear Throw";
+			meter -= 50;
+			
+			hold_spear = true;
+			aim_dir = -45;
+			
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Bow_Spearthrow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 25 && grounded && double_down_pressed){
+			action = "Spawn Frog";
 			meter -= 25;
 			
-			sprite_index = Spr_Bow_X_startup;
+			sprite_index = Spr_Bow_Frogspawn_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -183,8 +198,21 @@ if(action == "Aim Down" && y_hold){
 else if(action == "Aim Up" && y_hold){
 	aim_dir -= (45/aim_duration)*logic_time;
 }
-// Stop aim and shoot
+// Stop aim and shoot arrow
 if((action == "Aim Up" || action == "Aim Down") && hold_arrow && !y_hold){
 	hold_arrow = false;
 	action_alarm = 4;
+}
+
+// Spearthrow logic. Force the startup frames to happen
+if(action == "Spear Throw" && image_index > 2){
+	// Aim Spear
+	if(rb_hold){
+		aim_dir += (90/spear_aim_duration)*logic_time;
+	}
+	// Stop aim and throw spear
+	if(hold_spear && !rb_hold){
+		hold_spear = false;
+		action_alarm = 4;
+	}
 }

@@ -211,7 +211,7 @@ if(action == noone){
 	}	
 }
 // Jump cancel
-else if(a_pressed && extra_jumps_left > 0 && check_for_cancel()){
+else if(a_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
 	reset_physics();
 	a_pressed = 0; // Just reset A buffer
 	

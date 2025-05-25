@@ -198,7 +198,7 @@ action_trigger = function(){
 		ball_explosion_cd = ball_explosion_max_cd;
 			
 		obj = instance_create_depth(0, 0, ball.depth-1, Obj_Ball_Exploder);
-		obj.index = index;
+		obj.initiate(self);
 		obj.ball = ball;
 		
 		sprite_index = Spr_Baller_Charging_Ball_recovery;

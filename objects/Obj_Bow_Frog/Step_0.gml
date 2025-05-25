@@ -21,3 +21,14 @@ if(destroy_alarm > 0){
 		instance_destroy();
 	}
 }
+
+// Uhhh this shit
+if(!has_jumped){
+	if(!place_meeting(x, y+2, Obj_Platform)){
+		weight = 0.2;
+	}
+	else{
+		weight = 0;
+		v_velocity = 0;
+	}
+}
