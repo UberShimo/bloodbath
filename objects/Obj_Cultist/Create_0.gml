@@ -43,6 +43,8 @@ original_weight = weight;
 #endregion
 
 // Cultist stuff
+throw_star_up = false;
+throw_star_down = false;
 circle = noone;
 meter_circle = noone;
 
@@ -73,20 +75,19 @@ action_trigger = function(){
 		if(multi_hit_action_index == 0){
 			multi_hit_action_index += 1;
 
-			attack = instance_create_depth(x, y, 0, Obj_Cultist_8L_hitbox);
+			attack = instance_create_depth(x+20*image_xscale, y+24, 0, Obj_Cultist_8L_hitbox1);
 			attack.initiate(self);
 		
 			sprite_index = Spr_Cultist_8L_recovery;
 			image_index = 0;
-			action_alarm = 8;
+			action_alarm = 16;
 			recover_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(multi_hit_action_index < 4){
-			attack = instance_create_depth(x, y, 0, Obj_Cultist_8L_hitbox);
-			attack.initiate(self);
-			
-			action_alarm = 8;
+		else if(multi_hit_action_index == 1){
 			multi_hit_action_index += 1;
+			
+			attack = instance_create_depth(x+32*image_xscale, y+4, 0, Obj_Cultist_8L_hitbox2);
+			attack.initiate(self);
 		}
 	}
 	else if(action == "2L"){
@@ -241,12 +242,12 @@ action_trigger = function(){
 		star.initiate(self);
 		star.image_blend = c_red;
 		
-		if(up_hold){
+		if(throw_star_up){
 			star.h_velocity = 1*image_xscale;
 			star.v_velocity = -3;
 			star.v_acc = 0.03;
 		}
-		else if(down_hold){
+		else if(throw_star_down){
 			star.h_velocity = 1*image_xscale;
 			star.v_velocity = 1;
 			star.v_acc = -0.01;
@@ -260,8 +261,18 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Blast"){
+		attack = instance_create_depth(x, y, 0, Obj_Cultist_Blast_hitbox);
+		attack.initiate(self);
+		
+		h_velocity = -10*image_xscale;
+		
+		sprite_index = Spr_Cultist_Blast_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	// Meter moves
-	else if(action == "X"){
+	else if(action == "Meter Circle"){
 		if(meter_circle != noone){
 			spawn_effect(meter_circle.x, meter_circle.y, 1, Eff_Ring, 1, 0.1, c_lime, 1, 1, 0.2);
 			instance_destroy(meter_circle);
@@ -275,7 +286,7 @@ action_trigger = function(){
 		meter_circle.velocity_friction = 0;
 		meter_circle.is_meter_circle = true;
 		
-		sprite_index = Spr_Cultist_X_recovery;
+		sprite_index = Spr_Cultist_Meter_Circle_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
@@ -296,6 +307,7 @@ action_trigger = function(){
 		
 		spawner = instance_create_depth(x, y-96, 0, Obj_Zombie_Spawner);
 		spawner.index = index;
+		spawner.player_number = player_number;
 		spawner.zombie_color = player_color;
 		spawner.character_to_spawn = closest_enemy.object_index;
 		

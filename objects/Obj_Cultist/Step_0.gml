@@ -100,7 +100,16 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(double_down_pressed
+		if(down_forward_pressed || down_backward_pressed){
+			if(down_backward_pressed){
+				image_xscale *= -1;
+			}
+			action = "Blast";
+			sprite_index = Spr_Cultist_Blast_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed
 		&& ((circle != noone && circle.implode_alarm == 0)
 		|| (meter_circle != noone && meter_circle.implode_alarm == 0))){
 			action = "Circle Pullback";
@@ -143,9 +152,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			if(down_backward_pressed){
 				image_xscale *= -1;
 			}
-			action = "X";
+			action = "Meter Circle";
 			meter -= 35
-			sprite_index = Spr_Cultist_X_startup;
+			sprite_index = Spr_Cultist_Meter_Circle_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -172,4 +181,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
+}
+
+// Throw it up or down?
+if(action == "Star Throw"){
+	if(up_hold){
+		throw_star_up = true;
+	}
+	else if(!throw_star_up && down_hold){
+		throw_star_down = true;
+	}
+}
+else{
+	throw_star_up = false;
+	throw_star_down = false;
 }

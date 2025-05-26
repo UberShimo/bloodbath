@@ -7,6 +7,7 @@ spawn_alarm -= logic_time;
 if(spawn_alarm <= 0){
 	zombie = instance_create_depth(x, y, 0, character_to_spawn);
 	zombie.index = index;
+	zombie.player_number = player_number;
 	zombie.player_color = zombie_color;
 	zombie.is_CPU = true;
 	zombie.is_controllable = true;

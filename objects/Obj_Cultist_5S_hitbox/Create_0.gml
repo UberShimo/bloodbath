@@ -4,12 +4,13 @@ startup = generate_sprite_frames(Spr_Cultist_5S_startup); // 100% informational 
 recovery = generate_sprite_frames(Spr_Cultist_5S_recovery); // 100% informational not used in logic
 
 damage = 19;
-hit_stun = 24;
-hit_push = 4;
+hit_stun = 18;
+hit_push = 0;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
-h_launch = 4;
-v_launch = -4;
+extra_freeze_duration = 12;
+h_launch = 0;
+v_launch = 0;
 
 is_sticky = true;
 

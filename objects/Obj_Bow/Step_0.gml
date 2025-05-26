@@ -190,6 +190,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	doing_action_by_canceling = false;
 }
 
+// Throw it up or down?
+if(action == "Boomerang"){
+	if(up_hold){
+		throw_boomerang_up = true;
+	}
+	else if(!throw_boomerang_up && down_hold){
+		throw_boomerang_down = true;
+	}
+}
+else{
+	throw_boomerang_up = false;
+	throw_boomerang_down = false;
+}
+
 // Aim down logic
 if(action == "Aim Down" && y_hold){
 	aim_dir += (45/aim_duration)*logic_time;

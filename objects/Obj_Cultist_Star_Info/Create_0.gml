@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Launch a STAR.\nHold UP or DOWN to change\nSTAR trajectory.";
+info = "Launch a STAR.\nPress UP or DOWN to change\nSTAR trajectory.";
 movement_input = Spr_L;
 button_input = Spr_DF;
 image = Spr_Cultist_Starthrow_recovery;

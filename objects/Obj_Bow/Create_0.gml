@@ -45,6 +45,8 @@ original_weight = weight;
 
 // Bow related
 has_boomerang = true;
+throw_boomerang_up = false;
+throw_boomerang_down = false;
 hold_arrow = false;
 aim_height = 12;
 aim_dir = 0;
@@ -139,11 +141,11 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Bow_Boomerang);
 		attack.initiate(self);
 		
-		if(up_hold){
+		if(throw_boomerang_up){
 			attack.h_velocity = 9*image_xscale;
 			attack.v_velocity = -4;
 		}
-		else if(down_hold){
+		else if(throw_boomerang_down){
 			attack.h_velocity = 9*image_xscale;
 			attack.v_velocity = 4;
 		}
