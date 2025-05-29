@@ -13,7 +13,8 @@ if(ds_list_find_index(hitbox_list, other) == -1){
 	// Bounce toward closest enemy
 	closest_enemy = spawner.closest_enemy;
 
-	dir = point_direction(x, y, closest_enemy.x, closest_enemy.y);
+	// Aim for the head
+	dir = point_direction(x, y, closest_enemy.x, closest_enemy.y-closest_enemy.character_height/2);
 
 	h_velocity = lengthdir_x(spd, dir);
 	v_velocity = lengthdir_y(spd, dir);

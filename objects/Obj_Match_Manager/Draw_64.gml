@@ -39,8 +39,6 @@ if(!global.chaos_mode){
 
 // Play winner animation...
 if(play_winner_animation){
-	winner_color = global.p_colors[players[0].index];
-	
 	draw_sprite_ext(Spr_Winner, winner_image, x_draw_winner_animation, y_draw_winner_animation, ui_pixel_size*2, ui_pixel_size*2, 0, c_white, 1);
 }
 if(play_winner_splash){

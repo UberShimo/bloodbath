@@ -7,6 +7,7 @@ winner_image = 0;
 winner_animation_speed = 0.25;
 play_winner_splash = false;
 winner_splash_image = 0;
+winner_color = c_white;
 
 x_draw_winner_animation = display_get_gui_width()/2;
 y_draw_winner_animation = display_get_gui_height()/2-96;
@@ -53,6 +54,7 @@ check_for_winner = function(){
 	}
 	// Got a winner!!!
 	if(player_amount == 1 || team_win_found){
+		winner_color = global.p_colors[players[0].index];
 		// Play winner animation alarm
 		alarm[10] = 60;
 		// Menu alarm

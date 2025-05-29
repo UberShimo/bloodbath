@@ -4,6 +4,7 @@ if(grounded && lb_pressed > 0 && (action == noone || check_for_cancel())
 && (forward_hold || backward_hold)){
 	clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 	clone.initiate(self);
+	clone.player_number = player_number;
 	clone.outline_color = outline_color;
 }
 
@@ -22,6 +23,7 @@ if(action == noone && meter >= 25 && rb_pressed && !half_circle_forward_pressed 
 	clone.HP = HP;
 	clone.meter = meter;
 	clone.index = index;
+	clone.player_number = player_number;
 	clone.hearts = hearts;
 	clone.player_color = player_color;
 	clone.outline_color = outline_color;

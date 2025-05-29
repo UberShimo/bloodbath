@@ -137,7 +137,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		if(grounded && down_forward_pressed && meter >= 25){
+		else if(grounded && down_forward_pressed && meter >= 25){
 			action = "Elbow";
 			meter -= 25;
 			

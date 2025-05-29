@@ -71,7 +71,8 @@ if(death_alarm > 0){
 		hearts -= 1;
 		// Blood / respawn effect
 		spawn_effect(x, y, 12, Eff_Blood, 1, 0.05, c_white, 3, 4);
-		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_red, 0, 0, 3);
+		spawn_effect(x, y, 8, Eff_Splash, 1, 0.1, c_red, 2, 4);
+		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_red, 0, 0, 2);
 		
 		if(hearts > 0){
 			respawn_alarm = 120;
@@ -82,7 +83,6 @@ if(death_alarm > 0){
 			// Clear hitbox list
 			ds_list_clear(hitbox_list);
 		}
-		
 		Obj_Match_Manager.check_for_winner();
 	}	
 }

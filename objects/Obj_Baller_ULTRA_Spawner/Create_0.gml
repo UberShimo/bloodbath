@@ -1,6 +1,6 @@
 event_inherited();
 
-spawn_ball_alarm = 16;
+spawn_ball_alarm = 30;
 spawn_ball_counter = spawn_ball_alarm;
 duration = 300; // 5 sec
 

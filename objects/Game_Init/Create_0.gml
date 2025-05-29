@@ -8,12 +8,15 @@ global.dojo_mode = false;
 global.teams_mode = false;
 global.heart_amount = 3;
 global.character_select = Character_Select_1v1;
-global.music_volume = 0.3;
+global.music_volume = 1;
 global.min_players = 2;
 global.max_players = 8; // Actually max controller index check
 global.dojo_level = 0; // 0:freeform 1:Basic tutorial 2:Advanced tutorial
-global.do_bounce_thing_in_menu = true;
 global.priority_controller_index = -1;
+global.game_just_started = true;
+
+// Font time!
+draw_set_font(Game_Font);
 
 #region Stats / Colors
 global.cancelable_recovery_frames = 22;

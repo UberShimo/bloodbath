@@ -4,8 +4,13 @@ if(is_controllable){
 	// Special moves
 	rng = random_range(0, 1);
 
-	if(meter >= 15 && irandom_range(1, 8) == 1){ // 12.5%
-		down_forward_pressed = buffer_duration;
+	if(meter >= 25 && irandom_range(1, 8) == 1){ // 12.5%
+		if(irandom_range(0, 1)){ // 50%
+			down_forward_pressed = buffer_duration;
+		}
+		else{
+			double_down_pressed = buffer_duration;
+		}
 		rb_pressed = buffer_duration;
 	}
 	// H ring
@@ -39,24 +44,19 @@ if(is_controllable){
 		y_pressed = buffer_duration;
 	}
 	// Penguin!
-	else if(rng < 0.3){
-		half_circle_forward_pressed = buffer_duration;
-		y_pressed = buffer_duration;
-	}
-	// Rollkick
-	else if(rng < 0.4){
-		down_backward_pressed = buffer_duration;
+	else if(rng < 0.35){ // 15%
+		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
 	// Claw dance
-	else if(rng < 0.5){
+	else if(rng < 0.5){ // 15%
 		double_down_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
-		down_backward_pressed = true;
+		rb_pressed = true;
 		half_circle_forward_pressed = true;
 	}
 }

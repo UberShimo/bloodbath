@@ -7,7 +7,7 @@ outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
 outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 
 spawner = noone;
-duration = 0;
+duration = 120; // 2 sec max for safety
 
 initiate = function(initiator){
 	spawner = initiator;

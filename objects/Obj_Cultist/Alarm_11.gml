@@ -47,6 +47,12 @@ if(is_controllable){
 			up_hold = true;
 		}
 	}
+	// Blast
+	else if(rng < 0.6){ // 10%
+		down_forward_pressed = buffer_duration;
+		b_pressed = buffer_duration
+	}
+	// Meter teleport
 	else if(rng < 0.6 && meter_circle != noone){
 		double_down_pressed = buffer_duration;
 		rb_pressed = buffer_duration;
@@ -54,7 +60,7 @@ if(is_controllable){
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
-		down_backward_pressed = true;
+		rb_pressed = true;
 		half_circle_forward_pressed = true;
 	}
 }

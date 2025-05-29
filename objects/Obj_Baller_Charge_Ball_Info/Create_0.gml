@@ -12,3 +12,5 @@ extra_image = Spr_Baller_Ball_Explosion;
 extra_image_color = c_lime;
 frame = 0;
 meter_cost = 25;
+
+is_final = true;

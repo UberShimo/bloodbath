@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Settings",
-    "path": "folders/Objects/Main Menu/Settings.yy",
+    "name": "Main Menu",
+    "path": "folders/Objects/Main Menu.yy",
   },
   "parentObjectId": {
     "name": "Parent_Menu_Option",

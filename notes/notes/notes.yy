@@ -3,7 +3,7 @@
   "resourceVersion": "1.1",
   "name": "notes",
   "parent": {
-    "name": "Notes",
-    "path": "folders/Notes.yy",
+    "name": "Bloodbath Armageddon",
+    "path": "Bloodbath Armageddon.yyp",
   },
 }

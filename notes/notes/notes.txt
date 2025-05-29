@@ -1,12 +1,10 @@
 TODO{
-	Add playtesters
-	Update characters
-	UPDATE CPU BEHAIVOUR
-	Game freezez close to walls at times.
+	Touching roof snaps you to ground at rare times.
+	You can still bug out of stage at times...
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
+	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)???
 	Make the game crop images to save RAM?
 	Make Diabeto Studios intro
-	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)???
 }
 
 SLOGANS for trailer n stuff
@@ -89,7 +87,6 @@ Boomhand{
 }
 
 Bow{
-	Throwing spear left into ground makes it face wrong way...
 	Make 2S sound like "BOINGGGG"?
 }
 

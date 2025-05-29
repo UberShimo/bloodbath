@@ -13,7 +13,6 @@ v_launch = -2;
 
 active_frames = 2;
 is_parryable = false;
-is_final = true;
 meter_gain_multiplier = 0;
 
 effect = Obj_Katana_ULTRA_hit_eff;

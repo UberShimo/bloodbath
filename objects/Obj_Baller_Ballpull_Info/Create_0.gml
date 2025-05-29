@@ -11,3 +11,5 @@ image = Spr_Baller_Ballpull_recovery;
 frame = 0;
 extra_image = Spr_Baller_Ball;
 extra_image_x = 16;
+
+is_final = true;

@@ -17,5 +17,5 @@ is_parryable = false;
 shockwave_power = -8;
 effect = Obj_Cultist_Circle_Implosion_hit_eff;
 
-swing_sound = Snd_Quick_Swing;
-hit_sound = Snd_Knack;
+swing_sound = Snd_Explosion;
+hit_sound = Snd_Hit1;

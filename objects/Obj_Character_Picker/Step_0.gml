@@ -19,6 +19,7 @@ else if(u_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y
 		y -= move_y_distance;
 		x -= move_x_distance/2;
 	}
+	u_pressed = false; // So it dont change stage/music/bg etc when moving into them
 }
 else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
 	if(!place_meeting(x-move_x_distance/2, y+move_y_distance, Parent_Collision)){
@@ -29,6 +30,7 @@ else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y
 		y += move_y_distance;
 		x += move_x_distance/2;
 	}
+	d_pressed = false; // So it dont change stage/music/bg etc when moving into them
 }
 
 // Click an option
@@ -163,11 +165,12 @@ if(gamepad_button_check_pressed(controller_index, gp_start)){
 			room_goto(Dojo_Place);
 		}
 		else{
+			index = global.arena_index;
 			// Random stage
 			if(global.arena_index == 0){
-				global.arena_index = irandom_range(1, array_length(global.arena_list)-1);
+				index = irandom_range(1, array_length(global.arena_list)-1);
 			}
-			room_goto(global.arena_list[global.arena_index]);
+			room_goto(global.arena_list[index]);
 		}
 	}
 }

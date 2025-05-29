@@ -2,12 +2,16 @@ camera_start_x = camera_get_view_x(view_camera[0]);
 camera_start_y = camera_get_view_y(view_camera[0]);
 shake = 0;
 beat_alarm = 0;
+shake_amount = 64;
+shake_decrease = 6;
 global.teams_mode = false; // Very inportant to disable teams mode since it creates lots of problems outside chaos mode.
 
 // Shake the main menu
-if(room == Main_Menu && global.do_bounce_thing_in_menu){
-	global.do_bounce_thing_in_menu = false;
-	instance_create_depth(0, 0, -1000, Eff_Start_Black_Screen);
+if(room == Main_Menu){
+	if(global.game_just_started){
+		instance_create_depth(0, 0, -1000, Eff_Start_Black_Screen);
+		global.game_just_started = false;
+	}
 	
 	beats_are_shaky = false;
 	beat_counter = 0;
@@ -22,12 +26,4 @@ if(room == Main_Menu && global.do_bounce_thing_in_menu){
 	}
 	shake_switch[6] = true;
 	shake_switch[18] = true;
-	shake_switch[22] = true;
-	shake_switch[34] = true;
-	shake_switch[38] = true;
-	shake_switch[62] = true;
-	shake_switch[70] = true;
-	shake_switch[71] = true;
-	shake_switch[72] = true;
-	shake_switch[73] = true;
 }

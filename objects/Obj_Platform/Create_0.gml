@@ -1,4 +1,4 @@
-image = global.wall_images[global.BG_index];
+image = global.wall_images[Obj_BG.index];
 
 #region Outline variables
 width = 32;

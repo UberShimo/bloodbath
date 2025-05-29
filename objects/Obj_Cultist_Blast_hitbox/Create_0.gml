@@ -15,5 +15,5 @@ is_launcher = true;
 is_parryable = false;
 effect = Obj_Cultist_Blast_hit_eff;
 
-swing_sound = Snd_Knack;
-hit_sound = Snd_NOTHING;
+swing_sound = Snd_Explosion;
+hit_sound = Snd_Hit2;

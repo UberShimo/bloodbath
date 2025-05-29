@@ -171,6 +171,7 @@ action_trigger = function(){
 		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 		clone.initiate(self);
 		// Give clone your stats
+		clone.player_number = player_number;
 		clone.outline_color = outline_color;
 		clone.grip = grip;
 		clone.dash_speed = dash_speed;
@@ -203,7 +204,6 @@ action_trigger = function(){
 				steps += 1;
 			}
 		}
-		
 		
 		attack = instance_create_depth(x, y, 0, Obj_Katana_ULTRA_hitbox);
 		// Attack is spawned behind you after dash/teleport

@@ -1,7 +1,11 @@
 event_inherited();
 
-object_time = spawner.object_time;
-
+if(instance_exists(spawner)){
+	object_time = spawner.object_time;
+}
+else{
+	logic_time = global.game_time;
+}
 if(duration > 0){
 	duration -= logic_time;
 	if(duration <= 0){

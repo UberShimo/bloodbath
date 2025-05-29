@@ -231,7 +231,9 @@ action_trigger = function(){
 		}
 		
 		h_velocity = 0;
-		v_velocity = -1;
+		if(!grounded){
+			v_velocity = -1;
+		}
 		
 		sprite_index = Spr_Cultist_Circlepull_recovery;
 		image_index = 0;

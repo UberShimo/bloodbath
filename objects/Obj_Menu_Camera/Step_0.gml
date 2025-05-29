@@ -11,7 +11,8 @@ if(beat_alarm > 0){
 	beat_alarm -= 1;
 	if(beat_alarm <= 0){
 		if(beats_are_shaky){
-			shake = 24;
+			shake = shake_amount;
+			shake_amount -= shake_decrease;
 		}
 		if(shake_switch[beat_counter]){
 			beats_are_shaky = !beats_are_shaky;

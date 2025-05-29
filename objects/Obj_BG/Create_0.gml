@@ -3,12 +3,13 @@ parallax_amount = 0;
 parallax_descreaser = 0;
 parallax_adjuster = 1;
 
+index = global.BG_index;
 // Random BG
-if(global.BG_index == 0){
-	global.BG_index = irandom_range(1, array_length(global.BG_list)-1);
+if(index == 0){
+	index = irandom_range(1, array_length(global.BG_list)-1);
 }
 
-BG = global.BG_list[global.BG_index];
+BG = global.BG_list[index];
 
 // TRIPPY!!!
 if(BG == BG_Trippy){

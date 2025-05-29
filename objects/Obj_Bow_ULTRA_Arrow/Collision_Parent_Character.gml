@@ -3,8 +3,8 @@ if(other.index != index){
 		target = other;
 	}
 	
-	// Destroy on fifth hit
-	if(turns >= 5){
+	// Destroy on 6th hit
+	if(turns >= 6){
 		instance_destroy(existing_hitbox);
 		instance_destroy();
 	}

@@ -12,3 +12,5 @@ extra_image = Spr_Baller_Ball;
 extra_image_x = 8;
 extra_image_y = 32;
 frame = 0;
+
+is_final = true;

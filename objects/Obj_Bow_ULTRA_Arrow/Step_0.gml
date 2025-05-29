@@ -15,7 +15,7 @@ if(time_reset_alarm > 0){
 }
 
 // Follow target
-if(target != noone){
+if(instance_exists(target)){
 	// Set acceleration value
 	val = acceleration;
 	if(abs(h_velocity) < val){

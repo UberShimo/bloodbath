@@ -20,8 +20,13 @@ snap_to_ground = function(y_margin = 1){
 	while(position_meeting(x, y, Parent_Collision)){
 		y -= y_margin;
 	}
+	y_origin = y;
 	// The actual ground snapping
 	while(!position_meeting(x, y+y_margin, Parent_Collision) && !position_meeting(x, y+y_margin, Obj_Platform)){
 		y += 1;
+		if(y > room_height){
+			y = y_origin;
+			break;
+		}
 	}
 }

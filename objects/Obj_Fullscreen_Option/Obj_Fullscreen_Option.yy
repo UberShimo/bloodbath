@@ -4,12 +4,13 @@
   "name": "Obj_Fullscreen_Option",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Settings",
-    "path": "folders/Objects/Main Menu/Settings.yy",
+    "name": "Main Menu",
+    "path": "folders/Objects/Main Menu.yy",
   },
   "parentObjectId": {
     "name": "Parent_Menu_Option",

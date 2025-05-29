@@ -11,3 +11,5 @@ image = Spr_Baller_Stand;
 frame = 0;
 extra_image = Spr_Baller_Ball;
 extra_image_y = 24;
+
+is_final = true;

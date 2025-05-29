@@ -10,3 +10,5 @@ button_input = Spr_M;
 image = Spr_Baller_ULTRA_recovery;
 frame = 0;
 meter_cost = 100;
+
+is_final = true;
