@@ -135,11 +135,11 @@ action_trigger = function(){
 	}
 	else if(action == "5S"){
 		if(multi_hit_action_index == 0){
+			blink_h(12*image_xscale, false);
+			
 			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
 			attack.initiate(self);
 			
-			blink_h(12*image_xscale, false);
-		
 			sprite_index = Spr_Claws_5S_recovery;
 			image_index = 0;
 			recover_alarm = generate_sprite_frames(sprite_index);
@@ -147,6 +147,9 @@ action_trigger = function(){
 			multi_hit_action_index += 1;
 		}
 		else if(multi_hit_action_index < 6){
+			blink_h(4*image_xscale, false);
+			h_velocity += 2*image_xscale;
+			
 			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
 			attack.initiate(self);
 		
@@ -199,36 +202,6 @@ action_trigger = function(){
 		sprite_index = Spr_Claws_Dive_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action = "Claw Dance"){
-		if(multi_hit_action_index == 0){
-			attack = instance_create_depth(x, y, 0, Obj_Claws_Flurry_hitbox);
-			attack.initiate(self);
-			
-			blink_h(8*image_xscale, false);
-			h_velocity = 6*image_xscale;
-		
-			sprite_index = Spr_Claws_Flurry_recovery;
-			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
-			action_alarm = 16;
-			multi_hit_action_index += 1;
-		}
-		else if(multi_hit_action_index < 3){
-			attack = instance_create_depth(x, y, 0, Obj_Claws_Flurry_hitbox);
-			attack.initiate(self);
-			
-			blink_h(8*image_xscale, false);
-			h_velocity = 6*image_xscale;
-			
-			if(multi_hit_action_index == 2){
-				h_velocity = 1.5*image_xscale;
-				v_velocity = -7.8;
-			}
-			
-			action_alarm = 16;
-			multi_hit_action_index += 1;
-		}
 	}
 	else if(action == "Penguin"){
 		attack = instance_create_depth(x, y, 0, Obj_Claws_Penguin_hitbox);
