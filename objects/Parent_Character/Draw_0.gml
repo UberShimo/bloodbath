@@ -56,7 +56,7 @@ if(global.is_debugging){
 	if(action_text == "-4"){
 		action_text = "none";
 	}
-	draw_text(x, y-character_height-80, "grounded:  " + string(grounded));
+	draw_text(x, y-character_height-80, "close to wall?:  " + string(is_close_to_wall));
 	draw_text(x, y-character_height-64, "cancels:  " + string(cancels));
 	draw_text(x, y-character_height-48, "velocity:  " + string(general_velocity));
 	draw_text(x, y-character_height-32, "startup:  " + string(action_alarm));

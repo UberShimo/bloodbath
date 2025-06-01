@@ -6,8 +6,6 @@ if(is_controllable){
 	backward_hold = false;
 
 	reset_buffers();
-	// Start CPU choice while facing closest enemy
-	find_closest_enemy();
 	if(closest_enemy.x < x){
 		image_xscale = -1;
 	}

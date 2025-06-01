@@ -328,7 +328,8 @@ else if(v_velocity < 0){
 	while(!check_collision(0, -1)){
 		y -= 1;
 	}
-	v_velocity = -v_velocity*0.2;
+	y += 1; // For safety
+	v_velocity = -v_velocity*0.1;
 }
 // Snap to ground
 else{
@@ -377,6 +378,16 @@ if(is_in_wall){
 		x += lengthdir_x(1, dir);
 		y += lengthdir_y(1, dir);
 	}
+}
+
+// Are you close to a wall? Just used for character collision logic when close to walls so you dont clip through it
+check_length = 2;
+if(collision_rectangle(x-character_width/2-check_length, y-character_height/2,
+x+character_width/2+check_length, y+character_height/2, Parent_Collision, false, false)){
+	is_close_to_wall = true;
+}
+else{
+	is_close_to_wall = false;
 }
 #endregion
 

@@ -146,6 +146,7 @@ ground_bounce_limit = 10;
 grounded = true;
 priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in alarm[9]
 is_in_wall = false;
+is_close_to_wall = false;
 colliding_wall = noone;
 character_push_away_amount = 8;
 mini_jump_disabled = false; // Used so characters can properly get launched into air without losing v_velocity
@@ -472,7 +473,7 @@ blink_h = function(x_val, cross_up){
 }
 
 check_collision = function(h_vel = 0, v_vel = 0){
-	return collision_rectangle(x-character_width/2+h_vel, y-character_height/2+v_vel, x+character_width/2+h_vel, y+character_height/2+v_vel, Parent_Collision, false, false)
+	return collision_rectangle(x-character_width/2+h_vel, y-character_height/2+v_vel, x+character_width/2+h_vel, y+character_height/2+v_vel, Parent_Collision, false, false);
 }
 
 platform_check = function(){
