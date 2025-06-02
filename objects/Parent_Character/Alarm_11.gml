@@ -6,12 +6,6 @@ if(is_controllable){
 	backward_hold = false;
 
 	reset_buffers();
-	if(closest_enemy.x < x){
-		image_xscale = -1;
-	}
-	else{
-		image_xscale = 1;
-	}
 	
 	if(place_meeting(x, y+2, Obj_Platform) && irandom_range(1, 2) == 1){
 		platdrop_pressed = true; // No buffer duration here

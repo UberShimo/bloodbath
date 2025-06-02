@@ -1,11 +1,18 @@
 if(other.index != index){
-	other.x = x+16*image_xscale;
+	// Make sure opponent dont get into wall
+	x_val = 4*image_xscale;
+	repeat(4){
+		if(!other.check_collision(x_val, 0)){
+			other.x += x_val;
+		}
+	}
 	// Calculate so opponent stay on ground
 	y_val = y+(spawner.character_height-other.character_height)/2;
 	other.y = y_val;
 	other.h_velocity = 0;
 	other.v_velocity = 0;
 	other.weight = 0;
+	other.is_collidable = false;
 	
 	spawner.weight = 0;
 	spawner.h_velocity = 0;
