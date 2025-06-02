@@ -283,8 +283,8 @@ action_trigger = function(){
 		meter_circle.initiate(self);
 		meter_circle.image_blend = c_lime;
 		meter_circle.weight = 0.01;
-		meter_circle.h_velocity = 0.1*image_xscale;
-		meter_circle.v_velocity = -0.2;
+		meter_circle.h_velocity = 0.3*image_xscale;
+		meter_circle.v_velocity = -0.6;
 		meter_circle.velocity_friction = 0;
 		meter_circle.is_meter_circle = true;
 		

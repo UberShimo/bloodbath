@@ -1,6 +1,6 @@
 event_inherited();
 
-fade = 0.02;
+fade = 0.01;
 
 // Cancel effect color
 draw_color = c_white;
@@ -21,5 +21,5 @@ initiate = function(initiator){
 		draw_color = c_red;
 	}
 	
-	spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, draw_color, 0, 0, 0.25);
+	spawn_effect(x, y, 1, Eff_Ring, 1, 0.05, draw_color, 0, 0, 0.2);
 }

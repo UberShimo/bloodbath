@@ -114,6 +114,20 @@ if(respawn_alarm > 0){
 		ugly_left = gamepad_button_check(controller_index, gp_padl)
 		|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
 		
+		if(is_CPU){
+			ugly_down = false;
+			ugly_right = false;
+			ugly_left = false;
+			rng = irandom_range(0, 2);
+			
+			if(rng == 0){ // 33%
+				ugly_right = true;
+			}
+			else if(rng == 1){ // 33%
+				ugly_left = true;
+			}
+		}
+		
 		h_velocity = 0;
 		v_velocity = -4;
 		if(ugly_down){
