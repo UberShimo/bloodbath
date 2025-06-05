@@ -9,6 +9,12 @@ if(is_returning){
 
 // Hurting ball
 if(general_velocity > 7 && cant_hurt_alarm <= 0){
+	// Slow the ball down
+	if(general_velocity > max_velocity){
+		dir = point_direction(0, 0, h_velocity, v_velocity);
+		h_velocity = lengthdir_x(max_velocity, dir);
+		v_velocity = lengthdir_y(max_velocity, dir);
+	}
 	// Spawn da hitbox
 	if(existing_hitbox == noone){
 		existing_hitbox = instance_create_depth(x, y, depth, Obj_Baller_Ball_hitbox);
@@ -41,3 +47,8 @@ if(cant_hurt_alarm > 0){
 
 // Turn invisible if Baller is invisible
 visible = spawner.visible;
+
+// Dissapear if spawner dont exist obviously...
+if(!instance_exists(spawner)){
+	instance_destroy();
+}

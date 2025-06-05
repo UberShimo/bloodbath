@@ -11,6 +11,7 @@ cant_hurt_alarm = 0;
 existing_hitbox = noone;
 is_returning = false;
 hitbox_list = ds_list_create();
+max_velocity = 16;
 
 collide = function(){
 	if(!is_returning){
