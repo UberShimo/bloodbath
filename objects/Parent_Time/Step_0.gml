@@ -1,6 +1,5 @@
 logic_time = object_time * global.game_time;
 
-general_velocity = point_distance(0, 0, h_velocity, v_velocity); // Easy velocity info ;)
 image_speed = logic_time;
 effect_counter += logic_time;
 
@@ -21,7 +20,7 @@ if(time_reset_alarm > 0){
 if(velocity_friction > 0){
 	dir = point_direction(0, 0, h_velocity, v_velocity);
 	
-	if(general_velocity > velocity_friction){
+	if(get_velocity() > velocity_friction){
 		h_velocity -= lengthdir_x(velocity_friction, dir)*logic_time;
 		v_velocity -= lengthdir_y(velocity_friction, dir)*logic_time;
 	}

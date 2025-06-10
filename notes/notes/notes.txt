@@ -1,4 +1,5 @@
 TODO{
+	Doing "Final moves" can create 2 cancel effect if you cancel into it...
 	Make target practice!
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)???

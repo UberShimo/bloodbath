@@ -1,12 +1,8 @@
+event_inherited();
+
 image = global.wall_images[Obj_BG.index];
 
 #region Outline variables
-collision_check_distance = 34;
-width = 32;
-height = 32;
-x_offset = width/2;
-y_offset = height/2;
-outline_color = c_white;
 
 // Check where to draw
 draw_above = false;

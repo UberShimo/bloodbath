@@ -20,6 +20,6 @@ if(global.is_debugging){
 	draw_self();
 	
 	if(is_projectile){
-		draw_text(x, y-32, "velocity:  " + string(general_velocity));
+		draw_text(x, y-32, "velocity:  " + string(get_velocity()));
 	}
 }

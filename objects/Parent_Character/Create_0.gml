@@ -453,7 +453,7 @@ blink_h = function(x_val, cross_up){
 	x_check = 1;
 	loops = abs(x_val);
 	if(x_val < 0){
-		x_check = -x_check;
+		x_check = -1;
 	}
 	// Moving time
 	if(cross_up){

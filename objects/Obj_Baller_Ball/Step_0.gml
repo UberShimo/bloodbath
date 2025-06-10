@@ -7,10 +7,11 @@ if(is_returning){
 	v_velocity = lengthdir_y(spd, dir);
 }
 
+vel = get_velocity();
 // Hurting ball
-if(general_velocity > 7 && cant_hurt_alarm <= 0){
+if(vel > 7 && cant_hurt_alarm <= 0){
 	// Slow the ball down
-	if(general_velocity > max_velocity){
+	if(vel > max_velocity){
 		dir = point_direction(0, 0, h_velocity, v_velocity);
 		h_velocity = lengthdir_x(max_velocity, dir);
 		v_velocity = lengthdir_y(max_velocity, dir);

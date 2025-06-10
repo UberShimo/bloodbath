@@ -28,9 +28,9 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Katana){
 	sprite_index = Spr_Special_DF_Y_Control;
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Claws){
-	bonus_text = "Down > Down > B\nTo do fancy slashes!";
+	bonus_text = "Down > Forward > B\nTo go penguin mode!";
 	button_spr = Spr_S;
-	input_spr = Spr_DD;
+	input_spr = Spr_DF;
 	sprite_index = Spr_Special_DD_B_Control;
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Baller){

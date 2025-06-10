@@ -127,6 +127,11 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_8S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		
+		cancels = 0;
+		// Cancel eff
+		eff = instance_create_depth(x, y, 1, Eff_Cancel);
+		eff.initiate(self);
 	}
 	else if(action == "2S"){
 		blink_h(20*image_xscale, false);
@@ -157,6 +162,11 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_5S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		
+		cancels = 0;
+		// Cancel eff
+		eff = instance_create_depth(x, y, 1, Eff_Cancel);
+		eff.initiate(self);
 	}
 	// Special moves
 	else if(action == "Upswing"){
@@ -176,6 +186,11 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_Ballpull_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		
+		cancels = 0;
+		// Cancel eff
+		eff = instance_create_depth(x, y, 1, Eff_Cancel);
+		eff.initiate(self);
 	}
 	else if(action == "Balldash"){
 		// Face toward ball

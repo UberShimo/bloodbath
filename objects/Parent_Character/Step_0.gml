@@ -11,6 +11,16 @@ if(is_respawning){
 // Always make sure there is a closest enemy before executing code
 find_closest_enemy();
 
+// Are you close to a wall? Just used for character collision logic when close to walls so you dont clip through it
+check_length = 2;
+if(collision_rectangle(x-character_width/2-check_length, y-character_height/2,
+x+character_width/2+check_length, y+character_height/2, Parent_Collision, false, false)){
+	is_close_to_wall = true;
+}
+else{
+	is_close_to_wall = false;
+}
+
 #region alarms  V-----V
 if(action_alarm > 0){
 	action_alarm -= logic_time;
@@ -270,6 +280,21 @@ else{
 
 #region physics V-----V
 
+// Move back outa wall if inside it
+if(is_in_wall){
+	max_distance = 12;
+	distance_count = 0;
+	dir = point_direction(colliding_wall.x, colliding_wall.y, x, y);
+	while(check_collision()){
+		x += lengthdir_x(1, dir);
+		y += lengthdir_y(1, dir);
+		distance_count += 1;
+		if(distance_count >= max_distance){
+			break;
+		}
+	}
+}
+
 // H velocity
 val = h_velocity*logic_time;
 // Check collision with rectangle
@@ -383,25 +408,6 @@ if(ground_check()){
 }
 else{
 	grounded = false;
-}
-
-// Move outa wall if stuck
-if(is_in_wall){
-	dir = point_direction(colliding_wall.x, colliding_wall.y, x, y);
-	while(check_collision()){
-		x += lengthdir_x(1, dir);
-		y += lengthdir_y(1, dir);
-	}
-}
-
-// Are you close to a wall? Just used for character collision logic when close to walls so you dont clip through it
-check_length = 2;
-if(collision_rectangle(x-character_width/2-check_length, y-character_height/2,
-x+character_width/2+check_length, y+character_height/2, Parent_Collision, false, false)){
-	is_close_to_wall = true;
-}
-else{
-	is_close_to_wall = false;
 }
 #endregion
 
