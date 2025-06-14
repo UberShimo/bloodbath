@@ -1,8 +1,12 @@
 TODO{
+	Fix main menu "PRess A"
+	dont gain meter in Target Run
+	Save target run high score!
+	Make vertical parallax also...
+	Countdown before match starts.
 	Doing "Final moves" can create 2 cancel effect if you cancel into it...
-	Make target practice!
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
-	Make infinite cancels a game mode. (When initiating cancel_effect check game mode and give "initiator" cancels == max_cancels)???
+	When landing you get stuck at times.
 	Make Diabeto Studios intro
 }
 
@@ -50,10 +54,10 @@ Dont fuck with image angle on attacks...
 
 Character stuff:
 
-Balanced:	Batman, Katana
-Power:		Boomhand, Greatsword
-Agility:	Claws, Baller
-Zoner:		Bow, Mage
+Balanced:	Batman, Katana, Rapier
+Power:		Boomhand, Greatsword, Shield
+Agility:	Claws, Baller, Knife
+Zoner:		Bow, Mage, Scythe
 
 MOVES!:
 
@@ -90,7 +94,7 @@ Bow{
 }
 
 Cultist{
-	
+	Meter circle can get into walls :o
 }
 
 NEW

@@ -51,7 +51,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Spinhop";
 			
-			h_velocity = 2*image_xscale;
+			h_velocity = 1*image_xscale;
 			v_velocity = -9;
 			
 			if(!grounded){

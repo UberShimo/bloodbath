@@ -193,8 +193,8 @@ if(action == noone){
 			if(abs(h_velocity) < max_speed){
 				h_velocity += (grip+acceleration)*image_xscale*logic_time;
 			}
-			// Gain meter by moving forward
-			if(!closest_enemy.is_respawning && closest_enemy != self){
+			// Gain meter by moving toward opponent
+			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
 				meter += meter_gain_by_approaching*logic_time;
 			}
 		}
@@ -572,7 +572,7 @@ else if(lb_pressed > 0 && !down_hold
 			blink_h(dash_blink*image_xscale, true);
 			
 			// Gain meter when dashing toward enemy
-			if(!closest_enemy.is_respawning && closest_enemy != self){
+			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
 				meter += 5;
 			}
 		}
@@ -632,4 +632,9 @@ if(is_invincible && is_controllable){
 }
 else{
 	image_alpha = 1;
+}
+
+// Reset target run
+if(global.target_run_mode && rs_down && is_controllable){
+	room_restart();
 }

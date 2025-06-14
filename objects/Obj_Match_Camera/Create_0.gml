@@ -14,5 +14,3 @@ shake = 0;
 x_destination = x;
 y_destination = y;
 size_destination = max_screen_size;// Not used atm
-
-characters[0] = noone; // List to stack all characters on the battlefield in

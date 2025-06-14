@@ -3,7 +3,7 @@ if((l_pressed || other.r_pressed) && place_meeting(x, y, Obj_Music_Menu)){
 	play_music(Mu_Intelligence, global.music_volume, 100);
 }
 
-// Move
+#region Move
 if(l_pressed && !place_meeting(x-move_x_distance, y, Parent_Collision)){
 	x -= move_x_distance;
 }
@@ -32,6 +32,7 @@ else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y
 	}
 	d_pressed = false; // So it dont change stage/music/bg etc when moving into them
 }
+#endregion
 
 // Click an option
 if(gamepad_button_check_pressed(controller_index, gp_face1)
@@ -51,7 +52,7 @@ if(gamepad_button_check_pressed(controller_index, gp_face2)){
 	}
 }
 
-// Change team
+#region Change team
 if(global.teams_mode){
 	// -
 	if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
@@ -108,6 +109,7 @@ if(global.teams_mode){
 		}
 	}
 }
+#endregion
 
 // Return to Main menu
 if(gamepad_button_check(controller_index, gp_face2)){
@@ -130,7 +132,7 @@ if(gamepad_button_check_pressed(controller_index, gp_face4)
 	room_goto(option.move_list_room);
 }
 
-// Start match
+#region Start the action
 if(gamepad_button_check_pressed(controller_index, gp_start)){
 	all_players_ready = true; // Or is it true?
 	player_count = 0;
@@ -161,9 +163,41 @@ if(gamepad_button_check_pressed(controller_index, gp_start)){
 	}
 	
 	if(all_players_ready){
+		// Dojo
 		if(global.dojo_mode){
 			room_goto(Dojo_Place);
 		}
+		// Target run
+		else if(global.target_run_mode){
+			if(global.picked_characters[index] == Obj_Katana){
+				room_goto(Katana_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Batman){
+				room_goto(Batman_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Claws){
+				room_goto(Claws_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Baller){
+				room_goto(Baller_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Greatsword){
+				room_goto(Greatsword_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Boomhand){
+				room_goto(Boomhand_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Bow){
+				room_goto(Bow_Target_Run);
+			}
+			if(global.picked_characters[index] == Obj_Cultist){
+				room_goto(Cultist_Target_Run);
+			}
+			else{
+				room_goto(Dojo_Target_Run);
+			}
+		}
+		// Normal fight
 		else{
 			index = global.arena_index;
 			// Random stage
@@ -174,7 +208,9 @@ if(gamepad_button_check_pressed(controller_index, gp_start)){
 		}
 	}
 }
+#endregion
 
+#region Potrait stuff
 // Change portrait
 if(place_meeting(x, y, Parent_Character_Option)){
 	option = instance_place(x, y, Parent_Character_Option);
@@ -260,3 +296,4 @@ else{
 		P8_Preview.sprite_index = Spr_EMPTY;
 	}
 }
+#endregion

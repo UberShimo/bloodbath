@@ -35,7 +35,7 @@ extra_jump_strength = 0.8; // % based
 extra_jumps = 0;
 extra_jumps_left = extra_jumps;
 weight = global.standard_weight;
-max_fall_speed = 16;
+max_fall_speed = 10;
 character_width = 24;
 character_height = global.tall_height;
 // Original stats

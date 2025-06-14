@@ -1,34 +1,31 @@
-// Check for characters
-for(i = 0; i < instance_number(Parent_Character); i++){
-	characters[i] = instance_find(Parent_Character, i);
-}
+character_amount = instance_number(Parent_Character);
 
 // Calculate Biggest and smallest X/Y
 biggest_x = 0;
-for(i = 0; i < array_length(characters); i++){
+for(i = 0; i < character_amount; i++){
 	character = instance_find(Parent_Character, i);
-	if(character != noone && character.x > biggest_x){
+	if(character.object_index != Obj_Target && character.x > biggest_x){
 		biggest_x = character.x;
 	}
 }
 smallest_x = biggest_x;
-for(i = 0; i < array_length(characters); i++){
+for(i = 0; i < character_amount; i++){
 	character = instance_find(Parent_Character, i);
-	if(character != noone && character.x < smallest_x){
+	if(character.object_index != Obj_Target && character.x < smallest_x){
 		smallest_x = character.x;
 	}
 }
 biggest_y = 0;
-for(i = 0; i < array_length(characters); i++){
+for(i = 0; i < character_amount; i++){
 	character = instance_find(Parent_Character, i);
-	if(character != noone && character.y > biggest_y){
+	if(character.object_index != Obj_Target && character.y > biggest_y){
 		biggest_y = character.y;
 	}
 }
 smallest_y = biggest_y;
-for(i = 0; i < array_length(characters); i++){
+for(i = 0; i < character_amount; i++){
 	character = instance_find(Parent_Character, i);
-	if(character != noone && character.y < smallest_y){
+	if(character.object_index != Obj_Target && character.y < smallest_y){
 		smallest_y = character.y;
 	}
 }

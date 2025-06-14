@@ -24,4 +24,10 @@ if(global.picked_characters[index] != noone){
 		Obj_Match_Manager.players[Obj_Match_Manager.player_amount] = player;
 		Obj_Match_Manager.player_amount += 1;
 	}
+	if(instance_exists(Obj_Target_Run_Manager)){
+		Obj_Target_Run_Manager.players[0] = player;
+		Obj_Target_Run_Manager.player_amount += 1;
+		Obj_Target_Run_Manager.timer_start_alarm = activation_timer;
+		player.meter = player.max_meter/2; // Start with 50% meter in Target Run
+	}
 }

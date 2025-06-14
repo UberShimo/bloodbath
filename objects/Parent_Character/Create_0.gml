@@ -193,7 +193,7 @@ face_closest_enemy = function(){
 	find_closest_enemy();
 	
 	// Normal facing action time
-	if(!global.chaos_mode && instance_number(Parent_Character) > 1){
+	if(!global.chaos_mode && !global.target_run_mode && instance_number(Parent_Character) > 1){
 		
 		if(x < closest_enemy.x){
 			image_xscale = 1;
@@ -430,6 +430,9 @@ do_cancel = function(){
 	}
 	recover_alarm = 0;
 	cancels -= 1;
+	if(global.infinite_cancels_mode){
+		cancels = max_cancels;
+	}
 	can_cancel = false;
 	cancel_effect = instance_create_depth(x, y, 1, Eff_Cancel);
 	cancel_effect.initiate(self);

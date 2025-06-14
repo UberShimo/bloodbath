@@ -64,7 +64,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(forward_down_pressed || backward_down_pressed){
-			if(backward_down_pressed){
+			if(backward_down_pressed && doing_action_by_canceling){
 				image_xscale *= -1;
 			}
 			action = "Aim Up";

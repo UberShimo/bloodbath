@@ -5,7 +5,7 @@ is_projectile = true;
 is_cancelable = true;
 collision_check_with_distance = false;
 
-velocity_friction = 0.2;
+velocity_friction = 0.16;
 
 implode_alarm = 0;
 destroy_alarm = 0;
