@@ -35,6 +35,7 @@ ini_close();
 global.FPS = 60;
 global.game_time = 1;
 global.screen_ratio = 1.78; // 16:9
+global.match_start_timer = 180;
 global.is_debugging = false;
 global.chaos_mode = false;
 global.dojo_mode = false;

@@ -6,7 +6,7 @@ parallax_adjuster = 1;
 index = global.BG_index;
 // Random BG
 if(index == 0){
-	index = irandom_range(1, array_length(global.BG_list)-1);
+	index = irandom_range(1, array_length(global.BG_list)-2); // -2 cuz i dont want to have trippy BG in random select
 }
 
 BG = global.BG_list[index];

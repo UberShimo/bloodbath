@@ -1,10 +1,7 @@
 TODO{
-	Make vertical parallax also...
-	Countdown before match starts.
-	Doing "Final moves" can create 2 cancel effect if you cancel into it...
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	When landing you get stuck at times.
-	Make Diabeto Studios intro
+	Make vertical parallax also?...
 }
 
 SLOGANS for trailer n stuff

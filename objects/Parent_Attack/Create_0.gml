@@ -80,9 +80,6 @@ initiate = function(initiator){
 	
 		if(is_final){
 			initiator.cancels = 0;
-			// Cancel eff
-			eff = instance_create_depth(initiator.x, initiator.y, 1, Eff_Cancel);
-			eff.initiate(initiator);
 		}
 	}
 	

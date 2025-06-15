@@ -1,6 +1,6 @@
 // Must initiate index and player_color bf4 inheriting this code
 
-activation_timer = 120;
+activation_timer = global.match_start_timer;
 
 if(global.picked_characters[index] != noone){
 	player = instance_create_depth(x, y, 0, global.picked_characters[index]);
