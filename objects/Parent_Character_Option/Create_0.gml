@@ -1,11 +1,12 @@
 event_inherited();
 
-character = Obj_Example_Character;
-portrait = Spr_Batman_Portrait;
-animation = Spr_Batman_Stand;
+character = Obj_Dojo;
+portrait = Spr_Dojo_Portrait;
+animation = Spr_Dojo_Stand;
 animation_frame = 0;
 animation_speed = 1;
-move_list_room = Batman_Move_List;
+move_list_room = Dojo_Move_List;
+target_run_room = Dojo_Target_Run;
 
 option_width = 64;
 option_height = 128;
@@ -23,6 +24,10 @@ clicked = function(clicker){
 			tag.color = global.p_colors[clicker.index+global.team_change_value[clicker.index]];
 			clicker.tag = tag;
 			spawn_effect(x+option_width/2, y+option_height/2, 1, Eff_Picker_Rectangle, 1, 0.1, tag.color, 1, 1, 0.5, 0, 0);
+			
+			if(global.target_run_mode){
+				clicker.target_run_room = target_run_room;
+			}
 		}
 	}
 	// Pick for CPU

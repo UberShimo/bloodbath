@@ -9,6 +9,7 @@ exit_text_x = 20;
 exit_text_y = 2;
 exit_count = 0;
 exit_count_goal = 60;
+target_run_room = Dojo_Target_Run;
 
 move_x_distance = sprite_get_width(sprite_index);
 move_y_distance = sprite_get_height(sprite_index);

@@ -169,33 +169,7 @@ if(gamepad_button_check_pressed(controller_index, gp_start)){
 		}
 		// Target run
 		else if(global.target_run_mode){
-			if(global.picked_characters[index] == Obj_Katana){
-				room_goto(Katana_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Batman){
-				room_goto(Batman_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Claws){
-				room_goto(Claws_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Baller){
-				room_goto(Baller_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Greatsword){
-				room_goto(Greatsword_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Boomhand){
-				room_goto(Boomhand_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Bow){
-				room_goto(Bow_Target_Run);
-			}
-			if(global.picked_characters[index] == Obj_Cultist){
-				room_goto(Cultist_Target_Run);
-			}
-			else{
-				room_goto(Dojo_Target_Run);
-			}
+			room_goto(target_run_room);
 		}
 		// Normal fight
 		else{

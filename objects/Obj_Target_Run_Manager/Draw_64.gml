@@ -20,15 +20,15 @@ draw_text_transformed(840, 32, " x " + string(instance_number(Obj_Target)), 2, 2
 // Draw timer
 part_sec = floor((timer_count%global.FPS)/global.FPS*100);
 sec = floor(timer_count/global.FPS);
-draw_text_transformed(400, 16, string(sec) + " : " + string(part_sec), 2, 2, 0);
+draw_text_transformed(480, 16, string(sec) + "." + string(part_sec), 3, 3, 0);
 
 if(show_final_time){
 	outline_color = c_black;
 	outline_size = 8;
-	draw_text_transformed_color(x_draw_final_time+outline_size, y_draw_final_time, string(sec) + " : " + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
-	draw_text_transformed_color(x_draw_final_time-outline_size, y_draw_final_time, string(sec) + " : " + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
-	draw_text_transformed_color(x_draw_final_time, y_draw_final_time+outline_size, string(sec) + " : " + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
-	draw_text_transformed_color(x_draw_final_time, y_draw_final_time-outline_size, string(sec) + " : " + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
-	draw_text_transformed(x_draw_final_time, y_draw_final_time, string(sec) + " : " + string(part_sec), 6, 6, 0);
-	draw_text_transformed(x_draw_final_time, y_draw_final_time, string(sec) + " : " + string(part_sec), 6, 6, 0);
+	draw_text_transformed_color(x_draw_final_time+outline_size, y_draw_final_time, string(sec) + "." + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
+	draw_text_transformed_color(x_draw_final_time-outline_size, y_draw_final_time, string(sec) + "." + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
+	draw_text_transformed_color(x_draw_final_time, y_draw_final_time+outline_size, string(sec) + "." + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
+	draw_text_transformed_color(x_draw_final_time, y_draw_final_time-outline_size, string(sec) + "." + string(part_sec), 6, 6, 0, outline_color, outline_color, outline_color, outline_color, 1);
+	draw_text_transformed(x_draw_final_time, y_draw_final_time, string(sec) + "." + string(part_sec), 6, 6, 0);
+	draw_text_transformed(x_draw_final_time, y_draw_final_time, string(sec) + "." + string(part_sec), 6, 6, 0);
 }

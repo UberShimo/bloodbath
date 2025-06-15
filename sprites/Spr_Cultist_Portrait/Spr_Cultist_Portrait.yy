@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Cultist_Portrait",
   "bbox_bottom": 127,
-  "bbox_left": 0,
+  "bbox_left": 2,
   "bbox_right": 99,
   "bbox_top": 0,
   "bboxMode": 0,

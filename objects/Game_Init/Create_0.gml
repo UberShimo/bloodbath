@@ -1,4 +1,37 @@
-	
+#region load save
+ini_open("save.ini");
+
+global.dojo_unlocked = ini_read_real("save", "dojo unlocked", true);
+global.katana_unlocked = ini_read_real("save", "katana unlocked", true);
+global.claws_unlocked = ini_read_real("save", "claws unlocked", true);
+global.boomhand_unlocked = ini_read_real("save", "boomhand unlocked", true);
+global.bow_unlocked = ini_read_real("save", "bow unlocked", true);
+global.batman_unlocked = ini_read_real("save", "batman unlocked", true);
+global.baller_unlocked = ini_read_real("save", "baller unlocked", true);
+global.greatsword_unlocked = ini_read_real("save", "greatsword unlocked", true);
+global.cultist_unlocked = ini_read_real("save", "cultist unlocked", true);
+global.rapier_unlocked = ini_read_real("save", "rapier unlocked", true);
+global.knife_unlocked = ini_read_real("save", "knife unlocked", true);
+global.shield_unlocked = ini_read_real("save", "shield unlocked", true);
+global.scythe_unlocked = ini_read_real("save", "scythe unlocked", true);
+
+global.dojo_TR_record = ini_read_real("save", "dojo TR record", 60*60);
+global.katana_TR_record = ini_read_real("save", "katana TR record", 60*60);
+global.claws_TR_record = ini_read_real("save", "claws TR record", 60*60);
+global.boomhand_TR_record = ini_read_real("save", "boomhand TR record", 60*60);
+global.bow_TR_record = ini_read_real("save", "bow TR record", 60*60);
+global.batman_TR_record = ini_read_real("save", "batman TR record", 60*60);
+global.baller_TR_record = ini_read_real("save", "baller TR record", 60*60);
+global.greatsword_TR_record = ini_read_real("save", "greatsword TR record", 60*60);
+global.cultist_TR_record = ini_read_real("save", "cultist TR record", 60*60);
+global.rapier_TR_record = ini_read_real("save", "rapier TR record", 60*60);
+global.knife_TR_record = ini_read_real("save", "knife TR record", 60*60);
+global.shield_TR_record = ini_read_real("save", "shield TR record", 60*60);
+global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
+
+ini_close();
+#endregion
+
 global.FPS = 60;
 global.game_time = 1;
 global.screen_ratio = 1.78; // 16:9

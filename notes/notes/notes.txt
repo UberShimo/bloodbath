@@ -1,7 +1,4 @@
 TODO{
-	Fix main menu "PRess A"
-	dont gain meter in Target Run
-	Save target run high score!
 	Make vertical parallax also...
 	Countdown before match starts.
 	Doing "Final moves" can create 2 cancel effect if you cancel into it...
@@ -62,7 +59,7 @@ Zoner:		Bow, Mage, Scythe
 MOVES!:
 
 Dojo man{
-	Give a special move and an ULTRA move.
+	
 }
 
 Katana{
@@ -98,7 +95,7 @@ Cultist{
 }
 
 NEW
-Rapier elegant with fabric covering the face TANTAN{
+Rapier elegant with fabric covering the face Ellie{
 	Dash has shorter duration.
 	Good grip.
 
@@ -127,7 +124,7 @@ Rapier elegant with fabric covering the face TANTAN{
 }
 
 NEW
-Scythe black and white / grey WILLIAM{
+Scythe black and white / grey Charlotte{
 	Has 2 extra jumps.
 	Moves slippy and has great air control. Light weight.
 	Dash is teleport. Also slightly slower.
@@ -148,7 +145,6 @@ Scythe black and white / grey WILLIAM{
 
 NEW
 Big round shield ANDERS{
-	Is heavy.
 	Has longer parry duration
 	
 	5F: Push shield forward.
@@ -156,13 +152,13 @@ Big round shield ANDERS{
 	8F: Try grabbing above and then throw them down.
 	5L: Karate high kick.
 	2L: Heel kick downward.
-	8L. Cycle kick below. Hold to push yourself upward.
+	8L. Swing leg below.
 	5S: Swing shield forward giving you forward momentum.
 	2S: Uppercut with shield.
 	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
 	
 	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
-	vvL: Put out a circle that turns into shoulder bash when dashed through. (Yellow)
+	vvL: Put out a circle that stun opponents when dashed through. (Yellow)
 	vvS: Put out a circle that makes you unstoppable when dashed through. (Pink)
 	
 	X: Increase your time speed for a short duration.
@@ -175,7 +171,7 @@ Rat with knife and green tip on tail SIMON{
 	Solid but relatively slow movement. Super quick dash.
 
 	5F: Quick slash.
-	2F: Quick low slash.
+	2F: Tail sweep and slightly step back.
 	8F: Slash upward.
 	
 	5L: Quick stab slash and slight step forward.
