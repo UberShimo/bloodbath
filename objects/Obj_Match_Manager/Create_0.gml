@@ -8,10 +8,6 @@ winner_animation_speed = 0.25;
 play_winner_splash = false;
 winner_splash_image = 0;
 winner_color = c_white;
-ready_image_alpha = 1;
-ready_alpha_decrease = 1/global.match_start_timer;
-go_image_alpha = 0;
-go_alpha_decrease = 0.05;
 
 x_screen_center = display_get_gui_width()/2;
 y_screen_center = display_get_gui_height()/2-96;

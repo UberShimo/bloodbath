@@ -156,9 +156,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		// Quite the check...
-		else if(meter >= 15 && double_down_pressed && ds_list_size(rewind_list) >= rewind_length-1){
+		else if(meter >= 40 && double_down_pressed && ds_list_size(rewind_list) >= rewind_length-1){
 			action = "Rewind";
-			meter -= 15;
+			meter -= 40;
 			
 			sprite_index = Spr_Claws_Teleport_startup;
 			image_index = 0;

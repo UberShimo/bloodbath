@@ -139,10 +139,12 @@ if(legit_hit_check){
 		effect_to_spawn = Eff_Splash;
 		audio_play_sound(other.hit_sound, 0, false);
 	}
-	scale = other.hit_effect_scale;
-	spawn_effect(x_pos, y_pos, 8, effect_to_spawn, 1, 0.05, c_white, scale, scale);
-	// Ring
-	spawn_effect(x_pos, y_pos, 1, Eff_Ring, 1, 0.1, c_white, 0, 0, 0.15*scale);
+	if(object_index != Obj_Target){ // Targets spawn their own effect
+		scale = other.hit_effect_scale;
+		spawn_effect(x_pos, y_pos, 8, effect_to_spawn, 1, 0.05, c_white, scale, scale);
+		// Ring
+		spawn_effect(x_pos, y_pos, 1, Eff_Ring, 1, 0.1, c_white, 0, 0, 0.15*scale);
+	}
 	#endregion
 	
 	ds_list_add(hitbox_list, other);

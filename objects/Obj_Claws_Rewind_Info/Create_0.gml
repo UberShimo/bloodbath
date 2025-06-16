@@ -9,4 +9,4 @@ movement_input = Spr_DD;
 button_input = Spr_M;
 image = Spr_Claws_Teleport_eff;
 frame = 1;
-meter_cost = 15;
+meter_cost = 40;
