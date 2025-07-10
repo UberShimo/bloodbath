@@ -43,7 +43,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			// Ball dash
 			else{
 				action = "Balldash";
-				goes_through_collision = true; // Crazy stuff
 				h_velocity = 0;
 				v_velocity = -4;
 				ball.h_velocity = 0;
@@ -235,6 +234,7 @@ if(action == "Balldash" && action_alarm <= 0){
 		is_holding_ball = true;
 		h_velocity *= 0.25;
 		v_velocity *= 0.25;
+		reset_physics();
 		// Regain cancels baby!
 		cancels = max_cancels;
 		effect = instance_create_depth(x, y, 1, Eff_Cancel);

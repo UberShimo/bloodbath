@@ -1,4 +1,4 @@
-hitbox = Obj_Katana_Quickdraw_hitbox;
+hitbox = Obj_Blank_hitbox;
 
 event_inherited();
 

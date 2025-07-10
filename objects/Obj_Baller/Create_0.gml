@@ -203,10 +203,12 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_Balldash_hitbox);
 		attack.initiate(self);
 		
+		goes_through_collision = true; // Crazy stuff
 		is_collidable = false;
 		
 		sprite_index = Spr_Baller_Balldash_recovery;
 		image_index = 0;
+		recover_alarm = 300; // Max duration 5 sec
 	}
 	// Meter moves
 	else if(action == "Charge Ball"){

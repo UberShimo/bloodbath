@@ -1,4 +1,4 @@
-hitbox = Obj_Cultist_2L_hitbox;
+hitbox = Obj_Cultist_8L_hitbox1;
 
 event_inherited();
 

@@ -1,5 +1,8 @@
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Claws_Skyring_startup); // 100% informational not used in logic
+recovery = generate_sprite_frames(Spr_Claws_Skyring_recovery); // 100% informational not used in logic
+
 is_active = false;
 is_final = true;
 is_projectile = true;

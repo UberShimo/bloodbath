@@ -1,7 +1,7 @@
 event_inherited();
 
 if(global.dojo_level == 0){
-	if(student.start_hold && !time_switch_pressed){
+	if(student.start_hold && student.is_controllable && !time_switch_pressed){
 		time_switch_pressed = true;
 	
 		if(global.game_time == 1){

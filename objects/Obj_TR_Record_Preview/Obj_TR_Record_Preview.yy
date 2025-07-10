@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Previews",
-    "path": "folders/Objects/Character Select/Previews.yy",
+    "name": "Character Select",
+    "path": "folders/Objects/Character Select.yy",
   },
   "parentObjectId": null,
   "persistent": false,

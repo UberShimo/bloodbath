@@ -3,7 +3,7 @@ event_inherited();
 fade = 0.01;
 
 // Cancel effect color
-draw_color = c_white;
+draw_color = c_yellow;
 
 initiate = function(initiator){
 	sprite_index = initiator.sprite_index;

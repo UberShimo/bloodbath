@@ -10,3 +10,5 @@ button_input = Spr_M;
 image = Spr_Claws_Pose2;
 frame = 2;
 meter_cost = 100;
+
+is_final = true;

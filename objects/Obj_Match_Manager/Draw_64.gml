@@ -4,6 +4,11 @@ if(!global.chaos_mode){
 		p1_ui_meter = players[0].meter/players[0].max_meter;
 		p1_ui_hearts = players[0].hearts;
 	}
+	else{
+		p1_ui_hp = 0;
+		p1_ui_meter = 0;
+		p1_ui_hearts = 0;
+	}
 	
 	corner_offset = 4*ui_pixel_size;
 	x_line = 32*ui_pixel_size+corner_offset;
@@ -22,6 +27,11 @@ if(!global.chaos_mode){
 		p2_ui_hp = players[1].HP/players[1].max_HP;
 		p2_ui_meter = players[1].meter/players[1].max_meter;
 		p2_ui_hearts = players[1].hearts;
+	}
+	else{
+		p2_ui_hp = 0;
+		p2_ui_meter = 0;
+		p2_ui_hearts = 0;
 	}
 	
 	x_line = display_get_gui_width()-32*ui_pixel_size-corner_offset;

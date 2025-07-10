@@ -4,7 +4,8 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Jump and hit downward.";
+hold_ok = true;
+info = "Jump and hit downward.\nHold to boost higher.";
 movement_input = Spr_DF;
 button_input = Spr_L;
 image = Spr_Batman_Spinhop_recovery;

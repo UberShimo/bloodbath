@@ -1,5 +1,5 @@
 /// @description Input etc
-if(!is_CPU && is_controllable){
+if(!is_CPU){
 	read_input();
 }
 

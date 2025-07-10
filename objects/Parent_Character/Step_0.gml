@@ -174,12 +174,29 @@ if(priority_struck_alarm > 0){
 		priority_struck = false;
 	}
 }
+
+// Might aswell be poison alarm...
+if(DoT_alarm > 0){
+	DoT_alarm -= logic_time;
+	HP -= DoT_tick_dmg*logic_time;
+	
+	if(effect_counter >= 1){
+		spawn_effect(x, y, 1, Eff_Dot, 1, 0.1, c_lime, 0.2, 0.5, 0, 0, 0, character_width, depth-1);
+	}
+	
+	if(HP <= 0){
+		HP = 0;
+		DoT_alarm = 0;
+		DoT_tick_dmg = 0;
+	}
+}
 #endregion
+
+if(is_controllable){
 
 #region control V-----V
 // Movement
 if(action == noone){
-	
 	// Crouch
 	if(down_hold){
 		// nothing lol
@@ -265,18 +282,9 @@ if(platdrop_pressed && action == noone
 		y += 1;
 	}
 }
-
-// Exit
-if(start_hold){
-	exit_count += 1;
-	if(exit_count >= exit_count_goal){
-		room_goto(global.character_select);
-	}
-}
-else{
-	exit_count = 0;
-}
 #endregion
+
+}
 
 #region physics V-----V
 
@@ -411,6 +419,8 @@ else{
 }
 #endregion
 
+if(is_controllable){
+	
 #region sprite fix  V-----V
 image_speed = logic_time;
 image_angle = 0;
@@ -483,6 +493,8 @@ else if(action == "Stunned" && !grounded){
 	}
 }
 #endregion
+
+}
 
 #region buffer subtraction V-----V
 forward_pressed--;
@@ -573,7 +585,7 @@ else if(lb_pressed > 0 && !down_hold
 			
 			// Gain meter when dashing toward enemy
 			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
-				meter += 5;
+				meter += 4;
 			}
 		}
 	
@@ -623,18 +635,31 @@ if(grounded && action == "Dash"){
 	face_closest_enemy();
 }
 
-// Invincible effects / image alpha
+// Invincible effects
 if(is_invincible && is_controllable){
 	image_alpha = 0.25;
 	if(effect_counter >= 1){
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.05, c_lime, 0.1, 0.3, 0, 0, 360, 24);
 	}
 }
+
+// Exit
+if(start_hold){
+	exit_count += 1;
+	if(exit_count >= exit_count_goal){
+		room_goto(global.character_select);
+	}
+}
 else{
-	image_alpha = 1;
+	exit_count = 0;
 }
 
 // Reset target run
 if(global.target_run_mode && rs_down && is_controllable){
 	room_restart();
+}
+
+// Die!!!
+if(HP <= 0 && death_alarm <= 0 && !is_respawning){
+	die();
 }

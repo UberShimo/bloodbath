@@ -21,6 +21,13 @@ draw_text(x+32+digit_offset, y+32*3+digit_offset, damage);
 draw_text(x+32+digit_offset, y+32*2+digit_offset, startup);
 draw_text(x+32*4+digit_offset, y+32*2+digit_offset, recovery);
 draw_text(x+32*4+digit_offset, y+32*3+digit_offset, hit_stun);
+if(!is_final){
+	recovery_when_canceled = recovery-global.cancelable_recovery_frames;
+	if(recovery_when_canceled < 0){
+		recovery_when_canceled = 0;
+	}
+	draw_text_transformed(x+32*4+digit_offset, y+32*2+digit_offset+16, "(" + string(recovery_when_canceled) + ")", 0.75, 0.75, 0);
+}
 
 if(!is_parryable){
 	draw_sprite(Spr_Unparryable_Symbol, 0, x+32*3, y+32*0);

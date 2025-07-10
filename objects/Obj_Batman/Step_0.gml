@@ -52,7 +52,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Spinhop";
 			
 			h_velocity = 1*image_xscale;
-			v_velocity = -9;
+			v_velocity = -6;
 			
 			if(!grounded){
 				v_velocity = -4;
@@ -168,4 +168,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
+}
+
+// Spinhop height boost
+if(action == "Spinhop" && action_alarm > 0 && y_hold){
+	y -= 4*logic_time;
 }

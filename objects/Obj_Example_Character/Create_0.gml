@@ -13,9 +13,9 @@ stunned_spr = Spr_Batman_Stunned;
 launched_spr = Spr_Batman_Launched;
 land_spr = Spr_Batman_Land;
 parry_spr = Spr_Batman_Parry;
-pose1 = Spr_Batman_Pose1;
-pose2 = Spr_Batman_Pose1;
-pose3 = Spr_Batman_Pose1;
+pose1_spr = Spr_Batman_Pose1;
+pose2_spr = Spr_Batman_Pose1;
+pose3_spr = Spr_Batman_Pose1;
 #endregion
 
 #region Stats
@@ -146,7 +146,6 @@ action_trigger = function(){
 		sprite_index = Spr_Batman_ULTRA_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-		Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 	}
 	else{
 		action = noone;

@@ -1,4 +1,4 @@
-hitbox = Obj_Blank_hitbox;
+hitbox = Obj_Boomhand_ULTRA_hitbox;
 
 event_inherited();
 

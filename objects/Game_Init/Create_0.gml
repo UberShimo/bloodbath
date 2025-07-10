@@ -124,30 +124,30 @@ global.battle_music_index = 0;
 #region BG lists
 global.BG_list = [
 	BG_Random,
-	BG_Boxingring,
 	BG_Mauntains,
 	BG_Forest,
 	BG_Night,
 	BG_Sunset,
 	BG_Dungeon,
 	BG_Street,
+	BG_Boxingring,
 	BG_Trippy,
 	BG_Trainingroom
 ]
 // Wall image list
 global.wall_images = [
 	Spr_Collision,
-	Spr_Boxingring_Walls,
 	Spr_Mauntains_Walls,
 	Spr_Forest_Walls,
 	Spr_Night_Walls,
 	Spr_Sunset_Walls,
 	Spr_Dungeon_Walls,
 	Spr_Street_Walls,
+	Spr_Boxingring_Walls,
 	Spr_Trippy_Walls,
 	Spr_Trainingroom_Walls
 ]
-global.BG_index = 0;
+global.BG_index = 1;
 global.BG_darkness = 0.5; // % black
 #endregion
 
@@ -186,7 +186,7 @@ global.arena_images = [
 	Spr_Chandelier_Layout,
 	Spr_Rooms_Layout
 ]
-global.arena_index = 0;
+global.arena_index = 1;
 #endregion
 
 // Methods

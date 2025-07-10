@@ -18,6 +18,7 @@ collision_check_with_distance = false;
 
 // Wave stuff
 drag_along_amount = 0.8; // % based
+
 collide = function(){
 	if(place_meeting(x+h_velocity, y, Parent_Collision)){
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_aqua, 1, 1, 0.2);

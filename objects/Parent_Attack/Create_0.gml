@@ -57,6 +57,8 @@ is_collidable = true; // Goes through walls or not?
 is_initiated_by_character = true;
 hitfallable = true; // Mostly so you can hitfall moves that lift you up from ground
 collides_with_platform = false;
+DoT_amount = 0;
+DoT_duration = 0;
 #endregion
 
 // Methods

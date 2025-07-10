@@ -28,6 +28,9 @@ else if(P1_Preview.sprite_index == Spr_Bow_Portrait){
 else if(P1_Preview.sprite_index == Spr_Cultist_Portrait){
 	val = global.cultist_TR_record;
 }
+else if(P1_Preview.sprite_index == Spr_Knife_Portrait){
+	val = global.knife_TR_record;
+}
 if(val <= 0){
 	part_sec = "?";
 	sec = "?";

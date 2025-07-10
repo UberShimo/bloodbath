@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Unparryable katana slash!\nDash to cancel ULTRA.";
+info = "Katana slash!\nDash to cancel ULTRA.";
 movement_input = Spr_BDF;
 button_input = Spr_M;
 image = Spr_Katana_ULTRA_recovery;

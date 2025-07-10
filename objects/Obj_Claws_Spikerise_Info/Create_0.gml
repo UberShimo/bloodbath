@@ -1,4 +1,4 @@
-hitbox = Obj_Blank_hitbox;
+hitbox = Obj_Claws_Spike_hitbox;
 
 event_inherited();
 
@@ -13,3 +13,5 @@ meter_cost = 20;
 extra_image = Spr_Claws_Spike;
 extra_image_x = 32;
 extra_image_y = 32;
+
+is_final = true;

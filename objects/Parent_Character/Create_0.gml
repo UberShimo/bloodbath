@@ -103,6 +103,8 @@ is_unstoppable = false;
 is_invincible = false;
 is_collidable = true;
 goes_through_collision = false; // SUPER rarely used since this is risky business
+DoT_tick_dmg = 0; // Poison only lol
+DoT_alarm = 0; // Poison only lol
 // Variating stats
 start_speed = 3;
 max_speed = 6;
@@ -166,6 +168,15 @@ mini_jump_disabled_alarm = 0;
 #endregion
 
 // Methods
+die = function(){
+	action = "Stunned";
+	HP = 0;
+	shake_amount = 20;
+	object_time = 0;
+	time_reset_alarm = 30;
+	death_alarm = 30;
+}
+
 action_trigger = function(){
 	// Activated by action_alarm.
 	// This alarm performs the queued action. Like spawning hitboxes and shit...
@@ -400,7 +411,9 @@ action_button_pressed = function(){
 }
 
 check_for_cancel = function(){
-	if(can_cancel && cancels > 0 && recover_alarm < cancelable_recovery_frames && action != "Stunned" && !cancel_prevent_hold){
+	if(can_cancel && cancels > 0
+	&& recover_alarm < cancelable_recovery_frames && recover_alarm > 0
+	&& action != "Stunned" && !cancel_prevent_hold){
 		doing_action_by_canceling = true;
 		return true;
 	}
@@ -410,6 +423,7 @@ check_for_cancel = function(){
 save_current_state = function(){
 	last_action = action;
 	last_action_alarm = action_alarm;
+	last_recover_alarm = recover_alarm;
 	last_sprite = sprite_index;
 	last_image_index = image_index;
 	last_h_velocity = h_velocity;
@@ -441,6 +455,7 @@ do_cancel = function(){
 cancel_the_cancel = function(){
 	action = last_action;
 	action_alarm = last_action_alarm;
+	recover_alarm = last_recover_alarm;
 	sprite_index = last_sprite;
 	image_index = last_image_index;
 	h_velocity = last_h_velocity;

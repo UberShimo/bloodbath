@@ -13,9 +13,9 @@ stunned_spr = Spr_Dojo_Stunned;
 launched_spr = Spr_Dojo_Launched;
 land_spr = Spr_Dojo_Land;
 parry_spr = Spr_Dojo_Parry;
-pose1_spr = Spr_Dojo_Stand;
-pose2_spr = Spr_Dojo_Stand;
-pose3_spr = Spr_Dojo_Stand;
+pose1_spr = Spr_Dojo_Dash_Forward;
+pose2_spr = Spr_Dojo_Ascend;
+pose3_spr = Spr_Dojo_Descend;
 #endregion
 
 #region Stats
@@ -42,7 +42,7 @@ original_weight = weight;
 #endregion
 
 // Dojo specific
-HP = 200;
+HP = 180;
 max_HP = HP;
 
 action_trigger = function(){

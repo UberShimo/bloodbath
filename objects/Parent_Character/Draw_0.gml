@@ -9,7 +9,7 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 	var t_width = texture_get_texel_width(texture);
 	var t_height = texture_get_texel_height(texture);
 	shader_set_uniform_f(texel_handle, t_width, t_height);
-	shader_set_uniform_f(outline_handle, outline_color[0], outline_color[1], outline_color[2], outline_color[3]);
+	shader_set_uniform_f(outline_handle, outline_color[0]*image_alpha, outline_color[1]*image_alpha, outline_color[2]*image_alpha, outline_color[3]*image_alpha);
 }
 draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 shader_reset();
@@ -51,12 +51,12 @@ if(exit_count > 0){
 }
 
 // DEBUG
-if(global.is_debugging){
+if(global.is_debugging && object_index != Obj_Immortal_Dummy){ // Dont want that Dummy shit info
 	action_text = string(action);
 	if(action_text == "-4"){
 		action_text = "none";
 	}
-	draw_text(x, y-character_height-80, "close to wall?:  " + string(is_close_to_wall));
+	draw_text(x, y-character_height-80, "alphons:  " + string(image_alpha));
 	draw_text(x, y-character_height-64, "cancels:  " + string(cancels));
 	draw_text(x, y-character_height-48, "velocity:  " + string(get_velocity()));
 	draw_text(x, y-character_height-32, "startup:  " + string(action_alarm));

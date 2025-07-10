@@ -7,6 +7,14 @@ if(is_controllable){
 
 	reset_buffers();
 	
+	// Face opponent
+	if(x < closest_enemy.x  && image_xscale < 0){
+		backward_hold = true;
+	}
+	else if(x > closest_enemy.x  && image_xscale > 0){
+		backward_hold = true;
+	}
+	
 	if(place_meeting(x, y+2, Obj_Platform) && irandom_range(1, 2) == 1){
 		platdrop_pressed = true; // No buffer duration here
 		platdrop_hold = true;

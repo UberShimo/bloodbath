@@ -1,6 +1,7 @@
 TODO{
+	GIT GUD WITH YOUR RAT!!!
+	Rat does mark dash the wrong way after dashing through opponent?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
-	When landing you get stuck at times.
 	Make vertical parallax also?...
 }
 
@@ -72,7 +73,7 @@ Claws{
 }
 
 Baller{
-	
+	Maybe make max distance for ball? Can create problems in adventure mode.
 }
 
 Greatsword{
@@ -89,6 +90,11 @@ Bow{
 
 Cultist{
 	Meter circle can get into walls :o
+}
+
+Knife{
+	Make Grenade pop mark in an interesting way?
+	CPU cant lob grenade in cool ways.
 }
 
 NEW
@@ -116,7 +122,7 @@ Rapier elegant with fabric covering the face Ellie{
 	v>L: Slower dash stab.
 	v>S: Slowest dash stab that leaves a delayed stab afterwards.
 	
-	X: Quick dash stab that leaves a delayed stab afterwards.
+	v>X: Quick dash stab that leaves a delayed stab afterwards.
 	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
 }
 
@@ -156,36 +162,9 @@ Big round shield ANDERS{
 	
 	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
 	vvL: Put out a circle that stun opponents when dashed through. (Yellow)
-	vvS: Put out a circle that makes you unstoppable when dashed through. (Pink)
+	vvS: Put out a circle that makes you unstoppable when dashed through and you take less dmg. (Pink)
 	
-	X: Increase your time speed for a short duration.
+	v>X: Gain momentum forward. Can during other moves also!
+	vvX: Shovel up a big boulder with shield. Dash into boulder to push it forward. Unparryable.
 	ULTRA: Jump up into the sky and start aiming. Then smash down and deal big damage! Unparryable.
-}
-
-NEW
-Rat with knife and green tip on tail SIMON{
-	Has 1 extra cancel.
-	Solid but relatively slow movement. Super quick dash.
-
-	5F: Quick slash.
-	2F: Tail sweep and slightly step back.
-	8F: Slash upward.
-	
-	5L: Quick stab slash and slight step forward.
-	sL: Slash stab over head. movign forward.
-	8L: Slash forward and launch yourself forward.
-	
-	5S: Super strong stab behind.
-	2S: Slide forward and swing knife upward. Quite small launch. Combos into 5S.
-	8S: Stab slash downward
-	
-	v>F: Throw slightly angled knife that MARKS enemy. (Mark is a cross)
-	vvF: Deal small dmg to marked enemy. Unparryable. (Make cross with arms them slash)
-	v>L: Throw straight knife that MARKS enemy.
-	v>L: Teleport behind marked enemy. Cancelable.
-	vvS: Lob a grenade that explode after delay. Hold </> to change trajectory. Hold to lob harder. Cancelable.
-	
-	v>X: Crawl into invisibility
-	vvX: Lob grenade that turn into sparks instead. Keeping them at place for good amount.
-	ULTRA: Charge then go sonic mode into the air. Can slightly control while airborne. Upon landing you can control instantly.
 }

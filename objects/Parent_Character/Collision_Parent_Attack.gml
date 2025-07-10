@@ -93,6 +93,11 @@ if(legit_hit_check){
 				}
 			}
 		}
+		// DoT logic
+		if(other.DoT_amount > 0){
+			DoT_tick_dmg = other.DoT_amount/other.DoT_duration;
+			DoT_alarm = other.DoT_duration;
+		}
 	}
 	#endregion
 	
@@ -148,14 +153,4 @@ if(legit_hit_check){
 	#endregion
 	
 	ds_list_add(hitbox_list, other);
-	
-	// Die
-	if(HP <= 0){
-		HP = 0;
-		
-		shake_amount = 20;
-		object_time = 0;
-		time_reset_alarm = 30;
-		death_alarm = 30;
-	}
 }
