@@ -77,6 +77,7 @@ descend_spr = noone;
 stunned_spr = noone;
 launched_spr = noone;
 jump_spr = noone;
+land_spr = noone;
 parry_spr = noone;
 pose1_spr = noone;
 pose2_spr = noone;
@@ -84,7 +85,7 @@ pose3_spr = noone;
 #endregion
 
 #region Stats
-// Fixed stats
+// Fixed stats... ish
 HP = 120;
 max_HP = HP;
 meter = 0;
@@ -97,14 +98,7 @@ dash_cancel_max_amount = 0.75; // % based
 parry_duration = 48;
 parry_active_frames = 10; // Counts down in real time even if time is slowed/has stopped
 meter_gain_by_approaching = 10/60; // 10 meter / second
-meter_gain_by_dashing = 5;
-is_parrying = false;
-is_unstoppable = false;
-is_invincible = false;
-is_collidable = true;
-goes_through_collision = false; // SUPER rarely used since this is risky business
-DoT_tick_dmg = 0; // Poison only lol
-DoT_alarm = 0; // Poison only lol
+meter_gain_by_dashing = 4;
 // Variating stats
 start_speed = 3;
 max_speed = 6;
@@ -145,13 +139,21 @@ closest_enemy = self;
 multi_hit_action_index = 0; // When one move does many attacks this variable keeps track on what attack you are on
 wall_bounce_limit = 6;
 ground_bounce_limit = 10;
-grounded = true;
+grounded = false;
 priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in alarm[9]
-is_in_wall = false;
-is_close_to_wall = false;
 colliding_wall = noone;
 character_push_away_amount = 8;
 mini_jump_disabled = false; // Used so characters can properly get launched into air without losing v_velocity
+is_parrying = false;
+is_unstoppable = false;
+is_invincible = false;
+is_collidable = true;
+is_unstable = false; // Used for landing clumsy. Used on most aerial moves.
+is_in_wall = false;
+is_close_to_wall = false;
+goes_through_collision = false; // SUPER rarely used since this is risky business
+DoT_tick_dmg = 0; // Poison only lol
+DoT_alarm = 0; // Poison only lol
 #endregion
 
 #region Alarms
@@ -402,6 +404,7 @@ reset_physics = function(){
 	weight = original_weight;
 	multi_hit_action_index = 0;
 	is_collidable = true;
+	is_unstable = false;
 	goes_through_collision = false;
 	object_time = 1;
 }

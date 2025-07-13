@@ -88,6 +88,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(!grounded){
 			action = "8L";
+			is_unstable = true;
 			sprite_index = Spr_Claws_8L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

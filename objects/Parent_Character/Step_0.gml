@@ -241,7 +241,7 @@ if(action == noone){
 			action = "Jump";
 			sprite_index = jump_spr;
 			jump_alarm = jump_startup;
-			recover_alarm = jump_startup; // Important since if(recover_alarm == 0) > action = noone
+			recover_alarm = jump_startup; // Important since if(recover_alarm == 0) ---> action = noone
 		}
 		else if(extra_jumps_left > 0){
 			extra_jumps_left -= 1;
@@ -251,16 +251,14 @@ if(action == noone){
 }
 // Jump cancel
 else if(a_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
+	action = noone;
 	reset_physics();
 	a_pressed = 0; // Just reset A buffer
 	
 	if(grounded){
-		action = "Jump";
-		sprite_index = jump_spr;
-		jump_alarm = jump_startup;
+		v_velocity = -jump_power;
 	}
 	else if(extra_jumps_left > 0){
-		action = noone;
 		extra_jumps_left -= 1;
 		v_velocity = -jump_power*extra_jump_strength;
 	}
@@ -284,7 +282,7 @@ if(platdrop_pressed && action == noone
 
 #region physics V-----V
 
-// Move back outa wall if inside it
+// Move outa wall
 if(is_in_wall){
 	max_distance = 12;
 	distance_count = 0;
@@ -388,11 +386,16 @@ else{
 	}
 	// Land
 	else{
+		if(is_unstable){
+			action = "Unstable Landing";
+			sprite_index = land_spr;
+			recover_alarm += action_alarm+1;
+		}
 		v_velocity = 0;
 	}
 }
 // Grounded or not? also reset cancels
-if(ground_check()){
+if(ground_check() && v_velocity >= 0){
 	grounded = true;
 	
 	if(action == noone){
@@ -567,7 +570,7 @@ else if(lb_pressed > 0 && !down_hold
 			
 			// Gain meter when dashing toward enemy
 			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
-				meter += 4;
+				meter += meter_gain_by_dashing;
 			}
 		}
 	

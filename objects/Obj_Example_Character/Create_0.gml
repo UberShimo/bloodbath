@@ -12,6 +12,7 @@ descend_spr = Spr_Batman_Descend;
 stunned_spr = Spr_Batman_Stunned;
 launched_spr = Spr_Batman_Launched;
 jump_spr = Spr_Batman_Crouch;
+land_spr = Spr_Batman_Land;
 parry_spr = Spr_Batman_Parry;
 pose1_spr = Spr_Batman_Pose1;
 pose2_spr = Spr_Batman_Pose1;

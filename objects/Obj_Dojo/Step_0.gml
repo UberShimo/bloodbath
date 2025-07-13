@@ -9,7 +9,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(x_pressed && meter > 10){
+		meter -= 10;
 		action = "F";
 		shake_amount = launcher_shake_amount;
 		sprite_index = Spr_Dojo_F_startup;

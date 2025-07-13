@@ -64,6 +64,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(!grounded){
 			action = "8L";
+			is_unstable = true;
 			sprite_index = Spr_Batman_8L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -89,8 +90,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale *= -1;
 			}
 			action = "Dropkick";
+			is_unstable = true;
 			shake_amount = launcher_shake_amount;
 			
+			v_velocity = -1;
 			if(grounded){
 				h_velocity += 3*image_xscale;
 				v_velocity = -6;
@@ -102,6 +105,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(!grounded){
 			action = "8S";
+			is_unstable = true;
 			sprite_index = Spr_Batman_8S_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -171,6 +175,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 }
 
 // Spinhop height boost
-if(action == "Spinhop" && action_alarm > 0 && y_hold){
+if(action == "Spinhop" && action_alarm > 0 && y_hold && image_index >= 1){ // Cant height boost on first frame. Just for consistnecy!
 	y -= 4*logic_time;
 }

@@ -4,6 +4,7 @@ if(is_doing_F_loop){
 	y_pressed = 0;
 	b_pressed = 0;
 	x_pressed = buffer_duration;
+	meter += 10;
 }
 else if(is_jumping){
 	y_pressed = 0;

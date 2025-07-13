@@ -12,6 +12,7 @@ descend_spr = Spr_Boomhand_Descend;
 stunned_spr = Spr_Boomhand_Stunned;
 launched_spr = Spr_Boomhand_Launched;
 jump_spr = Spr_Boomhand_Crouch;
+land_spr = Spr_Boomhand_Land;
 parry_spr = Spr_Boomhand_Parry;
 pose1_spr = Spr_Boomhand_Pose1;
 pose2_spr = Spr_Boomhand_Pose2;

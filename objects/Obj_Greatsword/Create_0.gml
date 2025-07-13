@@ -12,6 +12,7 @@ descend_spr = Spr_Greatsword_Descend;
 stunned_spr = Spr_Greatsword_Stunned;
 launched_spr = Spr_Greatsword_Launched;
 jump_spr = Spr_Greatsword_Crouch;
+land_spr = Spr_Greatsword_Land;
 parry_spr = Spr_Greatsword_Parry;
 pose1_spr = Spr_Greatsword_Pose1;
 pose2_spr = Spr_Greatsword_Pose2;

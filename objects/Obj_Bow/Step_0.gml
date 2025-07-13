@@ -29,6 +29,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8F";
+			is_unstable = true;
 			sprite_index = Spr_Bow_8F_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

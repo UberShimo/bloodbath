@@ -13,6 +13,7 @@ v_launch = -6;
 
 is_sticky = true;
 is_launcher = true;
+is_parryable = false;
 meter_gain_multiplier = 10;
 
 swing_sound = Snd_Light_Swing;

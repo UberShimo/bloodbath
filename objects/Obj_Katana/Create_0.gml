@@ -12,6 +12,7 @@ descend_spr = Spr_Katana_Descend;
 stunned_spr = Spr_Katana_Stunned;
 launched_spr = Spr_Katana_Launched;
 jump_spr = Spr_Katana_Crouch;
+land_spr = Spr_Katana_Land;
 parry_spr = Spr_Katana_Parry;
 pose1_spr = Spr_Katana_Pose1;
 pose2_spr = Spr_Katana_Pose2;
@@ -53,7 +54,7 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_8F_hitbox);
 		attack.initiate(self);
 		
-		v_velocity -= 3;
+		v_velocity -= 2;
 		
 		sprite_index = Spr_Katana_8F_recovery;
 		image_index = 0;

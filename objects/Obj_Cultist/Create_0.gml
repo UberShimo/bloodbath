@@ -12,6 +12,7 @@ descend_spr = Spr_Cultist_Descend;
 stunned_spr = Spr_Cultist_Stunned;
 launched_spr = Spr_Cultist_Launched;
 jump_spr = Spr_Cultist_Crouch;
+land_spr = Spr_Cultist_Land;
 parry_spr = Spr_Cultist_Parry;
 pose1_spr = Spr_Cultist_Pose1;
 pose2_spr = Spr_Cultist_Pose2;
