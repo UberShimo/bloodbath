@@ -16,7 +16,7 @@ ascend_spr = Spr_Dojo_Ascend;
 descend_spr = Spr_Dojo_Descend;
 stunned_spr = Spr_Dojo_Stunned;
 launched_spr = Spr_Dojo_Launched;
-land_spr = Spr_Dojo_Land;
+jump_spr = Spr_Dojo_Land;
 parry_spr = Spr_Dojo_Parry;
 #endregion
 

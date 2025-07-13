@@ -7,10 +7,8 @@ air_only = false;
 info = "Ball will explode after delay.";
 movement_input = Spr_DD;
 button_input = Spr_M;
-image = Spr_Baller_Ball;
-extra_image = Spr_Baller_Ball_Explosion;
-extra_image_color = c_lime;
-frame = 0;
+image = Spr_Baller_Charging_Ball_recovery;
+extra_image = Spr_Baller_Ball;
 meter_cost = 25;
 
 is_final = true;

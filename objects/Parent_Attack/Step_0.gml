@@ -98,7 +98,7 @@ else if(active_frames > 0){
 	// Spawner is a character?
 	if(object_is_ancestor(spawner.object_index, Parent_Character)
 	&& (spawner.action != spawner_action
-	|| spawner.sprite_index == spawner.land_spr)){
+	|| spawner.sprite_index == spawner.jump_spr)){
 		instance_destroy();
 	}
 }

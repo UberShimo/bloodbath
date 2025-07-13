@@ -14,7 +14,7 @@ ascend_spr = Spr_Katana_Ascend;
 descend_spr = Spr_Katana_Descend;
 stunned_spr = Spr_Katana_Stunned;
 launched_spr = Spr_Katana_Launched;
-land_spr = Spr_Katana_Land;
+jump_spr = Spr_Katana_Land;
 #endregion
 
 // Fixed stats

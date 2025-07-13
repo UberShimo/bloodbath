@@ -34,7 +34,6 @@ if(jump_alarm > 0){
 	jump_alarm -= logic_time;
 	
 	if(jump_alarm <= 0){
-		action = noone;
 		v_velocity = -jump_power;
 	}
 }
@@ -192,8 +191,6 @@ if(DoT_alarm > 0){
 }
 #endregion
 
-if(is_controllable){
-
 #region control V-----V
 // Movement
 if(action == noone){
@@ -242,8 +239,9 @@ if(action == noone){
 		
 		if(grounded){
 			action = "Jump";
-			sprite_index = land_spr;
+			sprite_index = jump_spr;
 			jump_alarm = jump_startup;
+			recover_alarm = jump_startup; // Important since if(recover_alarm == 0) > action = noone
 		}
 		else if(extra_jumps_left > 0){
 			extra_jumps_left -= 1;
@@ -258,7 +256,7 @@ else if(a_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
 	
 	if(grounded){
 		action = "Jump";
-		sprite_index = land_spr;
+		sprite_index = jump_spr;
 		jump_alarm = jump_startup;
 	}
 	else if(extra_jumps_left > 0){
@@ -283,8 +281,6 @@ if(platdrop_pressed && action == noone
 	}
 }
 #endregion
-
-}
 
 #region physics V-----V
 
@@ -393,16 +389,6 @@ else{
 	// Land
 	else{
 		v_velocity = 0;
-		shake_amount = 0;
-	
-		// Harsh land
-		if(action != noone){
-			sprite_index = land_spr;
-			if(recover_alarm <= 0 && action_alarm > 0){
-				recover_alarm = action_alarm;
-			}
-			action_alarm = 0;
-		}
 	}
 }
 // Grounded or not? also reset cancels
@@ -419,8 +405,6 @@ else{
 }
 #endregion
 
-if(is_controllable){
-	
 #region sprite fix  V-----V
 image_speed = logic_time;
 image_angle = 0;
@@ -493,8 +477,6 @@ else if(action == "Stunned" && !grounded){
 	}
 }
 #endregion
-
-}
 
 #region buffer subtraction V-----V
 forward_pressed--;

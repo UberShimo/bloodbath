@@ -192,18 +192,23 @@ if(visibility_change != 0){
 }
 
 // Ultra control
-if(action == "ULTRA"){
-	if(forward_hold){
-		x += ULTRA_control*image_xscale*logic_time;
+if(action == "ULTRA" && multi_hit_action_index == 1){
+	if(grounded){
+		action = noone;
 	}
-	else if(backward_hold){
-		x -= ULTRA_control*image_xscale*logic_time;
-	}
-	if(down_hold){
-		y += ULTRA_control*image_xscale*logic_time;
-	}
-	else if(up_hold){
-		y -= ULTRA_control*image_xscale*logic_time;
+	else{
+		if(forward_hold){
+			x += ULTRA_control*image_xscale*logic_time;
+		}
+		else if(backward_hold){
+			x -= ULTRA_control*image_xscale*logic_time;
+		}
+		if(down_hold){
+			y += ULTRA_control*image_xscale*logic_time;
+		}
+		else if(up_hold){
+			y -= ULTRA_control*image_xscale*logic_time;
+		}
 	}
 }
 

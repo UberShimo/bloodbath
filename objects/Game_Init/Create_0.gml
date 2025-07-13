@@ -68,9 +68,9 @@ global.slippy_grip = 0.4;
 global.standard_grip = 0.5;
 global.steady_grip = 0.6;
 
-global.light_weight = 0.55;
-global.standard_weight = 0.7;
-global.heavy_weight = 0.85;
+global.light_weight = 0.5;
+global.standard_weight = 0.6;
+global.heavy_weight = 0.7;
 
 global.short_height = 48;
 global.standard_height = 64;

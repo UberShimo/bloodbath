@@ -1,6 +1,6 @@
 TODO{
-	GIT GUD WITH YOUR RAT!!!
 	Rat does mark dash the wrong way after dashing through opponent?
+	ULTRA moves cant be done backwards
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
 }
@@ -89,6 +89,7 @@ Bow{
 }
 
 Cultist{
+	Circle pullback should pull STARS back also!
 	Meter circle can get into walls :o
 }
 
