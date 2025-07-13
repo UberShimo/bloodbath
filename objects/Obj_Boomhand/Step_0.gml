@@ -1,3 +1,8 @@
+
+if(action == "Fistdive" && y_hold){
+	platdrop_hold = true;
+}
+
 event_inherited();
 
 // ACTION!
@@ -48,6 +53,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale *= -1;
 			}
 			action = "Fistdive";
+			is_unstable = true;
 			
 			weight = 0.1;
 			

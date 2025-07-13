@@ -1,4 +1,5 @@
 TODO{
+	Fix volume adjustment in menu.
 	Rat does mark dash the wrong way after dashing through opponent?
 	ULTRA moves cant be done backwards
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
