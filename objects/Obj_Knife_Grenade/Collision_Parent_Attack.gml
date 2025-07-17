@@ -1,6 +1,5 @@
-if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list, other) == -1 && !priority_struck){
-	index = other.index;
-	
+if(!other.is_projectile && other.hit_stun > 0 && is_initiated_by_character
+&& ds_list_find_index(hitbox_list, other) == -1 && !priority_struck){
 	if(other.hit_stun > 0 && other.is_priority){
 		priority_struck = true;
 		priority_struck_alarm = other.active_frames;

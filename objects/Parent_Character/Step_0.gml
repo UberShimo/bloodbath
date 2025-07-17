@@ -8,9 +8,6 @@ if(is_respawning){
 	v_velocity = 0;
 }
 
-// Always make sure there is a closest enemy before executing code
-find_closest_enemy();
-
 // Are you close to a wall? Just used for character collision logic when close to walls so you dont clip through it
 check_length = 2;
 if(collision_rectangle(x-character_width/2-check_length, y-character_height/2,

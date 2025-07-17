@@ -1,4 +1,4 @@
-if(ds_list_find_index(hitbox_list, other) == -1 && other.is_active){
+if(ds_list_find_index(hitbox_list, other) == -1 && other.is_active && !other.is_projectile){
 	dir = point_direction(other.x, other.y, x, y);
 
 	// Shockwave

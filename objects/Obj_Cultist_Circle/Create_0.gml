@@ -11,6 +11,8 @@ implode_alarm = 0;
 destroy_alarm = 0;
 is_meter_circle = false;
 
+mask_index = Spr_Cultist_Circle;
+
 hitbox_list = ds_list_create();
 
 collide = function(){

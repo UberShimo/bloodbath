@@ -29,6 +29,8 @@ global.knife_TR_record = ini_read_real("save", "knife TR record", 60*60);
 global.shield_TR_record = ini_read_real("save", "shield TR record", 60*60);
 global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
 
+global.music_volume = ini_read_real("save", "music volume", 1);
+
 ini_close();
 #endregion
 
@@ -44,7 +46,6 @@ global.infinite_cancels_mode = false;
 global.target_run_mode = false;
 global.heart_amount = 3;
 global.character_select = Character_Select_1v1;
-global.music_volume = 1;
 global.min_players = 2;
 global.max_players = 8; // Actually max controller index check
 global.dojo_level = 0; // 0:freeform 1:Basic tutorial 2:Advanced tutorial

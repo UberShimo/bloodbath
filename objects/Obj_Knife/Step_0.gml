@@ -1,3 +1,8 @@
+
+if(action == "Mark Spin" && y_hold){
+	platdrop_hold = true;
+}
+
 event_inherited();
 
 // ACTION!

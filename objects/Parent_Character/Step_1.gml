@@ -12,3 +12,6 @@ else{
 	is_in_wall = false;
 	colliding_wall = noone;
 }
+
+// Always make sure there is a closest enemy before executing code
+find_closest_enemy();
