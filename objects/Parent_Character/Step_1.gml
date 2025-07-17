@@ -1,3 +1,6 @@
+// Always make sure there is a closest enemy before executing code
+find_closest_enemy();
+
 /// @description Input etc
 if(!is_CPU){
 	read_input();
@@ -12,6 +15,3 @@ else{
 	is_in_wall = false;
 	colliding_wall = noone;
 }
-
-// Always make sure there is a closest enemy before executing code
-find_closest_enemy();

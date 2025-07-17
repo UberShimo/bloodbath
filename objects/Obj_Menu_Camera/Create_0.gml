@@ -5,12 +5,15 @@ beat_alarm = 0;
 shake_amount = 64;
 shake_decrease = 6;
 // Reset some global stats
-global.teams_mode = false; // Very inportant to disable teams mode since it creates lots of problems outside chaos mode.
 global.dojo_mode = false;
 global.chaos_mode = false;
 global.infinite_cancels_mode = false;
 global.target_run_mode = false;
 global.is_debugging = false;
+global.teams_mode = false; // Very inportant to disable teams mode since it creates lots of problems outside chaos mode.
+for(i = 0; i < 8; i++){
+	global.team_change_value[i] = 0;
+}
 
 // Shake the main menu
 if(room == Main_Menu){

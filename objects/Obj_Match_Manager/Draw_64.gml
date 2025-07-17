@@ -49,8 +49,10 @@ if(!global.chaos_mode){
 
 // Play winner animation...
 if(play_winner_animation){
-	draw_sprite_ext(Spr_Winner, winner_image, x_screen_center, y_screen_center, ui_pixel_size*2, ui_pixel_size*2, 0, c_white, 1);
+	scale = 1.6;
+	draw_sprite_ext(Spr_Winner, winner_image, x_screen_center, y_screen_center, ui_pixel_size*scale, ui_pixel_size*scale, 0, c_white, 1);
 }
 if(play_winner_splash){
-	draw_sprite_ext(Spr_Winner_Effect, winner_splash_image, x_screen_center, y_screen_center, ui_pixel_size*2, ui_pixel_size*2, 0, winner_color, 1);
+	scale = 1.8;
+	draw_sprite_ext(Spr_Winner_Effect, winner_splash_image, x_screen_center, y_screen_center, ui_pixel_size*scale, ui_pixel_size*scale, 0, winner_color, 1);
 }

@@ -1,3 +1,6 @@
+// Always make sure there is a closest enemy before executing code
+find_closest_enemy(); // Also needs to be here if a player dies after "Begin Step".
+
 event_inherited();
 
 if(is_respawning){
