@@ -216,7 +216,7 @@ action_trigger = function(){
 		
 		vel = 5;
 		if(b_hold){
-			vel = 8;
+			vel = 7;
 		}
 		
 		dir = 70;
@@ -248,7 +248,7 @@ action_trigger = function(){
 		
 		vel = 5;
 		if(rb_hold){
-			vel = 8;
+			vel = 7;
 		}
 		
 		dir = 70;

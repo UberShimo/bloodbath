@@ -850,6 +850,7 @@
     {"id":{"name":"Spr_Picker_Rectangle","path":"sprites/Spr_Picker_Rectangle/Spr_Picker_Rectangle.yy",},},
     {"id":{"name":"Spr_Batman_5F_startup","path":"sprites/Spr_Batman_5F_startup/Spr_Batman_5F_startup.yy",},},
     {"id":{"name":"P4_Preview","path":"objects/P4_Preview/P4_Preview.yy",},},
+    {"id":{"name":"Snd_Victory","path":"sounds/Snd_Victory/Snd_Victory.yy",},},
     {"id":{"name":"Spr_Katana_Launched","path":"sprites/Spr_Katana_Launched/Spr_Katana_Launched.yy",},},
     {"id":{"name":"Spr_Flag","path":"sprites/Spr_Flag/Spr_Flag.yy",},},
     {"id":{"name":"Spr_Baller_Balldash_hitbox","path":"sprites/Spr_Baller_Balldash_hitbox/Spr_Baller_Balldash_hitbox.yy",},},

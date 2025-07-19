@@ -55,6 +55,8 @@ check_for_winner = function(){
 	// Got a winner!!!
 	if(player_amount == 1 || team_win_found){
 		winner_color = global.p_colors[players[0].index];
+		play_music(Snd_NOTHING, 0, 1000);
+		audio_play_sound(Snd_Victory, 0, false);
 		// Play winner animation alarm
 		alarm[10] = 60;
 		// Menu alarm

@@ -26,6 +26,7 @@ return_alarm = 100;
 return_acceleration = 0.5;
 can_be_cought = false;
 can_be_cought_alarm = 30;
+max_duration = 600; // 10 sec
 
 collide = function(){
 	// Bounce

@@ -140,7 +140,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(grounded && half_circle_forward_pressed && meter >= 100){
+		if(grounded && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+			if(half_circle_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Cultist_ULTRA_startup;

@@ -41,7 +41,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		action_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(rb_pressed){
-		if(half_circle_forward_pressed && meter >= 100){
+		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+			if(half_circle_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Dojo_ULTRA_startup;

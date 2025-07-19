@@ -7,13 +7,13 @@ if(is_hypermode){
 }
 
 if(action == "Dive" && (x_hold || y_hold)){
-	platdrop_hold = true;
+	goes_through_platforms = true;
 }
 
 event_inherited();
 
 // ACTION!
-if(rb_pressed && half_circle_forward_pressed && meter >= 100){
+if(rb_pressed && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
 	meter -= 100;
 	is_hypermode = true;
 	hypermode_alarm = 300; // 5 sec

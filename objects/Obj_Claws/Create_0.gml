@@ -199,6 +199,7 @@ action_trigger = function(){
 		h_velocity = 8*image_xscale;
 		v_velocity = 16;
 		grip = 1;
+		is_unstable = true;
 		
 		sprite_index = Spr_Claws_Dive_recovery;
 		image_index = 0;

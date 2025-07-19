@@ -20,7 +20,7 @@ if(legit_hit_check){
 	if(!attack_parried){
 		HP -= other.damage;
 		// Give meter to players
-		if(other.is_initiated_by_character){
+		if(other.is_initiated_by_character && !other.is_projectile){
 			meter += other.meter_gain/2; // Gain half meter thingy
 			other.spawner.meter += other.meter_gain;
 		}
@@ -79,15 +79,27 @@ if(legit_hit_check){
 						v_velocity = other.v_launch;
 					}
 					if(other.h_affecting){
-						h_velocity = other.h_launch*other.image_xscale;
+						// Projectile
+						if(other.is_projectile && other.h_velocity != 0){
+							if(other.h_velocity > 0){
+								h_velocity =  other.h_launch;
+							}
+							else{
+								h_velocity = -other.h_launch;
+							}
+						}
 						// Side relevant
-						if(other.is_side_relevant){
+						else if(other.is_side_relevant){
 							if(x > other.x){
 								h_velocity = other.h_launch;
 							}
 							else{
 								h_velocity = -other.h_launch;
 							}
+						}
+						// Normal melee
+						else{
+							h_velocity = other.h_launch*other.image_xscale;
 						}
 					}
 				}

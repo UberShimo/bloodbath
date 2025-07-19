@@ -1,6 +1,6 @@
 
 if(action == "Mark Spin" && y_hold){
-	platdrop_hold = true;
+	goes_through_platforms = true;
 }
 
 event_inherited();
@@ -128,7 +128,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(half_circle_forward_pressed && meter >= 100){
+		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+			if(half_circle_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "ULTRA";
 			meter -= 50;
 			h_velocity = 0;
@@ -218,9 +221,9 @@ if(action == "ULTRA" && multi_hit_action_index == 1){
 	}
 }
 
-// Remove mark if it dies
+// Remove mark if you or target dies
 if(instance_exists(marked_target)){
-	if(marked_target.HP <= 0){
+	if(marked_target.HP <= 0 || HP <= 0){
 		marked_target = noone;
 	}
 }

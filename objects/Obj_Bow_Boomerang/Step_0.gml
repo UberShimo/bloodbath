@@ -12,6 +12,7 @@ if(return_alarm <= 0){
 	is_returning = true;
 }
 
+
 if(is_possessed){
 	dir = point_direction(x, y, target.x, target.y);
 	h_velocity += lengthdir_x(return_acceleration, dir);
@@ -23,8 +24,10 @@ else if(is_returning){
 	v_velocity += lengthdir_y(return_acceleration, dir);
 }
 
-// Spawner dead?
-if(spawner.HP <= 0){
+max_duration -= logic_time;
+
+// Spawner dead? Max duration?
+if(spawner.HP <= 0 || max_duration <= 0){
 	spawner.has_boomerang = true;
 	instance_destroy();
 }

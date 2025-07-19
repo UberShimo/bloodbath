@@ -1,5 +1,6 @@
 if(other.index != index){
 	// Make sure opponent dont get into wall
+	other.x = x;
 	x_val = 4*image_xscale;
 	repeat(4){
 		if(!other.check_collision(x_val, 0)){

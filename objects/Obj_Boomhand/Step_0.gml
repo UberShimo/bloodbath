@@ -1,6 +1,6 @@
 
 if(action == "Fistdive" && y_hold){
-	platdrop_hold = true;
+	goes_through_platforms = true;
 }
 
 event_inherited();
@@ -132,7 +132,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(grounded && half_circle_forward_pressed && meter >= 100){
+		if(grounded && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+			if(half_circle_backward_pressed){
+				image_xscale *= -1;
+			}
 			action = "ULTRA";
 			meter -= 50;
 			
@@ -186,6 +189,7 @@ if(action == "Hook Charge"){
 	else{
 		hook_charge += logic_time/max_charge_duration;
 		shake_amount += logic_time/15;
+		recover_alarm = 2; // Neccesary so your action wont turn into "noone"
 	}
 }
 

@@ -14,4 +14,4 @@ v_launch = -1;
 is_sticky = true;
 
 swing_sound = Snd_Quick_Swing;
-hit_sound = Snd_Crack;
+hit_sound = Snd_Knack;

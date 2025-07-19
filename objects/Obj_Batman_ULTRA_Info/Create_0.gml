@@ -2,7 +2,7 @@ hitbox = Obj_Batman_ULTRA_hitbox;
 
 event_inherited();
 
-air_ok = false;
+air_ok = true;
 air_only = false;
 info = "Tip destroys whatever it touches.\nDash to cancel ULTRA.";
 movement_input = Spr_BDF;

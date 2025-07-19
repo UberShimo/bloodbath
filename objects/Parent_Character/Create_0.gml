@@ -152,6 +152,7 @@ is_unstable = false; // Used for landing clumsy. Used on most aerial moves.
 is_in_wall = false;
 is_close_to_wall = false;
 goes_through_collision = false; // SUPER rarely used since this is risky business
+goes_through_platforms = false; // Only used during certain moves
 DoT_tick_dmg = 0; // Poison only lol
 DoT_alarm = 0; // Poison only lol
 #endregion
@@ -406,6 +407,7 @@ reset_physics = function(){
 	is_collidable = true;
 	is_unstable = false;
 	goes_through_collision = false;
+	goes_through_platforms = false;
 	object_time = 1;
 }
 
@@ -489,7 +491,7 @@ blink_h = function(x_val, cross_up){
 	else{
 		while(loops > 0
 		&& !place_meeting(x+x_check, y, Parent_Collision)
-		&& !place_meeting(x+x_check, y, Parent_Character)){
+		&& !place_meeting(x-x_check*8, y, Parent_Character)){ // -x_check*8 so you get really tight and personal if you blink into opponent
 			x += x_check;
 			loops -= 1;
 		}
@@ -508,7 +510,7 @@ platform_check = function(){
 			return false;
 		}
 	}
-	return !platdrop_hold && v_velocity >= 0 && platform != noone;
+	return !goes_through_platforms && !platdrop_hold && v_velocity >= 0 && platform != noone;
 }
 
 ground_check = function(){

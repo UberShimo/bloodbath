@@ -197,8 +197,12 @@ action_trigger = function(){
 		// Otherwise you will teleport behind opponent since your sprite basically dont exist right now... 
 		sprite_index = stand_spr;
 		
-		blink_h(96*image_xscale, false);
-		snap_to_ground(character_height/2);
+		unborrow_distance = 112;
+		blink_h(unborrow_distance*image_xscale, false);
+		while(!ground_check() && unborrow_distance >= 0){
+			x -= 8*image_xscale;
+			unborrow_distance -= 8;
+		}
 		
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Burrow_hitbox);
 		attack.initiate(self);
