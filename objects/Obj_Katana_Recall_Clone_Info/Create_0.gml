@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Leave a clone that teleport\nyou to it after delay.";
+info = "Leave a clone that teleports\nyou back to it.\nCan only be done in a neutral state.";
 movement_input = Spr_DD;
 button_input = Spr_M;
 image = Spr_Katana_Clone_Quickdraw_startup;

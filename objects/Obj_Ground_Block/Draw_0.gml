@@ -1,14 +1,11 @@
 draw_sprite(image, 1, x, y); // image_index 1 = GROUND
 
-if(draw_above){
-	draw_sprite_ext(Spr_Outline, 0, x+x_offset, y+y_offset, image_xscale, image_yscale, 0, outline_color, image_alpha);
-}
-if(draw_below){
-	draw_sprite_ext(Spr_Outline, 0, x+x_offset, y+y_offset, image_xscale, image_yscale, 180, outline_color, image_alpha);
-}
-if(draw_right){
-	draw_sprite_ext(Spr_Outline, 0, x+x_offset, y+y_offset, image_xscale, image_yscale, -90, outline_color, image_alpha);
-}
-if(draw_left){
-	draw_sprite_ext(Spr_Outline, 0, x+x_offset, y+y_offset, image_xscale, image_yscale, 90, outline_color, image_alpha);
+event_inherited();
+
+if(draw_below_room){
+	y_draw = y;
+	repeat(5){ // 5 is all you needs
+		y_draw += height;
+		draw_sprite(image, 4, x, y_draw); // image_index 4 = BELOW STAGE
+	}
 }

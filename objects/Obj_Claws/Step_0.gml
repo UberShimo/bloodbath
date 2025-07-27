@@ -13,10 +13,11 @@ if(action == "Dive" && (x_hold || y_hold)){
 event_inherited();
 
 // ACTION!
+// ULTRA!!!
 if(rb_pressed && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
 	meter -= 100;
 	is_hypermode = true;
-	hypermode_alarm = 300; // 5 sec
+	hypermode_alarm = ULTRA_duration;
 	spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 2);
 	reset_buffers();
 }
@@ -47,6 +48,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(!grounded){
 			action = "8F";
+			is_unstable = true;
 			sprite_index = Spr_Claws_8F_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

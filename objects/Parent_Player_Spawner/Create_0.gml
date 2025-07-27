@@ -8,7 +8,6 @@ if(global.picked_characters[index] != noone){
 	player.controller_index = global.controller_indexes[index];
 	player.player_number = index+1;
 	player.player_color = player_color;
-	player.face_closest_enemy();
 	
 	if(global.teams_mode){
 		// Convert color to shader format.

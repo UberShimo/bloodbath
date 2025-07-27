@@ -17,6 +17,7 @@ parry_spr = Spr_Boomhand_Parry;
 pose1_spr = Spr_Boomhand_Pose1;
 pose2_spr = Spr_Boomhand_Pose2;
 pose3_spr = Spr_Boomhand_Pose3;
+face = Spr_Boomhand_Faces;
 #endregion
 
 #region Stats

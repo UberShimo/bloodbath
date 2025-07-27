@@ -17,6 +17,7 @@ parry_spr = Spr_Baller_Parry;
 pose1_spr = Spr_Baller_Pose1;
 pose2_spr = Spr_Baller_Pose2;
 pose3_spr = Spr_Baller_Pose3;
+face = Spr_Baller_Faces;
 #endregion
 
 #region Stats
@@ -29,7 +30,7 @@ dash_speed = 10;
 dash_blink = 8;
 dash_duration = 24;
 dash_grip = 1;
-jump_power = 10;
+jump_power = 11;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
@@ -128,11 +129,6 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_8S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-		
-		cancels = 0;
-		// Cancel eff
-		eff = instance_create_depth(x, y, 1, Eff_Cancel);
-		eff.initiate(self);
 	}
 	else if(action == "2S"){
 		blink_h(20*image_xscale, false);
@@ -163,11 +159,6 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_5S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-		
-		cancels = 0;
-		// Cancel eff
-		eff = instance_create_depth(x, y, 1, Eff_Cancel);
-		eff.initiate(self);
 	}
 	// Special moves
 	else if(action == "Upswing"){
@@ -187,11 +178,6 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_Ballpull_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-		
-		cancels = 0;
-		// Cancel eff
-		eff = instance_create_depth(x, y, 1, Eff_Cancel);
-		eff.initiate(self);
 	}
 	else if(action == "Balldash"){
 		// Face toward ball

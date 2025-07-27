@@ -1,6 +1,7 @@
-if(action == noone && grounded){
+if(reset_combo){
 	hits = 0;
 	combo_damage = 0;
+	reset_combo = false;
 }
 
 event_inherited();

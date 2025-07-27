@@ -17,6 +17,7 @@ parry_spr = Spr_Cultist_Parry;
 pose1_spr = Spr_Cultist_Pose1;
 pose2_spr = Spr_Cultist_Pose2;
 pose3_spr = Spr_Cultist_Pose3;
+face = Spr_Cultist_Faces;
 #endregion
 
 #region Stats

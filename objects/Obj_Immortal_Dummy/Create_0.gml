@@ -1,5 +1,7 @@
 event_inherited();
 
+index = -2; // So it can be hit by index -1 shit also.
+
 // Stats
 jump_power = 11;
 mini_jump_power = 0.6; // % based
@@ -26,6 +28,7 @@ is_dumbly_attacking = false;
 
 hits = 0;
 combo_damage = 0;
+reset_combo = true;
 
 // Methods
 action_trigger = function(){

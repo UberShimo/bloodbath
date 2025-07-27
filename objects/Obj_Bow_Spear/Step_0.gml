@@ -18,6 +18,9 @@ if(instance_exists(attachment)){
 	else{
 		image_xscale = original_xscale;
 	}
+	if(attachment.HP <= 0){
+		instance_destroy();
+	}
 }
 
 // Angle the spear

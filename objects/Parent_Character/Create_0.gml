@@ -6,6 +6,10 @@ outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
 
 outline_color = [1, 1, 1, 0.4]; // RGB+alpha
 
+// face proper way
+if(x > room_width/2){
+	image_xscale *= -1;
+}
 depth = -1;
 
 #region Random stuff
@@ -82,6 +86,8 @@ parry_spr = noone;
 pose1_spr = noone;
 pose2_spr = noone;
 pose3_spr = noone;
+face = Spr_Dojo_Faces;
+face_index = 0;
 #endregion
 
 #region Stats

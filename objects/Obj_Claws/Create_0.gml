@@ -17,6 +17,7 @@ parry_spr = Spr_Claws_Parry;
 pose1_spr = Spr_Claws_Pose1;
 pose2_spr = Spr_Claws_Pose2;
 pose3_spr = Spr_Claws_Pose3;
+face = Spr_Claws_Faces;
 #endregion
 
 #region Stats
@@ -50,6 +51,7 @@ is_hypermode = false;
 hypermode_alarm = 0;
 rewind_list = ds_list_create();
 rewind_length = 120;
+ULTRA_duration = 240;
 
 action_trigger = function(){
 	shake_amount = 0;

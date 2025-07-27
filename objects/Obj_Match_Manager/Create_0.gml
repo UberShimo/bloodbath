@@ -1,6 +1,4 @@
 player_amount = 0;
-ui_pixel_size = 1.5;
-heart_size = 0.75; // % based
 global.game_time = 1; // Just reset time for safety
 play_winner_animation = false;
 winner_image = 0;
@@ -16,12 +14,25 @@ for(i = 0; i < 8; i++){
 	players[i] = noone;
 }
 
+// UI stuff
+ui_pixel_size = 1.8;
+heart_size = 0.75; // % based
+meter_frame_x = 20;
+hearts_distance = 32;
+hearts_x = -32;
+hearts_y = 66;
+face_size = 1.4;
+
 p1_ui_hp = 0;
 p1_ui_meter = 0;
 p1_ui_hearts = 0;
+p1_ui_face = Spr_Dojo_Faces;
+p1_ui_face_index = 0;
 p2_ui_hp = 0;
 p2_ui_meter = 0;
 p2_ui_hearts = 0;
+p2_ui_face = Spr_Dojo_Faces;
+p2_ui_face_index = 0;
 
 global_time_reset_alarm = 0;
 

@@ -17,6 +17,7 @@ parry_spr = Spr_Bow_Parry;
 pose1_spr = Spr_Bow_Pose1;
 pose2_spr = Spr_Bow_Pose2;
 pose3_spr = Spr_Bow_Pose3;
+face = Spr_Bow_Faces;
 #endregion
 
 #region Stats

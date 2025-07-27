@@ -17,6 +17,7 @@ parry_spr = Spr_Katana_Parry;
 pose1_spr = Spr_Katana_Pose1;
 pose2_spr = Spr_Katana_Pose2;
 pose3_spr = Spr_Katana_Pose3;
+face = Spr_Katana_Faces;
 #endregion
 
 #region Stats

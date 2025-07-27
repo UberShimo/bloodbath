@@ -1,8 +1,12 @@
 event_inherited();
 
 // Reset state
-if(action == noone && grounded){
+if(action == noone){
 	HP = max_HP;
+	if(!reset_combo){
+		reset_combo = true;
+		a_pressed = true;
+	}
 }
 
 // ACTION!

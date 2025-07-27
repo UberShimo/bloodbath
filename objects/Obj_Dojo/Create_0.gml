@@ -17,6 +17,7 @@ parry_spr = Spr_Dojo_Parry;
 pose1_spr = Spr_Dojo_Dash_Forward;
 pose2_spr = Spr_Dojo_Ascend;
 pose3_spr = Spr_Dojo_Descend;
+face = Spr_Dojo_Faces;
 #endregion
 
 #region Stats

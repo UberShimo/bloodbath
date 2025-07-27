@@ -17,6 +17,7 @@ parry_spr = Spr_Knife_Parry;
 pose1_spr = Spr_Knife_Pose1;
 pose2_spr = Spr_Knife_Pose2;
 pose3_spr = Spr_Knife_Pose3;
+face = Spr_Knife_Faces;
 #endregion
 
 #region Stats

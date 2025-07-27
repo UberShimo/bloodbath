@@ -78,6 +78,7 @@ if(death_alarm > 0){
 		death_alarm = 0;
 		
 		hearts -= 1;
+		meter /= 2; // Loose half meter
 		// Blood / respawn effect
 		spawn_effect(x, y, 12, Eff_Blood, 1, 0.05, c_white, 3, 4);
 		spawn_effect(x, y, 8, Eff_Splash, 1, 0.1, c_red, 2, 4);
@@ -149,7 +150,6 @@ if(respawn_alarm > 0){
 			h_velocity = -4;
 		}
 		HP = max_HP;
-		meter /= 2; // Loose half meter
 	}
 }
 
@@ -478,6 +478,20 @@ else if(action == "Stunned" && !grounded){
 	else if(h_velocity > 0){
 		image_xscale = -1;
 	}
+}
+
+// Decide face
+if(instance_number(Parent_Character) == 1){
+	face_index = 3;
+}
+else if(HP <= 0){
+	face_index = 2;
+}
+else if(action == "Stunned"){
+	face_index = 1;
+}
+else{
+	face_index = 0;
 }
 #endregion
 

@@ -17,6 +17,7 @@ parry_spr = Spr_Greatsword_Parry;
 pose1_spr = Spr_Greatsword_Pose1;
 pose2_spr = Spr_Greatsword_Pose2;
 pose3_spr = Spr_Greatsword_Pose3;
+face = Spr_Greatsword_Faces;
 #endregion
 
 #region Stats
@@ -183,7 +184,7 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Earth_L_hitbox);
 		attack.initiate(self);
 		
-		h_velocity = 8*image_xscale;
+		h_velocity = 9*image_xscale;
 		
 		sprite_index = Spr_Greatsword_Earth_L_recovery;
 		image_index = 0;

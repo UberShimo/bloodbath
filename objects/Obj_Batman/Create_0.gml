@@ -17,6 +17,7 @@ parry_spr = Spr_Batman_Parry;
 pose1_spr = Spr_Batman_Pose1;
 pose2_spr = Spr_Batman_Pose2;
 pose3_spr = Spr_Batman_Pose3;
+face = Spr_Batman_Faces;
 #endregion
 
 #region Stats

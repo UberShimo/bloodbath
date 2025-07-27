@@ -55,7 +55,7 @@ if(is_controllable){
 		else if(rng < 0.75){ // 25%
 			b_pressed = buffer_duration;
 		}
-		else if(rng < 1){ // 25%
+		else if(rng < 1 && action != "ULTRA"){ // 25%
 			lb_pressed = 2;
 		}
 		else{

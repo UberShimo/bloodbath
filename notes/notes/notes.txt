@@ -1,5 +1,5 @@
 TODO{
-	Make win sound!
+	Make a scale stat so characters can cahnge scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
 }
@@ -37,7 +37,8 @@ SPAWN_SWEETSPOT_HITBOX
 
 
 Notes in notes:
-Walls choose sprite by image_index (0: wall, 1: ground, 2: roof) (32x32 image size also)
+Walls choose sprite by image_index (0: wall, 1: ground, 2: roof, 3: Platform, 4: Below stage) (32x32 image size also)
+HP bar faces choose sprite by image_index (0: normal, 1: hurt, 2: dead, 3: Happy) (28x28 image size also)
 "This Is Standard Naming"
 Action infos ends with a "."
 Hurtbox = sprite collision
@@ -144,7 +145,7 @@ Scythe black and white / grey Charlotte{
 	
 	v>X: Reap that steals HP. Can hit bird.
 	vvX: Create slomo field moving forward.
-	ULTRA: 
+	ULTRA: Fly and blast lightning downwards!
 }
 
 NEW
@@ -167,5 +168,5 @@ Big round shield ANDERS{
 	
 	v>X: Gain momentum forward. Can during other moves also!
 	vvX: Shovel up a big boulder with shield. Dash into boulder to push it forward. Unparryable.
-	ULTRA: Jump up into the sky and start aiming. Then smash down and deal big damage! Unparryable.
+	ULTRA: Become BIG for a while dealing more dmg and take less dmg.
 }
