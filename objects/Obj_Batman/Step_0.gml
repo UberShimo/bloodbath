@@ -144,6 +144,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
 		}
 		else if(meter >= 40 && (down_forward_pressed || down_backward_pressed)){
 			if(down_backward_pressed){

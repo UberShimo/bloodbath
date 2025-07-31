@@ -1,4 +1,8 @@
 TODO{
+	Baller ULTRA leaves meteors in the ground...
+	Greatsword ULTRA should be a 3 smash move instead. Making it cooler and faster.
+	Baller vvX: Return ball without pulling it.
+	Knife cant turn around when cancelling into "Mark Dagger".
 	Make a scale stat so characters can cahnge scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
@@ -65,7 +69,7 @@ Katana{
 }
 
 Batman{
-	Add "OUMPH" sound to 5S move
+	
 }
 
 Claws{
@@ -81,12 +85,11 @@ Greatsword{
 }
 
 Boomhand{
-	Make X sound like steam
+	
 }
 
 Bow{
 	Boomerang somehow got stuck under ground.
-	Make 2S sound like "BOINGGGG"?
 }
 
 Cultist{
@@ -145,7 +148,7 @@ Scythe black and white / grey Charlotte{
 	
 	v>X: Reap that steals HP. Can hit bird.
 	vvX: Create slomo field moving forward.
-	ULTRA: Fly and blast lightning downwards!
+	ULTRA: Spawn a spinning circle that pull enemies inward and slowly rises.
 }
 
 NEW

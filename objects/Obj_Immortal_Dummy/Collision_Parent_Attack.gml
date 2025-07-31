@@ -1,4 +1,4 @@
-if(reset_combo){
+if(reset_combo && other.is_active){
 	hits = 0;
 	combo_damage = 0;
 	reset_combo = false;

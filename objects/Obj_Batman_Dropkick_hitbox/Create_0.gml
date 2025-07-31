@@ -14,4 +14,4 @@ v_launch = 0;
 is_sticky = true;
 is_parryable = false;
 
-swing_sound = Snd_Quick_Swing;
+swing_sound = Snd_Batman_Oumph;

@@ -147,6 +147,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			audio_play_sound(Snd_Boomhand_ULTRA_startup, 0, false);
 		}
 		else if(grounded && down_forward_pressed && meter >= 25){
 			action = "Elbow";
@@ -163,6 +164,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			repeat(8){
 				instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);
 			}
+			audio_play_sound(Snd_Steam, 0, false);
 		}
 	}
 	reset_buffers();

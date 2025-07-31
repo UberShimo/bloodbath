@@ -18,4 +18,5 @@ meter_gain_multiplier = 0;
 
 hit_effect_y = -8;
 
+swing_sound = Snd_Batman_ULTRA_WREEE;
 hit_sound = Snd_Hit2;

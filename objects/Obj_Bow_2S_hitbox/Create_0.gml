@@ -15,4 +15,5 @@ is_launcher = true;
 is_parryable = false;
 is_sticky = true;
 
+swing_sound = Snd_Bow_2S;
 hit_sound = Snd_Smack;

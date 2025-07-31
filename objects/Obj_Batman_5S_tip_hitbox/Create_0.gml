@@ -15,4 +15,5 @@ is_parryable = false;
 
 hit_effect_y = -8;
 
+swing_sound = Snd_NOTHING;
 hit_sound = Snd_Crack;

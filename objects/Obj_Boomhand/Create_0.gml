@@ -155,6 +155,7 @@ action_trigger = function(){
 		sprite_index = Spr_Boomhand_Roar_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		audio_play_sound(Snd_Boomhand_Roar, 0, false);
 	}
 	else if(action == "Groundsmash"){
 		wave1 = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave);
@@ -239,6 +240,7 @@ action_trigger = function(){
 		sprite_index = Spr_Boomhand_ULTRA_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		audio_play_sound(Snd_Boomhand_Scream, 0 ,false);
 	}
 	else{
 		action = noone;

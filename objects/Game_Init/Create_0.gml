@@ -131,7 +131,6 @@ global.BG_list = [
 	BG_Sunset,
 	BG_Dungeon,
 	BG_Street,
-	BG_Boxingring,
 	BG_Trippy,
 	BG_Trainingroom
 ]
@@ -144,7 +143,6 @@ global.wall_images = [
 	Spr_Sunset_Walls,
 	Spr_Dungeon_Walls,
 	Spr_Street_Walls,
-	Spr_Boxingring_Walls,
 	Spr_Trippy_Walls,
 	Spr_Trainingroom_Walls
 ]
