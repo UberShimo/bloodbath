@@ -19,8 +19,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	
 	if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && has_boomerang){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Boomerang";
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
@@ -49,8 +52,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Aim Down";
 			hold_arrow = true;
@@ -65,8 +71,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(forward_down_pressed || backward_down_pressed){
-			if(backward_down_pressed && doing_action_by_canceling){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Aim Up";
 			hold_arrow = true;
@@ -103,8 +112,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(b_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Crosspin";
 			h_velocity = 9*image_xscale;
@@ -139,8 +151,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(rb_pressed){
 		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "ULTRA";
 			meter -= 50;

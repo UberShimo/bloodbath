@@ -19,8 +19,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Projectile";
 			sprite_index = Spr_Dojo_Stab_Projectile_startup;

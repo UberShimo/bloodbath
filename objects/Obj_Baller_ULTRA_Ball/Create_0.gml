@@ -21,6 +21,8 @@ weight = 0.3;
 
 image_angle = point_direction(0, 0, h_velocity, v_velocity);
 
+snap_to_ground();
+
 collide = function(){
 	// Bounce
 	if(position_meeting(x+h_velocity, y, Parent_Collision)){

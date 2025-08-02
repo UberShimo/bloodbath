@@ -36,6 +36,8 @@ down_hold = false;
 up_hold = false;
 forward_pressed = 0;
 backward_pressed = 0;
+right_pressed = 0;
+left_pressed = 0;
 down_pressed = 0;
 a_pressed = 0;
 a_hold = false;
@@ -264,6 +266,8 @@ read_input = function(){
 		
 			if(!forward_held && forward_hold){
 				forward_pressed = buffer_duration;
+				right_pressed = buffer_duration;
+				left_pressed = 0;
 			}
 		
 			backward_held = backward_hold;
@@ -272,6 +276,8 @@ read_input = function(){
 		
 			if(!backward_held && backward_hold){
 				backward_pressed = buffer_duration;
+				left_pressed = buffer_duration;
+				right_pressed = 0;
 			}
 		}
 		// Facing left
@@ -282,6 +288,8 @@ read_input = function(){
 		
 			if(!forward_held && forward_hold){
 				forward_pressed = buffer_duration;
+				left_pressed = buffer_duration;
+				right_pressed = 0;
 			}
 		
 			backward_held = backward_hold;
@@ -290,6 +298,8 @@ read_input = function(){
 		
 			if(!backward_held && backward_hold){
 				backward_pressed = buffer_duration;
+				right_pressed = buffer_duration;
+				left_pressed = 0;
 			}
 		}
 		// Down

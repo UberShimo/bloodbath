@@ -17,8 +17,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
@@ -46,8 +49,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Spinhop";
 			
@@ -86,8 +92,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(b_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Dropkick";
 			is_unstable = true;
@@ -134,8 +143,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(rb_pressed){
 		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "ULTRA";
 			meter -= 50;
@@ -147,8 +159,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
 		}
 		else if(meter >= 40 && (down_forward_pressed || down_backward_pressed)){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Superball";
 			meter -= 40;

@@ -47,6 +47,9 @@ original_weight = weight;
 // Greatsword stuff
 pillar_distance = 0;
 earth_parry_success = false;
+ULTRA_invincible = false;
+ULTRA_invincibility_duration = 480; // 8 sec
+ULTRA_invincibility_timer = 0;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -239,37 +242,6 @@ action_trigger = function(){
 		sprite_index = Spr_Greatsword_Wavekick_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "ULTRA"){
-		meter = 0;
-		
-		if(multi_hit_action_index < 8){
-			action = "More Smash";
-			multi_hit_action_index += 1;
-			
-			attack = instance_create_depth(x, y, 0, Obj_Greatsword_ULTRA_hitbox);
-			attack.initiate(self);
-		
-			sprite_index = Spr_Greatsword_ULTRA_recovery;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else{
-			attack = instance_create_depth(x, y, 0, Obj_Greatsword_ULTRA_hitbox);
-			attack.initiate(self);
-			
-			sprite_index = Spr_Greatsword_ULTRA_recovery;
-			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
-	else if(action == "More Smash"){
-		action = "ULTRA";
-		h_velocity = 4*image_xscale;
-		
-		sprite_index = Spr_Greatsword_ULTRA_more_smash;
-		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Grab"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Grab_hitbox1);

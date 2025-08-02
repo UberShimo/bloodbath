@@ -32,8 +32,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	
 	if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && instance_exists(ring1)){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Dive";
 			instance_create_depth(x, y, depth, Eff_Claws_Teleport);
@@ -74,8 +77,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if((down_forward_pressed || down_backward_pressed) && instance_exists(ring2)){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Dive";
 			instance_create_depth(x, y, depth, Eff_Claws_Teleport);
@@ -125,8 +131,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Penguin";
 			sprite_index = Spr_Claws_Penguin_startup;

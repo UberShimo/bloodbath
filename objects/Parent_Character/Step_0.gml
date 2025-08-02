@@ -414,7 +414,7 @@ image_angle = 0;
 
 if(action == noone){
 	if(grounded){
-		face_closest_enemy();
+		face_closest_enemy(); // Not sprite related but...
 		
 		if(down_hold){
 			sprite_index = crouch_spr;
@@ -497,8 +497,10 @@ else{
 
 #region buffer subtraction V-----V
 forward_pressed--;
-down_pressed--;
 backward_pressed--;
+right_pressed--;
+left_pressed--;
+down_pressed--;
 a_pressed--;
 b_pressed--;
 x_pressed--;
@@ -506,7 +508,7 @@ y_pressed--;
 lb_pressed--;
 rb_pressed--;
 down_forward_pressed--;
-forward_down_pressed--
+forward_down_pressed--;
 half_circle_forward_pressed--;
 down_backward_pressed--;
 backward_down_pressed--;
@@ -627,11 +629,6 @@ if(meter == 100 && effect_counter >= 1){
 // Can respawn effect
 if(respawn_alarm > 0 && respawn_alarm < 60 && effect_counter >= 1){
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.05, c_lime, 0.1, 0.3, 0, 0, 360, 24);
-}
-
-// Make you turn around when dashing through opponent
-if(grounded && action == "Dash"){
-	face_closest_enemy();
 }
 
 // Invincible effects

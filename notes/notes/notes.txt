@@ -1,8 +1,4 @@
 TODO{
-	Baller ULTRA leaves meteors in the ground...
-	Greatsword ULTRA should be a 3 smash move instead. Making it cooler and faster.
-	Baller vvX: Return ball without pulling it.
-	Knife cant turn around when cancelling into "Mark Dagger".
 	Make a scale stat so characters can cahnge scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...

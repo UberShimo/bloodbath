@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Greatsword_Ocean_S_hitbox",
   "bbox_bottom": 154,
-  "bbox_left": 92,
+  "bbox_left": 127,
   "bbox_right": 183,
   "bbox_top": 44,
   "bboxMode": 0,

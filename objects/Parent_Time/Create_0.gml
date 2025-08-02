@@ -4,6 +4,7 @@ index = -1; // -1 objects belong to noone!
 h_velocity = 0;
 v_velocity = 0;
 velocity_friction = 0;
+object_scale = 1;
 shake_amount = 0;
 effect_counter = 0; // Fixes so that you spawn less effects when time goes slower
 

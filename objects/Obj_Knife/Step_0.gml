@@ -16,8 +16,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	
 	if(x_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Mark Dash";
 			v_velocity = 0;
@@ -58,8 +61,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Mark Dagger";
 			
@@ -146,8 +152,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			multi_hit_action_index = 0;
 		}
 		else if(meter >= 30 && (down_forward_pressed || down_backward_pressed) && grounded && image_alpha >= 1){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Sneak Away";
 			meter -= 30;

@@ -25,6 +25,16 @@ if(rb_pressed && meter >= 10 && !half_circle_forward_pressed && (down_forward_pr
 	spawn_effect(ball.x, ball.y, 1, Eff_Ring, 1, 0.1, c_lime, 0.5, 0.5, 0.1);
 	reset_buffers();
 }
+// Many checks
+if(rb_pressed && meter >= 40 && double_down_pressed && action != "Balldash" && !is_holding_ball){
+	meter -= 40;
+	ball.is_returning = true;
+	// Reset ball hitbox
+	instance_destroy(ball.existing_hitbox);
+	ball.existing_hitbox = noone;
+	spawn_effect(ball.x, ball.y, 1, Eff_Ring, 1, 0.1, c_lime, 0.5, 0.5, 0.1);
+	reset_buffers();
+}
 
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
@@ -77,8 +87,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Upswing";
 			is_holding_ball = false;
@@ -187,14 +200,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-		}
-		else if(meter >= 25 && double_down_pressed && ball_explosion_cd <= 0){
-			action = "Charge Ball";
-			meter -= 25;
-			
-			sprite_index = Spr_Baller_Charging_Ball_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
 	reset_buffers();

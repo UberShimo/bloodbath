@@ -1,13 +1,21 @@
-// ULTRA speed up
-if(action == "ULTRA" || action == "More Smash"){
-	object_time = 1+0.3*multi_hit_action_index;
-}
+
 // Fix some wierd startup canceling on stance moves
 if(action == "Earth Start" || action == "Ocean Start"){
 	can_cancel = false; 
 }
 
 event_inherited();
+
+// ULTRA timer
+if(ULTRA_invincibility_timer > 0){
+	ULTRA_invincibility_timer -= logic_time;
+	if(ULTRA_invincibility_timer <= 0){
+		ULTRA_invincible = false;
+	}
+	if(effect_counter >= 1){
+		spawn_effect(x, y, 1, Eff_Square, 0.5, 0.02, c_lime, 0.2, 0.5, 0, 0, 0, 32);
+	}
+}
 
 // ACTION!
 if(action_button_pressed() && (action == noone || check_for_cancel())){
@@ -66,8 +74,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Ocean Start";
 			grip = 0.4;
@@ -105,8 +116,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "Sword Dunk";
 			h_velocity = 5*image_xscale;
@@ -140,18 +154,22 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(grounded && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
+		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "ULTRA";
-			meter -= 50;
+			meter -= 100;
+			ULTRA_invincible = true;
+			ULTRA_invincibility_timer = ULTRA_invincibility_duration;
 			sprite_index = Spr_Greatsword_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			multi_hit_action_index = 0;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(down_backward_pressed){

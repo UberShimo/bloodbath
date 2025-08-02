@@ -240,6 +240,7 @@ action_trigger = function(){
 		sprite_index = Spr_Boomhand_ULTRA_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		audio_stop_sound(Snd_Boomhand_ULTRA_startup);
 		audio_play_sound(Snd_Boomhand_Scream, 0 ,false);
 	}
 	else{

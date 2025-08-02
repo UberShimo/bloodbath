@@ -16,5 +16,5 @@ is_sticky = true;
 is_parryable = false;
 is_final = true;
 
-swing_sound = Snd_Knack;
-hit_sound = Snd_Smack;
+swing_sound = Snd_NOTHING;
+hit_sound = Snd_Knack;
