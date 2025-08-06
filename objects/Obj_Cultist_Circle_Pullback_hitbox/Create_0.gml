@@ -11,6 +11,7 @@ shake_impact = global.heavy_shake_impact;
 h_launch = 0;
 v_launch = 0;
 
+is_parryable = false;
 is_shockwave = true;
 shockwave_power = 4;
 extra_freeze_duration = 32;

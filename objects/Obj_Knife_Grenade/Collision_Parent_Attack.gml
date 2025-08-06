@@ -50,4 +50,9 @@ if(!other.is_projectile && other.hit_stun > 0 && is_initiated_by_character
 	spawn_effect(x, y, 8, effect_to_spawn, 1, 0.05, c_white, scale, scale);
 	
 	ds_list_add(hitbox_list, other);
+	
+	// Cheating physics for grenades
+	if(other.object_index == Obj_Knife_Grenade_hitbox){
+		v_velocity -= 2;
+	}
 }

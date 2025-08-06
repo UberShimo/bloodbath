@@ -1,5 +1,5 @@
 
-if(action == "Mark Spin" && y_hold){
+if((action == "Mark Spin" && y_hold) || action == "ULTRA"){
 	goes_through_platforms = true;
 }
 
@@ -211,7 +211,7 @@ if(visibility_change != 0){
 
 // Ultra control
 if(action == "ULTRA" && multi_hit_action_index == 1){
-	if(grounded){
+	if(check_collision(0, 2)){
 		action = noone;
 	}
 	else{

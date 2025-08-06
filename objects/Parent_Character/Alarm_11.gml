@@ -7,6 +7,14 @@ if(is_controllable){
 
 	reset_buffers();
 	
+	// Ugly necessary fix for making CPU do special moves the right way
+	if(image_xscale > 0){
+		right_pressed = buffer_duration;
+	}
+	else{
+		left_pressed = buffer_duration;
+	}
+	
 	// Face opponent
 	if(x < closest_enemy.x  && image_xscale < 0){
 		backward_hold = true;

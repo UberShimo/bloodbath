@@ -8,7 +8,7 @@ if(legit_hit_check){
 	
 	if(is_parrying && other.is_parryable){
 		attack_parried = true;
-		action = noone;
+		recover_alarm = 1;
 		h_velocity = 0;
 		v_velocity = 0;
 		other.freeze_duration += 20;

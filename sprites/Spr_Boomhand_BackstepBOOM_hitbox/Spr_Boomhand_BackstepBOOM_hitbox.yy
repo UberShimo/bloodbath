@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Boomhand_BackstepBOOM_hitbox",
   "bbox_bottom": 68,
-  "bbox_left": 26,
+  "bbox_left": 64,
   "bbox_right": 92,
   "bbox_top": 59,
   "bboxMode": 0,

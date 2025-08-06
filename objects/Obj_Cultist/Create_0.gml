@@ -232,11 +232,6 @@ action_trigger = function(){
 			eff.image_angle = dir;
 		}
 		
-		h_velocity = 0;
-		if(!grounded){
-			v_velocity = -1;
-		}
-		
 		sprite_index = Spr_Cultist_Circlepull_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);

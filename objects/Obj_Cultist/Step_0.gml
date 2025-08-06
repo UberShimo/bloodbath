@@ -119,6 +119,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		&& ((circle != noone && circle.implode_alarm == 0)
 		|| (meter_circle != noone && meter_circle.implode_alarm == 0))){
 			action = "Circle Pullback";
+			shake_amount = launcher_shake_amount;
+			
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
 			
 			sprite_index = Spr_Cultist_Circlepull_startup;
 			image_index = 0;

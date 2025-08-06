@@ -89,7 +89,6 @@ Bow{
 }
 
 Cultist{
-	Circle pullback should pull STARS back also!
 	Meter circle can get into walls :o
 }
 
