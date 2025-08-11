@@ -99,6 +99,7 @@
     {"name":"Main Menu","order":7,"path":"folders/Sprites/Main Menu.yy",},
     {"name":"UI","order":8,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
+    {"name":"Scythe","order":11,"path":"folders/Sprites/Characters/Scythe.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Spr_Baller_ULTRA_Ball","order":32,"path":"sprites/Spr_Baller_ULTRA_Ball/Spr_Baller_ULTRA_Ball.yy",},
@@ -1282,7 +1283,6 @@
     {"name":"Arena_Floors","order":8,"path":"rooms/Arena_Floors/Arena_Floors.yy",},
     {"name":"Spr_Katana_2L_startup","order":8,"path":"sprites/Spr_Katana_2L_startup/Spr_Katana_2L_startup.yy",},
     {"name":"Spr_Greatsword_8F_recovery","order":5,"path":"sprites/Spr_Greatsword_8F_recovery/Spr_Greatsword_8F_recovery.yy",},
-    {"name":"Obj_Example_Character","order":1,"path":"objects/Obj_Example_Character/Obj_Example_Character.yy",},
     {"name":"Spr_Claws_2F_recovery","order":3,"path":"sprites/Spr_Claws_2F_recovery/Spr_Claws_2F_recovery.yy",},
     {"name":"Obj_Claws_5S_hitbox","order":6,"path":"objects/Obj_Claws_5S_hitbox/Obj_Claws_5S_hitbox.yy",},
     {"name":"Spr_Triangle","order":1,"path":"sprites/Spr_Triangle/Spr_Triangle.yy",},

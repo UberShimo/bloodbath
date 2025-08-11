@@ -39,7 +39,7 @@ weight = global.standard_weight;
 max_fall_speed = 16;
 character_width = 24;
 character_height = global.standard_height;
-cancels = 3;
+cancels = 4;
 max_cancels = cancels;
 // Original stats
 original_grip = grip;
@@ -116,7 +116,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "8S"){
-		v_velocity = 6;
+		v_velocity = 4;
 		
 		attack = instance_create_depth(x, y, 0, Obj_Knife_8S_hitbox);
 		attack.initiate(self);

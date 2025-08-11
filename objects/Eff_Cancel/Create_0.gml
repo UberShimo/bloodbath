@@ -3,7 +3,7 @@ event_inherited();
 fade = 0.01;
 
 // Cancel effect color
-draw_color = c_yellow;
+draw_color = #ffffaa;
 
 initiate = function(initiator){
 	sprite_index = initiator.sprite_index;
@@ -13,6 +13,9 @@ initiate = function(initiator){
 	
 	if(initiator.cancels == initiator.max_cancels){
 		draw_color = c_aqua;
+	}
+	else if(initiator.cancels == 2){
+		draw_color = c_yellow;
 	}
 	else if(initiator.cancels == 1){
 		draw_color = c_orange;

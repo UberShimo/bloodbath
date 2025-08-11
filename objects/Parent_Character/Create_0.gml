@@ -96,11 +96,11 @@ face_index = 0;
 // Fixed stats... ish
 HP = 120;
 max_HP = HP;
-meter = 0;
+meter = 50;
 max_meter = 100;
 hearts = global.heart_amount;
 can_cancel = false;
-cancels = 2;
+cancels = 3;
 max_cancels = cancels;
 dash_cancel_max_amount = 0.75; // % based
 parry_duration = 48;

@@ -1,5 +1,12 @@
 TODO{
-	Make a scale stat so characters can cahnge scale?
+	Make outline on characters in character select.
+	Grenades can be hit down through platforms.
+	Make sound when picking character.
+	Cultist Starthrow direction don't reset when you keep doing it.
+	Spawn cultist star slightly behind him.
+	Katana clones should not disappear when touching inactive attacks.
+	Knife proc mark even if parried.
+	Make a scale stat so characters can change scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
 }
@@ -132,17 +139,23 @@ Scythe black and white / grey Charlotte{
 	Moves slippy and has great air control. Light weight.
 	Dash is teleport. Also slightly slower.
 	
-	5F: Smack with handle.
+	5F: Smack with handle and spin forward slightly
+	2F: Slide kick forward
+	8F: Lift scythe upward
 	5L: Push
+	2L: Push upward
+	8L: Long slash forward
 	5S: Pull descently fast
 	2S: Multi hit spin launcher
+	8S: Pull scythe downward
 	
 	v>L: Spawn accelerating bird that change direction when holding up/down.
+	v>S: Propeller forward
 	vvF/L/S: Call down lightning after delay at position.
 	Hitting bird with lightning makes a horizontal splash.
 	
 	v>X: Reap that steals HP. Can hit bird.
-	vvX: Create slomo field moving forward.
+	vvX: Charge yourself with a spark that explodes after delay.
 	ULTRA: Spawn a spinning circle that pull enemies inward and slowly rises.
 }
 
