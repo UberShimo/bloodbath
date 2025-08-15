@@ -162,12 +162,12 @@ action_trigger = function(){
 		effect = instance_create_depth(x, y, depth+1, Obj_Knife_Teleport_effect);
 		effect.initiate(self);
 		
-		x = marked_target.x+24*image_xscale;
+		x = marked_target.x+16*image_xscale;
 		y = marked_target.y+marked_target.character_height/2-character_height/2; // Match with opponent feet
 		
 		marked_target = noone;
 		
-		h_velocity = 6*image_xscale;
+		h_velocity = 4*image_xscale;
 		v_velocity = 0;
 		air_grip = grip;
 		can_cancel = true;

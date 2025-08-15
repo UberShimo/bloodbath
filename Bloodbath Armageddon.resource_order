@@ -88,6 +88,7 @@
     {"name":"Knife","order":10,"path":"folders/Sprites/Characters/Knife.yy",},
     {"name":"Attacks","order":16,"path":"folders/Sprites/Characters/Knife/Attacks.yy",},
     {"name":"Hitboxes","order":40,"path":"folders/Sprites/Characters/Knife/Attacks/Hitboxes.yy",},
+    {"name":"Scythe","order":11,"path":"folders/Sprites/Characters/Scythe.yy",},
     {"name":"DOJO","order":6,"path":"folders/Sprites/DOJO.yy",},
     {"name":"Character Infos","order":8,"path":"folders/Sprites/DOJO/Character Infos.yy",},
     {"name":"Inputs","order":9,"path":"folders/Sprites/DOJO/Inputs.yy",},
@@ -99,7 +100,6 @@
     {"name":"Main Menu","order":7,"path":"folders/Sprites/Main Menu.yy",},
     {"name":"UI","order":8,"path":"folders/Sprites/UI.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
-    {"name":"Scythe","order":11,"path":"folders/Sprites/Characters/Scythe.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Spr_Baller_ULTRA_Ball","order":32,"path":"sprites/Spr_Baller_ULTRA_Ball/Spr_Baller_ULTRA_Ball.yy",},

@@ -15,3 +15,11 @@ is_sticky = true;
 
 swing_sound = Snd_Light_Swing;
 hit_sound = Snd_Hit2;
+
+extra_hit_logic = function(target){
+	// Extra dmg if target is marked
+	if(target == spawner.marked_target){
+		spawner.marked_target = noone;
+		damage *= 2; // Double damage!
+	}
+}

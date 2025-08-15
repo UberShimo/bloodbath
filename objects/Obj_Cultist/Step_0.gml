@@ -205,15 +205,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 }
 
 // Throw it up or down?
-if(action == "Star Throw"){
+if(action == "Star Throw" && action_alarm > 0){
 	if(up_hold){
 		throw_star_up = true;
 	}
 	else if(!throw_star_up && down_hold){
 		throw_star_down = true;
 	}
-}
-else{
-	throw_star_up = false;
-	throw_star_down = false;
 }

@@ -237,7 +237,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Star Throw"){
-		star = instance_create_depth(x, y, depth-1, Obj_Cultist_Star);
+		star = instance_create_depth(x-16*image_xscale, y, depth-1, Obj_Cultist_Star);
 		star.initiate(self);
 		star.image_blend = c_red;
 		
@@ -245,11 +245,13 @@ action_trigger = function(){
 			star.h_velocity = 1*image_xscale;
 			star.v_velocity = -3;
 			star.v_acc = 0.03;
+			throw_star_up = false;
 		}
 		else if(throw_star_down){
 			star.h_velocity = 1*image_xscale;
 			star.v_velocity = 1;
 			star.v_acc = -0.01;
+			throw_star_down = false;
 		}
 		else{
 			star.h_velocity = -2*image_xscale;

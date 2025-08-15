@@ -1,4 +1,4 @@
-if(other.index != spawner.index){
+if(other.index != spawner.index && other.is_active){
 	spawn_effect(x, y, 8, Eff_Splash, 1, 0.1, c_lime, 1, 2);
 	instance_destroy();
 }

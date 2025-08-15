@@ -104,3 +104,7 @@ collide = function(){
 	// What happens when you hit the wall?
 	// If you dont want anything to happen when colliding use move_step();
 }
+
+extra_hit_logic = function(target){
+	// Maybe there might happen something extra when hitting enemy?
+}

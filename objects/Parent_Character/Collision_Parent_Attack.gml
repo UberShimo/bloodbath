@@ -18,6 +18,8 @@ if(legit_hit_check){
 	
 	#region Get smacked
 	if(!attack_parried){
+		other.extra_hit_logic(self); // Maybe the attack has something extra?
+		
 		HP -= other.damage;
 		// Give meter to players
 		if(other.is_initiated_by_character && !other.is_projectile){

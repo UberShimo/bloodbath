@@ -1,11 +1,5 @@
 TODO{
-	Make outline on characters in character select.
-	Grenades can be hit down through platforms.
 	Make sound when picking character.
-	Cultist Starthrow direction don't reset when you keep doing it.
-	Spawn cultist star slightly behind him.
-	Katana clones should not disappear when touching inactive attacks.
-	Knife proc mark even if parried.
 	Make a scale stat so characters can change scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
