@@ -206,6 +206,7 @@
     {"id":{"name":"Obj_Claws_Rewind_Info","path":"objects/Obj_Claws_Rewind_Info/Obj_Claws_Rewind_Info.yy",},},
     {"id":{"name":"BG_Street","path":"sprites/BG_Street/BG_Street.yy",},},
     {"id":{"name":"Spr_Katana_Stand","path":"sprites/Spr_Katana_Stand/Spr_Katana_Stand.yy",},},
+    {"id":{"name":"Snd_Character_Pick","path":"sounds/Snd_Character_Pick/Snd_Character_Pick.yy",},},
     {"id":{"name":"Spr_Batman_5L_hitbox","path":"sprites/Spr_Batman_5L_hitbox/Spr_Batman_5L_hitbox.yy",},},
     {"id":{"name":"Spr_Random","path":"sprites/Spr_Random/Spr_Random.yy",},},
     {"id":{"name":"Spr_Greatsword_Grab_whiff","path":"sprites/Spr_Greatsword_Grab_whiff/Spr_Greatsword_Grab_whiff.yy",},},

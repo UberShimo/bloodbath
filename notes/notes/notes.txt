@@ -1,8 +1,10 @@
 TODO{
-	Make sound when picking character.
+	Start match should appear when all players are ready.
+	Choose characters should display when all players are not ready.
 	Make a scale stat so characters can change scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
+	Increase recovery on EVERYTHING? And increase cancellable frames...
 }
 
 SLOGANS for trailer n stuff

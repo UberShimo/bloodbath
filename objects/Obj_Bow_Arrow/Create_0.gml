@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Bow_Aim_Up_startup);
 recovery = generate_sprite_frames(Spr_Bow_Aim_Up_recovery);
 
-damage = 9;
+damage = 10;
 hit_stun = 16;
 hit_push = 3;
 freeze_duration = global.light_freeze_duration;

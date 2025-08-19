@@ -29,6 +29,7 @@ clicked = function(clicker){
 			tag.color = global.p_colors[clicker.index+global.team_change_value[clicker.index]];
 			clicker.tag = tag;
 			spawn_effect(x+option_width/2, y+option_height/2, 1, Eff_Picker_Rectangle, 1, 0.1, tag.color, 1, 1, 0.5, 0, 0);
+			audio_play_sound(Snd_Character_Pick, 0, false);
 			
 			if(global.target_run_mode){
 				clicker.target_run_room = target_run_room;
@@ -43,5 +44,6 @@ clicked = function(clicker){
 		clicker.connection = noone;
 		clicker.is_picking_for_cpu = false;
 		spawn_effect(x+option_width/2, y+option_height/2, 1, Eff_Picker_Rectangle, 1, 0.1, c_white, 1, 1, 0.5, 0, 0);
+		audio_play_sound(Snd_Character_Pick, 0, false);
 	}
 }

@@ -165,14 +165,16 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Aim Down"){
+	else if(action == "Aim Down" || action == "Aim Up"){
 		action = "Arrow Shot";
 		
 		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_Arrow);
 		attack.initiate(self);
 		// Calculate take off
 		hold_arrow = false;
-		spd = 32;
+		// Reduce arrow power if sloppy aim
+		spd = 32-abs(aim_dir)/2;
+		attack.damage -= (attack.damage/2)*abs(aim_dir)/45;
 		attack.h_velocity = lengthdir_x(spd, aim_dir)*image_xscale;
 		attack.v_velocity = lengthdir_y(spd, aim_dir);
 		attack.spd = spd; // Jump save speed for when it bounces
@@ -187,31 +189,6 @@ action_trigger = function(){
 		reset_physics();
 		
 		sprite_index = Spr_Bow_Aim_Down_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Aim Up"){
-		action = "Arrow Shot";
-		
-		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_Arrow);
-		attack.initiate(self);
-		// Calculate take off
-		hold_arrow = false;
-		spd = 32;
-		attack.h_velocity = lengthdir_x(spd, aim_dir)*image_xscale;
-		attack.v_velocity = lengthdir_y(spd, aim_dir);
-		attack.spd = spd; // Jump save speed for when it bounces
-		attack.image_xscale = image_xscale;
-		attack.image_angle = aim_dir*image_xscale;
-		
-		// Shoot effect
-		eff = instance_create_depth(x, y-aim_height, depth, Obj_Bow_Arrow_Shoot_eff);
-		eff.image_xscale = image_xscale;
-		eff.image_angle = aim_dir*image_xscale;
-		
-		reset_physics();
-		
-		sprite_index = Spr_Bow_Aim_Up_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
