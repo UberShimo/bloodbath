@@ -108,7 +108,7 @@ parry_active_frames = 10; // Counts down in real time even if time is slowed/has
 meter_gain_by_approaching = 10/60; // 10 meter / second
 meter_gain_by_dashing = 4;
 // Variating stats
-start_speed = 3;
+start_speed = 1;
 max_speed = 6;
 acceleration = 0.1;
 grip = global.standard_grip; // Slippy: 0.3, Standard: 0.5, Steady: 0.7

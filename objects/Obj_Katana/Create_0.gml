@@ -21,9 +21,8 @@ face = Spr_Katana_Faces;
 #endregion
 
 #region Stats
-start_speed = 3.5;
-max_speed = 5;
-acceleration = 0.2;
+max_speed = 4.5;
+acceleration = 1;
 grip = global.standard_grip;
 air_control = 0.2;
 dash_speed = 10;

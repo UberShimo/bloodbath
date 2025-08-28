@@ -21,9 +21,8 @@ face = Spr_Dojo_Faces;
 #endregion
 
 #region Stats
-start_speed = 3;
-max_speed = 6;
-acceleration = 0.1;
+max_speed = 5.5;
+acceleration = 0.3;
 grip = global.standard_grip;
 dash_speed = 12;
 dash_blink = 16;

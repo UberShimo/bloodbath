@@ -21,9 +21,8 @@ face = Spr_Baller_Faces;
 #endregion
 
 #region Stats
-start_speed = 3.5;
 max_speed = 5;
-acceleration = 0.2;
+acceleration = 0.5;
 air_control = 0.15;
 grip = global.standard_grip;
 dash_speed = 10;

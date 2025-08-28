@@ -21,9 +21,8 @@ face = Spr_Batman_Faces;
 #endregion
 
 #region Stats
-start_speed = 3;
 max_speed = 6;
-acceleration = 0.1;
+acceleration = 0.5;
 grip = global.standard_grip;
 air_control = 0.1;
 dash_speed = 12;

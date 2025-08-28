@@ -138,7 +138,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 					is_holding_ball = true;
 				}
 				// Pull ball
-				else{
+				else if(!ball.is_returning){
 					action = "Pull";
 					// Lift if falling
 					if(v_velocity > -3){
@@ -173,7 +173,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 					is_holding_ball = true;
 				}
 				// Pull ball
-				else{
+				else if(!ball.is_returning){
 					action = "Pull";
 					ball.h_velocity = 0;
 					ball.v_velocity = -5;

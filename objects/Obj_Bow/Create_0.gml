@@ -21,9 +21,8 @@ face = Spr_Bow_Faces;
 #endregion
 
 #region Stats
-start_speed = 2;
 max_speed = 6;
-acceleration = 0.1;
+acceleration = 0.15;
 grip = global.standard_grip;
 air_control = 0.1;
 dash_speed = 8;

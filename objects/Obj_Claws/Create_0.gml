@@ -21,7 +21,6 @@ face = Spr_Claws_Faces;
 #endregion
 
 #region Stats
-start_speed = 2;
 max_speed = 7;
 acceleration = 0.4;
 air_control = 0.05;

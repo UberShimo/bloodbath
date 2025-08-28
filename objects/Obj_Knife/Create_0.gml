@@ -21,9 +21,8 @@ face = Spr_Knife_Faces;
 #endregion
 
 #region Stats
-start_speed = 2;
 max_speed = 4;
-acceleration = 0.5;
+acceleration = 1;
 grip = global.standard_grip;
 air_control = 0.1;
 dash_speed = 7;

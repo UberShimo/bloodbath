@@ -11,24 +11,14 @@ else if(r_pressed && !place_meeting(x+move_x_distance, y, Parent_Collision)){
 	x += move_x_distance;
 }
 else if(u_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
-	if(!place_meeting(x+move_x_distance/2, y-move_y_distance, Parent_Collision)){
+	if(!place_meeting(x, y-move_y_distance, Parent_Collision)){
 		y -= move_y_distance;
-		x += move_x_distance/2;
-	}
-	else if(!place_meeting(x-move_x_distance/2, y-move_y_distance, Parent_Collision)){
-		y -= move_y_distance;
-		x -= move_x_distance/2;
 	}
 	u_pressed = false; // So it dont change stage/music/bg etc when moving into them
 }
 else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
-	if(!place_meeting(x-move_x_distance/2, y+move_y_distance, Parent_Collision)){
+	if(!place_meeting(x, y+move_y_distance, Parent_Collision)){
 		y += move_y_distance;
-		x -= move_x_distance/2;
-	}
-	else if(!place_meeting(x+move_x_distance/2, y+move_y_distance, Parent_Collision)){
-		y += move_y_distance;
-		x += move_x_distance/2;
 	}
 	d_pressed = false; // So it dont change stage/music/bg etc when moving into them
 }

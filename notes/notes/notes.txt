@@ -1,4 +1,12 @@
 TODO{
+	Finish scythe darn it.
+	Change katana clone spawns to actual moves.
+	Change scythe option Target run and Move list.
+	Knife cant do tutorial!!!
+	Sometimes you do v> moves the wrong way???
+	Changing volume in menu feels really bad
+	Bow CPU frogs exists forever.
+	Greatsword ULTRA is lame... Instead do a low punch into headbutt into a sword slam that launch like hell!
 	Start match should appear when all players are ready.
 	Choose characters should display when all players are not ready.
 	Make a scale stat so characters can change scale?
@@ -135,19 +143,20 @@ Scythe black and white / grey Charlotte{
 	Moves slippy and has great air control. Light weight.
 	Dash is teleport. Also slightly slower.
 	
-	5F: Smack with handle and spin forward slightly
-	2F: Slide kick forward
+	5F: Smack with handle and spin forward. Cancelable.
+	2F: Slide kick forward. Cancelable.
 	8F: Lift scythe upward
 	5L: Push
 	2L: Push upward
-	8L: Long slash forward
+	8L: Push forward.
 	5S: Pull descently fast
 	2S: Multi hit spin launcher
-	8S: Pull scythe downward
+	8S: Pull scythe downwards.
 	
+	v>F: Propeller forward.
 	v>L: Spawn accelerating bird that change direction when holding up/down.
-	v>S: Propeller forward
-	vvF/L/S: Call down lightning after delay at position.
+	v>S: Spin and swing scythe forward dealing extra dmg on tip.
+	vvF/L/S: Call down lightning at position. Hold to delay.
 	Hitting bird with lightning makes a horizontal splash.
 	
 	v>X: Reap that steals HP. Can hit bird.

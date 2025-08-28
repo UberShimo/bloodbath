@@ -21,9 +21,8 @@ face = Spr_Boomhand_Faces;
 #endregion
 
 #region Stats
-start_speed = 4;
 max_speed = 5;
-acceleration = 0.1;
+acceleration = 2;
 grip = global.steady_grip;
 air_control = 0.25;
 dash_speed = 9;
