@@ -1,0 +1,1 @@
+h_velocity = -2*other.image_xscale;

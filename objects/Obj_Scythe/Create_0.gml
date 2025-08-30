@@ -43,8 +43,10 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
-// Katana stuff
-send_clone_backward = false;
+// Scythe stuff
+lightning_distance = 0;
+lightning_discharge_timer = 0;
+lightning_discharge_delay = 180;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -140,84 +142,101 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Quickdraw"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
-		attack.initiate(self);
+	else if(action == "Shredder"){
+		if(multi_hit_action_index == 0){
+			attack = instance_create_depth(x, y, 0, Obj_Scythe_Shredder_hitbox);
+			attack.initiate(self);
 		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Headsplitter"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Headsplitter_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 6*image_xscale;
-		
-		sprite_index = Spr_Katana_Headsplitter_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Sweep"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Sweep_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 9*image_xscale;
-		grip = original_grip;
-		
-		sprite_index = Spr_Katana_Sweep_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Send Clone"){
-		action = "Clone Sent";
-		sprite_index = stand_spr;
-		v_velocity = 0;
-		h_velocity = 0;
-		can_cancel = true;
-		
-		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-		clone.initiate(self);
-		// Give clone your stats
-		clone.player_number = player_number;
-		clone.outline_color = outline_color;
-		clone.grip = grip;
-		clone.dash_speed = dash_speed;
-		clone.dash_blink = dash_blink;
-		clone.dash_duration = dash_duration;
-		clone.weight = 0;
-		clone.character_width = character_width;
-		clone.character_height = character_height;
-		
-		if(send_clone_backward){
-			clone.dash_backward = true;
+			h_velocity = 5*image_xscale;
+			v_velocity = 0;
+			weight = 0;
+			grip = 0;
+			
+			sprite_index = Spr_Scythe_Shredder_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = 12;
+			multi_hit_action_index += 1;
 		}
-		else{
-			clone.dash_forward = true;
+		else if(multi_hit_action_index == 1){
+			attack = instance_create_depth(x, y, 0, Obj_Scythe_Shredder_hitbox);
+			attack.initiate(self);
+			action_alarm = 12;
+			multi_hit_action_index += 1;
 		}
+		else if(multi_hit_action_index == 2){
+			attack = instance_create_depth(x, y, 0, Obj_Scythe_Shredder_hitbox);
+			attack.initiate(self);
+			attack.v_launch = -5;
+			air_grip = 0.2;
+			weight = original_weight;
+			
+			multi_hit_action_index += 1;
+		}
+	}
+	else if(action == "Birdie"){
+		bird = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
+		bird.initiate(self);
+		bird.h_velocity = -1.5*image_xscale;
+		bird.acceleration = 0.03*image_xscale;
 		
-		recover_alarm = dash_duration;
+		sprite_index = Spr_Scythe_Birdie_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Reap"){
+		attack = instance_create_depth(x, y, 0, Obj_Scythe_Reap_hitbox);
+		attack.initiate(self);
+		tip = instance_create_depth(x, y, 0, Obj_Scythe_Reap_tip_hitbox);
+		tip.initiate(self);
+		
+		sprite_index = Spr_Scythe_Reap_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Call Lightning"){
+		if(forward_hold){
+			lightning_distance += 32;
+		}
+		else if(backward_hold){
+			lightning_distance -= 32;
+		}
+		lightning = instance_create_depth(x+lightning_distance*image_xscale, y, 0, Obj_Scythe_Lightning_hitbox);
+		lightning.initiate(self);
+		
+		sprite_index = Spr_Scythe_Call_Lightning_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
+	else if(action == "Life Pull"){
+		hitbox = instance_create_depth(x, y, 0, Obj_Scythe_Life_Pull_hitbox);
+		hitbox.initiate(self);
+		
+		sprite_index = Spr_Scythe_Life_Pull_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Self Lightning"){
+		hitbox = instance_create_depth(x, y, 0, Obj_Scythe_Lightning_hitbox);
+		hitbox.initiate(self);
+		hitbox.effect_obj.image_blend = c_lime;
+		
+		lightning_discharge_timer = lightning_discharge_delay;
+		
+		sprite_index = Spr_Scythe_Self_Lightning_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "ULTRA"){
 		meter -= 50;
-		step_distance = 16;
-		steps = 0;
-		attack_spr_width = sprite_get_width(Spr_Katana_ULTRA_hitbox);
 		
-		repeat(16){
-			destination = step_distance*image_xscale;
-			if(!place_meeting(x+destination, y, Parent_Collision)){
-				x += destination;
-				steps += 1;
-			}
-		}
-		
-		attack = instance_create_depth(x, y, 0, Obj_Katana_ULTRA_hitbox);
-		// Attack is spawned behind you after dash/teleport
-		attack.image_xscale = -step_distance/attack_spr_width*steps;
+		attack = instance_create_depth(x, y, 0, Obj_Scythe_ULTRA_Circle);
 		attack.initiate(self);
-		sprite_index = Spr_Katana_ULTRA_recovery;
+		
+		attack.h_velocity = 4*image_xscale;
+		
+		sprite_index = Spr_Scythe_ULTRA_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}

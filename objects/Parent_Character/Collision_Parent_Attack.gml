@@ -136,17 +136,21 @@ if(legit_hit_check){
 	#endregion
 	
 	#region spawn effect
-	x_pos = x+(character_width/2);
-	if(x > other.x){
-		x_pos = x-(character_width/2);
-	}
-	y_other_diff = other.y - y;
-	y_pos = y+other.hit_effect_y+y_other_diff;
-	if(y_pos < y-character_height){
-		y_pos = y-character_height;
-	}
-	else if(y_pos > y+character_height){
-		y_pos = y+character_height;
+	x_pos = x;
+	y_pos = y;
+	if(!other.spawn_hit_effect_on_opponent){
+		x_pos = x+(character_width/2);
+		if(x > other.x){
+			x_pos = x-(character_width/2);
+		}
+		y_other_diff = other.y - y;
+		y_pos = y+other.hit_effect_y+y_other_diff;
+		if(y_pos < y-character_height){
+			y_pos = y-character_height;
+		}
+		else if(y_pos > y+character_height){
+			y_pos = y+character_height;
+		}
 	}
 	
 	// Decide effect / sound
@@ -155,7 +159,7 @@ if(legit_hit_check){
 		audio_play_sound(Snd_Parry, 0, false);
 	}
 	else{
-		effect_to_spawn = Eff_Splash;
+		effect_to_spawn = other.hit_effect;
 		audio_play_sound(other.hit_sound, 0, false);
 	}
 	if(object_index != Obj_Target){ // Targets spawn their own effect

@@ -1,12 +1,14 @@
 TODO{
-	Finish scythe darn it.
 	Change katana clone spawns to actual moves.
-	Change scythe option Target run and Move list.
 	Knife cant do tutorial!!!
+	Make Scythe Move list.
+	Make Scythe Target run.
+	Make Scythe Tutorial work.
+	Change scythe option Target run and Move list.
 	Sometimes you do v> moves the wrong way???
 	Changing volume in menu feels really bad
 	Bow CPU frogs exists forever.
-	Greatsword ULTRA is lame... Instead do a low punch into headbutt into a sword slam that launch like hell!
+	Greatsword ULTRA is lame... Charge a slam that deal more dmg the more charge.
 	Start match should appear when all players are ready.
 	Choose characters should display when all players are not ready.
 	Make a scale stat so characters can change scale?
@@ -139,28 +141,9 @@ Rapier elegant with fabric covering the face Ellie{
 
 NEW
 Scythe black and white / grey Charlotte{
-	Has 2 extra jumps.
-	Moves slippy and has great air control. Light weight.
-	Dash is teleport. Also slightly slower.
-	
-	5F: Smack with handle and spin forward. Cancelable.
-	2F: Slide kick forward. Cancelable.
-	8F: Lift scythe upward
-	5L: Push
-	2L: Push upward
-	8L: Push forward.
-	5S: Pull descently fast
-	2S: Multi hit spin launcher
-	8S: Pull scythe downwards.
-	
-	v>F: Propeller forward.
-	v>L: Spawn accelerating bird that change direction when holding up/down.
-	v>S: Spin and swing scythe forward dealing extra dmg on tip.
-	vvF/L/S: Call down lightning at position. Hold to delay.
-	Hitting bird with lightning makes a horizontal splash.
 	
 	v>X: Reap that steals HP. Can hit bird.
-	vvX: Charge yourself with a spark that explodes after delay.
+	vvX: Call lightning on yourself then do a Birdie lightning from yourself after delay.
 	ULTRA: Spawn a spinning circle that pull enemies inward and slowly rises.
 }
 

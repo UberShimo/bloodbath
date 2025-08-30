@@ -1,4 +1,4 @@
-// Leave clone when dashing, must happen before inherit,
+// Leave effect when dashing, must happen before inherit,
 // check is identical to dash check except ground check
 if(grounded && lb_pressed > 0 && (action == noone || check_for_cancel())
 && (forward_hold || backward_hold)){
@@ -19,9 +19,29 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	reset_physics();
 	
 	if(x_pressed){
-		if(!grounded){
+		if(down_forward_pressed || down_backward_pressed){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Shredder";
+			sprite_index = Spr_Scythe_Shredder_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+			multi_hit_action_index = 0;
+		}
+		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Scythe_8F_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed){
+			action = "Call Lightning";
+			lightning_distance = 96;
+			sprite_index = Spr_Scythe_Call_Lightning_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -46,14 +66,21 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Quickdraw";
-			sprite_index = Spr_Katana_Quickdraw_startup;
+			action = "Birdie";
+			sprite_index = Spr_Scythe_Birdie_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(!grounded){
 			action = "L";
 			sprite_index = Spr_Scythe_L_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed){
+			action = "Call Lightning";
+			lightning_distance = 192;
+			sprite_index = Spr_Scythe_Call_Lightning_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -71,32 +98,34 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
-			action = "8S";
-			sprite_index = Spr_Scythe_8S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Headsplitter";
-			shake_amount = launcher_shake_amount;
-			sprite_index = Spr_Katana_Headsplitter_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_forward_pressed || down_backward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Sweep";
+			action = "Reap";
 			
-			h_velocity += 6*image_xscale;
-			grip = 0;
+			h_velocity = 2*image_xscale;
+			v_velocity = 0;
+			weight = 0;
+			air_grip = 0.1;
 			
-			sprite_index = Spr_Katana_Sweep_startup;
+			sprite_index = Spr_Scythe_Reap_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
+			action = "8S";
+			sprite_index = Spr_Scythe_8S_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed){
+			action = "Call Lightning";
+			lightning_distance = 288;
+			sprite_index = Spr_Scythe_Call_Lightning_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -110,7 +139,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else{
 			action = "5S";
-			can_cancel = true;
 			sprite_index = Spr_Scythe_5S_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -123,16 +151,34 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "ULTRA";
 			meter -= 50;
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
 			
-			sprite_index = Spr_Katana_ULTRA_startup;
+			sprite_index = Spr_Scythe_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.5;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			audio_play_sound(Snd_Manly_Tensing, 0, false);
+		}
+		else if(meter >= 30 && (down_forward_pressed || down_backward_pressed) && grounded && image_alpha >= 1){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Life Pull";
+			meter -= 30;
+			
+			sprite_index = Spr_Scythe_Life_Pull_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 45 && grounded && double_down_pressed){
+			action = "Self Lightning";
+			meter -= 45;
+			
+			sprite_index = Spr_Scythe_Self_Lightning_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}	
 	reset_buffers();
@@ -147,4 +193,21 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
+}
+
+// Lightning discharge
+if(HP <= 0){
+	lightning_discharge_timer = 0;
+}
+
+if(lightning_discharge_timer > 0){
+	lightning_discharge_timer -= logic_time;
+	if(effect_counter >= 1){
+		spawn_effect(x, y, 1, Eff_Lightning, 1, 0.25, c_lime, 0.2, 0.5);
+	}
+	if(lightning_discharge_timer <= 0){
+		lightning = instance_create_depth(x, y, 0, Obj_Scythe_Birdie_Lightning_hitbox);
+		lightning.initiate(self);
+		lightning.effect_obj.image_blend = c_lime;
+	}
 }

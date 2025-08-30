@@ -32,9 +32,12 @@ meter_gain_multiplier = 1; // % based
 weight = 0;
 active_frames = 8; // Hitbox dissapears after those frames
 projectile_duration = 0; // Projectile dissapears after those frames
+hit_effect = Eff_Splash; // Effect that comes from opponent when hit
+spawn_hit_effect_on_opponent = false; // Spawns the hit_effect right on top of opponent
 hit_effect_scale = 1;
 hit_effect_time = 1;
 effect = Nothing; // Hit effect or whatever that is left behind after attack
+effect_obj = Nothing; // The actual instance of the created effect
 hit_effect_y = 0; // Makes hit effect spawn between opponent and this y value
 collision_check_with_distance = true; // Checks in a line instead of around object
 collision_check_distance = sprite_width/2; // Projectile related
@@ -92,8 +95,8 @@ initiate = function(initiator){
 	}
 	
 	if(effect != Nothing){
-		eff = instance_create_depth(x, y, depth, effect);
-		eff.initiate(self);
+		effect_obj = instance_create_depth(x, y, depth, effect);
+		effect_obj.initiate(self);
 	}
 	
 	audio_play_sound(swing_sound, 0, false);
