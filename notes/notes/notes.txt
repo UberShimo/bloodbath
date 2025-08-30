@@ -1,14 +1,8 @@
 TODO{
-	Change katana clone spawns to actual moves.
-	Knife cant do tutorial!!!
-	Make Scythe Move list.
-	Make Scythe Target run.
-	Make Scythe Tutorial work.
-	Change scythe option Target run and Move list.
 	Sometimes you do v> moves the wrong way???
 	Changing volume in menu feels really bad
 	Bow CPU frogs exists forever.
-	Greatsword ULTRA is lame... Charge a slam that deal more dmg the more charge.
+	Greatsword ULTRA is lame... Hold a slam that deal 60 dmg instead. Also kinda fast.
 	Start match should appear when all players are ready.
 	Choose characters should display when all players are not ready.
 	Make a scale stat so characters can change scale?

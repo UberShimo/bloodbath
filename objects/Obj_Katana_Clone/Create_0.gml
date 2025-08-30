@@ -74,8 +74,10 @@ initiate = function(initiator){
 	HP = initiator.HP;
 	meter = initiator.meter;
 	index = initiator.index;
+	player_number = initiator.player_number;
 	hearts = initiator.hearts;
 	player_color = initiator.player_color;
+	outline_color = initiator.outline_color;
 	image_xscale = initiator.image_xscale;
 	
 	dash_speed = initiator.dash_speed;

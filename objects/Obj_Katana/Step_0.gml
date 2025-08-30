@@ -12,38 +12,6 @@ event_inherited();
 
 // ACTION!
 
-// Special clone creation
-if(action == noone && meter >= 25 && rb_pressed && !half_circle_forward_pressed && (down_forward_pressed || down_backward_pressed || double_down_pressed)){
-	if(down_backward_pressed){
-		image_xscale *= -1;
-	}
-	meter -= 25;
-	
-	clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-	clone.HP = HP;
-	clone.meter = meter;
-	clone.index = index;
-	clone.player_number = player_number;
-	clone.hearts = hearts;
-	clone.player_color = player_color;
-	clone.outline_color = outline_color;
-	clone.image_xscale = image_xscale;
-	clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
-	clone.action_alarm = 90;
-	clone.life_span = 0;
-	clone.weight = 0;
-	clone.shake_amount = 2;
-	
-	if(double_down_pressed){
-		clone.action = "Teleport Spawner";
-		clone.spawner = self;
-	}
-	else{
-		clone.action = "Quickdraw";
-	}
-	reset_buffers();
-}
-
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
 	
@@ -162,8 +130,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(rb_pressed){
 		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
 			}
 			action = "ULTRA";
 			meter -= 50;
@@ -177,6 +148,28 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Manly_Tensing, 0, false);
+		}
+		else if(meter >= 25 && (down_forward_pressed || down_backward_pressed)){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Quickdraw Clone";
+			meter -= 25;
+			
+			sprite_index = Spr_Katana_Spawn_Clone_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 25 && double_down_pressed){
+			action = "Recall Clone";
+			meter -= 25;
+			
+			sprite_index = Spr_Katana_Spawn_Clone_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}	
 	reset_buffers();
