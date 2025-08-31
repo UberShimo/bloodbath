@@ -46,9 +46,8 @@ original_weight = weight;
 // Greatsword stuff
 pillar_distance = 0;
 earth_parry_success = false;
-ULTRA_invincible = false;
-ULTRA_invincibility_duration = 480; // 8 sec
-ULTRA_invincibility_timer = 0;
+ULTRA_is_held = false;
+ULTRA_max_hold = 60;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -255,6 +254,26 @@ action_trigger = function(){
 		attack.initiate(self);
 		
 		reset_physics();
+	}
+	else if(action == "ULTRA"){
+		if(rb_hold && !ULTRA_is_held){
+			action = "ULTRA Hold";
+			ULTRA_is_held = true;
+			sprite_index = Spr_Greatsword_ULTRA_hold;
+			action_alarm = ULTRA_max_hold;
+		}
+		else{
+			ULTRA_is_held = false;
+			
+			blink_h(12*image_xscale);
+			
+			attack = instance_create_depth(x, y, 0, Obj_Greatsword_ULTRA_hitbox);
+			attack.initiate(self);
+		
+			sprite_index = Spr_Greatsword_ULTRA_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index);
+		}
 	}
 	else{
 		action = noone;

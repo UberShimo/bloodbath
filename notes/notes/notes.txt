@@ -1,10 +1,7 @@
 TODO{
-	Sometimes you do v> moves the wrong way???
-	Changing volume in menu feels really bad
-	Bow CPU frogs exists forever.
-	Greatsword ULTRA is lame... Hold a slam that deal 60 dmg instead. Also kinda fast.
 	Start match should appear when all players are ready.
 	Choose characters should display when all players are not ready.
+	Sometimes you do v> moves the wrong way???
 	Make a scale stat so characters can change scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...

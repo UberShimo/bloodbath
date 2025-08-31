@@ -4,6 +4,10 @@ if(is_controllable){
 	down_hold = false;
 	forward_hold = false;
 	backward_hold = false;
+	x_hold = false;
+	y_hold = false;
+	b_hold = false;
+	rb_hold = false;
 
 	reset_buffers();
 	

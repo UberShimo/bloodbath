@@ -29,7 +29,8 @@ global.knife_TR_record = ini_read_real("save", "knife TR record", 60*60);
 global.shield_TR_record = ini_read_real("save", "shield TR record", 60*60);
 global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
 
-global.music_volume = ini_read_real("save", "music volume", 1);
+global.max_music_volume = 0.25;
+global.music_volume = ini_read_real("save", "music volume", global.max_music_volume);
 
 ini_close();
 #endregion

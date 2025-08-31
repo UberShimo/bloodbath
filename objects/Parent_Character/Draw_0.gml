@@ -60,9 +60,6 @@ if(global.is_debugging && object_index != Obj_Immortal_Dummy){ // Dont want that
 		action_text = "none";
 	}
 	val = ":(";
-	if(object_index == Obj_Greatsword && ULTRA_invincible){
-		val = "SHIT";
-	}
 	draw_text(x, y-character_height-80, "shit?:  " + val);
 	draw_text(x, y-character_height-64, "cancels:  " + string(cancels));
 	draw_text(x, y-character_height-48, "velocity:  " + string(get_velocity()));
