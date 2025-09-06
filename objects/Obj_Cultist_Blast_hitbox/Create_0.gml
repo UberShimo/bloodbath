@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Cultist_Blast_startup); // 100% information
 recovery = generate_sprite_frames(Spr_Cultist_Blast_recovery); // 100% informational not used in logic
 
 damage = 14;
-hit_stun = 20;
+hit_stun = global.heavy_hitstun;
 hit_push = 10;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

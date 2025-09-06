@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Boomhand_Fistdive_startup); // 100% informa
 recovery = generate_sprite_frames(Spr_Boomhand_Fistdive_recovery); // 100% informational not used in logic
 
 damage = 10;
-hit_stun = 30;
+hit_stun = global.heavy_hitstun;
 hit_push = 0;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = 8;

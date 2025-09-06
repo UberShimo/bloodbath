@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Knife_2F_startup); // 100% informational no
 recovery = generate_sprite_frames(Spr_Knife_2F_recovery); // 100% informational not used in logic
 
 damage = 3;
-hit_stun = 12;
+hit_stun = global.light_hitstun-4;
 hit_push = 1;
 freeze_duration = global.light_freeze_duration;
 shake_impact = global.light_shake_impact;

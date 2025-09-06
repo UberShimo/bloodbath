@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Knife_5S_startup); // 100% informational no
 recovery = generate_sprite_frames(Spr_Knife_5S_recovery); // 100% informational not used in logic
 
 damage = 19;
-hit_stun = 28;
+hit_stun = global.heavy_hitstun;
 hit_push = 0;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

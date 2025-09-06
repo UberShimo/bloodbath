@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Dojo_L_hitbox",
-    "path": "sprites/Spr_Dojo_L_hitbox/Spr_Dojo_L_hitbox.yy",
+    "name": "Spr_Scythe_5F_hitbox",
+    "path": "sprites/Spr_Scythe_5F_hitbox/Spr_Scythe_5F_hitbox.yy",
   },
   "spriteMaskId": null,
   "visible": true,

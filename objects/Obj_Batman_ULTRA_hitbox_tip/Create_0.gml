@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Batman_ULTRA_startup); // 100% informationa
 recovery = generate_sprite_frames(Spr_Batman_ULTRA_recovery); // 100% informational not used in logic
 
 damage = 120;
-hit_stun = 32;
+hit_stun = global.launcher_hitstun;
 hit_push = 12;
 freeze_duration = 60;
 shake_impact = 32;

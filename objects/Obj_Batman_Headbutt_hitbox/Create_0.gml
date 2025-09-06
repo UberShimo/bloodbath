@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Batman_Headbutt_startup); // 100% informati
 recovery = generate_sprite_frames(Spr_Batman_Headbutt_recovery); // 100% informational not used in logic
 
 damage = 13;
-hit_stun = 24;
+hit_stun = global.heavy_hitstun;
 hit_push = 4;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Bow_Boomerang_Throw_startup);
 recovery = generate_sprite_frames(Spr_Bow_Boomerang_Throw_recovery);
 
 damage = 4;
-hit_stun = 16;
+hit_stun = global.light_hitstun;
 hit_push = 0;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;

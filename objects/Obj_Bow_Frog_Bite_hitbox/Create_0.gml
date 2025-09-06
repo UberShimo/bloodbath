@@ -1,7 +1,7 @@
 event_inherited();
 
 damage = 15;
-hit_stun = 24;
+hit_stun = global.medium_hitstun;
 hit_push = 0;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;

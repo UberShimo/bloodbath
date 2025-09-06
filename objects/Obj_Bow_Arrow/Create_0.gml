@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Bow_Aim_Up_startup);
 recovery = generate_sprite_frames(Spr_Bow_Aim_Up_recovery);
 
 damage = 10;
-hit_stun = 16;
+hit_stun = global.light_hitstun;
 hit_push = 3;
 freeze_duration = global.light_freeze_duration;
 shake_impact = global.light_shake_impact;

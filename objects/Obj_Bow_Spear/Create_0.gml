@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Bow_Spearthrow_startup);
 recovery = generate_sprite_frames(Spr_Bow_Spearthrow_recovery);
 
 damage = 25;
-hit_stun = 16;
+hit_stun = global.light_hitstun;
 hit_push = 6;
 freeze_duration = global.light_freeze_duration;
 shake_impact = global.light_shake_impact;

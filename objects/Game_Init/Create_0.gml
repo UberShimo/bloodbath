@@ -59,12 +59,16 @@ draw_set_font(Game_Font);
 #region Stats / Colors
 global.cancelable_recovery_frames = 22;
 
+global.light_hitstun = 16;
 global.light_freeze_duration = 12;
 global.light_shake_impact = 1;
+global.medium_hitstun = 24;
 global.medium_freeze_duration = 16;
 global.medium_shake_impact = 2;
+global.heavy_hitstun = 32;
 global.heavy_freeze_duration = 24;
 global.heavy_shake_impact = 4;
+global.launcher_hitstun = 48;
 
 global.slippy_grip = 0.4;
 global.standard_grip = 0.5;

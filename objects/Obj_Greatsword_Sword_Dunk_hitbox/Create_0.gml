@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Greatsword_Sword_Dunk_startup); // 100% inf
 recovery = generate_sprite_frames(Spr_Greatsword_Sword_Dunk_recovery); // 100% informational not used in logic
 
 damage = 17;
-hit_stun = 28;
+hit_stun = global.heavy_hitstun;
 hit_push = 4;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

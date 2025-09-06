@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Batman_8F_startup); // 100% informational n
 recovery = generate_sprite_frames(Spr_Batman_8F_recovery); // 100% informational not used in logic
 
 damage = 4;
-hit_stun = 16;
+hit_stun = global.light_hitstun;
 hit_push = 4;
 freeze_duration = global.light_freeze_duration;
 shake_impact = global.light_shake_impact;

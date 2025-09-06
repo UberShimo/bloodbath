@@ -1,7 +1,7 @@
 event_inherited();
 
 damage = 30;
-hit_stun = 42;
+hit_stun = global.launcher_hitstun;
 hit_push = 16;
 freeze_duration = 30;
 shake_impact = 8;

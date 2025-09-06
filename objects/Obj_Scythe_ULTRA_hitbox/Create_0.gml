@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Scythe_ULTRA_startup); // 100% informationa
 recovery = generate_sprite_frames(Spr_Scythe_ULTRA_recovery); // 100% informational not used in logic
 
 damage = 2;
-hit_stun = 32;
+hit_stun = global.heavy_hitstun;
 hit_push = 0;
 freeze_duration = 1;
 shake_impact = global.heavy_shake_impact;

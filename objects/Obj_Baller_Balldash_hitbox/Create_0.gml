@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Baller_Balldash_startup);
 recovery = generate_sprite_frames(Spr_Baller_Balldash_recovery);
 
 damage = 5;
-hit_stun = 16;
+hit_stun = global.light_hitstun;
 hit_push = 6;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;

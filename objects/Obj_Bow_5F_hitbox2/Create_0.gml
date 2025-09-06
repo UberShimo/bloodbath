@@ -1,7 +1,7 @@
 event_inherited();
 
 damage = 5;
-hit_stun = 20;
+hit_stun = global.light_hitstun+4;
 hit_push = 3;
 freeze_duration = global.light_freeze_duration;
 shake_impact = global.light_shake_impact;

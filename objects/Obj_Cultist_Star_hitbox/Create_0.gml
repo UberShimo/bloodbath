@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Cultist_Starthrow_startup); // 100% informa
 recovery = generate_sprite_frames(Spr_Cultist_Starthrow_recovery); // 100% informational not used in logic
 
 damage = 9;
-hit_stun = 20;
+hit_stun = global.light_hitstun;
 hit_push = 5;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;

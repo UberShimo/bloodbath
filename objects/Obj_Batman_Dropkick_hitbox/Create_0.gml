@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Batman_Dropkick_startup); // 100% informati
 recovery = generate_sprite_frames(Spr_Batman_Dropkick_recovery); // 100% informational not used in logic
 
 damage = 18;
-hit_stun = 32;
+hit_stun = global.heavy_hitstun;
 hit_push = 10;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Batman_Spinhop_startup); // 100% informatio
 recovery = generate_sprite_frames(Spr_Batman_Spinhop_recovery); // 100% informational not used in logic
 
 damage = 13;
-hit_stun = 32;
+hit_stun = global.heavy_hitstun;
 hit_push = 12;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Bow_Crosspin_startup); // 100% informationa
 recovery = generate_sprite_frames(Spr_Bow_Crosspin_recovery); // 100% informational not used in logic
 
 damage = 13;
-hit_stun = 24;
+hit_stun = global.heavy_hitstun;
 hit_push = 9;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;

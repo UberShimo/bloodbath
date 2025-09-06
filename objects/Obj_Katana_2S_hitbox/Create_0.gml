@@ -4,7 +4,7 @@ startup = generate_sprite_frames(Spr_Katana_2S_startup); // 100% informational n
 recovery = generate_sprite_frames(Spr_Katana_2S_recovery); // 100% informational not used in logic
 
 damage = 11;
-hit_stun = 24;
+hit_stun = global.launcher_hitstun;
 hit_push = 0;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;

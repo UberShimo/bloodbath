@@ -3,8 +3,8 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Greatsword_ULTRA_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Greatsword_ULTRA_recovery); // 100% informational not used in logic
 
-damage = 60;
-hit_stun = 24;
+damage = 50;
+hit_stun = global.heavy_hitstun;
 hit_push = 4;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = 32;
