@@ -14,5 +14,6 @@ v_launch = -7;
 is_sticky = true;
 is_shockwave = true;
 shockwave_power = 4;
+shockwave_rotation = -45;
 
 swing_sound = Snd_Light_Swing;

@@ -1,4 +1,5 @@
 TODO{
+	Scythe is kinda invisible in move list lol.
 	Increase recovery on EVERYTHING? And increase cancellable frames...
 	Start match should appear when all players are ready.
 	Choose characters should display when all players are not ready.

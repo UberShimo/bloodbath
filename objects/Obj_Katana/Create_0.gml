@@ -116,6 +116,7 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_2S_hitbox);
 		attack.initiate(self);
 		
+		h_velocity = 1*image_xscale;
 		v_velocity = -jump_power;
 		
 		sprite_index = Spr_Katana_2S_recovery;
@@ -198,7 +199,7 @@ action_trigger = function(){
 		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 		clone.initiate(self);
 		clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
-		clone.action_alarm = 90;
+		clone.action_alarm = 120; // 2 sec
 		clone.life_span = 0;
 		clone.weight = 0;
 		clone.shake_amount = 2;
