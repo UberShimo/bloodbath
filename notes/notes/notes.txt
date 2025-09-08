@@ -1,8 +1,7 @@
 TODO{
-	Scythe is kinda invisible in move list lol.
-	Increase recovery on EVERYTHING? And increase cancellable frames...
+	Make a move list BG?
 	Start match should appear when all players are ready.
-	Choose characters should display when all players are not ready.
+	"Pick Character!" should display when all players are not ready.
 	Make a scale stat so characters can change scale?
 	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
 	Make vertical parallax also?...
@@ -131,14 +130,6 @@ Rapier elegant with fabric covering the face Ellie{
 }
 
 NEW
-Scythe black and white / grey Charlotte{
-	
-	v>X: Reap that steals HP. Can hit bird.
-	vvX: Call lightning on yourself then do a Birdie lightning from yourself after delay.
-	ULTRA: Spawn a spinning circle that pull enemies inward and slowly rises.
-}
-
-NEW
 Big round shield ANDERS{
 	Has longer parry duration
 	
@@ -157,6 +148,6 @@ Big round shield ANDERS{
 	vvS: Put out a circle that makes you unstoppable when dashed through and you take less dmg. (Pink)
 	
 	v>X: Gain momentum forward. Can during other moves also!
-	vvX: Shovel up a big boulder with shield. Dash into boulder to push it forward. Unparryable.
+	vvX: Slam shield forward making hit opponent smaller for a duration.
 	ULTRA: Become BIG for a while dealing more dmg and take less dmg.
 }

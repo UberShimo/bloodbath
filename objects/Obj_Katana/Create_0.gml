@@ -98,7 +98,7 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_5L_hitbox);
 		attack.initiate(self);
 		
-		grip = original_grip;
+		h_velocity += 3*image_xscale;
 		
 		sprite_index = Spr_Katana_5L_recovery;
 		image_index = 0;

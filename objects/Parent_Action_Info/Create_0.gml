@@ -40,3 +40,8 @@ image_speed = 0;
 // Draw variables
 input_offset = 24;
 digit_offset = 6;
+
+//Outline shader stuff
+texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
+outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
+outline_color = [1, 1, 1, 0.4]; // RGB+alpha

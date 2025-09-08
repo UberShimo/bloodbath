@@ -106,8 +106,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Sweep";
 			
+			h_velocity *= 0.25; // Only 25% of your h_velocity is effective
 			h_velocity += 6*image_xscale;
-			grip = 0;
+			grip = 0.1;
 			
 			sprite_index = Spr_Katana_Sweep_startup;
 			image_index = 0;

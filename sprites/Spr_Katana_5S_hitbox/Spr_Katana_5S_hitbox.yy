@@ -4,7 +4,7 @@
   "name": "Spr_Katana_5S_hitbox",
   "bbox_bottom": 144,
   "bbox_left": 92,
-  "bbox_right": 199,
+  "bbox_right": 193,
   "bbox_top": 122,
   "bboxMode": 0,
   "collisionKind": 4,

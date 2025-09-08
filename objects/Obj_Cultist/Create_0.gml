@@ -253,8 +253,7 @@ action_trigger = function(){
 			throw_star_down = false;
 		}
 		else{
-			star.h_velocity = -2*image_xscale;
-			star.h_acc = 0.025*image_xscale;
+			star.h_velocity = 2*image_xscale;
 		}
 		
 		sprite_index = Spr_Cultist_Starthrow_recovery;
