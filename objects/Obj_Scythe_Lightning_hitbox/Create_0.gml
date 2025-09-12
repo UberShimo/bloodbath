@@ -12,6 +12,7 @@ shake_impact = global.heavy_shake_impact;
 h_launch = 0;
 v_launch = 0;
 
+is_parryable = false;
 meter_gain_multiplier = 0;
 is_final = true;
 active_frames = 8;

@@ -44,6 +44,13 @@ original_weight = weight;
 #endregion
 
 // Scythe stuff
+glide_start_speed = 8;
+glide_speed = 0;
+glide_angle = 0;
+glide_start_angle = -10;
+glide_angle_change_amount = 4;
+glide_angle_max_change = 60;
+glide_hitbox = noone;
 lightning_distance = 0;
 lightning_discharge_timer = 0;
 lightning_discharge_delay = 180;
@@ -142,37 +149,19 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Shredder"){
-		if(multi_hit_action_index == 0){
-			attack = instance_create_depth(x, y, 0, Obj_Scythe_Shredder_hitbox);
-			attack.initiate(self);
+	else if(action == "Start Gliding"){
+		action = "Gliding";
+		glide_angle = glide_start_angle;
 		
-			h_velocity = 5*image_xscale;
-			v_velocity = 0;
-			weight = 0;
-			grip = 0;
+		glide_hitbox = instance_create_depth(x, y, 0, Obj_Scythe_Glide_hitbox);
+		glide_hitbox.initiate(self);
+		
+		glide_speed = glide_start_speed;
+		weight = 0;
 			
-			sprite_index = Spr_Scythe_Shredder_recovery;
-			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
-			action_alarm = 12;
-			multi_hit_action_index += 1;
-		}
-		else if(multi_hit_action_index == 1){
-			attack = instance_create_depth(x, y, 0, Obj_Scythe_Shredder_hitbox);
-			attack.initiate(self);
-			action_alarm = 12;
-			multi_hit_action_index += 1;
-		}
-		else if(multi_hit_action_index == 2){
-			attack = instance_create_depth(x, y, 0, Obj_Scythe_Shredder_hitbox);
-			attack.initiate(self);
-			attack.v_launch = -5;
-			air_grip = 0.2;
-			weight = original_weight;
-			
-			multi_hit_action_index += 1;
-		}
+		sprite_index = Spr_Scythe_Glide_recovery;
+		image_index = 0;
+		recover_alarm = 120; // 2 sec max timer
 	}
 	else if(action == "Birdie"){
 		bird = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);

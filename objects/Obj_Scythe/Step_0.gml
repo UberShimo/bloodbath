@@ -26,11 +26,15 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Shredder";
-			sprite_index = Spr_Scythe_Shredder_startup;
+			action = "Start Gliding";
+			
+			h_velocity = -3*image_xscale
+			v_velocity = -3;
+			weight = 0.25;
+			
+			sprite_index = Spr_Scythe_Glide_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
-			multi_hit_action_index = 0;
 		}
 		else if(!grounded){
 			action = "8F";
@@ -107,10 +111,10 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Reap";
 			
-			h_velocity = 2*image_xscale;
+			h_velocity += 2*image_xscale;
 			v_velocity = 0;
-			weight = 0;
-			air_grip = 0.1;
+			weight = 0.1;
+			air_grip = 0.2;
 			
 			sprite_index = Spr_Scythe_Reap_startup;
 			image_index = 0;
@@ -193,6 +197,46 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
+}
+
+// Glide logic
+if(action == "Gliding"){
+	// Sprite fix
+	sprite_index = Spr_Scythe_Glide_recovery;
+	image_angle = glide_angle*image_xscale;
+	goes_through_platforms = true;
+	
+	
+	if(forward_hold && glide_angle > -glide_angle_max_change){
+		glide_angle -= glide_angle_change_amount*logic_time;
+	}
+	else if(backward_hold && glide_angle < glide_angle_max_change){
+		glide_angle += glide_angle_change_amount*logic_time;
+	}
+	h_velocity = lengthdir_x(glide_speed, glide_angle)*image_xscale*logic_time;
+	v_velocity = lengthdir_y(glide_speed, glide_angle)*logic_time;
+	
+	// accelerate / deaccelerate!
+	if(glide_angle > 0){
+		glide_speed -= glide_angle/200*logic_time;
+	}
+	else if(glide_angle < -10){
+		glide_speed -= glide_angle/300*logic_time;
+	}
+	
+	if(instance_exists(glide_hitbox)){
+		distance = 28;
+		
+		glide_hitbox.x = x+lengthdir_x(distance, glide_angle)*image_xscale;
+		glide_hitbox.y = y+lengthdir_y(distance, glide_angle);
+		glide_hitbox.damage = get_velocity(); // Decide hitbox dmg
+	}
+	
+	// Stop glide
+	if(!x_hold || get_velocity() < 2 || check_collision(h_velocity, v_velocity)){
+		recover_alarm = 1;
+		goes_through_platforms = false;
+	}
 }
 
 // Lightning discharge

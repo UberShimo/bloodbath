@@ -14,9 +14,6 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b3d0637a-b6b1-489e-aa03-62771cd727f0",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"72886862-5f53-4933-8c59-52e5a1d27a4b",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9b8d616b-2ac6-4e7f-9ae8-59ebad71c36d",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -48,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 4.0,
+    "length": 1.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -60,9 +57,6 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Scythe_Crouch/Spr_Scythe_Crouch.yy",},},},"Disabled":false,"id":"df25d3ae-7e21-4afd-bcc6-fcc1f0787a2e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b3d0637a-b6b1-489e-aa03-62771cd727f0","path":"sprites/Spr_Scythe_Crouch/Spr_Scythe_Crouch.yy",},},},"Disabled":false,"id":"a01191b8-ecec-46fb-a397-65651ecb2a5d","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"72886862-5f53-4933-8c59-52e5a1d27a4b","path":"sprites/Spr_Scythe_Crouch/Spr_Scythe_Crouch.yy",},},},"Disabled":false,"id":"796a1629-ec1c-4af9-ba3b-9590bf8e0a5f","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9b8d616b-2ac6-4e7f-9ae8-59ebad71c36d","path":"sprites/Spr_Scythe_Crouch/Spr_Scythe_Crouch.yy",},},},"Disabled":false,"id":"4655756c-d332-4abd-bc81-ed7658327047","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

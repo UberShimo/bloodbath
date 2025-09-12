@@ -1,4 +1,5 @@
 TODO{
+	Make scythe target run save records and shet.
 	Make a move list BG?
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
@@ -98,6 +99,10 @@ Cultist{
 Knife{
 	Make Grenade pop mark in an interesting way?
 	CPU cant lob grenade in cool ways.
+}
+
+Scythe{
+	
 }
 
 NEW
