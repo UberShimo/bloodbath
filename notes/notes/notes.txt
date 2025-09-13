@@ -1,5 +1,4 @@
 TODO{
-	Make scythe target run save records and shet.
 	Make a move list BG?
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.

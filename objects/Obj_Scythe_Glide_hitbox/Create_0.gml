@@ -12,5 +12,4 @@ h_launch = 0;
 v_launch = 0;
 
 active_frames = 120; // Max duration
-is_final = true;
 swing_sound = Snd_NOTHING;

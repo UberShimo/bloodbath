@@ -14,7 +14,7 @@ v_launch = 0;
 active_frames = 8;
 is_launcher = true;
 is_shockwave = true;
-shockwave_power = -7;
+shockwave_power = -6;
 
 swing_sound = Snd_Quick_Swing;
 hit_sound = Snd_Knack;

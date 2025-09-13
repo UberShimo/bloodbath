@@ -63,6 +63,12 @@ function save_target_run_time(){
 			ini_write_real("save", "knife TR record", global.knife_TR_record);
 		}
 	}
+	else if(room == Scythe_Target_Run){
+		if(Obj_Target_Run_Manager.timer_count < global.scythe_TR_record){
+			global.scythe_TR_record = Obj_Target_Run_Manager.timer_count;
+			ini_write_real("save", "scythe TR record", global.scythe_TR_record);
+		}
+	}
 	
 	ini_close();
 }

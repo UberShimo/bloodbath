@@ -23,7 +23,7 @@ if(legit_hit_check){
 		HP -= other.damage;
 		// Give meter to players
 		if(other.is_initiated_by_character && !other.is_projectile){
-			meter += other.meter_gain/2; // Gain half meter thingy
+			meter += other.damage/2; // Gain meter from taking dmg
 			other.spawner.meter += other.meter_gain;
 		}
 		

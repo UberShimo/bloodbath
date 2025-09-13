@@ -19,13 +19,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	reset_physics();
 	
 	if(x_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+		if((down_forward_pressed || down_backward_pressed) && extra_jumps_left > 0){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
 				image_xscale = -object_scale;
 			}
+			extra_jumps_left -= 1;
 			action = "Start Gliding";
 			
 			h_velocity = -3*image_xscale
@@ -203,6 +204,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 if(action == "Gliding"){
 	// Sprite fix
 	sprite_index = Spr_Scythe_Glide_recovery;
+	image_index = 0;
 	image_angle = glide_angle*image_xscale;
 	goes_through_platforms = true;
 	
@@ -234,7 +236,10 @@ if(action == "Gliding"){
 	
 	// Stop glide
 	if(!x_hold || get_velocity() < 2 || check_collision(h_velocity, v_velocity)){
-		recover_alarm = 1;
+		action = "Stop Gliding"
+		sprite_index = Spr_Scythe_Glide_startup;
+		image_index = 0;
+		recover_alarm = 4;
 		goes_through_platforms = false;
 	}
 }
