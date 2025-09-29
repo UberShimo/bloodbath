@@ -1,7 +1,7 @@
 event_inherited();
 
 // RANDOMIZE ALL THE TIME BABY
-rng = irandom_range(1, 8);
+rng = irandom_range(1, 10);
 	
 switch(rng){
 	case 1:
@@ -27,6 +27,12 @@ switch(rng){
 		break;
 	case 8:
 		character = Obj_Cultist;
+		break;
+	case 9:
+		character = Obj_Knife;
+		break;
+	case 10:
+		character = Obj_Scythe;
 		break;
 	default:
 		character = Obj_Batman;

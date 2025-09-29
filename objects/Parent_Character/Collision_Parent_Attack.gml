@@ -4,6 +4,7 @@ legit_hit_check = other.index != index && ds_list_find_index(hitbox_list, other)
 
 if(legit_hit_check){
 	reset_physics();
+	reset_buffers();
 	attack_parried = false;
 	
 	if(is_parrying && other.is_parryable){

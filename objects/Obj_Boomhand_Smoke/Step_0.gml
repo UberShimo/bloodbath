@@ -23,10 +23,5 @@ else if(image_alpha < 1){
 x += h_velocity*logic_time;
 y += v_velocity*logic_time;
 
-// Friction logic
-if(abs(h_velocity) > abs(h_slowdown)){
-	h_velocity -= h_slowdown*logic_time;
-}
-if(abs(v_velocity) > abs(v_slowdown)){
-	v_velocity -= v_slowdown*logic_time;
-}
+x += random_range(-mini_move_amount, mini_move_amount);
+y += random_range(-mini_move_amount, mini_move_amount);

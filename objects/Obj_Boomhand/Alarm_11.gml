@@ -4,7 +4,7 @@ if(is_controllable){
 	// Special moves
 	rng = random_range(0, 1);
 
-	if(meter >= 15 && irandom_range(1, 8) == 1){ // 12.5%
+	if(meter >= 15 && irandom_range(1, 20) == 1){ // 5%
 		if(irandom_range(0, 1)){ // 50%
 			down_forward_pressed = buffer_duration;
 		}

@@ -45,6 +45,7 @@ original_weight = weight;
 
 // Katana stuff
 send_clone_backward = false;
+clone_action_delay = 150; // 2.5 sec
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -199,7 +200,7 @@ action_trigger = function(){
 		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 		clone.initiate(self);
 		clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
-		clone.action_alarm = 120; // 2 sec
+		clone.action_alarm = clone_action_delay;
 		clone.life_span = 0;
 		clone.weight = 0;
 		clone.shake_amount = 2;
@@ -211,6 +212,9 @@ action_trigger = function(){
 			clone.action = "Teleport Spawner";
 			clone.spawner = self;
 		}
+		sprite_index = Spr_Katana_Spawn_Clone_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;

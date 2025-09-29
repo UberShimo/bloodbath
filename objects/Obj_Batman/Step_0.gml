@@ -102,9 +102,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			is_unstable = true;
 			shake_amount = launcher_shake_amount;
 			
-			v_velocity = -1;
+			v_velocity = -2;
 			if(grounded){
-				h_velocity += 3*image_xscale;
+				h_velocity += 2*image_xscale;
 				v_velocity = -6;
 			}
 			

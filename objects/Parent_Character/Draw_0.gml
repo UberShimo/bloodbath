@@ -15,10 +15,6 @@ draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_y
 shader_reset();
 
 if(draw_mini_ui && !place_meeting(x, y, Obj_Boomhand_Smoke)){ // Smoke is suppose to hide you
-	// Draw player number
-	c = player_color;
-	draw_text_transformed_color(x-8, y-character_height-32, string(player_number), 2, 2, 0, c, c, c, c, image_alpha);
-		
 	hp_bar_x = x-sprite_get_width(Spr_Mini_HP_Bar)/2;
 	meter_bar_x = x-sprite_get_width(Spr_Mini_Meter_Bar)/2;
 	

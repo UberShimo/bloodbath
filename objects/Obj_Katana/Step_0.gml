@@ -105,6 +105,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Sweep";
+			is_collidable = false;
 			
 			h_velocity *= 0.25; // Only 25% of your h_velocity is effective
 			h_velocity += 6*image_xscale;

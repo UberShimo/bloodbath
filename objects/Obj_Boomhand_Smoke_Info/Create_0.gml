@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 hold_ok = false;
-info = "Release smoke.";
+info = "Release smoke.\nCan be used ANY TIME!";
 movement_input = Spr_DD;
 button_input = Spr_M;
 image = Spr_Boomhand_Stand;

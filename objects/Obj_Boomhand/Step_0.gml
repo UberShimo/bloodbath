@@ -5,6 +5,16 @@ if(action == "Fistdive" && y_hold){
 
 event_inherited();
 
+// Farty time
+if(meter >= 15 && double_down_pressed && rb_pressed){
+	meter -= 15;
+	reset_buffers();
+	repeat(12){
+		instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);
+	}
+	audio_play_sound(Snd_Steam, 0, false);
+}
+
 // ACTION!
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
@@ -164,13 +174,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Boomhand_Elbow_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(meter >= 15 && double_down_pressed){
-			meter -= 15;
-			repeat(8){
-				instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);
-			}
-			audio_play_sound(Snd_Steam, 0, false);
 		}
 	}
 	reset_buffers();

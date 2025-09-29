@@ -4,7 +4,7 @@ if(is_controllable){
 	// Special moves
 	rng = random_range(0, 1);
 
-	// Meter clone
+	// Meter moves
 	if(meter >= 25 && irandom_range(1, 8) == 1){ // 12.5%
 		if(irandom_range(0, 1)){ // 50%
 			down_forward_pressed = buffer_duration;
@@ -14,30 +14,43 @@ if(is_controllable){
 		}
 		rb_pressed = buffer_duration;
 	}
-	// Send clone
-	else if(rng < 0.2){ // 20%
-		if(irandom_range(0, 1)){ // 50%
-			down_forward_pressed = buffer_duration;
-		}
-		else{
-			down_backward_pressed = buffer_duration;
-		}
+	// Flight
+	else if(rng < 0.15){ // 15%
+		down_forward_pressed = buffer_duration;
 		x_pressed = buffer_duration;
 	}
-	// Quickslash
-	else if(rng < 0.35){ // 15%
+	// Birdie
+	else if(rng < 0.3){ // 15%
 		down_forward_pressed = buffer_duration;
 		y_pressed = buffer_duration;
 	}
-	// Sweep
-	else if(rng < 0.45){ // 10&
+	// Reap
+	else if(rng < 0.45){ // 15&
 		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
-	// Headsplitter
-	else if(rng < 0.55 && !grounded){ // 10%
+	// Lightning
+	else if(rng < 0.60 && grounded){ // 15%
 		double_down_pressed = buffer_duration;
-		b_pressed = buffer_duration;
+		
+		rng = irandom_range(0, 2);
+		if(rng == 1){ // 33%
+			x_pressed = buffer_duration;
+		}
+		else if(rng == 2){ // 33%
+			y_pressed = buffer_duration;
+		}
+		else{ // 33%
+			b_pressed = buffer_duration;
+		}
+		
+		rng = irandom_range(0, 2);
+		if(rng == 1){ // 33%
+			backward_hold = true;
+		}
+		else if(rng == 2){ // 33%
+			forward_hold = true;
+		}
 	}
 	
 	// ULTRA

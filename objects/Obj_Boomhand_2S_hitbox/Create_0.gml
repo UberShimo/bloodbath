@@ -4,12 +4,12 @@ startup = generate_sprite_frames(Spr_Boomhand_2S_startup); // 100% informational
 recovery = generate_sprite_frames(Spr_Boomhand_2S_recovery); // 100% informational not used in logic
 
 damage = 2;
-hit_stun = global.heavy_hitstun;
+hit_stun = global.launcher_hitstun;
 hit_push = 4;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;
 h_launch = 0.2;
-v_launch = -12;
+v_launch = -10;
 
 is_launcher = true;
 hit_effect_scale = 0;
