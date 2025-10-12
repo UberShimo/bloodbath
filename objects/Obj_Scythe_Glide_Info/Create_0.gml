@@ -10,5 +10,3 @@ movement_input = Spr_DF;
 button_input = Spr_F;
 image = Spr_Scythe_Glide_recovery;
 frame = 0;
-
-recovery = 4;

@@ -34,6 +34,7 @@ mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
 extra_jumps_left = extra_jumps;
+jump_control = 2.5;
 weight = global.standard_weight;
 max_fall_speed = 16;
 character_width = 24;
@@ -155,6 +156,7 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 		audio_play_sound(Snd_Boomhand_Roar, 0, false);
+		spawn_effect(x, y, 6, Eff_Splash, 1, +0.1, c_orange, 0, 0, 0.2);
 	}
 	else if(action == "Groundsmash"){
 		wave1 = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave);

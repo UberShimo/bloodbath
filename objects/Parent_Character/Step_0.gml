@@ -35,6 +35,13 @@ if(jump_alarm > 0){
 	
 	if(jump_alarm <= 0){
 		v_velocity = -jump_power;
+		
+		if(forward_hold && h_velocity*image_xscale < jump_control){
+			h_velocity = jump_control*image_xscale;
+		}
+		else if(backward_hold && h_velocity*image_xscale > -jump_control){
+			h_velocity = -jump_control*image_xscale;
+		}
 	}
 }
 
@@ -81,7 +88,7 @@ if(death_alarm > 0){
 		// Blood / respawn effect
 		spawn_effect(x, y, 12, Eff_Blood, 1, 0.05, c_white, 3, 4);
 		spawn_effect(x, y, 8, Eff_Splash, 1, 0.1, c_red, 2, 4);
-		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_red, 0, 0, 2);
+		spawn_effect(x, y, 1, Eff_Faded_Ring, 1, 0.2, c_red, 0, 0, 2);
 		
 		if(hearts > 0){
 			respawn_alarm = 120;
@@ -207,7 +214,7 @@ if(action == noone){
 				h_velocity += (grip+acceleration)*image_xscale*logic_time;
 			}
 			// Gain meter by moving toward opponent
-			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
+			if(!closest_enemy.is_respawning && closest_enemy != self && !faceback_hold && !global.target_run_mode){
 				meter += meter_gain_by_approaching*logic_time;
 			}
 		}
@@ -240,7 +247,7 @@ if(action == noone){
 			action = "Jump";
 			sprite_index = jump_spr;
 			jump_alarm = jump_startup;
-			recover_alarm = jump_startup; // Important since if(recover_alarm == 0) ---> action = noone
+			action_alarm = jump_startup; // Important since if(action_alarm == 0) ---> action = noone
 		}
 		else if(extra_jumps_left > 0){
 			extra_jumps_left -= 1;
@@ -250,14 +257,17 @@ if(action == noone){
 }
 // Jump cancel
 else if(a_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
-	action = noone;
 	reset_physics();
 	a_pressed = 0; // Just reset A buffer
 	
 	if(grounded){
-		v_velocity = -jump_power;
+		action = "Jump";
+		sprite_index = jump_spr;
+		jump_alarm = jump_startup;
+		action_alarm = jump_startup; // Important since if(action_alarm == 0) ---> action = noone
 	}
 	else if(extra_jumps_left > 0){
+		action = noone;
 		extra_jumps_left -= 1;
 		v_velocity = -jump_power*extra_jump_strength;
 	}
@@ -585,7 +595,11 @@ else if(lb_pressed > 0 && !down_hold
 			
 			// Gain meter when dashing toward enemy
 			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
-				meter += meter_gain_by_dashing;
+				// Extra check so you really dash towards enemy!
+				if((closest_enemy.x > x && image_xscale > 0)
+				|| (closest_enemy.x < x && image_xscale < 0)){
+					meter += meter_gain_by_dashing;
+				}
 			}
 		}
 	

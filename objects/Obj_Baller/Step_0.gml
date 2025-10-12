@@ -18,11 +18,15 @@ if(rb_pressed && meter >= 10 && !half_circle_forward_pressed && (down_forward_pr
 	meter -= 10;
 	is_holding_ball = false;
 	ball.h_velocity = 3*image_xscale;
+	eff_min_angle = -135;
+	eff_max_angle = -90;
 	if(down_backward_pressed){
 		ball.h_velocity *= -1;
+		eff_min_angle = -90;
+		eff_max_angle = -45;
 	}
 	ball.v_velocity = -6;
-	spawn_effect(ball.x, ball.y, 1, Eff_Ring, 1, 0.1, c_lime, 0.5, 0.5, 0.1);
+	spawn_effect(ball.x, ball.y, 3, Eff_Splash, 1, 0.1, c_lime, 0, 0.25, 0.15, eff_min_angle, eff_max_angle);
 	reset_buffers();
 }
 // Many checks
@@ -32,7 +36,10 @@ if(rb_pressed && meter >= 40 && double_down_pressed && action != "Balldash" && !
 	// Reset ball hitbox
 	instance_destroy(ball.existing_hitbox);
 	ball.existing_hitbox = noone;
-	spawn_effect(ball.x, ball.y, 1, Eff_Ring, 1, 0.1, c_lime, 0.5, 0.5, 0.1);
+	ball_dir = point_direction(x, y, ball.x, ball.y);
+	eff_min_angle = ball_dir-45;
+	eff_max_angle = ball_dir+45;
+	spawn_effect(ball.x, ball.y, 5, Eff_Splash, 1, 0.1, c_lime, 0, 0.25, 0.3, eff_min_angle, eff_max_angle);
 	reset_buffers();
 }
 

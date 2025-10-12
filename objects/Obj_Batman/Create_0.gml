@@ -34,6 +34,7 @@ mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
 extra_jumps_left = extra_jumps;
+jump_control = 1.2;
 weight = global.standard_weight;
 max_fall_speed = 16;
 character_width = 24;

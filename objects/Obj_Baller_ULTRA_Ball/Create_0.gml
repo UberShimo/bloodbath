@@ -18,6 +18,7 @@ collision_check_with_distance = true;
 collision_check_distance = 16;
 projectile_duration = 180; // 3 sec
 weight = 0.3;
+hitbox_list = ds_list_create();
 
 image_angle = point_direction(0, 0, h_velocity, v_velocity);
 

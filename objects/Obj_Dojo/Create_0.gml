@@ -31,6 +31,7 @@ dash_grip = 1;
 jump_power = 10;
 mini_jump_power = 0.6; // % based
 extra_jump_strength = 0.8; // % based
+jump_control = 2;
 weight = global.standard_weight;
 max_fall_speed = 16;
 character_width = 24;

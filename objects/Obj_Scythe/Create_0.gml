@@ -34,6 +34,7 @@ mini_jump_power = 0.5; // % based
 extra_jump_strength = 0.8; // % based
 extra_jumps = 3;
 extra_jumps_left = extra_jumps;
+jump_control = 2.5;
 weight = global.light_weight;
 max_fall_speed = 10;
 character_width = 24;
@@ -159,7 +160,7 @@ action_trigger = function(){
 		glide_speed = glide_start_speed;
 		weight = 0;
 			
-		sprite_index = Spr_Scythe_Glide_recovery;
+		sprite_index = Spr_Scythe_Gliding;
 		image_index = 0;
 		recover_alarm = 120; // 2 sec max timer
 	}

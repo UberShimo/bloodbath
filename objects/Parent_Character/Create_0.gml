@@ -125,6 +125,7 @@ extra_jump_strength = 0.8; // % based
 extra_jumps = 1;
 extra_jumps_left = extra_jumps;
 jump_startup = 4; // Amount of frames to take off from ground
+jump_control = 2; // How much you can set your h_velocity when jumping
 weight = global.standard_weight; // Light: 0.6, Standard: 0.7, Heavy: 0.8
 max_fall_speed = 16;
 character_width = 24;
@@ -441,7 +442,7 @@ action_button_pressed = function(){
 check_for_cancel = function(){
 	if(can_cancel && cancels > 0
 	&& recover_alarm < cancelable_recovery_frames && recover_alarm > 0
-	&& action != "Stunned" && !cancel_prevent_hold){
+	&& action != "Stunned" && action != "Jump" && !cancel_prevent_hold){
 		doing_action_by_canceling = true;
 		return true;
 	}

@@ -1,4 +1,5 @@
 TODO{
+	Add small sound when navigating menus. Also change character pick sound.
 	Make a move list BG?
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
@@ -134,7 +135,7 @@ Rapier elegant with fabric covering the face Ellie{
 }
 
 NEW
-Big round shield ANDERS{
+Greatshield ANDERS{
 	Has longer parry duration
 	
 	5F: Push shield forward.
@@ -148,10 +149,10 @@ Big round shield ANDERS{
 	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
 	
 	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
-	vvL: Put out a circle that stun opponents when dashed through. (Yellow)
+	vvL: Put out a circle that explode and stun opponents when dashed through. (Yellow)
 	vvS: Put out a circle that makes you unstoppable when dashed through and you take less dmg. (Pink)
 	
-	v>X: Gain momentum forward. Can during other moves also!
-	vvX: Slam shield forward making hit opponent smaller for a duration.
+	v>X: Shrink opponent in some way.
+	vvX: Put a circle with spinning arrows. Release to shoot arrows that hurt like hell!
 	ULTRA: Become BIG for a while dealing more dmg and take less dmg.
 }

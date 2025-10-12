@@ -2,7 +2,7 @@ hitbox = Obj_Greatsword_ULTRA_hitbox;
 
 event_inherited();
 
-air_ok = true;
+air_ok = false;
 air_only = false;
 hold_ok = true;
 info = "Slam hard like hell!.\nHold to delay slam.\nDash to cancel ULTRA.";

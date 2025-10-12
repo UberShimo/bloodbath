@@ -144,7 +144,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+		if(meter >= 100 && grounded && (half_circle_forward_pressed || half_circle_backward_pressed)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
