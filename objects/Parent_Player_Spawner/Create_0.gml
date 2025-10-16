@@ -23,6 +23,13 @@ if(global.picked_characters[index] != noone){
 	if(instance_exists(Obj_Match_Manager)){
 		Obj_Match_Manager.players[Obj_Match_Manager.player_amount] = player;
 		Obj_Match_Manager.player_amount += 1;
+		// Assign UI for P1 / P2
+		if(Obj_Match_Manager.player_amount == 1){
+			Obj_Match_Manager.p1_ui_instance = player;
+		}
+		else if(Obj_Match_Manager.player_amount == 2){
+			Obj_Match_Manager.p2_ui_instance = player;
+		}
 	}
 	if(instance_exists(Obj_Target_Run_Manager)){
 		Obj_Target_Run_Manager.players[0] = player;

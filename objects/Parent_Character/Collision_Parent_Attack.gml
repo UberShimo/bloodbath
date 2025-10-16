@@ -24,9 +24,9 @@ if(legit_hit_check){
 		HP -= other.damage;
 		// Give meter to players
 		if(other.is_initiated_by_character && !other.is_projectile){
-			meter += other.damage/2; // Gain meter from taking dmg
 			other.spawner.meter += other.meter_gain;
 		}
+		meter += other.damage/4; // Gain little meter from taking dmg
 		
 		// Also all first code is calculated in vain if you get launched...
 		// Dont flinch against normal attacks if you are priority struck
@@ -125,13 +125,22 @@ if(legit_hit_check){
 				Obj_Match_Camera.shake = other.shake_impact/2;
 			}
 		}
+		freeze_duration = other.freeze_duration;
+		extra_freeze_duration = other.extra_freeze_duration;
+		if(attack_parried){
+			freeze_duration = global.parry_freeze_duration;
+			extra_freeze_duration = 0;
+		}
+		// This player freeze
 		object_time = other.freeze_amount;
-		time_reset_alarm = other.freeze_duration+other.extra_freeze_duration;
+		time_reset_alarm = freeze_duration+extra_freeze_duration;
+		// Attack that hits you freeze
 		other.object_time = other.freeze_amount;
-		other.time_reset_alarm = other.freeze_duration;
+		other.time_reset_alarm = freeze_duration;
+		// Other player freeze
 		if(!other.is_projectile){
 			other.spawner.object_time = other.freeze_amount;
-			other.spawner.time_reset_alarm = other.freeze_duration;
+			other.spawner.time_reset_alarm = freeze_duration;
 		}
 	}
 	#endregion

@@ -106,7 +106,7 @@ dash_cancel_max_amount = 0.75; // % based
 parry_duration = 48;
 parry_active_frames = 10; // Counts down in real time even if time is slowed/has stopped
 meter_gain_by_approaching = 10/60; // 10 meter / second
-meter_gain_by_dashing = 4;
+meter_gain_by_dashing = 3;
 // Variating stats
 start_speed = 1;
 max_speed = 6;

@@ -296,6 +296,7 @@
     {"id":{"name":"Obj_Character_Picker","path":"objects/Obj_Character_Picker/Obj_Character_Picker.yy",},},
     {"id":{"name":"Obj_Greatsword_2L_hitbox","path":"objects/Obj_Greatsword_2L_hitbox/Obj_Greatsword_2L_hitbox.yy",},},
     {"id":{"name":"Spr_Match_Starter","path":"sprites/Spr_Match_Starter/Spr_Match_Starter.yy",},},
+    {"id":{"name":"Snd_Silent_Plopp","path":"sounds/Snd_Silent_Plopp/Snd_Silent_Plopp.yy",},},
     {"id":{"name":"Spr_Bow_Aim_Up_recovery","path":"sprites/Spr_Bow_Aim_Up_recovery/Spr_Bow_Aim_Up_recovery.yy",},},
     {"id":{"name":"Spr_Block_Splash","path":"sprites/Spr_Block_Splash/Spr_Block_Splash.yy",},},
     {"id":{"name":"Obj_Greatsword_5S_hitbox","path":"objects/Obj_Greatsword_5S_hitbox/Obj_Greatsword_5S_hitbox.yy",},},

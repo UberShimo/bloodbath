@@ -3,8 +3,8 @@ event_inherited();
 // Jump up
 if(!spawner.rb_hold && !has_jumped){
 	has_jumped = true;
-	h_velocity = 1.2*image_xscale;
-	v_velocity = -8;
+	h_velocity = 1.5*image_xscale;
+	v_velocity = -7;
 	sprite_index = Spr_Bow_Frog_Jump;
 	image_xscale = 1;
 }

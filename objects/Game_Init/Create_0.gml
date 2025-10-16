@@ -69,6 +69,7 @@ global.heavy_hitstun = 32;
 global.heavy_freeze_duration = 24;
 global.heavy_shake_impact = 4;
 global.launcher_hitstun = 48;
+global.parry_freeze_duration = 8;
 
 global.slippy_grip = 0.4;
 global.standard_grip = 0.5;

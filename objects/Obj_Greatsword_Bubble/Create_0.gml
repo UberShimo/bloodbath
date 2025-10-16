@@ -9,8 +9,11 @@ h_launch = 0;
 v_launch = 0;
 
 is_projectile = true;
-projectile_duration = random_range(60, 180);
+projectile_duration = random_range(90, 240);
 velocity_friction = 0.1;
+
+swing_sound = Snd_NOTHING;
+hit_sound = Snd_NOTHING;
 
 // Buuble stuff
 image_xscale = 0.25;

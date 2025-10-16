@@ -1,10 +1,10 @@
 if(!global.chaos_mode){
-	if(instance_exists(players[0])){
-		p1_ui_hp = players[0].HP/players[0].max_HP;
-		p1_ui_meter = players[0].meter/players[0].max_meter;
-		p1_ui_hearts = players[0].hearts;
-		p1_ui_face = players[0].face;
-		p1_ui_face_index = players[0].face_index;
+	if(instance_exists(p1_ui_instance)){
+		p1_ui_hp = p1_ui_instance.HP/p1_ui_instance.max_HP;
+		p1_ui_meter = p1_ui_instance.meter/p1_ui_instance.max_meter;
+		p1_ui_hearts = p1_ui_instance.hearts;
+		p1_ui_face = p1_ui_instance.face;
+		p1_ui_face_index = p1_ui_instance.face_index;
 	}
 	else{
 		p1_ui_hp = 0;
@@ -28,12 +28,12 @@ if(!global.chaos_mode){
 	// Face
 	draw_sprite_ext(p1_ui_face, p1_ui_face_index, x_line-22*ui_pixel_size, y_line+22*ui_pixel_size, ui_pixel_size*face_size, ui_pixel_size*face_size, 0, c_white, 1);
 	
-	if(instance_exists(players[1])){
-		p2_ui_hp = players[1].HP/players[1].max_HP;
-		p2_ui_meter = players[1].meter/players[1].max_meter;
-		p2_ui_hearts = players[1].hearts;
-		p2_ui_face = players[1].face;
-		p2_ui_face_index = players[1].face_index;
+	if(instance_exists(p2_ui_instance)){
+		p2_ui_hp = p2_ui_instance.HP/p2_ui_instance.max_HP;
+		p2_ui_meter = p2_ui_instance.meter/p2_ui_instance.max_meter;
+		p2_ui_hearts = p2_ui_instance.hearts;
+		p2_ui_face = p2_ui_instance.face;
+		p2_ui_face_index = p2_ui_instance.face_index;
 	}
 	else{
 		p2_ui_hp = 0;

@@ -78,7 +78,7 @@ initiate = function(initiator){
 	
 	if(is_initiated_by_character){
 		spawner_action = spawner.action;
-		meter_gain = (damage/2)*meter_gain_multiplier;
+		meter_gain = (damage/3)*meter_gain_multiplier;
 		if(is_cancelable){
 			initiator.can_cancel = true;
 		}

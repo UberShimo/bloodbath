@@ -23,11 +23,13 @@ hearts_x = -32;
 hearts_y = 66;
 face_size = 1.4;
 
+p1_ui_instance = noone;
 p1_ui_hp = 0;
 p1_ui_meter = 0;
 p1_ui_hearts = 0;
 p1_ui_face = Spr_Dojo_Faces;
 p1_ui_face_index = 0;
+p2_ui_instance = noone;
 p2_ui_hp = 0;
 p2_ui_meter = 0;
 p2_ui_hearts = 0;
