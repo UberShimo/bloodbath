@@ -51,7 +51,10 @@ marked_target = noone;
 visibility_change = 0;
 invisibility_duration = 120; // 2 sec
 reverse_invisibility_alarm = 0;
-ULTRA_control = 3;
+ULTRA_control = 0.2;
+ULTRA_duration = 60;
+ULTRA_alarm = 0;
+ULTRA_max_speed = 16;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -278,6 +281,8 @@ action_trigger = function(){
 			h_velocity = 2*image_xscale;
 			v_velocity = -6;
 			weight = 0.3;
+			ULTRA_alarm = ULTRA_duration;
+			cancels = max_cancels;
 		
 			sprite_index = Spr_Knife_ULTRA_recovery;
 			image_index = 0;

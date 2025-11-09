@@ -6,7 +6,7 @@ if((action == "Mark Spin" && y_hold) || action == "ULTRA"){
 event_inherited();
 
 // ACTION!
-if(action_button_pressed() && (action == noone || check_for_cancel())){
+if(action_button_pressed() && (action == noone || check_for_cancel() || action == "ULTRA")){ // You can cancel out of ULTRA
 	save_current_state();
 	
 	if(grounded){
@@ -211,22 +211,40 @@ if(visibility_change != 0){
 
 // Ultra control
 if(action == "ULTRA" && multi_hit_action_index == 1){
+	// ULTRA bounce
 	if(check_collision(0, 2)){
-		action = noone;
+		v_velocity *= -1;
+		if(v_velocity > -4){
+			v_velocity = -4;
+		}
+		y -= 4;
+		h_velocity += 6*image_xscale;
 	}
 	else{
 		if(forward_hold){
-			x += ULTRA_control*image_xscale*logic_time;
+			h_velocity += ULTRA_control*image_xscale*logic_time;
 		}
 		else if(backward_hold){
-			x -= ULTRA_control*image_xscale*logic_time;
+			h_velocity -= ULTRA_control*image_xscale*logic_time;
 		}
 		if(down_hold){
-			y += ULTRA_control*image_xscale*logic_time;
+			v_velocity += ULTRA_control*logic_time;
 		}
 		else if(up_hold){
-			y -= ULTRA_control*image_xscale*logic_time;
+			v_velocity -= ULTRA_control*logic_time;
 		}
+	}
+	
+	if(h_velocity > ULTRA_max_speed){
+		h_velocity = ULTRA_max_speed;
+	}
+	else if(h_velocity < -ULTRA_max_speed){
+		h_velocity = -ULTRA_max_speed;
+	}
+	
+	ULTRA_alarm -= logic_time;
+	if(ULTRA_alarm <= 0){
+		action = noone;
 	}
 }
 

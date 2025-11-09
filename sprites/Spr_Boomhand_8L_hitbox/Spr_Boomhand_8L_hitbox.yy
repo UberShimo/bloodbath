@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Spr_Boomhand_8L_hitbox",
-  "bbox_bottom": 97,
+  "bbox_bottom": 95,
   "bbox_left": 16,
   "bbox_right": 110,
   "bbox_top": 17,

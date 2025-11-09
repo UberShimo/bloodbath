@@ -44,4 +44,4 @@ digit_offset = 6;
 //Outline shader stuff
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
 outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
-outline_color = [1, 1, 1, 0.4]; // RGB+alpha
+outline_color = global.menu_outline_color;

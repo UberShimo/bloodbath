@@ -39,7 +39,7 @@ if(draw_mini_ui && !place_meeting(x, y, Obj_Boomhand_Smoke)){ // Smoke is suppos
 // Draw EXIT...
 if(exit_count > 0){
 	a = exit_count/exit_count_goal;
-	c = c_white;
+	c = c_black;
 	// Draw white outline kinda
 	draw_text_color(x+exit_text_x+1, y-character_height+exit_text_y, "EXIT", c, c, c, c, a/2);
 	draw_text_color(x+exit_text_x-1, y-character_height+exit_text_y, "EXIT", c, c, c, c, a/2);

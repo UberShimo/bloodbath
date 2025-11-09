@@ -22,7 +22,9 @@ hitbox_list = ds_list_create();
 
 image_angle = point_direction(0, 0, h_velocity, v_velocity);
 
-snap_to_ground();
+if(!place_meeting(x, y, Obj_Platform)){	
+	snap_to_ground();
+}
 
 collide = function(){
 	// Bounce

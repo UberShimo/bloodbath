@@ -11,6 +11,7 @@ shake_impact = global.light_shake_impact;
 h_launch = 5;
 v_launch = -2;
 
+active_frames = 16;
 is_sticky = true;
 
 swing_sound = Snd_Quick_Swing;

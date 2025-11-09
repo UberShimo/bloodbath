@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "Jump and spin like crazy!\nYou have some control during ULTRA.\nDash to cancel ULTRA at any time.";
+info = "Jump and spin like crazy!\nYou have some control during ULTRA.\nCancel ULTRA into anything.";
 movement_input = Spr_BDF;
 button_input = Spr_M;
 image = Spr_Knife_ULTRA_recovery;

@@ -84,6 +84,8 @@ global.standard_height = 64;
 global.tall_height = 80;
 
 // Player colors
+global.standard_outline_color = [0, 0, 0, 1]; // RGB+alpha
+global.menu_outline_color = [0, 0, 0, 1]; // RGB+alpha
 global.p_colors[0] = make_color_rgb(255, 0, 0);
 global.p_colors[1] = make_color_rgb(0, 255, 255);
 global.p_colors[2] = make_color_rgb(0, 255, 0);

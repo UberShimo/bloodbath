@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Knife_ULTRA_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Knife_ULTRA_recovery); // 100% informational not used in logic
 
-damage = 8;
+damage = 5;
 hit_stun = 12;
 hit_push = 0;
 freeze_duration = 3;
@@ -16,3 +16,8 @@ is_sticky = true;
 is_launcher = true;
 
 swing_sound = Snd_Quick_Swing;
+
+extra_hit_logic = function(target){
+	target.x = x;
+	target.y = y;
+}

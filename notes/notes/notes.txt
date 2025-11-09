@@ -1,7 +1,6 @@
 TODO{
 	Look through moves and remove hitboxes that reach behind.
 	Add small sound when navigating menus. Also change character pick sound.
-	Make a move list BG?
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
 	Make a scale stat so characters can change scale?
