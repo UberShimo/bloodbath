@@ -13,7 +13,7 @@ global.reset_controllers();
 
 // Spawn initial character picker
 if(global.priority_controller_index != -1){
-	picker = instance_create_depth(x, y, depth, Obj_Character_Picker);
+	picker = instance_create_depth(x, y, 0, Obj_Character_Picker);
 	picker.index = 0;
 	picker.controller_index = global.priority_controller_index;
 	global.controller_indexes[0] = global.priority_controller_index;

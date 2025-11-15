@@ -523,17 +523,13 @@ down_backward_pressed--;
 backward_down_pressed--;
 half_circle_backward_pressed--;
 double_down_pressed--;
-meter_dash_lb_pressed--;
-meter_dash_rb_pressed--;
 #endregion
 
 #region universal moves V-----V
 // Meter dash
-if(meter_dash_lb_pressed > 0 && meter_dash_rb_pressed > 0
+if(rb_hold && lb_pressed > 0
 && (forward_hold || backward_hold) && meter >= 50){
 	reset_buffers();
-	meter_dash_lb_pressed = 0;
-	meter_dash_rb_pressed = 0;
 	meter -= 50;
 	cancels = 0;
 	
@@ -639,6 +635,11 @@ if(meter == 100 && effect_counter >= 1){
 	spawn_effect(x, y, 1, Eff_Fade_Ray, 1, 0, c_lime, 1, 2, 0, 0, 360, 0, 1);
 }
 
+// RB hold effect
+if(rb_hold && effect_counter >= 1 ){
+	spawn_effect(x, y, 1, Eff_Pixel, 1, 0.2, c_lime, 1, 2, 0, 0, 360, character_width, 1);
+}
+
 // Can respawn effect
 if(respawn_alarm > 0 && respawn_alarm < 60 && effect_counter >= 1){
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.05, c_lime, 0.1, 0.3, 0, 0, 360, 24);
@@ -666,6 +667,14 @@ else{
 // Reset target run
 if(global.target_run_mode && rs_down && is_controllable){
 	room_restart();
+}
+
+// Reduce meter shake
+if(meter_shake > 0){
+	meter_shake -= 1; // Not gametime related
+}
+else{
+	meter_shake = 0;
 }
 
 // Die!!!

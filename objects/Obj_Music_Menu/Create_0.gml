@@ -3,6 +3,8 @@ y_draw_text_spacing = 32;
 text_color = c_white;
 text_bg_color = c_black;
 
+depth = -1;
+
 clicked = function(){
 	// Nothing
 }

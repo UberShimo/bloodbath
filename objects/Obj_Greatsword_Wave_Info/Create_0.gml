@@ -5,8 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Spawn a WAVE that drags players.\nHitting it with PILLAR\nturns it into a bubbles!";
-movement_input = Spr_DD;
-button_input = Spr_M;
+button_input = Spr_RB_Y;
 image = Spr_Greatsword_Wavekick_startup;
 frame = 2;
 

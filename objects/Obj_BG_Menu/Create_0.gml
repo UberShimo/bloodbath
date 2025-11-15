@@ -5,6 +5,8 @@ mini_preview_draw_scale = 0.06;
 x_draw = -sprite_get_width(BG_Black)*BG_draw_scale-64;
 bg_color = c_black;
 
+depth = -1;
+
 clicked = function(){
 	// Nothing
 }

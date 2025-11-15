@@ -6,7 +6,7 @@ if(action == "Fistdive" && y_hold){
 event_inherited();
 
 // Farty time
-if(meter >= 15 && double_down_pressed && rb_pressed){
+if(rb_hold && meter >= 15 && x_pressed){
 	meter -= 15;
 	reset_buffers();
 	repeat(12){
@@ -24,7 +24,37 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed && grounded){
+			action = "ULTRA";
+			meter -= 50;
+			
+			is_unstoppable = true;
+			shake_amount = 4;
+			
+			sprite_index = Spr_Boomhand_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			audio_play_sound(Snd_Boomhand_ULTRA_startup, 0, false);
+		}
+		else if(meter >= 25 && y_pressed && grounded){
+			action = "Elbow";
+			meter -= 25;
+			
+			is_unstoppable = true;
+			
+			sprite_index = Spr_Boomhand_Elbow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if(!grounded){
 			action = "8F";
 			is_unstable = true;
@@ -143,35 +173,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "5S";
 			hook_charge = 0;
 			sprite_index = Spr_Boomhand_5S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
-	else if(rb_pressed){
-		if(grounded && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			
-			is_unstoppable = true;
-			shake_amount = 4;
-			
-			sprite_index = Spr_Boomhand_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			audio_play_sound(Snd_Boomhand_ULTRA_startup, 0, false);
-		}
-		else if(grounded && down_forward_pressed && meter >= 25){
-			action = "Elbow";
-			meter -= 25;
-			
-			is_unstoppable = true;
-			
-			sprite_index = Spr_Boomhand_Elbow_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

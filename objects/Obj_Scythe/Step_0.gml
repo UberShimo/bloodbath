@@ -18,7 +18,39 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			
+			sprite_index = Spr_Scythe_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.5;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+		}
+		else if(meter >= 30 && y_pressed){
+			action = "Life Pull";
+			meter -= 30;
+			
+			sprite_index = Spr_Scythe_Life_Pull_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 45 && x_pressed && grounded){
+			action = "Self Lightning";
+			meter -= 45;
+			
+			sprite_index = Spr_Scythe_Self_Lightning_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}	
+	else if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && extra_jumps_left > 0){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -149,43 +181,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			
-			sprite_index = Spr_Scythe_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.5;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-		}
-		else if(meter >= 30 && (down_forward_pressed || down_backward_pressed) && grounded && image_alpha >= 1){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Life Pull";
-			meter -= 30;
-			
-			sprite_index = Spr_Scythe_Life_Pull_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(meter >= 45 && grounded && double_down_pressed){
-			action = "Self Lightning";
-			meter -= 45;
-			
-			sprite_index = Spr_Scythe_Self_Lightning_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}	
 	reset_buffers();
 	
 	if(doing_action_by_canceling){

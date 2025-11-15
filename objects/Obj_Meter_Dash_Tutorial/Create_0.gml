@@ -1,6 +1,6 @@
 event_inherited();
 
-text = "Press LB+RB to METER DASH!\n"+
+text = "Hold RB + Press LB to METER DASH!\n"+
 "Can be done ANY TIME\n"+
 "but cost 50% meter.";
 

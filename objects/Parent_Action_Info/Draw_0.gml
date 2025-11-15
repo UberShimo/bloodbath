@@ -8,6 +8,9 @@ shader_set_uniform_f(texel_handle, t_width, t_height);
 shader_set_uniform_f(outline_handle, outline_color[0]*image_alpha, outline_color[1]*image_alpha, outline_color[2]*image_alpha, outline_color[3]*image_alpha);
 
 // Draw action image
+draw_set_alpha(sprite_bg_alpha);
+draw_rectangle_color(x, y, x+192, y+128, sprite_bg_color, sprite_bg_color, sprite_bg_color, sprite_bg_color, false);
+draw_set_alpha(1);
 draw_sprite(image, frame, x+96, y+64);
 draw_sprite_ext(extra_image, 0, x+96+extra_image_x, y+64+extra_image_y, extra_image_scale, extra_image_scale, extra_image_rotation, extra_image_color, 1);
 

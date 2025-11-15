@@ -16,7 +16,36 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && grounded && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			
+			sprite_index = Spr_Greatsword_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index)-2*logic_time; // -1 makes it look corrent
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+		}
+		else if(meter >= 20 && y_pressed && grounded){
+			meter -= 20;
+			action = "Wavekick";
+			sprite_index = Spr_Greatsword_Wavekick_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(x_pressed){
+			action = "Grab";
+			sprite_index = Spr_Greatsword_Grab_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Greatsword_8F_startup;
@@ -143,40 +172,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(rb_pressed){
-		if(meter >= 100 && grounded && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			
-			sprite_index = Spr_Greatsword_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index)-2*logic_time; // -1 makes it look corrent
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(down_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "Grab";
-			sprite_index = Spr_Greatsword_Grab_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed && grounded && meter >= 20){
-			meter -= 20;
-			action = "Wavekick";
-			sprite_index = Spr_Greatsword_Wavekick_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
 	reset_buffers();
 	
 	if(doing_action_by_canceling){
@@ -240,7 +235,7 @@ else if(action == "Ocean"){
 	reset_buffers();
 }
 
-if(action == "ULTRA Hold" && !rb_hold){
+if(action == "ULTRA Hold" && !b_hold){
 	action = "ULTRA";
 	action_alarm = 1;
 }

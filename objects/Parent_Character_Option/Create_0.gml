@@ -11,7 +11,11 @@ target_run_room = Dojo_Target_Run;
 option_width = 64;
 option_height = 128;
 
+bg_color = c_white;
+bg_alpha = 0.1;
+
 mask_index = Spr_Picker;
+depth = 10;
 
 //Outline shader stuff
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");

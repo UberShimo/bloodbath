@@ -4,6 +4,8 @@ arena_draw_scale = 0.8;
 mini_preview_draw_scale = 0.46;
 x_draw = -sprite_get_width(Spr_Normal_Layout)*arena_draw_scale-64;
 
+depth = -1;
+
 clicked = function(){
 	// Nothing
 }

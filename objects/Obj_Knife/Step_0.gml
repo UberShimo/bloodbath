@@ -14,7 +14,52 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			sprite_index = Spr_Knife_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			
+			multi_hit_action_index = 0;
+		}
+		else if(meter >= 30 && y_pressed){
+			action = "Lob Potion";
+			meter -= 30;
+			
+			sprite_index = Spr_Knife_Potion_Lob_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 30 && x_pressed && grounded && image_alpha >= 1){
+			if(backward_hold){
+				image_xscale *= -1;
+			}
+			action = "Sneak Away";
+			meter -= 30;
+			
+			h_velocity = 4*image_xscale;
+			grip = 0;
+			is_collidable = false;
+			
+			sprite_index = Spr_Knife_Sneak_Away_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+			visibility_change = -1/action_alarm; // Very smart solution
+			reverse_invisibility_alarm = invisibility_duration; // Gotta have it here for safety. Very critical alarm to start!
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -129,53 +174,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		else{
 			action = "5S";
 			sprite_index = Spr_Knife_5S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			sprite_index = Spr_Knife_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			
-			multi_hit_action_index = 0;
-		}
-		else if(meter >= 30 && (down_forward_pressed || down_backward_pressed) && grounded && image_alpha >= 1){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Sneak Away";
-			meter -= 30;
-			
-			h_velocity = 4*image_xscale;
-			grip = 0;
-			is_collidable = false;
-			
-			sprite_index = Spr_Knife_Sneak_Away_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-			visibility_change = -1/action_alarm; // Very smart solution
-			reverse_invisibility_alarm = invisibility_duration; // Gotta have it here for safety. Very critical alarm to start!
-		}
-		else if(meter >= 30 && double_down_pressed){
-			action = "Lob Potion";
-			meter -= 30;
-			
-			sprite_index = Spr_Knife_Potion_Lob_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

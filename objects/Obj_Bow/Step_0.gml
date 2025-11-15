@@ -17,7 +17,48 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			sprite_index = Spr_Bow_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+		}
+		else if(meter >= 50 && y_pressed){
+			action = "Spear Throw";
+			meter -= 50;
+			
+			hold_spear = true;
+			aim_dir = -45;
+			
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Bow_Spearthrow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 25 && x_pressed && grounded){
+			action = "Spawn Frog";
+			meter -= 25;
+			
+			sprite_index = Spr_Bow_Frogspawn_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && has_boomerang){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -149,52 +190,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			sprite_index = Spr_Bow_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-		}
-		else if(meter >= 50 && (down_forward_pressed || down_backward_pressed)){
-			if(down_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "Spear Throw";
-			meter -= 50;
-			
-			hold_spear = true;
-			aim_dir = -45;
-			
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			
-			sprite_index = Spr_Bow_Spearthrow_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(meter >= 25 && grounded && double_down_pressed){
-			action = "Spawn Frog";
-			meter -= 25;
-			
-			sprite_index = Spr_Bow_Frogspawn_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
 	reset_buffers();
 	
 	if(doing_action_by_canceling){
@@ -240,11 +235,11 @@ if((action == "Aim Up" || action == "Aim Down") && hold_arrow && !y_hold){
 // Spearthrow logic. Force the startup frames to happen
 if(action == "Spear Throw" && image_index > 2){
 	// Aim Spear
-	if(rb_hold){
+	if(y_hold){
 		aim_dir += (90/spear_aim_duration)*logic_time;
 	}
 	// Stop aim and throw spear
-	if(hold_spear && !rb_hold){
+	if(hold_spear && !y_hold){
 		hold_spear = false;
 		action_alarm = 4;
 	}

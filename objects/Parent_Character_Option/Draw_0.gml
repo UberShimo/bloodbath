@@ -1,3 +1,7 @@
+draw_set_alpha(bg_alpha);
+draw_rectangle_color(x, y, x+option_width, y+option_height, bg_color, bg_color, bg_color, bg_color, false);
+draw_set_alpha(1);
+
 draw_self();
 
 x_draw = x+option_width/2;

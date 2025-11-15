@@ -14,13 +14,13 @@ else{
 
 // ACTION!
 // Many checks...
-if(rb_pressed && meter >= 10 && !half_circle_forward_pressed && (down_forward_pressed || down_backward_pressed) && action != "Balldash" && !ball.is_returning){
+if(rb_hold && meter >= 10 && x_pressed && action != "Balldash" && !ball.is_returning){
 	meter -= 10;
 	is_holding_ball = false;
 	ball.h_velocity = 3*image_xscale;
 	eff_min_angle = -135;
 	eff_max_angle = -90;
-	if(down_backward_pressed){
+	if(backward_hold){
 		ball.h_velocity *= -1;
 		eff_min_angle = -90;
 		eff_max_angle = -45;
@@ -30,7 +30,7 @@ if(rb_pressed && meter >= 10 && !half_circle_forward_pressed && (down_forward_pr
 	reset_buffers();
 }
 // Many checks
-if(rb_pressed && meter >= 40 && double_down_pressed && action != "Balldash" && !is_holding_ball){
+if(rb_hold && meter >= 40 && y_pressed && action != "Balldash" && !is_holding_ball){
 	meter -= 40;
 	ball.is_returning = true;
 	// Reset ball hitbox
@@ -51,7 +51,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed && grounded){
+			action = "ULTRA";
+			meter -= 50;
+			
+			shake_amount = 4;
+			
+			sprite_index = Spr_Baller_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && !is_holding_ball){
 			// Pick up ball
 			if(place_meeting(x, y, ball)){
@@ -190,23 +208,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 					action_alarm = generate_sprite_frames(sprite_index);
 				}
 			}
-		}
-	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			
-			shake_amount = 4;
-			
-			sprite_index = Spr_Baller_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 	}
 	reset_buffers();

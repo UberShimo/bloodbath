@@ -199,7 +199,7 @@ action_trigger = function(){
 		ball.h_velocity = 1*image_xscale;
 		ball.v_velocity = -6;
 		
-		if(rb_hold){
+		if(x_hold){
 			ball.v_velocity = -9;
 		}
 		

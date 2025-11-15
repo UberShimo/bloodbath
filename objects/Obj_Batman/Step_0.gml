@@ -9,7 +9,37 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			sprite_index = Spr_Batman_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
+		}
+		else if(meter >= 40 && y_pressed){
+			action = "Curve Superball";
+			meter -= 40;
+			sprite_index = Spr_Batman_Pitch_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 40 && x_pressed){
+			action = "Superball";
+			meter -= 40;
+			sprite_index = Spr_Batman_Pitch_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Batman_8F_startup;
@@ -137,44 +167,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		else{
 			action = "5S";
 			sprite_index = Spr_Batman_5S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			sprite_index = Spr_Batman_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
-		}
-		else if(meter >= 40 && (down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Superball";
-			meter -= 40;
-			sprite_index = Spr_Batman_Pitch_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed && meter >= 40){
-			action = "Curve Superball";
-			meter -= 40;
-			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

@@ -257,7 +257,7 @@ action_trigger = function(){
 		reset_physics();
 	}
 	else if(action == "ULTRA"){
-		if(rb_hold && !ULTRA_is_held){
+		if(b_hold && !ULTRA_is_held){
 			action = "ULTRA Hold";
 			ULTRA_is_held = true;
 			sprite_index = Spr_Greatsword_ULTRA_hold;

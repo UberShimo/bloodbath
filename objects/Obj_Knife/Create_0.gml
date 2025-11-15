@@ -251,7 +251,7 @@ action_trigger = function(){
 		attack.initiate(self);
 		
 		vel = 5;
-		if(rb_hold){
+		if(y_hold){
 			vel = 7;
 		}
 		

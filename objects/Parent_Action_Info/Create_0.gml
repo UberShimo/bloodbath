@@ -40,6 +40,8 @@ image_speed = 0;
 // Draw variables
 input_offset = 24;
 digit_offset = 6;
+sprite_bg_alpha = 0.1;
+sprite_bg_color = c_white;
 
 //Outline shader stuff
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");

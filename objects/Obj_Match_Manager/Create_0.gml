@@ -29,12 +29,16 @@ p1_ui_meter = 0;
 p1_ui_hearts = 0;
 p1_ui_face = Spr_Dojo_Faces;
 p1_ui_face_index = 0;
+p1_x_ui_meter_shake = 0;
+p1_y_ui_meter_shake = 0;
 p2_ui_instance = noone;
 p2_ui_hp = 0;
 p2_ui_meter = 0;
 p2_ui_hearts = 0;
 p2_ui_face = Spr_Dojo_Faces;
 p2_ui_face_index = 0;
+p2_x_ui_meter_shake = 0;
+p2_y_ui_meter_shake = 0;
 
 global_time_reset_alarm = 0;
 

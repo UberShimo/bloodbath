@@ -20,7 +20,43 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Katana_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.5;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			audio_play_sound(Snd_Manly_Tensing, 0, false);
+		}
+		else if(meter >= 25 && y_pressed){
+			action = "Quickdraw Clone";
+			meter -= 25;
+			
+			sprite_index = Spr_Katana_Spawn_Clone_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 25 && x_pressed){
+			action = "Recall Clone";
+			meter -= 25;
+			
+			sprite_index = Spr_Katana_Spawn_Clone_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Katana_8F_startup;
@@ -126,50 +162,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "5S";
 			can_cancel = true;
 			sprite_index = Spr_Katana_5S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			
-			sprite_index = Spr_Katana_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.5;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			audio_play_sound(Snd_Manly_Tensing, 0, false);
-		}
-		else if(meter >= 25 && (down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Quickdraw Clone";
-			meter -= 25;
-			
-			sprite_index = Spr_Katana_Spawn_Clone_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(meter >= 25 && double_down_pressed){
-			action = "Recall Clone";
-			meter -= 25;
-			
-			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

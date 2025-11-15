@@ -5,8 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Sneak away into INVISIBILITY\nfor a short duration.";
-movement_input = Spr_M;
-button_input = Spr_DF;
+movement_input = Spr_RB_X;
 image = Spr_Knife_Sneak_Away_startup;
 frame = 0;
 

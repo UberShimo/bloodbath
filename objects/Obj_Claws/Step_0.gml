@@ -14,7 +14,7 @@ event_inherited();
 
 // ACTION!
 // ULTRA!!!
-if(rb_pressed && meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
+if(rb_hold && meter >= 100 && b_pressed){
 	meter -= 100;
 	is_hypermode = true;
 	hypermode_alarm = ULTRA_duration;
@@ -30,7 +30,34 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(rb_hold){// Quite the check...
+		if(meter >= 20 && y_pressed && grounded){
+			action = "Spikerise";
+			meter -= 20;
+			
+			sprite_index = Spr_Claws_Spikerise_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 40 && x_pressed && ds_list_size(rewind_list) >= rewind_length-1){
+			action = "Rewind";
+			meter -= 40;
+			
+			sprite_index = Spr_Claws_Teleport_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+			
+			if(hypermode_alarm < 60){
+				hypermode_alarm = 60;
+				is_hypermode = true;
+			}
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && instance_exists(ring1)){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -156,30 +183,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 			multi_hit_action_index = 0;
-		}
-	}
-	else if(rb_pressed){// Quite the check...
-		if(meter >= 20 && down_forward_pressed && grounded){
-			action = "Spikerise";
-			meter -= 20;
-			
-			sprite_index = Spr_Claws_Spikerise_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		// Quite the check...
-		else if(meter >= 40 && double_down_pressed && ds_list_size(rewind_list) >= rewind_length-1){
-			action = "Rewind";
-			meter -= 40;
-			
-			sprite_index = Spr_Claws_Teleport_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-			
-			if(hypermode_alarm < 60){
-				hypermode_alarm = 60;
-				is_hypermode = true;
-			}
 		}
 	}
 	reset_buffers();

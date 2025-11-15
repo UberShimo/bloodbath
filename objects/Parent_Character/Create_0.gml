@@ -24,11 +24,12 @@ player_color = c_white;
 draw_mini_ui = global.chaos_mode;
 exit_text_x = -16;
 exit_text_y = 0;
+meter_shake_amount = 12;
+meter_shake = 0;
 #endregion
 
 #region Initialize input values / buffers
 buffer_duration = 16;
-meter_dash_buffer_duration = 8;
 
 forward_hold = false;
 backward_hold = false;
@@ -63,8 +64,6 @@ down_backward_pressed = 0;
 forward_down_pressed = 0;
 half_circle_backward_pressed = 0;
 double_down_pressed = 0;
-meter_dash_lb_pressed = 0;
-meter_dash_rb_pressed = 0;
 platdrop_pressed = false;
 platdrop_hold = false;
 faceback_hold = false;
@@ -355,13 +354,11 @@ read_input = function(){
 	
 		if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
 			rb_pressed = buffer_duration;
-			meter_dash_rb_pressed = meter_dash_buffer_duration;
 		}
 		rb_hold = gamepad_button_check(controller_index, gp_shoulderr);
 	
 		if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
 			lb_pressed = buffer_duration;
-			meter_dash_lb_pressed = meter_dash_buffer_duration;
 		}
 		lb_hold = gamepad_button_check(controller_index, gp_shoulderl);
 	
@@ -433,7 +430,7 @@ reset_physics = function(){
 }
 
 action_button_pressed = function(){
-	if(x_pressed || y_pressed || b_pressed || lb_pressed || rb_pressed){
+	if(x_pressed || y_pressed || b_pressed || lb_pressed){
 		return true;
 	}
 	return false;

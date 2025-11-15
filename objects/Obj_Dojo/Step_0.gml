@@ -9,7 +9,23 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed && meter > 10){
+	if(rb_hold){
+		if(meter >= 100 && b_pressed){
+			action = "ULTRA";
+			meter -= 50;
+			sprite_index = Spr_Dojo_ULTRA_startup;
+			image_index = 0;
+			global.game_time = 0.25;
+			action_alarm = generate_sprite_frames(sprite_index);
+			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+			multi_hit_action_index = 0;
+		}
+		else{
+			meter_shake = meter_shake_amount;
+			audio_play_sound(Snd_Bzz, 0, false);
+		}
+	}
+	else if(x_pressed && meter > 10){
 		meter -= 10;
 		action = "F";
 		shake_amount = launcher_shake_amount;
@@ -42,21 +58,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(rb_pressed){
-		if(meter >= 100 && (half_circle_forward_pressed || half_circle_backward_pressed)){
-			if(half_circle_backward_pressed){
-				image_xscale *= -1;
-			}
-			action = "ULTRA";
-			meter -= 50;
-			sprite_index = Spr_Dojo_ULTRA_startup;
-			image_index = 0;
-			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
-			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
-			multi_hit_action_index = 0;
-		}
 	}
 	reset_buffers();
 	
