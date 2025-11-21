@@ -26,6 +26,7 @@ if(action_alarm > 0){
 	action_alarm -= logic_time;
 	
 	if(action_alarm <= 0){
+		universal_action_trigger();
 		action_trigger();
 	}
 }
@@ -561,6 +562,19 @@ if(rb_hold && lb_pressed > 0
 	action_alarm = 0;
 	recover_alarm = 24;
 	invincibility_alarm = 24;
+}
+// Meter pull
+else if(lb_hold && rb_hold && meter >= 75){
+	action = "Meter Pull";
+	find_closest_enemy();
+	meter_pull_target = closest_enemy;
+	
+	h_velocity = 0;
+	v_velocity = 0;
+	weight = 0;
+	
+	sprite_index = meter_pull_spr;
+	action_alarm = meter_pull_charge_duration;
 }
 // Parry / Dash
 // Awful amount of checks just to be able to pay cancels when dashing in air

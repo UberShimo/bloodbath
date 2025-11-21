@@ -182,9 +182,15 @@ if(place_meeting(x, y, Parent_Character_Option)){
 	if(!is_picking_for_cpu){
 		if(index == 0 && global.picked_characters[0] == noone && instance_exists(P1_Preview)){
 			P1_Preview.sprite_index = option.portrait;
+			if(!global.chaos_mode){
+				P1_Preview.stats = option.stats;
+			}
 		}
 		else if(index == 1 && global.picked_characters[1] == noone && instance_exists(P2_Preview)){
 			P2_Preview.sprite_index = option.portrait;
+			if(!global.chaos_mode){
+				P2_Preview.stats = option.stats;
+			}
 		}
 		else if(index == 2 && global.picked_characters[2] == noone && instance_exists(P3_Preview)){
 			P3_Preview.sprite_index = option.portrait;

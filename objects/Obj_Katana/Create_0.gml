@@ -14,6 +14,7 @@ launched_spr = Spr_Katana_Launched;
 jump_spr = Spr_Katana_Crouch;
 land_spr = Spr_Katana_Land;
 parry_spr = Spr_Katana_Parry;
+meter_pull_spr = Spr_Katana_Meter_Pull;
 pose1_spr = Spr_Katana_Pose1;
 pose2_spr = Spr_Katana_Pose2;
 pose3_spr = Spr_Katana_Pose3;

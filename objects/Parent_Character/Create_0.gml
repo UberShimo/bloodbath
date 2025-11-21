@@ -84,6 +84,7 @@ launched_spr = noone;
 jump_spr = noone;
 land_spr = noone;
 parry_spr = noone;
+meter_pull_spr = noone;
 pose1_spr = noone;
 pose2_spr = noone;
 pose3_spr = noone;
@@ -163,6 +164,8 @@ goes_through_collision = false; // SUPER rarely used since this is risky busines
 goes_through_platforms = false; // Only used during certain moves
 DoT_tick_dmg = 0; // Poison only lol
 DoT_alarm = 0; // Poison only lol
+meter_pull_target = noone;
+meter_pull_charge_duration = 30; // Frames
 #endregion
 
 #region Alarms
@@ -190,7 +193,22 @@ die = function(){
 
 action_trigger = function(){
 	// Activated by action_alarm.
-	// This alarm performs the queued action. Like spawning hitboxes and shit...
+	// This function performs the queued action. Like spawning hitboxes and shit...
+}
+
+universal_action_trigger = function(){
+	// Activated by action_alarm.
+	// This function contains all universal moves.
+	if(action == "Meter Pull"){
+		attack = instance_create_depth(meter_pull_target.x, meter_pull_target.y, 0, Obj_Meter_Pull_hitbox);
+		attack.initiate(self);
+		
+		meter -= 75;
+		
+		sprite_index = Spr_Katana_8F_recovery;
+		image_index = 0;
+		recover_alarm = 1;
+	}
 }
 
 reset_buffers = function(){

@@ -14,6 +14,7 @@ launched_spr = Spr_Knife_Launched;
 jump_spr = Spr_Knife_Crouch;
 land_spr = Spr_Knife_Land;
 parry_spr = Spr_Knife_Parry;
+meter_pull_spr = Spr_Knife_Meter_Pull;
 pose1_spr = Spr_Knife_Pose1;
 pose2_spr = Spr_Knife_Pose2;
 pose3_spr = Spr_Knife_Pose3;

@@ -1,8 +1,16 @@
 event_inherited();
 
-text = "Hold RB + Press LB to METER DASH!\n"+
-"Can be done ANY TIME\n"+
-"but cost 50% meter.";
+text = "Hold RB to enter charge meter!\n"+
+"While charging meter:\n"+
+"LB: METER PULL\n"+
+"(Cost 75% meter)\n"+
+"LB + direction: METER DASH\n"+
+"(Cost 50% meter)\n"+
+"\n"+
+"\n"+
+"You can METER DASH anytime.\n"+
+"Now METER DASH out of the infinite combo!";
+text_scale = 0.6;
 
 alarm[0] = 120;
 

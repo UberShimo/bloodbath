@@ -2,6 +2,7 @@ event_inherited();
 
 character = Obj_Dojo;
 portrait = Spr_Dojo_Portrait;
+stats = Spr_Dojo_Stats;
 animation = Spr_Dojo_Stand;
 animation_frame = 0;
 animation_speed = 1;

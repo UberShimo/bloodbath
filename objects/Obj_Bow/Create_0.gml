@@ -14,6 +14,7 @@ launched_spr = Spr_Bow_Launched;
 jump_spr = Spr_Bow_Crouch;
 land_spr = Spr_Bow_Land;
 parry_spr = Spr_Bow_Parry;
+meter_pull_spr = Spr_Bow_Meter_Pull;
 pose1_spr = Spr_Bow_Pose1;
 pose2_spr = Spr_Bow_Pose2;
 pose3_spr = Spr_Bow_Pose3;

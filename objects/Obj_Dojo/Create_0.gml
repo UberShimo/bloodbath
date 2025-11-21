@@ -14,6 +14,7 @@ launched_spr = Spr_Dojo_Launched;
 jump_spr = Spr_Dojo_Crouch;
 land_spr = Spr_Dojo_Land;
 parry_spr = Spr_Dojo_Parry;
+meter_pull_spr = Spr_Dojo_Meter_Pull;
 pose1_spr = Spr_Dojo_Dash_Forward;
 pose2_spr = Spr_Dojo_Ascend;
 pose3_spr = Spr_Dojo_Descend;

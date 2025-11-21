@@ -14,6 +14,7 @@ launched_spr = Spr_Batman_Launched;
 jump_spr = Spr_Batman_Crouch;
 land_spr = Spr_Batman_Land;
 parry_spr = Spr_Batman_Parry;
+meter_pull_spr = Spr_Batman_Meter_Pull;
 pose1_spr = Spr_Batman_Pose1;
 pose2_spr = Spr_Batman_Pose2;
 pose3_spr = Spr_Batman_Pose3;

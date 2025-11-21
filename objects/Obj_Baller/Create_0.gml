@@ -14,6 +14,7 @@ launched_spr = Spr_Baller_Launched;
 jump_spr = Spr_Baller_Crouch;
 land_spr = Spr_Baller_Land;
 parry_spr = Spr_Baller_Parry;
+meter_pull_spr = Spr_Baller_Meter_Pull;
 pose1_spr = Spr_Baller_Pose1;
 pose2_spr = Spr_Baller_Pose2;
 pose3_spr = Spr_Baller_Pose3;

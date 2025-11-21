@@ -3,5 +3,6 @@ event_inherited();
 character = Obj_Claws;
 animation = Spr_Claws_Stand;
 portrait = Spr_Claws_Portrait;
+stats = Spr_Claws_Stats;
 move_list_room = Claws_Move_List;
 target_run_room = Claws_Target_Run;

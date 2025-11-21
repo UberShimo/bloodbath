@@ -110,4 +110,5 @@ collide = function(){
 
 extra_hit_logic = function(target){
 	// Maybe there might happen something extra when hitting enemy?
+	// This function happens before most other hit logic
 }

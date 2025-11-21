@@ -6,8 +6,8 @@ recovery = generate_sprite_frames(Spr_Dojo_F_recovery); // 100% informational no
 damage = 1;
 hit_stun = 60;
 hit_push = 4;
-freeze_duration = global.heavy_freeze_duration;
-shake_impact = global.heavy_shake_impact;
+freeze_duration = global.light_freeze_duration;
+shake_impact = 0;
 h_launch = 0;
 v_launch = -6;
 
