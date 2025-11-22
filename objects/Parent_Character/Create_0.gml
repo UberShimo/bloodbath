@@ -26,6 +26,9 @@ exit_text_x = -16;
 exit_text_y = 0;
 meter_shake_amount = 12;
 meter_shake = 0;
+meter_channel_draw_amount = 0;
+meter_channel_draw_change_amount = 0.05;
+meter_channel_max_draw_amount = 0.5;
 #endregion
 
 #region Initialize input values / buffers

@@ -25,7 +25,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed && meter > 10){
+	else if(x_pressed && meter >= 10){
 		meter -= 10;
 		action = "F";
 		shake_amount = launcher_shake_amount;

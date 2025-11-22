@@ -14,6 +14,13 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 shader_reset();
 
+// Channeling meter effect
+if(rb_hold){
+	gpu_set_fog(true, c_lime, 0, 1000);
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_lime, meter_channel_draw_amount);
+	gpu_set_fog(false, c_lime, 0, 1000);
+}
+
 if(draw_mini_ui && !place_meeting(x, y, Obj_Boomhand_Smoke)){ // Smoke is suppose to hide you
 	hp_bar_x = x-sprite_get_width(Spr_Mini_HP_Bar)/2;
 	meter_bar_x = x-sprite_get_width(Spr_Mini_Meter_Bar)/2;

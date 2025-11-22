@@ -265,6 +265,7 @@ action_trigger = function(){
 			action_alarm = ULTRA_max_hold;
 		}
 		else{
+			meter -= 50;
 			ULTRA_is_held = false;
 			
 			blink_h(12*image_xscale);

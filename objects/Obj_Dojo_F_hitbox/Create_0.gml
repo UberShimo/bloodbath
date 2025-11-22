@@ -18,3 +18,7 @@ meter_gain_multiplier = 10;
 
 swing_sound = Snd_Light_Swing;
 hit_sound = Snd_Hit2;
+
+extra_hit_logic = function(target){
+	target.meter += 4;
+}

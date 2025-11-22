@@ -15,7 +15,7 @@ for(i = 0; i < max_pickers; i++){
 		
 		for(j = 0; j < array_length(global.controller_indexes); j++){
 			if(global.controller_indexes[j] == -1){ // -1 = empty
-				picker = instance_create_depth(x, y, depth, Obj_Character_Picker);
+				picker = instance_create_depth(x, y, 0, Obj_Character_Picker);
 				picker.index = j;
 				picker.controller_index = i;
 				global.controller_indexes[j] = i;

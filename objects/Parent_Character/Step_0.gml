@@ -651,7 +651,16 @@ if(meter == 100 && effect_counter >= 1){
 
 // RB hold effect
 if(rb_hold && effect_counter >= 1 ){
-	spawn_effect(x, y, 1, Eff_Pixel, 1, 0.2, c_lime, 1, 2, 0, 0, 360, character_width, 1);
+	spawn_effect(x, y, 1, Eff_Pixel, 1, 0.2, c_lime, 1, 4, 0, 0, 360, 48, depth-1);
+	meter_channel_draw_amount += meter_channel_draw_change_amount;
+	if(meter_channel_draw_amount >= meter_channel_max_draw_amount){
+		meter_channel_draw_change_amount *= -1;
+		meter_channel_draw_amount += meter_channel_draw_change_amount;
+	}
+	else if(meter_channel_draw_amount <= 0){
+		meter_channel_draw_change_amount *= -1;
+		meter_channel_draw_amount += meter_channel_draw_change_amount;
+	}
 }
 
 // Can respawn effect
