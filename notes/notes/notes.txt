@@ -1,4 +1,6 @@
 TODO{
+	Opponent should not gain meter from picknig up Bow spear.
+	Scythe: RB + Y = Spawn many birds!
 	Look through moves and remove hitboxes that reach behind.
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
@@ -136,24 +138,24 @@ Rapier elegant with fabric covering the face Ellie{
 }
 
 NEW
-Greatshield ANDERS{
+Greatshield ANDERS blonde with bandit mask on and bathing pants{
 	Has longer parry duration
 	
 	5F: Push shield forward.
 	2F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable.
-	8F: Try grabbing above and then throw them down.
-	5L: Karate high kick.
-	2L: Heel kick downward.
-	8L. Swing leg below.
-	5S: Swing shield forward giving you forward momentum.
+	8F: Swing leg below. Pushing forward.
+	5L: Swing shield forward giving you forward momentum.
+	2L: Unstoppable headbutt upward.
+	8L. Try grabbing above and then throw them down.
+	5S: Punch forward with shield edge
 	2S: Uppercut with shield.
 	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
 	
 	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
 	vvL: Put out a circle that explode and stun opponents when dashed through. (Yellow)
-	vvS: Put out a circle that makes you unstoppable when dashed through and you take less dmg. (Pink)
+	vvS: Put out a circle that get pushed away as a projectile when dashed upon. (Pink)
 	
-	v>X: Shrink opponent in some way.
-	vvX: Put a circle with spinning arrows. Release to shoot arrows that hurt like hell!
-	ULTRA: Become BIG for a while dealing more dmg and take less dmg.
+	v>X: Kickflip up dealing dmg multiple times.
+	vvX: Grab opponent and steal their size! cost 50% meter and steal 20% size.
+	ULTRA: Become unstoppable and have infinite cancels for 8 sec.
 }

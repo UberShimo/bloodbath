@@ -29,19 +29,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 30 && y_pressed){
-			action = "Life Pull";
-			meter -= 30;
+		else if(meter >= 40 && x_pressed && grounded){
+			action = "Self Lightning";
+			meter -= 40;
 			
-			sprite_index = Spr_Scythe_Life_Pull_startup;
+			sprite_index = Spr_Scythe_Self_Lightning_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 45 && x_pressed && grounded){
-			action = "Self Lightning";
-			meter -= 45;
+		else if(meter >= 65 && y_pressed){
+			action = "Meter Birdie";
+			meter -= 65;
 			
-			sprite_index = Spr_Scythe_Self_Lightning_startup;
+			sprite_index = Spr_Scythe_Meter_Birdie_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

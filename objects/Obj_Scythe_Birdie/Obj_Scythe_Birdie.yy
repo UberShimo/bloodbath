@@ -8,6 +8,7 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Parent_Character","path":"objects/Parent_Character/Parent_Character.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Obj_Scythe_5S_hitbox","path":"objects/Obj_Scythe_5S_hitbox/Obj_Scythe_5S_hitbox.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Obj_Scythe_Lightning_hitbox","path":"objects/Obj_Scythe_Lightning_hitbox/Obj_Scythe_Lightning_hitbox.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"Obj_Scythe_8S_hitbox","path":"objects/Obj_Scythe_8S_hitbox/Obj_Scythe_8S_hitbox.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],

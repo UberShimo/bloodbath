@@ -200,14 +200,6 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
-	else if(action == "Life Pull"){
-		hitbox = instance_create_depth(x, y, 0, Obj_Scythe_Life_Pull_hitbox);
-		hitbox.initiate(self);
-		
-		sprite_index = Spr_Scythe_Life_Pull_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "Self Lightning"){
 		hitbox = instance_create_depth(x, y, 0, Obj_Scythe_Lightning_hitbox);
 		hitbox.initiate(self);
@@ -216,6 +208,20 @@ action_trigger = function(){
 		lightning_discharge_timer = lightning_discharge_delay;
 		
 		sprite_index = Spr_Scythe_Self_Lightning_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Meter Birdie"){
+		repeat(5){
+			bird = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
+			bird.initiate(self);
+			bird.h_velocity = random_range(-1, -3)*image_xscale;
+			bird.v_velocity = random_range(-1.5, 1.5);
+			bird.acceleration = 0.03*image_xscale;
+			bird.image_blend = c_lime;
+		}
+		
+		sprite_index = Spr_Scythe_Meter_Birdie_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
