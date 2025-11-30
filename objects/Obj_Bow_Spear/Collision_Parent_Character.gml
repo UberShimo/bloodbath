@@ -18,7 +18,7 @@ if(other.index != index && is_active){
 	weight = 0;
 }
 
-if(!is_active && (attachment == noone || (other == spawner && point_distance(x, y, other.x, other.y) < 32))){
+if(!is_active && other == spawner && (attachment == noone || point_distance(x, y, other.x, other.y) < 32)){
 	spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0.25, 0.25, 0.2);
 	spawn_effect(other.x, other.y, 6, Eff_Spark, 1, 0.1, c_lime, 2, 3, 0);
 	other.meter += 25;
