@@ -7,39 +7,42 @@ if(is_holding_ball){
 	ball.y = y;
 	ball.h_velocity = 0;
 	ball.v_velocity = 0;
+	ball.weight = ball.original_weight;
+	ball.reset_physics_alarm = 0;
 }
 else{
-	weight = global.standard_weight;
+	weight = global.light_weight;
 }
 
 // ACTION!
 // Many checks...
-if(rb_hold && meter >= 10 && x_pressed && action != "Balldash" && !ball.is_returning){
-	meter -= 10;
-	is_holding_ball = false;
-	ball.h_velocity = 3*image_xscale;
-	eff_min_angle = -135;
-	eff_max_angle = -90;
-	if(backward_hold){
-		ball.h_velocity *= -1;
-		eff_min_angle = -90;
-		eff_max_angle = -45;
-	}
-	ball.v_velocity = -6;
-	spawn_effect(ball.x, ball.y, 3, Eff_Splash, 1, 0.1, c_lime, 0, 0.25, 0.15, eff_min_angle, eff_max_angle);
+if(rb_hold && meter >= 20 && x_pressed && action != "Stunned" && !is_holding_ball){
+	meter -= 20;
+	
+	ball.h_velocity = 0;
+	ball.v_velocity = 0;
+	ball.weight = 0;
+	ball.reset_physics_alarm = 60; // 1 sec
+	
+	attack = instance_create_depth(x, y, 0, Obj_Baller_Ball_Zap_hitbox);
+	attack.initiate(self);
+	eff = instance_create_depth(x, y, depth-1, Obj_Baller_Ball_Zap_hit_eff);
+	eff.initiate(self);
+	scale = point_distance(x, y, ball.x, ball.y)/sprite_get_width(Spr_Baller_Ball_Zap);
+	dir = point_direction(x, y, ball.x, ball.y);
+	
+	attack.image_xscale = scale;
+	attack.image_angle = dir;
+	eff.image_xscale = scale;
+	eff.image_angle = dir;
+	eff.duration = 8;
 	reset_buffers();
 }
-// Many checks
-if(rb_hold && meter >= 40 && y_pressed && action != "Balldash" && !is_holding_ball){
-	meter -= 40;
-	ball.is_returning = true;
-	// Reset ball hitbox
-	instance_destroy(ball.existing_hitbox);
-	ball.existing_hitbox = noone;
-	ball_dir = point_direction(x, y, ball.x, ball.y);
-	eff_min_angle = ball_dir-45;
-	eff_max_angle = ball_dir+45;
-	spawn_effect(ball.x, ball.y, 5, Eff_Splash, 1, 0.1, c_lime, 0, 0.25, 0.3, eff_min_angle, eff_max_angle);
+else if(rb_hold && meter >= 50 && y_pressed){
+	meter -= 50;
+	recaller = instance_create_depth(ball.x, ball.y, ball.depth-1, Obj_Ball_Meter_Recaller);
+	recaller.initiate(self)
+	recaller.ball = ball;
 	reset_buffers();
 }
 
@@ -83,9 +86,11 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				ball.h_velocity = 0;
 				ball.v_velocity = -4;
 				ball.y -= 6;
+				ball.weight = ball.original_weight;
 				sprite_index = Spr_Baller_Balldash_startup;
 				image_index = 0;
 				action_alarm = generate_sprite_frames(sprite_index);
+				ball.cant_hurt_alarm = action_alarm;
 			}
 		}
 		else if(!grounded){
@@ -170,11 +175,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 						v_velocity = -3;
 					}
 					ball.h_velocity = 0;
-					ball.v_velocity = -5;
+					ball.v_velocity = -4;
 					ball.y -= 6;
+					ball.weight = ball.original_weight;
 					sprite_index = Spr_Baller_Ballpull_startup;
 					image_index = 0;
 					action_alarm = generate_sprite_frames(sprite_index);
+					ball.cant_hurt_alarm = action_alarm;
 				}
 			}
 		}
@@ -201,11 +208,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				else if(!ball.is_returning){
 					action = "Pull";
 					ball.h_velocity = 0;
-					ball.v_velocity = -5;
+					ball.v_velocity = -4;
 					ball.y -= 6;
+					ball.weight = ball.original_weight;
 					sprite_index = Spr_Baller_Ballpull_startup;
 					image_index = 0;
 					action_alarm = generate_sprite_frames(sprite_index);
+					ball.cant_hurt_alarm = action_alarm;
 				}
 			}
 		}
@@ -224,12 +233,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	doing_action_by_canceling = false;
 }
 
-// Ball explosion cd logic
-if(ball_explosion_cd >= 0){
-	ball_explosion_cd -= logic_time;
-}
-
-// Dash to ball
+// Dash to ball / Flying ball logic
 if(action == "Balldash" && action_alarm <= 0){
 	spd = 16;
 	dir = point_direction(x, y, ball.x, ball.y);
@@ -238,6 +242,7 @@ if(action == "Balldash" && action_alarm <= 0){
 	ball.h_velocity = 0;
 	ball.v_velocity = 0;
 	ball.weight = 0;
+	ball.reset_physics_alarm = 120; // For safety
 	
 	// Effect
 	if(effect_counter >= 1){
@@ -263,14 +268,11 @@ if(action == "Balldash" && action_alarm <= 0){
 		recover_alarm = 4;
 	}
 }
-// Just reset ball weight
-else{
-	ball.weight = 0.5;
-}
 
 // Drop ball
 if(is_holding_ball && (double_down_pressed || action == "Dash")){
 	is_holding_ball = false;
+	ball.cant_hurt_alarm = 12;
 }
 
 // Hold ball if you respawn

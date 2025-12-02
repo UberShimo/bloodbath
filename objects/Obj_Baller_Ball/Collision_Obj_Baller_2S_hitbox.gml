@@ -1,8 +1,8 @@
 if(ds_list_find_index(hitbox_list, other) == -1 && !spawner.is_holding_ball){
 	
 	// Baller move
-	h_velocity = 8*other.image_xscale;
-	v_velocity = -5;
+	h_velocity = 10*other.image_xscale;
+	v_velocity = -4;
 	
 	other.spawner.can_cancel = true;
 	

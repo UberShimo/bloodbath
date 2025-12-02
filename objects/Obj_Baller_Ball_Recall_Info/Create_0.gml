@@ -4,13 +4,11 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Recall ball immediately.";
+info = "Recall ball after short delay.";
 button_input = Spr_RB_Y;
 image = Spr_Baller_Ball;
-extra_image = Spr_Baller_Balldash_eff;
-extra_image_color = c_lime;
-extra_image_scale = -1;
+extra_image = Spr_Baller_Ball_Meter_Recall;
 frame = 0;
-meter_cost = 40;
+meter_cost = 50;
 
 is_final = true;

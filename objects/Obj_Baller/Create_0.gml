@@ -145,16 +145,16 @@ action_trigger = function(){
 		is_holding_ball = false;
 		
 		if(forward_hold){
-			ball.h_velocity = 10*image_xscale;
+			ball.h_velocity = 7*image_xscale;
 			ball.v_velocity = -6;
 		}
 		else if(backward_hold){
-			ball.h_velocity = 3*image_xscale;
-			ball.v_velocity = -12;
+			ball.h_velocity = 2*image_xscale;
+			ball.v_velocity = -10;
 		}
 		else{
-			ball.h_velocity = 6*image_xscale;
-			ball.v_velocity = -9;
+			ball.h_velocity = 4*image_xscale;
+			ball.v_velocity = -8;
 		}
 		
 		sprite_index = Spr_Baller_5S_recovery;

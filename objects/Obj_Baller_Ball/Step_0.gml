@@ -9,7 +9,7 @@ if(is_returning){
 
 vel = get_velocity();
 // Hurting ball
-if(vel > 7 && cant_hurt_alarm <= 0){
+if(vel > 3 && cant_hurt_alarm <= 0){
 	// Slow the ball down
 	if(vel > max_velocity){
 		dir = point_direction(0, 0, h_velocity, v_velocity);
@@ -43,6 +43,14 @@ if(cant_hurt_alarm > 0){
 	cant_hurt_alarm -= logic_time;
 	if(cant_hurt_alarm <= 0){
 		cant_hurt_alarm = 0;
+	}
+}
+
+// Reset physics
+if(reset_physics_alarm > 0){
+	reset_physics_alarm -= logic_time;
+	if(reset_physics_alarm <= 0){
+		weight = original_weight;
 	}
 }
 

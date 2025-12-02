@@ -5,13 +5,14 @@ is_projectile = true;
 collision_check_with_distance = false;
 weight = 0.4;
 original_weight = weight;
-cant_hurt_alarm = 0;
 
 // Ball things
 existing_hitbox = noone;
 is_returning = false;
 hitbox_list = ds_list_create();
 max_velocity = 16;
+reset_physics_alarm = 0;
+cant_hurt_alarm = 0;
 
 collide = function(){
 	if(!is_returning){
