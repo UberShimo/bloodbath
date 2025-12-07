@@ -5,8 +5,8 @@ if(is_controllable){
 	rng = random_range(0, 1);
 
 	if(meter >= 35 && irandom_range(1, 8) == 1){ // 12.5%
-		down_hold = true;
-		rb_pressed = buffer_duration;
+		rb_hold = true;
+		y_pressed = buffer_duration;
 	}
 	// Circle
 	else if(rng < 0.3){ // 30%
@@ -54,14 +54,14 @@ if(is_controllable){
 	}
 	// Meter teleport
 	else if(rng < 0.6 && meter_circle != noone){
-		double_down_pressed = buffer_duration;
-		rb_pressed = buffer_duration;
+		rb_hold = true;
+		x_pressed = buffer_duration;
 	}
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		reset_buffers();
-		rb_pressed = buffer_duration;
-		half_circle_forward_pressed = buffer_duration;
+		rb_hold = true;
+		b_pressed = buffer_duration;
 	}
 }

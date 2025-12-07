@@ -1,3 +1,5 @@
+gpu_set_texfilter(false);
+
 #region load save
 ini_open("save.ini");
 

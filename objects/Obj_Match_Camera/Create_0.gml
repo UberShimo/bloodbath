@@ -1,3 +1,4 @@
+
 min_screen_size = 580;
 max_screen_size = room_width;
 extra_screen_size = 128;

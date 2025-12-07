@@ -17,9 +17,9 @@ if(is_controllable){
 	}
 	
 	// ULTRA
-	if(meter > 99 && irandom_range(0, 1) == 0){ // 50%
+	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		reset_buffers();
-		rb_pressed = buffer_duration;
-		half_circle_forward_pressed = buffer_duration;
+		rb_hold = true;
+		b_pressed = buffer_duration;
 	}
 }

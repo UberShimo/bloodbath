@@ -1,3 +1,4 @@
+
 character_amount = instance_number(Parent_Character);
 
 // Calculate Biggest and smallest X/Y
