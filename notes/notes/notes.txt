@@ -4,7 +4,12 @@ TODO{
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
 	Make a scale stat so characters can change scale?
-	Make Adventure mode (Small army battle, Giant battle, Quick enemy battle)
+	Make Roguelike mode:
+	(Small army battle, Giant battle, Quick enemy battle)
+	enemy stats increase slightly each battle.
+	Choose between 2 upgrades.
+	Upgrades:
+	Heal / Grow in size / Meter regen / Extra cancel / Increase character speed / Dmg based on low HP / Lifesteal / "WIND" Extra jump + spawn stunning projectiles
 	Make vertical parallax also?...
 }
 
