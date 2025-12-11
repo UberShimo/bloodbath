@@ -173,6 +173,14 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Flipkick"){
+		attack = instance_create_depth(x, y, 0, Obj_Baller_Flipkick_hitbox);
+		attack.initiate(self);
+
+		sprite_index = Spr_Baller_Flipkick_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "Pull"){
 		ball.is_returning = true;
 		

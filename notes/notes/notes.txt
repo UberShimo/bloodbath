@@ -1,4 +1,5 @@
 TODO{
+	Baller flipkick is good?
 	Look through moves and remove hitboxes that reach behind.
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
@@ -82,7 +83,6 @@ Claws{
 }
 
 Baller{
-	v>S: Dive forward head first!
 	Maybe make max distance for ball? Can create problems in adventure mode.
 }
 

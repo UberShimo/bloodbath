@@ -151,7 +151,24 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
+		if((down_forward_pressed || down_backward_pressed)){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Flipkick";
+			is_holding_ball = false;
+			
+			h_velocity = 3*image_xscale;
+			v_velocity = -6;
+			
+			sprite_index = Spr_Baller_Flipkick_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			if(is_holding_ball){
 				action = "8S";
 				// Lift if falling
