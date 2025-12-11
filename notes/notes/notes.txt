@@ -82,6 +82,7 @@ Claws{
 }
 
 Baller{
+	v>S: Dive forward head first!
 	Maybe make max distance for ball? Can create problems in adventure mode.
 }
 
@@ -113,14 +114,14 @@ Scythe{
 
 NEW
 Rapier elegant with fabric covering the face Ellie{
-	Dash has shorter duration.
+	Dash has shorter duration and is not cancelable.
 	Good grip.
 
 	F: Quick swing
 	F<: Quick swing and step back
 	F>: Quick swing and step forward
 	Fv: Kick
-	F^: Pathetic aerial kick.
+	F^: Pathetic aerial kick. Stops your momentum if enemy hit. Combo into 8L.
 	
 	L: Stap forward
 	L<: Stab slightly up
@@ -130,13 +131,18 @@ Rapier elegant with fabric covering the face Ellie{
 	
 	S: Step forward in a goofy way and a bent rapier. Release to slam down rapier forward in a elegant way!
 	vS: Elegant jump with a rapier twist that then swing upward.
-	^S: Spin 3 times in air.
+	^S: Spin horizontal 3 times in air.
 	
 	v>F: Quick dash stab that is final.
 	v>L: Slower dash stab.
 	v>S: Slowest dash stab that leaves a delayed stab afterwards.
 	
-	v>X: Quick dash stab that leaves a delayed stab afterwards.
+	vvF: Return to neatral state. Move duration match dash duration.
+	vvL: Enter parry state. If you parry you dash through opponent and deal big dmg.
+	vvS: Spin rapier hitting upward 4 times. Can move during attack!
+	
+	RB+X: Fly upward and spin horizontal 3 times in air.
+	RB+Y: Do a stab with super range! Angle with by holding back or forward.
 	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
 }
 

@@ -219,6 +219,14 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Backflip"){
+		h_velocity = -6*image_xscale;
+		v_velocity = -9;
+		
+		sprite_index = Spr_Claws_Backflip_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	// Meter moves
 	else if(action == "Spikerise"){
 		attack = instance_create_depth(x+24*image_xscale, y+character_height/2*image_yscale, 0, Obj_Claws_Spike_Spawner);

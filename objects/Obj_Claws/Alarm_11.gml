@@ -48,7 +48,7 @@ if(is_controllable){
 		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
-	// Claw dance
+	// Backflip!
 	else if(rng < 0.5){ // 15%
 		double_down_pressed = buffer_duration;
 		b_pressed = buffer_duration;

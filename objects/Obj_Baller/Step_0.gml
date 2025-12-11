@@ -265,7 +265,7 @@ if(action == "Balldash" && action_alarm <= 0){
 		if(attack != noone){
 			instance_destroy(attack);
 		}
-		recover_alarm = 4;
+		recover_alarm = 1;
 	}
 }
 

@@ -62,7 +62,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(half_circle_forward_pressed){
+		else if(down_forward_pressed){
 			action = "Roar";
 			sprite_index = Spr_Boomhand_Roar_startup;
 			image_index = 0;
