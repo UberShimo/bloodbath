@@ -14,16 +14,18 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c0163ba6-a37c-4050-a40d-65516ef9928d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0000a0f7-5af4-41a4-8fb9-0753f29b3495",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b7a0c373-e9e1-4284-b618-f2d1e4342229",},
   ],
   "gridX": 32,
   "gridY": 32,
-  "height": 8,
+  "height": 32,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 9,
+  "origin": 1,
   "parent": {
     "name": "Attacks",
     "path": "folders/Sprites/Characters/Boomhand/Attacks.yy",
@@ -43,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -55,12 +57,14 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c0163ba6-a37c-4050-a40d-65516ef9928d","path":"sprites/Spr_Boomhand_Groundsmash_Shockwave/Spr_Boomhand_Groundsmash_Shockwave.yy",},},},"Disabled":false,"id":"65a56f37-b18e-4ce8-b04f-4970f33cdd86","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0000a0f7-5af4-41a4-8fb9-0753f29b3495","path":"sprites/Spr_Boomhand_Groundsmash_Shockwave/Spr_Boomhand_Groundsmash_Shockwave.yy",},},},"Disabled":false,"id":"10fa5814-eb08-49aa-8f2e-0ebd34ab10b8","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b7a0c373-e9e1-4284-b618-f2d1e4342229","path":"sprites/Spr_Boomhand_Groundsmash_Shockwave/Spr_Boomhand_Groundsmash_Shockwave.yy",},},},"Disabled":false,"id":"399a1b29-6a13-41df-8685-9dbe7977d7ff","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 32,
-    "yorigin": -24,
+    "xorigin": 128,
+    "yorigin": 0,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -70,5 +74,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 64,
+  "width": 256,
 }

@@ -50,7 +50,7 @@ roar_power = 0;
 roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )... Takes 8 sec to fully cooldown atm...
 hook_charge = 0; // Actually not a hook tho...
 max_charge_duration = 360; // Frames, 6 sec
-
+ready_to_spawn_groundsmash_shockwave = false;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -160,13 +160,11 @@ action_trigger = function(){
 		spawn_effect(x, y, 6, Eff_Splash, 1, +0.1, c_orange, 0, 0, 0.2);
 	}
 	else if(action == "Groundsmash"){
-		wave1 = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave);
-		wave1.initiate(self);
-		wave1.h_velocity = 32;
-		wave1 = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave);
-		wave1.initiate(self);
-		wave1.h_velocity = -32;
-		wave1.image_xscale = -1;
+		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_hitbox);
+		attack.initiate(self);
+		
+		h_velocity = 0;
+		v_velocity = 20;
 		
 		sprite_index = Spr_Boomhand_Groundsmash_recovery;
 		image_index = 0;

@@ -68,12 +68,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(double_down_pressed){
-			action = "Groundsmash";
-			sprite_index = Spr_Boomhand_Groundsmash_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Boomhand_2F_startup;
@@ -100,16 +94,36 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			weight = 0.1;
 			
-			sprite_index = Spr_Boomhand_Fistdive_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-			
 			h_velocity = 0;
 			v_velocity = -2;
 			if(grounded){
 				v_velocity = -8;
 				weight = original_weight;
 			}
+			
+			sprite_index = Spr_Boomhand_Fistdive_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed){
+			action = "Groundsmash";
+			
+			is_unstable = true;
+			weight = 0.1;
+			ready_to_spawn_groundsmash_shockwave = true;
+			
+			if(grounded){
+				h_velocity = 6*image_xscale;
+				v_velocity = -8;
+			}
+			else{
+				h_velocity = 0;
+				v_velocity = -2;
+			}
+			
+			sprite_index = Spr_Boomhand_Groundsmash_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(!grounded){
 			action = "8L";
@@ -225,4 +239,15 @@ if(roar_power > 0){
 			eff.v_velocity = -0.25;
 		}
 	}
+}
+
+// Shocking groundsmash land hitbox!
+if(ready_to_spawn_groundsmash_shockwave && grounded && action_alarm <= 0){
+	ready_to_spawn_groundsmash_shockwave = false;
+	
+	attack = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave_hitbox);
+	attack.initiate(self);
+}
+else if(action != "Groundsmash"){
+	ready_to_spawn_groundsmash_shockwave = false;
 }

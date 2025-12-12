@@ -82,10 +82,6 @@ initiate = function(initiator){
 		if(is_cancelable){
 			initiator.can_cancel = true;
 		}
-	
-		if(is_final){
-			initiator.cancels = 0;
-		}
 	}
 	
 	if(global.is_debugging){
