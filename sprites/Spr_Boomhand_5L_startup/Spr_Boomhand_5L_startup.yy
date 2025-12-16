@@ -24,8 +24,6 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c8bd01a9-dbb7-429d-96d0-beb18892d043","blendMode":0,"displayName":"Layer 3","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f269854b-099d-4bb3-b3c0-4b2b00e1c597","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"09016afd-dcdc-4e43-8459-9fd0bb66e62c","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":false,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,

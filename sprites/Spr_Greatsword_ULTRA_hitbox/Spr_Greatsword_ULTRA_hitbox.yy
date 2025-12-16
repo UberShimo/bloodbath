@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Greatsword_ULTRA_hitbox",
   "bbox_bottom": 160,
-  "bbox_left": 127,
+  "bbox_left": 133,
   "bbox_right": 222,
   "bbox_top": 73,
   "bboxMode": 0,

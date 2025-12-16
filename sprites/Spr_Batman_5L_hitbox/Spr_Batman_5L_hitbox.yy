@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Batman_5L_hitbox",
   "bbox_bottom": 64,
-  "bbox_left": 61,
+  "bbox_left": 66,
   "bbox_right": 127,
   "bbox_top": 34,
   "bboxMode": 0,
@@ -21,7 +21,6 @@
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,

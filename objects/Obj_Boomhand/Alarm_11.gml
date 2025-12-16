@@ -18,17 +18,17 @@ if(is_controllable){
 		half_circle_forward_pressed = buffer_duration;
 		x_pressed = buffer_duration;
 	}
-	// Groundsmash
-	else if(rng < 0.25){ // 10%
-		double_down_pressed = buffer_duration;
-		x_pressed = buffer_duration;
-	}
 	// Punch move
-	else if(rng < 0.35){ // 10%
+	else if(rng < 0.25){ // 10%
 		down_forward_pressed = buffer_duration;
 		y_pressed = buffer_duration;
 	}
-	// Ground uppercut
+	// Groundsmash
+	else if(rng < 0.35){ // 10%
+		double_down_pressed = buffer_duration;
+		y_pressed = buffer_duration;
+	}
+	// Burrow
 	else if(rng < 0.45){ // 10%
 		double_down_pressed = buffer_duration;
 		b_pressed = buffer_duration;

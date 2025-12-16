@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Scythe_5F_hitbox",
   "bbox_bottom": 73,
-  "bbox_left": 64,
+  "bbox_left": 71,
   "bbox_right": 111,
   "bbox_top": 50,
   "bboxMode": 0,

@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Bow_5F_hitbox1",
   "bbox_bottom": 129,
-  "bbox_left": 128,
+  "bbox_left": 132,
   "bbox_right": 192,
   "bbox_top": 123,
   "bboxMode": 0,
@@ -21,7 +21,6 @@
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d48ffbdc-8853-4ac1-b2d2-9ae35b9ea9a3","blendMode":0,"displayName":"Weapon","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":false,},
   ],
   "nineSlice": null,
   "origin": 4,

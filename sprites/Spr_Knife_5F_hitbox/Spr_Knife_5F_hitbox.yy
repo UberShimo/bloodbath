@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Knife_5F_hitbox",
   "bbox_bottom": 71,
-  "bbox_left": 63,
+  "bbox_left": 71,
   "bbox_right": 117,
   "bbox_top": 54,
   "bboxMode": 0,

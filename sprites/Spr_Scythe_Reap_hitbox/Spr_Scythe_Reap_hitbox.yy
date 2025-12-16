@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Scythe_Reap_hitbox",
   "bbox_bottom": 75,
-  "bbox_left": 104,
+  "bbox_left": 108,
   "bbox_right": 205,
   "bbox_top": 42,
   "bboxMode": 0,

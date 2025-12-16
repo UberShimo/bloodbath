@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Batman_ULTRA_hitbox",
   "bbox_bottom": 62,
-  "bbox_left": 96,
+  "bbox_left": 98,
   "bbox_right": 166,
   "bbox_top": 29,
   "bboxMode": 0,

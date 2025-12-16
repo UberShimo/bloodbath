@@ -27,6 +27,11 @@ if(is_controllable){
 		down_forward_pressed = buffer_duration;
 		y_pressed = buffer_duration;
 	}
+	// Flipkick
+	else if(rng < 0.60){ // 15%
+		down_forward_pressed = buffer_duration;
+		b_pressed = buffer_duration;
+	}
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
