@@ -1,5 +1,14 @@
 
-if((action == "Mark Spin" && y_hold) || action == "ULTRA"){
+if((action == "Mark Spin")){
+	if(y_hold){
+		goes_through_platforms = true;
+	}
+	else{
+		goes_through_platforms = false;
+	}
+}
+
+if(action == "ULTRA"){
 	goes_through_platforms = true;
 }
 

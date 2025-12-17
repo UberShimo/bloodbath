@@ -6,8 +6,13 @@ if(is_hypermode){
 	}
 }
 
-if(action == "Dive" && (x_hold || y_hold)){
-	goes_through_platforms = true;
+if(action == "Dive"){
+	if(x_hold || y_hold){
+		goes_through_platforms = true;
+	}
+	else{
+		goes_through_platforms = false;
+	}
 }
 
 event_inherited();

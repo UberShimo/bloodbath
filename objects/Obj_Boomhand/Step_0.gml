@@ -1,6 +1,11 @@
 
-if(action == "Fistdive" && y_hold){
-	goes_through_platforms = true;
+if(action == "Fistdive" || action == "Groundsmash"){
+	if(y_hold){
+		goes_through_platforms = true;
+	}
+	else{
+		goes_through_platforms = false;
+	}
 }
 
 event_inherited();
@@ -114,7 +119,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			if(grounded){
 				h_velocity = 6*image_xscale;
-				v_velocity = -8;
+				v_velocity = -6;
 			}
 			else{
 				h_velocity = 0;
