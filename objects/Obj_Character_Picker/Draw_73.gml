@@ -1,7 +1,7 @@
 // Draw EXITING...
 if(exit_count > 0){
 	a = exit_count/exit_count_goal;
-	c = c_white;
+	c = c_black;
 	// Draw white outline kinda
 	draw_text_color(x+exit_text_x+1, y+exit_text_y, "EXIT", c, c, c, c, a/2);
 	draw_text_color(x+exit_text_x-1, y+exit_text_y, "EXIT", c, c, c, c, a/2);

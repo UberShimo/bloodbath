@@ -160,6 +160,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Flipkick";
 			is_holding_ball = false;
+			ball.cant_hurt_alarm = 14;
 			
 			h_velocity = 3*image_xscale;
 			v_velocity = -6;
@@ -289,7 +290,7 @@ if(action == "Balldash" && action_alarm <= 0){
 // Drop ball
 if(is_holding_ball && (double_down_pressed || action == "Dash")){
 	is_holding_ball = false;
-	ball.cant_hurt_alarm = 12;
+	ball.cant_hurt_alarm = 14;
 }
 
 // Hold ball if you respawn

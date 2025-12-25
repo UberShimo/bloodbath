@@ -8,7 +8,7 @@ else{
 	index = global.battle_music_index;
 	// Random song
 	if(index == 0){
-		index = irandom_range(1, array_length(global.music_list)-1);
+		index = irandom_range(1, 8); // Song 1-8 inculded in random
 	}
 	play_music(global.music_list[index][1], global.music_volume);
 }

@@ -1,6 +1,4 @@
 TODO{
-	Boomhand: Cant land on platform durign Groundsmash.
-	Baller: Make ball unhurtful some frames after dropping it with Flipkick or Dashing
 	Make stages look better.
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.

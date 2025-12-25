@@ -51,6 +51,7 @@ roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )... Takes 8 sec 
 hook_charge = 0; // Actually not a hook tho...
 max_charge_duration = 360; // Frames, 6 sec
 ready_to_spawn_groundsmash_shockwave = false;
+has_played_fart_sound = false;
 
 action_trigger = function(){
 	shake_amount = 0;

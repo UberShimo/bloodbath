@@ -256,3 +256,14 @@ if(ready_to_spawn_groundsmash_shockwave && grounded && action_alarm <= 0){
 else if(action != "Groundsmash"){
 	ready_to_spawn_groundsmash_shockwave = false;
 }
+
+// Fart sound on taunt
+if(sprite_index == Spr_Boomhand_Pose3){
+	if(image_index > 7 && !has_played_fart_sound){
+		has_played_fart_sound = true;
+		audio_play_sound(Snd_Fart, 0, false);
+	}
+	else if(image_index < 1){
+		has_played_fart_sound = false;
+	}
+}

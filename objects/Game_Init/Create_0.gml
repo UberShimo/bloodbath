@@ -37,6 +37,7 @@ global.music_volume = ini_read_real("save", "music volume", global.max_music_vol
 ini_close();
 #endregion
 
+#region settings ish
 global.FPS = 60;
 global.game_time = 1;
 global.screen_ratio = 1.78; // 16:9
@@ -54,6 +55,7 @@ global.max_players = 8; // Actually max controller index check
 global.dojo_level = 0; // 0:freeform 1:Basic tutorial 2:Advanced tutorial
 global.priority_controller_index = -1;
 global.game_just_started = true;
+#endregion
 
 // Font time!
 draw_set_font(Game_Font);
@@ -113,17 +115,17 @@ global.music_list = [
 	["Shredded Redemption", Mu_Shred],
 	["Dumb n Bass", Mu_Dumb_n_Bass],
 	["Orc Ester", Mu_Orc],
-	["Everything Is Alot", Mu_Everything],
 	["Dang That's Whapp!", Mu_Dang],
 	["Strive", Mu_Strive],
-	["Deny It Or Not", Mu_Deny_It],
+	["Sweet Dirt", Mu_Sweet_Dirt],
 	["Blaze Man", Mu_Blaze],
+	["Everything Is Alot", Mu_Everything],
+	["Deny It Or Not", Mu_Deny_It],
 	["Intelligence Killed Us All", Mu_Intelligence],
 	["Meaningless Beat", Mu_Meaningless],
 	["Close But No Happiness", Mu_Happiness],
 	["Sad Monster", Mu_Sad_Monster],
 	["Samurai", Mu_Samurai],
-	["Sweet Dirt", Mu_Sweet_Dirt],
 	["Temptation And Harmony", Mu_Temptation],
 	["Ultravibe", Mu_Ultravibe],
 	["Menu Theme", Mu_Anger],
@@ -156,7 +158,7 @@ global.wall_images = [
 	Spr_Trippy_Walls,
 	Spr_Trainingroom_Walls
 ]
-global.BG_index = 1;
+global.BG_index = 0;
 global.BG_darkness = 0.5; // % black
 #endregion
 
