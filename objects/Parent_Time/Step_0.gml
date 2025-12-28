@@ -1,5 +1,10 @@
 logic_time = object_time * global.game_time;
 
+if(place_meeting(x, y, Parent_Time_Changing_Object)){
+	obj = place_meeting(x, y, Parent_Time_Changing_Object);
+	logic_time *= obj.time_change;
+}
+
 image_speed = logic_time;
 effect_counter += logic_time;
 

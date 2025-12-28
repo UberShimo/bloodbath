@@ -1,6 +1,9 @@
 TODO{
-	Change batman metercurve ball to rb_hold + DOWN.
 	Change cultist meterball spawn to rb_hold + X and meter ball teleprot to rb_hold + X + DOWN.
+	New Cultist RB + Y = Create space where time goes faster.
+	New Cultist RB + Y + DOWN = Create space where time goes slower.
+	Add dash / parry / meter dash / meter pull to move lists?
+	Change move list so its not a long row of moves?
 	Make stages look better.
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
@@ -76,7 +79,7 @@ Katana{
 }
 
 Batman{
-	
+	Meter ball changes direction when bouncign on ground at times.
 }
 
 Claws{

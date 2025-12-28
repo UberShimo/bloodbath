@@ -10,7 +10,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	reset_physics();
 	
 	if(rb_hold){
-		if(meter >= 100 && b_pressed){
+		if(meter >= 100 && b_pressed && grounded){
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Batman_ULTRA_startup;
@@ -20,17 +20,24 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
 		}
-		else if(meter >= 40 && y_pressed){
+		else if(meter >= 40 && x_pressed && down_hold && grounded){
 			action = "Curve Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 40 && x_pressed){
+		else if(meter >= 40 && x_pressed && grounded){
 			action = "Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 40 && y_pressed && grounded){
+			action = "Throw Superball";
+			meter -= 40;
+			sprite_index = Spr_Batman_Meter_Ballthrow_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
