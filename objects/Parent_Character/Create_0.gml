@@ -29,6 +29,7 @@ meter_shake = 0;
 meter_channel_draw_amount = 0;
 meter_channel_draw_change_amount = 0.05;
 meter_channel_max_draw_amount = 0.5;
+is_meter_stunned = false;
 #endregion
 
 #region Initialize input values / buffers

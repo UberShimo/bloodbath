@@ -7,7 +7,6 @@ time_switch_pressed = false;
 reset_positions_pressed = false;
 change_debug_pressed = false;
 
-global.BG_index = array_length(global.BG_list)-1; // Trainingroom
 play_music(Mu_Tutorial, global.music_volume);
 
 // Methods

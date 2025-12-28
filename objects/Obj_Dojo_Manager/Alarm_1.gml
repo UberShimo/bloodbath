@@ -15,3 +15,7 @@ else{
 	dummy = instance_create_depth(Spawner_P2.x, Spawner_P2.y, depth, Obj_Immortal_Dummy);
 	dummy.is_controllable = true; // Sprite wont work etc if uncontrollable...
 }
+
+// Set wall images to Training room
+Parent_Collision.image = Spr_Trainingroom_Walls;
+Obj_BG.BG = BG_Trainingroom;

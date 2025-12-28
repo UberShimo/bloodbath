@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "BG_Sunset",
-  "bbox_bottom": 511,
+  "bbox_bottom": 699,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
@@ -20,7 +20,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 512,
+  "height": 700,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0c71341c-59be-4a23-88f2-ec4e2af3e7ad","blendMode":0,"displayName":"Layer 6","isLocked":false,"opacity":100.0,"visible":true,},

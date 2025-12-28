@@ -73,6 +73,8 @@ if(recover_alarm > 0){
 		action_alarm = 0;
 		action = noone;
 		is_unstoppable = false;
+		is_meter_stunned = false;
+		shake_amount = 0;
 		
 		reset_physics();
 		can_cancel = false;
@@ -529,52 +531,64 @@ double_down_pressed--;
 #region universal moves V-----V
 // Meter dash
 if(rb_hold && lb_pressed > 0
-&& (forward_hold || backward_hold) && meter >= 50){
-	reset_buffers();
-	meter -= 50;
-	cancels = 0;
+&& (forward_hold || backward_hold)){
+	if(meter >= 50){
+		reset_buffers();
+		meter -= 50;
+		cancels = 0;
 	
-	// Undo normal dash
-	if(action == "Dash"){
-		if(instance_exists(cancel_effect)){
-			instance_destroy(cancel_effect);
+		// Undo normal dash
+		if(action == "Dash"){
+			if(instance_exists(cancel_effect)){
+				instance_destroy(cancel_effect);
+			}
 		}
-	}
-	else if(backward_hold){
-		sprite_index = dash_backward_spr;
-		h_velocity = -dash_speed*image_xscale;
-		blink_h(-dash_blink*image_xscale, true);
-	}
-	else{
-		sprite_index = dash_forward_spr;
-		h_velocity = dash_speed*image_xscale;
-		blink_h(dash_blink*image_xscale, true);
-	}
-	image_index = 0;
+		else if(backward_hold){
+			sprite_index = dash_backward_spr;
+			h_velocity = -dash_speed*image_xscale;
+			blink_h(-dash_blink*image_xscale, true);
+		}
+		else{
+			sprite_index = dash_forward_spr;
+			h_velocity = dash_speed*image_xscale;
+			blink_h(dash_blink*image_xscale, true);
+		}
+		image_index = 0;
 	
-	action = "Meter Dash";
-	is_collidable = false;
-	is_invincible = true;
-	grip = dash_grip;
-	air_grip = dash_grip;
-	v_velocity = dash_lift;
-	weight = original_weight/4;
-	action_alarm = 0;
-	recover_alarm = 24;
-	invincibility_alarm = 24;
+		action = "Meter Dash";
+		is_collidable = false;
+		is_invincible = true;
+		grip = dash_grip;
+		air_grip = dash_grip;
+		v_velocity = dash_lift;
+		weight = original_weight/4;
+		action_alarm = 0;
+		recover_alarm = 24;
+		invincibility_alarm = 24;
+	}
+	else{	
+		meter_shake = meter_shake_amount;
+		audio_play_sound(Snd_Bzz, 0, false);
+	}
 }
 // Meter pull
-else if(lb_hold && rb_hold && meter >= 75){
-	action = "Meter Pull";
-	find_closest_enemy();
-	meter_pull_target = closest_enemy;
+else if(rb_hold && lb_pressed > 0){
+	if(meter >= 75){
+		action = "Meter Pull";
+		find_closest_enemy();
+		meter_pull_target = closest_enemy;
 	
-	h_velocity = 0;
-	v_velocity = 0;
-	weight = 0;
+		h_velocity = 0;
+		v_velocity = 0;
+		weight = 0;
 	
-	sprite_index = meter_pull_spr;
-	action_alarm = meter_pull_charge_duration;
+		sprite_index = meter_pull_spr;
+		action_alarm = meter_pull_charge_duration;
+	}
+	else{	
+		meter_shake = meter_shake_amount;
+		audio_play_sound(Snd_Bzz, 0, false);
+	}
 }
 // Parry / Dash
 // Awful amount of checks just to be able to pay cancels when dashing in air
@@ -638,11 +652,12 @@ else if(lb_pressed > 0 && !down_hold
 	doing_action_by_canceling = false;
 	image_index = 0;
 }
+#endregion
+
 // Meter control
 if(meter > max_meter){
 	meter = max_meter;
 }
-#endregion
 
 // Fully charged effect
 if(meter == 100 && effect_counter >= 1){
@@ -661,6 +676,12 @@ if(rb_hold && effect_counter >= 1 ){
 		meter_channel_draw_change_amount *= -1;
 		meter_channel_draw_amount += meter_channel_draw_change_amount;
 	}
+}
+
+// Meter pulled effect
+if(is_meter_stunned){
+	spawn_effect(x, y, 1, Eff_Lightning, 1, 0.1, c_lime, 0.1, 0.3, 0, 0, 360, 24);
+	shake_amount = 4;
 }
 
 // Can respawn effect

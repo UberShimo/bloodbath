@@ -10,5 +10,5 @@ button_input = Spr_L;
 image = Spr_Dojo_Stab_Projectile_recovery;
 frame = 0;
 extra_image = Spr_Dojo_Stab_Projectile;
-extra_image_x = 16;
-extra_image_y = -6;
+extra_image_x = 80;
+extra_image_y = -7;

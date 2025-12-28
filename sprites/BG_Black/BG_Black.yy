@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "BG_Black",
-  "bbox_bottom": 511,
+  "bbox_bottom": 699,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 512,
+  "height": 700,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d9d6bf0b-de1e-42d1-95e1-4e4a589be7f9","blendMode":0,"displayName":"Layer 3","isLocked":false,"opacity":100.0,"visible":true,},

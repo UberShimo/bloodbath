@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "BG_Night",
-  "bbox_bottom": 511,
+  "bbox_bottom": 699,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
@@ -20,7 +20,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 512,
+  "height": 700,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"83d9294a-f649-4f98-aa77-925d1f389a89","blendMode":0,"displayName":"Layer 4","isLocked":false,"opacity":100.0,"visible":true,},

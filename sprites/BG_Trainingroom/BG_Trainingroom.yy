@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "BG_Trainingroom",
-  "bbox_bottom": 511,
+  "bbox_bottom": 699,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
@@ -20,7 +20,7 @@
   ],
   "gridX": 32,
   "gridY": 32,
-  "height": 512,
+  "height": 700,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3ddb0b47-bdd7-4b1f-bafa-e9d65de2c919","blendMode":0,"displayName":"Layer 4","isLocked":false,"opacity":100.0,"visible":true,},

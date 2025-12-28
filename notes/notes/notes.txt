@@ -1,4 +1,6 @@
 TODO{
+	Change batman metercurve ball to rb_hold + DOWN.
+	Change cultist meterball spawn to rb_hold + X and meter ball teleprot to rb_hold + X + DOWN.
 	Make stages look better.
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.

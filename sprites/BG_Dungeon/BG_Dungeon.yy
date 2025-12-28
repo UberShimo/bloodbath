@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "BG_Dungeon",
-  "bbox_bottom": 511,
+  "bbox_bottom": 699,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
@@ -20,7 +20,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 512,
+  "height": 700,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3da8ca4f-9fb1-4d3a-9872-07c7defb8984","blendMode":0,"displayName":"Shadow / Lighting","isLocked":false,"opacity":50.0,"visible":true,},

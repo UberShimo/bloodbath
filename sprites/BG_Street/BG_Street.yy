@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "BG_Street",
-  "bbox_bottom": 511,
+  "bbox_bottom": 698,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
@@ -20,7 +20,7 @@
   ],
   "gridX": 32,
   "gridY": 32,
-  "height": 512,
+  "height": 700,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e0df4434-8198-429e-8c05-07f08e2fc0ab","blendMode":0,"displayName":"SHADOW / LIGHT","isLocked":false,"opacity":19.0,"visible":true,},

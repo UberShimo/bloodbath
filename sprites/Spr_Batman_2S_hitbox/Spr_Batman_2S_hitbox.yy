@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Batman_2S_hitbox",
   "bbox_bottom": 84,
-  "bbox_left": 30,
+  "bbox_left": 52,
   "bbox_right": 119,
   "bbox_top": 0,
   "bboxMode": 0,

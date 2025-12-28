@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Katana_2S_hitbox",
   "bbox_bottom": 184,
-  "bbox_left": 77,
+  "bbox_left": 82,
   "bbox_right": 191,
   "bbox_top": 42,
   "bboxMode": 0,
