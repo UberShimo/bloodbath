@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "Spr_Character_Info",
+  "name": "Spr_Action_Info_Frame_Left_Part",
   "bbox_bottom": 125,
   "bbox_left": 2,
   "bbox_right": 61,
@@ -25,14 +25,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Character Infos",
-    "path": "folders/Sprites/DOJO/Character Infos.yy",
+    "name": "DOJO",
+    "path": "folders/Sprites/DOJO.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "Spr_Character_Info",
+    "name": "Spr_Action_Info_Frame_Left_Part",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0b752daf-7bca-4002-816f-383b3043f5a5","path":"sprites/Spr_Character_Info/Spr_Character_Info.yy",},},},"Disabled":false,"id":"18a83a63-1718-4265-b0b0-87de0c38508c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0b752daf-7bca-4002-816f-383b3043f5a5","path":"sprites/Spr_Action_Info_Frame_Left_Part/Spr_Action_Info_Frame_Left_Part.yy",},},},"Disabled":false,"id":"85eeae85-c3af-4888-9137-bb279aae0d1f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 480,
+  "width": 196,
 }

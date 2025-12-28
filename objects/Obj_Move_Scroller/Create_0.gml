@@ -1,3 +1,3 @@
 controller_index = -1;
 
-move_distance = 8;
+move_speed = 12;

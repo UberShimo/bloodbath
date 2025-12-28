@@ -1,11 +1,12 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Parent_Action_Info",
+  "name": "Obj_Action_Info_Picker",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -30,9 +31,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Action_Info_Frame",
-    "path": "sprites/Spr_Action_Info_Frame/Spr_Action_Info_Frame.yy",
+    "name": "Spr_Ball",
+    "path": "sprites/Spr_Ball/Spr_Ball.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -42,6 +42,9 @@ input_offset = 24;
 digit_offset = 6;
 sprite_bg_alpha = 0.1;
 sprite_bg_color = c_white;
+text_bg_alpha = 0.75;
+text_bg_color = c_black;
+show_info = false;
 
 //Outline shader stuff
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");

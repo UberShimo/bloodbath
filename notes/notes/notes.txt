@@ -1,7 +1,6 @@
 TODO{
 	Add dash / parry / meter dash / meter pull to move lists?
 	Change move list so its not a long row of moves?
-	Make stages look better.
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
@@ -14,9 +13,6 @@ TODO{
 	Heal / Grow in size / Meter regen / Extra cancel / Increase character speed / Dmg based on low HP / Lifesteal / "WIND" Extra jump + spawn stunning projectiles
 	Make vertical parallax also?...
 }
-
-SLOGANS for trailer n stuff
-[	FAST	FREEFORM	FUN		INTENSE		UNIQUE	PLAY HOW THE **** YOU WANT		GAMEPLAY	]
 
 Debug tips:
 "index" actually means "team" in most cases....
