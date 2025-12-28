@@ -19,20 +19,34 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 35 && y_pressed){
-			action = "Meter Circle";
-			meter -= 35
-			sprite_index = Spr_Cultist_Meter_Circle_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(x_pressed && meter_circle != noone){
+		else if(x_pressed && meter_circle != noone && down_hold){
 			action = "Meter Circle Teleport";
 			h_velocity = 0;
 			v_velocity = 0;
 			weight = 0;
 			
 			sprite_index = Spr_Cultist_Vortex_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 35 && x_pressed){
+			action = "Meter Circle";
+			meter -= 35;
+			sprite_index = Spr_Cultist_Meter_Circle_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 20 && y_pressed && down_hold){
+			action = "Slow Time Manipulation";
+			meter -= 20;
+			sprite_index = Spr_Cultist_Time_Manipulation_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(meter >= 20 && y_pressed){
+			action = "Fast Time Manipulation";
+			meter -= 20;
+			sprite_index = Spr_Cultist_Time_Manipulation_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

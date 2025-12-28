@@ -1,7 +1,4 @@
 TODO{
-	Change cultist meterball spawn to rb_hold + X and meter ball teleprot to rb_hold + X + DOWN.
-	New Cultist RB + Y = Create space where time goes faster.
-	New Cultist RB + Y + DOWN = Create space where time goes slower.
 	Add dash / parry / meter dash / meter pull to move lists?
 	Change move list so its not a long row of moves?
 	Make stages look better.

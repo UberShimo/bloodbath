@@ -303,6 +303,24 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Fast Time Manipulation"){
+		obj = instance_create_depth(x, y, depth+1, Obj_Cultist_Time_Manipulator_Area);
+		obj.time_change *= 1.25;
+		
+		sprite_index = Spr_Cultist_Time_Manipulation_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Slow Time Manipulation"){
+		obj = instance_create_depth(x, y, depth+1, Obj_Cultist_Time_Manipulator_Area);
+		obj.time_change /= 1.25;
+		obj.big_pointer_rotation_speed *= -1;
+		obj.small_pointer_rotation_speed *= -1;
+		
+		sprite_index = Spr_Cultist_Time_Manipulation_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		
