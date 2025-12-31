@@ -18,14 +18,11 @@ collision_check_with_distance = false;
 
 // Wave stuff
 drag_along_amount = 0.8; // % based
+pillar_list = ds_list_create();
 
 collide = function(){
 	if(place_meeting(x+h_velocity, y, Parent_Collision)){
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_aqua, 1, 1, 0.2);
 		instance_destroy();
-	}
-	if(place_meeting(x, y+v_velocity, Parent_Collision)){
-		sprite_index = Spr_Greatsword_Wave;
-		v_velocity = 0;
 	}
 }

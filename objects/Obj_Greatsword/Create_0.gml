@@ -134,13 +134,10 @@ action_trigger = function(){
 		pillar.image_xscale = -image_xscale;
 		pillar.x += pillar_distance*image_xscale;
 		pillar.snap_to_ground(pillar.sprite_height/2);
+		pillar.action_alarm = 90;
 		
 		stomp = instance_create_depth(x, y, 0, Obj_Greatsword_Stomp_hitbox);
 		stomp.initiate(self);
-		
-		if(x_hold || y_hold || b_hold){
-			pillar.action_alarm = 90;
-		}
 		
 		sprite_index = Spr_Greatsword_Stomp_recovery;
 		image_index = 0;
@@ -204,10 +201,10 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Ocean F"){
-		blink_h(16*image_xscale, false);
-		
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_F_hitbox);
 		attack.initiate(self);
+		
+		h_velocity = -8*image_xscale;
 		
 		sprite_index = Spr_Greatsword_Ocean_F_recovery;
 		image_index = 0;

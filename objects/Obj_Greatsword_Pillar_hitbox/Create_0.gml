@@ -1,10 +1,10 @@
 event_inherited();
 
 damage = 4;
-hit_stun = global.medium_hitstun;
+hit_stun = global.heavy_hitstun;
 hit_push = 8;
 freeze_duration = global.medium_freeze_duration;
-shake_impact = global.medium_shake_impact;
+shake_impact = global.heavy_shake_impact;
 h_launch = 3;
 v_launch = -7;
 

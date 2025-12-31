@@ -1,13 +1,14 @@
-repeat(10){
-	h_vel = random_range(0, 4)*other.image_xscale;
-	v_vel = random_range(0, -4);
-	x_spawn = random_range(-16, 16);
-	y_spawn = random_range(0, 12);
+// Looks if value exists in list. If not it returns -1
+if(ds_list_find_index(pillar_list, other) == -1){
+	if(other.image_xscale > 0){
+		image_xscale = object_scale;
+		h_velocity = abs(h_velocity)*object_scale;
+	}
+	else{
+		image_xscale = -object_scale;
+		h_velocity = abs(h_velocity)*-object_scale;
+	}
+	v_velocity = -4.2; // Just to get up on platforms
 	
-	bubble = instance_create_depth(x+x_spawn, y+y_spawn, depth+1, Obj_Greatsword_Bubble);
-	bubble.initiate(self);
-	bubble.h_velocity = h_vel;
-	bubble.v_velocity = v_vel;
+	ds_list_add(pillar_list, other);
 }
-
-instance_destroy();

@@ -9,3 +9,5 @@ movement_input = Spr_EMPTY;
 button_input = Spr_F;
 image = Spr_Greatsword_Ocean_F_recovery;
 frame = 1;
+extra_image = Spr_Greatsword_Ocean_F_hit_eff;
+extra_image_x = 8;

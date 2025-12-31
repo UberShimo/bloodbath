@@ -139,7 +139,7 @@ Rapier elegant with fabric covering the face Ellie{
 	vvS: Spin rapier hitting upward 4 times. Can move during attack!
 	
 	RB+X: Fly upward and spin horizontal 3 times in air.
-	RB+Y: Do a stab with super range! Angle with by holding back or forward.
+	RB+Y: Reveal hidden gun in rapier and shoot straight forward! Low cost. Low dmg.
 	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
 }
 
@@ -149,7 +149,7 @@ Greatshield ANDERS blonde with bandit mask on and bathing pants{
 	
 	5F: Push shield forward.
 	2F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable.
-	8F: Swing leg below. Pushing forward.
+	8F: Spin shield below dealing 4x dmg.
 	5L: Swing shield forward giving you forward momentum.
 	2L: Unstoppable headbutt upward.
 	8L. Try grabbing above and then throw them down.
@@ -157,11 +157,14 @@ Greatshield ANDERS blonde with bandit mask on and bathing pants{
 	2S: Uppercut with shield.
 	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
 	
-	vvF: Put out a circle that gives back cancels when dashed through. (Blue)
-	vvL: Put out a circle that explode and stun opponents when dashed through. (Yellow)
-	vvS: Put out a circle that get pushed away as a projectile when dashed upon. (Pink)
+	vvF: Put out a ice circle that gives back cancels when dashed through. (Blue)
+	vvL: Put out a ice circle that explode and stun opponents when dashed through. (Yellow)
+	vvS: Put out a ice circle that get pushed away as a projectile when dashed upon. (Pink)
 	
-	v>X: Kickflip up dealing dmg multiple times.
-	vvX: Grab opponent and steal their size! cost 50% meter and steal 20% size.
-	ULTRA: Become unstoppable and have infinite cancels for 8 sec.
+	v>L: Roll and kick up with both feet. Unparryable.
+	v>S: Slow grab that deal big dmg and shrink opponent.
+	
+	RB+x: Strike a freezing pose that stun close opponents and trigger ice circles.
+	RB+y: X: Lift glasses and create ice in front of you on ground. Making it slippy obviously...
+	ULTRA: Grow in size Become unstoppable and increase stun on all moves.
 }

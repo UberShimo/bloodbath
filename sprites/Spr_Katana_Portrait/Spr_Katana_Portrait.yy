@@ -24,6 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"53d7d8e0-dfc5-4fe1-9809-8f9d154ebc41","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b197e787-9d9a-441c-872a-834d5fbae048","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"22cd321b-864a-489f-81ef-7f197a55dee6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c11e1f86-dbfc-4fa0-aa7c-b19d5a161596","blendMode":0,"displayName":"Layer 3","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,

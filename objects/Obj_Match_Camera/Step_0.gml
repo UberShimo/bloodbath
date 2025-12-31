@@ -87,6 +87,6 @@ else{
 camera_x += random_range(-shake, shake);
 camera_y += random_range(-shake, shake);
 
-// Set properties
-camera_set_view_size(view_camera[0], camera_width, camera_height);
-camera_set_view_pos(view_camera[0], camera_x, camera_y);
+// Set properties. Uses floor() to reduce wierd pixel scaling.
+camera_set_view_size(view_camera[0], floor(camera_width), floor(camera_height));
+camera_set_view_pos(view_camera[0], floor(camera_x), floor(camera_y));

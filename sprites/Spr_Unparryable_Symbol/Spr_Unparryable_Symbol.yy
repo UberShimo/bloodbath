@@ -4,7 +4,7 @@
   "name": "Spr_Unparryable_Symbol",
   "bbox_bottom": 40,
   "bbox_left": 3,
-  "bbox_right": 91,
+  "bbox_right": 94,
   "bbox_top": 9,
   "bboxMode": 0,
   "collisionKind": 1,

@@ -11,6 +11,7 @@ shake_impact = global.heavy_shake_impact;
 h_launch = 1;
 v_launch = -11;
 
+is_parryable = false;
 is_sticky = true;
 is_launcher = true;
 
