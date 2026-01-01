@@ -1,6 +1,5 @@
 TODO{
 	Add dash / parry / meter dash / meter pull to move lists?
-	Change move list so its not a long row of moves?
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
@@ -88,7 +87,7 @@ Greatsword{
 }
 
 Boomhand{
-	
+	Shockwave looks wierd when time goes slow.
 }
 
 Bow{

@@ -160,6 +160,15 @@ action_trigger = function(){
 		audio_play_sound(Snd_Boomhand_Roar, 0, false);
 		spawn_effect(x, y, 6, Eff_Splash, 1, +0.1, c_orange, 0, 0, 0.2);
 	}
+	else if(action == "Shockwave Punch"){
+		attack = instance_create_depth(x+64*image_xscale, y, 0, Obj_Boomhand_Shockwave);
+		attack.initiate(self);
+		attack.h_velocity = 64*image_xscale;
+		
+		sprite_index = Spr_Boomhand_Shockwave_Punch_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "Groundsmash"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_hitbox);
 		attack.initiate(self);

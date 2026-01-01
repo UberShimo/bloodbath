@@ -19,13 +19,13 @@
   ],
   "gridX": 32,
   "gridY": 32,
-  "height": 32,
+  "height": 16,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc8aefe2-31d7-4852-923b-bdfabc77b00c","blendMode":0,"displayName":"Body","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 1,
+  "origin": 9,
   "parent": {
     "name": "Attacks",
     "path": "folders/Sprites/Characters/Boomhand/Attacks.yy",
@@ -63,8 +63,8 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 128,
-    "yorigin": 0,
+    "xorigin": 64,
+    "yorigin": -16,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -74,5 +74,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 256,
+  "width": 128,
 }

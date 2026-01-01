@@ -18,4 +18,5 @@ else{
 
 // Set wall images to Training room
 Parent_Collision.image = Spr_Trainingroom_Walls;
+Obj_Platform.image = Spr_Trainingroom_Walls;
 Obj_BG.BG = BG_Trainingroom;
