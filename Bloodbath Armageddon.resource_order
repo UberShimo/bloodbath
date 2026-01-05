@@ -1456,6 +1456,7 @@
     {"name":"Spr_Cultist_ULTRA_startup","order":44,"path":"sprites/Spr_Cultist_ULTRA_startup/Spr_Cultist_ULTRA_startup.yy",},
     {"name":"Spr_Scythe_Crouch","order":2,"path":"sprites/Spr_Scythe_Crouch/Spr_Scythe_Crouch.yy",},
     {"name":"Spr_Cultist_Starthrow_recovery","order":32,"path":"sprites/Spr_Cultist_Starthrow_recovery/Spr_Cultist_Starthrow_recovery.yy",},
+    {"name":"Spr_Diagonal_Back","order":19,"path":"sprites/Spr_Diagonal_Back/Spr_Diagonal_Back.yy",},
     {"name":"Spr_Knife_Grenade_Lob_recovery","order":30,"path":"sprites/Spr_Knife_Grenade_Lob_recovery/Spr_Knife_Grenade_Lob_recovery.yy",},
     {"name":"Obj_Katana_2F_hitbox","order":1,"path":"objects/Obj_Katana_2F_hitbox/Obj_Katana_2F_hitbox.yy",},
     {"name":"Spr_Baller_Balldash_startup","order":22,"path":"sprites/Spr_Baller_Balldash_startup/Spr_Baller_Balldash_startup.yy",},

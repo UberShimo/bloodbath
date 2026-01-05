@@ -60,7 +60,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(!grounded){
+		if(diagonal_back_hold && grounded){
+			action = "Shockwave Punch";
+			sprite_index = Spr_Boomhand_Shockwave_Punch_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8F";
 			is_unstable = true;
 			sprite_index = Spr_Boomhand_8F_startup;
@@ -70,12 +76,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		else if(down_forward_pressed){
 			action = "Roar";
 			sprite_index = Spr_Boomhand_Roar_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Shockwave Punch";
-			sprite_index = Spr_Boomhand_Shockwave_Punch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -93,7 +93,27 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(!grounded && (down_forward_pressed || down_backward_pressed)){
+		if(diagonal_back_hold){
+			action = "Groundsmash";
+			
+			is_unstable = true;
+			weight = 0.1;
+			ready_to_spawn_groundsmash_shockwave = true;
+			
+			if(grounded){
+				h_velocity = 6*image_xscale;
+				v_velocity = -6;
+			}
+			else{
+				h_velocity = 0;
+				v_velocity = -2;
+			}
+			
+			sprite_index = Spr_Boomhand_Groundsmash_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded && (down_forward_pressed || down_backward_pressed)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -113,26 +133,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			
 			sprite_index = Spr_Boomhand_Fistdive_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Groundsmash";
-			
-			is_unstable = true;
-			weight = 0.1;
-			ready_to_spawn_groundsmash_shockwave = true;
-			
-			if(grounded){
-				h_velocity = 6*image_xscale;
-				v_velocity = -6;
-			}
-			else{
-				h_velocity = 0;
-				v_velocity = -2;
-			}
-			
-			sprite_index = Spr_Boomhand_Groundsmash_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -174,16 +174,16 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
-			action = "8S";
-			sprite_index = Spr_Boomhand_8S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
+		if(diagonal_back_hold && grounded){
 			action = "Burrow";
 			
 			sprite_index = Spr_Boomhand_Burrow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
+			action = "8S";
+			sprite_index = Spr_Boomhand_8S_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

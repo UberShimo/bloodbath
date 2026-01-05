@@ -36,7 +36,7 @@ if(is_controllable){
 	}
 	// Headsplitter
 	else if(rng < 0.55 && !grounded){ // 10%
-		double_down_pressed = buffer_duration;
+		diagonal_back_hold = true;
 		b_pressed = buffer_duration;
 	}
 	

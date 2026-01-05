@@ -47,7 +47,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(!grounded){
+		if(diagonal_back_hold && grounded){
+			action = "Curve Pitch";
+			sprite_index = Spr_Batman_Pitch_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Batman_8F_startup;
 			image_index = 0;
@@ -61,12 +67,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Pitch";
-			sprite_index = Spr_Batman_Pitch_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Curve Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -128,7 +128,15 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+		if(diagonal_back_hold && grounded){
+			action = "Headbutt";
+			is_unstoppable = true;
+			shake_amount = launcher_shake_amount;
+			sprite_index = Spr_Batman_Headbutt_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -153,14 +161,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "8S";
 			is_unstable = true;
 			sprite_index = Spr_Batman_8S_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Headbutt";
-			is_unstoppable = true;
-			shake_amount = launcher_shake_amount;
-			sprite_index = Spr_Batman_Headbutt_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

@@ -69,7 +69,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(x_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+		if(diagonal_back_hold){
+			action = "Mark Teleport";
+			
+			sprite_index = Spr_Knife_Mark_Teleport_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -83,13 +90,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			is_collidable = false;
 			
 			sprite_index = Spr_Knife_Mark_Dash_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Mark Teleport";
-			
-			sprite_index = Spr_Knife_Mark_Teleport_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -114,7 +114,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+		if(diagonal_back_hold){
+			action = "Mark Spin";
+			
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Knife_Mark_Spin_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -124,17 +135,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			action = "Mark Dagger";
 			
 			sprite_index = Spr_Knife_Mark_Dagger_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Mark Spin";
-			
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			
-			sprite_index = Spr_Knife_Mark_Spin_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -159,7 +159,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(b_pressed){
-		if(double_down_pressed){
+		if(down_forward_pressed){
 			action = "Lob Grenade";
 			
 			sprite_index = Spr_Knife_Grenade_Lob_startup;

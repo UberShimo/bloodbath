@@ -28,8 +28,8 @@ cancel eff works when things goes in this order:
 4. Set recover alarm etc...
 
 When checking attack input it has to get checked in this order:
-1. Air moves
-2. Half circle moves
+1. Diagonal moves
+2. Air moves
 3. Quarter circle moves
 4. Normal ground moves
 

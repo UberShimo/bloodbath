@@ -25,13 +25,18 @@ if(is_controllable){
 	}
 	// Groundsmash
 	else if(rng < 0.35){ // 10%
-		double_down_pressed = buffer_duration;
+		diagonal_back_hold = true;
 		y_pressed = buffer_duration;
 	}
 	// Burrow
 	else if(rng < 0.45){ // 10%
-		double_down_pressed = buffer_duration;
+		diagonal_back_hold = true;
 		b_pressed = buffer_duration;
+	}
+	// Shockwave punch
+	else if(rng < 0.55){ // 10%
+		diagonal_back_hold = true;
+		x_pressed = buffer_duration;
 	}
 	
 	// ULTRA

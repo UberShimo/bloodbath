@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Teleport behind MARKED enemy.\nMARK is removed.";
-movement_input = Spr_DD;
+movement_input = Spr_Diagonal_Back;
 button_input = Spr_F;
 image = Spr_Knife_Mark_Teleport_recovery;
 frame = 0;

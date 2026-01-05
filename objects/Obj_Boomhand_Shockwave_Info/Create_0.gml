@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Send a shockwave.";
-movement_input = Spr_DD;
+movement_input = Spr_Diagonal_Back;
 button_input = Spr_F;
 image = Spr_Boomhand_Shockwave_Punch_recovery;
 frame = 0;
