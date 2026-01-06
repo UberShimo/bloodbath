@@ -226,7 +226,11 @@ action_trigger = function(){
 		ball.h_velocity = 12*image_xscale;
 		ball.v_velocity = -3;
 		ball.is_active = true;
+		// Manually make ball dangerous
 		ball.damage = 10;
+		ball.hit_stun = global.medium_hitstun;
+		ball.freeze_duration = global.medium_freeze_duration;
+		ball.shake_impact = global.medium_shake_impact;
 		
 		sprite_index = Spr_Batman_Meter_Ballthrow_recovery;
 		image_index = 0;

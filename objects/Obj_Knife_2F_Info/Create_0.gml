@@ -8,4 +8,4 @@ info = "";
 movement_input = Spr_D;
 button_input = Spr_F;
 image = Spr_Knife_2F_recovery;
-frame = 1;
+frame = 0;
