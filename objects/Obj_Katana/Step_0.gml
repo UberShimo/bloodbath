@@ -119,7 +119,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "Headsplitter";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Katana_Headsplitter_startup;

@@ -21,10 +21,10 @@ if(is_controllable){
 	// Pitch ball
 	else if(rng < 0.1){ // 10%
 		if(irandom_range(0, 1)){ // 50%
-			diagonal_back_hold = true;
+			diagonal_input_hold = true;
 		}
 		else{
-			diagonal_back_hold = true;
+			diagonal_input_hold = true;
 		}
 		x_pressed = buffer_duration;
 		if(irandom_range(0, 1) == 0){ // 50%
@@ -43,7 +43,7 @@ if(is_controllable){
 	}
 	// Headbutt
 	else if(rng < 0.4){ // 10%
-		diagonal_back_hold = true;
+		diagonal_input_hold = true;
 		b_pressed = buffer_duration;
 	}
 	

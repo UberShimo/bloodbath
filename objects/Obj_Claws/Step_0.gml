@@ -63,7 +63,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "H Ring Spawn";
 			sprite_index = Spr_Claws_Skyring_startup;
 			image_index = 0;
@@ -108,7 +108,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "V Ring Spawn";
 			sprite_index = Spr_Claws_Skyring_startup;
 			image_index = 0;

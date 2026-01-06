@@ -11,7 +11,7 @@ button_input = Spr_S;
 image = Spr_Knife_Grenade_Lob_recovery;
 frame = 0;
 extra_image = Spr_Knife_Grenade;
-extra_image_x = 48;
-extra_image_y = -48;
+extra_image_x = 32;
+extra_image_y = -32;
 
 is_cancelable = true;

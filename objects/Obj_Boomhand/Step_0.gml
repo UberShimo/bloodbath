@@ -60,7 +60,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "Shockwave Punch";
 			sprite_index = Spr_Boomhand_Shockwave_Punch_startup;
 			image_index = 0;
@@ -93,7 +93,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(diagonal_back_hold){
+		if(diagonal_input_hold){
 			action = "Groundsmash";
 			
 			is_unstable = true;
@@ -174,7 +174,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "Burrow";
 			
 			sprite_index = Spr_Boomhand_Burrow_startup;

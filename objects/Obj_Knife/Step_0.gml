@@ -69,7 +69,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_back_hold){
+		if(diagonal_input_hold){
 			action = "Mark Teleport";
 			
 			sprite_index = Spr_Knife_Mark_Teleport_startup;
@@ -114,7 +114,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(y_pressed){
-		if(diagonal_back_hold){
+		if(diagonal_input_hold){
 			action = "Mark Spin";
 			
 			h_velocity = 0;

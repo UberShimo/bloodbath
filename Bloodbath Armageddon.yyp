@@ -1610,7 +1610,7 @@
     {"id":{"name":"Spr_Cultist_ULTRA_startup","path":"sprites/Spr_Cultist_ULTRA_startup/Spr_Cultist_ULTRA_startup.yy",},},
     {"id":{"name":"Spr_Scythe_Crouch","path":"sprites/Spr_Scythe_Crouch/Spr_Scythe_Crouch.yy",},},
     {"id":{"name":"Spr_Cultist_Starthrow_recovery","path":"sprites/Spr_Cultist_Starthrow_recovery/Spr_Cultist_Starthrow_recovery.yy",},},
-    {"id":{"name":"Spr_Diagonal_Back","path":"sprites/Spr_Diagonal_Back/Spr_Diagonal_Back.yy",},},
+    {"id":{"name":"Spr_Diagonal_Input","path":"sprites/Spr_Diagonal_Input/Spr_Diagonal_Input.yy",},},
     {"id":{"name":"Spr_Knife_Grenade_Lob_recovery","path":"sprites/Spr_Knife_Grenade_Lob_recovery/Spr_Knife_Grenade_Lob_recovery.yy",},},
     {"id":{"name":"Obj_Katana_2F_hitbox","path":"objects/Obj_Katana_2F_hitbox/Obj_Katana_2F_hitbox.yy",},},
     {"id":{"name":"Spr_Baller_Balldash_startup","path":"sprites/Spr_Baller_Balldash_startup/Spr_Baller_Balldash_startup.yy",},},

@@ -1,7 +1,7 @@
 event_inherited();
 
 text = "All characters have special moves.\n"+
-"They are performed with\n"+
+"Some are performed with\n"+
 "a quick input sequence.";
 text_scale = 0.6;
 
@@ -31,7 +31,7 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Claws){
 	bonus_text = "Down > Forward > B\nTo go penguin mode!";
 	button_spr = Spr_S;
 	input_spr = Spr_DF;
-	sprite_index = Spr_Special_DD_B_Control;
+	sprite_index = Spr_Special_DF_B_Control;
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Baller){
 	bonus_text = "Down > Forward > Y\nTo swing upward!";
@@ -66,8 +66,8 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Cultist){
 else if(Obj_Dojo_Manager.student.object_index == Obj_Knife){
 	bonus_text = "Down > Down > B\nTo lob a grenade!";
 	button_spr = Spr_S;
-	input_spr = Spr_DD;
-	sprite_index = Spr_Special_DD_B_Control;
+	input_spr = Spr_DF;
+	sprite_index = Spr_Special_DF_B_Control;
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Scythe){
 	bonus_text = "Down > Forward > Y\nTo release a bird!";

@@ -47,7 +47,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "Curve Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
@@ -128,7 +128,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(diagonal_back_hold && grounded){
+		if(diagonal_input_hold && grounded){
 			action = "Headbutt";
 			is_unstoppable = true;
 			shake_amount = launcher_shake_amount;

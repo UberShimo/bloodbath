@@ -10,8 +10,8 @@ movement_input = Spr_RB_Y;
 image = Spr_Knife_Potion_Lob_recovery;
 frame = 0;
 extra_image = Spr_Knife_Potion;
-extra_image_x = 48;
-extra_image_y = -48;
+extra_image_x = 32;
+extra_image_y = -32;
 
 is_cancelable = true;
 meter_cost = 30;

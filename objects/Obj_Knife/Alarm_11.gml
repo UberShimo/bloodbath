@@ -22,7 +22,7 @@ if(is_controllable){
 	}
 	// Mark teleport
 	else if(rng < 0.2){ // 10%
-		diagonal_back_hold = true;
+		diagonal_input_hold = true;
 		x_pressed = buffer_duration;
 	}
 	// Mark dagger
@@ -32,7 +32,7 @@ if(is_controllable){
 	}
 	// Mark spin
 	else if(rng < 0.55 && !grounded){ // 15%
-		diagonal_back_hold = true;
+		diagonal_input_hold = true;
 		y_pressed = buffer_duration;
 	}
 	// Grenade

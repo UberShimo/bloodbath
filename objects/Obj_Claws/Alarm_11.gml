@@ -24,7 +24,7 @@ if(is_controllable){
 			}
 		}
 		else{
-			diagonal_back_hold = true;
+			diagonal_input_hold = true;
 		}
 		x_pressed = buffer_duration;
 	}
@@ -39,7 +39,7 @@ if(is_controllable){
 			}
 		}
 		else{
-			diagonal_back_hold = true;
+			diagonal_input_hold = true;
 		}
 		y_pressed = buffer_duration;
 	}

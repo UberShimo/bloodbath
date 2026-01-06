@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Knife_Mark_Spin_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Knife_Mark_Spin_recovery); // 100% informational not used in logic
 
-damage = 9;
+damage = 7;
 hit_stun = global.medium_hitstun;
 hit_push = 0;
 freeze_duration = global.medium_freeze_duration;

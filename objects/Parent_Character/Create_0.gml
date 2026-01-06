@@ -68,7 +68,7 @@ down_backward_pressed = 0;
 forward_down_pressed = 0;
 half_circle_backward_pressed = 0;
 double_down_pressed = 0;
-diagonal_back_hold = false;
+diagonal_input_hold = false;
 platdrop_pressed = false;
 platdrop_hold = false;
 faceback_hold = false;
@@ -426,11 +426,11 @@ read_input = function(){
 			backward_down_pressed = 0;
 			down_pressed = 0;
 		}
-		if(down_hold && backward_hold){
-			diagonal_back_hold = true;
+		if(down_hold && (forward_hold || backward_hold)){
+			diagonal_input_hold = true;
 		}
 		else{
-			diagonal_back_hold = false;
+			diagonal_input_hold = false;
 		}
 	}
 	// Inputs that read outside of controllability!
