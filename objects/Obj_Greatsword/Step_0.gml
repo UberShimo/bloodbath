@@ -46,7 +46,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(!grounded){
+		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Stomp";
+			pillar_distance = 60;
+			sprite_index = Spr_Greatsword_Stomp_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Greatsword_8F_startup;
 			image_index = 0;
@@ -65,13 +78,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(double_down_pressed){
-			action = "Stomp";
-			pillar_distance = 60;
-			sprite_index = Spr_Greatsword_Stomp_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Greatsword_2F_startup;
@@ -86,7 +92,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(!grounded){
+		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Stomp";
+			pillar_distance = 120;
+			sprite_index = Spr_Greatsword_Stomp_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8L";
 			sprite_index = Spr_Greatsword_8L_startup;
 			image_index = 0;
@@ -106,13 +125,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(double_down_pressed){
-			action = "Stomp";
-			pillar_distance = 120;
-			sprite_index = Spr_Greatsword_Stomp_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Greatsword_2L_startup;
@@ -128,7 +140,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
+		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Stomp";
+			pillar_distance = 180;
+			sprite_index = Spr_Greatsword_Stomp_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Greatsword_8S_startup;
 			image_index = 0;
@@ -145,13 +170,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			h_velocity = 5*image_xscale;
 			grip = 0.2;
 			sprite_index = Spr_Greatsword_Sword_Dunk_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Stomp";
-			pillar_distance = 180;
-			sprite_index = Spr_Greatsword_Stomp_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

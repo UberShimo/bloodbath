@@ -64,6 +64,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(x_pressed){
 		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
 			action = "H Ring Spawn";
 			sprite_index = Spr_Claws_Skyring_startup;
 			image_index = 0;
@@ -109,6 +115,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(y_pressed){
 		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
 			action = "V Ring Spawn";
 			sprite_index = Spr_Claws_Skyring_startup;
 			image_index = 0;
@@ -156,7 +168,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(!grounded){
+		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Backflip";
+			sprite_index = Spr_Claws_Backflip_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Claws_8S_startup;
 			image_index = 0;
@@ -171,12 +195,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Penguin";
 			sprite_index = Spr_Claws_Penguin_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(double_down_pressed){
-			action = "Backflip";
-			sprite_index = Spr_Claws_Backflip_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

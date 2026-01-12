@@ -15,5 +15,6 @@ is_parryable = false;
 is_shockwave = true;
 shockwave_power = 4;
 extra_freeze_duration = 32;
+spawn_hit_effect_on_opponent = true;
 
 hit_sound = Snd_Hit2;

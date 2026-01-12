@@ -1,3 +1,4 @@
+
 logic_time = object_time * global.game_time;
 
 // Slightly complicated check for time changiong objects. I want them to stack and stuff!

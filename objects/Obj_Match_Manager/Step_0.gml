@@ -1,3 +1,8 @@
+// If steam controller isnt present
+if(!object_exists(Obj_Steam_Controller)){
+	steam_update(); 
+}
+
 if(global_time_reset_alarm > 0){
 	global_time_reset_alarm -= 1;
 	

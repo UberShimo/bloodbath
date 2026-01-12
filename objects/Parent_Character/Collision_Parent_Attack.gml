@@ -152,14 +152,14 @@ if(legit_hit_check){
 		x_pos = x+(character_width/2);
 		if(x > other.x){
 			x_pos = x-(character_width/2);
-		}
+		}		
 		y_other_diff = other.y - y;
 		y_pos = y+other.hit_effect_y+y_other_diff;
-		if(y_pos < y-character_height){
-			y_pos = y-character_height;
+		if(y_pos < y-character_height/2){
+			y_pos = y-character_height/2;
 		}
-		else if(y_pos > y+character_height){
-			y_pos = y+character_height;
+		else if(y_pos > y+character_height/2){
+			y_pos = y+character_height/2;
 		}
 	}
 	

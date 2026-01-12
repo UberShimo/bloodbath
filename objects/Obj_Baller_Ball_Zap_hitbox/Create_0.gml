@@ -15,6 +15,7 @@ v_launch = 0;
 active_frames = 8;
 is_final = true;
 hitfallable = false;
+spawn_hit_effect_on_opponent = true;
 
 swing_sound = Snd_Quick_Swing;
 hit_sound = Snd_Small_Explosion;

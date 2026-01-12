@@ -1,3 +1,8 @@
+// If steam controller isnt present
+if(!object_exists(Obj_Steam_Controller)){
+	steam_update(); 
+}
+
 global.reset_controllers();
 global.game_time = 1;
 

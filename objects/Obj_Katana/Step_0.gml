@@ -120,6 +120,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(b_pressed){
 		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
 			action = "Headsplitter";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Katana_Headsplitter_startup;

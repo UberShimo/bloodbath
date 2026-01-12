@@ -41,7 +41,6 @@ SPAWN_NORMAL_HITBOX
 [then]
 SPAWN_SWEETSPOT_HITBOX
 
-
 Notes in notes:
 Walls choose sprite by image_index (0: wall, 1: ground, 2: roof, 3: Platform, 4: Below stage) (32x32 image size also)
 HP bar faces choose sprite by image_index (0: normal, 1: hurt, 2: dead, 3: Happy) (28x28 image size also)
@@ -52,6 +51,17 @@ Attack collision = purple sprites
 We are not using particles since we cant manipulate it good enough. Slow mo, scaling per dmg etc...
 Dont fuck with image angle on attacks...
 
+Achievments:
+"Learning Bobby": Do a 3 hit combo involving a clone in training mode
+"Learning Lucas": Juggle a baseball 3 times in training mode
+"Learning Victor": Do a 3 hit combo incuding ball recall in training mode
+"Learning Jeeny": Do a 3 hit combo including a ring dive in training mode
+"Learning Simon": Do a 3 hit combo including a grenade in training mode
+"Learning William": Do 3 hit combo including a pillar in training mode
+"Learning Bertil": Kill training dummy in one hit.
+"Learning Charlotte": Blow up a bird.
+"Learning Poya": Implode a circle with a star.
+"Learning Sol": Shoot arrow on boomerang.
 
 Character stuff:
 
@@ -71,6 +81,7 @@ Katana{
 }
 
 Batman{
+	Baller ball recaller gets stuck...
 	Meter ball changes direction when bouncign on ground at times.
 }
 

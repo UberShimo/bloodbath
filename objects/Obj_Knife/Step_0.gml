@@ -70,6 +70,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 	}
 	else if(x_pressed){
 		if(diagonal_input_hold){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
 			action = "Mark Teleport";
 			
 			sprite_index = Spr_Knife_Mark_Teleport_startup;
@@ -115,6 +121,12 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 	}
 	else if(y_pressed){
 		if(diagonal_input_hold){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
 			action = "Mark Spin";
 			
 			h_velocity = 0;
@@ -159,7 +171,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed){
+		if(down_forward_pressed || down_backward_pressed){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
 			action = "Lob Grenade";
 			
 			sprite_index = Spr_Knife_Grenade_Lob_startup;

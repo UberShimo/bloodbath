@@ -1,3 +1,5 @@
+steam_init();
+
 gpu_set_texfilter(false);
 
 #region load save

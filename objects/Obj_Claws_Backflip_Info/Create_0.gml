@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Do a backflip!";
-movement_input = Spr_DD;
+movement_input = Spr_Diagonal_Input;
 button_input = Spr_S;
 image = Spr_Claws_Backflip_recovery;
 frame = 1;

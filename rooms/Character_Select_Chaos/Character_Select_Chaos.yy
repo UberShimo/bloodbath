@@ -44,6 +44,7 @@
     {"name":"inst_5FC26419","path":"rooms/Character_Select_Chaos/Character_Select_Chaos.yy",},
     {"name":"inst_4BB03FA7","path":"rooms/Character_Select_Chaos/Character_Select_Chaos.yy",},
     {"name":"inst_7A97F078","path":"rooms/Character_Select_Chaos/Character_Select_Chaos.yy",},
+    {"name":"inst_FDE2D38","path":"rooms/Character_Select_Chaos/Character_Select_Chaos.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -90,6 +91,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5FC26419","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"Obj_Inf_Cacnels_Option","path":"objects/Obj_Inf_Cacnels_Option/Obj_Inf_Cacnels_Option.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":32.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4BB03FA7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"Obj_Knife_Option","path":"objects/Obj_Knife_Option/Obj_Knife_Option.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":160.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A97F078","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"Obj_Scythe_Option","path":"objects/Obj_Scythe_Option/Obj_Scythe_Option.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":288.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_FDE2D38","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"Obj_Steam_Controller","path":"objects/Obj_Steam_Controller/Obj_Steam_Controller.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":512.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"BG_Character_Select","path":"sprites/BG_Character_Select/BG_Character_Select.yy",},"stretch":true,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

@@ -220,7 +220,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Backflip"){
-		h_velocity = -6*image_xscale;
+		h_velocity = -5*image_xscale;
 		v_velocity = -9;
 		
 		sprite_index = Spr_Claws_Backflip_recovery;

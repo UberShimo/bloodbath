@@ -193,13 +193,6 @@ action_trigger = function(){
 	}
 	else if(action == "Mark Spin"){
 		if(instance_exists(marked_target)){
-			// Face toward marked enemy
-			if(x < marked_target.x){
-				image_xscale = 1;
-			}
-			else{
-				image_xscale = -1;
-			}
 			vel = 10;
 			dir = point_direction(x, y, marked_target.x, marked_target.y);
 			h_velocity = lengthdir_x(vel, dir);
