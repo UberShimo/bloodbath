@@ -224,6 +224,7 @@
     {"id":{"name":"Obj_Claws_Rewind_Info","path":"objects/Obj_Claws_Rewind_Info/Obj_Claws_Rewind_Info.yy",},},
     {"id":{"name":"BG_Street","path":"sprites/BG_Street/BG_Street.yy",},},
     {"id":{"name":"Spr_Katana_Stand","path":"sprites/Spr_Katana_Stand/Spr_Katana_Stand.yy",},},
+    {"id":{"name":"Spr_Controller_Only","path":"sprites/Spr_Controller_Only/Spr_Controller_Only.yy",},},
     {"id":{"name":"Snd_Character_Pick","path":"sounds/Snd_Character_Pick/Snd_Character_Pick.yy",},},
     {"id":{"name":"Spr_Batman_5L_hitbox","path":"sprites/Spr_Batman_5L_hitbox/Spr_Batman_5L_hitbox.yy",},},
     {"id":{"name":"Spr_Boomhand_Meter_Pull","path":"sprites/Spr_Boomhand_Meter_Pull/Spr_Boomhand_Meter_Pull.yy",},},

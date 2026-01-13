@@ -15,8 +15,6 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d9420ee4-3509-408f-a80a-da7ab697c3ad",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"038785bf-15f3-4c55-a505-c4d278038778",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f96bffe4-4ed5-473c-82de-e8d21ee78555",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"846909f6-2f5a-4e05-a9e8-6bd6d6ecfaf2",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -47,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 4.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -60,8 +58,6 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d9420ee4-3509-408f-a80a-da7ab697c3ad","path":"sprites/Spr_Claws_Penguin_startup/Spr_Claws_Penguin_startup.yy",},},},"Disabled":false,"id":"405f4966-da3e-4db5-9447-6c2b4f762257","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"038785bf-15f3-4c55-a505-c4d278038778","path":"sprites/Spr_Claws_Penguin_startup/Spr_Claws_Penguin_startup.yy",},},},"Disabled":false,"id":"6f9b6d6d-9af0-4337-bdad-aff760ed9de3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f96bffe4-4ed5-473c-82de-e8d21ee78555","path":"sprites/Spr_Claws_Penguin_startup/Spr_Claws_Penguin_startup.yy",},},},"Disabled":false,"id":"069a7ce1-913f-4d62-9d23-814f1fe5a120","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"846909f6-2f5a-4e05-a9e8-6bd6d6ecfaf2","path":"sprites/Spr_Claws_Penguin_startup/Spr_Claws_Penguin_startup.yy",},},},"Disabled":false,"id":"be8b7981-4707-4799-ba1a-8244ed9a53cf","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

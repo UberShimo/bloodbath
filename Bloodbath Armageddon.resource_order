@@ -193,6 +193,7 @@
     {"name":"Obj_Claws_Rewind_Info","order":16,"path":"objects/Obj_Claws_Rewind_Info/Obj_Claws_Rewind_Info.yy",},
     {"name":"BG_Street","order":9,"path":"sprites/BG_Street/BG_Street.yy",},
     {"name":"Spr_Katana_Stand","order":1,"path":"sprites/Spr_Katana_Stand/Spr_Katana_Stand.yy",},
+    {"name":"Spr_Controller_Only","order":30,"path":"sprites/Spr_Controller_Only/Spr_Controller_Only.yy",},
     {"name":"Snd_Character_Pick","order":1,"path":"sounds/Snd_Character_Pick/Snd_Character_Pick.yy",},
     {"name":"Spr_Batman_5L_hitbox","order":3,"path":"sprites/Spr_Batman_5L_hitbox/Spr_Batman_5L_hitbox.yy",},
     {"name":"Spr_Boomhand_Meter_Pull","order":13,"path":"sprites/Spr_Boomhand_Meter_Pull/Spr_Boomhand_Meter_Pull.yy",},
