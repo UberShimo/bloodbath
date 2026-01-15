@@ -6,6 +6,13 @@ if(action == noone){
 	if(!reset_combo){
 		reset_combo = true;
 		a_pressed = true;
+		
+		// Achievement check variables!!!
+		katana_has_used_clone = false;
+		baller_has_recalled_ball = false;
+		claws_has_ring_dived = false;
+		knife_has_hit_grenade = false;
+		greatsword_has_hit_pillar = false;
 	}
 }
 

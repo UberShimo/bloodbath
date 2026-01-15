@@ -36,6 +36,33 @@ global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
 global.max_music_volume = 0.25;
 global.music_volume = ini_read_real("save", "music volume", global.max_music_volume);
 
+// Achievments
+global.katana_learned = ini_read_real("save", "katana learned", false);
+global.claws_learned = ini_read_real("save", "claws learned", false);
+global.boomhand_learned = ini_read_real("save", "boomhand learned", false);
+global.bow_learned = ini_read_real("save", "bow learned", false);
+global.batman_learned = ini_read_real("save", "batman learned", false);
+global.baller_learned = ini_read_real("save", "baller learned", false);
+global.greatsword_learned = ini_read_real("save", "greatsword learned", false);
+global.cultist_learned = ini_read_real("save", "cultist learned", false);
+global.rapier_learned = ini_read_real("save", "rapier learned", false);
+global.knife_learned = ini_read_real("save", "knife learned", false);
+global.shield_learned = ini_read_real("save", "shield learned", false);
+global.scythe_learned = ini_read_real("save", "scythe learned", false);
+
+global.katana_TR_achievment = ini_read_real("save", "katana TR achievment", false);
+global.claws_TR_achievment = ini_read_real("save", "claws TR achievment", false);
+global.boomhand_TR_achievment = ini_read_real("save", "boomhand TR achievment", false);
+global.bow_TR_achievment = ini_read_real("save", "bow TR achievment", false);
+global.batman_TR_achievment = ini_read_real("save", "batman TR achievment", false);
+global.baller_TR_achievment = ini_read_real("save", "baller TR achievment", false);
+global.greatsword_TR_achievment = ini_read_real("save", "greatsword TR achievment", false);
+global.cultist_TR_achievment = ini_read_real("save", "cultist TR achievment", false);
+global.rapier_TR_achievment = ini_read_real("save", "rapier TR achievment", false);
+global.knife_TR_achievment = ini_read_real("save", "knife TR achievment", false);
+global.shield_TR_achievment = ini_read_real("save", "shield TR achievment", false);
+global.scythe_TR_achievment = ini_read_real("save", "scythe TR achievment", false);
+
 ini_close();
 #endregion
 

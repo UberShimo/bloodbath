@@ -13,4 +13,21 @@ if(legit_hit_check){
 
 	hits += 1;
 	combo_damage += other.damage;
+	
+	// Update achievements
+	if(katana_has_used_clone && hits >= 3){
+		update_steam_achievement("KATANA_LEARNED");
+	}
+	else if(baller_has_recalled_ball && hits >= 3){
+		update_steam_achievement("BALLER_LEARNED");
+	}
+	else if(claws_has_ring_dived && hits >= 3){
+		update_steam_achievement("CLAWS_LEARNED");
+	}
+	else if(knife_has_hit_grenade && hits >= 3){
+		update_steam_achievement("KNIFE_LEARNED");
+	}
+	else if(greatsword_has_hit_pillar && hits >= 3){
+		update_steam_achievement("GREATSWORD_LEARNED");
+	}
 }

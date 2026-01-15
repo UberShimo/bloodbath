@@ -30,6 +30,13 @@ hits = 0;
 combo_damage = 0;
 reset_combo = true;
 
+// Achievement check variables!!!
+katana_has_used_clone = false;
+baller_has_recalled_ball = false;
+claws_has_ring_dived = false;
+knife_has_hit_grenade = false;
+greatsword_has_hit_pillar = false;
+
 // Methods
 action_trigger = function(){
 	// Normal moves

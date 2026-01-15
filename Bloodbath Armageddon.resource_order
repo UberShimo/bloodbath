@@ -252,6 +252,7 @@
     {"name":"Spr_BDF","order":16,"path":"sprites/Spr_BDF/Spr_BDF.yy",},
     {"name":"Spr_Baller_2S_recovery","order":16,"path":"sprites/Spr_Baller_2S_recovery/Spr_Baller_2S_recovery.yy",},
     {"name":"Spr_Bow_Aim_Down_recovery","order":25,"path":"sprites/Spr_Bow_Aim_Down_recovery/Spr_Bow_Aim_Down_recovery.yy",},
+    {"name":"update_steam_achievement","order":2,"path":"scripts/update_steam_achievement/update_steam_achievement.yy",},
     {"name":"Spr_Batman_Meter_Ballthrow_startup","order":27,"path":"sprites/Spr_Batman_Meter_Ballthrow_startup/Spr_Batman_Meter_Ballthrow_startup.yy",},
     {"name":"Spr_Cultist_Circle","order":20,"path":"sprites/Spr_Cultist_Circle/Spr_Cultist_Circle.yy",},
     {"name":"Spr_Boomhand_Groundsmash_Shockwave_Hitbox","order":13,"path":"sprites/Spr_Boomhand_Groundsmash_Shockwave_Hitbox/Spr_Boomhand_Groundsmash_Shockwave_Hitbox.yy",},

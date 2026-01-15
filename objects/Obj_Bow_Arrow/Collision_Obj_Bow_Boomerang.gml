@@ -26,4 +26,9 @@ if(ds_list_find_index(hitbox_list, other) == -1){
 	spawn_effect(x, y, 8, Eff_Splash, 1, 0.05, c_white, scale, scale);
 	
 	ds_list_add(hitbox_list, other);
+	
+	// Achievement update
+	if(object_exists(Obj_Immortal_Dummy)){
+		update_steam_achievement("BOW_LEARNED");
+	}
 }

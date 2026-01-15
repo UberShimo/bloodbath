@@ -58,6 +58,11 @@ action_trigger = function(){
 		
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 0.2);
 		life_span = generate_sprite_frames(sprite_index);
+		
+		// Achievement update
+		if(object_exists(Obj_Immortal_Dummy)){
+			Obj_Immortal_Dummy.katana_has_used_clone = true;
+		}
 	}
 	else if(action == "Teleport Spawner"){
 		if(instance_exists(spawner)){
@@ -66,6 +71,10 @@ action_trigger = function(){
 			spawner.y = y;
 		}
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 0.2);
+		// Achievement update
+		if(object_exists(Obj_Immortal_Dummy)){
+			Obj_Immortal_Dummy.katana_has_used_clone = true;
+		}
 		instance_destroy();
 	}
 }

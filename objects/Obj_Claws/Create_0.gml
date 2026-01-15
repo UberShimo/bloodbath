@@ -207,6 +207,10 @@ action_trigger = function(){
 		sprite_index = Spr_Claws_Dive_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+		// Achievement update
+		if(object_exists(Obj_Immortal_Dummy)){
+			Obj_Immortal_Dummy.claws_has_ring_dived = true;
+		}
 	}
 	else if(action == "Penguin"){
 		attack = instance_create_depth(x, y, 0, Obj_Claws_Penguin_hitbox);

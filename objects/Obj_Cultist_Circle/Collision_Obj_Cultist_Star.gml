@@ -12,3 +12,8 @@ else{
 audio_play_sound(Snd_Light_Swing, 0, false);
 
 instance_destroy(other);
+
+// Achievement update
+if(object_exists(Obj_Immortal_Dummy)){
+	update_steam_achievement("CULTIST_LEARNED");
+}
