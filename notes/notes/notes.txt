@@ -1,4 +1,5 @@
 TODO{
+	Chaos mode portraits have a transparent square around them...
 	Add dash / parry / meter dash / meter pull to move lists?
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
