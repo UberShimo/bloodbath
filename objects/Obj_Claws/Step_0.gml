@@ -63,19 +63,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_input_hold && grounded){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "H Ring Spawn";
-			sprite_index = Spr_Claws_Skyring_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if((down_forward_pressed || down_backward_pressed) && instance_exists(ring1)){
+		if(diagonal_input_hold && grounded && instance_exists(ring1)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -90,6 +78,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			instance_destroy(ring1);
 			spawn_effect(x, y, 6, Eff_Splash, 1, 0.05, c_fuchsia, 1.5, 3, 0);
 			sprite_index = Spr_Claws_Dive_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if((down_forward_pressed || down_backward_pressed)){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "H Ring Spawn";
+			sprite_index = Spr_Claws_Skyring_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -114,19 +114,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(diagonal_input_hold && grounded){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "V Ring Spawn";
-			sprite_index = Spr_Claws_Skyring_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if((down_forward_pressed || down_backward_pressed) && instance_exists(ring2)){
+		if(diagonal_input_hold && grounded && instance_exists(ring2)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -141,6 +129,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			instance_destroy(ring2);
 			spawn_effect(x, y, 6, Eff_Splash, 1, 0.05, c_fuchsia, 1.5, 3, 0);
 			sprite_index = Spr_Claws_Dive_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if((down_forward_pressed || down_backward_pressed)){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "V Ring Spawn";
+			sprite_index = Spr_Claws_Skyring_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -175,8 +175,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Backflip";
-			sprite_index = Spr_Claws_Backflip_startup;
+			action = "Penguin";
+			sprite_index = Spr_Claws_Penguin_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -193,8 +193,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Penguin";
-			sprite_index = Spr_Claws_Penguin_startup;
+			action = "Backflip";
+			sprite_index = Spr_Claws_Backflip_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

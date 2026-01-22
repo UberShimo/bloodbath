@@ -17,7 +17,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
+	if(rb_hold && !instance_exists(frog)){ // Cant do meter moves while having your frog out!
 		if(meter >= 100 && b_pressed){
 			action = "ULTRA";
 			meter -= 50;

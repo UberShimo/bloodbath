@@ -36,7 +36,7 @@ global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
 global.max_music_volume = 0.25;
 global.music_volume = ini_read_real("save", "music volume", global.max_music_volume);
 
-// Achievments
+// achievements
 global.katana_learned = ini_read_real("save", "katana learned", false);
 global.claws_learned = ini_read_real("save", "claws learned", false);
 global.boomhand_learned = ini_read_real("save", "boomhand learned", false);
@@ -50,18 +50,18 @@ global.knife_learned = ini_read_real("save", "knife learned", false);
 global.shield_learned = ini_read_real("save", "shield learned", false);
 global.scythe_learned = ini_read_real("save", "scythe learned", false);
 
-global.katana_TR_achievment = ini_read_real("save", "katana TR achievment", false);
-global.claws_TR_achievment = ini_read_real("save", "claws TR achievment", false);
-global.boomhand_TR_achievment = ini_read_real("save", "boomhand TR achievment", false);
-global.bow_TR_achievment = ini_read_real("save", "bow TR achievment", false);
-global.batman_TR_achievment = ini_read_real("save", "batman TR achievment", false);
-global.baller_TR_achievment = ini_read_real("save", "baller TR achievment", false);
-global.greatsword_TR_achievment = ini_read_real("save", "greatsword TR achievment", false);
-global.cultist_TR_achievment = ini_read_real("save", "cultist TR achievment", false);
-global.rapier_TR_achievment = ini_read_real("save", "rapier TR achievment", false);
-global.knife_TR_achievment = ini_read_real("save", "knife TR achievment", false);
-global.shield_TR_achievment = ini_read_real("save", "shield TR achievment", false);
-global.scythe_TR_achievment = ini_read_real("save", "scythe TR achievment", false);
+global.katana_tr_achievement = ini_read_real("save", "katana TR achievement", false);
+global.claws_tr_achievement = ini_read_real("save", "claws TR achievement", false);
+global.boomhand_tr_achievement = ini_read_real("save", "boomhand TR achievement", false);
+global.bow_tr_achievement = ini_read_real("save", "bow TR achievement", false);
+global.batman_tr_achievement = ini_read_real("save", "batman TR achievement", false);
+global.baller_tr_achievement = ini_read_real("save", "baller TR achievement", false);
+global.greatsword_tr_achievement = ini_read_real("save", "greatsword TR achievement", false);
+global.cultist_tr_achievement = ini_read_real("save", "cultist TR achievement", false);
+global.rapier_tr_achievement = ini_read_real("save", "rapier TR achievement", false);
+global.knife_tr_achievement = ini_read_real("save", "knife TR achievement", false);
+global.shield_tr_achievement = ini_read_real("save", "shield TR achievement", false);
+global.scythe_tr_achievement = ini_read_real("save", "scythe TR achievement", false);
 
 ini_close();
 #endregion
@@ -187,7 +187,7 @@ global.wall_images = [
 	Spr_Trippy_Walls,
 	Spr_Trainingroom_Walls
 ]
-global.BG_index = 0;
+global.BG_index = 1;
 global.BG_darkness = 0.5; // % black
 #endregion
 

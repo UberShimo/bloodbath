@@ -47,19 +47,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_input_hold && grounded){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Curve Pitch";
-			sprite_index = Spr_Batman_Pitch_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(!grounded){
+		if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Batman_8F_startup;
 			image_index = 0;
@@ -73,6 +61,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Pitch";
+			sprite_index = Spr_Batman_Pitch_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(forward_down_pressed || backward_down_pressed){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Curve Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

@@ -57,6 +57,7 @@ aim_duration = generate_sprite_frames(Spr_Bow_Aim_Down_startup);
 hold_spear = false;
 spear_aim_height = 16;
 spear_aim_duration = generate_sprite_frames(Spr_Bow_Spearthrow_startup)-8; // -8 cuz you dont aim at the first frames
+frog = noone;
 target = noone; // Used for seeking arrow
 
 action_trigger = function(){

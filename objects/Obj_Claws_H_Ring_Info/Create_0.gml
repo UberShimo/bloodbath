@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Launch horizontal ring.\nHit it to gain HYPERACTIVE burst!";
-movement_input = Spr_Diagonal_Input;
+movement_input = Spr_DF;
 button_input = Spr_F;
 image = Spr_Claws_Skyring_recovery;
 extra_image = Spr_Claws_Skyring;

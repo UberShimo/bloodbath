@@ -56,6 +56,7 @@ if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list,
 	is_active = true;
 	weight = 0.5;
 	h_spin = 0;
+	juggles += 1;
 	
 	other.spawner.can_cancel = true;
 	
@@ -80,11 +81,4 @@ if(!other.is_projectile && other.hit_stun > 0 && ds_list_find_index(hitbox_list,
 	spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_red, 0, 0, 0.15*scale);
 	
 	ds_list_add(hitbox_list, other);
-	
-	// Achievement update
-	juggles += 1;
-	
-	if(object_exists(Obj_Immortal_Dummy) && juggles >= 3){
-		update_steam_achievement("BATMAN_LEARNED");
-	}
 }

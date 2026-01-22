@@ -14,6 +14,7 @@ v_launch = -1;
 is_projectile = true;
 is_cancelable = true;
 projectile_duration = 120;
+has_hit_boomerang = false;
 
 swing_sound = Snd_Quick_Swing;
 

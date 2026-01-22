@@ -3,8 +3,9 @@ if(other.index == index){
 	lightning.initiate(self);
 	
 	// Achievement update
-	if(object_exists(Obj_Immortal_Dummy)){
+	if(instance_exists(Obj_Immortal_Dummy)){
 		update_steam_achievement("SCYTHE_LEARNED");
+		global.scythe_learned = true;
 	}
 
 	instance_destroy();

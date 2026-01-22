@@ -121,7 +121,7 @@ if(legit_hit_check){
 		// Shake things up!
 		if(other.shake_impact > shake_amount){
 			shake_amount = other.shake_impact;
-			if(object_exists(Obj_Match_Camera)){
+			if(instance_exists(Obj_Match_Camera)){
 				Obj_Match_Camera.shake = other.shake_impact/2;
 			}
 		}

@@ -1,5 +1,5 @@
 // If steam controller isnt present
-if(!object_exists(Obj_Steam_Controller)){
+if(!instance_exists(Obj_Steam_Controller)){
 	steam_update(); 
 }
 

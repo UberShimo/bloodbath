@@ -57,3 +57,29 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
 }
+
+// Achievement updates
+if(instance_exists(Obj_Dojo_Manager)){
+	// Claws
+	if(Obj_Dojo_Manager.student.action == "Dive"){
+		claws_has_ring_dived = true;
+	}
+	// Batman
+	else if(instance_number(Obj_Batman_Baseball) > 0){
+		for(i = 0; i < instance_number(Obj_Batman_Baseball); i++){
+			if(instance_find(Obj_Batman_Baseball, i).juggles >= 3){
+				update_steam_achievement("BATMAN_LEARNED");
+				global.batman_learned = true;
+			}
+		}
+	}
+	// Bow
+	else if(instance_number(Obj_Bow_Arrow) > 0){
+		for(i = 0; i < instance_number(Obj_Bow_Arrow); i++){
+			if(instance_find(Obj_Bow_Arrow, i).has_hit_boomerang){
+				update_steam_achievement("BOW_LEARNED");
+				global.bow_learned = true;
+			}
+		}
+	}
+}
