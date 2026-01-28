@@ -69,7 +69,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_input_hold){
+		if(diagonal_input_hold && instance_exists(marked_target)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}

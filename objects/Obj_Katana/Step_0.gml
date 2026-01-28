@@ -30,7 +30,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Katana_ULTRA_startup;
 			image_index = 0;
-			global.game_time = 0.5;
+			global.game_time = 0.25;
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Manly_Tensing, 0, false);

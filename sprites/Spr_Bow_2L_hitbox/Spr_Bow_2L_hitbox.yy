@@ -4,7 +4,7 @@
   "name": "Spr_Bow_2L_hitbox",
   "bbox_bottom": 149,
   "bbox_left": 86,
-  "bbox_right": 179,
+  "bbox_right": 186,
   "bbox_top": 59,
   "bboxMode": 0,
   "collisionKind": 4,

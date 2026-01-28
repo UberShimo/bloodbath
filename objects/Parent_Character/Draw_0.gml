@@ -26,20 +26,22 @@ if(draw_mini_ui && !place_meeting(x, y, Obj_Boomhand_Smoke)){ // Smoke is suppos
 	meter_bar_x = x-sprite_get_width(Spr_Mini_Meter_Bar)/2;
 	
 	// HP bar
-	draw_sprite_ext(Spr_Mini_HP_Bar, 1, hp_bar_x, y-character_height+16, HP/max_HP, 1, 0, c_white, 1);
-	draw_sprite_ext(Spr_Mini_HP_Bar, 0, hp_bar_x, y-character_height+16, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(Spr_Mini_HP_Bar, 1, hp_bar_x, y-character_height+16, HP/max_HP, 1, 0, c_white, image_alpha);
+	draw_sprite_ext(Spr_Mini_HP_Bar, 0, hp_bar_x, y-character_height+16, 1, 1, 0, c_white, image_alpha);
 	// Meter bar
-	draw_sprite_ext(Spr_Mini_Meter_Bar, 1, meter_bar_x, y-character_height+24, meter/max_meter, 1, 0, c_white, 1);
-	draw_sprite_ext(Spr_Mini_Meter_Bar, 0, meter_bar_x, y-character_height+24, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(Spr_Mini_Meter_Bar, 1, meter_bar_x, y-character_height+24, meter/max_meter, 1, 0, c_white, image_alpha);
+	draw_sprite_ext(Spr_Mini_Meter_Bar, 0, meter_bar_x, y-character_height+24, 1, 1, 0, c_white, image_alpha);
 	// Hearts
 	if(hearts < 6){
 		for(i = 0; i < hearts; i++){
-			draw_sprite_ext(Spr_Heart, 0, x-32+16*i, y-character_height+10, 0.3, 0.3, 0, c_white, 1);
+			draw_sprite_ext(Spr_Heart, 0, x-32+16*i, y-character_height+10, 0.3, 0.3, 0, c_white, image_alpha);
 		}
 	}
 	else{
-		draw_sprite_ext(Spr_Heart, 0, x-32+16, y-character_height+10, 0.3, 0.3, 0, c_white, 1);
+		draw_sprite_ext(Spr_Heart, 0, x-32+16, y-character_height+10, 0.3, 0.3, 0, c_white, image_alpha);
+		draw_set_alpha(image_alpha);
 		draw_text(x-32+24, y-character_height, " x  " + string(hearts));
+		draw_set_alpha(1);
 	}
 }
 
