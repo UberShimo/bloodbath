@@ -54,6 +54,7 @@ hold_arrow = false;
 aim_height = 12;
 aim_dir = 0;
 aim_duration = generate_sprite_frames(Spr_Bow_Aim_Down_startup);
+metertwist_control = 0.3;
 hold_spear = false;
 spear_aim_height = 16;
 spear_aim_duration = generate_sprite_frames(Spr_Bow_Spearthrow_startup)-8; // -8 cuz you dont aim at the first frames
@@ -203,6 +204,13 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
+	else if(action == "Meter Twist"){
+		reset_physics();
+		
+		sprite_index = Spr_Bow_Metertwist_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "Spear Throw"){
 		action = "Spear Gone";
 		
@@ -222,16 +230,6 @@ action_trigger = function(){
 		sprite_index = Spr_Bow_Spearthrow_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Spawn Frog"){
-		frog = instance_create_depth(x-16*image_xscale, y+28, 0, Obj_Bow_Frog);
-		frog.spawner = self;
-		frog.h_velocity = 2.5*image_xscale;
-		frog.image_xscale = image_xscale;
-		
-		sprite_index = Spr_Bow_Stand;
-		image_index = 0;
-		recover_alarm = 1;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;

@@ -7,8 +7,12 @@ if(ds_list_find_index(hitbox_list, other) == -1){
 		other.return_alarm = 60;
 	}
 
-	// Bounce toward closest enemy
-	closest_enemy = spawner.closest_enemy;
+	// Bounce toward closest enemy. Need some ugly logic here...
+	spawner_x = spawner.x;
+	spawner.x = -room_width;
+	closest_enemy = instance_nearest(x, y, Parent_Character);
+	spawner.x = spawner_x;
+	
 	has_hit_boomerang = true;
 
 	dir = point_direction(x, y, closest_enemy.x, closest_enemy.y);

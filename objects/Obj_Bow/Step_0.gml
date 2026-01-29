@@ -45,13 +45,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 25 && x_pressed && grounded){
-			action = "Spawn Frog";
-			meter -= 25;
+		else if(meter >= 20 && x_pressed){
+			action = "Meter Twist";
+			meter -= 20;
 			
-			sprite_index = Spr_Bow_Frogspawn_startup;
+			weight = 0.3;
+			is_collidable = false;
+			is_invincible = true;
+			v_velocity = -5;
+			
+			sprite_index = Spr_Bow_Metertwist_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
+			invincibility_alarm = action_alarm;
 		}
 		else{
 			meter_shake = meter_shake_amount;
@@ -230,6 +236,16 @@ else if(action == "Aim Up" && y_hold){
 if((action == "Aim Up" || action == "Aim Down") && hold_arrow && !y_hold){
 	hold_arrow = false;
 	action_alarm = 4;
+}
+
+// Meter twist control
+if(action == "Meter Twist"){
+	if(forward_hold){
+		h_velocity += metertwist_control*logic_time*image_xscale;
+	}
+	else if(backward_hold){
+		h_velocity -= metertwist_control*logic_time*image_xscale;
+	}
 }
 
 // Spearthrow logic. Force the startup frames to happen
