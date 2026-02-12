@@ -563,8 +563,8 @@ if(rb_hold && lb_pressed > 0
 		v_velocity = dash_lift;
 		weight = original_weight/4;
 		action_alarm = 0;
-		recover_alarm = 24;
-		invincibility_alarm = 24;
+		recover_alarm = dash_duration;
+		invincibility_alarm = dash_duration;
 	}
 	else{	
 		meter_shake = meter_shake_amount;

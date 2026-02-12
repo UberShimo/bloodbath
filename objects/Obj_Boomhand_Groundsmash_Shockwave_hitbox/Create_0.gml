@@ -16,4 +16,4 @@ is_parryable = false;
 is_final = true;
 effect = Obj_Boomhand_Groundsmash_Shockwave_hit_eff;
 
-swing_sound = Snd_Crack;
+swing_sound = Snd_Knack;

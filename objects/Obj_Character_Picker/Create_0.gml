@@ -11,8 +11,8 @@ exit_count = 0;
 exit_count_goal = 60;
 target_run_room = Dojo_Target_Run;
 
-move_x_distance = sprite_get_width(sprite_index);
-move_y_distance = sprite_get_height(sprite_index);
+move_distance_x = sprite_get_width(sprite_index);
+move_distance_y = sprite_get_height(sprite_index);
 
 // Init input variables
 r_held = false;

@@ -13,5 +13,5 @@ v_launch = 10;
 
 is_sticky = true;
 
-swing_sound = Snd_Knack;
+swing_sound = Snd_Swing1;
 hit_sound = Snd_Hit2;

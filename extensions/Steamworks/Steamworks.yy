@@ -17,7 +17,7 @@
   "date": "2026-01-08T15:44:24.8066226+01:00",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "1.7.0",
+  "extensionVersion": "1.0.0",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"Steamworks.ext","constants":[
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ov_friends","hidden":false,"value":"0",},

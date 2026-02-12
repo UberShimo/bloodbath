@@ -1,3 +1,4 @@
+// Move
 if(r_pressed){
 	x += move_distance_x;
 	closest_action_info = instance_nearest(x-64, y-64, Parent_Action_Info);

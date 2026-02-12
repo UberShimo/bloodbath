@@ -4,23 +4,33 @@ if((l_pressed || other.r_pressed) && place_meeting(x, y, Obj_Music_Menu)){
 }
 
 #region Move
-if(l_pressed && !place_meeting(x-move_x_distance, y, Parent_Collision)){
-	x -= move_x_distance;
+if(r_pressed){
+	x += move_distance_x*image_xscale;
+	closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
+	x = closest_action_info.x;
+	y = closest_action_info.y;
 }
-else if(r_pressed && !place_meeting(x+move_x_distance, y, Parent_Collision)){
-	x += move_x_distance;
+else if(l_pressed){
+	x -= move_distance_x*image_xscale;
+	closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
+	x = closest_action_info.x;
+	y = closest_action_info.y;
 }
-else if(u_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
-	if(!place_meeting(x, y-move_y_distance, Parent_Collision)){
-		y -= move_y_distance;
+// No going up or down when on a list option
+option = instance_nearest(x, y, Parent_Character_Select_Option);
+if(!option.is_list_option){
+	if(u_pressed){
+		y -= move_distance_y*image_yscale;
+		closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
+		x = closest_action_info.x;
+		y = closest_action_info.y;
 	}
-	u_pressed = false; // So it dont change stage/music/bg etc when moving into them
-}
-else if(d_pressed && !place_meeting(x, y, Obj_Music_Menu) && !place_meeting(x, y, Obj_BG_Menu) && !place_meeting(x, y, Obj_Arena_Menu)){
-	if(!place_meeting(x, y+move_y_distance, Parent_Collision)){
-		y += move_y_distance;
+	else if(d_pressed){
+		y += move_distance_y*image_yscale;
+		closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
+		x = closest_action_info.x;
+		y = closest_action_info.y;
 	}
-	d_pressed = false; // So it dont change stage/music/bg etc when moving into them
 }
 #endregion
 

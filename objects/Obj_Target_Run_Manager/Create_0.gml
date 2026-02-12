@@ -1,3 +1,5 @@
+event_inherited();
+
 player_amount = 0;
 ui_pixel_size = 1.5;
 heart_size = 0.75; // % based
@@ -14,9 +16,6 @@ y_draw_final_time = display_get_gui_height()/2-64;
 for(i = 0; i < 8; i++){
 	players[i] = noone;
 }
-
-p1_ui_hp = 0;
-p1_ui_meter = 0;
 
 global_time_reset_alarm = 0;
 

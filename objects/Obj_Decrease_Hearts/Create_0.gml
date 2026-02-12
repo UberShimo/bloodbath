@@ -1,3 +1,4 @@
+event_inherited();
 
 clicked = function(){
 	if(global.heart_amount > 1){

@@ -40,7 +40,7 @@
   "origin": 0,
   "parent": {
     "name": "BGs",
-    "path": "folders/Sprites/Arenas/BGs.yy",
+    "path": "folders/Sprites/BGs.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

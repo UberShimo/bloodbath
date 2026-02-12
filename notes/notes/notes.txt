@@ -1,16 +1,45 @@
 TODO{
+	Finish rapier.
+
 	Add dash / parry / meter dash / meter pull to move lists?
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
 	Make a scale stat so characters can change scale?
-	Make Roguelike mode:
-	(Small army battle, Giant battle, Quick enemy battle)
-	enemy stats increase slightly each battle.
-	Choose between 2 upgrades.
-	Upgrades:
-	Heal / Grow in size / Meter regen / Extra cancel / Increase character speed / Dmg based on low HP / Lifesteal / "WIND" Extra jump + spawn stunning projectiles
 	Make vertical parallax also?...
+}
+
+DOOM MODE (Roguelike){
+	Includes 8 stages.
+	Last stage is a mirror match with yourself that has all your UPGRADES.
+	Clearing last stage unlocks next DOOM level. There is infinite levels.
+	Between stages choose between 2 UPGRADES OR recover 20% HP + 10 HP.
+	
+	UPGRADES:
+	Heal
+	Grow in size
+	Meter regen
+	Extra cancel
+	Increase character speed
+	Dmg based on low HP
+	Lifesteal
+	"WIND" Extra jump + spawn stunning projectiles
+	After stage 3 you instead choose an ADJUSTMENT. "You feel a change deep within yo..."
+	
+	ADJUSTMENTS:
+	Ghost form (Dash is invincible but cant be canceled)
+	Slippy (Grip becomes slippy)
+	Juggernaut (Hit slower but harder)
+	Vampire (Gain lifesteal but loose HP over time)
+	Meterless (Can no longer gain meter but you get 2 UPGRADES)
+	Afterimage (An afterimage follows you moves. But it can also hit you...)
+	
+	ENCOUNTERS
+	Small army battle
+	Giant battle
+	Quick enemy battle
+	
+	enemy stats increase slightly each battle.
 }
 
 Debug tips:
@@ -42,6 +71,7 @@ SPAWN_NORMAL_HITBOX
 SPAWN_SWEETSPOT_HITBOX
 
 Notes in notes:
+DONT HAVE MOVES THAT REQUIRE BACKWARD INPUT! Cuz it turns you around in chaos mode ya know...
 Walls choose sprite by image_index (0: wall, 1: ground, 2: roof, 3: Platform, 4: Below stage) (32x32 image size also)
 HP bar faces choose sprite by image_index (0: normal, 1: hurt, 2: dead, 3: Happy) (28x28 image size also)
 "This Is Standard Naming"
@@ -50,6 +80,19 @@ Hurtbox = sprite collision
 Attack collision = purple sprites
 We are not using particles since we cant manipulate it good enough. Slow mo, scaling per dmg etc...
 Dont fuck with image angle on attacks...
+
+Checklist on new character:
+Sprites.
+Hitboxes.
+Character object.
+Portrait.
+Stats.
+Character option.
+Move list.
+Tutorial working on character.
+Target run.
+Achievements.
+
 
 
 Character stuff:
@@ -101,7 +144,6 @@ Cultist{
 Knife{
 	Knife invisible forever at rare times....
 	Make Grenade pop mark in an interesting way?
-	CPU cant lob grenade in cool ways.
 }
 
 Scythe{
@@ -109,41 +151,39 @@ Scythe{
 }
 
 NEW
-Rapier elegant with fabric covering the face Ellie{
+Rapier. Elegant with fabric covering the face Ellie{
+	Has lower max HP.
 	Dash has shorter duration and is not cancelable.
-	Good grip.
 
 	F: Quick swing
 	F<: Quick swing and step back
 	F>: Quick swing and step forward
 	Fv: Kick
-	F^: Pathetic aerial kick. Stops your momentum if enemy hit. Combo into 8L.
+	F^: Pathetic aerial kick that boosts you down and forward. Stops your momentum if enemy hit. Combo into 8L.
 	
-	L: Stap forward
-	L<: Stab slightly up
-	L>: Stab feet
+	L: Stab forward
+	L>: Stab slightly down
 	Lv: Stab upward
 	L^: Stab down
 	
-	S: Step forward in a goofy way and a bent rapier. Release to slam down rapier forward in a elegant way!
+	S: Spin forward and slash down with rapier. Hold to perform 2 downward slashes in a sequence.
 	vS: Elegant jump with a rapier twist that then swing upward.
-	^S: Spin horizontal 3 times in air.
+	^S: Spin slash that launches you foward and up. Cancelable.
 	
 	v>F: Quick dash stab that is final.
 	v>L: Slower dash stab.
 	v>S: Slowest dash stab that leaves a delayed stab afterwards.
 	
-	vvF: Return to neatral state. Move duration match dash duration.
-	vvL: Enter parry state. If you parry you dash through opponent and deal big dmg.
-	vvS: Spin rapier hitting upward 4 times. Can move during attack!
+	vvL: Stab upward. Tip deals insane dmg cuz it hits the gooch!
+	diagonal L: Spin rapier and step back.
 	
 	RB+X: Fly upward and spin horizontal 3 times in air.
-	RB+Y: Reveal hidden gun in rapier and shoot straight forward! Low cost. Low dmg.
+	RB+Y: Reveal hidden gun in rapier and shoot straight forward!
 	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
 }
 
 NEW
-Greatshield ANDERS blonde with bandit mask on and bathing pants{
+Greatshield. Blonde with bandit mask on and bathing pants ANDERS{
 	Has longer parry duration
 	
 	5F: Push shield forward.
@@ -166,4 +206,62 @@ Greatshield ANDERS blonde with bandit mask on and bathing pants{
 	RB+x: Strike a freezing pose that stun close opponents and trigger ice circles.
 	RB+y: X: Lift glasses and create ice in front of you on ground. Making it slippy obviously...
 	ULTRA: Grow in size Become unstoppable and increase stun on all moves.
+}
+
+NEW
+Black steel Greathammer. Armored skirt. Bright round helmet with red ponytail REBECCA{
+	
+	
+	vvF: REV your hammer making your hammer moves faster. Rev dissapears over time.
+	v>F: Boost forward. Spend REV. More REV = more boost.
+}
+
+NEW
+Zombie with dark brown pants and a cross pendant. Light green pale skin with white eyes. CHRISTIAN{
+	Has super low dash grip.
+	Pretty agile.
+	
+	5F: Punch
+	2F: Low kick.
+	8F: Punch forward.
+	
+	5L: Karate kick forward slightly boosting you forward.
+	2L: Karate kick upward
+	8L: Swing leg forward.
+	
+	5S: Slam both arms downward.
+	2S: Swing both arms backward then swoosh them upward.
+	8S: Kick and punch forward at same time with all your limbs.
+	
+	diagonal F: Rip your arm off and hit far. Costs HP.
+	
+	v>F: An unstoppable dash.
+	v>L: Spit 3 projectiles in arc. Cost HP.
+	v>S: Take a bite. Steals HP from opponent.
+}
+
+NEW
+Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them{
+
+	5S: Short headcleaver move using both shotels. Deal huge dmg.
+	
+	/ Half moons can be jumped on with A to perform a free extra jump!
+	v>F/L/S: Lob out a spinning half moon that falls slowly input decide distance thrown away.
+}
+
+NEW
+Faceless black n red mage with loooong staff JOEL{
+	Slow movement.
+	Bad dash.
+	
+	
+	5S: Charge then stab in any of the 8 directions! If you hit dimension ball while holding B you teleport to it.
+	
+	/ Hit dimension balls to bring them into action!
+	/ Dimension ball bounce on each other and deal more dmg the more speed they have.
+	v>F: Put out dimension ball slightly upward. Hold to push it further.
+	v>L: Put out dimension ball. Hold to push it further.
+	
+	RB + X: Put out dimension ball slightly upward that can perform you 5S move! Can also bounce on opponent once.
+	RB + Y: Spawn a dimension ball that can perform you 5S move! Can also bounce on opponent once.
 }
