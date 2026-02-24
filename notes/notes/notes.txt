@@ -1,10 +1,26 @@
 TODO{
-	Finish rapier.
+	Finish rapier!
+	Tutorial working on character.
+	Target run.
+	Achievements.
+	REWORK CLAWS!:
+	5S.... Once again... Need cahnge. Multihit spin move. Can move during attack!
+	5F: A slash instead of stab.
+	2F: A slash instead of stab...
+	5L: Same!
 
-	Add dash / parry / meter dash / meter pull to move lists?
+	Fix you ugly arenas! Update wall textures, BGs, floors etc...
+	Then new trailer :3
+	
+	Do a check so meter moves dont generate meter!
+
 	Add small sound when navigating menus. Also change character pick sound.
 	Start match should appear when all players are ready.
 	"Pick Character!" should display when all players are not ready.
+	
+	Add velocity change to hitboxes?
+	Add "Velocity change: +/=" to action infos?
+	
 	Make a scale stat so characters can change scale?
 	Make vertical parallax also?...
 }
@@ -85,10 +101,12 @@ Checklist on new character:
 Sprites.
 Hitboxes.
 Character object.
+Including CPU behaviour...
 Portrait.
 Stats.
-Character option.
+Acion infos.
 Move list.
+Character option.
 Tutorial working on character.
 Target run.
 Achievements.
@@ -150,40 +168,12 @@ Scythe{
 	
 }
 
-NEW
-Rapier. Elegant with fabric covering the face Ellie{
-	Has lower max HP.
-	Dash has shorter duration and is not cancelable.
-
-	F: Quick swing
-	F<: Quick swing and step back
-	F>: Quick swing and step forward
-	Fv: Kick
-	F^: Pathetic aerial kick that boosts you down and forward. Stops your momentum if enemy hit. Combo into 8L.
-	
-	L: Stab forward
-	L>: Stab slightly down
-	Lv: Stab upward
-	L^: Stab down
-	
-	S: Spin forward and slash down with rapier. Hold to perform 2 downward slashes in a sequence.
-	vS: Elegant jump with a rapier twist that then swing upward.
-	^S: Spin slash that launches you foward and up. Cancelable.
-	
-	v>F: Quick dash stab that is final.
-	v>L: Slower dash stab.
-	v>S: Slowest dash stab that leaves a delayed stab afterwards.
-	
-	vvL: Stab upward. Tip deals insane dmg cuz it hits the gooch!
-	diagonal L: Spin rapier and step back.
-	
-	RB+X: Fly upward and spin horizontal 3 times in air.
-	RB+Y: Reveal hidden gun in rapier and shoot straight forward!
+Rapier{
 	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
 }
 
 NEW
-Greatshield. Blonde with bandit mask on and bathing pants ANDERS{
+Greatshield. Blonde with glasses on and bathing pants. ICE hair going straight back! ANDERS{
 	Has longer parry duration
 	
 	5F: Push shield forward.
@@ -205,15 +195,19 @@ Greatshield. Blonde with bandit mask on and bathing pants ANDERS{
 	
 	RB+x: Strike a freezing pose that stun close opponents and trigger ice circles.
 	RB+y: X: Lift glasses and create ice in front of you on ground. Making it slippy obviously...
-	ULTRA: Grow in size Become unstoppable and increase stun on all moves.
+	ULTRA: A grab that pops the opponent into nothingness.
 }
 
 NEW
 Black steel Greathammer. Armored skirt. Bright round helmet with red ponytail REBECCA{
 	
+	5S: Slam hammer down. Can be canceled into itself. Costs a cancel obviously...
 	
 	vvF: REV your hammer making your hammer moves faster. Rev dissapears over time.
 	v>F: Boost forward. Spend REV. More REV = more boost.
+	
+	RB+X: Gain full REV!
+	RB+Y: 
 }
 
 NEW
@@ -247,6 +241,8 @@ Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them{
 	
 	/ Half moons can be jumped on with A to perform a free extra jump!
 	v>F/L/S: Lob out a spinning half moon that falls slowly input decide distance thrown away.
+	
+	RB+Y: Call down moonlight shrinking opponents.
 }
 
 NEW

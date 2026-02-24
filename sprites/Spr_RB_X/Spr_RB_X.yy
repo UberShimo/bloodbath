@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Inputs",
-    "path": "folders/Sprites/DOJO/Inputs.yy",
+    "name": "Meter",
+    "path": "folders/Sprites/DOJO/Inputs/Meter.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

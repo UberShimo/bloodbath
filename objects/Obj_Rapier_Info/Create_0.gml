@@ -1,4 +1,4 @@
 event_inherited();
 
-info = "Has slightly quicker dash.\nDash cant be canceled.\nHas slightly less health.";
-image = Spr_Scythe_Portrait;
+info = "Elegant and stylish.\nHas quicker dash but it can't be canceled.\nHas slightly lower health.";
+image = Spr_Rapier_Portrait;

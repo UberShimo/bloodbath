@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Inputs",
-    "path": "folders/Sprites/DOJO/Inputs.yy",
+    "name": "Buttons",
+    "path": "folders/Sprites/DOJO/Inputs/Buttons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

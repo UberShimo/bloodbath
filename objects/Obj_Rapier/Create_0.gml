@@ -48,197 +48,233 @@ original_weight = weight;
 // Rapier stuff
 HP = 100;
 max_HP = HP;
-send_clone_backward = false;
-clone_action_delay = 150; // 2.5 sec
+lunge_type = 0; // 0: quick, 1: normal, 2: magic
+ULTRA_target = noone;
+max_dissapear_duration = 120; // 2 sec
+dissapear_duration_timer = 0;
 
 action_trigger = function(){
 	shake_amount = 0;
 	
 	// Normal moves
 	if(action == "8F"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_8F_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_8F_hitbox);
 		attack.initiate(self);
 		
-		v_velocity -= 2;
+		h_velocity = 3*image_xscale;
+		v_velocity = 1;
 		
-		sprite_index = Spr_Katana_8F_recovery;
+		sprite_index = Spr_Rapier_8F_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "2F"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_2F_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_2F_hitbox);
 		attack.initiate(self);
 		
-		sprite_index = Spr_Katana_2F_recovery;
+		sprite_index = Spr_Rapier_2F_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5F"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_5F_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_5F_hitbox);
 		attack.initiate(self);
 		
-		sprite_index = Spr_Katana_5F_recovery;
+		if(forward_hold){
+			h_velocity = 6*image_xscale;
+		}
+		else if(backward_hold){
+			h_velocity = -6*image_xscale;
+		}
+		
+		sprite_index = Spr_Rapier_5F_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "8L"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_8L_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_8L_hitbox);
 		attack.initiate(self);
 		
-		h_velocity += 3*image_xscale;
-		
-		sprite_index = Spr_Katana_8L_recovery;
+		sprite_index = Spr_Rapier_8L_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "2L"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_2L_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_2L_hitbox);
 		attack.initiate(self);
 		
-		sprite_index = Spr_Katana_2L_recovery;
+		sprite_index = Spr_Rapier_2L_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5L"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_5L_hitbox);
+		blink_h(3*image_xscale);
+		
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_5L_hitbox);
 		attack.initiate(self);
 		
-		h_velocity += 3*image_xscale;
+		sprite_index = Spr_Rapier_5L_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "6L"){
+		blink_h(3*image_xscale);
 		
-		sprite_index = Spr_Katana_5L_recovery;
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_6L_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Rapier_6L_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "3L"){
+		blink_h(3*image_xscale);
+		
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_3L_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Rapier_3L_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "8S"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_8S_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_8S_hitbox);
 		attack.initiate(self);
 		
-		sprite_index = Spr_Katana_8S_recovery;
+		h_velocity = 5*image_xscale;
+		v_velocity = -6;
+		
+		sprite_index = Spr_Rapier_8S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "2S"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_2S_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_2S_hitbox);
 		attack.initiate(self);
 		
-		h_velocity = 1*image_xscale;
-		v_velocity = -jump_power;
+		h_velocity = 0;
 		
-		sprite_index = Spr_Katana_2S_recovery;
+		sprite_index = Spr_Rapier_2S_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5S"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_5S_hitbox);
+		if(multi_hit_action_index == 0){
+			if(b_hold){ // Charge double attack
+				sprite_index = Spr_Rapier_5S_startup_extend;
+				image_index = 0;
+				action_alarm = generate_sprite_frames(sprite_index);
+				multi_hit_action_index = 1;
+			}
+			else{
+				attack = instance_create_depth(x, y, 0, Obj_Rapier_5S_hitbox);
+				attack.initiate(self);
+		
+				h_velocity = 3*image_xscale;
+		
+				sprite_index = Spr_Rapier_5S_recovery;
+				image_index = 0;
+				recover_alarm = generate_sprite_frames(sprite_index);
+			}
+		}
+		else if(multi_hit_action_index > 0){
+			attack = instance_create_depth(x, y, 0, Obj_Rapier_5S_hitbox);
+			attack.initiate(self);
+		
+			h_velocity = 3*image_xscale;
+			
+			if(multi_hit_action_index == 1){
+				sprite_index = Spr_Rapier_5S_recovery_extend;
+				image_index = 0;
+				action_alarm = generate_sprite_frames(sprite_index);
+				multi_hit_action_index = 2;
+			}
+			else{
+				sprite_index = Spr_Rapier_5S_recovery;
+				image_index = 0;
+				recover_alarm = generate_sprite_frames(sprite_index);
+			}
+		}
+	}
+	// Special moves
+	else if(action == "Lunge"){
+		blink_h(80*image_xscale, true);
+		reset_physics();
+		
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_Lunge_hitbox);
+		if(lunge_type == 0){ // Quick
+			attack.is_final = true;
+		}
+		attack.initiate(self);
+		
+		if(lunge_type == 2){
+			afterimage = instance_create_depth(x, y, 0, Obj_Rapier_Lunge_Afterimage);
+			afterimage.initiate(self);
+		}
+		
+		sprite_index = Spr_Rapier_Lunge_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Gooch Impaler"){
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_Gooch_Impaler_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Rapier_Gooch_Impaler_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Spin Back"){
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_Spin_Back_hitbox);
 		attack.initiate(self);
 		
 		h_velocity = -8*image_xscale;
 		
-		sprite_index = Spr_Katana_5S_recovery;
+		sprite_index = Spr_Rapier_Spin_Back_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	// Special moves
-	else if(action == "Quickdraw"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Headsplitter"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Headsplitter_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 6*image_xscale;
-		
-		sprite_index = Spr_Katana_Headsplitter_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Sweep"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Sweep_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 9*image_xscale;
-		grip = original_grip;
-		
-		sprite_index = Spr_Katana_Sweep_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Send Clone"){
-		action = "Clone Sent";
-		sprite_index = stand_spr;
-		v_velocity = 0;
-		h_velocity = 0;
-		can_cancel = true;
-		
-		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-		clone.initiate(self);
-		// Give clone your stats
-		clone.player_number = player_number;
-		clone.outline_color = outline_color;
-		clone.grip = grip;
-		clone.dash_speed = dash_speed;
-		clone.dash_blink = dash_blink;
-		clone.dash_duration = dash_duration;
-		clone.weight = 0;
-		clone.character_width = character_width;
-		clone.character_height = character_height;
-		
-		if(send_clone_backward){
-			clone.dash_backward = true;
-		}
-		else{
-			clone.dash_forward = true;
-		}
-		
-		recover_alarm = dash_duration;
 	}
 	// Meter moves
-	else if(action == "Quickdraw Clone" || action == "Recall Clone"){
-		can_cancel = true;
+	else if(action == "Whirl"){
+		if(multi_hit_action_index < 3){
+			attack = instance_create_depth(x, y, 0, Obj_Rapier_Whirl_hitbox);
+			attack.initiate(self);
 		
-		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-		clone.initiate(self);
-		clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
-		clone.action_alarm = clone_action_delay;
-		clone.life_span = 0;
-		clone.weight = 0;
-		clone.shake_amount = 2;
-	
-		if(action == "Quickdraw Clone" ){
-			clone.action = "Quickdraw";
+			h_velocity = 1*image_xscale;
+			v_velocity = -6;
+		
+			if(multi_hit_action_index == 0){
+				sprite_index = Spr_Rapier_Whirl_recovery;
+				image_index = 0;
+				recover_alarm = generate_sprite_frames(sprite_index);
+			}
+			multi_hit_action_index += 1;
+			action_alarm = 12;
 		}
-		else{
-			clone.action = "Teleport Spawner";
-			clone.spawner = self;
-		}
-		sprite_index = Spr_Katana_Spawn_Clone_recovery;
+	}
+	else if(action == "Gun"){
+		bullet = instance_create_depth(x+80*image_xscale, y-16*image_yscale, 0, Obj_Rapier_Gunshot);
+		bullet.initiate(self);
+		bullet.h_velocity = 96*image_xscale;
+		
+		h_velocity += -1*image_xscale;
+		
+		sprite_index = Spr_Rapier_Gun_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Dissapear"){
+		action = "Gone";
+		sprite_index = Spr_EMPTY;
+		image_index = 0;
+		recover_alarm = max_dissapear_duration+32; // Recover alarm has to have something...
+	}
 	else if(action == "ULTRA"){
-		meter -= 50;
-		step_distance = 16;
-		steps = 0;
-		attack_spr_width = sprite_get_width(Spr_Katana_ULTRA_hitbox);
-		
-		repeat(16){
-			destination = step_distance*image_xscale;
-			if(!place_meeting(x+destination, y, Parent_Collision)){
-				x += destination;
-				steps += 1;
-			}
-		}
-		
-		attack = instance_create_depth(x, y, 0, Obj_Katana_ULTRA_hitbox);
-		// Attack is spawned behind you after dash/teleport
-		attack.image_xscale = -step_distance/attack_spr_width*steps;
+		attack = instance_create_depth(x, y, 0, Obj_Rapier_ULTRA_hitbox);
 		attack.initiate(self);
-		sprite_index = Spr_Katana_ULTRA_recovery;
+		ULTRA_target = noone;
+		
+		sprite_index = Spr_Rapier_ULTRA_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
