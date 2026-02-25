@@ -6,6 +6,6 @@ air_ok = false;
 air_only = true;
 info = "Bounce off enemy on hit.";
 movement_input = Spr_EMPTY;
-button_input = Spr_F;
+button_input = Spr_X;
 image = Spr_Rapier_8F_recovery;
 frame = 0;

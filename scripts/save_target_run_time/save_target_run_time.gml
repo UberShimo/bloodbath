@@ -109,6 +109,16 @@ function save_target_run_time(){
 			global.scythe_tr_achievement = true;
 		}
 	}
+	else if(room == Rapier_Target_Run){
+		if(Obj_Target_Run_Manager.timer_count < global.rapier_TR_record){
+			global.rapier_TR_record = Obj_Target_Run_Manager.timer_count;
+			ini_write_real("save", "rapier TR record", global.rapier_TR_record);
+		}
+		if(Obj_Target_Run_Manager.timer_count < ten_seconds){
+			update_steam_achievement("RAPIER_TR_10_SEC");
+			global.rapier_tr_achievement = true;
+		}
+	}
 	
 	ini_close();
 }

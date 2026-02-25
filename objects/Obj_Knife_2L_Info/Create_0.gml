@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "Lifts you up.";
 movement_input = Spr_D;
-button_input = Spr_L;
+button_input = Spr_Y;
 image = Spr_Knife_2L_recovery;
 frame = 0;

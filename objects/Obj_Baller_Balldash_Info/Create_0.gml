@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Dash to ball and pick it up.\nResets cancels.";
-movement_input = Spr_F;
+movement_input = Spr_X;
 button_input = Spr_DF;
 image = Spr_Baller_Balldash_recovery;
 frame = 0;

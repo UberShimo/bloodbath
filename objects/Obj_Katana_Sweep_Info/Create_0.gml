@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "Swoosh forward with a sweep.";
 movement_input = Spr_DF;
-button_input = Spr_S;
+button_input = Spr_B;
 image = Spr_Katana_Sweep_recovery;
 frame = 1;

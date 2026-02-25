@@ -9,6 +9,6 @@ air_ok = true;
 air_only = false;
 info = "Teleport to CIRCLE.";
 movement_input = Spr_DD;
-button_input = Spr_F;
+button_input = Spr_X;
 image = Spr_Cultist_Vortex_startup;
 frame = 0;

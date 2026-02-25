@@ -1,8 +1,5 @@
 TODO{
-	Finish rapier!
-	Tutorial working on character.
-	Target run.
-	Achievements.
+	
 	REWORK CLAWS!:
 	5S.... Once again... Need cahnge. Multihit spin move. Can move during attack!
 	5F: A slash instead of stab.

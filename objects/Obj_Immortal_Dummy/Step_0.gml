@@ -83,3 +83,8 @@ if(instance_exists(Obj_Dojo_Manager)){
 		}
 	}
 }
+
+// Rapier stab achievement shit
+if(rapier_1_sec_countdown > 0){
+	rapier_1_sec_countdown -= 1;
+}

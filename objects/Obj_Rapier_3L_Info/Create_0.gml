@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_L;
+button_input = Spr_Y;
 image = Spr_Rapier_3L_recovery;
 frame = 1;

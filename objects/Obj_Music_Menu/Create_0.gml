@@ -14,4 +14,3 @@ clicked = function(){
 	// Nothing
 }
 
-play_music(Mu_Intelligence, global.music_volume, 1000);

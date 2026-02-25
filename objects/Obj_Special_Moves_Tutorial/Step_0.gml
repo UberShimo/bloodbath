@@ -76,3 +76,10 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Scythe){
 		instance_destroy();
 	}
 }
+else if(Obj_Dojo_Manager.student.object_index == Obj_Rapier){
+	if(Obj_Dojo_Manager.student.action == "Lunge"){
+		instance_create_depth(x, y, depth-1, Eff_Nice);
+		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
+		instance_destroy();
+	}
+}

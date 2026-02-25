@@ -7,6 +7,6 @@ air_only = false;
 hold_ok = true;
 info = "Jump and hit downward.\nHold to boost higher.";
 movement_input = Spr_DF;
-button_input = Spr_L;
+button_input = Spr_Y;
 image = Spr_Batman_Spinhop_recovery;
 frame = 0;

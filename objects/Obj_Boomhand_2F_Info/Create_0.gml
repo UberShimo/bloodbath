@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "";
 movement_input = Spr_D;
-button_input = Spr_F;
+button_input = Spr_X;
 image = Spr_Boomhand_2F_recovery;
 frame = 0;

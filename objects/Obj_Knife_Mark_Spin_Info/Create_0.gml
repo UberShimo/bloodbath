@@ -6,6 +6,6 @@ air_ok = true;
 air_only = false;
 info = "Spin toward MARKED enemy if any.\nHold to go through platforms.";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_L;
+button_input = Spr_Y;
 image = Spr_Knife_Mark_Spin_recovery;
 frame = 1;

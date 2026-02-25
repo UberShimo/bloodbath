@@ -7,6 +7,6 @@ air_only = true;
 hold_ok = true;
 info = "Hold to fly.";
 movement_input = Spr_EMPTY;
-button_input = Spr_F;
+button_input = Spr_X;
 image = Spr_Baller_8F_recovery;
 frame = 0;

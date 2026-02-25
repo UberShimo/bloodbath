@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "2 hit anti air.";
 movement_input = Spr_D;
-button_input = Spr_L;
+button_input = Spr_Y;
 image = Spr_Batman_2L_recovery;
 frame = 1;

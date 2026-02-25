@@ -2,6 +2,8 @@ if(reset_combo && other.is_active){
 	hits = 0;
 	combo_damage = 0;
 	reset_combo = false;
+	rapier_stabs = 0;
+	rapier_1_sec_countdown = 0;
 }
 
 event_inherited();
@@ -13,6 +15,19 @@ if(legit_hit_check){
 
 	hits += 1;
 	combo_damage += other.damage;
+	
+	// Rapier stabs cheking
+	if(other.object_index == Obj_Rapier_5L_hitbox
+	|| other.object_index == Obj_Rapier_6L_hitbox
+	|| other.object_index == Obj_Rapier_3L_hitbox
+	|| other.object_index == Obj_Rapier_2L_hitbox
+	|| other.object_index == Obj_Rapier_8L_hitbox
+	|| other.object_index == Obj_Rapier_Lunge_hitbox){
+		if(rapier_stabs == 0){
+			rapier_1_sec_countdown = 60; // 1 sec
+		}
+		rapier_stabs += 1;
+	}
 	
 	// Update achievements
 	if(katana_has_used_clone && hits >= 3){
@@ -34,6 +49,10 @@ if(legit_hit_check){
 	else if(greatsword_has_hit_pillar && hits >= 3){
 		update_steam_achievement("GREATSWORD_LEARNED");
 		global.greatsword_learned = true;
+	}
+	else if(rapier_1_sec_countdown > 0 && rapier_stabs >= 4){
+		update_steam_achievement("RAPIER_LEARNED");
+		global.rapier_learned = true;
 	}
 }
 

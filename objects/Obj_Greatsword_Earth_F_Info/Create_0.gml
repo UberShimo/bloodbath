@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "During EARTH stance.";
 movement_input = Spr_EMPTY;
-button_input = Spr_F;
+button_input = Spr_X;
 image = Spr_Greatsword_Earth_F_recovery;
 frame = 0;

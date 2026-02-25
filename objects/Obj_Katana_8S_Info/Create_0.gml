@@ -6,6 +6,6 @@ air_ok = false;
 air_only = true;
 info = "";
 movement_input = Spr_EMPTY;
-button_input = Spr_S;
+button_input = Spr_B;
 image = Spr_Katana_8S_recovery;
 frame = 0;

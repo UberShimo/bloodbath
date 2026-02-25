@@ -7,6 +7,6 @@ air_only = false;
 hold_ok = true;
 info = "Hold to charge attack.";
 movement_input = Spr_EMPTY;
-button_input = Spr_S;
+button_input = Spr_B;
 image = Spr_Boomhand_5S_recovery;
 frame = 0;

@@ -6,6 +6,6 @@ air_ok = true;
 air_only = false;
 info = "Dropkick!";
 movement_input = Spr_DF;
-button_input = Spr_S;
+button_input = Spr_B;
 image = Spr_Batman_Dropkick_recovery;
 frame = 1;

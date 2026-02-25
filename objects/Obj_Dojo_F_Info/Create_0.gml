@@ -6,7 +6,7 @@ air_ok = true;
 air_only = false;
 info = "Is an infinite combo.";
 movement_input = Spr_EMPTY;
-button_input = Spr_F;
+button_input = Spr_X;
 image = Spr_Dojo_F_recovery;
 frame = 0;
 

@@ -28,3 +28,6 @@ if(global.cultist_learned){
 if(global.bow_learned){
 	draw_sprite(Spr_Bow_Faces, 0, x+24*9, y);
 }
+if(global.rapier_learned){
+	draw_sprite(Spr_Rapier_Faces, 0, x+24*10, y);
+}

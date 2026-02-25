@@ -6,6 +6,6 @@ air_ok = true;
 air_only = false;
 info = "";
 movement_input = Spr_EMPTY;
-button_input = Spr_S;
+button_input = Spr_B;
 image = Spr_Dojo_S_recovery;
 frame = 0;

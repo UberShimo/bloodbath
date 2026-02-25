@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Lift you up slightly.\nAlso drops ball.";
-movement_input = Spr_L;
+movement_input = Spr_Y;
 button_input = Spr_DF;
 image = Spr_Baller_Upswing_recovery;
 frame = 1;

@@ -6,6 +6,6 @@ air_ok = false;
 air_only = false;
 info = "Split their heads!";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_S;
+button_input = Spr_B;
 image = Spr_Katana_Headsplitter_recovery;
 frame = 1;

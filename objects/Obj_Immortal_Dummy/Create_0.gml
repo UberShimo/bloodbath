@@ -36,6 +36,8 @@ baller_has_recalled_ball = false;
 claws_has_ring_dived = false;
 knife_has_hit_grenade = false;
 greatsword_has_hit_pillar = false;
+rapier_stabs = 0;
+rapier_1_sec_countdown = 0;
 
 // Methods
 action_trigger = function(){

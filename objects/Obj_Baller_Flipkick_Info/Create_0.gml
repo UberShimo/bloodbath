@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Flip and kick.\nAlso drops ball.";
-movement_input = Spr_S;
+movement_input = Spr_B;
 button_input = Spr_DF;
 image = Spr_Baller_Flipkick_recovery;
 frame = 1;
