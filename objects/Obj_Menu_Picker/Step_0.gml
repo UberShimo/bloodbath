@@ -9,6 +9,7 @@ if(u_pressed){
 			y += move_distance;
 		}
 	}
+	audio_play_sound(Snd_Click_2, 0, false);
 }
 else if(d_pressed){
 	if(!position_meeting(x, y+move_distance, Parent_Collision)){
@@ -19,6 +20,7 @@ else if(d_pressed){
 			y -= move_distance;
 		}
 	}
+	audio_play_sound(Snd_Click_1, 0, false);
 }
 
 // Pick

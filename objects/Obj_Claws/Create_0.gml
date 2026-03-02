@@ -46,6 +46,7 @@ original_weight = weight;
 #endregion
 
 // Claws related
+is_spinning = false;
 ring1 = noone;
 ring2 = noone;
 is_hypermode = false;
@@ -75,6 +76,9 @@ action_trigger = function(){
 		}
 	}
 	else if(action == "2F"){
+		blink_h(2*image_xscale, false);
+		h_velocity += 1*image_xscale;
+		
 		attack = instance_create_depth(x, y, 0, Obj_Claws_2F_hitbox);
 		attack.initiate(self);
 		
@@ -83,6 +87,9 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5F"){
+		blink_h(4*image_xscale, false);
+		h_velocity += 3*image_xscale;
+		
 		attack = instance_create_depth(x, y, 0, Obj_Claws_5F_hitbox);
 		attack.initiate(self);
 		
@@ -100,7 +107,7 @@ action_trigger = function(){
 	}
 	else if(action == "2L"){
 		blink_h(12*image_xscale, false);
-		h_velocity = 4*image_xscale;
+		h_velocity = 5*image_xscale;
 		
 		attack = instance_create_depth(x, y, 0, Obj_Claws_2L_hitbox);
 		attack.initiate(self);
@@ -110,7 +117,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5L"){
-		blink_h(28*image_xscale, false);
+		blink_h(32*image_xscale, false);
 		
 		attack = instance_create_depth(x, y, 0, Obj_Claws_5L_hitbox);
 		attack.initiate(self);
@@ -139,26 +146,29 @@ action_trigger = function(){
 	}
 	else if(action == "5S"){
 		if(multi_hit_action_index == 0){
-			blink_h(12*image_xscale, false);
-			
 			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
 			attack.initiate(self);
+			
+			is_spinning = true;
 			
 			sprite_index = Spr_Claws_5S_recovery;
 			image_index = 0;
 			recover_alarm = generate_sprite_frames(sprite_index);
-			action_alarm = 9;
+			action_alarm = 12;
 			multi_hit_action_index += 1;
 		}
-		else if(multi_hit_action_index < 6){
-			blink_h(4*image_xscale, false);
-			h_velocity += 2*image_xscale;
-			
+		else if(multi_hit_action_index < 4){
 			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
 			attack.initiate(self);
 		
-			action_alarm = 9;
+			action_alarm = 12;
 			multi_hit_action_index += 1;
+		}
+		else{
+			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_finish_hitbox);
+			attack.initiate(self);
+			reset_physics();
+			is_spinning = false;
 		}
 	}
 	// Special moves

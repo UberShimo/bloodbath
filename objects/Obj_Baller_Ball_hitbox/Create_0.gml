@@ -18,5 +18,4 @@ swing_sound = Snd_NOTHING;
 hit_sound = Snd_Crack;
 
 // Ball stuff.
-// also Ball hits are actually considired melee
 ball = noone;

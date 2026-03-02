@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Rapier_Spin_Back_hitbox",
-    "path": "sprites/Spr_Rapier_Spin_Back_hitbox/Spr_Rapier_Spin_Back_hitbox.yy",
+    "name": "Spr_Rapier_Whirl_hitbox",
+    "path": "sprites/Spr_Rapier_Whirl_hitbox/Spr_Rapier_Whirl_hitbox.yy",
   },
   "spriteMaskId": null,
   "visible": true,

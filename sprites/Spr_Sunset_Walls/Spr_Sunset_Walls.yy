@@ -15,7 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e0bdb407-60e4-43bd-a837-b814505ada37",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"899564fa-617c-4827-b0e0-c0016acda7ba",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"11d143a5-f5f1-4817-9fff-5b3425e87580",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d762efdb-cf23-40ff-a12a-f1eae3ac511f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"677c4eeb-70e9-4e74-a2ba-d0baf6fd582d",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"32314cc2-4d7a-49d1-930b-12879ff030e6",},
   ],
@@ -24,6 +24,8 @@
   "height": 32,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5bf8215b-bbe3-45a7-9a64-5c1fb0370c94","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"57ba8538-ff0c-4b36-b76f-16d8c001907e","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e2b2caaf-cd7d-4bbb-803b-7156661bf54c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
@@ -60,7 +62,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e0bdb407-60e4-43bd-a837-b814505ada37","path":"sprites/Spr_Sunset_Walls/Spr_Sunset_Walls.yy",},},},"Disabled":false,"id":"7729aa75-e04a-48ed-af33-aa568a7e81ff","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"899564fa-617c-4827-b0e0-c0016acda7ba","path":"sprites/Spr_Sunset_Walls/Spr_Sunset_Walls.yy",},},},"Disabled":false,"id":"65de2772-6a62-4abb-8e1d-e391a19647e2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"11d143a5-f5f1-4817-9fff-5b3425e87580","path":"sprites/Spr_Sunset_Walls/Spr_Sunset_Walls.yy",},},},"Disabled":false,"id":"4bcaf20a-4ca9-4606-9e74-7f7fcae1e7e9","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d762efdb-cf23-40ff-a12a-f1eae3ac511f","path":"sprites/Spr_Sunset_Walls/Spr_Sunset_Walls.yy",},},},"Disabled":false,"id":"e86bfeb6-ec99-4688-944b-741dd77dc484","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"677c4eeb-70e9-4e74-a2ba-d0baf6fd582d","path":"sprites/Spr_Sunset_Walls/Spr_Sunset_Walls.yy",},},},"Disabled":false,"id":"8fae12b3-177c-45c1-95c3-03872b2deace","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"32314cc2-4d7a-49d1-930b-12879ff030e6","path":"sprites/Spr_Sunset_Walls/Spr_Sunset_Walls.yy",},},},"Disabled":false,"id":"115e4955-9e00-472d-826b-959dd62713ff","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},

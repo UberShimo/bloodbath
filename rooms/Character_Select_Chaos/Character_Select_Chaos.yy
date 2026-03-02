@@ -44,7 +44,6 @@
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
-        {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_68655913","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":-65.46855,"scaleX":1.6,"scaleY":1.5,"spriteId":{"name":"Spr_Press_Start_To_Start","path":"sprites/Spr_Press_Start_To_Start/Spr_Press_Start_To_Start.yy",},"x":918.00006,"y":115.0,},
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_627232B7","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":75.73513,"scaleX":2.0,"scaleY":2.0,"spriteId":{"name":"Spr_Hold_B","path":"sprites/Spr_Hold_B/Spr_Hold_B.yy",},"x":64.0,"y":128.0,},
         {"resourceType":"GMRParticleSystem","resourceVersion":"1.0","name":"particle_1CBEC3B0","colour":4294967295,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"particleSystemId":{"name":"Soft_BG_Particles","path":"particles/Soft_BG_Particles/Soft_BG_Particles.yy",},"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":288.0,},
       ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},

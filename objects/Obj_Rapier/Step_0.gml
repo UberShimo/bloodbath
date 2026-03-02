@@ -229,14 +229,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 
 // Follow enemy during ULTRA
 if(action == "Gone"){
-	x = ULTRA_target.x-64*image_xscale;
+	x = ULTRA_target.x;
 	y = ULTRA_target.y;
 	dissapear_duration_timer -= logic_time;
 	
 	if(!b_hold || dissapear_duration_timer <= 0){
 		action = "ULTRA";
+		is_invincible = true;
+		
+		blink_h(-56*image_xscale, true);
+		
 		sprite_index = Spr_Rapier_ULTRA_startup;
 		image_index = 0;
 		action_alarm = 4;
+		invincibility_alarm = 5;
 	}
 }

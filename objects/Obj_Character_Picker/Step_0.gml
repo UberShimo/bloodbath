@@ -9,12 +9,14 @@ if(r_pressed){
 	closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
 	x = closest_action_info.x;
 	y = closest_action_info.y;
+	audio_play_sound(Snd_Click_2, 0, false);
 }
 else if(l_pressed){
 	x -= move_distance_x*image_xscale;
 	closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
 	x = closest_action_info.x;
 	y = closest_action_info.y;
+	audio_play_sound(Snd_Click_1, 0, false);
 }
 // No going up or down when on a list option
 option = instance_nearest(x, y, Parent_Character_Select_Option);
@@ -24,12 +26,14 @@ if(!option.is_list_option){
 		closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
 		x = closest_action_info.x;
 		y = closest_action_info.y;
+		audio_play_sound(Snd_Click_2, 0, false);
 	}
 	else if(d_pressed){
 		y += move_distance_y*image_yscale;
 		closest_action_info = instance_nearest(x, y, Parent_Character_Select_Option);
 		x = closest_action_info.x;
 		y = closest_action_info.y;
+		audio_play_sound(Snd_Click_1, 0, false);
 	}
 }
 #endregion
@@ -39,6 +43,7 @@ if(gamepad_button_check_pressed(controller_index, gp_face1)
 && place_meeting(x, y, Parent_Character_Select_Option)){
 	option = instance_place(x, y, Parent_Character_Select_Option);
 	option.clicked(self);
+	audio_play_sound(Snd_Character_Select_Interact, 0, false);
 }
 
 // Unpick character
@@ -134,35 +139,7 @@ if(gamepad_button_check_pressed(controller_index, gp_face4)
 
 #region Start the action
 if(gamepad_button_check_pressed(controller_index, gp_start)){
-	all_players_ready = true; // Or is it true?
-	player_count = 0;
-	
-	for(i = 0; i < global.max_players; i++){
-		if(global.picked_characters[i] != noone){
-			player_count += 1;
-		}
-	}
-	
-	if(player_count < global.min_players){
-		all_players_ready = false;
-	}
-	
-	// Check if all player are not on same team
-	if(global.teams_mode){
-		found_different_team = false;
-		for(i = 0; i < global.max_players; i++){
-			if(global.picked_characters[i] != noone){
-				if(i+global.team_change_value[i] != index+team_change){ // loop through other index+teamchange and compare it to your own
-					found_different_team = true;
-				}
-			}
-		}
-		if(!found_different_team){
-			all_players_ready = false;
-		}
-	}
-	
-	if(all_players_ready){
+	if(check_if_all_players_ready()){
 		// Dojo
 		if(global.dojo_mode){
 			room_goto(Dojo_Place);

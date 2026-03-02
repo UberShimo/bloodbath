@@ -63,7 +63,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(diagonal_input_hold && grounded && instance_exists(ring1)){
+		if(diagonal_input_hold && instance_exists(ring1)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -114,7 +114,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(diagonal_input_hold && grounded && instance_exists(ring2)){
+		if(diagonal_input_hold && instance_exists(ring2)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -226,6 +226,28 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
+}
+
+// 5S movement
+if(is_spinning){
+	is_collidable = false;
+	weight = 0;
+	if(forward_hold){
+		x += 3*image_xscale*logic_time;
+	}
+	else if(backward_hold){
+		x -= 3*image_xscale*logic_time;
+	}
+	if(up_hold){
+		y -= 2*logic_time;
+	}
+	else if(down_hold){
+		y += 2*logic_time;
+	}
+}
+// Safety
+if(action != "5S"){
+	is_spinning = false;
 }
 
 // Rewind stashing

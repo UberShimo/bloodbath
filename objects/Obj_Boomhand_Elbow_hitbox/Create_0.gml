@@ -13,5 +13,6 @@ h_launch = 0;
 v_launch = 0;
 
 is_sticky = true;
+meter_gain_multiplier = 0;
 
 swing_sound = Snd_Crack;

@@ -15,6 +15,7 @@ v_launch = 0;
 is_sticky = true;
 is_parryable = false;
 is_final = true;
+meter_gain_multiplier = 0;
 
 swing_sound = Snd_NOTHING;
 hit_sound = Snd_Knack;

@@ -46,6 +46,7 @@ original_weight = weight;
 #endregion
 
 // Cultist stuff
+circle_dashing_backward = false;
 throw_star_up = false;
 throw_star_down = false;
 circle = noone;
@@ -134,7 +135,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Circle Dash Forward"){
+	else if(action == "Circle Dash"){
 		if(circle != noone){
 			spawn_effect(circle.x, circle.y, 1, Eff_Ring, 1, 0.1, c_red, 1, 1, 0.2);
 			instance_destroy(circle);
@@ -144,29 +145,22 @@ action_trigger = function(){
 		circle.image_blend = c_red;
 		
 		is_collidable = false;
-		h_velocity = 10*image_xscale;
 		air_grip = 0.5;
 		
-		sprite_index = Spr_Cultist_Circledash_Forward_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Circle Dash Backward"){
-		if(circle != noone){
-			spawn_effect(circle.x, circle.y, 1, Eff_Ring, 1, 0.1, c_red, 1, 1, 0.2);
-			instance_destroy(circle);
+		if(circle_dashing_backward){
+			h_velocity = -10*image_xscale;
+		
+			sprite_index = Spr_Cultist_Circledash_Backward_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index);
 		}
-		circle = instance_create_depth(x, y, depth-1, Obj_Cultist_Circle);
-		circle.initiate(self);
-		circle.image_blend = c_red;
-		
-		is_collidable = false;
-		h_velocity = -10*image_xscale;
-		air_grip = 0.5;
-		
-		sprite_index = Spr_Cultist_Circledash_Backward_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		else{
+			h_velocity = 10*image_xscale;
+			
+			sprite_index = Spr_Cultist_Circledash_Forward_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index);
+		}
 	}
 	else if(action == "Circle Teleport"){
 		if(instance_exists(circle)){

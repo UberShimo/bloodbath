@@ -57,22 +57,24 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	else if(x_pressed){
 		if(down_forward_pressed){
-			action = "Circle Dash Forward";
+			action = "Circle Dash";
 			
 			h_velocity = 0;
 			v_velocity = 0;
 			weight = 0;
+			circle_dashing_backward = false;
 			
 			sprite_index = Spr_Cultist_Circledash_Forward_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(down_backward_pressed){
-			action = "Circle Dash Backward";
+			action = "Circle Dash";
 			
 			h_velocity = 0;
 			v_velocity = 0;
 			weight = 0;
+			circle_dashing_backward = true;
 			
 			sprite_index = Spr_Cultist_Circledash_Backward_startup;
 			image_index = 0;

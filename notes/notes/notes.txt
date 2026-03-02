@@ -1,25 +1,12 @@
 TODO{
 	
-	REWORK CLAWS!:
-	5S.... Once again... Need cahnge. Multihit spin move. Can move during attack!
-	5F: A slash instead of stab.
-	2F: A slash instead of stab...
-	5L: Same!
-
-	Fix you ugly arenas! Update wall textures, BGs, floors etc...
 	Then new trailer :3
 	
-	Do a check so meter moves dont generate meter!
-
-	Add small sound when navigating menus. Also change character pick sound.
-	Start match should appear when all players are ready.
-	"Pick Character!" should display when all players are not ready.
-	
 	Add velocity change to hitboxes?
+	Add h_blink to hitboxes?
 	Add "Velocity change: +/=" to action infos?
 	
 	Make a scale stat so characters can change scale?
-	Make vertical parallax also?...
 }
 
 DOOM MODE (Roguelike){
@@ -30,19 +17,21 @@ DOOM MODE (Roguelike){
 	
 	UPGRADES:
 	Heal
+	Extra dmg
 	Grow in size
 	Meter regen
 	Extra cancel
 	Increase character speed
 	Dmg based on low HP
-	Lifesteal
 	"WIND" Extra jump + spawn stunning projectiles
+	Deal extra dmg when hitting opponent further away.
+	
 	After stage 3 you instead choose an ADJUSTMENT. "You feel a change deep within yo..."
 	
 	ADJUSTMENTS:
 	Ghost form (Dash is invincible but cant be canceled)
 	Slippy (Grip becomes slippy)
-	Juggernaut (Hit slower but harder)
+	Juggernaut (Wont flinch. But moves are slower.)
 	Vampire (Gain lifesteal but loose HP over time)
 	Meterless (Can no longer gain meter but you get 2 UPGRADES)
 	Afterimage (An afterimage follows you moves. But it can also hit you...)
@@ -166,32 +155,35 @@ Scythe{
 }
 
 Rapier{
-	ULTRA: Dissapear then slash through closest enemy. Can be done ANYTIME! Hold to delay slash. Time goes slow while holding.
+	
 }
 
 NEW
-Greatshield. Blonde with glasses on and bathing pants. ICE hair going straight back! ANDERS{
+Shield. ANDERS{
 	Has longer parry duration
 	
-	5F: Push shield forward.
-	2F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable.
-	8F: Spin shield below dealing 4x dmg.
+	5F: Snap finger to create a low dmg spark.
+	2F: Low kick.
+	8F. Try grabbing above and then throw them down.
 	5L: Swing shield forward giving you forward momentum.
-	2L: Unstoppable headbutt upward.
-	8L. Try grabbing above and then throw them down.
-	5S: Punch forward with shield edge
+	2L: Extend spikes on head upwards.
+	8F: Spin shield below dealing dmg 4x times. Hitting enemy bounce you up slightly.
+	5S: Gut punch with shield.
 	2S: Uppercut with shield.
-	8S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
+	8S: Swing shield below you.
 	
 	vvF: Put out a ice circle that gives back cancels when dashed through. (Blue)
 	vvL: Put out a ice circle that explode and stun opponents when dashed through. (Yellow)
 	vvS: Put out a ice circle that get pushed away as a projectile when dashed upon. (Pink)
 	
+	Diagonal F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable.
+	Diagonal S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
+	
 	v>L: Roll and kick up with both feet. Unparryable.
-	v>S: Slow grab that deal big dmg and shrink opponent.
+	v>S: Raise shield and parry in that direction. Then bash forward for great stun!
 	
 	RB+x: Strike a freezing pose that stun close opponents and trigger ice circles.
-	RB+y: X: Lift glasses and create ice in front of you on ground. Making it slippy obviously...
+	RB+y: Use hand to spawn ice on ground in front of you.
 	ULTRA: A grab that pops the opponent into nothingness.
 }
 

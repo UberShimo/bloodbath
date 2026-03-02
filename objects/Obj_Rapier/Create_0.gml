@@ -23,12 +23,12 @@ face = Spr_Rapier_Faces;
 
 #region Stats
 max_speed = 3.8;
-acceleration = 1;
+acceleration = 1.5;
 grip = global.standard_grip;
-air_control = 0.1;
+air_control = 0.2;
 dash_speed = 9;
 dash_blink = 0;
-dash_duration = 20;
+dash_duration = 16;
 dash_grip = 0.7;
 jump_power = 12;
 mini_jump_power = 0.5; // % based

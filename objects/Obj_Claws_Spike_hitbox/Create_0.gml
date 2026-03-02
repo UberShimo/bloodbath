@@ -11,5 +11,7 @@ shake_impact = global.medium_shake_impact;
 h_launch = 2;
 v_launch = -3;
 
+meter_gain_multiplier = 0;
+
 swing_sound = Snd_Quick_Swing;
 effect = Obj_Claws_Spike_hit_eff;

@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 1.7502,
+  "duration": 1.776325,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds/Sounds.yy",
@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "Snd_Character_Pick.mp3",
   "type": 0,
-  "volume": 0.35,
+  "volume": 0.1,
 }

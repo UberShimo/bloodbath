@@ -31,29 +31,26 @@ for(i = 0; i < character_amount; i++){
 	}
 }
 
-// Adjust camera width... In a very smooth way!
-target_size = biggest_x+extra_screen_size - (smallest_x-extra_screen_size);
-// Use vertical camera adjustment?
-if((biggest_y+extra_screen_size - (smallest_y-extra_screen_size)) * global.screen_ratio > target_size){
-	target_size = (biggest_y+extra_screen_size - (smallest_y-extra_screen_size)) * global.screen_ratio;
+// Adjust camera size... In a very smooth way!
+target_width = biggest_x+extra_screen_width - (smallest_x-extra_screen_width);
+
+if(target_width < min_screen_size){
+	target_width = min_screen_size;
 }
-if(target_size < min_screen_size){
-	target_size = min_screen_size;
+else if(target_width > max_screen_size){
+	target_width = max_screen_size;
 }
-else if(target_size > max_screen_size){
-	target_size = max_screen_size;
-}
-if(camera_width < target_size){
-	if(camera_width + camera_resize_speed > target_size){
-		camera_width = target_size;
+if(camera_width < target_width){
+	if(camera_width + camera_resize_speed > target_width){
+		camera_width = target_width;
 	}
 	else{
 		camera_width += camera_resize_speed;
 	}
 }
-if(camera_width > target_size){
-	if(camera_width - camera_resize_speed < target_size){
-		camera_width = target_size;
+if(camera_width > target_width){
+	if(camera_width - camera_resize_speed < target_width){
+		camera_width = target_width;
 	}
 	else{
 		camera_width -= camera_resize_speed;

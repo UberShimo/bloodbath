@@ -31,7 +31,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7b5aa00e-8984-419e-a596-06ba8cc80721","blendMode":0,"displayName":"Layer 8","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 0,
+  "origin": 1,
   "parent": {
     "name": "BGs",
     "path": "folders/Sprites/BGs.yy",
@@ -70,7 +70,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
+    "xorigin": 480,
     "yorigin": 0,
   },
   "swatchColours": null,

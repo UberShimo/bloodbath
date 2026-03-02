@@ -1,8 +1,7 @@
 
 min_screen_size = 580;
 max_screen_size = room_width;
-extra_screen_size = 128;
-screen_adjustment_speed = 8; // Not used atm
+extra_screen_width = 128;
 screen_extra_height = 64;
 camera_width = 64;
 camera_height = 0;

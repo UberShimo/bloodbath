@@ -13,7 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b0a29a09-1ead-4f01-b026-3711d254ba3f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4427b014-e52b-473a-bfcd-be8e2efd028d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"290483d0-6c7e-401c-9d27-0699a01cae3d",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -55,7 +56,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b0a29a09-1ead-4f01-b026-3711d254ba3f","path":"sprites/Spr_Claws_5L_startup/Spr_Claws_5L_startup.yy",},},},"Disabled":false,"id":"aed8b1c4-3f4c-4eb8-9007-d8ee3230990c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4427b014-e52b-473a-bfcd-be8e2efd028d","path":"sprites/Spr_Claws_5L_startup/Spr_Claws_5L_startup.yy",},},},"Disabled":false,"id":"d6b84ddb-73a6-47b1-8ced-63fd7179421f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"290483d0-6c7e-401c-9d27-0699a01cae3d","path":"sprites/Spr_Claws_5L_startup/Spr_Claws_5L_startup.yy",},},},"Disabled":false,"id":"6e4916d7-9161-488c-afcf-3d8bb7e831d0","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
