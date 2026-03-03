@@ -4,9 +4,9 @@ startup = generate_sprite_frames(Spr_Cultist_Circle_Pinch_startup); // 100% info
 recovery = generate_sprite_frames(Spr_Cultist_Circle_Pinch_recovery); // 100% informational not used in logic
 
 damage = 16;
-hit_stun = global.heavy_hitstun;
+hit_stun = global.launcher_hitstun;
 hit_push = 12;
-freeze_duration = global.medium_freeze_duration;
+freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
 h_launch = 5;
 v_launch = -3;

@@ -5,13 +5,13 @@ legit_hit_check = other.index != index && ds_list_find_index(hitbox_list, other)
 if(legit_hit_check){
 	reset_physics();
 	reset_buffers();
+	h_velocity = 0;
+	v_velocity = 0;
 	attack_parried = false;
 	
 	if(is_parrying && other.is_parryable){
 		attack_parried = true;
 		recover_alarm = 1;
-		h_velocity = 0;
-		v_velocity = 0;
 		other.freeze_duration += 20;
 		other.hit_effect_scale *= 2;
 		meter += other.meter_gain;
@@ -37,8 +37,9 @@ if(legit_hit_check){
 			}
 			
 			action = "Stunned";
-			action_alarm = 0;
 			recover_alarm = other.hit_stun;
+			action_alarm = 0;
+			jump_alarm = 0;
 			
 			// Grounded push
 			if(other.h_affecting){

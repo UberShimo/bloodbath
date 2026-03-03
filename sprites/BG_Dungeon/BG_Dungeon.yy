@@ -23,6 +23,7 @@
   "height": 700,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"544796cd-dfb6-49cf-bdd8-9972ebb90077","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":false,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3da8ca4f-9fb1-4d3a-9872-07c7defb8984","blendMode":0,"displayName":"Shadow / Lighting","isLocked":false,"opacity":50.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9b82f336-a3a5-439f-aaae-0d2e92978e2f","blendMode":0,"displayName":"Candles","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"60d37ae3-fc86-489a-aaa8-53be89cb4c3e","blendMode":0,"displayName":"candle light","isLocked":false,"opacity":100.0,"visible":true,},

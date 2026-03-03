@@ -2,6 +2,8 @@ TODO{
 	
 	Then new trailer :3
 	
+	Make RS in training mode toggle Dummy jumping.
+	
 	Add velocity change to hitboxes?
 	Add h_blink to hitboxes?
 	Add "Velocity change: +/=" to action infos?
