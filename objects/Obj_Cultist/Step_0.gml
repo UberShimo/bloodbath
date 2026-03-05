@@ -56,7 +56,22 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if(down_forward_pressed){
+		if(diagonal_input_hold){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Star Throw";
+			throw_star_down = true;
+			throw_star_up = false;
+			
+			sprite_index = Spr_Cultist_Starthrow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed){
 			action = "Circle Dash";
 			
 			h_velocity = 0;
@@ -110,15 +125,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(double_down_pressed
-		&& ((circle != noone && circle.implode_alarm == 0)
-		|| (meter_circle != noone && meter_circle.implode_alarm == 0))){
-			action = "Circle Implode";
-			sprite_index = Spr_Cultist_Circle_Pinch_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(down_forward_pressed || down_backward_pressed){
+		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -126,7 +133,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Star Throw";
+			throw_star_down = false;
+			throw_star_up = false;
+			
 			sprite_index = Spr_Cultist_Starthrow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(double_down_pressed
+		&& ((circle != noone && circle.implode_alarm == 0)
+		|| (meter_circle != noone && meter_circle.implode_alarm == 0))){
+			action = "Circle Implode";
+			sprite_index = Spr_Cultist_Circle_Pinch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -151,7 +169,22 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+		if(diagonal_input_hold){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Star Throw";
+			throw_star_down = false;
+			throw_star_up = true;
+			
+			sprite_index = Spr_Cultist_Starthrow_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -210,14 +243,4 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
-}
-
-// Throw it up or down?
-if(action == "Star Throw" && action_alarm > 0){
-	if(up_hold){
-		throw_star_up = true;
-	}
-	else if(!throw_star_up && down_hold){
-		throw_star_down = true;
-	}
 }

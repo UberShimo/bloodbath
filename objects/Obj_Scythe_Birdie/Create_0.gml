@@ -24,8 +24,17 @@ depth = -5;
 
 collide = function(){
 	if(place_meeting(x+h_velocity, y, Parent_Collision)){
-		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_white, 0.5, 0.5, 0.1);
-		instance_destroy();
+		if(place_meeting(x+8*image_xscale, y, Parent_Collision)){
+			spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_white, 0.5, 0.5, 0.1);
+			instance_destroy();
+		}
+		// Bounce
+		else{
+			h_velocity *= -0.1;
+			while(place_meeting(x, y, Parent_Collision)){
+				x += image_xscale;
+			}
+		}
 	}
 	// Bounce
 	else{

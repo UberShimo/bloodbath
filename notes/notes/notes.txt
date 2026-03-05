@@ -1,5 +1,4 @@
 TODO{
-	
 	Then new trailer :3
 	
 	Make RS in training mode toggle Dummy jumping.
@@ -62,8 +61,8 @@ cancel eff works when things goes in this order:
 
 When checking attack input it has to get checked in this order:
 1. Diagonal moves
-2. Air moves
-3. Quarter circle moves
+2. Air moves (Including special input moves)
+3. Other special input moves
 4. Normal ground moves
 
 Sweetspot hitbox needs to have:

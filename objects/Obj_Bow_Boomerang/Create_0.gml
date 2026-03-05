@@ -19,14 +19,18 @@ hit_sound = Snd_Knack;
 
 velocity_friction = 0.2;
 
+// Boomerang stuff
 is_returning = false;
 is_possessed = false;
 target = noone;
-return_alarm = 100;
-return_acceleration = 0.5;
+return_alarm = 60;
+return_acceleration = 0.4;
+lift_amount = 0.3;
 can_be_cought = false;
 can_be_cought_alarm = 30;
 max_duration = 600; // 10 sec
+effect_spawn_frequence = 4;
+effect_spawn_alarm = effect_spawn_frequence;
 
 collide = function(){
 	// Bounce
@@ -38,4 +42,5 @@ collide = function(){
 		v_velocity = v_velocity*-0.8;
 		y -= v_velocity;
 	}
+	is_returning = true;
 }

@@ -1611,6 +1611,7 @@
     {"id":{"name":"Obj_Claws_H_Dive_Info","path":"objects/Obj_Claws_H_Dive_Info/Obj_Claws_H_Dive_Info.yy",},},
     {"id":{"name":"Spr_Baller_Ascend","path":"sprites/Spr_Baller_Ascend/Spr_Baller_Ascend.yy",},},
     {"id":{"name":"Spr_Cultist_5S_hitbox","path":"sprites/Spr_Cultist_5S_hitbox/Spr_Cultist_5S_hitbox.yy",},},
+    {"id":{"name":"Obj_Bow_Boomerang_fade_eff","path":"objects/Obj_Bow_Boomerang_fade_eff/Obj_Bow_Boomerang_fade_eff.yy",},},
     {"id":{"name":"Spr_Air_OK","path":"sprites/Spr_Air_OK/Spr_Air_OK.yy",},},
     {"id":{"name":"Obj_Boomhand_Elbow_Info","path":"objects/Obj_Boomhand_Elbow_Info/Obj_Boomhand_Elbow_Info.yy",},},
     {"id":{"name":"Spr_DB","path":"sprites/Spr_DB/Spr_DB.yy",},},

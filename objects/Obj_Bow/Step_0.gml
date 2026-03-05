@@ -65,7 +65,26 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(x_pressed){
-		if((down_forward_pressed || down_backward_pressed) && has_boomerang){
+		if(diagonal_input_hold){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Aim Down";
+			hold_arrow = true;
+			aim_dir = -45;
+			
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			
+			sprite_index = Spr_Bow_Aim_Down_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -73,6 +92,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Boomerang";
+			throw_boomerang_up = false;
+			throw_boomerang_down = true;
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -98,26 +119,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(y_pressed){
-		if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Aim Down";
-			hold_arrow = true;
-			aim_dir = -45;
-			
-			h_velocity = 0;
-			v_velocity = 0;
-			weight = 0;
-			
-			sprite_index = Spr_Bow_Aim_Down_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(forward_down_pressed || backward_down_pressed){
+		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -133,6 +135,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			weight = 0;
 			
 			sprite_index = Spr_Bow_Aim_Up_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Boomerang";
+			throw_boomerang_up = false;
+			throw_boomerang_down = false;
+			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -158,7 +174,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -173,6 +189,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			velocity_friction = 0.1;
 			is_collidable = false;
 			sprite_index = Spr_Bow_Crosspin_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Boomerang";
+			throw_boomerang_up = true;
+			throw_boomerang_down = false;
+			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -210,32 +240,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	doing_action_by_canceling = false;
 }
 
-// Throw it up or down?
-if(action == "Boomerang"){
-	if(up_hold){
-		throw_boomerang_up = true;
-	}
-	else if(!throw_boomerang_up && down_hold){
-		throw_boomerang_down = true;
-	}
-}
-else{
-	throw_boomerang_up = false;
-	throw_boomerang_down = false;
-}
-
 // Aim down logic
-if(action == "Aim Down" && y_hold){
-	aim_dir += (45/aim_duration)*logic_time;
+if(action == "Aim Down"){
+	if(x_hold){
+		aim_dir += (45/aim_duration)*logic_time;
+	}
+	else if(hold_arrow){
+		hold_arrow = false;
+		action_alarm = 4;
+	}
 }
 // Aim up logic
-else if(action == "Aim Up" && y_hold){
-	aim_dir -= (45/aim_duration)*logic_time;
-}
-// Stop aim and shoot arrow
-if((action == "Aim Up" || action == "Aim Down") && hold_arrow && !y_hold){
-	hold_arrow = false;
-	action_alarm = 4;
+else if(action == "Aim Up"){
+	if(y_hold){
+		aim_dir -= (45/aim_duration)*logic_time;
+	}
+	else if(hold_arrow){
+		hold_arrow = false;
+		action_alarm = 4;
+	}
 }
 
 // Meter twist control
@@ -249,7 +272,7 @@ if(action == "Meter Twist"){
 }
 
 // Spearthrow logic. Force the startup frames to happen
-if(action == "Spear Throw" && image_index > 2){
+if(action == "Spear Throw" && image_index > 6){
 	// Aim Spear
 	if(y_hold){
 		aim_dir += (90/spear_aim_duration)*logic_time;

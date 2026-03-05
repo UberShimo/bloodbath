@@ -13,3 +13,5 @@ extra_image = Spr_Bow_Spear;
 extra_image_x = 64;
 extra_image_y = -16;
 meter_cost = 50;
+
+startup = 24;

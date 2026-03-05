@@ -57,7 +57,7 @@ aim_duration = generate_sprite_frames(Spr_Bow_Aim_Down_startup);
 metertwist_control = 0.3;
 hold_spear = false;
 spear_aim_height = 16;
-spear_aim_duration = generate_sprite_frames(Spr_Bow_Spearthrow_startup)-8; // -8 cuz you dont aim at the first frames
+spear_aim_duration = generate_sprite_frames(Spr_Bow_Spearthrow_startup)-24; // -24 cuz you dont aim at the first frames
 frog = noone;
 target = noone; // Used for seeking arrow
 
@@ -147,19 +147,34 @@ action_trigger = function(){
 		attack.initiate(self);
 		
 		if(throw_boomerang_up){
-			attack.h_velocity = 9*image_xscale;
-			attack.v_velocity = -4;
+			attack.h_velocity = 7*image_xscale;
+			attack.v_velocity = -2;
+			attack.return_alarm = 40;
+			if(b_hold){
+				attack.h_velocity *= 1.3
+				attack.v_velocity *= 1.3
+				attack.return_alarm = 50;
+			}
+			attack.lift_amount = 1.2;
 		}
 		else if(throw_boomerang_down){
-			attack.h_velocity = 9*image_xscale;
-			attack.v_velocity = 4;
+			attack.h_velocity = 8*image_xscale;
+			attack.v_velocity = 3;
+			attack.return_alarm = 50;
+			if(x_hold){
+				attack.h_velocity *= 1.3
+				attack.v_velocity *= 1.3
+				attack.return_alarm = 62;
+			}
+			attack.lift_amount = 0.8;
 		}
 		else{
-			attack.h_velocity = 10*image_xscale;
-		}
-		
-		if(x_hold){
-			attack.return_alarm = 300;
+			attack.h_velocity = 9*image_xscale;
+			attack.return_alarm = 60;
+			if(y_hold){
+				attack.h_velocity *= 1.3;
+				attack.return_alarm = 70;
+			}
 		}
 		
 		has_boomerang = false;

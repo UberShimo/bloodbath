@@ -6,8 +6,8 @@ air_ok = true;
 air_only = false;
 hold_ok = true;
 info = "Aim an arrow downward.\nRelease to fire it!\nBounces of BOOMERANG.";
-movement_input = Spr_DF;
-button_input = Spr_Y;
+movement_input = Spr_Diagonal_Input;
+button_input = Spr_X;
 image = Spr_Bow_Aim_Down_startup;
 frame = 0;
 

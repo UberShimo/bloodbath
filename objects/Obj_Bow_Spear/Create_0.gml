@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Bow_Spearthrow_startup);
 recovery = generate_sprite_frames(Spr_Bow_Spearthrow_recovery);
 
-damage = 25;
+damage = 45;
 hit_stun = global.light_hitstun;
 hit_push = 6;
 freeze_duration = global.light_freeze_duration;

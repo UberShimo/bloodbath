@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Pitch a ball that curves\nback to you!";
-movement_input = Spr_FD;
+movement_input = Spr_DD;
 button_input = Spr_X;
 image = Spr_Batman_Pitch_recovery;
 extra_image = Spr_Baseball;
