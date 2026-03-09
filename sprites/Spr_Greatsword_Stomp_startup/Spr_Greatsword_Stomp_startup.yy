@@ -14,7 +14,8 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1092cc1e-6281-48c1-a938-753555ddcfa6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6e75c6f5-1b92-41e4-82b0-8ab1eef3e37b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"25766cff-976e-42f5-9705-0c779ad744a6",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -45,7 +46,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,7 +58,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Greatsword_Stomp_startup/Spr_Greatsword_Stomp_startup.yy",},},},"Disabled":false,"id":"98cfef09-42df-4a20-9421-8b4878591083","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1092cc1e-6281-48c1-a938-753555ddcfa6","path":"sprites/Spr_Greatsword_Stomp_startup/Spr_Greatsword_Stomp_startup.yy",},},},"Disabled":false,"id":"f4ea0ba4-ab84-4993-89d3-afa5b7c9adc3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6e75c6f5-1b92-41e4-82b0-8ab1eef3e37b","path":"sprites/Spr_Greatsword_Stomp_startup/Spr_Greatsword_Stomp_startup.yy",},},},"Disabled":false,"id":"34a97f3f-f8b9-4eec-86f2-ebc12600fe5e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"25766cff-976e-42f5-9705-0c779ad744a6","path":"sprites/Spr_Greatsword_Stomp_startup/Spr_Greatsword_Stomp_startup.yy",},},},"Disabled":false,"id":"698035fd-8de3-4c5b-bdc6-463af31060a3","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

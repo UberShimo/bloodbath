@@ -13,5 +13,5 @@ extra_image = Spr_Knife_Potion;
 extra_image_x = 32;
 extra_image_y = -32;
 
-is_cancelable = true;
+is_final = true;
 meter_cost = 30;

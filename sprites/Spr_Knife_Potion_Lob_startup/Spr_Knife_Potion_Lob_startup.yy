@@ -14,9 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"90101d68-9130-4cce-a135-dd769c330eb2",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dfee9e52-091f-4dd1-bcd9-62859f143afb",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"10ebb868-4b2c-482e-a45d-4ec7d5e0c33a",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8109dcfc-39d8-4859-9eea-7e392a4bb15a",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"62b80990-d2fd-4ae6-b649-1cd4f3dbaa9d",},
   ],
   "gridX": 32,
@@ -49,7 +47,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 5.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -61,10 +59,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"90101d68-9130-4cce-a135-dd769c330eb2","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"b8b91393-e370-4d8d-8b08-c6aef421b46e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dfee9e52-091f-4dd1-bcd9-62859f143afb","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"1f649b60-f1e3-4dd3-8701-e7a685945436","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"10ebb868-4b2c-482e-a45d-4ec7d5e0c33a","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"2bbaaa14-8af5-4c0e-8ba3-a49e79f61903","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8109dcfc-39d8-4859-9eea-7e392a4bb15a","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"e825bfae-c04d-4cde-a531-b0d298afd01c","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"62b80990-d2fd-4ae6-b649-1cd4f3dbaa9d","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"0ebee094-1e9f-473d-ac4d-331b804747fe","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"10ebb868-4b2c-482e-a45d-4ec7d5e0c33a","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"2bbaaa14-8af5-4c0e-8ba3-a49e79f61903","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"62b80990-d2fd-4ae6-b649-1cd4f3dbaa9d","path":"sprites/Spr_Knife_Potion_Lob_startup/Spr_Knife_Potion_Lob_startup.yy",},},},"Disabled":false,"id":"0ebee094-1e9f-473d-ac4d-331b804747fe","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

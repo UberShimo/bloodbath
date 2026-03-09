@@ -46,7 +46,7 @@ if(draw_mini_ui && !place_meeting(x, y, Obj_Boomhand_Smoke)){ // Smoke is suppos
 }
 
 // Draw meter pull line
-if(action == "Meter Pull"){
+if(action == "Meter Pull" && instance_exists(meter_pull_target)){
 	draw_set_alpha(1-(action_alarm/meter_pull_charge_duration));
 	draw_line_width_color(x, y, meter_pull_target.x, meter_pull_target.y, 3, c_lime, c_lime);
 	draw_set_alpha(1);

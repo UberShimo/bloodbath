@@ -205,12 +205,14 @@ universal_action_trigger = function(){
 	// Activated by action_alarm.
 	// This function contains all universal moves.
 	if(action == "Meter Pull"){
-		attack = instance_create_depth(meter_pull_target.x, meter_pull_target.y, 0, Obj_Meter_Pull_hitbox);
-		attack.initiate(self);
+		if(instance_exists(meter_pull_target)){
+			attack = instance_create_depth(meter_pull_target.x, meter_pull_target.y, 0, Obj_Meter_Pull_hitbox);
+			attack.initiate(self);
 		
-		meter -= 75;
+			meter -= 75;
+		}
 		
-		sprite_index = Spr_Katana_8F_recovery;
+		sprite_index = meter_pull_spr;
 		image_index = 0;
 		recover_alarm = 1;
 	}

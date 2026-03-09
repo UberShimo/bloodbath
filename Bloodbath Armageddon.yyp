@@ -1044,6 +1044,7 @@
     {"id":{"name":"Spr_Scythe_Stunned","path":"sprites/Spr_Scythe_Stunned/Spr_Scythe_Stunned.yy",},},
     {"id":{"name":"Spr_Baller_8L_startup","path":"sprites/Spr_Baller_8L_startup/Spr_Baller_8L_startup.yy",},},
     {"id":{"name":"Spr_Katana_Dash_Backward","path":"sprites/Spr_Katana_Dash_Backward/Spr_Katana_Dash_Backward.yy",},},
+    {"id":{"name":"Spr_Special_Diagonal_B_Control","path":"sprites/Spr_Special_Diagonal_B_Control/Spr_Special_Diagonal_B_Control.yy",},},
     {"id":{"name":"Obj_Claws_Penguin_Info","path":"objects/Obj_Claws_Penguin_Info/Obj_Claws_Penguin_Info.yy",},},
     {"id":{"name":"Eff_Baller_Ball","path":"objects/Eff_Baller_Ball/Eff_Baller_Ball.yy",},},
     {"id":{"name":"Obj_Move_Scroller_Creator","path":"objects/Obj_Move_Scroller_Creator/Obj_Move_Scroller_Creator.yy",},},

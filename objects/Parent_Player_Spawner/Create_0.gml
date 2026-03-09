@@ -11,7 +11,7 @@ if(global.picked_characters[index] != noone){
 	
 	if(global.teams_mode){
 		// Convert color to shader format.
-		player.outline_color = [color_get_red(player_color), color_get_green(player_color), color_get_blue(player_color), 1];
+		player.outline_color = [color_get_red(player_color), color_get_green(player_color), color_get_blue(player_color), 0.75];
 	}
 	
 	player.alarm[1] = activation_timer; // "ACTIVATION" alarm

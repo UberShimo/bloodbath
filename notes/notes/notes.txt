@@ -2,6 +2,7 @@ TODO{
 	Then new trailer :3
 	
 	Make RS in training mode toggle Dummy jumping.
+	Combo tutorial should require more than one move.
 	
 	Add velocity change to hitboxes?
 	Add h_blink to hitboxes?
@@ -186,6 +187,7 @@ Shield. ANDERS{
 	RB+x: Strike a freezing pose that stun close opponents and trigger ice circles.
 	RB+y: Use hand to spawn ice on ground in front of you.
 	ULTRA: A grab that pops the opponent into nothingness.
+	Shield diagonal X can be performed in air and hitbox dmg scales with velocity.
 }
 
 NEW

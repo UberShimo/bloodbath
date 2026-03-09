@@ -6,7 +6,7 @@ text = "Fall through platform: DOWN + LB\n\n"+
 flag = instance_create_depth(Spawner_P8.x, Spawner_P8.y+64, 5, Obj_Flag);
 
 // Spawn walls
-x_spawn = Spawner_P7.x-96;
+x_spawn = Spawner_P7.x-64;
 y_spawn = Spawner_P7.y-64;
 
 // Left walls

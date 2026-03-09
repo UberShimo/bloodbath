@@ -3,6 +3,7 @@ min_screen_size = 580;
 max_screen_size = room_width;
 extra_screen_width = 128;
 screen_extra_height = 64;
+screen_extra_bottom = 48;
 camera_width = 64;
 camera_height = 0;
 camera_x = room_width/2-camera_width/2;

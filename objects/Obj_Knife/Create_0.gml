@@ -209,6 +209,8 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Lob Grenade"){
+		action = "Grenade Lobbed";
+		
 		attack = instance_create_depth(x+8*image_xscale, y, 0, Obj_Knife_Grenade);
 		attack.initiate(self);
 		
@@ -227,8 +229,6 @@ action_trigger = function(){
 		
 		attack.h_velocity = lengthdir_x(vel, dir)*image_xscale;
 		attack.v_velocity = lengthdir_y(vel, dir);
-		
-		can_cancel = true;
 		
 		sprite_index = Spr_Knife_Grenade_Lob_recovery;
 		image_index = 0;
@@ -259,8 +259,6 @@ action_trigger = function(){
 		
 		attack.h_velocity = lengthdir_x(vel, dir)*image_xscale;
 		attack.v_velocity = lengthdir_y(vel, dir);
-		
-		can_cancel = true;
 		
 		sprite_index = Spr_Knife_Potion_Lob_recovery;
 		image_index = 0;

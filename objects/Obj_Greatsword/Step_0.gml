@@ -20,11 +20,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		if(meter >= 100 && grounded && b_pressed){
 			action = "ULTRA";
 			meter -= 50;
+			ULTRA_hold_timer = ULTRA_max_hold;
+			is_holding_ULTRA = false;
 			
 			sprite_index = Spr_Greatsword_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index)-2*logic_time; // -1 makes it look corrent
+			action_alarm = generate_sprite_frames(sprite_index)-2*logic_time; // -2 makes it look correct
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(meter >= 20 && y_pressed && grounded){
@@ -253,10 +255,10 @@ else if(action == "Ocean"){
 	reset_buffers();
 }
 
-if(action == "ULTRA Hold" && !b_hold){
-	action = "ULTRA";
-	action_alarm = 1;
-}
-else{
-	ULTRA_is_held = false;
+if(action == "ULTRA Hold"){
+	ULTRA_hold_timer -= logic_time;
+	if(!b_hold || ULTRA_hold_timer <= 0){
+		action = "ULTRA";
+		action_alarm = 4;
+	}
 }

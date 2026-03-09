@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Spr_Flag",
-  "bbox_bottom": 63,
-  "bbox_left": 16,
-  "bbox_right": 48,
+  "bbox_bottom": 38,
+  "bbox_left": 31,
+  "bbox_right": 61,
   "bbox_top": 23,
   "bboxMode": 2,
   "collisionKind": 1,
@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "DOJO",
+    "path": "folders/Sprites/DOJO.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

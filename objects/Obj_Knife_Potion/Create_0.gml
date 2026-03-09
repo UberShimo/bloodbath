@@ -6,7 +6,7 @@ recovery = generate_sprite_frames(Spr_Knife_Potion_Lob_recovery); // 100% inform
 depth = -3;
 
 is_projectile = true;
-is_cancelable = true;
+is_final = true;
 weight = 0.3;
 collision_check_with_distance = false;
 

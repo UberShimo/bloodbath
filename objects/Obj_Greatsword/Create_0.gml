@@ -48,8 +48,10 @@ original_weight = weight;
 // Greatsword stuff
 pillar_distance = 0;
 earth_parry_success = false;
-ULTRA_is_held = false;
 ULTRA_max_hold = 60;
+ULTRA_hold_timer = 0;
+is_holding_ULTRA = false;
+
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -134,7 +136,7 @@ action_trigger = function(){
 		pillar.image_xscale = -image_xscale;
 		pillar.x += pillar_distance*image_xscale;
 		pillar.snap_to_ground(pillar.sprite_height/2);
-		pillar.action_alarm = 90;
+		pillar.action_alarm = 120; // 2 sec
 		
 		stomp = instance_create_depth(x, y, 0, Obj_Greatsword_Stomp_hitbox);
 		stomp.initiate(self);
@@ -255,15 +257,15 @@ action_trigger = function(){
 		reset_physics();
 	}
 	else if(action == "ULTRA"){
-		if(b_hold && !ULTRA_is_held){
+		if(b_hold && !is_holding_ULTRA){
 			action = "ULTRA Hold";
-			ULTRA_is_held = true;
 			sprite_index = Spr_Greatsword_ULTRA_hold;
-			action_alarm = ULTRA_max_hold;
+			is_holding_ULTRA = true;
+			
+			action_alarm = ULTRA_max_hold+4; // Action alarm needs to be something
 		}
 		else{
 			meter -= 50;
-			ULTRA_is_held = false;
 			
 			blink_h(12*image_xscale);
 			

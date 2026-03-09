@@ -60,12 +60,20 @@ camera_height = camera_width / global.screen_ratio;
 
 // Calculate camera destination
 x_destination = (smallest_x + biggest_x)/2 - camera_width/2;
-y_destination = (smallest_y + biggest_y)/2 - camera_height/2 - screen_extra_height;
+y_destination = (smallest_y + biggest_y)/2 - camera_height/2;
 if(x_destination < 0){
 	x_destination = 0;
 }
 else if(x_destination+camera_width > room_width){
 	x_destination = room_width-camera_width;
+}
+
+// Extra camera height
+y_destination -=  screen_extra_height;
+
+// Make sure players at bottom are visible
+while(y_destination < biggest_y-camera_height+screen_extra_bottom){
+	y_destination += 1;
 }
 
 // Move camera to destination
