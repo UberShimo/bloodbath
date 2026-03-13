@@ -15,7 +15,12 @@ if(is_controllable){
 	}
 	// Roar
 	else if(rng < 0.15){ // 15%
-		half_circle_forward_pressed = buffer_duration;
+		down_forward_pressed = buffer_duration;
+		x_pressed = buffer_duration;
+	}
+	// Shockwave punch
+	else if(rng < 0.55){ // 10%
+		diagonal_input_hold = true;
 		x_pressed = buffer_duration;
 	}
 	// Punch move
@@ -32,11 +37,6 @@ if(is_controllable){
 	else if(rng < 0.45){ // 10%
 		diagonal_input_hold = true;
 		b_pressed = buffer_duration;
-	}
-	// Shockwave punch
-	else if(rng < 0.55){ // 10%
-		diagonal_input_hold = true;
-		x_pressed = buffer_duration;
 	}
 	
 	// ULTRA

@@ -721,7 +721,7 @@ else{
 	meter_shake = 0;
 }
 
-// Die!!!
-if(HP <= 0 && death_alarm <= 0 && !is_respawning){
+// Die!!! By damage or below room
+if((HP <= 0 || y > room_height+256) && death_alarm <= 0 && !is_respawning){
 	die();
 }

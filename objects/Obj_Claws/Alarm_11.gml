@@ -45,12 +45,12 @@ if(is_controllable){
 	}
 	// Penguin!
 	else if(rng < 0.35){ // 15%
-		down_forward_pressed = buffer_duration;
+		diagonal_input_hold = buffer_duration;
 		b_pressed = buffer_duration;
 	}
 	// Backflip!
 	else if(rng < 0.5){ // 15%
-		double_down_pressed = buffer_duration;
+		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration;
 	}
 	

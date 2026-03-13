@@ -212,14 +212,19 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Meter Birdie"){
-		repeat(5){
-			bird = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
-			bird.initiate(self);
-			bird.h_velocity = random_range(-1, -3)*image_xscale;
-			bird.v_velocity = random_range(-1.5, 1.5);
-			bird.acceleration = 0.03*image_xscale;
-			bird.image_blend = c_lime;
-		}
+		bird1 = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
+		bird1.initiate(self);
+		bird1.h_velocity = -1*image_xscale;
+		bird1.v_velocity = 1;
+		bird1.acceleration = 0.03*image_xscale;
+		bird1.image_blend = c_lime;
+		
+		bird2 = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
+		bird2.initiate(self);
+		bird2.h_velocity = -2*image_xscale;
+		bird2.v_velocity = -1;
+		bird2.acceleration = 0.03*image_xscale;
+		bird2.image_blend = c_lime;
 		
 		sprite_index = Spr_Scythe_Meter_Birdie_recovery;
 		image_index = 0;

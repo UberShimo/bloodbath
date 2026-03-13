@@ -39,6 +39,19 @@ if(is_controllable){
 	else if(rng < 0.7 && !grounded){ // 15%
 		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration;
+		
+		// Hold?
+		if(irandom_range(0, 1)){ // 50%
+			b_hold = true;
+		}
+		// Left / right?
+		rng = irandom_range(1, 4);
+		if(rng == 1){ // 25%
+			forward_hold = true;
+		}
+		else if(rng == 2){ // 25%
+			backward_hold = true;
+		}
 	}
 	
 	// ULTRA

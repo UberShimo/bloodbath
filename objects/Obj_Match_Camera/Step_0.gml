@@ -72,8 +72,13 @@ else if(x_destination+camera_width > room_width){
 y_destination -=  screen_extra_height;
 
 // Make sure players at bottom are visible
-while(y_destination < biggest_y-camera_height+screen_extra_bottom){
+while(y_destination < biggest_y - camera_height + screen_extra_bottom){
 	y_destination += 1;
+}
+
+// Make sure camera dont go too far below
+while(y_destination + camera_height >  room_height + max_screen_below_room_amount){
+	y_destination -= 1;
 }
 
 // Move camera to destination

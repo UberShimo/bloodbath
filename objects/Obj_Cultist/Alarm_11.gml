@@ -36,15 +36,17 @@ if(is_controllable){
 	}
 	// Star
 	else if(rng < 0.5){ // 20%
-		y_pressed = buffer_duration
-		down_forward_pressed = buffer_duration;
+		diagonal_input_hold = true;
 		
 		rng = irandom_range(0, 2)
 		if(rng == 1){
-			down_hold = true;
+			x_pressed = buffer_duration
 		}
 		else if(rng == 2){
-			up_hold = true;
+			y_pressed = buffer_duration
+		}
+		else{
+			b_pressed = buffer_duration
 		}
 	}
 	// Blast

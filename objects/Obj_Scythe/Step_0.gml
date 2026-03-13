@@ -37,9 +37,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 65 && y_pressed){
+		else if(meter >= 20 && y_pressed){
 			action = "Meter Birdie";
-			meter -= 65;
+			meter -= 20;
 			
 			sprite_index = Spr_Scythe_Meter_Birdie_startup;
 			image_index = 0;
@@ -49,7 +49,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			meter_shake = meter_shake_amount;
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
-	}	
+	}
 	else if(x_pressed){
 		if((down_forward_pressed || down_backward_pressed) && extra_jumps_left > 0){
 			if(right_pressed){

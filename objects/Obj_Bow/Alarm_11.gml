@@ -10,45 +10,57 @@ if(is_controllable){
 			y_pressed = buffer_duration;
 			y_hold = true;
 			// How long to hold?
-			alarm[11] = random_range(1, generate_sprite_frames(Spr_Bow_Spearthrow_startup)+8);
+			alarm[11] = random_range(24, generate_sprite_frames(Spr_Bow_Spearthrow_startup));
 		}
 		else{
 			x_pressed = buffer_duration;
-			// How long to hold?
-			alarm[11] = random_range(40, 120);
 		}
 	}
 	// Boomerang
 	else if(rng < 0.2){ // 20%
 		down_forward_pressed = buffer_duration;
-		x_pressed = buffer_duration;
 		
-		if(irandom_range(0, 1)){ // 50%
+		if(irandom_range(0, 1)){ // 50% angled throw
 			if(y < closest_enemy.y){
-				down_hold = true;
+				x_pressed = buffer_duration;
 			}
 			else{
-				up_hold = true;
+				b_pressed = buffer_duration;
 			}
+		}
+		else{
+			y_pressed = buffer_duration;
+		}
+		// Hold?
+		if(irandom_range(0, 1)){ // 50%
+			x_hold = true;
+			y_hold = true;
+			b_hold = true;
+		}
+		else{
+			x_hold = false;
+			y_hold = false;
+			b_hold = false;
 		}
 	}
 	// Shoot arrow
 	else if(rng < 0.4){ // 20%
-		if(irandom_range(0, 1)){ // 50%
-			down_forward_pressed = buffer_duration;
+		diagonal_input_hold = true;
+		if(irandom_range(1, 3) < 3){ // 66%
+			x_pressed = buffer_duration;
+			x_hold = true;
 		}
 		else{
-			forward_down_pressed = buffer_duration;
+			y_pressed = buffer_duration;
+			y_hold = true;
 		}
-		y_pressed = buffer_duration;
-		y_hold = true;
 		
 		// How long to hold?
 		alarm[11] = random_range(1, generate_sprite_frames(Spr_Bow_Aim_Down_startup));
 	}
 	// Crosspin
 	else if(rng < 0.5){ // 10%
-		down_forward_pressed = buffer_duration;
+		diagonal_input_hold = true;
 		b_pressed = buffer_duration;
 	}
 	
