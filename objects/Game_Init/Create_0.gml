@@ -207,7 +207,8 @@ global.arena_list = [
 	Arena_Side_Holes,
 	Arena_Platform_Swarm,
 	Arena_Chandelier,
-	Arena_Rooms
+	Arena_Rooms,
+	Arena_Higher_Edges
 ]
 global.arena_images = [
 	Spr_Random_Layout,
@@ -224,7 +225,8 @@ global.arena_images = [
 	Spr_Side_Holes_Layout,
 	Spr_Platform_Swarm_Layout,
 	Spr_Chandelier_Layout,
-	Spr_Rooms_Layout
+	Spr_Rooms_Layout,
+	Spr_Higher_Edges_Layout
 ]
 global.arena_index = 1;
 #endregion

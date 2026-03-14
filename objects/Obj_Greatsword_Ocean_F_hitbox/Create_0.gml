@@ -14,4 +14,3 @@ v_launch = 0;
 effect = Obj_Greatsword_Ocean_F_hit_eff;
 
 swing_sound = Snd_Quick_Swing;
-hit_sound = Snd_Knack;

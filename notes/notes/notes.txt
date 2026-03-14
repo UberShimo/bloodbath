@@ -1,7 +1,10 @@
 TODO{
-	
+	Rapier Lunge into left wall teleport to the most right collision.
 	Make RS in training mode toggle Dummy jumping.
 	Combo tutorial should require more than one move.
+	
+	Give menu options a little extra flavour!
+	Fix controller remap.
 	
 	Add velocity change to hitboxes?
 	Add h_blink to hitboxes?
@@ -226,7 +229,7 @@ Zombie with dark brown pants and a cross pendant. Light green pale skin with whi
 }
 
 NEW
-Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them{
+Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them ROBIN{
 
 	5S: Short headcleaver move using both shotels. Deal huge dmg.
 	
@@ -237,10 +240,14 @@ Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them{
 }
 
 NEW
-Faceless black n red mage with loooong staff JOEL{
+Faceless snake with loooong staff JOEL{
 	Slow movement.
 	Bad dash.
 	
+	8F: Swing staff forward below you pushing you slightly backward and upward on hit.
+	
+	
+	8L: Swing staff backward below you pushing you slightly forward and upward on hit.
 	
 	5S: Charge then stab in any of the 8 directions! If you hit dimension ball while holding B you teleport to it.
 	
