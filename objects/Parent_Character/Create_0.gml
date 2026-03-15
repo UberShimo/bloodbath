@@ -529,7 +529,7 @@ cancel_the_cancel = function(){
 	instance_destroy(cancel_effect);
 }
 
-blink_h = function(x_val, cross_up){
+blink_h = function(x_val, cross_up = false){
 	// Prep
 	x_check = 1;
 	loops = abs(x_val);

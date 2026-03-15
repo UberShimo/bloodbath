@@ -9,7 +9,7 @@ if(is_controllable){
 		y_pressed = buffer_duration;
 	}
 	// Circle
-	else if(rng < 0.3){ // 30%
+	else if(rng < 0.15){ // 15%
 		if(circle != noone){
 			double_down_pressed = buffer_duration;
 				
@@ -35,7 +35,7 @@ if(is_controllable){
 		}
 	}
 	// Star
-	else if(rng < 0.5){ // 20%
+	else if(rng < 0.35){ // 20%
 		diagonal_input_hold = true;
 		
 		rng = irandom_range(0, 2)
@@ -50,12 +50,12 @@ if(is_controllable){
 		}
 	}
 	// Blast
-	else if(rng < 0.6){ // 10%
+	else if(rng < 0.45){ // 10%
 		down_forward_pressed = buffer_duration;
 		b_pressed = buffer_duration
 	}
 	// Meter teleport
-	else if(rng < 0.6 && meter_circle != noone){
+	else if(rng < 0.6 && meter_circle != noone){ // 15%
 		rb_hold = true;
 		x_pressed = buffer_duration;
 	}

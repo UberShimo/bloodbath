@@ -1715,6 +1715,7 @@
     {"id":{"name":"Spr_Dash_Control","path":"sprites/Spr_Dash_Control/Spr_Dash_Control.yy",},},
     {"id":{"name":"Spr_Combo_Control","path":"sprites/Spr_Combo_Control/Spr_Combo_Control.yy",},},
     {"id":{"name":"Spr_Greatsword_Launched","path":"sprites/Spr_Greatsword_Launched/Spr_Greatsword_Launched.yy",},},
+    {"id":{"name":"Spr_ICON","path":"sprites/Spr_ICON/Spr_ICON.yy",},},
     {"id":{"name":"Spr_Knife_2S_startup","path":"sprites/Spr_Knife_2S_startup/Spr_Knife_2S_startup.yy",},},
     {"id":{"name":"Scythe_Move_List","path":"rooms/Scythe_Move_List/Scythe_Move_List.yy",},},
     {"id":{"name":"Obj_Katana_5L_hitbox","path":"objects/Obj_Katana_5L_hitbox/Obj_Katana_5L_hitbox.yy",},},

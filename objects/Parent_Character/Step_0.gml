@@ -316,7 +316,7 @@ if(!check_collision(val, 0) || goes_through_collision){
 	x += val;
 }
 // Collide logic
-else{
+else if(val != 0){
 	x_check = 1;
 	if(val < 0){
 		x_check = -1;

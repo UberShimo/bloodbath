@@ -1,9 +1,7 @@
 TODO{
-	Rapier Lunge into left wall teleport to the most right collision.
 	Make RS in training mode toggle Dummy jumping.
 	Combo tutorial should require more than one move.
 	
-	Give menu options a little extra flavour!
 	Fix controller remap.
 	
 	Add velocity change to hitboxes?

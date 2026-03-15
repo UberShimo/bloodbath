@@ -25,4 +25,11 @@ collide = function(){
 		v_velocity *= -0.8;
 		y += v_velocity;
 	}
+	// Security thing to get circle out of walls
+	if(place_meeting(x, y, Parent_Collision)){
+		collision = instance_nearest(x, y, Parent_Collision);
+		dir = point_direction(collision.x, collision.y, x, y);
+		x += lengthdir_x(2, dir);
+		y += lengthdir_y(2, dir);
+	}
 }
