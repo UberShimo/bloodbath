@@ -3,7 +3,7 @@ event_inherited();
 text = "Hold RB to channel meter!\n"+
 "While channeling meter:\n"+
 "LB: METER PULL\n"+
-"(Cost 75% meter)\n"+
+"(Cost 50% meter)\n"+
 "LB + direction: METER DASH\n"+
 "(Cost 50% meter)\n"+
 "\n"+

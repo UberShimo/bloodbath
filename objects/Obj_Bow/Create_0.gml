@@ -250,7 +250,7 @@ action_trigger = function(){
 		meter -= 50;
 		attack = instance_create_depth(x, y-aim_height, 0, Obj_Bow_ULTRA_Arrow);
 		attack.initiate(self);
-		attack.h_velocity = 3*image_xscale;
+		attack.h_velocity = 8*image_xscale;
 		attack.target = closest_enemy;
 		
 		sprite_index = Spr_Bow_ULTRA_recovery;

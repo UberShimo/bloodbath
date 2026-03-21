@@ -209,7 +209,7 @@ universal_action_trigger = function(){
 			attack = instance_create_depth(meter_pull_target.x, meter_pull_target.y, 0, Obj_Meter_Pull_hitbox);
 			attack.initiate(self);
 		
-			meter -= 75;
+			meter -= 50;
 		}
 		
 		sprite_index = meter_pull_spr;

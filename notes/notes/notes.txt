@@ -1,4 +1,19 @@
 TODO{
+	Make Bow ULTRA arrow look cooler.
+	Reduce hitstun on Bow arrows.
+	Does it say in Bow arrow shoot that it can cancel into itself?
+	Make Bow boomerang inactive when it hits someone. Shooting arrow on it  will make it active again! Also arrow dont bounce on it no more... Hitting spear on boomerang should destroy spear but boost Boomerang damage ALOT!
+	Give possessed boomerang cooler effect and MORE DAMAGE!!!
+	
+	Make Cultist v>S look cooler.
+	Make Cultist star gravitate towards circles.
+	Make Cultist star explode in center of circle instead of touching.
+	Make Cultist Circle implosion pull stars like "Circle pull".
+	
+	Make Knife markspin consume mark on hit. Also you should not be able to use Mark spin without a mark.
+	Knife MARK should ATTRACT grenades!
+	Knife grenades should launch eachother more. So it wont infinite combo.
+	
 	Make RS in training mode toggle Dummy jumping.
 	Combo tutorial should require more than one move.
 	
@@ -119,8 +134,7 @@ Katana{
 }
 
 Batman{
-	Baller ball recaller gets stuck...
-	Meter ball changes direction when bouncign on ground at times.
+	Meter ball changes direction when bouncing on ground at times.
 }
 
 Claws{
@@ -149,7 +163,6 @@ Cultist{
 
 Knife{
 	Knife invisible forever at rare times....
-	Make Grenade pop mark in an interesting way?
 }
 
 Scythe{

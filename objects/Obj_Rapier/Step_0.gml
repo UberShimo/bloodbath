@@ -35,7 +35,15 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Gun";
 			meter -= 25;
 			
+			fire_gun_crouching = false;
+			if(grounded && down_hold){
+				fire_gun_crouching = true;
+			}
+			
 			sprite_index = Spr_Rapier_Gun_startup;
+			if(fire_gun_crouching){
+				sprite_index = Spr_Rapier_Gun_Crouching_startup;
+			}
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}

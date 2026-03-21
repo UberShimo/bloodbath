@@ -1,3 +1,5 @@
+meter = 0; // Yeah this guy aint getting no meter...
+
 event_inherited();
 
 // Reset state

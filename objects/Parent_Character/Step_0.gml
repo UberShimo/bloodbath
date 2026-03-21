@@ -573,7 +573,7 @@ if(rb_hold && lb_pressed > 0
 }
 // Meter pull
 else if(rb_hold && lb_pressed > 0){
-	if(meter >= 75){
+	if(meter >= 50){
 		action = "Meter Pull";
 		find_closest_enemy();
 		meter_pull_target = closest_enemy;

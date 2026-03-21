@@ -49,6 +49,7 @@ original_weight = weight;
 HP = 100;
 max_HP = HP;
 lunge_type = 0; // 0: quick, 1: normal, 2: magic
+fire_gun_crouching = false;
 ULTRA_target = noone;
 max_dissapear_duration = 120; // 2 sec
 dissapear_duration_timer = 0;
@@ -253,13 +254,20 @@ action_trigger = function(){
 		}
 	}
 	else if(action == "Gun"){
-		bullet = instance_create_depth(x+80*image_xscale, y-16*image_yscale, 0, Obj_Rapier_Gunshot);
+		y_spawn = y-16*image_yscale;
+		if(fire_gun_crouching){
+			y_spawn = y-5*image_yscale;
+		}
+		bullet = instance_create_depth(x+80*image_xscale, y_spawn, 0, Obj_Rapier_Gunshot);
 		bullet.initiate(self);
 		bullet.h_velocity = 96*image_xscale;
 		
 		h_velocity += -1*image_xscale;
 		
 		sprite_index = Spr_Rapier_Gun_recovery;
+		if(fire_gun_crouching){
+			sprite_index = Spr_Rapier_Gun_Crouching_recovery;
+		}
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
