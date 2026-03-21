@@ -1,24 +1,21 @@
 if(ds_list_find_index(hitbox_list, other) == -1){
-	// Push away boomerang
-	other.h_velocity = h_velocity/3;
-	other.v_velocity = v_velocity/3;
-	other.is_returning = false;
+	// Create new boomerang so it can hit poopnent again.
+	new_boomerang = instance_create_depth(other.x, other.y, depth, Obj_Bow_Boomerang);
+	new_boomerang.swing_sound = Snd_Click_2;
+	new_boomerang.initiate(other);
+	new_boomerang.index = other.index;
+	new_boomerang.spawner = other.spawner;
+	new_boomerang.h_velocity = h_velocity/3;
+	new_boomerang.v_velocity = v_velocity/3;
+	new_boomerang.is_returning = false;
+	new_boomerang.return_alarm = 30;
+	new_boomerang.lift_amount = 0.8;
 	
 	// Make boomerang possessed
-	other.is_possessed = true;
-	other.target = spawner.closest_enemy;
-	other.sprite_index = Spr_Bow_Boomerang_Possessed;
-	other.damage = 10;
-
-	// Bounce toward closest enemy
-	closest_enemy = spawner.closest_enemy;
-
-	// Aim for the head
-	dir = point_direction(x, y, closest_enemy.x, closest_enemy.y-closest_enemy.character_height/2);
-
-	h_velocity = lengthdir_x(spd, dir);
-	v_velocity = lengthdir_y(spd, dir);
-	image_angle = dir;
+	new_boomerang.is_possessed = true;
+	new_boomerang.target = spawner.closest_enemy;
+	new_boomerang.sprite_index = Spr_Bow_Boomerang_Possessed;
+	new_boomerang.damage = 45;
 
 	// Freeze time
 	object_time = freeze_amount;
@@ -30,4 +27,6 @@ if(ds_list_find_index(hitbox_list, other) == -1){
 	spawn_effect(x, y, 8, Eff_Splash, 1, 0.05, c_white, scale, scale);
 	
 	ds_list_add(hitbox_list, other);
+	instance_destroy(other);
+	instance_destroy();
 }

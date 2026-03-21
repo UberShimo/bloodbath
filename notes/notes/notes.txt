@@ -1,9 +1,4 @@
 TODO{
-	Make Bow ULTRA arrow look cooler.
-	Reduce hitstun on Bow arrows.
-	Does it say in Bow arrow shoot that it can cancel into itself?
-	Make Bow boomerang inactive when it hits someone. Shooting arrow on it  will make it active again! Also arrow dont bounce on it no more... Hitting spear on boomerang should destroy spear but boost Boomerang damage ALOT!
-	Give possessed boomerang cooler effect and MORE DAMAGE!!!
 	
 	Make Cultist v>S look cooler.
 	Make Cultist star gravitate towards circles.

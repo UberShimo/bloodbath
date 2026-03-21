@@ -44,3 +44,10 @@ collide = function(){
 	}
 	is_returning = true;
 }
+
+extra_hit_logic = function(target){
+	is_returning = true;
+	is_possessed = false;
+	is_active = false;
+	image_blend = c_gray;
+}
