@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 hold_ok = true;
-info = "Lob a GRENADE.\nHold LEFT or RIGHT to change\nGRENADE trajectory.\nHold to lob further.";
+info = "Lob a GRENADE.\nHold LEFT or RIGHT to change\nGRENADE trajectory.\nHold to lob further.\nMoves towards MARK.";
 movement_input = Spr_DF;
 button_input = Spr_B;
 image = Spr_Knife_Grenade_Lob_recovery;

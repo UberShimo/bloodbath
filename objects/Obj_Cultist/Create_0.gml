@@ -148,14 +148,14 @@ action_trigger = function(){
 		air_grip = 0.5;
 		
 		if(circle_dashing_backward){
-			h_velocity = -10*image_xscale;
+			h_velocity = -9*image_xscale;
 		
 			sprite_index = Spr_Cultist_Circledash_Backward_recovery;
 			image_index = 0;
 			recover_alarm = generate_sprite_frames(sprite_index);
 		}
 		else{
-			h_velocity = 10*image_xscale;
+			h_velocity = 9*image_xscale;
 			
 			sprite_index = Spr_Cultist_Circledash_Forward_recovery;
 			image_index = 0;

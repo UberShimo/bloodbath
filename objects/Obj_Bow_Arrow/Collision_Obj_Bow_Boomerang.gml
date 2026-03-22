@@ -9,7 +9,7 @@ if(ds_list_find_index(hitbox_list, other) == -1){
 	new_boomerang.v_velocity = v_velocity/3;
 	new_boomerang.is_returning = false;
 	new_boomerang.return_alarm = 30;
-	new_boomerang.lift_amount = 0.8;
+	new_boomerang.lift_amount = 1;
 	
 	scale = other.hit_effect_scale;
 	spawn_effect(x, y, 8, Eff_Splash, 1, 0.05, c_white, scale, scale);

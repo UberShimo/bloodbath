@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Spin toward MARKED enemy if any.\nHold to go through platforms.";
+info = "Spin toward MARKED enemy.\nMARK is removed.\nHold to go through platforms.";
 movement_input = Spr_Diagonal_Input;
 button_input = Spr_Y;
 image = Spr_Knife_Mark_Spin_recovery;

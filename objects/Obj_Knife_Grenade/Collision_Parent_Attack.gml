@@ -53,6 +53,7 @@ if(!other.is_projectile && other.hit_stun > 0 && is_initiated_by_character
 	
 	// Cheating physics for grenades
 	if(other.object_index == Obj_Knife_Grenade_hitbox){
+		h_velocity *= 2;
 		v_velocity -= 2;
 	}
 }

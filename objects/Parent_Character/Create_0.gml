@@ -57,6 +57,7 @@ rb_hold = false;
 lb_pressed = 0;
 lb_hold = false;
 start_hold = false;
+select_hold = false;
 rs_up = false;
 rs_down = false;
 rs_right = false;
@@ -439,6 +440,8 @@ read_input = function(){
 	
 	// Start
 	start_hold = gamepad_button_check(controller_index, gp_start);
+	// Select
+	select_hold = gamepad_button_check(controller_index, gp_select);
 	
 	// Right stick input
 	rs_up = gamepad_axis_value(controller_index, gp_axisrv) < -0.5;
@@ -461,7 +464,7 @@ reset_physics = function(){
 }
 
 action_button_pressed = function(){
-	if(x_pressed || y_pressed || b_pressed || lb_pressed){
+	if(!select_hold && (x_pressed || y_pressed || b_pressed || lb_pressed)){ // Select + Input is for doing other stuff...
 		return true;
 	}
 	return false;

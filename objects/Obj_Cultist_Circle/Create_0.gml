@@ -33,3 +33,24 @@ collide = function(){
 		y += lengthdir_y(2, dir);
 	}
 }
+
+implode = function(){
+	sprite_index = Spr_Cultist_Circle_Implosion_startup;
+	image_index = 0;
+	implode_alarm = 1;
+	// Remove circle from the player
+	if(is_meter_circle){
+		spawner.meter_circle = noone;
+	}
+	else{
+		spawner.circle = noone;
+	}
+
+	audio_play_sound(Snd_Light_Swing, 0, false);
+
+	// Achievement update
+	if(instance_exists(Obj_Immortal_Dummy)){
+		update_steam_achievement("CULTIST_LEARNED");
+		global.cultist_learned = true;
+	}
+}

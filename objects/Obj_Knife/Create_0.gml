@@ -191,15 +191,15 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Mark Spin"){
-		if(instance_exists(marked_target)){
-			vel = 10;
-			dir = point_direction(x, y, marked_target.x, marked_target.y);
-			h_velocity = lengthdir_x(vel, dir);
-			v_velocity = lengthdir_y(vel, dir);
-			grip = 0;
-			velocity_friction = 0.4;
-		}
+	else if(action == "Mark Spin" && instance_exists(marked_target)){
+		vel = 10;
+		dir = point_direction(x, y, marked_target.x, marked_target.y);
+		h_velocity = lengthdir_x(vel, dir);
+		v_velocity = lengthdir_y(vel, dir);
+		grip = 0;
+		velocity_friction = 0.4;
+		
+		marked_target = noone;
 		
 		attack = instance_create_depth(x, y, 0, Obj_Knife_Mark_Spin_hitbox);
 		attack.initiate(self);

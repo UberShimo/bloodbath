@@ -15,8 +15,10 @@ priority_struck = false;
 priority_struck_alarm = 0;
 collision_protection = 10; // 10 frames of cant hit opponent
 
+// Grenade stuff
 hitbox_list = ds_list_create();
 detonation_timer = 150;
+mark_attract_force = 1;
 
 collide = function(){// Bounce
 	if(place_meeting(x+h_velocity, y, Parent_Collision)){

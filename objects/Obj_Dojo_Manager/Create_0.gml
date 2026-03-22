@@ -6,6 +6,7 @@ dummy = noone;
 time_switch_pressed = false;
 reset_positions_pressed = false;
 change_debug_pressed = false;
+toggle_jump_pressed = false;
 
 play_music(Mu_Tutorial, global.music_volume);
 

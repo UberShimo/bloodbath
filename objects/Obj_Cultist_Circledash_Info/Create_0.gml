@@ -7,7 +7,7 @@ recovery = generate_sprite_frames(Spr_Cultist_Circledash_Forward_recovery);
 
 air_ok = true;
 air_only = false;
-info = "Dash and leave a CIRCLE behind you.\nIf circle touches a STAR\nit implodes. CIRCLE can be\npushed around by attacks.";
+info = "Dash and leave a CIRCLE behind you.\nCIRCLE can be pushed around\nby attacks.";
 movement_input = Spr_DF;
 button_input = Spr_X;
 image = Spr_Cultist_Circledash_Forward_recovery;

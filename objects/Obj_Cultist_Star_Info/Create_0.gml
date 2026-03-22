@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Launch a STAR.\nInput determines trajectory of STAR.";
+info = "Launch a STAR.\nInput determines trajectory of STAR.\nSTAR gravitate toward CIRCLES.";
 movement_input = Spr_Multi_Button;
 button_input = Spr_Diagonal_Input;
 image = Spr_Cultist_Starthrow_recovery;

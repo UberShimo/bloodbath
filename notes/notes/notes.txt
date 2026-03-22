@@ -1,15 +1,10 @@
 TODO{
 	
-	Make Cultist v>S look cooler.
-	Make Cultist star gravitate towards circles.
-	Make Cultist star explode in center of circle instead of touching.
-	Make Cultist Circle implosion pull stars like "Circle pull".
+	Make SELECT + X = toggle hitboxes.
+	Make SELECT + Y = toggle jumping dummy.
+	Make SELECT + B = reset.
+	Make SELECT in target run reset run.
 	
-	Make Knife markspin consume mark on hit. Also you should not be able to use Mark spin without a mark.
-	Knife MARK should ATTRACT grenades!
-	Knife grenades should launch eachother more. So it wont infinite combo.
-	
-	Make RS in training mode toggle Dummy jumping.
 	Combo tutorial should require more than one move.
 	
 	Fix controller remap.
