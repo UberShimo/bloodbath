@@ -1,10 +1,5 @@
 TODO{
 	
-	Make SELECT + X = toggle hitboxes.
-	Make SELECT + Y = toggle jumping dummy.
-	Make SELECT + B = reset.
-	Make SELECT in target run reset run.
-	
 	Combo tutorial should require more than one move.
 	
 	Fix controller remap.

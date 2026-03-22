@@ -1,11 +1,11 @@
 event_inherited();
 
-text = "Right stick UP:\n"+
-"DEBUG ON/OFF\n"+
+text = "SELECT + X:\n"+
+"Reset positions\n"+
 "\n"+
-"Right stick DOWN:\n"+
-"RESET POSITIONS\n"+
+"SELECT + Y:\n"+
+"Toggle jumping\n"+
 "\n"+
-"Tap start:\n"+
-"CHANGE GAME SPEED";
+"SELECT + B:\n"+
+"Toggle debug";
 text_scale = 0.7;

@@ -36,6 +36,8 @@ if(global.dojo_level == 0){
 		dummy.reset_physics();
 		dummy.x = Spawner_P2.x;
 		dummy.y = Spawner_P2.y;
+		
+		student.reset_buffers();
 	}
 	else if(!student.x_hold){
 		reset_positions_pressed = false;
@@ -45,7 +47,16 @@ if(global.dojo_level == 0){
 	if(student.y_hold && student.select_hold && !toggle_jump_pressed){
 		toggle_jump_pressed = true;
 	
-		dummy.is_jumping = !dummy.is_jumping;
+		if(dummy.is_jumping){
+			dummy.is_jumping = false;
+			dummy.alarm[11] = 0;
+		}
+		else{
+			dummy.is_jumping = true;
+			dummy.alarm[11] = 4;
+		}
+		
+		student.reset_buffers();
 	}
 	else if(!student.y_hold){
 		toggle_jump_pressed = false;
@@ -56,6 +67,8 @@ if(global.dojo_level == 0){
 		change_debug_pressed = true;
 	
 		global.is_debugging = !global.is_debugging;
+		
+		student.reset_buffers();
 	}
 	else if(!student.b_hold){
 		change_debug_pressed = false;

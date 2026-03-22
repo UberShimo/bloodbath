@@ -16,5 +16,3 @@ if(timer_start_alarm > 0){
 if(timer_on){
 	timer_count += 1;
 }
-
-// Reset run
