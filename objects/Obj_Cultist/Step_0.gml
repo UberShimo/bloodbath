@@ -192,6 +192,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Blast";
+			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Cultist_Blast_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

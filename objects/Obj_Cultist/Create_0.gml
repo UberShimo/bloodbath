@@ -26,7 +26,7 @@ max_speed = 5;
 acceleration = 0.2;
 grip = global.standard_grip;
 air_control = 0.1;
-dash_speed = 9;
+dash_speed = 8;
 dash_blink = 0;
 dash_duration = 24;
 dash_grip = 0.5;
@@ -149,6 +149,7 @@ action_trigger = function(){
 		
 		if(circle_dashing_backward){
 			h_velocity = -9*image_xscale;
+			circle.h_velocity = 3*image_xscale;
 		
 			sprite_index = Spr_Cultist_Circledash_Backward_recovery;
 			image_index = 0;
@@ -156,6 +157,7 @@ action_trigger = function(){
 		}
 		else{
 			h_velocity = 9*image_xscale;
+			circle.h_velocity = -3*image_xscale;
 			
 			sprite_index = Spr_Cultist_Circledash_Forward_recovery;
 			image_index = 0;

@@ -1,4 +1,4 @@
-if(ds_list_find_index(hitbox_list, other) == -1){
+if(ds_list_find_index(hitbox_list, other) == -1 && is_active){
 	// Create new boomerang so it can hit poopnent again.
 	new_boomerang = instance_create_depth(other.x, other.y, depth, Obj_Bow_Boomerang);
 	new_boomerang.swing_sound = Snd_Click_2;

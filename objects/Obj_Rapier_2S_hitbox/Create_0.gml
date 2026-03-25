@@ -9,7 +9,7 @@ hit_push = 2;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
 h_launch = 0.5;
-v_launch = -8;
+v_launch = -10;
 
 is_sticky = true;
 is_launcher = true;

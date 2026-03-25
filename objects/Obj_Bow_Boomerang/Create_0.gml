@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Bow_Boomerang_Throw_startup);
 recovery = generate_sprite_frames(Spr_Bow_Boomerang_Throw_recovery);
 
-damage = 12;
+damage = 10;
 hit_stun = global.light_hitstun;
 hit_push = 0;
 freeze_duration = global.medium_freeze_duration;
@@ -15,7 +15,6 @@ is_projectile = true;
 is_final = true;
 
 swing_sound = Snd_Light_Swing;
-hit_sound = Snd_Knack;
 
 velocity_friction = 0.2;
 

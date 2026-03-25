@@ -5,6 +5,8 @@ is_projectile = true;
 is_cancelable = true;
 collision_check_with_distance = false;
 
+swing_sound = Snd_Silent_Plopp;
+
 velocity_friction = 0.16;
 
 implode_alarm = 0;

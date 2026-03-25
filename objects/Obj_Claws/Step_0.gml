@@ -233,16 +233,16 @@ if(is_spinning){
 	is_collidable = false;
 	weight = 0;
 	if(forward_hold){
-		x += 3*image_xscale*logic_time;
+		x += spin_movement_speed*image_xscale*logic_time;
 	}
 	else if(backward_hold){
-		x -= 3*image_xscale*logic_time;
+		x -= spin_movement_speed*image_xscale*logic_time;
 	}
 	if(up_hold){
-		y -= 2*logic_time;
+		y -= spin_movement_speed*logic_time;
 	}
 	else if(down_hold){
-		y += 2*logic_time;
+		y += spin_movement_speed*logic_time;
 	}
 }
 // Safety

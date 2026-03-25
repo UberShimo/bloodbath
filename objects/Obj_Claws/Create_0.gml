@@ -46,6 +46,7 @@ original_weight = weight;
 #endregion
 
 // Claws related
+spin_movement_speed = 3;
 is_spinning = false;
 ring1 = noone;
 ring2 = noone;
@@ -154,14 +155,14 @@ action_trigger = function(){
 			sprite_index = Spr_Claws_5S_recovery;
 			image_index = 0;
 			recover_alarm = generate_sprite_frames(sprite_index);
-			action_alarm = 12;
+			action_alarm = 9;
 			multi_hit_action_index += 1;
 		}
 		else if(multi_hit_action_index < 4){
 			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
 			attack.initiate(self);
 		
-			action_alarm = 12;
+			action_alarm = 9;
 			multi_hit_action_index += 1;
 		}
 		else{

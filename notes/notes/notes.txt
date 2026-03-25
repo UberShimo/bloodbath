@@ -228,6 +228,7 @@ NEW
 Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them ROBIN{
 
 	5S: Short headcleaver move using both shotels. Deal huge dmg.
+	2S: Roll forward then kick yourself upwards back on your feet! Slightly faster launcher that normal.
 	
 	/ Half moons can be jumped on with A to perform a free extra jump!
 	v>F/L/S: Lob out a spinning half moon that falls slowly input decide distance thrown away.
@@ -236,7 +237,7 @@ Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them ROBIN{
 }
 
 NEW
-Faceless snake with loooong staff JOEL{
+Snake with loooong staff JOEL{
 	Slow movement.
 	Bad dash.
 	

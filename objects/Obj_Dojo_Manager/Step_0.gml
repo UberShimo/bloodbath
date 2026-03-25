@@ -1,21 +1,17 @@
 event_inherited();
 
 if(global.dojo_level == 0){
-	if(student.start_hold && student.is_controllable && !time_switch_pressed){
-		time_switch_pressed = true;
-	
-		if(global.game_time == 1){
-			global.game_time = 0.5;
+	// Change game speed
+	if(student.select_hold && student.is_controllable){
+		if(student.rs_up && global.game_time < 2){
+			global.game_time += 0.01;
 		}
-		else if(global.game_time == 0.5){
-			global.game_time = 0.25;
+		else if(student.rs_down && global.game_time > 0.25){
+			global.game_time -= 0.01;
 		}
-		else{
+		else if((student.rs_left || student.rs_right)){
 			global.game_time = 1;
 		}
-	}
-	else if(!student.start_hold){
-		time_switch_pressed = false;
 	}
 
 	// Reset positions

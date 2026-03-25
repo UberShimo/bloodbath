@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"642dbb78-ff9c-4e5e-b9dc-2fec2470c091",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9e48d050-c4ce-4db5-88f2-2b5f71c42034",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0d6f8f09-2c25-4fa2-9e5f-51654e9b3ef4",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -45,7 +46,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -58,6 +59,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"642dbb78-ff9c-4e5e-b9dc-2fec2470c091","path":"sprites/Spr_Cultist_Circledash_Forward_startup/Spr_Cultist_Circledash_Forward_startup.yy",},},},"Disabled":false,"id":"7d0297e5-a3fe-4d55-a3fb-e3931afe462d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9e48d050-c4ce-4db5-88f2-2b5f71c42034","path":"sprites/Spr_Cultist_Circledash_Forward_startup/Spr_Cultist_Circledash_Forward_startup.yy",},},},"Disabled":false,"id":"323684d6-d15f-4bee-94e0-e6b2378150b7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0d6f8f09-2c25-4fa2-9e5f-51654e9b3ef4","path":"sprites/Spr_Cultist_Circledash_Forward_startup/Spr_Cultist_Circledash_Forward_startup.yy",},},},"Disabled":false,"id":"e563c0a4-dec1-45ee-b202-70577550e3d1","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

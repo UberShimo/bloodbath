@@ -507,6 +507,7 @@ do_cancel = function(){
 	}
 	recover_alarm = 0;
 	cancels -= 1;
+	multi_hit_action_index = 0;
 	if(global.infinite_cancels_mode){
 		cancels = max_cancels;
 	}
