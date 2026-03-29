@@ -166,7 +166,7 @@ action_trigger = function(){
 		recover_alarm = 120; // 2 sec max timer
 	}
 	else if(action == "Birdie"){
-		bird = instance_create_depth(x-8*image_xscale, y, 0, Obj_Scythe_Birdie);
+		bird = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
 		bird.initiate(self);
 		bird.h_velocity = -1.5*image_xscale;
 		bird.acceleration = 0.03*image_xscale;

@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "Smash a hole in the ground\nthat spawns meteors!\nDash to cancel ULTRA.";
+info = "Smash a hole in the ground\nthat spawns METERBALLS!\nDash to cancel ULTRA.";
 button_input = Spr_RB_B;
 image = Spr_Baller_ULTRA_recovery;
 frame = 0;

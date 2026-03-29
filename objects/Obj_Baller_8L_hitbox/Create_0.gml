@@ -3,15 +3,15 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Baller_8L_startup); // 100% informational not used in logic
 recovery = generate_sprite_frames(Spr_Baller_8L_recovery); // 100% informational not used in logic
 
-damage = 8;
+damage = 4;
 hit_stun = global.medium_hitstun;
-hit_push = 4;
-freeze_duration = global.medium_freeze_duration;
+hit_push = 0;
+freeze_duration = global.light_freeze_duration;
 shake_impact = global.medium_shake_impact;
 h_launch = 1;
-v_launch = 2;
+v_launch = -5;
 
 is_sticky = true;
-hit_effect_y = 16;
+is_launcher = true;
 
-swing_sound = Snd_Light_Swing;
+swing_sound = Snd_Quick_Swing;

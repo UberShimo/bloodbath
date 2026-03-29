@@ -402,6 +402,7 @@ else{
 			action = "Unstable Landing";
 			sprite_index = land_spr;
 			recover_alarm += action_alarm+1;
+			action_alarm = 0;
 		}
 		v_velocity = 0;
 	}
@@ -661,7 +662,7 @@ if(meter > max_meter){
 
 // Fully charged effect
 if(meter == 100 && effect_counter >= 1){
-	spawn_effect(x, y, 1, Eff_Fade_Ray, 1, 0, c_lime, 1, 2, 0, 0, 360, 0, 1);
+	spawn_effect(x, y, 1, Eff_Fade_Ray, 0.5, 0, c_lime, 0.5, 1.5, 0, 0, 360, 0, 1);
 }
 
 // RB hold effect

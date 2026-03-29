@@ -1,17 +1,18 @@
 
-min_screen_size = 580;
+min_screen_size = 660;
 max_screen_size = room_width;
 extra_screen_width = 128;
-screen_extra_height = 64;
+screen_extra_height = 80;
 screen_extra_bottom = 48;
 max_screen_below_room_amount = 64;
 camera_width = 64;
 camera_height = 0;
-camera_x = room_width/2-camera_width/2;
-camera_y = room_height/2;
-camera_speed = 16;
-camera_resize_speed = 16;
+camera_x = 0;
+camera_y = 0;
+camera_speed = 8;
+camera_resize_speed = 8;
 shake = 0;
+camera_position_is_initiated = false;
 
 x_destination = x;
 y_destination = y;

@@ -183,7 +183,7 @@ action_trigger = function(){
 		ring1.h_velocity = -3*image_xscale;
 		ring1.h_acceleration *= image_xscale;
 		ring1.v_velocity = -1.5;
-		ring1.weight *= 0.25;
+		ring1.weight *= 0.3;
 		
 		sprite_index = Spr_Claws_Skyring_recovery;
 		image_index = 0;

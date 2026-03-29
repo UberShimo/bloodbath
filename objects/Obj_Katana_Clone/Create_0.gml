@@ -43,6 +43,7 @@ grounded = false;
 action_alarm = 0;
 cancels = 0;
 is_collidable = false;
+cant_be_focused = true;
 
 // Clone inputs
 dash_forward = false;
@@ -55,6 +56,8 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_Quickdraw_recovery;
 		image_index = 0;
+		image_blend = c_white;
+		image_alpha = 1;
 		
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 0.2);
 		life_span = generate_sprite_frames(sprite_index);

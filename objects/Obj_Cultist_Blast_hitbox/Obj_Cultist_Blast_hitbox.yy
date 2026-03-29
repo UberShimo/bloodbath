@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Cultist_Star_Blast_hitbox",
-    "path": "sprites/Spr_Cultist_Star_Blast_hitbox/Spr_Cultist_Star_Blast_hitbox.yy",
+    "name": "Spr_Cultist_Blast_hitbox",
+    "path": "sprites/Spr_Cultist_Blast_hitbox/Spr_Cultist_Blast_hitbox.yy",
   },
   "spriteMaskId": null,
   "visible": false,

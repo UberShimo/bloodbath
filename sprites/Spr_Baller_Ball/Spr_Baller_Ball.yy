@@ -15,11 +15,12 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"71a32fc1-afd4-4443-a368-233cb351bd4c",},
   ],
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 14,
+  "gridY": 14,
   "height": 28,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"745af839-08a3-4ff6-9e30-2da2d48aaf93","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0986b872-ab61-4add-a7ce-391b79710563","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,

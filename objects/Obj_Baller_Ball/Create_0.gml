@@ -13,6 +13,7 @@ hitbox_list = ds_list_create();
 max_velocity = 16;
 reset_physics_alarm = 0;
 cant_hurt_alarm = 0;
+has_aquired_spawner_outline_color = false;
 
 collide = function(){
 	if(!is_returning){

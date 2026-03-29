@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = false;
 air_only = true;
-info = "Throw ball down if you have it.";
+info = "Throw BALL down if you have it.";
 movement_input = Spr_EMPTY;
 button_input = Spr_B;
 image = Spr_Baller_8S_recovery;

@@ -119,20 +119,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if(diagonal_input_hold && grounded){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Headsplitter";
-			shake_amount = launcher_shake_amount;
-			sprite_index = Spr_Katana_Headsplitter_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if(!grounded){
+		if(!grounded){
 			action = "8S";
 			is_unstable = true;
 			sprite_index = Spr_Katana_8S_startup;

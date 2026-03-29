@@ -4,7 +4,7 @@ event_inherited();
 texel_handle = shader_get_uniform(Shd_Outline, "inTexel");
 outline_handle = shader_get_uniform(Shd_Outline, "outlineColor");
 
-outline_color = global.standard_outline_color;
+outline_color = global.standard_outline_color; // Is an array of colors!!!
 
 // face proper way
 if(x > room_width/2){
@@ -30,6 +30,7 @@ meter_channel_draw_amount = 0;
 meter_channel_draw_change_amount = 0.05;
 meter_channel_max_draw_amount = 0.5;
 is_meter_stunned = false;
+cant_be_focused = false; // Makes it so opponent wont turn toward you
 #endregion
 
 #region Initialize input values / buffers
@@ -241,7 +242,9 @@ face_closest_enemy = function(){
 	find_closest_enemy();
 	
 	// Normal facing action time
-	if(!global.chaos_mode && !global.target_run_mode && instance_number(Parent_Character) > 1){
+	if(!global.chaos_mode
+	&& !global.target_run_mode
+	&& instance_number(Parent_Character) > 1){
 		
 		if(x < closest_enemy.x){
 			image_xscale = 1;
@@ -271,7 +274,8 @@ find_closest_enemy = function(){
 	
 	// Loop through characters and find closest enemy
 	for(i = 0; i < instance_number(Parent_Character); i++){
-		if(instance_find(Parent_Character, i).index != index){
+		if(instance_find(Parent_Character, i).index != index
+		&& !instance_find(Parent_Character, i).cant_be_focused){
 			enemy = instance_find(Parent_Character, i);
 			temp_distance = abs(x-enemy.x);
 			if(temp_distance < enemy_distance){

@@ -1,8 +1,7 @@
 event_inherited();
 
-// Balling baller
+// Stick ball to you if holdign it
 if(is_holding_ball){
-	weight = global.heavy_weight;
 	ball.x = x;
 	ball.y = y;
 	ball.h_velocity = 0;
@@ -10,32 +9,35 @@ if(is_holding_ball){
 	ball.weight = ball.original_weight;
 	ball.reset_physics_alarm = 0;
 }
-else{
-	weight = global.light_weight;
+	
+// Weight manipulation
+if(action != "Headbutt"){
+	if(is_holding_ball){
+		weight = global.heavy_weight;
+	}
+	else{
+		weight = global.light_weight;
+	}
+}
+// Special ball manipulation so it looks good when launching off ball when headbutting!
+else if(is_holding_ball){
+	ball.x = x-12*image_xscale;
+	ball.y = y+12;
 }
 
 // ACTION!
 // Many checks...
-if(rb_hold && meter >= 20 && x_pressed && action != "Stunned" && !is_holding_ball){
-	meter -= 20;
+if(rb_hold && meter >= 10 && x_pressed && !is_holding_ball){
+	meter -= 10;
 	
 	ball.h_velocity = 0;
 	ball.v_velocity = 0;
 	ball.weight = 0;
 	ball.reset_physics_alarm = 60; // 1 sec
+	ball.is_returning = false;
 	
-	attack = instance_create_depth(x, y, 0, Obj_Baller_Ball_Zap_hitbox);
-	attack.initiate(self);
-	eff = instance_create_depth(x, y, depth-1, Obj_Baller_Ball_Zap_hit_eff);
-	eff.initiate(self);
-	scale = point_distance(x, y, ball.x, ball.y)/sprite_get_width(Spr_Baller_Ball_Zap);
-	dir = point_direction(x, y, ball.x, ball.y);
+	spawn_effect(ball.x, ball.y, 1, Eff_Ring, 1, 0.1, c_lime, 1, 1, -0.02);
 	
-	attack.image_xscale = scale;
-	attack.image_angle = dir;
-	eff.image_xscale = scale;
-	eff.image_angle = dir;
-	eff.duration = 8;
 	reset_buffers();
 }
 else if(rb_hold && meter >= 50 && y_pressed){
@@ -123,10 +125,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Upswing";
-			is_holding_ball = false;
+			action = "Whip";
 			
-			sprite_index = Spr_Baller_Upswing_startup;
+			sprite_index = Spr_Baller_Whip_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -136,6 +137,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Baller_8L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
+			multi_hit_action_index = 0;
 		}
 		else if(down_hold){
 			action = "2L";
@@ -151,7 +153,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(b_pressed){
-		if((down_forward_pressed || down_backward_pressed)){
+		if(diagonal_input_hold){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Headbutt";
+			shake_amount = launcher_shake_amount;
+			
+			h_velocity *= 0.2;
+			v_velocity *= 0.2;
+			weight = 0;
+			
+			sprite_index = Spr_Baller_Headbutt_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if((down_forward_pressed || down_backward_pressed)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -280,9 +300,6 @@ if(action == "Balldash" && action_alarm <= 0){
 		effect = instance_create_depth(x, y, 1, Eff_Cancel);
 		effect.initiate(self);
 		
-		if(attack != noone){
-			instance_destroy(attack);
-		}
 		recover_alarm = 1;
 	}
 }

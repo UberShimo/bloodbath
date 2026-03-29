@@ -24,7 +24,6 @@ if(dash_forward || dash_backward){
 }
 #endregion
 
-
 if(life_span > 0){
 	life_span -= logic_time;
 	

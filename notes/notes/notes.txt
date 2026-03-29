@@ -1,4 +1,10 @@
 TODO{
+	Knife grenades don't roll toward mark on platforms.
+	Make claws 5S slightly wider and change 5S hit / swing sound.
+	Change claws 5S finishing pose to standing like a cross with face upwards. Like jesus!
+	Claw rings/masks goes too high. They hide behind HP bar mostly...
+	Reduce camera speed. Its a little too fast I think...
+	Bow 8S should not affect return alarm on boomerang.
 	
 	Combo tutorial should require more than one move.
 	

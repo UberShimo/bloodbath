@@ -57,6 +57,12 @@ if(reset_physics_alarm > 0){
 // Turn invisible if Baller is invisible
 visible = spawner.visible;
 
+// Aquire spawner outline color
+if(instance_exists(spawner) && !has_aquired_spawner_outline_color){
+	outline_color = spawner.outline_color;
+	has_aquired_spawner_outline_color = true;
+}
+
 // Dissapear if spawner dont exist obviously...
 if(!instance_exists(spawner)){
 	instance_destroy();

@@ -100,3 +100,10 @@ camera_y += random_range(-shake, shake);
 // Set properties. Uses floor() to reduce wierd pixel scaling.
 camera_set_view_size(view_camera[0], floor(camera_width), floor(camera_height));
 camera_set_view_pos(view_camera[0], floor(camera_x), floor(camera_y));
+
+// Initiate camera at center of all characters
+if(!camera_position_is_initiated){
+	camera_position_is_initiated = true;
+	camera_x = x_destination;
+	camera_y = y_destination;
+}

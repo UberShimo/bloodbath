@@ -4,12 +4,12 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Zap your ball putting it in place for a\nshort duration.\nCan be done during other moves!";
+info = "Put your BALL in place\nfor a short duration.";
 button_input = Spr_RB_X;
 image = Spr_Baller_Ball;
-extra_image = Spr_Baller_Ball_Zap;
-extra_image_scale = -1;
+extra_image = Spr_Circle;
+extra_image_color = c_lime;
 frame = 0;
-meter_cost = 20;
+meter_cost = 10;
 
 is_final = true;

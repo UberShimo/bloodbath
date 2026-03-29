@@ -9,7 +9,7 @@ hit_push = 12;
 freeze_duration = global.light_freeze_duration;
 shake_impact = global.heavy_shake_impact;
 h_launch = 1;
-v_launch = -13;
+v_launch = -11;
 
 is_launcher = true;
 is_parryable = false;

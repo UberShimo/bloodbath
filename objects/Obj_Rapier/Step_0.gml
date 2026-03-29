@@ -236,7 +236,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 }
 
 // Follow enemy during ULTRA
-if(action == "Gone"){
+if(action == "Gone" && instance_exists(ULTRA_target)){
 	x = ULTRA_target.x;
 	y = ULTRA_target.y;
 	dissapear_duration_timer -= logic_time;

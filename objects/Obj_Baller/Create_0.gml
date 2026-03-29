@@ -94,19 +94,35 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_8L_hitbox);
 		attack.initiate(self);
 		
-		sprite_index = Spr_Baller_8L_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		h_velocity = 2*image_xscale;
+		v_velocity = -1;
+		
+		if(multi_hit_action_index == 0){
+			sprite_index = Spr_Baller_8L_recovery;
+			image_index = 0;
+			recover_alarm = generate_sprite_frames(sprite_index);
+		
+			action_alarm = 16;
+			multi_hit_action_index += 1;
+		}
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_2L_hitbox);
 		attack.initiate(self);
+		
+		h_velocity = 1.5*image_xscale;
+		v_velocity = -8;
+		is_holding_ball = false;
+		ball.cant_hurt_alarm = 14;
 		
 		sprite_index = Spr_Baller_2L_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "5L"){
+		blink_h(8*image_xscale);
+		h_velocity = 4*image_xscale;
+		
 		attack = instance_create_depth(x, y, 0, Obj_Baller_5L_hitbox);
 		attack.initiate(self);
 		
@@ -162,25 +178,6 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Upswing"){
-		attack = instance_create_depth(x, y, 0, Obj_Baller_Upswing_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 1.5*image_xscale;
-		v_velocity = -8;
-		
-		sprite_index = Spr_Baller_Upswing_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Flipkick"){
-		attack = instance_create_depth(x, y, 0, Obj_Baller_Flipkick_hitbox);
-		attack.initiate(self);
-
-		sprite_index = Spr_Baller_Flipkick_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "Pull"){
 		ball.is_returning = true;
 		
@@ -196,8 +193,6 @@ action_trigger = function(){
 		else{
 			image_xscale = 1;
 		}
-		attack = instance_create_depth(x, y, 0, Obj_Baller_Balldash_hitbox);
-		attack.initiate(self);
 		
 		goes_through_collision = true; // Crazy stuff
 		is_collidable = false;
@@ -205,6 +200,43 @@ action_trigger = function(){
 		sprite_index = Spr_Baller_Balldash_recovery;
 		image_index = 0;
 		recover_alarm = 300; // Max duration 5 sec
+	}
+	else if(action == "Whip"){
+		attack = instance_create_depth(x, y, 0, Obj_Baller_Whip_hitbox);
+		attack.initiate(self);
+
+		sprite_index = Spr_Baller_Whip_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Flipkick"){
+		attack = instance_create_depth(x, y, 0, Obj_Baller_Flipkick_hitbox);
+		attack.initiate(self);
+
+		sprite_index = Spr_Baller_Flipkick_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Headbutt"){
+		attack = instance_create_depth(x, y, 0, Obj_Baller_Headbutt_hitbox);
+		attack.initiate(self);
+		
+		h_velocity = 6*image_xscale;
+		v_velocity = -2;
+		weight = global.light_weight;
+		
+		if(is_holding_ball){
+			attack.damage = 12; // Extra damage!
+			h_velocity = 9*image_xscale;
+			
+			is_holding_ball = false;
+			ball.h_velocity = -6*image_xscale;
+			ball.v_velocity = 1;
+		}
+
+		sprite_index = Spr_Baller_Headbutt_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
 	else if(action == "Charge Ball"){

@@ -119,7 +119,7 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "2S"){
-		attack = instance_create_depth(x+32*image_xscale, y, 0, Obj_Cultist_2S_hitbox);
+		attack = instance_create_depth(x, y, 0, Obj_Cultist_2S_hitbox);
 		attack.initiate(self);
 		
 		sprite_index = Spr_Cultist_2S_recovery;
@@ -259,10 +259,10 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Blast"){
-		attack = instance_create_depth(x, y, 0, Obj_Cultist_Blast_hitbox);
+		attack = instance_create_depth(x+12*image_xscale, y, 0, Obj_Cultist_Blast_hitbox);
 		attack.initiate(self);
 		
-		h_velocity = -10*image_xscale;
+		h_velocity = -11*image_xscale;
 		
 		sprite_index = Spr_Cultist_Blast_recovery;
 		image_index = 0;

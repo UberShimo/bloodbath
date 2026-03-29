@@ -11,7 +11,7 @@ if(!place_meeting(x, y, Obj_Boomhand_Smoke)){
 	shader_set_uniform_f(texel_handle, t_width, t_height);
 	shader_set_uniform_f(outline_handle, outline_color[0]*image_alpha, outline_color[1]*image_alpha, outline_color[2]*image_alpha, outline_color[3]*image_alpha);
 }
-draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x_draw, y_draw, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 shader_reset();
 
 // Channeling meter effect

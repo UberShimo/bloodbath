@@ -145,16 +145,6 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Headsplitter"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Headsplitter_hitbox);
-		attack.initiate(self);
-		
-		h_velocity = 6*image_xscale;
-		
-		sprite_index = Spr_Katana_Headsplitter_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "Sweep"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_Sweep_hitbox);
 		attack.initiate(self);
@@ -206,6 +196,9 @@ action_trigger = function(){
 		clone.life_span = 0;
 		clone.weight = 0;
 		clone.shake_amount = 2;
+		clone.image_blend = c_lime;
+		clone.image_alpha = 0.5;
+		clone.draw_mini_ui = false; // No need for UI on those bastards.
 	
 		if(action == "Quickdraw Clone" ){
 			clone.action = "Quickdraw";
