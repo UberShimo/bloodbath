@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Claws_5S_hitbox",
-    "path": "sprites/Spr_Claws_5S_hitbox/Spr_Claws_5S_hitbox.yy",
+    "name": "Spr_Claws_5S_finish_hitbox",
+    "path": "sprites/Spr_Claws_5S_finish_hitbox/Spr_Claws_5S_finish_hitbox.yy",
   },
   "spriteMaskId": null,
   "visible": false,

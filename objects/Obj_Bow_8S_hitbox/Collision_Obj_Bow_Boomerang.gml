@@ -8,6 +8,6 @@ effect.initiate(spawner);
 	
 other.v_velocity = 6;
 other.is_returning = false;
-other.return_alarm = 100;
+other.return_alarm = 20;
 
 instance_destroy();

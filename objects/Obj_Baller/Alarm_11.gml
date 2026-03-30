@@ -18,18 +18,23 @@ if(is_controllable){
 		double_down_pressed = buffer_duration;
 	}
 	// Ball dash
-	else if(rng < 0.3){ // 20%
+	else if(rng < 0.2){ // 10%
 		down_forward_pressed = buffer_duration;
 		x_pressed = buffer_duration;
 	}
-	// Upswing
-	else if(rng < 0.45){ // 15%
+	// Whip
+	else if(rng < 0.3){ // 10%
 		down_forward_pressed = buffer_duration;
 		y_pressed = buffer_duration;
 	}
 	// Flipkick
-	else if(rng < 0.60){ // 15%
+	else if(rng < 0.4){ // 10%
 		down_forward_pressed = buffer_duration;
+		y_pressed = buffer_duration;
+	}
+	// Headbutt
+	else if(rng < 0.5){ // 10%
+		diagonal_input_hold = true;
 		b_pressed = buffer_duration;
 	}
 	

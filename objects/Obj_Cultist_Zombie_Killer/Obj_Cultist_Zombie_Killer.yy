@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_METER",
-    "path": "sprites/Spr_METER/Spr_METER.yy",
+    "name": "Spr_METER_M",
+    "path": "sprites/Spr_METER_M/Spr_METER_M.yy",
   },
   "spriteMaskId": null,
   "visible": false,

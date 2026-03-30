@@ -1,5 +1,6 @@
 steam_init();
 
+// Trying to fix bad pixelation
 gpu_set_texfilter(false);
 
 #region load save

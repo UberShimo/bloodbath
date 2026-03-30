@@ -10,7 +10,7 @@ camera_height = 0;
 camera_x = 0;
 camera_y = 0;
 camera_speed = 8;
-camera_resize_speed = 8;
+camera_resize_speed = 12;
 shake = 0;
 camera_position_is_initiated = false;
 

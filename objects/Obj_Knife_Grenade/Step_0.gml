@@ -15,7 +15,8 @@ if(detonation_timer <= 0){
 }
 
 // Attract to mark
-if(instance_exists(spawner.marked_target) && place_meeting(x, y+2, Parent_Collision)){
+if(instance_exists(spawner.marked_target)
+&& (place_meeting(x, y+2, Parent_Collision) || place_meeting(x, y+2, Obj_Platform))){
 	step = mark_attract_force*logic_time;
 	collision_check = 8*object_scale;
 	if(x > spawner.marked_target.x){

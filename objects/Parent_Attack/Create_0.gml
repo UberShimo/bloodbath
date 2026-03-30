@@ -70,7 +70,7 @@ initiate = function(initiator){
 	spawner = initiator;
 	image_xscale *= initiator.image_xscale;
 	image_yscale *= initiator.image_yscale;
-	object_time = initiator.object_time;
+	// object_time = initiator.object_time; this creates bugs for spawned things when spawner is in "time freeze"
 	outline_color = initiator.outline_color;
 	
 	// Is initiated by a character?
