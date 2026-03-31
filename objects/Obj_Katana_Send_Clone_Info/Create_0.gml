@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = false;
 air_only = false;
-info = "Send a clone";
+info = "Send a clone.";
 movement_input = Spr_DF;
 button_input = Spr_X;
 image = Spr_Katana_Stand;

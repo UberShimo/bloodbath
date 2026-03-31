@@ -17,7 +17,7 @@ if(rb_hold && meter >= 15 && x_pressed){
 	repeat(12){
 		instance_create_depth(x, y, depth-10, Obj_Boomhand_Smoke);
 	}
-	audio_play_sound(Snd_Steam, 0, false);
+	audio_play_sound(Snd_Fart, 0, false);
 }
 
 // ACTION!

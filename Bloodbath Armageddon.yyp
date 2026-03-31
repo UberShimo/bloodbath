@@ -823,6 +823,7 @@
     {"id":{"name":"Spr_Greatsword_2F_recovery","path":"sprites/Spr_Greatsword_2F_recovery/Spr_Greatsword_2F_recovery.yy",},},
     {"id":{"name":"Spr_Rapier_Spin_Back_hitbox","path":"sprites/Spr_Rapier_Spin_Back_hitbox/Spr_Rapier_Spin_Back_hitbox.yy",},},
     {"id":{"name":"Spr_Baller_Ball_Meter_Recall","path":"sprites/Spr_Baller_Ball_Meter_Recall/Spr_Baller_Ball_Meter_Recall.yy",},},
+    {"id":{"name":"Spr_Multibutton_Explaination","path":"sprites/Spr_Multibutton_Explaination/Spr_Multibutton_Explaination.yy",},},
     {"id":{"name":"BG_Move_List","path":"sprites/BG_Move_List/BG_Move_List.yy",},},
     {"id":{"name":"Spr_Random_Layout","path":"sprites/Spr_Random_Layout/Spr_Random_Layout.yy",},},
     {"id":{"name":"Obj_Dojo_ULTRA_Info","path":"objects/Obj_Dojo_ULTRA_Info/Obj_Dojo_ULTRA_Info.yy",},},

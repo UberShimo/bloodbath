@@ -10,7 +10,7 @@ button_spr = Spr_X;
 input_spr = Spr_DF;
 
 if(Obj_Dojo_Manager.student.object_index == Obj_Dojo){
-	bonus_text = "Down > Forward > B\nTo fire projectile!";
+	bonus_text = "Down > Forward > Y\nTo fire projectile!";
 	button_spr = Spr_Y;
 	input_spr = Spr_DF;
 	sprite_index = Spr_Special_DF_Y_Control;
@@ -34,7 +34,7 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Claws){
 	sprite_index = Spr_Special_Diagonal_B_Control;
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Baller){
-	bonus_text = "Down > Forward > Y\nTo swing upward!";
+	bonus_text = "Down > Forward > Y\nTo whip it!";
 	button_spr = Spr_Y;
 	input_spr = Spr_DF;
 	sprite_index = Spr_Special_DF_Y_Control;

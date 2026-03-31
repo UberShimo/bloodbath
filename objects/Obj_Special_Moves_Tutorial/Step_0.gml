@@ -28,7 +28,7 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Claws){
 	}
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Baller){
-	if(Obj_Dojo_Manager.student.action == "Upswing"){
+	if(Obj_Dojo_Manager.student.action == "Whip"){
 		instance_create_depth(x, y, depth-1, Eff_Nice);
 		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
 		instance_destroy();
