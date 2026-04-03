@@ -35,17 +35,17 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Manly_Tensing, 0, false);
 		}
-		else if(meter >= 25 && y_pressed){
+		else if(meter >= 30 && y_pressed){
 			action = "Quickdraw Clone";
-			meter -= 25;
+			meter -= 30;
 			
 			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 25 && x_pressed){
+		else if(meter >= 30 && x_pressed){
 			action = "Recall Clone";
-			meter -= 25;
+			meter -= 30;
 			
 			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;

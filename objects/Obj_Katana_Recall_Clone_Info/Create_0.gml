@@ -8,7 +8,7 @@ info = "Leave a clone that teleports\nyou back to it.";
 button_input = Spr_RB_X;
 image = Spr_Katana_Spawn_Clone_recovery;
 frame = 0;
-meter_cost = 25;
+meter_cost = 30;
 
 startup = generate_sprite_frames(Spr_Katana_Spawn_Clone_startup);
 recovery = generate_sprite_frames(Spr_Katana_Spawn_Clone_recovery);

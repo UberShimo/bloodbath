@@ -191,8 +191,8 @@ action_trigger = function(){
 		// Calculate take off
 		hold_arrow = false;
 		// Reduce arrow power if sloppy aim
-		spd = 32-abs(aim_dir)/2;
-		attack.damage -= (attack.damage/2)*abs(aim_dir)/45;
+		spd = 32-abs(aim_dir)*0.55; // Max aim_dir: 45. 45*0.55 = 25ish. 32-25 = 7. Arrow speed = 7 > 32
+		attack.damage -= (attack.damage*0.7)*abs(aim_dir)/45; // Remove up to 70% damage
 		attack.h_velocity = lengthdir_x(spd, aim_dir)*image_xscale;
 		attack.v_velocity = lengthdir_y(spd, aim_dir);
 		attack.spd = spd; // Jump save speed for when it bounces
@@ -211,6 +211,8 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "Crosspin"){
+		image_xscale *= -1; // Turn around
+		
 		attack = instance_create_depth(x, y, 0, Obj_Bow_Crosspin_hitbox);
 		attack.initiate(self);
 		

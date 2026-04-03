@@ -5,10 +5,10 @@ recovery = generate_sprite_frames(Spr_Bow_Crosspin_recovery); // 100% informatio
 
 damage = 13;
 hit_stun = global.heavy_hitstun;
-hit_push = 9;
+hit_push = 5;
 freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;
-h_launch = 4;
+h_launch = 3;
 v_launch = -6;
 
 is_sticky = true;
