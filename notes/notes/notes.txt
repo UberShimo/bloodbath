@@ -1,64 +1,19 @@
 TODO{
-
-
-	I gotta do this????
-	
-||||--------------------------------------------------------------||||
-	1. Create a low-res internal resolution
-
-	Pick something like:
-
-	320x180 (very pixel-art friendly)
-	or 640x360
-	global.base_w = 320;
-	global.base_h = 180;
-	2. Create a surface
-
-	In a controller object:
-
-	if (!surface_exists(global.surf)) {
-	    global.surf = surface_create(global.base_w, global.base_h);
-	}
-	3. Draw your game to the surface
-
-	In Draw Begin:
-
-	surface_set_target(global.surf);
-	draw_clear_alpha(c_black, 0);
-
-	Then let all your normal drawing happen.
-
-	4. Reset drawing
-
-	In Draw End:
-
-	surface_reset_target();
-	5. Draw the surface with smooth zoom
-
-	Now scale the final image:
-
-	var zoom = camera_zoom; // e.g. 1.0 → 1.25 → 1.8 etc.
-
-	var sw = surface_get_width(global.surf);
-	var sh = surface_get_height(global.surf);
-
-	var dw = sw * zoom;
-	var dh = sh * zoom;
-
-	draw_surface_ext(
-	    global.surf,
-	    display_get_width()/2 - dw/2,
-	    display_get_height()/2 - dh/2,
-	    zoom,
-	    zoom,
-	    0,
-	    c_white,
-	    1
-	);
-||||-----------------------------------------------------||||
-
 	
 	Combo tutorial should require more than one move.
+	
+	Make ITEMS mode!
+	Items v-v
+	Meter orb: Fills your meter over time.
+	Star: You spawn stars toward enemy for a duration.
+	Mushroom: Makes you bigger for a while.
+	Quickness: Makes you faster for a duration.
+	Meteor: Spawn a meteor that launch toward you after duration creating a huge explosion.
+	Ghost mirror: Become invulnerable for 4 sec.
+	Metal: Become heavy but unstoppable.
+	Wings: Gain infinite jumps for a duration.
+	Boots: Gain movement speed for a duration.
+	Magnet: Pull opponents toward you for a duration.
 	
 	Fix controller remap.
 	

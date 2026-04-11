@@ -91,7 +91,12 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "8L"){
-		attack = instance_create_depth(x, y, 0, Obj_Baller_8L_hitbox);
+		x_spawn = -4;
+		if(multi_hit_action_index == 0){
+			x_spawn = 0;
+		}
+		
+		attack = instance_create_depth(x+x_spawn*image_xscale, y, 0, Obj_Baller_8L_hitbox);
 		attack.initiate(self);
 		
 		h_velocity = 2*image_xscale;

@@ -9,3 +9,5 @@ hit_push = 0;
 freeze_duration = 0.5;
 h_launch = 0;
 v_launch = 0;
+
+is_final = true;
