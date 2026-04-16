@@ -67,3 +67,8 @@ if(instance_exists(spawner) && !has_aquired_spawner_outline_color){
 if(!instance_exists(spawner)){
 	instance_destroy();
 }
+
+// Rotate ball
+if(!is_returning){
+	image_angle += -h_velocity*0.5;
+}

@@ -13,3 +13,12 @@ is_sticky = true;
 meter_gain_multiplier = 0;
 
 hit_sound = Snd_Crack;
+
+extra_hit_logic = function(target){
+	if(target.meter > 25){
+		target.meter -= 25;
+	}
+	else{
+		target.meter = 0;
+	}
+}

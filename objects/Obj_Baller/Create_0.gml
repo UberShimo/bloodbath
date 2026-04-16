@@ -227,8 +227,9 @@ action_trigger = function(){
 		attack.initiate(self);
 		
 		h_velocity = 6*image_xscale;
-		v_velocity = -2;
+		v_velocity = -3;
 		weight = global.light_weight;
+		is_unstable = true;
 		
 		if(is_holding_ball){
 			attack.damage = 12; // Extra damage!

@@ -1,4 +1,5 @@
 TODO{
+	Add anders!
 	
 	Combo tutorial should require more than one move.
 	
@@ -174,31 +175,30 @@ Rapier{
 NEW
 Shield. ANDERS{
 	Has longer parry duration
+	Lightweight
 	
-	5F: Snap finger to create a low dmg spark.
+	5F: Punch.
 	2F: Low kick.
 	8F. Try grabbing above and then throw them down.
 	5L: Swing shield forward giving you forward momentum.
-	2L: Extend spikes on head upwards.
-	8F: Spin shield below dealing dmg 4x times. Hitting enemy bounce you up slightly.
-	5S: Gut punch with shield.
+	2L: Headbutt upward.
+	8F: Spin shield below dealing dmg 4x times. Hitting enemy bounce you up slightly. Bounce off ground if landing.
+	5S: Punch with shield.
 	2S: Uppercut with shield.
 	8S: Swing shield below you.
 	
-	vvF: Put out a ice circle that gives back cancels when dashed through. (Blue)
-	vvL: Put out a ice circle that explode and stun opponents when dashed through. (Yellow)
-	vvS: Put out a ice circle that get pushed away as a projectile when dashed upon. (Pink)
+	v> F/L/S: Do a TRICK and leave a POSE!
+	Doing a TRICK or DASHING into a POSE will activate its effect.
+	F: A superman kinda pose. Gives back all cancels. (Blue)
+	L: A spin and point up pose. Spawn a projectile that launch toward closest opponent. (Yellow)
+	S: An upside down pose. Becomes UNSTOPPABLE for a short duration. (Pink)
 	
-	Diagonal F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable.
-	Diagonal S: Slam downward giving your downward momentum. Hold to potentially bounce on ground.
+	Diagonal F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable. Can bounce on ground.
+	Diagonal S: Raise shield and parry in that direction. Then bash forward for great stun!
 	
-	v>L: Roll and kick up with both feet. Unparryable.
-	v>S: Raise shield and parry in that direction. Then bash forward for great stun!
-	
-	RB+x: Strike a freezing pose that stun close opponents and trigger ice circles.
-	RB+y: Use hand to spawn ice on ground in front of you.
+	RB+x: Use hand to spawn ice on ground in front of you.
+	RB+y: Fire a slooow projectile that FREEZE opponent och pull a POSE towards you.
 	ULTRA: A grab that pops the opponent into nothingness.
-	Shield diagonal X can be performed in air and hitbox dmg scales with velocity.
 }
 
 NEW
