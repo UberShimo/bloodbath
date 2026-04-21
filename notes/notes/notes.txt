@@ -1,7 +1,4 @@
 TODO{
-	Add anders!
-	
-	Combo tutorial should require more than one move.
 	
 	Make ITEMS mode!
 	Items v-v
@@ -172,33 +169,8 @@ Rapier{
 	
 }
 
-NEW
-Shield. ANDERS{
-	Has longer parry duration
-	Lightweight
-	
-	5F: Punch.
-	2F: Low kick.
-	8F. Try grabbing above and then throw them down.
-	5L: Swing shield forward giving you forward momentum.
-	2L: Headbutt upward.
-	8F: Spin shield below dealing dmg 4x times. Hitting enemy bounce you up slightly. Bounce off ground if landing.
-	5S: Punch with shield.
-	2S: Uppercut with shield.
-	8S: Swing shield below you.
-	
-	v> F/L/S: Do a TRICK and leave a POSE!
-	Doing a TRICK or DASHING into a POSE will activate its effect.
-	F: A superman kinda pose. Gives back all cancels. (Blue)
-	L: A spin and point up pose. Spawn a projectile that launch toward closest opponent. (Yellow)
-	S: An upside down pose. Becomes UNSTOPPABLE for a short duration. (Pink)
-	
-	Diagonal F: Gain slight momentum forward and skate on shield. Hold to stay on shield. Cancelable. Can bounce on ground.
-	Diagonal S: Raise shield and parry in that direction. Then bash forward for great stun!
-	
-	RB+x: Use hand to spawn ice on ground in front of you.
-	RB+y: Fire a slooow projectile that FREEZE opponent och pull a POSE towards you.
-	ULTRA: A grab that pops the opponent into nothingness.
+Shield{
+	Shield CPU wont pop his poses. Cant make him manually dash for some fucking reason... Forward input gets eliminatied before dash check somehow?
 }
 
 NEW

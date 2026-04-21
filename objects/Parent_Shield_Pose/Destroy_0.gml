@@ -1,0 +1,1 @@
+spawn_effect(x, y, 1, Eff_Ring, 0.5, 0.1, image_blend, 1.5, 1.5, 0.05);

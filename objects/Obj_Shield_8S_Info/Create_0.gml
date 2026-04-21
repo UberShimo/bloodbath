@@ -1,0 +1,11 @@
+hitbox = Obj_Shield_8S_hitbox;
+
+event_inherited();
+
+air_ok = false;
+air_only = true;
+info = "";
+movement_input = Spr_EMPTY;
+button_input = Spr_B;
+image = Spr_Shield_8S_recovery;
+frame = 0;

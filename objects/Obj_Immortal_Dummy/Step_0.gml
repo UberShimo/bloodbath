@@ -84,6 +84,13 @@ if(instance_exists(Obj_Dojo_Manager)){
 			}
 		}
 	}
+	// Shield
+	else if(Obj_Dojo_Manager.student.object_index == Obj_Shield){
+		if(Obj_Dojo_Manager.student.get_velocity() > 16){
+			update_steam_achievement("SHIELD_LEARNED");
+			global.shield_learned = true;
+		}
+	}
 }
 
 // Rapier stab achievement shit

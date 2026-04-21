@@ -5,6 +5,7 @@ student = noone;
 dummy = noone;
 time_switch_pressed = false;
 reset_positions_pressed = false;
+toggle_attack_pressed = false;
 change_debug_pressed = false;
 toggle_jump_pressed = false;
 

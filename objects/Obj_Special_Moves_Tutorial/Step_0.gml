@@ -83,3 +83,10 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Rapier){
 		instance_destroy();
 	}
 }
+else if(Obj_Dojo_Manager.student.object_index == Obj_Shield){
+	if(Obj_Dojo_Manager.student.action == "Bash"){
+		instance_create_depth(x, y, depth-1, Eff_Nice);
+		instance_create_depth(x, y, depth, Obj_Meter_Dash_Tutorial);
+		instance_destroy();
+	}
+}

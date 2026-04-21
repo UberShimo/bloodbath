@@ -31,3 +31,6 @@ if(global.bow_learned){
 if(global.rapier_learned){
 	draw_sprite(Spr_Rapier_Faces, 0, x+24*10, y);
 }
+if(global.shield_learned){
+	draw_sprite(Spr_Shield_Faces, 0, x+24*11, y);
+}

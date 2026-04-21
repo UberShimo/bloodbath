@@ -5,7 +5,7 @@ if(is_controllable){
 	rng = random_range(0, 1);
 
 	// Meter clone
-	if(meter >= 25 && irandom_range(1, 8) == 1){ // 12.5%
+	if(meter >= 20 && irandom_range(1, 8) == 1){ // 12.5%
 		rb_hold = true;
 		if(irandom_range(0, 1)){ // 50%
 			x_pressed = buffer_duration;
@@ -14,28 +14,28 @@ if(is_controllable){
 			y_pressed = buffer_duration;
 		}
 	}
-	// Send clone
-	else if(rng < 0.2){ // 20%
-		if(irandom_range(0, 1)){ // 50%
-			down_forward_pressed = buffer_duration;
+	// Pose
+	else if(rng < 0.1){ // 10%
+		down_forward_pressed = buffer_duration;
+		rng = irandom_range(1, 3);
+		
+		if(rng == 1){ // 33%
+			x_pressed = buffer_duration;
 		}
-		else{
-			down_backward_pressed = buffer_duration;
+		else if(rng == 2){ // 33%
+			y_pressed = buffer_duration;
 		}
+		else{ // 33%
+			b_pressed = buffer_duration;
+		}
+	}
+	// Surf
+	else if(rng < 0.25){ // 15%
+		diagonal_input_hold = true;
 		x_pressed = buffer_duration;
 	}
-	// Quickslash
-	else if(rng < 0.35){ // 15%
-		down_forward_pressed = buffer_duration;
-		y_pressed = buffer_duration;
-	}
-	// Sweep
-	else if(rng < 0.45){ // 10&
-		down_forward_pressed = buffer_duration;
-		b_pressed = buffer_duration;
-	}
-	// Headsplitter
-	else if(rng < 0.55 && !grounded){ // 10%
+	// Bash
+	else if(rng < 0.40){ // 15&
 		diagonal_input_hold = true;
 		b_pressed = buffer_duration;
 	}

@@ -8,6 +8,7 @@ if(is_controllable){
 	y_hold = false;
 	b_hold = false;
 	rb_hold = false;
+	diagonal_input_hold = false;
 
 	reset_buffers();
 	

@@ -1,8 +1,8 @@
 event_inherited();
 
 text = "When hitting most attacks you can cancel\n"+
-"it into any other move you like to!\n"+
-"Execute a 3 hit combo!\n\n\n\n"+
+"it into any other move you like!\n"+
+"Use cancels to do a combo!\n\n\n\n"+
 "Cancels are limited.\n"+
 "Hold RT to prevent cancels.\n";
 text_scale = 0.6;

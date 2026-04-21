@@ -11,7 +11,7 @@ ascend_spr = Spr_Shield_Ascend;
 descend_spr = Spr_Shield_Descend;
 stunned_spr = Spr_Shield_Stunned;
 launched_spr = Spr_Shield_Launched;
-jump_spr = Spr_Shield_Crouch;
+jump_spr = Spr_Shield_Land;
 land_spr = Spr_Shield_Land;
 parry_spr = Spr_Shield_Parry;
 meter_pull_spr = Spr_Shield_Meter_Pull;
@@ -26,10 +26,10 @@ max_speed = 4.5;
 acceleration = 0.8;
 grip = global.standard_grip;
 air_control = 0.15;
-dash_speed = 12;
+dash_speed = 10;
 dash_blink = 0;
 dash_duration = 24;
-dash_grip = 1;
+dash_grip = 0.7;
 jump_power = 10;
 mini_jump_power = 0.5; // % based
 extra_jump_strength = 0.8; // % based
@@ -46,8 +46,10 @@ original_weight = weight;
 #endregion
 
 // Shield stuff
-parry_active_frames = 14; // Has 4 more parry frames!
-is_surfing = false;
+unstoppable_duration = 90;
+unstoppable_alarm = 0;
+surf_max_duration = generate_sprite_frames(Spr_Shield_Surf_recovery);
+bash_parry_success = false;
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -150,101 +152,91 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Special moves
-	else if(action == "Quickdraw"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
-		attack.initiate(self);
+	else if(action == "Cancel Trick"){
+		pose = instance_create_depth(x, y, 0, Obj_Shield_Cancel_Pose);
+		pose.initiate(self);
 		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
+		sprite_index = Spr_Shield_Cancel_Trick_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Sweep"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Sweep_hitbox);
-		attack.initiate(self);
+	else if(action == "Projectile Trick"){
+		pose = instance_create_depth(x, y, 0, Obj_Shield_Projectile_Pose);
+		pose.initiate(self);
 		
-		h_velocity = 9*image_xscale;
-		grip = original_grip;
-		
-		sprite_index = Spr_Katana_Sweep_recovery;
+		sprite_index = Spr_Shield_Projectile_Trick_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "Send Clone"){
-		action = "Clone Sent";
-		sprite_index = stand_spr;
-		v_velocity = 0;
-		h_velocity = 0;
+	else if(action == "Unstoppable Trick"){
+		pose = instance_create_depth(x, y, 0, Obj_Shield_Unstoppable_Pose);
+		pose.initiate(self);
+		
+		sprite_index = Spr_Shield_Unstoppable_Trick_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Surf Kick"){
+		action = "Surf";
+		
+		attack = instance_create_depth(x, y, 0, Obj_Shield_Surf_hitbox);
+		attack.initiate(self);
+		
+		if(grounded){
+			h_velocity += 8*image_xscale;
+		}
+		grip = original_grip/2;
 		can_cancel = true;
 		
-		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-		clone.initiate(self);
-		// Give clone your stats
-		clone.player_number = player_number;
-		clone.outline_color = outline_color;
-		clone.grip = grip;
-		clone.dash_speed = dash_speed;
-		clone.dash_blink = dash_blink;
-		clone.dash_duration = dash_duration;
-		clone.weight = 0;
-		clone.character_width = character_width;
-		clone.character_height = character_height;
+		sprite_index = Spr_Shield_Surf_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Bash Charge"){
+		action = "Bash";
+		is_parrying = false;
+		blink_h(48*image_xscale);
 		
-		if(send_clone_backward){
-			clone.dash_backward = true;
-		}
-		else{
-			clone.dash_forward = true;
-		}
+		attack = instance_create_depth(x, y, 0, Obj_Shield_Bash_hitbox);
+		attack.initiate(self);
 		
-		recover_alarm = dash_duration;
+		sprite_index = Spr_Shield_Bash_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
-	else if(action == "Quickdraw Clone" || action == "Recall Clone"){
-		can_cancel = true;
+	else if(action == "Spawn Ice"){
+		attack = instance_create_depth(x, y, 0, Obj_Shield_Ice_Spawner);
+		attack.initiate(self);
+		attack.h_velocity = 8*image_xscale;
 		
-		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-		clone.initiate(self);
-		clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
-		clone.action_alarm = clone_action_delay;
-		clone.life_span = 0;
-		clone.weight = 0;
-		clone.shake_amount = 2;
-		clone.image_blend = c_lime;
-		clone.image_alpha = 0.5;
-		clone.draw_mini_ui = false; // No need for UI on those bastards.
-	
-		if(action == "Quickdraw Clone" ){
-			clone.action = "Quickdraw";
-		}
-		else{
-			clone.action = "Teleport Spawner";
-			clone.spawner = self;
-		}
-		sprite_index = Spr_Katana_Spawn_Clone_recovery;
+		sprite_index = Spr_Shield_Ice_Floor_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "Cool Shot"){
+		attack = instance_create_depth(x+32*image_xscale*object_scale, y-16*object_scale, 0, Obj_Shield_Cool_Shot);
+		attack.initiate(self);
+		attack.h_velocity = 3*image_xscale;
+		
+		sprite_index = Spr_Shield_Cool_Shot_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
-		step_distance = 16;
-		steps = 0;
-		attack_spr_width = sprite_get_width(Spr_Katana_ULTRA_hitbox);
-		
-		repeat(16){
-			destination = step_distance*image_xscale;
-			if(!place_meeting(x+destination, y, Parent_Collision)){
-				x += destination;
-				steps += 1;
-			}
-		}
-		
-		attack = instance_create_depth(x, y, 0, Obj_Katana_ULTRA_hitbox);
-		// Attack is spawned behind you after dash/teleport
-		attack.image_xscale = -step_distance/attack_spr_width*steps;
+		attack = instance_create_depth(x, y, 0, Obj_Shield_ULTRA_hitbox1);
 		attack.initiate(self);
-		sprite_index = Spr_Katana_ULTRA_recovery;
+		
+		sprite_index = Spr_Shield_ULTRA_whiff;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+	}
+	else if(action == "ULTRA Hit"){
+		attack = instance_create_depth(x, y, 0, Obj_Shield_ULTRA_hitbox2);
+		attack.initiate(self);
+		
+		reset_physics();
 	}
 	else{
 		action = noone;

@@ -31,4 +31,7 @@ if(global.bow_tr_achievement){
 if(global.rapier_tr_achievement){
 	draw_sprite(Spr_Rapier_Faces, 0, x+24*10, y);
 }
+if(global.shield_tr_achievement){
+	draw_sprite(Spr_Shield_Faces, 0, x+24*11, y);
+}
 

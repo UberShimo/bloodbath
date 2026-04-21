@@ -39,23 +39,24 @@ if(global.dojo_level == 0){
 		reset_positions_pressed = false;
 	}
 	
-	// Toggle Dummy jumping
-	if(student.y_hold && student.select_hold && !toggle_jump_pressed){
-		toggle_jump_pressed = true;
+	// Toggle Dummy attacking
+	if(student.y_hold && student.select_hold && !toggle_attack_pressed){
+		toggle_attack_pressed = true;
+		dummy.is_jumping = false;
 	
-		if(dummy.is_jumping){
-			dummy.is_jumping = false;
+		if(dummy.is_dumbly_attacking){
+			dummy.is_dumbly_attacking = false;
 			dummy.alarm[11] = 0;
 		}
 		else{
-			dummy.is_jumping = true;
+			dummy.is_dumbly_attacking = true;
 			dummy.alarm[11] = 4;
 		}
 		
 		student.reset_buffers();
 	}
 	else if(!student.y_hold){
-		toggle_jump_pressed = false;
+		toggle_attack_pressed = false;
 	}
 	
 	// Toggle DEBUG
@@ -68,5 +69,25 @@ if(global.dojo_level == 0){
 	}
 	else if(!student.b_hold){
 		change_debug_pressed = false;
+	}
+	
+	// Toggle Dummy jumping
+	if(student.a_hold && student.select_hold && !toggle_jump_pressed){
+		toggle_jump_pressed = true;
+		dummy.is_dumbly_attacking = false;
+	
+		if(dummy.is_jumping){
+			dummy.is_jumping = false;
+			dummy.alarm[11] = 0;
+		}
+		else{
+			dummy.is_jumping = true;
+			dummy.alarm[11] = 4;
+		}
+		
+		student.reset_buffers();
+	}
+	else if(!student.a_hold){
+		toggle_jump_pressed = false;
 	}
 }

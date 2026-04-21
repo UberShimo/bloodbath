@@ -81,3 +81,9 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Rapier){
 	input_spr = Spr_DF;
 	sprite_index = Spr_Special_DF_B_Control;
 }
+else if(Obj_Dojo_Manager.student.object_index == Obj_Shield){
+	bonus_text = "Down + Forward > B\nTo do a shield bash!";
+	button_spr = Spr_B;
+	input_spr = Spr_Diagonal_Input;
+	sprite_index = Spr_Special_Diagonal_B_Control;
+}

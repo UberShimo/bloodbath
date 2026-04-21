@@ -40,32 +40,36 @@ if(legit_hit_check){
 			recover_alarm = other.hit_stun;
 			action_alarm = 0;
 			jump_alarm = 0;
+			hit_direction = 0;
 			
-			// Grounded push
-			if(other.h_affecting){
-				// Projectile
-				if(other.is_projectile && other.h_velocity != 0){
-					if(other.h_velocity > 0){
-						h_velocity =  other.hit_push;
-					}
-					else{
-						h_velocity = -other.hit_push;
-					}
+			// Projectile
+			if(other.is_projectile && other.h_velocity != 0){
+				if(other.h_velocity > 0){
+					hit_direction = -1;
 				}
-				// Side relevant
-				else if(other.is_side_relevant || other.is_shockwave){
-					if(x > other.x){
-						h_velocity = other.hit_push;
-					}
-					else{
-						h_velocity = -other.hit_push;
-					}
-				}
-				// Normal melee
 				else{
-					h_velocity = other.hit_push*other.image_xscale;
+					hit_direction = 1;
 				}
 			}
+			// Side relevant
+			else if(other.is_side_relevant || other.is_shockwave){
+				if(x > other.x){
+					hit_direction = -1;
+				}
+				else{
+					hit_direction = 1;
+				}
+			}
+			// Normal melee
+			else{
+				if(other.image_xscale > 0){
+					hit_direction = -1;
+				}
+				else{
+					hit_direction = 1;
+				}
+			}
+			h_velocity = other.hit_push*-hit_direction;
 			sprite_index = stunned_spr;
 	
 			// Launch
@@ -77,35 +81,10 @@ if(legit_hit_check){
 					h_velocity = lengthdir_x(other.shockwave_power, dir);
 					v_velocity = lengthdir_y(other.shockwave_power, dir);
 				}
-				// Normal attack
+				// None shockwave
 				else{
-					if(other.v_affecting){
-						v_velocity = other.v_launch;
-					}
-					if(other.h_affecting){
-						// Projectile
-						if(other.is_projectile && other.h_velocity != 0){
-							if(other.h_velocity > 0){
-								h_velocity =  other.h_launch;
-							}
-							else{
-								h_velocity = -other.h_launch;
-							}
-						}
-						// Side relevant
-						else if(other.is_side_relevant){
-							if(x > other.x){
-								h_velocity = other.h_launch;
-							}
-							else{
-								h_velocity = -other.h_launch;
-							}
-						}
-						// Normal melee
-						else{
-							h_velocity = other.h_launch*other.image_xscale;
-						}
-					}
+					v_velocity = other.v_launch;
+					h_velocity = other.h_launch*-hit_direction;
 				}
 			}
 		}

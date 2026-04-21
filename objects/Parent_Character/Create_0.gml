@@ -150,6 +150,7 @@ launcher_shake_amount = 2;
 doing_action_by_canceling = false;
 hitbox_list = ds_list_create();
 legit_hit_check = false;
+hit_direction = 0; // 1 = hit from right. -1 = hit from left
 cancelable_recovery_frames = global.cancelable_recovery_frames;
 closest_enemy = self;
 multi_hit_action_index = 0; // When one move does many attacks this variable keeps track on what attack you are on
@@ -173,6 +174,7 @@ DoT_tick_dmg = 0; // Poison only lol
 DoT_alarm = 0; // Poison only lol
 meter_pull_target = noone;
 meter_pull_charge_duration = 30; // Frames
+grip_multiplier = 1; // Can be changed by grip changing surfaces!
 #endregion
 
 #region Alarms
@@ -361,7 +363,7 @@ read_input = function(){
 		cancel_prevent_hold = gamepad_button_check(controller_index, gp_shoulderrb);
 
 		// Jump
-		if(gamepad_button_check_pressed(controller_index, gp_face1)){
+		if(gamepad_button_check_pressed(controller_index, gp_face1) && !select_hold){ // No jumping while holding select!
 			a_pressed = buffer_duration;
 		}
 		a_hold = gamepad_button_check(controller_index, gp_face1);

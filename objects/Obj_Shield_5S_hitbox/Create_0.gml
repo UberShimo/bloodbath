@@ -5,10 +5,10 @@ recovery = generate_sprite_frames(Spr_Shield_5S_recovery); // 100% informational
 
 damage = 14;
 hit_stun = global.heavy_hitstun;
-hit_push = 6;
+hit_push = 9;
 freeze_duration = global.heavy_freeze_duration;
 shake_impact = global.heavy_shake_impact;
-h_launch = 5;
+h_launch = 6;
 v_launch = -2;
 
 is_sticky = true;

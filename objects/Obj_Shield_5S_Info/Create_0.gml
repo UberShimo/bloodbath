@@ -1,0 +1,11 @@
+hitbox = Obj_Shield_5S_hitbox;
+
+event_inherited();
+
+air_ok = false;
+air_only = false;
+info = "";
+movement_input = Spr_EMPTY;
+button_input = Spr_B;
+image = Spr_Shield_5S_recovery;
+frame = 0;

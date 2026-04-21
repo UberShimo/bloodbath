@@ -119,6 +119,16 @@ function save_target_run_time(){
 			global.rapier_tr_achievement = true;
 		}
 	}
+	else if(room == Shield_Target_Run){
+		if(Obj_Target_Run_Manager.timer_count < global.shield_TR_record){
+			global.shield_TR_record = Obj_Target_Run_Manager.timer_count;
+			ini_write_real("save", "shield TR record", global.shield_TR_record);
+		}
+		if(Obj_Target_Run_Manager.timer_count < ten_seconds){
+			update_steam_achievement("SHIELD_TR_10_SEC");
+			global.shield_tr_achievement = true;
+		}
+	}
 	
 	ini_close();
 }

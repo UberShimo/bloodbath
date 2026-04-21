@@ -37,6 +37,9 @@ else if(P1_Preview.sprite_index == Spr_Scythe_Portrait){
 else if(P1_Preview.sprite_index == Spr_Rapier_Portrait){
 	val = global.rapier_TR_record;
 }
+else if(P1_Preview.sprite_index == Spr_Shield_Portrait){
+	val = global.shield_TR_record;
+}
 if(val <= 0){
 	part_sec = "?";
 	sec = "?";

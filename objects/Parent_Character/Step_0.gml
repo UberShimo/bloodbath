@@ -21,6 +21,15 @@ else{
 	is_close_to_wall = false;
 }
 
+// Check for a grip changing surface!
+if(position_meeting(x, y+character_height/2, Parent_Grip_Changing_Surface)){
+	surface = instance_position(x, y+character_height/2, Parent_Grip_Changing_Surface)
+	grip_multiplier = surface.grip_multiplier;
+}
+else{
+	grip_multiplier = 1;
+}
+
 #region alarms  V-----V
 if(action_alarm > 0){
 	action_alarm -= logic_time;
@@ -28,6 +37,24 @@ if(action_alarm > 0){
 	if(action_alarm <= 0){
 		universal_action_trigger();
 		action_trigger();
+	}
+}
+
+if(recover_alarm > 0){
+	recover_alarm -= logic_time;
+	
+	if(recover_alarm <= 0){
+		sprite_index = stand_spr;
+		image_blend = c_white;
+		recover_alarm = 0;
+		action_alarm = 0;
+		action = noone;
+		is_unstoppable = false;
+		is_meter_stunned = false;
+		shake_amount = 0;
+		
+		reset_physics();
+		can_cancel = false;
 	}
 }
 
@@ -61,23 +88,6 @@ if(parry_alarm > 0){
 	if(parry_alarm <= 0){
 		is_parrying = false;
 		shake_amount = 0;
-	}
-}
-
-if(recover_alarm > 0){
-	recover_alarm -= logic_time;
-	
-	if(recover_alarm <= 0){
-		sprite_index = stand_spr;
-		recover_alarm = 0;
-		action_alarm = 0;
-		action = noone;
-		is_unstoppable = false;
-		is_meter_stunned = false;
-		shake_amount = 0;
-		
-		reset_physics();
-		can_cancel = false;
 	}
 }
 
@@ -210,11 +220,11 @@ if(action == noone){
 	// Forward
 	else if(forward_hold){
 		if(grounded){
-			if(abs(h_velocity) < start_speed){
+			if(abs(h_velocity) < start_speed && grip_multiplier >= 1){ // No start speed on slippy surfaces
 				h_velocity = start_speed*image_xscale;
 			}
 			if(abs(h_velocity) < max_speed){
-				h_velocity += (grip+acceleration)*image_xscale*logic_time;
+				h_velocity += (grip+acceleration)*image_xscale*logic_time*grip_multiplier;
 			}
 			// Gain meter by moving toward opponent
 			if(!closest_enemy.is_respawning && closest_enemy != self && !faceback_hold && !global.target_run_mode){
@@ -229,11 +239,11 @@ if(action == noone){
 	// Backward
 	else if(backward_hold){
 		if(grounded){
-			if(abs(h_velocity) < start_speed){
+			if(abs(h_velocity) < start_speed && grip_multiplier >= 1){ // No start speed on slippy surfaces
 				h_velocity = -start_speed*image_xscale;
 			}
 			if(abs(h_velocity) < max_speed){
-				h_velocity += -(grip+acceleration)*image_xscale*logic_time;
+				h_velocity += -(grip+acceleration)*image_xscale*logic_time*grip_multiplier;
 			}
 		}
 		else if(abs(h_velocity) < max_speed){
@@ -346,6 +356,7 @@ else if(grounded){
 else if(action == noone){
 	val = air_control*logic_time;
 }
+val *= grip_multiplier;
 
 if(h_velocity > val){
 	h_velocity -= val;

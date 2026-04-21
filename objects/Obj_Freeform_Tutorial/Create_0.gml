@@ -1,11 +1,11 @@
 event_inherited();
 
 text = "SELECT + X:\n"+
-"Reset positions\n"+
-"\n"+
+"        Reset positions\n"+
 "SELECT + Y:\n"+
-"Toggle jumping\n"+
-"\n"+
+"        Toggle attacking\n"+
 "SELECT + B:\n"+
-"Toggle debug";
+"        Toggle debug\n"+
+"SELECT + A:\n"+
+"        Toggle jumping";
 text_scale = 0.7;

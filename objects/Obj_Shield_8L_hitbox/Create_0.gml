@@ -12,7 +12,6 @@ h_launch = 1;
 v_launch = -2;
 
 is_sticky = true;
-is_cancelable = true;
 
 swing_sound = Snd_Light_Swing;
 
