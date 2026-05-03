@@ -29,6 +29,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "ULTRA";
 			meter -= 50;
 			
+			shake_amount = launcher_shake_amount;
+			
 			sprite_index = Spr_Shield_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;

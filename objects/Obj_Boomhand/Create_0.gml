@@ -152,7 +152,7 @@ action_trigger = function(){
 	}
 	// Special moves
 	else if(action == "Roar"){
-		roar_power += 0.36;
+		roar_power += 0.5;
 		
 		sprite_index = Spr_Boomhand_Roar_recovery;
 		image_index = 0;

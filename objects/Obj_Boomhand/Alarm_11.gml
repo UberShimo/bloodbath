@@ -15,7 +15,7 @@ if(is_controllable){
 	}
 	// Roar
 	else if(rng < 0.10){ // 10%
-		down_forward_pressed = buffer_duration;
+		double_down_pressed = buffer_duration;
 		x_pressed = buffer_duration;
 	}
 	// Shockwave punch

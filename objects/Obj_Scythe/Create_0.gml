@@ -118,7 +118,7 @@ action_trigger = function(){
 			attack = instance_create_depth(x, y, 0, Obj_Scythe_2S_hitbox);
 			attack.initiate(self);
 		
-			h_velocity += 4*image_xscale;
+			h_velocity += 5*image_xscale;
 			
 			sprite_index = Spr_Scythe_2S_recovery;
 			image_index = 0;
@@ -129,6 +129,9 @@ action_trigger = function(){
 		else if(multi_hit_action_index == 1){
 			attack = instance_create_depth(x, y, 0, Obj_Scythe_2S_hitbox);
 			attack.initiate(self);
+			
+			h_velocity += 3*image_xscale;
+			
 			action_alarm = 12;
 			multi_hit_action_index += 1;
 		}
@@ -136,6 +139,8 @@ action_trigger = function(){
 			attack = instance_create_depth(x, y, 0, Obj_Scythe_2S_hitbox);
 			attack.initiate(self);
 			attack.v_launch = -11;
+			
+			h_velocity += 2*image_xscale;
 			
 			multi_hit_action_index += 1;
 		}

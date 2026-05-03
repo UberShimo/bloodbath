@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Spawn a circle that pulls enemy into it!";
+info = "Spawn a circle that pulls enemy into it!\nDash to cancel ULTRA.";
 button_input = Spr_RB_B;
 image = Spr_Scythe_ULTRA_recovery;
 frame = 0;

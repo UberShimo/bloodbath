@@ -25,7 +25,7 @@ extra_hit_logic = function(target){
 	target.x = x;
 	target.y = y;
 	x_val = 4*image_xscale;
-	repeat(6){
+	repeat(8){
 		if(!target.check_collision(x_val, 0)){
 			target.x += x_val;
 		}

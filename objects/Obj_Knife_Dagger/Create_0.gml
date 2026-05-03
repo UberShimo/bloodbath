@@ -20,3 +20,8 @@ swing_sound = Snd_Quick_Swing;
 collide = function(){
 	instance_destroy();
 }
+
+extra_hit_logic = function(target){
+	spawner.marked_target = target;
+	instance_destroy();
+}

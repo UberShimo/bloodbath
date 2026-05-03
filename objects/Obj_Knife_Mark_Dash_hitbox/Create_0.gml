@@ -17,3 +17,9 @@ is_parryable = false;
 
 swing_sound = Snd_NOTHING;
 hit_sound = Snd_NOTHING;
+hit_effect_scale = 0;
+
+extra_hit_logic = function(target){
+	spawner.marked_target = target;
+	instance_destroy();
+}

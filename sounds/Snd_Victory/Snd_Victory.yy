@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 6.00815,
+  "duration": 4.754275,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds/Sounds.yy",
@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "Snd_Victory.mp3",
   "type": 0,
-  "volume": 0.4,
+  "volume": 0.5,
 }

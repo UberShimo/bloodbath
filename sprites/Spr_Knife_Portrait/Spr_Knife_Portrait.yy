@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "Spr_Knife_Portrait",
   "bbox_bottom": 127,
-  "bbox_left": 2,
-  "bbox_right": 117,
+  "bbox_left": 1,
+  "bbox_right": 119,
   "bbox_top": 1,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -20,6 +20,7 @@
   "height": 128,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f8fcb1a4-015b-4cee-8fb5-410b6544b6ed","blendMode":0,"displayName":"Layer 7","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1812606e-dc21-4849-9311-94fea9e1d734","blendMode":0,"displayName":"NAME","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4fa68040-736a-40c9-bade-eb444a988a21","blendMode":0,"displayName":"Layer 5","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ae15b9c8-04c4-4cce-a6af-937b30be0b76","blendMode":0,"displayName":"Layer 4","isLocked":false,"opacity":30.0,"visible":true,},

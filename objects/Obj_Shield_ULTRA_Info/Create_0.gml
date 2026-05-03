@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 hold_ok = false;
-info = "A mighty grab that just...\nKills whatever is squeezes.";
+info = "A mighty grab that just...\nKills whatever is squeezes.\nDash to cancel ULTRA.";
 movement_input = Spr_EMPTY;
 button_input = Spr_RB_B;
 image = Spr_Shield_ULTRA_hit;

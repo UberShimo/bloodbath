@@ -15,6 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"aa56be82-c51f-44bc-8563-87d03d3af607",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"090749c8-059e-4efb-b346-9fcbb456ef77",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a927c800-5c1d-4172-aca2-f607c7617c57",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -46,7 +48,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 4.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -59,6 +61,8 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Boomhand_Roar_startup/Spr_Boomhand_Roar_startup.yy",},},},"Disabled":false,"id":"ea17047a-de36-4149-baba-9ce3cf16744e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aa56be82-c51f-44bc-8563-87d03d3af607","path":"sprites/Spr_Boomhand_Roar_startup/Spr_Boomhand_Roar_startup.yy",},},},"Disabled":false,"id":"28acf55c-e4eb-47ee-8ab4-2f6e31e728ab","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"090749c8-059e-4efb-b346-9fcbb456ef77","path":"sprites/Spr_Boomhand_Roar_startup/Spr_Boomhand_Roar_startup.yy",},},},"Disabled":false,"id":"2cc82dac-f821-47a0-b9e8-2cc78e75e1ef","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a927c800-5c1d-4172-aca2-f607c7617c57","path":"sprites/Spr_Boomhand_Roar_startup/Spr_Boomhand_Roar_startup.yy",},},},"Disabled":false,"id":"04ee226d-7748-43ab-8f90-39b2369b9d70","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

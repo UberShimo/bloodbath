@@ -22,6 +22,15 @@ TODO{
 	Make a scale stat so characters can change scale?
 }
 
+PATCH NOTES:
+- Simon cant mark invulnerable opponent.
+- Simon portrait name updated.
+- Charlotte D Strong updated.
+- Anders Cancel Trick looks little different.
+- Anders ULTRA feels way cooler.
+- Win sound updated!
+
+
 DOOM MODE (Roguelike){
 	Includes 8 stages.
 	Last stage is a mirror match with yourself that has all your UPGRADES.
