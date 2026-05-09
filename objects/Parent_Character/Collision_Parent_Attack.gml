@@ -3,12 +3,16 @@ legit_hit_check = other.index != index && ds_list_find_index(hitbox_list, other)
 && !is_invincible && !is_respawning && other.is_active && death_alarm <= 0 && !priority_struck;
 
 if(legit_hit_check){
-	reset_physics();
-	reset_buffers();
-	h_velocity = 0;
-	v_velocity = 0;
-	attack_parried = false;
+	// Reset physics unless you are untoppable
+	if(!is_unstoppable){
+		reset_physics();
+		reset_buffers();
+		h_velocity = 0;
+		v_velocity = 0;
+	}
 	
+	// Parry?
+	attack_parried = false;
 	if(is_parrying && other.is_parryable){
 		attack_parried = true;
 		recover_alarm = 1;

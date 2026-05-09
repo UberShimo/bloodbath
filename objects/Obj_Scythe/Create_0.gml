@@ -89,7 +89,7 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(action == "L"){
+	else if(action == "5L"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_L_hitbox);
 		attack.initiate(self);
 		

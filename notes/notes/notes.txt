@@ -13,6 +13,7 @@ TODO{
 	Boots: Gain movement speed for a duration.
 	Magnet: Pull opponents toward you for a duration.
 	
+	After dashing you cant do v>Dash input for some reason...
 	Fix controller remap.
 	
 	Add velocity change to hitboxes?
@@ -28,6 +29,16 @@ PATCH NOTES:
 - Charlotte D Strong updated.
 - Anders Cancel Trick looks little different.
 - Anders ULTRA feels way cooler.
+- Anders surf move reworked.
+- Bobbys Air Strong push back reduced.
+- Bobby Air Normal recovery reduced.
+- Fixed so Victor wont gravitate when being grabbed.
+- Removed William Air Medium
+- Ellie Light attack startup increased.
+- Bertil ROAR effect looks cooler.
+
+- Changed wallbounce logic.
+- You dont loose momentum when being hit during unstoppable moves.
 - Win sound updated!
 
 

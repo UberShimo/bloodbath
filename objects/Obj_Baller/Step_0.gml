@@ -11,7 +11,7 @@ if(is_holding_ball){
 }
 	
 // Weight manipulation
-if(action != "Headbutt"){
+if(action == noone){
 	if(is_holding_ball){
 		weight = global.heavy_weight;
 	}

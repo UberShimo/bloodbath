@@ -154,7 +154,7 @@ hit_direction = 0; // 1 = hit from right. -1 = hit from left
 cancelable_recovery_frames = global.cancelable_recovery_frames;
 closest_enemy = self;
 multi_hit_action_index = 0; // When one move does many attacks this variable keeps track on what attack you are on
-wall_bounce_limit = 6;
+wall_bounce_limit = 5;
 ground_bounce_limit = 10;
 grounded = false;
 priority_struck = false; // When you get hit by a priority hitbox. Sweetspots usually. This variable resets in alarm[9]

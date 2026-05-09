@@ -260,15 +260,14 @@ if(roar_power > 0){
 	
 	// Effect
 	if(effect_counter >= 1){
-		repeat(2){
-			x_spawn = x+random_range(-character_width/2, character_width/2);
-			y_spawn = y+random_range(-character_height/2, character_height/2);
-			eff = instance_create_depth(x_spawn, y_spawn, depth-1, Eff_Dot);
-			eff.image_blend = c_orange;
-			eff.image_xscale = roar_power/2;
-			eff.image_yscale = roar_power/2;
-			eff.v_velocity = -0.25;
+		d = 1;
+		if(spawn_fire_effect_in_front){
+			d = -1;
 		}
+		spawn_fire_effect_in_front = !spawn_fire_effect_in_front;
+		x_spawn = x+random_range(-character_width/2, character_width/2);
+		y_spawn = random_range(bbox_top, y+16);
+		spawn_effect(x_spawn, y_spawn, 1, Eff_Fire, 1, 0.05, c_white, roar_power, roar_power, -0.01, 0, 360, 0, depth+d);
 	}
 }
 

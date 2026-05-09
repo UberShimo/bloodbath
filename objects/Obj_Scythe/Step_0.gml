@@ -109,7 +109,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else if(!grounded){
-			action = "L";
+			action = "5L";
 			sprite_index = Spr_Scythe_L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
@@ -128,7 +128,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 		else{
-			action = "L";
+			action = "5L";
 			sprite_index = Spr_Scythe_L_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);

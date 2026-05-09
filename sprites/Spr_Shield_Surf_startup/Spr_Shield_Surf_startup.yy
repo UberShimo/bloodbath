@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0d405612-b970-41fc-82c9-4630e2c364f7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"66d2265d-84ef-4a5d-b48b-e9b04c620293",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -48,7 +49,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -61,6 +62,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Shield_Surf_startup/Spr_Shield_Surf_startup.yy",},},},"Disabled":false,"id":"06f68d86-6a8e-43ff-b2cb-b9de91de9736","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0d405612-b970-41fc-82c9-4630e2c364f7","path":"sprites/Spr_Shield_Surf_startup/Spr_Shield_Surf_startup.yy",},},},"Disabled":false,"id":"2eed0953-4ff4-4c9e-af96-a909dba6bcfb","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"66d2265d-84ef-4a5d-b48b-e9b04c620293","path":"sprites/Spr_Shield_Surf_startup/Spr_Shield_Surf_startup.yy",},},},"Disabled":false,"id":"0313ff65-bdcf-45b9-ad37-2d1d1ff5a6ca","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

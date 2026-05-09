@@ -179,14 +179,15 @@ action_trigger = function(){
 	else if(action == "Surf Kick"){
 		action = "Surf";
 		
-		attack = instance_create_depth(x, y, 0, Obj_Shield_Surf_hitbox);
-		attack.initiate(self);
-		
 		if(grounded){
 			h_velocity += 8*image_xscale;
 		}
 		grip = original_grip/2;
+		// Regain cancels baby!
+		cancels = max_cancels;
 		can_cancel = true;
+		effect = instance_create_depth(x, y, 1, Eff_Cancel);
+		effect.initiate(self);
 		
 		sprite_index = Spr_Shield_Surf_recovery;
 		image_index = 0;

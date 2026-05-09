@@ -335,12 +335,18 @@ else if(val != 0){
 		x += x_check;
 	}
 	// Wall bounce
-	if(action == "Stunned" && abs(h_velocity) > wall_bounce_limit){
-		h_velocity = -h_velocity*0.25;
-		spawn_effect(x, y, 8, Eff_Splash, 1, 0.05);
+	if(action == "Stunned"){
+		if(grounded && abs(h_velocity) > wall_bounce_limit){
+			h_velocity = -h_velocity*0.25;
 		
-		if(v_velocity > -10){
-			v_velocity = -10;
+			if(v_velocity > -8){
+				v_velocity = -8;
+			}
+			spawn_effect(x, y, 8, Eff_Splash, 1, 0.05);
+		}
+		else if(!grounded){
+			h_velocity = -h_velocity*0.5;
+			spawn_effect(x, y, 8, Eff_Splash, 1, 0.05);
 		}
 	}
 }
@@ -631,7 +637,7 @@ else if(lb_pressed > 0 && !down_hold
 			
 			// Gain meter when dashing toward enemy
 			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
-				// Extra check so you really dash towards enemy!
+				// Extra check to see if you really dash towards enemy!
 				if((closest_enemy.x > x && image_xscale > 0)
 				|| (closest_enemy.x < x && image_xscale < 0)){
 					meter += meter_gain_by_dashing;

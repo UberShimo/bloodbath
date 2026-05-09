@@ -68,7 +68,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Surf Kick";
 			is_collidable = false;
-			cancels += 1; // So it is cancel free!
 			
 			sprite_index = Spr_Shield_Surf_startup;
 			image_index = 0;
@@ -223,7 +222,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 
 // Surf logic
 if(action == "Surf"){
-	cancelable_recovery_frames = surf_max_duration-8;
+	cancelable_recovery_frames = surf_max_duration-4;
 }
 else{
 	cancelable_recovery_frames = global.cancelable_recovery_frames;
