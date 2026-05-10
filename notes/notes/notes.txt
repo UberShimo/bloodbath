@@ -24,22 +24,7 @@ TODO{
 }
 
 PATCH NOTES:
-- Simon cant mark invulnerable opponent.
-- Simon portrait name updated.
-- Charlotte D Strong updated.
-- Anders Cancel Trick looks little different.
-- Anders ULTRA feels way cooler.
-- Anders surf move reworked.
-- Bobbys Air Strong push back reduced.
-- Bobby Air Normal recovery reduced.
-- Fixed so Victor wont gravitate when being grabbed.
-- Removed William Air Medium
-- Ellie Light attack startup increased.
-- Bertil ROAR effect looks cooler.
 
-- Changed wallbounce logic.
-- You dont loose momentum when being hit during unstoppable moves.
-- Win sound updated!
 
 
 DOOM MODE (Roguelike){
