@@ -1,3 +1,49 @@
+// Check for pose circles
+if(instance_exists(Parent_Shield_Pose)){
+	shortest_dist = pose_dash_min_distance;
+	targeted_pose = noone;
+	for(i = 0; i < instance_number(Parent_Shield_Pose); i++){
+		pose = instance_find(Parent_Shield_Pose, i);
+		dist = distance_to_point(pose.x, pose.y);
+		if(dist < shortest_dist && pose.index == index && pose.is_targetable){
+			shortest_dist = dist;
+			targeted_pose = pose;
+		}
+	}
+}
+else{
+	targeted_pose = noone;
+}
+
+// Special pose dash
+if(lb_pressed > 0 && cancels > 0 && (forward_hold || backward_hold) && instance_exists(targeted_pose)){
+	save_current_state();
+	reset_physics();
+	do_cancel(); // Counts as a cancel always
+	reset_buffers();
+	
+	action = "Pose Dash";
+	can_cancel = true;
+	goes_through_platforms = true;
+	
+	pose_dash_dir = point_direction(x, y, targeted_pose.x, targeted_pose.y);
+	h_velocity = lengthdir_x(pose_dash_velocity, pose_dash_dir);
+	v_velocity = lengthdir_y(pose_dash_velocity, pose_dash_dir);
+	weight = 0;
+			
+	sprite_index = Spr_Shield_Pose_Dash;
+	image_index = 0;
+	recover_alarm = generate_sprite_frames(sprite_index);
+	
+	// Set image angle before activating pose
+	image_angle = pose_dash_dir;
+	if(image_xscale < 0){
+		image_angle += 180;
+	}
+	// last but not least
+	targeted_pose.activate();
+}
+
 
 event_inherited();
 
@@ -84,8 +130,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			is_unstable = true;
 			
 			h_velocity = 3*image_xscale;
-			v_velocity = -6;
-			weight = 0.45;
+			v_velocity = -trick_jump_power;
+			weight = trick_jump_weight;
 			
 			sprite_index = Spr_Shield_Cancel_Trick_startup;
 			image_index = 0;
@@ -122,8 +168,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			is_unstable = true;
 			
 			h_velocity = 3*image_xscale;
-			v_velocity = -6;
-			weight = 0.45;
+			v_velocity = -trick_jump_power;
+			weight = trick_jump_weight;
 			
 			sprite_index = Spr_Shield_Projectile_Trick_startup;
 			image_index = 0;
@@ -177,8 +223,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			is_unstable = true;
 			
 			h_velocity = 3*image_xscale;
-			v_velocity = -6;
-			weight = 0.45;
+			v_velocity = -trick_jump_power;
+			weight = trick_jump_weight;
 			
 			sprite_index = Spr_Shield_Unstoppable_Trick_startup;
 			image_index = 0;
@@ -226,4 +272,25 @@ if(action == "Surf"){
 }
 else{
 	cancelable_recovery_frames = global.cancelable_recovery_frames;
+}
+
+// Pose dash sprite fix
+if(action == "Pose Dash"){
+	image_angle = pose_dash_dir;
+	if(image_xscale < 0){
+		image_angle += 180;
+	}
+	// Friction
+	if(abs(h_velocity) > 1*logic_time){
+		h_velocity -= lengthdir_x(pose_dash_friction, pose_dash_dir)*logic_time;
+	}
+	else{
+		h_velocity = 0;
+	}
+	if(abs(v_velocity) > 1*logic_time){
+		v_velocity -= lengthdir_y(pose_dash_friction, pose_dash_dir)*logic_time;
+	}
+	else{
+		v_velocity = 0;
+	}
 }

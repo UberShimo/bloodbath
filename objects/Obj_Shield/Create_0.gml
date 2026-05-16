@@ -46,6 +46,14 @@ original_weight = weight;
 #endregion
 
 // Shield stuff
+perform_pose_dash = false;
+pose_dash_min_distance = 64;
+targeted_pose = noone;
+pose_dash_dir = 0;
+pose_dash_velocity = 12;
+pose_dash_friction = 0.5;
+trick_jump_power = 5.5;
+trick_jump_weight = 0.42;
 unstoppable_duration = 90;
 unstoppable_alarm = 0;
 surf_max_duration = generate_sprite_frames(Spr_Shield_Surf_recovery);

@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"afff1ca4-cb48-48c8-847d-39f65ff97e31",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"16a247e9-b334-46a0-8a96-b13f182c0d0b",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b1b3b43b-d59f-446e-a752-7313fc784b22",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c81f0424-6a4f-4f12-81aa-7f8cc543720c",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5ca7a371-ea44-4fed-857d-50423f51e23c",},
@@ -61,7 +61,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"afff1ca4-cb48-48c8-847d-39f65ff97e31","path":"sprites/Spr_Shield_Unstoppable_Trick_recovery/Spr_Shield_Unstoppable_Trick_recovery.yy",},},},"Disabled":false,"id":"fb7ee15a-4997-4986-a758-127825e144f1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"16a247e9-b334-46a0-8a96-b13f182c0d0b","path":"sprites/Spr_Shield_Unstoppable_Trick_recovery/Spr_Shield_Unstoppable_Trick_recovery.yy",},},},"Disabled":false,"id":"c423625f-e7fb-4d75-93f9-26a36c113d7c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b1b3b43b-d59f-446e-a752-7313fc784b22","path":"sprites/Spr_Shield_Unstoppable_Trick_recovery/Spr_Shield_Unstoppable_Trick_recovery.yy",},},},"Disabled":false,"id":"eb92d95b-d2b5-4b6e-9a7f-f689e0540916","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c81f0424-6a4f-4f12-81aa-7f8cc543720c","path":"sprites/Spr_Shield_Unstoppable_Trick_recovery/Spr_Shield_Unstoppable_Trick_recovery.yy",},},},"Disabled":false,"id":"7333d04a-61f2-48c3-84a7-7ced4ca4deb0","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5ca7a371-ea44-4fed-857d-50423f51e23c","path":"sprites/Spr_Shield_Unstoppable_Trick_recovery/Spr_Shield_Unstoppable_Trick_recovery.yy",},},},"Disabled":false,"id":"46484d45-5f69-4862-9fdc-adb8d02f02de","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},

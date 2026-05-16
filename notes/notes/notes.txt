@@ -24,7 +24,9 @@ TODO{
 }
 
 PATCH NOTES:
-
+- Anders plopp sound effect on poses reduced.
+- Anders now dashes THROUGH poses when activating them.
+- Poya medium attacks changed animation / hitboxes.
 
 
 DOOM MODE (Roguelike){

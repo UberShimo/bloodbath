@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"59b6e0ad-1c67-4771-a15b-2c87df3c68f6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f5901c69-66ff-4706-b99e-db6888e8716a",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cdb52af2-0142-4a7f-8df8-95a6d00c3fb9",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"549d2a48-a687-49a7-85a2-761dc6cd53b1",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dbf87068-cfb2-4ce1-b62d-ee579bdd3978",},
@@ -61,7 +61,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"59b6e0ad-1c67-4771-a15b-2c87df3c68f6","path":"sprites/Spr_Shield_Projectile_Trick_recovery/Spr_Shield_Projectile_Trick_recovery.yy",},},},"Disabled":false,"id":"119bfdb2-1b2b-4017-8e13-50b3f94c4ba7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f5901c69-66ff-4706-b99e-db6888e8716a","path":"sprites/Spr_Shield_Projectile_Trick_recovery/Spr_Shield_Projectile_Trick_recovery.yy",},},},"Disabled":false,"id":"aa5f5903-8177-4da3-aedf-5b90a170b2f4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cdb52af2-0142-4a7f-8df8-95a6d00c3fb9","path":"sprites/Spr_Shield_Projectile_Trick_recovery/Spr_Shield_Projectile_Trick_recovery.yy",},},},"Disabled":false,"id":"2ebcbd6f-a97d-41bf-803a-373876efe451","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"549d2a48-a687-49a7-85a2-761dc6cd53b1","path":"sprites/Spr_Shield_Projectile_Trick_recovery/Spr_Shield_Projectile_Trick_recovery.yy",},},},"Disabled":false,"id":"79cf6052-0704-45d9-8dfa-c4313ca5b356","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dbf87068-cfb2-4ce1-b62d-ee579bdd3978","path":"sprites/Spr_Shield_Projectile_Trick_recovery/Spr_Shield_Projectile_Trick_recovery.yy",},},},"Disabled":false,"id":"5ab9966e-f7fa-4228-8489-b6bd1b4fc179","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},

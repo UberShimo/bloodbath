@@ -7,6 +7,7 @@ activate = function(){
 	spawner.cancels = spawner.max_cancels;
 	effect = instance_create_depth(spawner.x, spawner.y, 1, Eff_Cancel);
 	effect.initiate(spawner);
+	effect.image_angle = spawner.image_angle;
 	
 	spawn_effect(x, y, 1, Eff_Shield_Pose_Pop, 1, 0, image_blend, 1, 1, 0, image_angle, image_angle);
 	audio_play_sound(Snd_Plopp, 0, false);
