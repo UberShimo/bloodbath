@@ -1,6 +1,7 @@
 if(ds_list_find_index(hitbox_list, other) == -1 && !spawner.is_holding_ball){
 	
 	// Baller move
+	y -= 3; // Safety lift so it wount fuck around with ground collision
 	h_velocity = 10*other.image_xscale;
 	v_velocity = -4;
 	
@@ -9,12 +10,12 @@ if(ds_list_find_index(hitbox_list, other) == -1 && !spawner.is_holding_ball){
 	// Freeze time
 	if(other.freeze_duration > 0){
 		object_time = other.freeze_amount;
-		time_reset_alarm = other.freeze_duration;
+		time_reset_alarm = 8;
 		other.object_time = other.freeze_amount;
-		other.time_reset_alarm = other.freeze_duration;
+		other.time_reset_alarm = 8;
 		if(!other.is_projectile){
 			other.spawner.object_time = other.freeze_amount;
-			other.spawner.time_reset_alarm = other.freeze_duration;
+			other.spawner.time_reset_alarm = 8;
 		}
 	}
 	

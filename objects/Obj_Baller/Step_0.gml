@@ -20,7 +20,7 @@ if(action == noone){
 	}
 }
 // Special ball manipulation so it looks good when launching off ball when headbutting!
-else if(is_holding_ball){
+else if(is_holding_ball && action == "Headbutt"){
 	ball.x = x-12*image_xscale;
 	ball.y = y+12;
 }

@@ -153,10 +153,10 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "2S"){
-		blink_h(20*image_xscale, false);
-		
 		attack = instance_create_depth(x, y, 0, Obj_Baller_2S_hitbox);
 		attack.initiate(self);
+		
+		h_velocity = 6*image_xscale;
 		
 		sprite_index = Spr_Baller_2S_recovery;
 		image_index = 0;

@@ -13,5 +13,6 @@ v_launch = -7;
 
 is_sticky = true;
 is_launcher = true;
+hitfallable = false;
 
 swing_sound = Snd_Light_Swing;

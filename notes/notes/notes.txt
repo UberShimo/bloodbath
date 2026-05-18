@@ -1,4 +1,6 @@
 TODO{
+	Baller 2L should not be hitfallable.
+	Baller ball is truly offset during most ball moves... 
 	
 	Make ITEMS mode!
 	Items v-v
@@ -27,6 +29,9 @@ PATCH NOTES:
 - Anders plopp sound effect on poses reduced.
 - Anders now dashes THROUGH poses when activating them.
 - Poya medium attacks changed animation / hitboxes.
+- Victor down medium attack no longer hit fallable.
+- Victor ball position adjusted during many moves.
+- Jeeny Air strong hurtbox corrected.
 
 
 DOOM MODE (Roguelike){
