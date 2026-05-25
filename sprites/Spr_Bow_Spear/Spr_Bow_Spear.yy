@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Bow_Spear",
   "bbox_bottom": 9,
-  "bbox_left": 1,
+  "bbox_left": 64,
   "bbox_right": 94,
   "bbox_top": 7,
   "bboxMode": 2,

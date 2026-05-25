@@ -143,7 +143,7 @@ action_trigger = function(){
 	}
 	// Special moves
 	else if(action == "Boomerang"){
-		attack = instance_create_depth(x, y, 0, Obj_Bow_Boomerang);
+		attack = instance_create_depth(x+16*image_xscale, y, 0, Obj_Bow_Boomerang);
 		attack.initiate(self);
 		
 		if(throw_boomerang_up){
@@ -195,7 +195,6 @@ action_trigger = function(){
 		attack.damage -= (attack.damage*0.7)*abs(aim_dir)/45; // Remove up to 70% damage
 		attack.h_velocity = lengthdir_x(spd, aim_dir)*image_xscale;
 		attack.v_velocity = lengthdir_y(spd, aim_dir);
-		attack.spd = spd; // Jump save speed for when it bounces
 		attack.image_xscale = image_xscale;
 		attack.image_angle = aim_dir*image_xscale;
 		

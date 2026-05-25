@@ -326,7 +326,9 @@ action_trigger = function(){
 		spawner.zombie_color = player_color;
 		spawner.character_to_spawn = closest_enemy.object_index;
 		
-		action = noone;
+		sprite_index = Spr_Cultist_ULTRA_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else{
 		action = noone;

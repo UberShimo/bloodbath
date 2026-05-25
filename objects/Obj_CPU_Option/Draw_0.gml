@@ -11,3 +11,6 @@ if(connection != noone){
 if(global.teams_mode){
 	image_blend = global.p_colors[index+global.team_change_value[index]];
 }
+else{
+	image_blend = c_white;
+}

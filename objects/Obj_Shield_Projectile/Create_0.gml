@@ -3,7 +3,7 @@ event_inherited();
 startup = generate_sprite_frames(Spr_Shield_Projectile_Trick_startup);
 recovery = generate_sprite_frames(Spr_Shield_Projectile_Trick_recovery);
 
-damage = 8;
+damage = 7;
 hit_stun = 16;
 hit_push = 0;
 freeze_duration = global.medium_freeze_duration;

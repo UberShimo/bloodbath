@@ -16,7 +16,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Cultist_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = generate_sprite_frames(sprite_index)-1; // -1 needed for some reason?
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(x_pressed && meter_circle != noone && down_hold){

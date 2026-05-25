@@ -22,8 +22,12 @@ hit_sound = Snd_Smack;
 extra_hit_logic = function(target){
 	
 	// Make sure opponent dont get into wall
+	height_diff = spawner.character_height - target.character_height;
+	if(height_diff > 0){
+		height_diff = 0;
+	}
 	target.x = x;
-	target.y = y;
+	target.y = y+height_diff;
 	x_val = 4*image_xscale;
 	repeat(8){
 		if(!target.check_collision(x_val, 0)){
@@ -34,7 +38,6 @@ extra_hit_logic = function(target){
 	target.h_velocity = 0;
 	target.v_velocity = 0;
 	target.weight = 0;
-	target.is_collidable = false;
 	
 	spawner.weight = 0;
 	spawner.h_velocity = 0;
