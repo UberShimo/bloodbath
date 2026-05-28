@@ -127,7 +127,7 @@ global.p_colors[3] = make_color_rgb(255, 255, 0);
 global.p_colors[4] = make_color_rgb(255, 102, 0);
 global.p_colors[5] = make_color_rgb(255, 0, 255);
 global.p_colors[6] = make_color_rgb(0, 0, 255);
-global.p_colors[7] = make_color_rgb(102, 102, 255);
+global.p_colors[7] = make_color_rgb(180, 180, 180);
 #endregion
 
 // Initiate arrays

@@ -36,7 +36,7 @@ PATCH NOTES:
 - Jeeny Air strong hurtbox corrected.
 - Sol boomerang/arrows/spear dont hit behind her.
 
-- Turning off TEAMS now removes color in character select.
+- Character selects visually updated.
 
 
 DOOM MODE (Roguelike){

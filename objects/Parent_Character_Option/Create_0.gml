@@ -12,8 +12,8 @@ target_run_room = Dojo_Target_Run;
 option_width = 64;
 option_height = 128;
 
-bg_color = c_white;
-bg_alpha = 0.1;
+bg_color = make_color_rgb(40, 40, 40);
+bg_alpha = 1;
 
 mask_index = Spr_Picker;
 depth = 10;
