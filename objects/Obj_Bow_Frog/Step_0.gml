@@ -1,7 +1,7 @@
 event_inherited();
 
 // Jump up
-if(!spawner.rb_hold && !has_jumped){
+if(!spawner.meter_hold && !has_jumped){
 	has_jumped = true;
 	h_velocity = 1.5*image_xscale;
 	v_velocity = -7;

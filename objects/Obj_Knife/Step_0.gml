@@ -1,6 +1,6 @@
 
 if((action == "Mark Spin")){
-	if(y_hold){
+	if(medium_attack_hold){
 		goes_through_platforms = true;
 	}
 	else{
@@ -23,8 +23,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
 			h_velocity = 0;
@@ -38,7 +38,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			multi_hit_action_index = 0;
 		}
-		else if(meter >= 30 && y_pressed){
+		else if(meter >= 30 && medium_attack_pressed){
 			action = "Lob Potion";
 			meter -= 30;
 			
@@ -46,7 +46,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 30 && x_pressed && grounded && image_alpha >= 1){
+		else if(meter >= 30 && light_attack_pressed && grounded && image_alpha >= 1){
 			if(backward_hold){
 				image_xscale *= -1;
 			}
@@ -68,7 +68,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(diagonal_input_hold && instance_exists(marked_target)){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -119,7 +119,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(diagonal_input_hold && instance_exists(marked_target)){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -170,7 +170,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;

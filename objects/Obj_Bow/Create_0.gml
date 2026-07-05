@@ -150,7 +150,7 @@ action_trigger = function(){
 			attack.h_velocity = 7*image_xscale;
 			attack.v_velocity = -2;
 			attack.return_alarm = 40;
-			if(b_hold){
+			if(heavy_attack_hold){
 				attack.h_velocity *= 1.3
 				attack.v_velocity *= 1.3
 				attack.return_alarm = 50;
@@ -161,7 +161,7 @@ action_trigger = function(){
 			attack.h_velocity = 8*image_xscale;
 			attack.v_velocity = 3;
 			attack.return_alarm = 50;
-			if(x_hold){
+			if(light_attack_hold){
 				attack.h_velocity *= 1.3
 				attack.v_velocity *= 1.3
 				attack.return_alarm = 62;
@@ -171,7 +171,7 @@ action_trigger = function(){
 		else{
 			attack.h_velocity = 9*image_xscale;
 			attack.return_alarm = 60;
-			if(y_hold){
+			if(medium_attack_hold){
 				attack.h_velocity *= 1.3;
 				attack.return_alarm = 70;
 			}

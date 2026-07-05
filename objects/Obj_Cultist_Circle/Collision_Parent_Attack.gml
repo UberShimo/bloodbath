@@ -1,8 +1,13 @@
 if(ds_list_find_index(hitbox_list, other) == -1 && other.is_active && !other.is_projectile){
 	dir = point_direction(other.x, other.y, x, y);
 
+	// Special blast interaction
+	if(other.object_index == Obj_Cultist_Blast_hitbox){
+		h_velocity = 8*other.image_xscale;
+		v_velocity = 0;
+	}
 	// Shockwave
-	if(other.is_shockwave){
+	else if(other.is_shockwave){
 		h_velocity = lengthdir_x(other.shockwave_power, dir);
 		v_velocity = lengthdir_y(other.shockwave_power, dir);
 	}

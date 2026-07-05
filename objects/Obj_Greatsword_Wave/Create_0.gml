@@ -15,6 +15,7 @@ is_projectile = true;
 projectile_duration = 600;
 is_final = true;
 collision_check_with_distance = false;
+swing_sound = Snd_NOTHING;
 
 // Wave stuff
 drag_along_amount = 0.8; // % based

@@ -8,7 +8,7 @@ if(action == "Dash"){
 
 // ACTION!
 // ULTRA!!!
-if(rb_hold && meter >= 100 && b_pressed){
+if(meter_hold && meter >= 100 && heavy_attack_pressed){
 	action = "Dissapear";
 	meter -= 100;
 	find_closest_enemy();
@@ -30,8 +30,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 25 && y_pressed){
+	if(meter_hold){
+		if(meter >= 25 && medium_attack_pressed){
 			action = "Gun";
 			meter -= 25;
 			
@@ -47,7 +47,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 20 && x_pressed){
+		else if(meter >= 20 && light_attack_pressed){
 			action = "Whirl";
 			meter -= 20;
 			
@@ -61,7 +61,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -99,7 +99,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(diagonal_input_hold && grounded){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -163,7 +163,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold && grounded){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -241,7 +241,7 @@ if(action == "Gone" && instance_exists(ULTRA_target)){
 	y = ULTRA_target.y;
 	dissapear_duration_timer -= logic_time;
 	
-	if(!b_hold || dissapear_duration_timer <= 0){
+	if(!heavy_attack_hold || dissapear_duration_timer <= 0){
 		action = "ULTRA";
 		is_invincible = true;
 		

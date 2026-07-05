@@ -132,7 +132,7 @@ action_trigger = function(){
 	}
 	else if(action == "5S"){
 		// Start charge
-		if(b_hold && hook_charge == 0){
+		if(heavy_attack_hold && hook_charge == 0){
 			action = "Hook Charge";
 		}
 		else{

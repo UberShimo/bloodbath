@@ -215,7 +215,7 @@ action_trigger = function(){
 		attack.initiate(self);
 		
 		vel = 5;
-		if(b_hold){
+		if(heavy_attack_hold){
 			vel = 7;
 		}
 		
@@ -245,7 +245,7 @@ action_trigger = function(){
 		attack.initiate(self);
 		
 		vel = 5;
-		if(y_hold){
+		if(medium_attack_hold){
 			vel = 7;
 		}
 		

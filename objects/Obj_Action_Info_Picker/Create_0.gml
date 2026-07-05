@@ -22,4 +22,4 @@ d_held = false;
 d_hold = false;
 d_pressed = false;
 
-a_pressed = false;
+jump_pressed = false;

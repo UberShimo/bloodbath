@@ -27,7 +27,7 @@ else if(is_holding_ball && action == "Headbutt"){
 
 // ACTION!
 // Many checks...
-if(rb_hold && meter >= 10 && x_pressed && !is_holding_ball){
+if(meter_hold && meter >= 10 && light_attack_pressed && !is_holding_ball){
 	meter -= 10;
 	
 	ball.h_velocity = 0;
@@ -40,7 +40,7 @@ if(rb_hold && meter >= 10 && x_pressed && !is_holding_ball){
 	
 	reset_buffers();
 }
-else if(rb_hold && meter >= 50 && y_pressed){
+else if(meter_hold && meter >= 50 && medium_attack_pressed){
 	meter -= 50;
 	recaller = instance_create_depth(ball.x, ball.y, ball.depth-1, Obj_Ball_Meter_Recaller);
 	recaller.initiate(self)
@@ -56,8 +56,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed && grounded){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed && grounded){
 			action = "ULTRA";
 			meter -= 50;
 			
@@ -74,7 +74,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if((down_forward_pressed || down_backward_pressed) && !is_holding_ball){
 			// Pick up ball
 			if(place_meeting(x, y, ball)){
@@ -117,7 +117,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -152,7 +152,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;

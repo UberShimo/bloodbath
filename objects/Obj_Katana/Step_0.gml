@@ -1,6 +1,6 @@
 // Leave clone when dashing, must happen before inherit,
 // check is identical to dash check except ground check
-if(grounded && lb_pressed > 0 && (action == noone || check_for_cancel())
+if(grounded && dash_pressed > 0 && (action == noone || check_for_cancel())
 && (forward_hold || backward_hold)){
 	clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
 	clone.initiate(self);
@@ -20,8 +20,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
 			h_velocity = 0;
@@ -35,7 +35,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Manly_Tensing, 0, false);
 		}
-		else if(meter >= 30 && y_pressed){
+		else if(meter >= 30 && medium_attack_pressed){
 			action = "Quickdraw Clone";
 			meter -= 30;
 			
@@ -43,7 +43,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 30 && x_pressed){
+		else if(meter >= 30 && light_attack_pressed){
 			action = "Recall Clone";
 			meter -= 30;
 			
@@ -56,7 +56,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Katana_8F_startup;
@@ -85,7 +85,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -118,7 +118,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(!grounded){
 			action = "8S";
 			is_unstable = true;

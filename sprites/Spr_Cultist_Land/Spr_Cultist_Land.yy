@@ -4,8 +4,8 @@
   "name": "Spr_Cultist_Land",
   "bbox_bottom": 95,
   "bbox_left": 48,
-  "bbox_right": 86,
-  "bbox_top": 62,
+  "bbox_right": 78,
+  "bbox_top": 47,
   "bboxMode": 2,
   "collisionKind": 4,
   "collisionTolerance": 0,
@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0a554acf-bb32-46d7-9066-7a8fa365974f",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -55,7 +55,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4d396fab-7fe7-4b73-bb10-6c3a8edd73f1","path":"sprites/Spr_Cultist_Land/Spr_Cultist_Land.yy",},},},"Disabled":false,"id":"afdc11c0-b433-42c3-8671-098013312edd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0a554acf-bb32-46d7-9066-7a8fa365974f","path":"sprites/Spr_Cultist_Land/Spr_Cultist_Land.yy",},},},"Disabled":false,"id":"a7803e62-2590-4a67-8bcf-e72f801bf2c5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -1,4 +1,4 @@
-vel = 16;
+vel = 12;
 dir = other.image_angle;
 
 h_velocity = lengthdir_x(vel, dir);

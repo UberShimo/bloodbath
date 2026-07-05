@@ -270,18 +270,20 @@ action_trigger = function(){
 	}
 	// Meter moves
 	else if(action == "Meter Circle"){
+		// Destroy existing meter circle
 		if(meter_circle != noone){
 			spawn_effect(meter_circle.x, meter_circle.y, 1, Eff_Ring, 1, 0.1, c_lime, 1, 1, 0.2);
 			instance_destroy(meter_circle);
 		}
-		meter_circle = instance_create_depth(x, y-32, depth-1, Obj_Cultist_Circle);
+		meter_circle = instance_create_depth(x, y+32, depth-1, Obj_Cultist_Circle);
 		meter_circle.initiate(self);
 		meter_circle.image_blend = c_lime;
 		meter_circle.weight = 0.01;
-		meter_circle.h_velocity = 0.3*image_xscale;
-		meter_circle.v_velocity = -0.6;
+		meter_circle.v_velocity = 1;
 		meter_circle.velocity_friction = 0;
 		meter_circle.is_meter_circle = true;
+		
+		v_velocity = -4;
 		
 		sprite_index = Spr_Cultist_Meter_Circle_recovery;
 		image_index = 0;

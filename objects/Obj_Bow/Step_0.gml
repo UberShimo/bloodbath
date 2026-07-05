@@ -17,8 +17,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold && !instance_exists(frog)){ // Cant do meter moves while having your frog out!
-		if(meter >= 100 && b_pressed){
+	if(meter_hold && !instance_exists(frog)){ // Cant do meter moves while having your frog out!
+		if(meter >= 100 && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
 			h_velocity = 0;
@@ -30,7 +30,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 50 && y_pressed){
+		else if(meter >= 50 && medium_attack_pressed){
 			action = "Spear Throw";
 			meter -= 50;
 			
@@ -45,7 +45,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 20 && x_pressed){
+		else if(meter >= 20 && light_attack_pressed){
 			action = "Meter Twist";
 			meter -= 20;
 			
@@ -64,7 +64,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -118,7 +118,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -173,7 +173,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -242,7 +242,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 
 // Aim down logic
 if(action == "Aim Down"){
-	if(x_hold){
+	if(light_attack_hold){
 		aim_dir += (45/aim_duration)*logic_time;
 	}
 	else if(hold_arrow){
@@ -252,7 +252,7 @@ if(action == "Aim Down"){
 }
 // Aim up logic
 else if(action == "Aim Up"){
-	if(y_hold){
+	if(medium_attack_hold){
 		aim_dir -= (45/aim_duration)*logic_time;
 	}
 	else if(hold_arrow){
@@ -274,11 +274,11 @@ if(action == "Meter Twist"){
 // Spearthrow logic. Force the startup frames to happen
 if(action == "Spear Throw" && image_index > 6){
 	// Aim Spear
-	if(y_hold){
+	if(medium_attack_hold){
 		aim_dir += (90/spear_aim_duration)*logic_time;
 	}
 	// Stop aim and throw spear
-	if(hold_spear && !y_hold){
+	if(hold_spear && !medium_attack_hold){
 		hold_spear = false;
 		action_alarm = 4;
 	}

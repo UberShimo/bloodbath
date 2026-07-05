@@ -1,4 +1,6 @@
-// Check for pose circles
+event_inherited();
+
+// Check for poses
 if(instance_exists(Parent_Shield_Pose)){
 	shortest_dist = pose_dash_min_distance;
 	targeted_pose = noone;
@@ -15,39 +17,7 @@ else{
 	targeted_pose = noone;
 }
 
-// Special pose dash
-if(lb_pressed > 0 && cancels > 0 && (forward_hold || backward_hold) && instance_exists(targeted_pose)){
-	save_current_state();
-	reset_physics();
-	do_cancel(); // Counts as a cancel always
-	reset_buffers();
-	
-	action = "Pose Dash";
-	can_cancel = true;
-	goes_through_platforms = true;
-	
-	pose_dash_dir = point_direction(x, y, targeted_pose.x, targeted_pose.y);
-	h_velocity = lengthdir_x(pose_dash_velocity, pose_dash_dir);
-	v_velocity = lengthdir_y(pose_dash_velocity, pose_dash_dir);
-	weight = 0;
-			
-	sprite_index = Spr_Shield_Pose_Dash;
-	image_index = 0;
-	recover_alarm = generate_sprite_frames(sprite_index);
-	
-	// Set image angle before activating pose
-	image_angle = pose_dash_dir;
-	if(image_xscale < 0){
-		image_angle += 180;
-	}
-	// last but not least
-	targeted_pose.activate();
-}
-
-
-event_inherited();
-
-// Untoppable logic
+// Unstoppable logic
 if(unstoppable_alarm > 0){
 	unstoppable_alarm -= logic_time;
 	is_unstoppable = true;
@@ -70,8 +40,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
 			
@@ -83,7 +53,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 35 && y_pressed){
+		else if(meter >= 35 && medium_attack_pressed){
 			action = "Cool Shot";
 			meter -= 35;
 			
@@ -91,11 +61,16 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 15 && x_pressed && grounded){
-			action = "Spawn Ice";
-			meter -= 15;
+		else if(meter >= 10 && light_attack_pressed && targeted_pose != noone){
+			action = "Pose Dash Start";
+			meter -= 10;
+	
+			pose_dash_dir = point_direction(x, y, targeted_pose.x, targeted_pose.y);
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
 			
-			sprite_index = Spr_Shield_Ice_Floor_startup;
+			sprite_index = Spr_Shield_Pose_Dash_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
@@ -104,7 +79,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -156,8 +131,21 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
-		if(down_forward_pressed || down_backward_pressed){
+	else if(medium_attack_pressed){
+		if(diagonal_input_hold && grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Spawn Ice";
+			
+			sprite_index = Spr_Shield_Ice_Floor_startup;
+			image_index = 0;
+			action_alarm = generate_sprite_frames(sprite_index);
+		}
+		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -196,7 +184,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;

@@ -45,18 +45,18 @@ backward_pressed = 0;
 right_pressed = 0; // Works very special. Also works as "hold"
 left_pressed = 0; // Works very special. Also works as "hold"
 down_pressed = 0;
-a_pressed = 0;
-a_hold = false;
-b_pressed = 0;
-b_hold = false;
-x_pressed = 0;
-x_hold = false;
-y_pressed = 0;
-y_hold = false;
-rb_pressed = 0;
-rb_hold = false;
-lb_pressed = 0;
-lb_hold = false;
+jump_pressed = 0;
+jump_hold = false;
+light_attack_pressed = 0;
+light_attack_hold = false;
+medium_attack_pressed = 0;
+medium_attack_hold = false;
+heavy_attack_pressed = 0;
+heavy_attack_hold = false;
+meter_pressed = 0;
+meter_hold = false;
+dash_pressed = 0;
+dash_hold = false;
 start_hold = false;
 select_hold = false;
 rs_up = false;
@@ -226,12 +226,12 @@ reset_buffers = function(){
 	forward_pressed = 0;
 	down_pressed = 0;
 	backward_pressed = 0;
-	a_pressed = 0;
-	b_pressed = 0;
-	x_pressed = 0;
-	y_pressed = 0;
-	lb_pressed = 0;
-	rb_pressed = 0;
+	jump_pressed = 0;
+	heavy_attack_pressed = 0;
+	light_attack_pressed = 0;
+	medium_attack_pressed = 0;
+	dash_pressed = 0;
+	meter_pressed = 0;
 	down_forward_pressed = 0;
 	half_circle_forward_pressed = 0;
 	down_backward_pressed = 0;
@@ -364,35 +364,35 @@ read_input = function(){
 
 		// Jump
 		if(gamepad_button_check_pressed(controller_index, gp_face1) && !select_hold){ // No jumping while holding select!
-			a_pressed = buffer_duration;
+			jump_pressed = buffer_duration;
 		}
-		a_hold = gamepad_button_check(controller_index, gp_face1);
+		jump_hold = gamepad_button_check(controller_index, gp_face1);
 	
 		// Action buttons
 		if(gamepad_button_check_pressed(controller_index, gp_face2)){
-			b_pressed = buffer_duration;
+			heavy_attack_pressed = buffer_duration;
 		}
-		b_hold = gamepad_button_check(controller_index, gp_face2);
+		heavy_attack_hold = gamepad_button_check(controller_index, gp_face2);
 	
 		if(gamepad_button_check_pressed(controller_index, gp_face3)){
-			x_pressed = buffer_duration;
+			light_attack_pressed = buffer_duration;
 		}
-		x_hold = gamepad_button_check(controller_index, gp_face3);
+		light_attack_hold = gamepad_button_check(controller_index, gp_face3);
 	
 		if(gamepad_button_check_pressed(controller_index, gp_face4)){
-			y_pressed = buffer_duration;
+			medium_attack_pressed = buffer_duration;
 		}
-		y_hold = gamepad_button_check(controller_index, gp_face4);
+		medium_attack_hold = gamepad_button_check(controller_index, gp_face4);
 	
 		if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
-			rb_pressed = buffer_duration;
+			meter_pressed = buffer_duration;
 		}
-		rb_hold = gamepad_button_check(controller_index, gp_shoulderr);
+		meter_hold = gamepad_button_check(controller_index, gp_shoulderr);
 	
 		if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
-			lb_pressed = buffer_duration;
+			dash_pressed = buffer_duration;
 		}
-		lb_hold = gamepad_button_check(controller_index, gp_shoulderl);
+		dash_hold = gamepad_button_check(controller_index, gp_shoulderl);
 	
 		// Platdrop (this is one special since it doesnt use the buffer_duration)
 		if(down_hold && gamepad_button_check_pressed(controller_index, gp_shoulderl)){
@@ -401,7 +401,7 @@ read_input = function(){
 		else{
 			platdrop_pressed = false;
 		}
-		if(lb_hold && down_hold){
+		if(dash_hold && down_hold){
 			platdrop_hold = true;
 		}
 		else{
@@ -470,7 +470,7 @@ reset_physics = function(){
 }
 
 action_button_pressed = function(){
-	if(!select_hold && (x_pressed || y_pressed || b_pressed || lb_pressed)){ // Select + Input is for doing other stuff...
+	if(!select_hold && (light_attack_pressed || medium_attack_pressed || heavy_attack_pressed || dash_pressed)){ // Select + Input is for doing other stuff...
 		return true;
 	}
 	return false;

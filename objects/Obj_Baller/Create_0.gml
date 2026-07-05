@@ -67,7 +67,7 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 		
-		if(multi_hit_action_index < 5 && x_hold){
+		if(multi_hit_action_index < 5 && light_attack_hold){
 			action_alarm = 8;
 			multi_hit_action_index += 1;
 		}

@@ -9,8 +9,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed && grounded){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed && grounded){
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Cultist_ULTRA_startup;
@@ -19,7 +19,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index)-1; // -1 needed for some reason?
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(x_pressed && meter_circle != noone && down_hold){
+		else if(light_attack_pressed && meter_circle != noone && down_hold){
 			action = "Meter Circle Teleport";
 			h_velocity = 0;
 			v_velocity = 0;
@@ -29,21 +29,24 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 35 && x_pressed){
+		else if(meter >= 35 && light_attack_pressed){
 			action = "Meter Circle";
 			meter -= 35;
+			
+			v_velocity = -4;
+			
 			sprite_index = Spr_Cultist_Meter_Circle_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 20 && y_pressed && down_hold){
+		else if(meter >= 20 && medium_attack_pressed && down_hold){
 			action = "Slow Time Manipulation";
 			meter -= 20;
 			sprite_index = Spr_Cultist_Time_Manipulation_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 20 && y_pressed){
+		else if(meter >= 20 && medium_attack_pressed){
 			action = "Fast Time Manipulation";
 			meter -= 20;
 			sprite_index = Spr_Cultist_Time_Manipulation_startup;
@@ -55,7 +58,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -124,7 +127,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -168,7 +171,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;

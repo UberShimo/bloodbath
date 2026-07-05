@@ -7,7 +7,7 @@ if(action == noone){
 	HP = max_HP;
 	if(!reset_combo){
 		reset_combo = true;
-		a_pressed = true;
+		jump_pressed = true;
 		
 		// Achievement check variables!!!
 		katana_has_used_clone = false;
@@ -27,20 +27,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(x_pressed){
+	if(light_attack_pressed){
 		action = "F";
 		shake_amount = launcher_shake_amount;
 		sprite_index = Spr_Dojo_F_startup;
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		action = "L";
 		sprite_index = Spr_Dojo_L_startup;
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		action = "S";
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;

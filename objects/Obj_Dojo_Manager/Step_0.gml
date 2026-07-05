@@ -15,7 +15,7 @@ if(global.dojo_level == 0){
 	}
 
 	// Reset positions
-	if(student.x_hold && student.select_hold && !reset_positions_pressed){
+	if(student.light_attack_hold && student.select_hold && !reset_positions_pressed){
 		reset_positions_pressed = true;
 	
 		student.h_velocity = 0;
@@ -35,12 +35,12 @@ if(global.dojo_level == 0){
 		
 		student.reset_buffers();
 	}
-	else if(!student.x_hold){
+	else if(!student.light_attack_hold){
 		reset_positions_pressed = false;
 	}
 	
 	// Toggle Dummy attacking
-	if(student.y_hold && student.select_hold && !toggle_attack_pressed){
+	if(student.medium_attack_hold && student.select_hold && !toggle_attack_pressed){
 		toggle_attack_pressed = true;
 		dummy.is_jumping = false;
 	
@@ -55,24 +55,24 @@ if(global.dojo_level == 0){
 		
 		student.reset_buffers();
 	}
-	else if(!student.y_hold){
+	else if(!student.medium_attack_hold){
 		toggle_attack_pressed = false;
 	}
 	
 	// Toggle DEBUG
-	if(student.b_hold && student.select_hold && !change_debug_pressed){
+	if(student.heavy_attack_hold && student.select_hold && !change_debug_pressed){
 		change_debug_pressed = true;
 	
 		global.is_debugging = !global.is_debugging;
 		
 		student.reset_buffers();
 	}
-	else if(!student.b_hold){
+	else if(!student.heavy_attack_hold){
 		change_debug_pressed = false;
 	}
 	
 	// Toggle Dummy jumping
-	if(student.a_hold && student.select_hold && !toggle_jump_pressed){
+	if(student.jump_hold && student.select_hold && !toggle_jump_pressed){
 		toggle_jump_pressed = true;
 		dummy.is_dumbly_attacking = false;
 	
@@ -87,7 +87,7 @@ if(global.dojo_level == 0){
 		
 		student.reset_buffers();
 	}
-	else if(!student.a_hold){
+	else if(!student.jump_hold){
 		toggle_jump_pressed = false;
 	}
 }

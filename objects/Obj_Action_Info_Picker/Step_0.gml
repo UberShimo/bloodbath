@@ -24,7 +24,7 @@ else if(d_pressed){
 	y = closest_action_info.y+64;
 }
 
-if(a_pressed){
+if(jump_pressed){
 	show_info = !show_info;
 }
 

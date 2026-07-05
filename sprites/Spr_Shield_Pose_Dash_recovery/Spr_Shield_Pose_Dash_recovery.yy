@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "Spr_Shield_Pose_Dash",
+  "name": "Spr_Shield_Pose_Dash_recovery",
   "bbox_bottom": 75,
   "bbox_left": 39,
   "bbox_right": 102,
@@ -41,7 +41,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "Spr_Shield_Pose_Dash",
+    "name": "Spr_Shield_Pose_Dash_recovery",
     "autoRecord": true,
     "backdropHeight": 1080,
     "backdropImageOpacity": 0.5,
@@ -63,12 +63,12 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5310456b-5701-4fe1-bf53-ce8296594884","path":"sprites/Spr_Shield_Pose_Dash/Spr_Shield_Pose_Dash.yy",},},},"Disabled":false,"id":"91bc58cb-0f4c-4620-88cb-018d5314b326","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cdbe6202-b6fc-4237-9448-1361f5c1633b","path":"sprites/Spr_Shield_Pose_Dash/Spr_Shield_Pose_Dash.yy",},},},"Disabled":false,"id":"59d1af32-9b13-4c3f-8e05-288b15f6ccab","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9d1dee61-dfdb-4a24-8d1f-c4345a1a3bd5","path":"sprites/Spr_Shield_Pose_Dash/Spr_Shield_Pose_Dash.yy",},},},"Disabled":false,"id":"78cbe3c9-e94f-4eee-bf6f-c6d9b78ecaab","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd15fc80-a113-4598-9dc0-7c880c270ce9","path":"sprites/Spr_Shield_Pose_Dash/Spr_Shield_Pose_Dash.yy",},},},"Disabled":false,"id":"53433fdb-0715-401d-ba95-96fdece4f338","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a4b6c3e9-0e3f-4aee-9c9c-2639aaa86a5e","path":"sprites/Spr_Shield_Pose_Dash/Spr_Shield_Pose_Dash.yy",},},},"Disabled":false,"id":"0d8c1a53-d32a-4f07-870c-b13ed69e4c28","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"df565860-2feb-46d3-9b2b-88b46f558a11","path":"sprites/Spr_Shield_Pose_Dash/Spr_Shield_Pose_Dash.yy",},},},"Disabled":false,"id":"4ca6e9e5-ba99-4309-8130-1e6bad5cca78","IsCreationKey":false,"Key":5.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5310456b-5701-4fe1-bf53-ce8296594884","path":"sprites/Spr_Shield_Pose_Dash_recovery/Spr_Shield_Pose_Dash_recovery.yy",},},},"Disabled":false,"id":"91bc58cb-0f4c-4620-88cb-018d5314b326","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cdbe6202-b6fc-4237-9448-1361f5c1633b","path":"sprites/Spr_Shield_Pose_Dash_recovery/Spr_Shield_Pose_Dash_recovery.yy",},},},"Disabled":false,"id":"59d1af32-9b13-4c3f-8e05-288b15f6ccab","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9d1dee61-dfdb-4a24-8d1f-c4345a1a3bd5","path":"sprites/Spr_Shield_Pose_Dash_recovery/Spr_Shield_Pose_Dash_recovery.yy",},},},"Disabled":false,"id":"78cbe3c9-e94f-4eee-bf6f-c6d9b78ecaab","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd15fc80-a113-4598-9dc0-7c880c270ce9","path":"sprites/Spr_Shield_Pose_Dash_recovery/Spr_Shield_Pose_Dash_recovery.yy",},},},"Disabled":false,"id":"53433fdb-0715-401d-ba95-96fdece4f338","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a4b6c3e9-0e3f-4aee-9c9c-2639aaa86a5e","path":"sprites/Spr_Shield_Pose_Dash_recovery/Spr_Shield_Pose_Dash_recovery.yy",},},},"Disabled":false,"id":"0d8c1a53-d32a-4f07-870c-b13ed69e4c28","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"df565860-2feb-46d3-9b2b-88b46f558a11","path":"sprites/Spr_Shield_Pose_Dash_recovery/Spr_Shield_Pose_Dash_recovery.yy",},},},"Disabled":false,"id":"4ca6e9e5-ba99-4309-8130-1e6bad5cca78","IsCreationKey":false,"Key":5.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

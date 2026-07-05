@@ -125,7 +125,7 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_5L_hitbox);
 		attack.initiate(self);
 		
-		h_velocity = 8*image_xscale;
+		h_velocity = 6*image_xscale;
 		
 		sprite_index = Spr_Shield_5L_recovery;
 		image_index = 0;
@@ -201,6 +201,15 @@ action_trigger = function(){
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
+	else if(action == "Spawn Ice"){
+		attack = instance_create_depth(x, y, 0, Obj_Shield_Ice_Spawner);
+		attack.initiate(self);
+		attack.h_velocity = 8*image_xscale;
+		
+		sprite_index = Spr_Shield_Ice_Floor_recovery;
+		image_index = 0;
+		recover_alarm = generate_sprite_frames(sprite_index);
+	}
 	else if(action == "Bash Charge"){
 		action = "Bash";
 		is_parrying = false;
@@ -214,14 +223,28 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	// Meter moves
-	else if(action == "Spawn Ice"){
-		attack = instance_create_depth(x, y, 0, Obj_Shield_Ice_Spawner);
-		attack.initiate(self);
-		attack.h_velocity = 8*image_xscale;
+	else if(action == "Pose Dash Start"){
+		action = "Pose Dash";
 		
-		sprite_index = Spr_Shield_Ice_Floor_recovery;
+		can_cancel = true;
+		goes_through_platforms = true;
+	
+		h_velocity = lengthdir_x(pose_dash_velocity, pose_dash_dir);
+		v_velocity = lengthdir_y(pose_dash_velocity, pose_dash_dir);
+			
+		sprite_index = Spr_Shield_Pose_Dash_recovery;
 		image_index = 0;
 		recover_alarm = generate_sprite_frames(sprite_index);
+	
+		// Set image angle before activating pose
+		image_angle = pose_dash_dir;
+		if(image_xscale < 0){
+			image_angle += 180;
+		}
+		// last but not least
+		if(targeted_pose != noone){
+			targeted_pose.activate();
+		}
 	}
 	else if(action == "Cool Shot"){
 		attack = instance_create_depth(x+32*image_xscale*object_scale, y-16*object_scale, 0, Obj_Shield_Cool_Shot);

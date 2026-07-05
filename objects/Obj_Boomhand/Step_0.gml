@@ -1,6 +1,6 @@
 
 if(action == "Fistdive" || action == "Groundsmash"){
-	if(y_hold){
+	if(medium_attack_hold){
 		goes_through_platforms = true;
 	}
 	else{
@@ -11,7 +11,7 @@ if(action == "Fistdive" || action == "Groundsmash"){
 event_inherited();
 
 // Farty time
-if(rb_hold && meter >= 15 && x_pressed){
+if(meter_hold && meter >= 15 && light_attack_pressed){
 	meter -= 15;
 	reset_buffers();
 	repeat(12){
@@ -29,8 +29,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed && grounded){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed && grounded){
 			action = "ULTRA";
 			meter -= 50;
 			
@@ -44,7 +44,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Boomhand_ULTRA_startup, 0, false);
 		}
-		else if(meter >= 25 && y_pressed && grounded){
+		else if(meter >= 25 && medium_attack_pressed && grounded){
 			action = "Elbow";
 			meter -= 25;
 			
@@ -59,7 +59,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(diagonal_input_hold && grounded){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -100,7 +100,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -187,7 +187,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold && grounded){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -238,7 +238,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 
 if(action == "Hook Charge"){
 	// Charged enough
-	if(!b_hold || hook_charge >= 1){
+	if(!heavy_attack_hold || hook_charge >= 1){
 		action = "5S";
 		action_alarm = 1;
 	}

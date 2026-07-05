@@ -144,7 +144,7 @@ action_trigger = function(){
 		ball.h_velocity = 0.8*image_xscale;
 		ball.v_velocity = -6;
 		
-		if(x_hold){
+		if(light_attack_hold){
 			ball.h_velocity = 1*image_xscale;
 			ball.v_velocity = -9;
 		}
@@ -200,7 +200,7 @@ action_trigger = function(){
 		ball.h_velocity = 1*image_xscale;
 		ball.v_velocity = -6;
 		
-		if(x_hold){
+		if(light_attack_hold){
 			ball.v_velocity = -9;
 		}
 		

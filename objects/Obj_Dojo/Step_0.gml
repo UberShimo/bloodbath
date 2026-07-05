@@ -9,8 +9,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Dojo_ULTRA_startup;
@@ -25,7 +25,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed && meter >= 10){
+	else if(light_attack_pressed && meter >= 10){
 		meter -= 10;
 		action = "F";
 		shake_amount = launcher_shake_amount;
@@ -33,7 +33,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		image_index = 0;
 		action_alarm = generate_sprite_frames(sprite_index);
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -53,7 +53,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		action = "S";
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;

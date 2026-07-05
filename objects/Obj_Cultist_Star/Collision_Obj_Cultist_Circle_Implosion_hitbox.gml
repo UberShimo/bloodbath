@@ -1,4 +1,4 @@
-vel = 16;
+vel = 12;
 dir = point_direction(x, y, other.x, other.y);
 
 h_velocity = lengthdir_x(vel, dir);

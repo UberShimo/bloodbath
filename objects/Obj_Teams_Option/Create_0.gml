@@ -8,8 +8,4 @@ clicked = function(clicker){
 	
 	// All character pickers
 	Obj_Character_Picker.team_change = 0;
-	
-	for(i = 0; i < 8; i++){
-		global.team_change_value[i] = 0;
-	}
 }

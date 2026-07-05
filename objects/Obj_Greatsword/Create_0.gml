@@ -48,8 +48,8 @@ original_weight = weight;
 // Greatsword stuff
 pillar_distance = 0;
 earth_parry_success = false;
-ULTRA_max_hold = 60;
-ULTRA_hold_timer = 0;
+ULTRA_malight_attack_hold = 60;
+ULTRjump_hold_timer = 0;
 is_holding_ULTRA = false;
 
 
@@ -249,12 +249,12 @@ action_trigger = function(){
 		reset_physics();
 	}
 	else if(action == "ULTRA"){
-		if(b_hold && !is_holding_ULTRA){
+		if(heavy_attack_hold && !is_holding_ULTRA){
 			action = "ULTRA Hold";
-			sprite_index = Spr_Greatsword_ULTRA_hold;
+			sprite_index = Spr_Greatsword_ULTRjump_hold;
 			is_holding_ULTRA = true;
 			
-			action_alarm = ULTRA_max_hold+4; // Action alarm needs to be something
+			action_alarm = ULTRA_malight_attack_hold+4; // Action alarm needs to be something
 		}
 		else{
 			meter -= 50;

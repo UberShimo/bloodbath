@@ -252,9 +252,9 @@ if(action == noone){
 		}
 	}
 	// Jump
-	if(a_pressed){
+	if(jump_pressed){
 		reset_physics();
-		a_pressed = 0; // Just reset A buffer
+		jump_pressed = 0; // Just reset A buffer
 		
 		if(grounded){
 			action = "Jump";
@@ -269,9 +269,9 @@ if(action == noone){
 	}	
 }
 // Jump cancel
-else if(a_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
+else if(jump_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
 	reset_physics();
-	a_pressed = 0; // Just reset A buffer
+	jump_pressed = 0; // Just reset A buffer
 	
 	if(grounded){ // Grounded jump cancel is 3 times slower!!!
 		action = "Jump";
@@ -290,7 +290,7 @@ else if(a_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()){
 	doing_action_by_canceling = false;
 }
 // Short jump
-if(action == noone && !mini_jump_disabled && v_velocity < -jump_power*mini_jump_power && !a_hold){
+if(action == noone && !mini_jump_disabled && v_velocity < -jump_power*mini_jump_power && !jump_hold){
 	v_velocity = -jump_power*mini_jump_power;
 }
 // Clip through platform when dropping through it
@@ -531,12 +531,12 @@ backward_pressed--;
 right_pressed--;
 left_pressed--;
 down_pressed--;
-a_pressed--;
-b_pressed--;
-x_pressed--;
-y_pressed--;
-lb_pressed--;
-rb_pressed--;
+jump_pressed--;
+heavy_attack_pressed--;
+light_attack_pressed--;
+medium_attack_pressed--;
+dash_pressed--;
+meter_pressed--;
 down_forward_pressed--;
 forward_down_pressed--;
 half_circle_forward_pressed--;
@@ -546,9 +546,10 @@ half_circle_backward_pressed--;
 double_down_pressed--;
 #endregion
 
+
 #region universal moves V-----V
 // Meter dash
-if(rb_hold && lb_pressed > 0
+if(meter_hold && dash_pressed > 0
 && (forward_hold || backward_hold)){
 	if(meter >= 50){
 		reset_buffers();
@@ -590,7 +591,7 @@ if(rb_hold && lb_pressed > 0
 	}
 }
 // Meter pull
-else if(rb_hold && lb_pressed > 0){
+else if(meter_hold && dash_pressed > 0 && (action == noone || check_for_cancel())){
 	if(meter >= 50){
 		action = "Meter Pull";
 		find_closest_enemy();
@@ -608,67 +609,70 @@ else if(rb_hold && lb_pressed > 0){
 		audio_play_sound(Snd_Bzz, 0, false);
 	}
 }
-// Parry / Dash
+// Dash
 // Awful amount of checks just to be able to pay cancels when dashing in air
-else if(lb_pressed > 0 && !down_hold
-&& ((action == noone && grounded || (action == "ULTRA" && action_alarm > 0))
-|| check_for_cancel()
-|| (!grounded && cancels > 0 && action == noone))){
+else if(dash_pressed > 0 && !platdrop_hold && (forward_hold || backward_hold) && (
+	(action == noone && grounded) ||
+	(action == "ULTRA" && action_alarm > 0) ||
+	(action == noone && !grounded && cancels > 0) ||
+	check_for_cancel()
+)){
 	read_input();
-	lb_pressed = 0; // Just reset LB buffer
+	dash_pressed = 0; // Just reset LB buffer
 	is_unstoppable = false; // Actually just for Boomhand ultra cancel...
 	
 	// Also cancel if its just an air dash
-	if(doing_action_by_canceling || (!grounded && (forward_hold || backward_hold))){
+	if(doing_action_by_canceling || !grounded){
 		do_cancel();
 	}
 	
 	// Dashes
-	if(forward_hold || backward_hold){
-		if(backward_hold){
-			sprite_index = dash_backward_spr;
-			h_velocity = -dash_speed*image_xscale;
-			blink_h(-dash_blink*image_xscale, true);
-		}
-		else{
-			sprite_index = dash_forward_spr;
-			h_velocity = dash_speed*image_xscale;
-			blink_h(dash_blink*image_xscale, true);
+	if(backward_hold){
+		sprite_index = dash_backward_spr;
+		h_velocity = -dash_speed*image_xscale;
+		blink_h(-dash_blink*image_xscale, true);
+	}
+	else{
+		sprite_index = dash_forward_spr;
+		h_velocity = dash_speed*image_xscale;
+		blink_h(dash_blink*image_xscale, true);
 			
-			// Gain meter when dashing toward enemy
-			if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
-				// Extra check to see if you really dash towards enemy!
-				if((closest_enemy.x > x && image_xscale > 0)
-				|| (closest_enemy.x < x && image_xscale < 0)){
-					meter += meter_gain_by_dashing;
-				}
+		// Gain meter when dashing toward enemy
+		if(!closest_enemy.is_respawning && closest_enemy != self && !global.target_run_mode){
+			// Extra check to see if you really dash towards enemy!
+			if((closest_enemy.x > x && image_xscale > 0)
+			|| (closest_enemy.x < x && image_xscale < 0)){
+				meter += meter_gain_by_dashing;
 			}
 		}
+	}
 	
-		action = "Dash";
-		can_cancel = true;
-		is_collidable = false;
-		grip = dash_grip;
-		air_grip = dash_grip;
-		weight = original_weight/4;
-		v_velocity = dash_lift;
-		recover_alarm = dash_duration;
-	}
-	// Parry
-	else if(grounded && !platdrop_hold){
-		action = "Parry";
-		
-		is_parrying = true;
-		shake_amount = 2;
-		sprite_index = parry_spr;
-		image_index = 0;
-		
-		parry_alarm = parry_active_frames;
-		recover_alarm = parry_duration;
-	}
+	action = "Dash";
+	can_cancel = true;
+	is_collidable = false;
+	grip = dash_grip;
+	air_grip = dash_grip;
+	weight = original_weight/4;
+	v_velocity = dash_lift;
+	recover_alarm = dash_duration;
+	
 	// Gotta reset this shit
 	doing_action_by_canceling = false;
 	image_index = 0;
+}
+// Parry
+else if(dash_pressed > 0 && grounded && !platdrop_hold && (action == noone || check_for_cancel())){
+	reset_buffers();
+	
+	action = "Parry";
+		
+	is_parrying = true;
+	shake_amount = 2;
+	sprite_index = parry_spr;
+	image_index = 0;
+		
+	parry_alarm = parry_active_frames;
+	recover_alarm = parry_duration;
 }
 #endregion
 
@@ -683,7 +687,7 @@ if(meter == 100 && effect_counter >= 1){
 }
 
 // RB hold effect
-if(rb_hold && effect_counter >= 1 ){
+if(meter_hold && effect_counter >= 1 ){
 	spawn_effect(x, y, 1, Eff_Pixel, 1, 0.2, c_lime, 1, 4, 0, 0, 360, 48, depth-1);
 	meter_channel_draw_amount += meter_channel_draw_change_amount;
 	if(meter_channel_draw_amount >= meter_channel_max_draw_amount){

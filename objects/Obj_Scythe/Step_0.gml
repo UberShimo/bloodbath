@@ -1,6 +1,6 @@
 // Leave effect when dashing, must happen before inherit,
 // check is identical to dash check except ground check
-if(grounded && lb_pressed > 0 && (action == noone || check_for_cancel())
+if(grounded && dash_pressed > 0 && (action == noone || check_for_cancel())
 && (forward_hold || backward_hold)){
 	eff = instance_create_depth(x, y, 0, Eff_Scythe_Dash);
 	eff.initiate(self);
@@ -18,8 +18,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
 			
@@ -29,7 +29,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
-		else if(meter >= 40 && x_pressed && grounded){
+		else if(meter >= 40 && light_attack_pressed && grounded){
 			action = "Self Lightning";
 			meter -= 40;
 			
@@ -37,7 +37,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 20 && y_pressed){
+		else if(meter >= 20 && medium_attack_pressed){
 			action = "Meter Birdie";
 			meter -= 20;
 			
@@ -50,7 +50,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if((down_forward_pressed || down_backward_pressed) && extra_jumps_left > 0){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -95,7 +95,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -134,7 +134,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -230,7 +230,7 @@ if(action == "Gliding"){
 	}
 	
 	// Stop glide
-	if(!x_hold || get_velocity() < 2 || check_collision(h_velocity, v_velocity)){
+	if(!light_attack_hold || get_velocity() < 2 || check_collision(h_velocity, v_velocity)){
 		action = "Stop Gliding"
 		reset_physics();
 		sprite_index = Spr_Scythe_Glide_recovery;

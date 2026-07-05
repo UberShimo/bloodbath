@@ -161,7 +161,7 @@ action_trigger = function(){
 	}
 	else if(action == "5S"){
 		if(multi_hit_action_index == 0){
-			if(b_hold){ // Charge double attack
+			if(heavy_attack_hold){ // Charge double attack
 				sprite_index = Spr_Rapier_5S_startup_extend;
 				image_index = 0;
 				action_alarm = generate_sprite_frames(sprite_index);

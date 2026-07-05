@@ -7,12 +7,12 @@ recovery = generate_sprite_frames(Spr_Cultist_Meter_Circle_recovery);
 
 air_ok = true;
 air_only = false;
-info = "Spawn a green CIRCLE.";
+info = "Spawn a green CIRCLE below you.";
 button_input = Spr_RB_X;
-image = Spr_Cultist_Meter_Circle_startup;
-frame = 3;
+image = Spr_Cultist_Meter_Circle_recovery;
+frame = 0;
 meter_cost = 35;
 
 extra_image = Spr_Cultist_Circle;
-extra_image_y = -32;
+extra_image_y = +32;
 extra_image_color = c_lime;

@@ -9,8 +9,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){
-		if(meter >= 100 && b_pressed && grounded){
+	if(meter_hold){
+		if(meter >= 100 && heavy_attack_pressed && grounded){
 			action = "ULTRA";
 			meter -= 50;
 			sprite_index = Spr_Batman_ULTRA_startup;
@@ -20,21 +20,21 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
 		}
-		else if(meter >= 40 && x_pressed && down_hold && grounded){
+		else if(meter >= 40 && light_attack_pressed && down_hold && grounded){
 			action = "Curve Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 40 && x_pressed && grounded){
+		else if(meter >= 40 && light_attack_pressed && grounded){
 			action = "Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 40 && y_pressed && grounded){
+		else if(meter >= 40 && medium_attack_pressed && grounded){
 			action = "Throw Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Meter_Ballthrow_startup;
@@ -46,7 +46,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Batman_8F_startup;
@@ -84,7 +84,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -127,7 +127,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold && grounded){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -199,6 +199,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 }
 
 // Spinhop height boost
-if(action == "Spinhop" && action_alarm > 0 && y_hold && image_index >= 1){ // Cant height boost on first frame. Just for consistnecy!
+if(action == "Spinhop" && action_alarm > 0 && medium_attack_hold && image_index >= 1){ // Cant height boost on first frame. Just for consistnecy!
 	y -= 4*logic_time;
 }

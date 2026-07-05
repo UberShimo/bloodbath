@@ -5,12 +5,12 @@ if(is_controllable){
 	rng = random_range(0, 1);
 
 	if(meter >= 25 && irandom_range(1, 8) == 1){ // 12.5%
-		rb_hold = true;
+		meter_hold = true;
 		if(irandom_range(0, 1)){ // 50%
-			x_pressed = buffer_duration;
+			light_attack_pressed = buffer_duration;
 		}
 		else{
-			y_pressed = buffer_duration;
+			medium_attack_pressed = buffer_duration;
 		}
 	}
 	// H ring
@@ -26,7 +26,7 @@ if(is_controllable){
 		else{
 			diagonal_input_hold = true;
 		}
-		x_pressed = buffer_duration;
+		light_attack_pressed = buffer_duration;
 	}
 	// V ring
 	else if(rng < 0.2){ // 10%
@@ -41,23 +41,23 @@ if(is_controllable){
 		else{
 			diagonal_input_hold = true;
 		}
-		y_pressed = buffer_duration;
+		medium_attack_pressed = buffer_duration;
 	}
 	// Penguin!
 	else if(rng < 0.35){ // 15%
 		diagonal_input_hold = buffer_duration;
-		b_pressed = buffer_duration;
+		heavy_attack_pressed = buffer_duration;
 	}
 	// Backflip!
 	else if(rng < 0.5){ // 15%
 		down_forward_pressed = buffer_duration;
-		b_pressed = buffer_duration;
+		heavy_attack_pressed = buffer_duration;
 	}
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		reset_buffers();
-		rb_hold = true;
-		b_pressed = buffer_duration;
+		meter_hold = true;
+		heavy_attack_pressed = buffer_duration;
 	}
 }

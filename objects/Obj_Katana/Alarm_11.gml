@@ -6,12 +6,12 @@ if(is_controllable){
 
 	// Meter clone
 	if(meter >= 25 && irandom_range(1, 8) == 1){ // 12.5%
-		rb_hold = true;
+		meter_hold = true;
 		if(irandom_range(0, 1)){ // 50%
-			x_pressed = buffer_duration;
+			light_attack_pressed = buffer_duration;
 		}
 		else{
-			y_pressed = buffer_duration;
+			medium_attack_pressed = buffer_duration;
 		}
 	}
 	// Send clone
@@ -22,28 +22,28 @@ if(is_controllable){
 		else{
 			down_backward_pressed = buffer_duration;
 		}
-		x_pressed = buffer_duration;
+		light_attack_pressed = buffer_duration;
 	}
 	// Quickslash
 	else if(rng < 0.35){ // 15%
 		down_forward_pressed = buffer_duration;
-		y_pressed = buffer_duration;
+		medium_attack_pressed = buffer_duration;
 	}
 	// Sweep
 	else if(rng < 0.45){ // 10&
 		down_forward_pressed = buffer_duration;
-		b_pressed = buffer_duration;
+		heavy_attack_pressed = buffer_duration;
 	}
 	// Headsplitter
 	else if(rng < 0.55 && !grounded){ // 10%
 		diagonal_input_hold = true;
-		b_pressed = buffer_duration;
+		heavy_attack_pressed = buffer_duration;
 	}
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		reset_buffers();
-		rb_hold = true;
-		b_pressed = buffer_duration;
+		meter_hold = true;
+		heavy_attack_pressed = buffer_duration;
 	}
 }

@@ -7,7 +7,7 @@ if(is_hypermode){
 }
 
 if(action == "Dive"){
-	if(x_hold || y_hold){
+	if(light_attack_hold || medium_attack_hold){
 		goes_through_platforms = true;
 	}
 	else{
@@ -19,7 +19,7 @@ event_inherited();
 
 // ACTION!
 // ULTRA!!!
-if(rb_hold && meter >= 100 && b_pressed){
+if(meter_hold && meter >= 100 && heavy_attack_pressed){
 	meter -= 100;
 	is_hypermode = true;
 	hypermode_alarm = ULTRA_duration;
@@ -35,8 +35,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	}
 	reset_physics();
 	
-	if(rb_hold){// Quite the check...
-		if(meter >= 20 && y_pressed && grounded){
+	if(meter_hold){// Quite the check...
+		if(meter >= 20 && medium_attack_pressed && grounded){
 			action = "Spikerise";
 			meter -= 20;
 			
@@ -44,7 +44,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
-		else if(meter >= 40 && x_pressed && ds_list_size(rewind_list) >= rewind_length-1){
+		else if(meter >= 40 && light_attack_pressed && ds_list_size(rewind_list) >= rewind_length-1){
 			action = "Rewind";
 			meter -= 40;
 			
@@ -62,7 +62,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			audio_play_sound(Snd_Bzz, 0, false);
 		}
 	}
-	else if(x_pressed){
+	else if(light_attack_pressed){
 		if(diagonal_input_hold && instance_exists(ring1)){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -113,7 +113,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(y_pressed){
+	else if(medium_attack_pressed){
 		if(diagonal_input_hold && instance_exists(ring2)){
 			if(right_pressed){
 				image_xscale = object_scale;
@@ -167,7 +167,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action_alarm = generate_sprite_frames(sprite_index);
 		}
 	}
-	else if(b_pressed){
+	else if(heavy_attack_pressed){
 		if(diagonal_input_hold && grounded){
 			if(right_pressed){
 				image_xscale = object_scale;

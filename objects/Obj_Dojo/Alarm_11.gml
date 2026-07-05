@@ -13,13 +13,13 @@ if(is_controllable){
 		else{
 			down_backward_pressed = buffer_duration;
 		}
-		y_pressed = buffer_duration;
+		medium_attack_pressed = buffer_duration;
 	}
 	
 	// ULTRA
 	if(meter >= 100 && irandom_range(0, 1) == 0){ // 50%
 		reset_buffers();
-		rb_hold = true;
-		b_pressed = buffer_duration;
+		meter_hold = true;
+		heavy_attack_pressed = buffer_duration;
 	}
 }

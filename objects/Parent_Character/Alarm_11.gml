@@ -4,10 +4,10 @@ if(is_controllable){
 	down_hold = false;
 	forward_hold = false;
 	backward_hold = false;
-	x_hold = false;
-	y_hold = false;
-	b_hold = false;
-	rb_hold = false;
+	light_attack_hold = false;
+	medium_attack_hold = false;
+	heavy_attack_hold = false;
+	meter_hold = false;
 	diagonal_input_hold = false;
 
 	reset_buffers();
@@ -40,7 +40,7 @@ if(is_controllable){
 		rng = irandom_range(1, 4);
 	
 		if(rng == 1){ // 25% chance to jump
-			a_pressed = buffer_duration;
+			jump_pressed = buffer_duration;
 		}
 		else if(rng == 2){ // 33& chance to crouch
 			down_hold = true;
@@ -60,16 +60,16 @@ if(is_controllable){
 		rng = random_range(0, 1);
 	
 		if(rng < 0.25){ // 25%
-			x_pressed = buffer_duration;
+			light_attack_pressed = buffer_duration;
 		}
 		else if(rng < 0.5){ // 25%
-			y_pressed = buffer_duration;
+			medium_attack_pressed = buffer_duration;
 		}
 		else if(rng < 0.75){ // 25%
-			b_pressed = buffer_duration;
+			heavy_attack_pressed = buffer_duration;
 		}
 		else if(rng < 1 && action != "ULTRA"){ // 25%
-			lb_pressed = 2;
+			dash_pressed = 2;
 		}
 		else{
 			// Nothin
