@@ -34,3 +34,5 @@ if(life_span > 0){
 		instance_destroy();
 	}
 }
+
+image_alpha += alpha_increase;

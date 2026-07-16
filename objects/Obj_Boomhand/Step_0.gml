@@ -101,13 +101,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(medium_attack_pressed){
-		if(diagonal_input_hold){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
+		if(double_down_pressed){
 			action = "Groundsmash";
 			
 			is_unstable = true;

@@ -64,7 +64,7 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Cultist){
 	sprite_index = Spr_Special_Diagonal_B_Control;
 }
 else if(Obj_Dojo_Manager.student.object_index == Obj_Knife){
-	bonus_text = "Down > Down > B\nTo lob a grenade!";
+	bonus_text = "Down > Forward > B\nTo lob a grenade!";
 	button_spr = Spr_B;
 	input_spr = Spr_DF;
 	sprite_index = Spr_Special_DF_B_Control;

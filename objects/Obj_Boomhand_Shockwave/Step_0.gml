@@ -12,7 +12,7 @@ if(!position_meeting(x+x_check, y+y_check, Parent_Collision) && !position_meetin
 	instance_destroy();
 }
 
-if(effect_counter >= 1){
+if(!place_meeting(x, y, Obj_Boomhand_Shockwave_decay_eff)){
 	eff = instance_create_depth(x, y, depth, Obj_Boomhand_Shockwave_decay_eff);
 	eff.initiate(self);
 }

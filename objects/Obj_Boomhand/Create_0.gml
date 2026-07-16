@@ -164,7 +164,7 @@ action_trigger = function(){
 	else if(action == "Shockwave Punch"){
 		attack = instance_create_depth(x+64*image_xscale, y, 0, Obj_Boomhand_Shockwave);
 		attack.initiate(self);
-		attack.h_velocity = 64*image_xscale;
+		attack.h_velocity = 16*image_xscale;
 		
 		sprite_index = Spr_Boomhand_Shockwave_Punch_recovery;
 		image_index = 0;

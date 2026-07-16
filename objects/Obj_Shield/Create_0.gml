@@ -72,11 +72,14 @@ action_trigger = function(){
 		recover_alarm = generate_sprite_frames(sprite_index);
 	}
 	else if(action == "8F Hit"){
+		action = "8F";
+		
 		attack = instance_create_depth(x, y, 0, Obj_Shield_8F_hitbox2);
 		attack.initiate(self);
 		
 		reset_physics();
-		v_velocity = -2;
+		h_velocity = 1*image_xscale;
+		v_velocity = -3;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_2F_hitbox);

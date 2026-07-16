@@ -11,5 +11,4 @@ shake_impact = global.medium_shake_impact;
 h_launch = 2;
 v_launch = -2;
 
-is_sticky = true;
 hit_sound = Snd_Hit2;

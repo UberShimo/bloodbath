@@ -2,6 +2,7 @@ event_inherited();
 
 life_span = 24;
 spawner = noone;
+alpha_increase = 0;
 
 #region Sprites
 stand_spr = Spr_Katana_Stand;

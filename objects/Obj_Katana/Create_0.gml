@@ -197,7 +197,8 @@ action_trigger = function(){
 		clone.weight = 0;
 		clone.shake_amount = 2;
 		clone.image_blend = c_lime;
-		clone.image_alpha = 0.5;
+		clone.image_alpha = 0;
+		clone.alpha_increase = 1/clone_action_delay;
 		clone.draw_mini_ui = false; // No need for UI on those bastards.
 	
 		if(action == "Quickdraw Clone" ){

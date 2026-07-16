@@ -322,10 +322,10 @@ action_trigger = function(){
 	else if(action == "ULTRA"){
 		meter -= 50;
 		
-		spawner = instance_create_depth(x, y-96, 0, Obj_Zombie_Spawner);
+		spawner = instance_create_depth(x, y-96, 0, Obj_Doppelganger_Spawner);
 		spawner.index = index;
 		spawner.player_number = player_number;
-		spawner.zombie_color = player_color;
+		spawner.doppelganger_color = player_color;
 		spawner.character_to_spawn = closest_enemy.object_index;
 		
 		sprite_index = Spr_Cultist_ULTRA_recovery;

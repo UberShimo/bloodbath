@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"384fa96e-a0ed-453c-9d58-3fe9f9f27332","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 3,
   "parent": {
     "name": "Hitboxes",
     "path": "folders/Sprites/Characters/Rapier/Attacks/Hitboxes.yy",
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 96,
+    "xorigin": 0,
     "yorigin": 64,
   },
   "swatchColours": null,

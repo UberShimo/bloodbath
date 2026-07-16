@@ -16,14 +16,16 @@ is_projectile = true;
 is_final = true;
 is_parryable = false;
 
-
 visible = false; // INVISIBLE PROJECTILE!
  // Initiate first shockwave effect.
 eff = instance_create_depth(x, y, depth, Obj_Boomhand_Shockwave_decay_eff);
 eff.initiate(self);
 
 swing_sound = Snd_Crack;
-hit_sound = Snd_NOTHING;
+hit_sound = Snd_Knack;
+
+// Shockwave stuff
+
 
 collide = function(){
 	instance_destroy();

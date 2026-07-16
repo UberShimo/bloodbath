@@ -4,6 +4,7 @@ if(other.index != index && !is_projectile && !is_final && is_initiated_by_charac
 	// Hitfall logic
 	if(hitfallable && spawner.platdrop_hold && !spawner.grounded){
 		spawner.v_velocity = spawner.max_fall_speed;
+		spawner.dash_pressed = 0; // Reset buffer so you wont try to parry when landing
 	}
 	// Reset input timer for CPU
 	if(other.is_CPU){

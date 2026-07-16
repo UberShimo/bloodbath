@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Fire a cool FLAKE.\nFLAKE can trigger POSES!";
+info = "Fire a cool shot that can\nTRIGGER POSES!";
 movement_input = Spr_EMPTY;
 button_input = Spr_RB_Y;
 image = Spr_Shield_Cool_Shot_recovery;

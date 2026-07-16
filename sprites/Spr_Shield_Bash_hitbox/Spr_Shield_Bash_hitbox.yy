@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Shield_Bash_hitbox",
   "bbox_bottom": 88,
-  "bbox_left": 32,
+  "bbox_left": 72,
   "bbox_right": 101,
   "bbox_top": 37,
   "bboxMode": 0,

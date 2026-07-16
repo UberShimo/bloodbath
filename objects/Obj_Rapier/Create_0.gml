@@ -199,7 +199,6 @@ action_trigger = function(){
 	}
 	// Special moves
 	else if(action == "Lunge"){
-		blink_h(80*image_xscale, true);
 		reset_physics();
 		
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_Lunge_hitbox);
@@ -208,10 +207,13 @@ action_trigger = function(){
 		}
 		attack.initiate(self);
 		
-		if(lunge_type == 2){
+		if(lunge_type == 2){ // Spiral
 			afterimage = instance_create_depth(x, y, 0, Obj_Rapier_Lunge_Afterimage);
 			afterimage.initiate(self);
 		}
+		
+		// Blink after hitbox so it cant reach behind her
+		blink_h(80*image_xscale, true);
 		
 		sprite_index = Spr_Rapier_Lunge_recovery;
 		image_index = 0;

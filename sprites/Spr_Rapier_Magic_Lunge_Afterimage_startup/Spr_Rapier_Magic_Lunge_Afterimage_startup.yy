@@ -38,7 +38,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2ea97d34-7259-4f22-8847-8dee41336e5d","blendMode":0,"displayName":"Layer 4","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 3,
   "parent": {
     "name": "Attacks",
     "path": "folders/Sprites/Characters/Rapier/Attacks.yy",
@@ -89,7 +89,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 96,
+    "xorigin": 0,
     "yorigin": 64,
   },
   "swatchColours": null,

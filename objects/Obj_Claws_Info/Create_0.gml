@@ -1,4 +1,7 @@
 event_inherited();
 
 info = "Quick and tricky!\nHas slippy feet tho.";
-image = Spr_Claws_Portrait;
+preview1 = Spr_Claws_Stand;
+preview2 = Spr_Claws_Pose1;
+preview3 = Spr_Claws_Pose2;
+preview4 = Spr_Claws_Pose3

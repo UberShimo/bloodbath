@@ -4,7 +4,7 @@
   "name": "Spr_Shield_2F_startup",
   "bbox_bottom": 95,
   "bbox_left": 41,
-  "bbox_right": 70,
+  "bbox_right": 65,
   "bbox_top": 51,
   "bboxMode": 2,
   "collisionKind": 4,
