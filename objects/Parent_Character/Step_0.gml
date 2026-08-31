@@ -273,11 +273,16 @@ else if(jump_pressed && (extra_jumps_left > 0 || grounded) && check_for_cancel()
 	reset_physics();
 	jump_pressed = 0; // Just reset A buffer
 	
-	if(grounded){ // Grounded jump cancel is 3 times slower!!!
-		action = "Jump";
+	if(grounded){
 		sprite_index = jump_spr;
-		jump_alarm = jump_startup*3;
-		action_alarm = jump_startup*3; // Important since if(action_alarm == 0) ---> action = noone
+		jump_alarm = jump_startup;
+		action_alarm = jump_startup; // Important since if(action_alarm == 0) ---> action = noone
+		// Unstable jump cancel is 3 times slower!!!
+		if(action == "Unstable Landing"){
+			jump_alarm *= 3;
+			action_alarm *= 3;
+		}
+		action = "Jump";
 	}
 	else if(extra_jumps_left > 0){
 		action = noone;

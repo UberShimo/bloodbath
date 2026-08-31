@@ -27,7 +27,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Bow_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(meter >= 50 && medium_attack_pressed){
@@ -43,7 +43,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Bow_Spearthrow_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_spear_throw;
 		}
 		else if(meter >= 20 && light_attack_pressed){
 			action = "Meter Twist";
@@ -56,7 +56,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Bow_Metertwist_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_meter_twist;
 			invincibility_alarm = action_alarm;
 		}
 		else{
@@ -82,7 +82,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Bow_Aim_Down_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_aim;
 		}
 		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
 			if(right_pressed){
@@ -96,26 +96,26 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			throw_boomerang_down = true;
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_boomerang;
 		}
 		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8F";
 			is_unstable = true;
 			sprite_index = Spr_Bow_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Bow_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Bow_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -136,7 +136,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Bow_Aim_Up_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_aim;
 		}
 		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
 			if(right_pressed){
@@ -150,19 +150,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			throw_boomerang_down = false;
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_boomerang;
 		}
 		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8L";
 			sprite_index = Spr_Bow_8L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Bow_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 			multi_hit_action_index = 0;
 		}
 		else{
@@ -170,7 +170,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			h_velocity = 3*image_xscale;
 			sprite_index = Spr_Bow_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -190,7 +190,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			is_collidable = false;
 			sprite_index = Spr_Bow_Crosspin_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_crosspin;
 		}
 		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
 			if(right_pressed){
@@ -204,26 +204,26 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			throw_boomerang_down = false;
 			sprite_index = Spr_Bow_Boomerang_Throw_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_boomerang;
 		}
 		else if(!grounded || v_velocity < 0){ // Safety v_velocity check so you cant dash amd do ground attacks
 			action = "8S";
 			sprite_index = Spr_Bow_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_hold){
 			action = "2S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Bow_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			sprite_index = Spr_Bow_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}
 	reset_buffers();

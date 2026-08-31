@@ -188,7 +188,7 @@ global.wall_images = [
 	Spr_Trippy_Walls,
 	Spr_Trainingroom_Walls
 ]
-global.BG_index = 1;
+global.BG_index = 0;
 global.BG_darkness = 0.5; // % black
 #endregion
 

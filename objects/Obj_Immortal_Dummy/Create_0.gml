@@ -22,6 +22,17 @@ jump_spr = Spr_Dojo_Land;
 parry_spr = Spr_Dojo_Parry;
 #endregion
 
+
+#region startup/recovery frames
+startup_frames_F = generate_sprite_frames(Spr_Dojo_F_startup);
+recovery_frames_F = generate_sprite_frames(Spr_Dojo_F_recovery);
+startup_frames_L = generate_sprite_frames(Spr_Dojo_L_startup);
+recovery_frames_L = generate_sprite_frames(Spr_Dojo_L_recovery);
+startup_frames_S = generate_sprite_frames(Spr_Dojo_S_startup);
+recovery_frames_S = generate_sprite_frames(Spr_Dojo_S_recovery);
+#endregion
+
+// Immortal Dummy stuff
 is_doing_F_loop = false;
 is_jumping = false;
 is_dumbly_attacking = false;
@@ -48,7 +59,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Dojo_F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_F;
 	}
 	else if(action == "L"){
 		attack = instance_create_depth(x, y, 0, Obj_Dojo_L_hitbox);
@@ -56,7 +67,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Dojo_L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_L;
 	}
 	else if(action == "S"){
 		attack = instance_create_depth(x, y, 0, Obj_Dojo_S_hitbox);
@@ -64,7 +75,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Dojo_S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_S;
 	}
 	else{
 		action = noone;

@@ -47,5 +47,5 @@ extra_hit_logic = function(target){
 	spawner.sprite_index = Spr_Shield_8F_hit;
 	spawner.image_index = 0;
 	spawner.action_alarm = 16;
-	spawner.recover_alarm = generate_sprite_frames(spawner.sprite_index);
+	spawner.recover_alarm = spawner.recovery_frames_8F_hit;
 }

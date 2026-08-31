@@ -31,7 +31,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Katana_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Manly_Tensing, 0, false);
 		}
@@ -41,7 +41,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_clone;
 		}
 		else if(meter >= 30 && light_attack_pressed){
 			action = "Recall Clone";
@@ -49,7 +49,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_clone;
 		}
 		else{
 			meter_shake = meter_shake_amount;
@@ -61,7 +61,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "8F";
 			sprite_index = Spr_Katana_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			send_clone_backward = false;
@@ -76,13 +76,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "2F";
 			sprite_index = Spr_Katana_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Katana_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -96,26 +96,27 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Quickdraw";
 			sprite_index = Spr_Katana_Quickdraw_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_quickdraw;
 		}
 		else if(!grounded){
 			action = "8L";
+			is_unstable = true;
 			sprite_index = Spr_Katana_8L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Katana_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else{
 			action = "5L";
 			grip = original_grip/2;
 			sprite_index = Spr_Katana_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -124,7 +125,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			is_unstable = true;
 			sprite_index = Spr_Katana_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -142,21 +143,21 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Katana_Sweep_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_sweep;
 		}
 		else if(down_hold){
 			action = "2S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Katana_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			can_cancel = true;
 			sprite_index = Spr_Katana_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}	
 	reset_buffers();

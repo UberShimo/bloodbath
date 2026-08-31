@@ -20,13 +20,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		if(meter >= 100 && grounded && heavy_attack_pressed){
 			action = "ULTRA";
 			meter -= 50;
-			ULTRjump_hold_timer = ULTRA_malight_attack_hold;
+			ULTRA_hold_timer = ULTRA_hold_max;
 			is_holding_ULTRA = false;
 			
 			sprite_index = Spr_Greatsword_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index)-2*logic_time; // -2 makes it look correct
+			action_alarm = startup_frames_ULTRA-2; // -2 makes it look correct
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(meter >= 20 && medium_attack_pressed && grounded){
@@ -34,13 +34,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Wavekick";
 			sprite_index = Spr_Greatsword_Wavekick_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_wavekick;
 		}
 		else if(light_attack_pressed){
 			action = "Grab";
 			sprite_index = Spr_Greatsword_Grab_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_grab;
 		}
 		else{
 			meter_shake = meter_shake_amount;
@@ -59,13 +59,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			pillar_distance = 60;
 			sprite_index = Spr_Greatsword_Stomp_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_stomp;
 		}
 		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Greatsword_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			action = "Earth Start";
@@ -78,19 +78,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			shake_amount = 2;
 			sprite_index = Spr_Greatsword_Earth_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_earth;
 		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Greatsword_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Greatsword_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -105,13 +105,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			pillar_distance = 120;
 			sprite_index = Spr_Greatsword_Stomp_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_stomp;
 		}
 		else if(!grounded){
 			action = "5L";
+			is_unstable = true;
 			sprite_index = Spr_Greatsword_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -125,20 +126,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			h_velocity = 8*image_xscale;
 			sprite_index = Spr_Greatsword_Ocean_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ocean;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Greatsword_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else{
 			action = "5L";
 			h_velocity += 4*image_xscale;
 			sprite_index = Spr_Greatsword_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -153,13 +154,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			pillar_distance = 180;
 			sprite_index = Spr_Greatsword_Stomp_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_stomp;
 		}
 		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Greatsword_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -173,7 +174,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			grip = 0.2;
 			sprite_index = Spr_Greatsword_Sword_Dunk_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_sword_dunk;
 		}
 		else if(down_hold){
 			action = "2S";
@@ -182,14 +183,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			grip = 0.1;
 			sprite_index = Spr_Greatsword_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Greatsword_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}
 	reset_buffers();
@@ -211,21 +212,21 @@ else if(action == "Earth"){
 		action = "Earth F";
 		sprite_index = Spr_Greatsword_Earth_F_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_earth_f;
 		recover_alarm = 0;
 	}
 	else if(medium_attack_pressed){
 		action = "Earth L";
 		sprite_index = Spr_Greatsword_Earth_L_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_earth_l;
 		recover_alarm = 0;
 	}
 	else if(heavy_attack_pressed){
 		action = "Earth S";
 		sprite_index = Spr_Greatsword_Earth_S_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_earth_s;
 		recover_alarm = 0;
 	}
 	reset_buffers();
@@ -235,29 +236,29 @@ else if(action == "Ocean"){
 		action = "Ocean F";
 		sprite_index = Spr_Greatsword_Ocean_F_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_ocean_f;
 		recover_alarm = 0;
 	}
 	else if(medium_attack_pressed){
 		action = "Ocean L";
 		sprite_index = Spr_Greatsword_Ocean_L_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_ocean_l;
 		recover_alarm = 0;
 	}
 	else if(heavy_attack_pressed){
 		action = "Ocean S";
 		sprite_index = Spr_Greatsword_Ocean_S_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_ocean_s;
 		recover_alarm = 0;
 	}
 	reset_buffers();
 }
 
 if(action == "ULTRA Hold"){
-	ULTRjump_hold_timer -= logic_time;
-	if(!heavy_attack_hold || ULTRjump_hold_timer <= 0){
+	ULTRA_hold_timer -= logic_time;
+	if(!heavy_attack_hold || ULTRA_hold_timer <= 0){
 		action = "ULTRA";
 		action_alarm = 4;
 	}

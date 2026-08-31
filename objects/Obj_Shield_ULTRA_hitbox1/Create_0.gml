@@ -46,6 +46,6 @@ extra_hit_logic = function(target){
 	spawner.sprite_index = Spr_Shield_ULTRA_hit;
 	spawner.image_index = 0;
 	spawner.action_alarm = 24;
-	spawner.recover_alarm = generate_sprite_frames(spawner.sprite_index);
+	spawner.recover_alarm = spawner.recovery_frames_ULTRA_hit;
 	spawner.shake_amount = 8;
 }

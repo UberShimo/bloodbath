@@ -4,8 +4,7 @@ text = "When hitting most attacks you can cancel\n"+
 "it into any other move you like!\n"+
 "Use cancels to do a combo!\n\n\n\n"+
 "Cancels are limited.\n"+
-"Hold RT to prevent cancels.\n"+
-"Jumping off ground with a cancel is slow.\n";
+"Hold RT to prevent cancels.\n";
 text_scale = 0.6;
 
 Obj_Dojo_Manager.student.cancels = Obj_Dojo_Manager.student.max_cancels;

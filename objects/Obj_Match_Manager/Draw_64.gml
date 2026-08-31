@@ -37,7 +37,7 @@ if(!global.chaos_mode){
 		draw_sprite_ext(Spr_Heart, 0, x_line+hearts_x*ui_pixel_size+hearts_distance*i*ui_pixel_size*heart_size, y_line+hearts_y*ui_pixel_size, ui_pixel_size*heart_size, ui_pixel_size*heart_size, 0, c_white, 1);
 	}
 	// Face
-	draw_sprite_ext(p1_ui_face, p1_ui_face_index, x_line-22*ui_pixel_size, y_line+22*ui_pixel_size, ui_pixel_size*face_size, ui_pixel_size*face_size, 0, c_white, 1);
+	draw_sprite_ext(p1_ui_face, p1_ui_face_index, x_line-24*ui_pixel_size, y_line+22*ui_pixel_size, ui_pixel_size*face_size, ui_pixel_size*face_size, 0, c_white, 1);
 	
 	// P2
 	if(instance_exists(p2_ui_instance)){

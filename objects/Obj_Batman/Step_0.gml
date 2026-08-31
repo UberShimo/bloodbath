@@ -16,7 +16,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Batman_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Batman_ULTRA_startup, 0, false); // Epic sound
 		}
@@ -25,21 +25,21 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_pitch;
 		}
 		else if(meter >= 40 && light_attack_pressed && grounded){
 			action = "Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_pitch;
 		}
 		else if(meter >= 40 && medium_attack_pressed && grounded){
 			action = "Throw Superball";
 			meter -= 40;
 			sprite_index = Spr_Batman_Meter_Ballthrow_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_throw_ball;
 		}
 		else{
 			meter_shake = meter_shake_amount;
@@ -51,7 +51,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "8F";
 			sprite_index = Spr_Batman_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -63,25 +63,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_pitch;
 		}
 		else if(double_down_pressed){
 			action = "Curve Pitch";
 			sprite_index = Spr_Batman_Pitch_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_pitch;
 		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Batman_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Batman_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -103,20 +103,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Batman_Spinhop_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_spinhop;
 		}
 		else if(!grounded){
 			action = "8L";
 			is_unstable = true;
 			sprite_index = Spr_Batman_8L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Batman_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 			multi_hit_action_index = 0;
 		}
 		else{
@@ -124,7 +124,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			h_velocity += 4*image_xscale;
 			sprite_index = Spr_Batman_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -140,7 +140,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Batman_Headbutt_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_headbutt;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -161,27 +161,27 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Batman_Dropkick_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_dropkick;
 		}
 		else if(!grounded){
 			action = "8S";
 			is_unstable = true;
 			sprite_index = Spr_Batman_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_hold){
 			action = "2S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Batman_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			sprite_index = Spr_Batman_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}
 	reset_buffers();

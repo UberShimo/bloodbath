@@ -44,5 +44,5 @@ extra_hit_logic = function(target){
 	spawner.sprite_index = Spr_Greatsword_Grab_hit;
 	spawner.image_index = 0;
 	spawner.action_alarm = 32;
-	spawner.recover_alarm = generate_sprite_frames(spawner.sprite_index);
+	spawner.recover_alarm = spawner.recovery_frames_grab_hit;
 }

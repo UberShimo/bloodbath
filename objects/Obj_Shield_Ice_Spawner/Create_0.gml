@@ -3,7 +3,7 @@ event_inherited();
 is_active = false;
 is_projectile = true;
 collision_check_with_distance = false;
-projectile_duration = generate_sprite_frames(sprite_index);
+projectile_duration = 28;
 
 // Ice spawner stuff
 drag_along_amount = 0.25; // % based

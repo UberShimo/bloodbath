@@ -45,6 +45,39 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Scythe_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Scythe_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Scythe_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Scythe_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Scythe_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Scythe_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Scythe_L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Scythe_L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Scythe_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Scythe_2L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Scythe_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Scythe_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Scythe_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Scythe_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Scythe_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Scythe_8S_recovery);
+startup_frames_glide = generate_sprite_frames(Spr_Scythe_Glide_startup);
+recovery_frames_glide = generate_sprite_frames(Spr_Scythe_Glide_recovery);
+startup_frames_birdie = generate_sprite_frames(Spr_Scythe_Birdie_startup);
+recovery_frames_birdie = generate_sprite_frames(Spr_Scythe_Birdie_recovery);
+startup_frames_reap = generate_sprite_frames(Spr_Scythe_Reap_startup);
+recovery_frames_reap = generate_sprite_frames(Spr_Scythe_Reap_recovery);
+startup_frames_call_lightning = generate_sprite_frames(Spr_Scythe_Call_Lightning_startup);
+recovery_frames_call_lightning = generate_sprite_frames(Spr_Scythe_Call_Lightning_recovery);
+startup_frames_self_lightning = generate_sprite_frames(Spr_Scythe_Self_Lightning_startup);
+recovery_frames_self_lightning = generate_sprite_frames(Spr_Scythe_Self_Lightning_recovery);
+startup_frames_meter_birdie = generate_sprite_frames(Spr_Scythe_Meter_Birdie_startup);
+recovery_frames_meter_birdie = generate_sprite_frames(Spr_Scythe_Meter_Birdie_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Scythe_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Scythe_ULTRA_recovery);
+#endregion
+
 // Scythe stuff
 glide_start_speed = 8;
 glide_speed = 0;
@@ -67,7 +100,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_2F_hitbox);
@@ -77,7 +110,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_5F_hitbox);
@@ -87,7 +120,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "5L"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_L_hitbox);
@@ -95,7 +128,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_2L_hitbox);
@@ -103,7 +136,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_8S_hitbox);
@@ -111,7 +144,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		if(multi_hit_action_index == 0){
@@ -122,7 +155,7 @@ action_trigger = function(){
 			
 			sprite_index = Spr_Scythe_2S_recovery;
 			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
+			recover_alarm = recovery_frames_2S;
 			action_alarm = 12;
 			multi_hit_action_index += 1;
 		}
@@ -153,7 +186,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_5S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "Start Gliding"){
@@ -178,7 +211,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_Birdie_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_birdie;
 	}
 	else if(action == "Reap"){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_Reap_hitbox);
@@ -188,7 +221,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_Reap_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_reap;
 	}
 	else if(action == "Call Lightning"){
 		if(forward_hold){
@@ -202,7 +235,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_Call_Lightning_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_call_lightning;
 	}
 	// Meter moves
 	else if(action == "Self Lightning"){
@@ -214,7 +247,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_Self_Lightning_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_self_lightning;
 	}
 	else if(action == "Meter Birdie"){
 		bird1 = instance_create_depth(x-16*image_xscale, y, 0, Obj_Scythe_Birdie);
@@ -233,7 +266,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_Meter_Birdie_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_meter_birdie;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
@@ -245,7 +278,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Scythe_ULTRA_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA;
 	}
 	else{
 		action = noone;

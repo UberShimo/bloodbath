@@ -66,7 +66,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Baller_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else{
@@ -91,7 +91,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				ball.weight = ball.original_weight;
 				sprite_index = Spr_Baller_Balldash_startup;
 				image_index = 0;
-				action_alarm = generate_sprite_frames(sprite_index);
+				action_alarm = startup_frames_balldash;
 				ball.cant_hurt_alarm = action_alarm;
 			}
 		}
@@ -99,7 +99,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "8F";
 			sprite_index = Spr_Baller_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 			multi_hit_action_index = 0;
 		}
 		else if(down_hold){
@@ -108,13 +108,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			h_velocity += 2*image_xscale;
 			sprite_index = Spr_Baller_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Baller_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -126,41 +126,48 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Whip";
+			is_unstable = true;
 			
 			sprite_index = Spr_Baller_Whip_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_whip;
 		}
 		else if(!grounded){
 			action = "8L";
 			is_unstable = true;
 			sprite_index = Spr_Baller_8L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 			multi_hit_action_index = 0;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Baller_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else{
 			action = "5L";
 			sprite_index = Spr_Baller_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
-		if(diagonal_input_hold){
+		if((down_forward_pressed || down_backward_pressed)){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
 				image_xscale = -object_scale;
 			}
-			action = "Headbutt";
+			if(is_holding_ball){
+				action = "Headbutt";
+			}
+			else{
+				action = "Ball Whack Attack Start";
+				goes_through_platforms = true;
+			}
 			shake_amount = launcher_shake_amount;
 			
 			h_velocity *= 0.2;
@@ -169,25 +176,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Baller_Headbutt_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
-		}
-		else if((down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
-				image_xscale = object_scale;
-			}
-			else{
-				image_xscale = -object_scale;
-			}
-			action = "Flipkick";
-			is_holding_ball = false;
-			ball.cant_hurt_alarm = 14;
-			
-			h_velocity = 3*image_xscale;
-			v_velocity = -6;
-			
-			sprite_index = Spr_Baller_Flipkick_startup;
-			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_headbutt;
 		}
 		else if(!grounded){
 			if(is_holding_ball){
@@ -198,7 +187,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				}
 				sprite_index = Spr_Baller_8S_startup;
 				image_index = 0;
-				action_alarm = generate_sprite_frames(sprite_index);
+				action_alarm = startup_frames_8S;
 			}
 			else{
 				// Pick up ball
@@ -218,7 +207,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 					ball.weight = ball.original_weight;
 					sprite_index = Spr_Baller_Ballpull_startup;
 					image_index = 0;
-					action_alarm = generate_sprite_frames(sprite_index);
+					action_alarm = startup_frames_pull;
 					ball.cant_hurt_alarm = action_alarm;
 				}
 			}
@@ -228,14 +217,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Baller_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			if(is_holding_ball){
 				action = "5S";
 				sprite_index = Spr_Baller_5S_startup;
 				image_index = 0;
-				action_alarm = generate_sprite_frames(sprite_index);
+				action_alarm = startup_frames_5S;
 			}
 			else{
 				// Pick up ball
@@ -251,7 +240,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 					ball.weight = ball.original_weight;
 					sprite_index = Spr_Baller_Ballpull_startup;
 					image_index = 0;
-					action_alarm = generate_sprite_frames(sprite_index);
+					action_alarm = startup_frames_pull;
 					ball.cant_hurt_alarm = action_alarm;
 				}
 			}
@@ -301,6 +290,72 @@ if(action == "Balldash" && action_alarm <= 0){
 		effect.initiate(self);
 		
 		recover_alarm = 1;
+	}
+}
+
+// Ball Whack Attack
+if(action == "Ball Whack Attack"){
+	whack_image_angle -= whack_rotation_speed;
+	image_angle = whack_image_angle*image_xscale;
+	
+	dir = point_direction(x, y, ball.x, ball.y);
+	h_velocity = lengthdir_x(whack_velocity, dir);
+	v_velocity = lengthdir_y(whack_velocity, dir);
+	
+	// Bump ball
+	if(place_meeting(x+h_velocity, y+v_velocity, ball)){
+		action = "Stunned";
+		recover_alarm = whack_self_stun;
+		reset_physics();
+		
+		// Bump ball on ground
+		if(position_meeting(ball.x, ball.y+12*ball.image_yscale, Parent_Collision)){
+			if(h_velocity > 0){
+				ball.h_velocity = 3;
+			}
+			else{
+				ball.h_velocity = -3;
+			}
+			ball.v_velocity = -3;
+			ball.cant_hurt_alarm = 20;
+		}
+		// Bump ball in air
+		else{
+			ball.h_velocity = h_velocity;
+			ball.v_velocity = v_velocity;
+		}
+		h_velocity *= -whack_bounce_off;
+		v_velocity *= -whack_bounce_off;
+		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_white, 0.1, 0.1, 0.2);
+		audio_play_sound(whack_bump_sound, 0, false);
+		
+	}
+	// Bump opponent
+	else if(place_meeting(x+h_velocity, y+v_velocity, Parent_Collision)){
+		action = "Stunned";
+		recover_alarm = whack_self_stun;
+		reset_physics();
+		if(place_meeting(x+h_velocity, y, Parent_Collision)){
+			h_velocity *= -whack_bounce_off;
+		}
+		if(place_meeting(x, y+v_velocity, Parent_Collision)){
+			v_velocity *= -whack_bounce_off;
+		}
+		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_white, 0.1, 0.1, 0.2);
+		audio_play_sound(whack_bump_sound, 0, false);
+	}
+	// Bump terrain
+	else if(place_meeting(x+h_velocity, y+v_velocity, Parent_Character)){
+		action = "Stunned";
+		recover_alarm = whack_self_stun;
+		reset_physics();
+		char = instance_place(x+h_velocity, y+v_velocity, Parent_Character);
+		char.h_velocity = h_velocity;
+		char.v_velocity = v_velocity;
+		h_velocity *= -whack_bounce_off;
+		v_velocity *= -whack_bounce_off;
+		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_white, 0.1, 0.1, 0.2);
+		audio_play_sound(whack_bump_sound, 0, false);
 	}
 }
 

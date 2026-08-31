@@ -45,6 +45,35 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Katana_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Katana_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Katana_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Katana_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Katana_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Katana_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Katana_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Katana_5L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Katana_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Katana_2L_recovery);
+startup_frames_8L = generate_sprite_frames(Spr_Katana_8L_startup);
+recovery_frames_8L = generate_sprite_frames(Spr_Katana_8L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Katana_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Katana_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Katana_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Katana_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Katana_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Katana_8S_recovery);
+startup_frames_quickdraw = generate_sprite_frames(Spr_Katana_Quickdraw_startup);
+recovery_frames_quickdraw = generate_sprite_frames(Spr_Katana_Quickdraw_recovery);
+startup_frames_sweep = generate_sprite_frames(Spr_Katana_Sweep_startup);
+recovery_frames_sweep = generate_sprite_frames(Spr_Katana_Sweep_recovery);
+startup_frames_clone = generate_sprite_frames(Spr_Katana_Spawn_Clone_startup);
+recovery_frames_clone = generate_sprite_frames(Spr_Katana_Spawn_Clone_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Katana_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Katana_ULTRA_recovery);
+#endregion
+
 // Katana stuff
 send_clone_backward = false;
 clone_action_delay = 150; // 2.5 sec
@@ -61,7 +90,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_2F_hitbox);
@@ -69,7 +98,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_5F_hitbox);
@@ -77,7 +106,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "8L"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_8L_hitbox);
@@ -87,7 +116,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_8L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8L;
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_2L_hitbox);
@@ -95,7 +124,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_5L_hitbox);
@@ -105,7 +134,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_8S_hitbox);
@@ -113,7 +142,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_2S_hitbox);
@@ -124,7 +153,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_5S_hitbox);
@@ -134,7 +163,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_5S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "Quickdraw"){
@@ -143,7 +172,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_Quickdraw_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_quickdraw;
 	}
 	else if(action == "Sweep"){
 		attack = instance_create_depth(x, y, 0, Obj_Katana_Sweep_hitbox);
@@ -154,7 +183,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Katana_Sweep_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_sweep;
 	}
 	else if(action == "Send Clone"){
 		action = "Clone Sent";
@@ -210,7 +239,7 @@ action_trigger = function(){
 		}
 		sprite_index = Spr_Katana_Spawn_Clone_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_clone;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
@@ -232,7 +261,7 @@ action_trigger = function(){
 		attack.initiate(self);
 		sprite_index = Spr_Katana_ULTRA_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA;
 	}
 	else{
 		action = noone;

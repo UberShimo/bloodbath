@@ -190,6 +190,29 @@ priority_struck_alarm = 0;
 mini_jump_disabled_alarm = 0;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = 24;
+recovery_frames_5F = 24;
+startup_frames_2F = 24;
+recovery_frames_2F = 24;
+startup_frames_8F = 24;
+recovery_frames_8F = 24;
+startup_frames_5L = 24;
+recovery_frames_5L = 24;
+startup_frames_2L = 24;
+recovery_frames_2L = 24;
+startup_frames_8L = 24;
+recovery_frames_8L = 24;
+startup_frames_5S = 24;
+recovery_frames_5S = 24;
+startup_frames_2S = 24;
+recovery_frames_2S = 24;
+startup_frames_8S = 24;
+recovery_frames_8S = 24;
+startup_frames_ULTRA = 24;
+recovery_frames_ULTRA = 24;
+#endregion
+
 // Methods
 die = function(){
 	action = "Stunned";

@@ -16,7 +16,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Dojo_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			multi_hit_action_index = 0;
 		}
@@ -31,7 +31,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		shake_amount = launcher_shake_amount;
 		sprite_index = Spr_Dojo_F_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_F;
 	}
 	else if(medium_attack_pressed){
 		if(down_forward_pressed || down_backward_pressed){
@@ -44,20 +44,20 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Projectile";
 			sprite_index = Spr_Dojo_Stab_Projectile_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_projectile;
 		}
 		else{
 			action = "L";
 			sprite_index = Spr_Dojo_L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_L;
 		}
 	}
 	else if(heavy_attack_pressed){
 		action = "S";
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_S;
 	}
 	reset_buffers();
 	

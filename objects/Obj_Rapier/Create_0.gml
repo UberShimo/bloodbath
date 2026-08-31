@@ -45,6 +45,47 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Rapier_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Rapier_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Rapier_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Rapier_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Rapier_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Rapier_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Rapier_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Rapier_5L_recovery);
+startup_frames_6L = generate_sprite_frames(Spr_Rapier_6L_startup);
+recovery_frames_6L = generate_sprite_frames(Spr_Rapier_6L_recovery);
+startup_frames_3L = generate_sprite_frames(Spr_Rapier_3L_startup);
+recovery_frames_3L = generate_sprite_frames(Spr_Rapier_3L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Rapier_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Rapier_2L_recovery);
+startup_frames_8L = generate_sprite_frames(Spr_Rapier_8L_startup);
+recovery_frames_8L = generate_sprite_frames(Spr_Rapier_8L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Rapier_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Rapier_5S_recovery);
+startup_frames_5S_extend = generate_sprite_frames(Spr_Rapier_5S_startup_extend);
+recovery_frames_5S_extend = generate_sprite_frames(Spr_Rapier_5S_recovery_extend);
+startup_frames_2S = generate_sprite_frames(Spr_Rapier_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Rapier_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Rapier_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Rapier_8S_recovery);
+startup_frames_lunge0 = generate_sprite_frames(Spr_Rapier_Quick_Lunge_startup);
+startup_frames_lunge1 = generate_sprite_frames(Spr_Rapier_Normal_Lunge_startup);
+startup_frames_lunge2 = generate_sprite_frames(Spr_Rapier_Magic_Lunge_startup);
+recovery_frames_lunge = generate_sprite_frames(Spr_Rapier_Lunge_recovery);
+startup_frames_gooch_impaler = generate_sprite_frames(Spr_Rapier_Gooch_Impaler_startup);
+recovery_frames_gooch_impaler = generate_sprite_frames(Spr_Rapier_Gooch_Impaler_recovery);
+startup_frames_spin_back = generate_sprite_frames(Spr_Rapier_Spin_Back_startup);
+recovery_frames_spin_back = generate_sprite_frames(Spr_Rapier_Spin_Back_recovery);
+startup_frames_whirl = generate_sprite_frames(Spr_Rapier_Whirl_startup);
+recovery_frames_whirl = generate_sprite_frames(Spr_Rapier_Whirl_recovery);
+startup_frames_gun = generate_sprite_frames(Spr_Rapier_Gun_startup);
+recovery_frames_gun = generate_sprite_frames(Spr_Rapier_Gun_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Rapier_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Rapier_ULTRA_recovery);
+#endregion
+
 // Rapier stuff
 HP = 100;
 max_HP = HP;
@@ -67,7 +108,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_2F_hitbox);
@@ -75,7 +116,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_5F_hitbox);
@@ -90,7 +131,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "8L"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_8L_hitbox);
@@ -98,7 +139,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_8L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8L;
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_2L_hitbox);
@@ -106,7 +147,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
 		blink_h(3*image_xscale);
@@ -116,7 +157,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "6L"){
 		blink_h(3*image_xscale);
@@ -126,7 +167,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_6L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_6L;
 	}
 	else if(action == "3L"){
 		blink_h(3*image_xscale);
@@ -136,7 +177,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_3L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_3L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_8S_hitbox);
@@ -147,7 +188,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_2S_hitbox);
@@ -157,14 +198,14 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		if(multi_hit_action_index == 0){
 			if(heavy_attack_hold){ // Charge double attack
 				sprite_index = Spr_Rapier_5S_startup_extend;
 				image_index = 0;
-				action_alarm = generate_sprite_frames(sprite_index);
+				action_alarm = startup_frames_5S_extend;
 				multi_hit_action_index = 1;
 			}
 			else{
@@ -175,7 +216,7 @@ action_trigger = function(){
 		
 				sprite_index = Spr_Rapier_5S_recovery;
 				image_index = 0;
-				recover_alarm = generate_sprite_frames(sprite_index);
+				recover_alarm = recovery_frames_5S;
 			}
 		}
 		else if(multi_hit_action_index > 0){
@@ -187,13 +228,13 @@ action_trigger = function(){
 			if(multi_hit_action_index == 1){
 				sprite_index = Spr_Rapier_5S_recovery_extend;
 				image_index = 0;
-				action_alarm = generate_sprite_frames(sprite_index);
+				action_alarm = recovery_frames_5S_extend;
 				multi_hit_action_index = 2;
 			}
 			else{
 				sprite_index = Spr_Rapier_5S_recovery;
 				image_index = 0;
-				recover_alarm = generate_sprite_frames(sprite_index);
+				recover_alarm = recovery_frames_5S;
 			}
 		}
 	}
@@ -217,7 +258,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_Lunge_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_lunge;
 	}
 	else if(action == "Gooch Impaler"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_Gooch_Impaler_hitbox);
@@ -225,7 +266,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_Gooch_Impaler_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_gooch_impaler;
 	}
 	else if(action == "Spin Back"){
 		attack = instance_create_depth(x, y, 0, Obj_Rapier_Spin_Back_hitbox);
@@ -235,7 +276,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_Spin_Back_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_spin_back;
 	}
 	// Meter moves
 	else if(action == "Whirl"){
@@ -249,7 +290,7 @@ action_trigger = function(){
 			if(multi_hit_action_index == 0){
 				sprite_index = Spr_Rapier_Whirl_recovery;
 				image_index = 0;
-				recover_alarm = generate_sprite_frames(sprite_index);
+				recover_alarm = recovery_frames_whirl;
 			}
 			multi_hit_action_index += 1;
 			action_alarm = 12;
@@ -271,7 +312,7 @@ action_trigger = function(){
 			sprite_index = Spr_Rapier_Gun_Crouching_recovery;
 		}
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_gun;
 	}
 	else if(action == "Dissapear"){
 		action = "Gone";
@@ -286,7 +327,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Rapier_ULTRA_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA;
 	}
 	else{
 		action = noone;

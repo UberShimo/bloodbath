@@ -18,7 +18,7 @@ if(meter_hold && meter >= 100 && heavy_attack_pressed){
 	sprite_index = Spr_Rapier_ULTRA_startup;
 	image_index = 0;
 	global.game_time = 0.25;
-	action_alarm = generate_sprite_frames(sprite_index)-2; // -2 cuz the animation manages to loops for some reason
+	action_alarm = startup_frames_ULTRA-2; // -2 cuz the animation manages to loops for some reason
 	Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 }
 
@@ -45,7 +45,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				sprite_index = Spr_Rapier_Gun_Crouching_startup;
 			}
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_gun;
 		}
 		else if(meter >= 20 && light_attack_pressed){
 			action = "Whirl";
@@ -53,7 +53,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Rapier_Whirl_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_whirl;
 			multi_hit_action_index = 0;
 		}
 		else{
@@ -78,25 +78,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Rapier_Quick_Lunge_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_lunge0;
 		}
 		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Rapier_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Rapier_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Rapier_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -111,7 +111,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Rapier_3L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_3L;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -129,38 +129,38 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Rapier_Normal_Lunge_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_lunge1;
 		}
 		else if(!grounded){
 			action = "8L";
 			sprite_index = Spr_Rapier_8L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 		}
 		else if(double_down_pressed){
 			action = "Gooch Impaler";
 			sprite_index = Spr_Rapier_Gooch_Impaler_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_gooch_impaler;
 		}
 		
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Rapier_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else if(forward_hold){
 			action = "6L";
 			sprite_index = Spr_Rapier_6L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_6L;
 		}
 		else{
 			action = "5L";
 			sprite_index = Spr_Rapier_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -175,7 +175,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Rapier_Spin_Back_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_spin_back;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -193,13 +193,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Rapier_Magic_Lunge_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_lunge2;
 		}
 		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Rapier_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_hold){
 			action = "2S";
@@ -210,14 +210,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Rapier_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			can_cancel = true;
 			sprite_index = Spr_Rapier_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 			multi_hit_action_index = 0;
 		}
 	}	

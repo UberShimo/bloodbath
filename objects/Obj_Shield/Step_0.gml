@@ -50,7 +50,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Shield_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(meter >= 35 && medium_attack_pressed){
@@ -59,7 +59,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Cool_Shot_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_cool_shot;
 		}
 		else if(meter >= 10 && light_attack_pressed && targeted_pose != noone){
 			action = "Pose Dash Start";
@@ -72,7 +72,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Pose_Dash_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_pose_dash;
 		}
 		else{
 			meter_shake = meter_shake_amount;
@@ -92,7 +92,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Surf_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_surf;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -110,25 +110,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Cancel_Trick_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_cancel_trick;
 		}
 		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Shield_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Shield_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Shield_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -143,7 +143,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Ice_Floor_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_spawn_ice;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -161,27 +161,27 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Projectile_Trick_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_projectile_trick;
 		}
 		else if(!grounded){
 			action = "8L";
+			is_unstable = true;
 			sprite_index = Spr_Shield_8L_startup;
 			image_index = 0;
-			is_unstable = true;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 			multi_hit_action_index = 0;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Shield_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else{
 			action = "5L";
 			sprite_index = Spr_Shield_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -198,7 +198,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Bash_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_bash;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -216,28 +216,28 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Shield_Unstoppable_Trick_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_unstoppable_trick;
 		}
 		else if(!grounded){
 			action = "8S";
 			is_unstable = true;
 			sprite_index = Spr_Shield_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_hold){
 			action = "2S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Shield_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			can_cancel = true;
 			sprite_index = Spr_Shield_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}	
 	reset_buffers();

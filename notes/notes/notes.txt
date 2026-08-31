@@ -1,10 +1,10 @@
 TODO{
-	
+	Why do you hear Swing sound when you start a match?
 	
 	Ta tumen ur röven och börje the BIG projects.
 	Custom tags med custom key binds...
 	Och online...
-	Med hjälp av AI!
+	Med hjälp av AI!?
 	
 	Make ITEMS mode!
 	Items v-v
@@ -194,27 +194,31 @@ Black steel Greathammer. Armored skirt. Bright round helmet with red ponytail RE
 }
 
 NEW
-Zombie with dark brown pants and a cross pendant. Light green pale skin with white eyes. CHRISTIAN{
+CHRISTIAN{
 	Has super low dash grip.
-	Pretty agile.
 	
-	5F: Punch
+	5F: Swing arm foward giving you slight momentum.
 	2F: Low kick.
-	8F: Punch forward.
+	8F: Punch forward. Giving slight forward momentum.
 	
-	5L: Karate kick forward slightly boosting you forward.
-	2L: Karate kick upward
+	5L: Kick forward with both feet while fists on ground.
+	2L: Swing both arms upward.
 	8L: Swing leg forward.
 	
-	5S: Slam both arms downward.
+	5S: Long range clap forward with sweetspot on tip.
 	2S: Swing both arms backward then swoosh them upward.
 	8S: Kick and punch forward at same time with all your limbs.
 	
 	diagonal F: Rip your arm off and hit far. Costs HP.
+	diagonal S: Slam both arms downward and faceplant. Costs a little HP.
 	
-	v>F: An unstoppable dash.
+	v>F: Flip forward and swing arms downward.
 	v>L: Spit 3 projectiles in arc. Cost HP.
 	v>S: Take a bite. Steals HP from opponent.
+	
+	RB+X; Reverse horizontal velocity. Can be done during other moves.
+	RB+Y: Slow long reaching grab that pulls closest enemy to you.
+	ULTRA: Do 20 punches fast as fuck. ORA ORA ORA ORA ORA!!!
 }
 
 NEW

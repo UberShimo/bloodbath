@@ -11,7 +11,7 @@ if(action_alarm > 0){
 		
 		sprite_index = Spr_Greatsword_Pillar;
 		image_index = 0;
-		destroy_alarm = generate_sprite_frames(sprite_index);
+		destroy_alarm = 32;
 	}
 }
 

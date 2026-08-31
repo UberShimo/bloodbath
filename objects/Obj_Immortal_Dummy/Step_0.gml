@@ -32,19 +32,19 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		shake_amount = launcher_shake_amount;
 		sprite_index = Spr_Dojo_F_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_F;
 	}
 	else if(medium_attack_pressed){
 		action = "L";
 		sprite_index = Spr_Dojo_L_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_L;
 	}
 	else if(heavy_attack_pressed){
 		action = "S";
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = startup_frames_S;
 	}
 	reset_buffers();
 	

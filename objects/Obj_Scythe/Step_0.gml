@@ -26,7 +26,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Scythe_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.5;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 		}
 		else if(meter >= 40 && light_attack_pressed && grounded){
@@ -35,7 +35,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Scythe_Self_Lightning_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_self_lightning;
 		}
 		else if(meter >= 20 && medium_attack_pressed){
 			action = "Meter Birdie";
@@ -43,7 +43,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Scythe_Meter_Birdie_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_meter_birdie;
 		}
 		else{
 			meter_shake = meter_shake_amount;
@@ -67,32 +67,32 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Scythe_Glide_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_glide;
 		}
 		else if(!grounded){
 			action = "8F";
 			sprite_index = Spr_Scythe_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(double_down_pressed){
 			action = "Call Lightning";
 			lightning_distance = 96;
 			sprite_index = Spr_Scythe_Call_Lightning_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_call_lightning;
 		}
 		else if(down_hold){
 			action = "2F";
 			sprite_index = Spr_Scythe_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Scythe_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -106,32 +106,32 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			action = "Birdie";
 			sprite_index = Spr_Scythe_Birdie_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_birdie;
 		}
 		else if(!grounded){
 			action = "5L";
 			sprite_index = Spr_Scythe_L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 		else if(double_down_pressed){
 			action = "Call Lightning";
 			lightning_distance = 192;
 			sprite_index = Spr_Scythe_Call_Lightning_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_call_lightning;
 		}
 		else if(down_hold){
 			action = "2L";
 			sprite_index = Spr_Scythe_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else{
 			action = "5L";
 			sprite_index = Spr_Scythe_L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -151,34 +151,34 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			
 			sprite_index = Spr_Scythe_Reap_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_reap;
 		}
 		else if(!grounded){
 			action = "8S";
 			sprite_index = Spr_Scythe_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(double_down_pressed){
 			action = "Call Lightning";
 			lightning_distance = 288;
 			sprite_index = Spr_Scythe_Call_Lightning_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_call_lightning;
 		}
 		else if(down_hold){
 			action = "2S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Scythe_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 			multi_hit_action_index = 0;
 		}
 		else{
 			action = "5S";
 			sprite_index = Spr_Scythe_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}
 	reset_buffers();
@@ -235,7 +235,7 @@ if(action == "Gliding"){
 		reset_physics();
 		sprite_index = Spr_Scythe_Glide_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_glide;
 		goes_through_platforms = false;
 	}
 }

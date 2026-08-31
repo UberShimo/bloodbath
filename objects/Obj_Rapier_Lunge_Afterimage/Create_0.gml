@@ -13,5 +13,5 @@ v_launch = 0;
 is_active = false;
 is_projectile = true;
 
-action_alarm = generate_sprite_frames(sprite_index);
+action_alarm = 64;
 destroy_alarm = 0;

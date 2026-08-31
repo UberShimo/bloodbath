@@ -45,6 +45,39 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Batman_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Batman_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Batman_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Batman_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Batman_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Batman_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Batman_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Batman_5L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Batman_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Batman_2L_recovery);
+startup_frames_8L = generate_sprite_frames(Spr_Batman_8L_startup);
+recovery_frames_8L = generate_sprite_frames(Spr_Batman_8L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Batman_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Batman_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Batman_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Batman_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Batman_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Batman_8S_recovery);
+startup_frames_pitch = generate_sprite_frames(Spr_Batman_Pitch_startup);
+recovery_frames_pitch = generate_sprite_frames(Spr_Batman_Pitch_recovery);
+startup_frames_spinhop = generate_sprite_frames(Spr_Batman_Pitch_startup);
+recovery_frames_spinhop = generate_sprite_frames(Spr_Batman_Pitch_recovery);
+startup_frames_headbutt = generate_sprite_frames(Spr_Batman_Headbutt_startup);
+recovery_frames_headbutt = generate_sprite_frames(Spr_Batman_Headbutt_recovery);
+startup_frames_dropkick = generate_sprite_frames(Spr_Batman_Dropkick_startup);
+recovery_frames_dropkick = generate_sprite_frames(Spr_Batman_Dropkick_recovery);
+startup_frames_throw_ball = generate_sprite_frames(Spr_Batman_Meter_Ballthrow_startup);
+recovery_frames_throw_ball = generate_sprite_frames(Spr_Batman_Meter_Ballthrow_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Batman_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Batman_ULTRA_recovery);
+#endregion
+
 action_trigger = function(){
 	shake_amount = 0;
 	
@@ -57,7 +90,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_2F_hitbox);
@@ -65,7 +98,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_5F_hitbox);
@@ -73,7 +106,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "8L"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_8L_hitbox);
@@ -81,7 +114,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_8L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8L;
 	}
 	else if(action == "2L"){
 		if(multi_hit_action_index == 0){
@@ -90,7 +123,7 @@ action_trigger = function(){
 		
 			sprite_index = Spr_Batman_2L_recovery;
 			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
+			recover_alarm = recovery_frames_2L;
 			action_alarm = 8;
 			multi_hit_action_index += 1;
 		}
@@ -105,7 +138,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_8S_hitbox);
@@ -115,7 +148,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_2S_hitbox);
@@ -125,7 +158,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_5S_hitbox);
@@ -135,7 +168,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_5S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "Pitch"){
@@ -151,7 +184,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Pitch_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_pitch;
 	}
 	else if(action == "Curve Pitch"){
 		ball = instance_create_depth(x+(12*image_xscale), y-6, 0, Obj_Batman_Baseball);
@@ -163,7 +196,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Pitch_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_pitch;
 	}
 	else if(action == "Spinhop"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_Spinhop_hitbox);
@@ -174,7 +207,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Spinhop_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_spinhop;
 	}
 	else if(action == "Dropkick"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_Dropkick_hitbox);
@@ -182,7 +215,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Dropkick_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_dropkick;
 	}
 	else if(action == "Headbutt"){
 		attack = instance_create_depth(x, y, 0, Obj_Batman_Headbutt_hitbox);
@@ -191,7 +224,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Headbutt_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_headbutt;
 	}
 	// Meter moves
 	else if(action == "Superball"){
@@ -206,7 +239,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Pitch_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_pitch;
 	}
 	else if(action == "Curve Superball"){
 		ball = instance_create_depth(x+(12*image_xscale), y-6, 0, Obj_Batman_Superball);
@@ -218,7 +251,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Pitch_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_pitch;
 	}
 	else if(action == "Throw Superball"){
 		ball = instance_create_depth(x+(12*image_xscale), y-16, 0, Obj_Batman_Superball);
@@ -234,7 +267,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_Meter_Ballthrow_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_throw_ball;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
@@ -245,7 +278,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Batman_ULTRA_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA;
 	}
 	else{
 		action = noone;

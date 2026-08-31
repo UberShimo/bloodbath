@@ -4,8 +4,8 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Launch yourself forward!\nLaunch is more powerful\nwhen holding BALL.";
+info = "If you hold BALL:\nLaunch yourself forward!";
 movement_input = Spr_B;
-button_input = Spr_Diagonal_Input;
+button_input = Spr_DF;
 image = Spr_Baller_Headbutt_recovery;
 frame = 0;

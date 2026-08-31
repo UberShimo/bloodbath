@@ -45,8 +45,46 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Baller_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Baller_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Baller_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Baller_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Baller_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Baller_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Baller_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Baller_5L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Baller_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Baller_2L_recovery);
+startup_frames_8L = generate_sprite_frames(Spr_Baller_8L_startup);
+recovery_frames_8L = generate_sprite_frames(Spr_Baller_8L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Baller_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Baller_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Baller_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Baller_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Baller_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Baller_8S_recovery);
+startup_frames_pull = generate_sprite_frames(Spr_Baller_Ballpull_startup);
+recovery_frames_pull = generate_sprite_frames(Spr_Baller_Ballpull_recovery);
+startup_frames_balldash = generate_sprite_frames(Spr_Baller_Balldash_startup);
+recovery_frames_balldash = 300; // Max duration 5 sec
+startup_frames_whip = generate_sprite_frames(Spr_Baller_Whip_startup);
+recovery_frames_whip = generate_sprite_frames(Spr_Baller_Whip_recovery);
+startup_frames_headbutt = generate_sprite_frames(Spr_Baller_Headbutt_startup);
+recovery_frames_headbutt = generate_sprite_frames(Spr_Baller_Headbutt_recovery); // Is also startup for whack attack
+recovery_frames_whack_attack = 300;  // Max duration 5 sec
+startup_frames_ULTRA = generate_sprite_frames(Spr_Baller_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Baller_ULTRA_recovery);
+#endregion
+
 // Baller related
 is_holding_ball = true;
+whack_velocity = 9;
+whack_rotation_speed = 30;
+whack_image_angle = 0;
+whack_self_stun = 30;
+whack_bounce_off = 0.5; // % based
+whack_bump_sound = Snd_Plopp;
 ball = instance_create_depth(x, y, depth-1, Obj_Baller_Ball);
 ball.initiate(self);
 ball_explosion_max_cd = 90;
@@ -65,7 +103,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 		
 		if(multi_hit_action_index < 5 && light_attack_hold){
 			action_alarm = 8;
@@ -79,7 +117,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_5F_hitbox);
@@ -88,7 +126,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "8L"){
 		x_spawn = -4;
@@ -105,7 +143,7 @@ action_trigger = function(){
 		if(multi_hit_action_index == 0){
 			sprite_index = Spr_Baller_8L_recovery;
 			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
+			recover_alarm = recovery_frames_8L;
 		
 			action_alarm = 16;
 			multi_hit_action_index += 1;
@@ -122,7 +160,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
 		blink_h(8*image_xscale);
@@ -133,7 +171,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "8S"){
 		// Turn around?
@@ -150,7 +188,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_2S_hitbox);
@@ -160,7 +198,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		is_holding_ball = false;
@@ -180,7 +218,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_5S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "Pull"){
@@ -188,7 +226,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_Ballpull_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_pull;
 	}
 	else if(action == "Balldash"){
 		// Face toward ball
@@ -204,7 +242,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Baller_Balldash_recovery;
 		image_index = 0;
-		recover_alarm = 300; // Max duration 5 sec
+		recover_alarm = recovery_frames_balldash; // Max duration 5 sec
 	}
 	else if(action == "Whip"){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_Whip_hitbox);
@@ -212,15 +250,7 @@ action_trigger = function(){
 
 		sprite_index = Spr_Baller_Whip_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
-	else if(action == "Flipkick"){
-		attack = instance_create_depth(x, y, 0, Obj_Baller_Flipkick_hitbox);
-		attack.initiate(self);
-
-		sprite_index = Spr_Baller_Flipkick_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_whip;
 	}
 	else if(action == "Headbutt"){
 		attack = instance_create_depth(x, y, 0, Obj_Baller_Headbutt_hitbox);
@@ -242,20 +272,14 @@ action_trigger = function(){
 
 		sprite_index = Spr_Baller_Headbutt_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_headbutt;
+	}
+	else if(action == "Ball Whack Attack Start"){
+		action = "Ball Whack Attack";
+
+		recover_alarm = recovery_frames_whack_attack; // Max duration 5 sec
 	}
 	// Meter moves
-	else if(action == "Charge Ball"){
-		ball_explosion_cd = ball_explosion_max_cd;
-			
-		obj = instance_create_depth(0, 0, ball.depth-1, Obj_Ball_Exploder);
-		obj.initiate(self);
-		obj.ball = ball;
-		
-		sprite_index = Spr_Baller_Charging_Ball_recovery;
-		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
-	}
 	else if(action == "ULTRA"){
 		meter -= 50;
 		
@@ -264,7 +288,7 @@ action_trigger = function(){
 			
 		sprite_index = Spr_Baller_ULTRA_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA;
 	}
 	else{
 		action = noone;

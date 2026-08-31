@@ -45,6 +45,47 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Shield_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Shield_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Shield_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Shield_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Shield_8F_startup);
+recovery_frames_8F_whiff = generate_sprite_frames(Spr_Shield_8F_whiff);
+recovery_frames_8F_hit = generate_sprite_frames(Spr_Shield_8F_hit);
+startup_frames_5L = generate_sprite_frames(Spr_Shield_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Shield_5L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Shield_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Shield_2L_recovery);
+startup_frames_8L = generate_sprite_frames(Spr_Shield_8L_startup);
+recovery_frames_8L = generate_sprite_frames(Spr_Shield_8L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Shield_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Shield_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Shield_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Shield_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Shield_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Shield_8S_recovery);
+startup_frames_cancel_trick = generate_sprite_frames(Spr_Shield_Cancel_Trick_startup);
+recovery_frames_cancel_trick = generate_sprite_frames(Spr_Shield_Cancel_Trick_recovery);
+startup_frames_projectile_trick = generate_sprite_frames(Spr_Shield_Projectile_Trick_startup);
+recovery_frames_projectile_trick = generate_sprite_frames(Spr_Shield_Projectile_Trick_recovery);
+startup_frames_unstoppable_trick = generate_sprite_frames(Spr_Shield_Unstoppable_Trick_startup);
+recovery_frames_unstoppable_trick = generate_sprite_frames(Spr_Shield_Unstoppable_Trick_recovery);
+startup_frames_surf = generate_sprite_frames(Spr_Shield_Surf_startup);
+recovery_frames_surf = generate_sprite_frames(Spr_Shield_Surf_recovery);
+startup_frames_spawn_ice = generate_sprite_frames(Spr_Shield_Ice_Floor_startup);
+recovery_frames_spawn_ice = generate_sprite_frames(Spr_Shield_Ice_Floor_recovery);
+startup_frames_bash = generate_sprite_frames(Spr_Shield_Bash_startup);
+recovery_frames_bash = generate_sprite_frames(Spr_Shield_Bash_recovery);
+startup_frames_pose_dash = generate_sprite_frames(Spr_Shield_Pose_Dash_startup);
+recovery_frames_pose_dash = generate_sprite_frames(Spr_Shield_Pose_Dash_recovery);
+startup_frames_cool_shot = generate_sprite_frames(Spr_Shield_Cool_Shot_startup);
+recovery_frames_cool_shot = generate_sprite_frames(Spr_Shield_Cool_Shot_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Shield_ULTRA_startup);
+recovery_frames_ULTRA_whiff = generate_sprite_frames(Spr_Shield_ULTRA_whiff);
+recovery_frames_ULTRA_hit = generate_sprite_frames(Spr_Shield_ULTRA_hit);
+#endregion
+
 // Shield stuff
 perform_pose_dash = false;
 pose_dash_min_distance = 64;
@@ -58,6 +99,7 @@ unstoppable_duration = 90;
 unstoppable_alarm = 0;
 surf_max_duration = generate_sprite_frames(Spr_Shield_Surf_recovery);
 bash_parry_success = false;
+ice_spawner_duration = generate_sprite_frames(Spr_Shield_Ice_Floor_spawner);
 
 action_trigger = function(){
 	shake_amount = 0;
@@ -69,7 +111,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_8F_whiff;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F_whiff;
 	}
 	else if(action == "8F Hit"){
 		action = "8F";
@@ -89,7 +131,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		blink_h(4*image_xscale);
@@ -99,7 +141,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "8L"){
 		if(multi_hit_action_index < 4){
@@ -110,7 +152,7 @@ action_trigger = function(){
 				weight = 0.4;
 				sprite_index = Spr_Shield_8L_recovery;
 				image_index = 0;
-				recover_alarm = generate_sprite_frames(sprite_index);
+				recover_alarm = recovery_frames_8L;
 			}
 			multi_hit_action_index += 1;
 			action_alarm = 6;
@@ -122,7 +164,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_5L_hitbox);
@@ -132,7 +174,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_8S_hitbox);
@@ -140,7 +182,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		blink_h(8*image_xscale);
@@ -150,7 +192,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_5S_hitbox);
@@ -160,7 +202,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_5S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "Cancel Trick"){
@@ -169,7 +211,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Cancel_Trick_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_cancel_trick;
 	}
 	else if(action == "Projectile Trick"){
 		pose = instance_create_depth(x, y, 0, Obj_Shield_Projectile_Pose);
@@ -177,7 +219,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Projectile_Trick_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_projectile_trick;
 	}
 	else if(action == "Unstoppable Trick"){
 		pose = instance_create_depth(x, y, 0, Obj_Shield_Unstoppable_Pose);
@@ -185,7 +227,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Unstoppable_Trick_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_unstoppable_trick;
 	}
 	else if(action == "Surf Kick"){
 		action = "Surf";
@@ -202,7 +244,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Surf_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_surf;
 	}
 	else if(action == "Spawn Ice"){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_Ice_Spawner);
@@ -211,7 +253,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Ice_Floor_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_spawn_ice;
 	}
 	else if(action == "Bash Charge"){
 		action = "Bash";
@@ -223,7 +265,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Bash_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_bash;
 	}
 	// Meter moves
 	else if(action == "Pose Dash Start"){
@@ -237,7 +279,7 @@ action_trigger = function(){
 			
 		sprite_index = Spr_Shield_Pose_Dash_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_pose_dash;
 	
 		// Set image angle before activating pose
 		image_angle = pose_dash_dir;
@@ -256,7 +298,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_Cool_Shot_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_cool_shot;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
@@ -265,7 +307,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Shield_ULTRA_whiff;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA_whiff;
 	}
 	else if(action == "ULTRA Hit"){
 		attack = instance_create_depth(x, y, 0, Obj_Shield_ULTRA_hitbox2);

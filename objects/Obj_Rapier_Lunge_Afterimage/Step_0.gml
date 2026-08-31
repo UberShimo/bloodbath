@@ -9,7 +9,7 @@ if(action_alarm > 0){
 		attack.initiate(self);
 		
 		sprite_index = Spr_Rapier_Magic_Lunge_Afterimage_recovery;
-		destroy_alarm = generate_sprite_frames(sprite_index);
+		destroy_alarm = 12;
 	}
 }
 

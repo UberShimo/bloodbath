@@ -9,6 +9,4 @@ initiate = function(initiator){
 	
 	// BAM
 	image_blend = initiator.image_blend;
-	
-	duration = generate_sprite_frames(sprite_index);
 }

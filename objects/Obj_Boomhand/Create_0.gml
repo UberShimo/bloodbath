@@ -45,6 +45,43 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Boomhand_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Boomhand_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Boomhand_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Boomhand_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Boomhand_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Boomhand_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Boomhand_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Boomhand_5L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Boomhand_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Boomhand_2L_recovery);
+startup_frames_8L = generate_sprite_frames(Spr_Boomhand_8L_startup);
+recovery_frames_8L = generate_sprite_frames(Spr_Boomhand_8L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Boomhand_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Boomhand_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Boomhand_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Boomhand_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Boomhand_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Boomhand_8S_recovery);
+startup_frames_roar = generate_sprite_frames(Spr_Boomhand_Roar_startup);
+recovery_frames_roar = generate_sprite_frames(Spr_Boomhand_Roar_recovery);
+startup_frames_shockwave_punch = generate_sprite_frames(Spr_Boomhand_Shockwave_Punch_startup);
+recovery_frames_shockwave_punch = generate_sprite_frames(Spr_Boomhand_Shockwave_Punch_recovery);
+startup_frames_groundsmash = generate_sprite_frames(Spr_Boomhand_Groundsmash_startup);
+recovery_frames_groundsmash = generate_sprite_frames(Spr_Boomhand_Groundsmash_recovery);
+startup_frames_backstepBOOM = generate_sprite_frames(Spr_Boomhand_BackstepBOOM_startup);
+recovery_frames_backstepBOOM = generate_sprite_frames(Spr_Boomhand_BackstepBOOM_recovery);
+startup_frames_fistdive = generate_sprite_frames(Spr_Boomhand_Fistdive_startup);
+recovery_frames_fistdive = generate_sprite_frames(Spr_Boomhand_Fistdive_recovery);
+startup_frames_burrow = generate_sprite_frames(Spr_Boomhand_Burrow_startup);
+recovery_frames_burrow = generate_sprite_frames(Spr_Boomhand_Burrow_recovery);
+startup_frames_elbow = generate_sprite_frames(Spr_Boomhand_Elbow_startup);
+recovery_frames_elbow = generate_sprite_frames(Spr_Boomhand_Elbow_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Boomhand_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Boomhand_ULTRA_recovery);
+#endregion
+
 // Boomhand stuff
 roar_power = 0;
 roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )... Takes 8 sec to fully cooldown atm...
@@ -68,7 +105,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_2F_hitbox);
@@ -76,7 +113,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_5F_hitbox);
@@ -84,7 +121,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "8L"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_8L_hitbox);
@@ -92,7 +129,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_8L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8L;
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_2L_hitbox);
@@ -102,7 +139,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_5L_hitbox);
@@ -110,7 +147,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_8S_hitbox);
@@ -120,7 +157,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_2S_hitbox);
@@ -128,7 +165,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		// Start charge
@@ -148,7 +185,7 @@ action_trigger = function(){
 		
 			sprite_index = Spr_Boomhand_5S_recovery;
 			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
+			recover_alarm = recovery_frames_5S;
 		}
 	}
 	// Special moves
@@ -157,7 +194,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_Roar_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_roar;
 		audio_play_sound(Snd_Boomhand_Roar, 0, false);
 		spawn_effect(x, y, 6, Eff_Splash, 1, +0.1, c_orange, 0, 0, 0.2);
 	}
@@ -168,7 +205,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_Shockwave_Punch_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_shockwave_punch;
 	}
 	else if(action == "Groundsmash"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_hitbox);
@@ -179,7 +216,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_Groundsmash_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_groundsmash;
 	}
 	else if(action == "BackstepBOOM"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_BackstepBOOM_hitbox);
@@ -190,7 +227,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_BackstepBOOM_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_backstepBOOM;
 	}
 	else if(action == "Fistdive"){
 		attack = instance_create_depth(x, y, 0, Obj_Boomhand_Fistdive_hitbox);
@@ -203,7 +240,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_Fistdive_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_fistdive;
 	}
 	else if(action == "Burrow"){
 		// Change sprite for sake of collision checking with blink_h();
@@ -225,7 +262,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_Burrow_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_burrow;
 	}
 	// Meter moves
 	else if(action == "Elbow"){
@@ -236,7 +273,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_Elbow_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_elbow;
 	}
 	else if(action == "ULTRA"){
 		meter -= 50;
@@ -250,7 +287,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Boomhand_ULTRA_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ULTRA;
 		audio_stop_sound(Snd_Boomhand_ULTRA_startup);
 		audio_play_sound(Snd_Boomhand_Scream, 0 ,false);
 	}

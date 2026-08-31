@@ -61,8 +61,8 @@ action_trigger = function(){
 		image_alpha = 1;
 		
 		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 0.2);
-		life_span = generate_sprite_frames(sprite_index);
-		recover_alarm = generate_sprite_frames(sprite_index);
+		life_span = 32;
+		recover_alarm = 32;
 		
 		// Achievement update
 		if(instance_exists(Obj_Immortal_Dummy)){

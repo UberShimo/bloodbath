@@ -33,7 +33,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			sprite_index = Spr_Knife_ULTRA_startup;
 			image_index = 0;
 			global.game_time = 0.25;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			
 			multi_hit_action_index = 0;
@@ -44,7 +44,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Potion_Lob_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_lob_potion;
 		}
 		else if(meter >= 30 && light_attack_pressed && grounded && image_alpha >= 1){
 			if(backward_hold){
@@ -59,7 +59,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Sneak_Away_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_sneak_away;
 			visibility_change = -1/action_alarm; // Very smart solution
 			reverse_invisibility_alarm = invisibility_duration; // Gotta have it here for safety. Very critical alarm to start!
 		}
@@ -80,7 +80,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Mark_Teleport_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_mark_teleport;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -97,26 +97,25 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Mark_Dash_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_mark_dash;
 		}
 		else if(!grounded){
 			action = "8F";
-			is_unstable = true;
 			sprite_index = Spr_Knife_8F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8F;
 		}
 		else if(down_hold){
 			action = "2F";			
 			sprite_index = Spr_Knife_2F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2F;
 		}
 		else{
 			action = "5F";
 			sprite_index = Spr_Knife_5F_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5F;
 		}
 	}
 	else if(medium_attack_pressed){
@@ -135,7 +134,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Mark_Spin_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_mark_spin;
 		}
 		else if(down_forward_pressed || down_backward_pressed){
 			if(right_pressed){
@@ -148,26 +147,26 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Mark_Dagger_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_mark_dagger;
 		}
 		else if(!grounded){
 			action = "8L";
 			sprite_index = Spr_Knife_8L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8L;
 		}
 		else if(down_hold){
 			action = "2L";
 			h_velocity = 3*image_xscale;
 			sprite_index = Spr_Knife_2L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2L;
 		}
 		else{
 			action = "5L";
 			sprite_index = Spr_Knife_5L_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5L;
 		}
 	}
 	else if(heavy_attack_pressed){
@@ -182,27 +181,28 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			
 			sprite_index = Spr_Knife_Grenade_Lob_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_lob_grenade;
 		}
 		else if(!grounded){
 			action = "8S";
+			is_unstable = true;
 			v_velocity = -4;
 			sprite_index = Spr_Knife_8S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_8S;
 		}
 		else if(down_hold){
 			action = "2S";
 			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Knife_2S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_2S;
 		}
 		else{
 			action = "5S";
 			sprite_index = Spr_Knife_5S_startup;
 			image_index = 0;
-			action_alarm = generate_sprite_frames(sprite_index);
+			action_alarm = startup_frames_5S;
 		}
 	}
 	reset_buffers();

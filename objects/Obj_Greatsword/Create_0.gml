@@ -45,11 +45,57 @@ original_grip = grip;
 original_weight = weight;
 #endregion
 
+#region startup/recovery frames
+startup_frames_5F = generate_sprite_frames(Spr_Greatsword_5F_startup);
+recovery_frames_5F = generate_sprite_frames(Spr_Greatsword_5F_recovery);
+startup_frames_2F = generate_sprite_frames(Spr_Greatsword_2F_startup);
+recovery_frames_2F = generate_sprite_frames(Spr_Greatsword_2F_recovery);
+startup_frames_8F = generate_sprite_frames(Spr_Greatsword_8F_startup);
+recovery_frames_8F = generate_sprite_frames(Spr_Greatsword_8F_recovery);
+startup_frames_5L = generate_sprite_frames(Spr_Greatsword_5L_startup);
+recovery_frames_5L = generate_sprite_frames(Spr_Greatsword_5L_recovery);
+startup_frames_2L = generate_sprite_frames(Spr_Greatsword_2L_startup);
+recovery_frames_2L = generate_sprite_frames(Spr_Greatsword_2L_recovery);
+startup_frames_5S = generate_sprite_frames(Spr_Greatsword_5S_startup);
+recovery_frames_5S = generate_sprite_frames(Spr_Greatsword_5S_recovery);
+startup_frames_2S = generate_sprite_frames(Spr_Greatsword_2S_startup);
+recovery_frames_2S = generate_sprite_frames(Spr_Greatsword_2S_recovery);
+startup_frames_8S = generate_sprite_frames(Spr_Greatsword_8S_startup);
+recovery_frames_8S = generate_sprite_frames(Spr_Greatsword_8S_recovery);
+startup_frames_stomp = generate_sprite_frames(Spr_Greatsword_Stomp_startup);
+recovery_frames_stomp = generate_sprite_frames(Spr_Greatsword_Stomp_recovery);
+startup_frames_sword_dunk = generate_sprite_frames(Spr_Greatsword_Sword_Dunk_startup);
+recovery_frames_sword_dunk = generate_sprite_frames(Spr_Greatsword_Sword_Dunk_recovery);
+startup_frames_earth = generate_sprite_frames(Spr_Greatsword_Earth_startup);
+recovery_frames_earth = generate_sprite_frames(Spr_Greatsword_Earth_recovery);
+startup_frames_ocean = generate_sprite_frames(Spr_Greatsword_Ocean_startup);
+recovery_frames_ocean = generate_sprite_frames(Spr_Greatsword_Ocean_recovery);
+startup_frames_earth_f = generate_sprite_frames(Spr_Greatsword_Earth_F_startup);
+recovery_frames_earth_f = generate_sprite_frames(Spr_Greatsword_Earth_F_recovery);
+startup_frames_earth_l = generate_sprite_frames(Spr_Greatsword_Earth_L_startup);
+recovery_frames_earth_l = generate_sprite_frames(Spr_Greatsword_Earth_L_recovery);
+startup_frames_earth_s = generate_sprite_frames(Spr_Greatsword_Earth_S_startup);
+recovery_frames_earth_s = generate_sprite_frames(Spr_Greatsword_Earth_S_recovery);
+startup_frames_ocean_f = generate_sprite_frames(Spr_Greatsword_Ocean_F_startup);
+recovery_frames_ocean_f = generate_sprite_frames(Spr_Greatsword_Ocean_F_recovery);
+startup_frames_ocean_l = generate_sprite_frames(Spr_Greatsword_Ocean_L_startup);
+recovery_frames_ocean_l = generate_sprite_frames(Spr_Greatsword_Ocean_L_recovery);
+startup_frames_ocean_s = generate_sprite_frames(Spr_Greatsword_Ocean_S_startup);
+recovery_frames_ocean_s = generate_sprite_frames(Spr_Greatsword_Ocean_S_recovery);
+startup_frames_grab = generate_sprite_frames(Spr_Greatsword_Grab_startup);
+recovery_frames_grab_whiff = generate_sprite_frames(Spr_Greatsword_Grab_whiff);
+recovery_frames_grab_hit = generate_sprite_frames(Spr_Greatsword_Grab_hit);
+startup_frames_wavekick = generate_sprite_frames(Spr_Greatsword_Wavekick_startup);
+recovery_frames_wavekick = generate_sprite_frames(Spr_Greatsword_Wavekick_recovery);
+startup_frames_ULTRA = generate_sprite_frames(Spr_Greatsword_ULTRA_startup);
+recovery_frames_ULTRA = generate_sprite_frames(Spr_Greatsword_ULTRA_recovery);
+#endregion
+
 // Greatsword stuff
 pillar_distance = 0;
 earth_parry_success = false;
-ULTRA_malight_attack_hold = 60;
-ULTRjump_hold_timer = 0;
+ULTRA_hold_max = 60;
+ULTRA_hold_timer = 0;
 is_holding_ULTRA = false;
 
 
@@ -63,7 +109,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_8F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8F;
 	}
 	else if(action == "2F"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_2F_hitbox);
@@ -71,7 +117,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_2F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2F;
 	}
 	else if(action == "5F"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_5F_hitbox);
@@ -79,7 +125,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_5F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5F;
 	}
 	else if(action == "2L"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_2L_hitbox);
@@ -87,7 +133,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_2L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_5L_hitbox);
@@ -95,7 +141,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_5L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5L;
 	}
 	else if(action == "8S"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_8S_hitbox);
@@ -103,7 +149,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_8S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_8S;
 	}
 	else if(action == "2S"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_2S_hitbox);
@@ -111,7 +157,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_2S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_5S_hitbox);
@@ -119,7 +165,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_5S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "Stomp"){
@@ -135,7 +181,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Stomp_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_stomp;
 	}
 	else if(action == "Sword Dunk"){
 		h_velocity = 0;
@@ -145,7 +191,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Sword_Dunk_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_sword_dunk;
 	}
 	else if(action == "Earth Start"){
 		action = "Earth";
@@ -154,14 +200,14 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Earth_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_earth;
 	}
 	else if(action == "Ocean Start"){
 		action = "Ocean";
 		
 		sprite_index = Spr_Greatsword_Ocean_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ocean;
 	}
 	// Ughhhhh stance actions...
 	else if(action == "Earth F"){
@@ -172,7 +218,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Earth_F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_earth_f;
 	}
 	else if(action == "Earth L"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Earth_L_hitbox);
@@ -182,7 +228,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Earth_L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_earth_l;
 	}
 	else if(action == "Earth S"){
 		blink_h(12*image_xscale, false);
@@ -192,7 +238,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Earth_S_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_earth_s;
 	}
 	else if(action == "Ocean F"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_F_hitbox);
@@ -202,7 +248,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Ocean_F_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ocean_f;
 	}
 	else if(action == "Ocean L"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Ocean_L_hitbox);
@@ -210,7 +256,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Ocean_L_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_ocean_l;
 	}
 	else if(action == "Ocean S"){
 		action = "Earth Start";
@@ -222,7 +268,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Ocean_S_recovery;
 		image_index = 0;
-		action_alarm = generate_sprite_frames(sprite_index);
+		action_alarm = recovery_frames_ocean_s;
 	}
 	// Meter moves
 	else if(action == "Wavekick"){
@@ -232,7 +278,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Wavekick_recovery;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_wavekick;
 	}
 	else if(action == "Grab"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Grab_hitbox1);
@@ -240,7 +286,7 @@ action_trigger = function(){
 		
 		sprite_index = Spr_Greatsword_Grab_whiff;
 		image_index = 0;
-		recover_alarm = generate_sprite_frames(sprite_index);
+		recover_alarm = recovery_frames_grab_whiff;
 	}
 	else if(action == "Grab Success"){
 		attack = instance_create_depth(x, y, 0, Obj_Greatsword_Grab_hitbox2);
@@ -251,10 +297,10 @@ action_trigger = function(){
 	else if(action == "ULTRA"){
 		if(heavy_attack_hold && !is_holding_ULTRA){
 			action = "ULTRA Hold";
-			sprite_index = Spr_Greatsword_ULTRjump_hold;
+			sprite_index = Spr_Greatsword_ULTRA_hold;
 			is_holding_ULTRA = true;
 			
-			action_alarm = ULTRA_malight_attack_hold+4; // Action alarm needs to be something
+			action_alarm = ULTRA_hold_max+4; // Action alarm needs to be something
 		}
 		else{
 			meter -= 50;
@@ -266,7 +312,7 @@ action_trigger = function(){
 		
 			sprite_index = Spr_Greatsword_ULTRA_recovery;
 			image_index = 0;
-			recover_alarm = generate_sprite_frames(sprite_index);
+			recover_alarm = recovery_frames_ULTRA;
 		}
 	}
 	else{
