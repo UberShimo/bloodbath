@@ -34,4 +34,7 @@ if(global.rapier_tr_achievement){
 if(global.shield_tr_achievement){
 	draw_sprite(Spr_Shield_Faces, 0, x+24*11, y);
 }
+if(global.zombie_tr_achievement){
+	draw_sprite(Spr_Zombie_Faces, 0, x+24*12, y);
+}
 

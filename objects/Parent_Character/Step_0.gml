@@ -752,3 +752,7 @@ else{
 if((HP <= 0 || y > room_height+256) && death_alarm <= 0 && !is_respawning){
 	die();
 }
+// Cant have too much HP
+else if(HP > max_HP){
+	HP = max_HP;
+}

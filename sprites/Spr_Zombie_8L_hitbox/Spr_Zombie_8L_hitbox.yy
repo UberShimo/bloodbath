@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Zombie_8L_hitbox",
   "bbox_bottom": 93,
-  "bbox_left": 41,
+  "bbox_left": 64,
   "bbox_right": 93,
   "bbox_top": 54,
   "bboxMode": 0,

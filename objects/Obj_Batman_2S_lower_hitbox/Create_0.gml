@@ -12,6 +12,6 @@ h_launch = 8;
 v_launch = -4;
 
 is_priority = true;
-active_frames = 4;
+active_frames = 1;
 is_sticky = true;
 is_launcher = true;

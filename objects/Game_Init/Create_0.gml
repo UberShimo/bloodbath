@@ -19,6 +19,7 @@ global.rapier_unlocked = ini_read_real("save", "rapier unlocked", true);
 global.knife_unlocked = ini_read_real("save", "knife unlocked", true);
 global.shield_unlocked = ini_read_real("save", "shield unlocked", true);
 global.scythe_unlocked = ini_read_real("save", "scythe unlocked", true);
+global.zombie_unlocked = ini_read_real("save", "zombie unlocked", true);
 
 global.dojo_TR_record = ini_read_real("save", "dojo TR record", 60*60);
 global.katana_TR_record = ini_read_real("save", "katana TR record", 60*60);
@@ -33,6 +34,7 @@ global.rapier_TR_record = ini_read_real("save", "rapier TR record", 60*60);
 global.knife_TR_record = ini_read_real("save", "knife TR record", 60*60);
 global.shield_TR_record = ini_read_real("save", "shield TR record", 60*60);
 global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
+global.zombie_TR_record = ini_read_real("save", "zombie TR record", 60*60);
 
 global.max_music_volume = 0.25;
 global.music_volume = ini_read_real("save", "music volume", global.max_music_volume);
@@ -50,6 +52,7 @@ global.rapier_learned = ini_read_real("save", "rapier learned", false);
 global.knife_learned = ini_read_real("save", "knife learned", false);
 global.shield_learned = ini_read_real("save", "shield learned", false);
 global.scythe_learned = ini_read_real("save", "scythe learned", false);
+global.zombie_learned = ini_read_real("save", "zombie learned", false);
 
 global.katana_tr_achievement = ini_read_real("save", "katana TR achievement", false);
 global.claws_tr_achievement = ini_read_real("save", "claws TR achievement", false);
@@ -63,6 +66,7 @@ global.rapier_tr_achievement = ini_read_real("save", "rapier TR achievement", fa
 global.knife_tr_achievement = ini_read_real("save", "knife TR achievement", false);
 global.shield_tr_achievement = ini_read_real("save", "shield TR achievement", false);
 global.scythe_tr_achievement = ini_read_real("save", "scythe TR achievement", false);
+global.zombie_tr_achievement = ini_read_real("save", "zombie TR achievement", false);
 
 ini_close();
 #endregion

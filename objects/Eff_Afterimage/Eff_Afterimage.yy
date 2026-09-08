@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Effects",
-    "path": "folders/Objects/Effects.yy",
+    "name": "Claws",
+    "path": "folders/Objects/Characters/Claws.yy",
   },
   "parentObjectId": {
     "name": "Parent_Effect",

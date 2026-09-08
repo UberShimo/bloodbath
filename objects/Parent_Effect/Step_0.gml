@@ -14,6 +14,10 @@ if(image_alpha <= 0){
 	instance_destroy();
 }
 
+if(must_be_positive_scale && image_xscale < 0){
+	instance_destroy();
+}
+
 x += h_velocity*logic_time;
 y += v_velocity*logic_time;
 

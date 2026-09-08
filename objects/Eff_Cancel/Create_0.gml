@@ -4,6 +4,7 @@ fade = 0.02;
 
 // Cancel effect color
 draw_color = #ffffaa;
+ring = noone;
 
 initiate = function(initiator){
 	sprite_index = initiator.sprite_index;
@@ -24,5 +25,5 @@ initiate = function(initiator){
 		draw_color = c_red;
 	}
 	
-	spawn_effect(x, y, 1, Eff_Ring, 0.5, 0.02, draw_color, 0, 0, 0.1);
+	ring = spawn_effect(x, y, 1, Eff_Ring, 0.5, 0.02, draw_color, 0, 0, 0.1);
 }

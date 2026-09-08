@@ -34,3 +34,6 @@ if(global.rapier_learned){
 if(global.shield_learned){
 	draw_sprite(Spr_Shield_Faces, 0, x+24*11, y);
 }
+if(global.zombie_learned){
+	draw_sprite(Spr_Zombie_Faces, 0, x+24*12, y);
+}

@@ -30,13 +30,8 @@ if(is_controllable){
 		medium_attack_pressed = buffer_duration;
 	}
 	// Sweep
-	else if(rng < 0.45){ // 10&
+	else if(rng < 0.50){ // 15&
 		down_forward_pressed = buffer_duration;
-		heavy_attack_pressed = buffer_duration;
-	}
-	// Headsplitter
-	else if(rng < 0.55 && !grounded){ // 10%
-		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}
 	

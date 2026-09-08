@@ -33,6 +33,7 @@ weight = 0;
 active_frames = 8; // Hitbox dissapears after those frames
 projectile_duration = 0; // Projectile dissapears after those frames
 hit_effect = Eff_Splash; // Effect that comes from opponent when hit
+hit_effect_color = c_white; // Color of hit_effect
 spawn_hit_effect_on_opponent = false; // Spawns the hit_effect right on top of opponent
 hit_effect_scale = 1;
 hit_effect_time = 1;

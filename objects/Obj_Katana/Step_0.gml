@@ -37,7 +37,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(meter >= 30 && medium_attack_pressed){
 			action = "Quickdraw Clone";
-			meter -= 30;
+			meter -= 25;
 			
 			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;
@@ -45,7 +45,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else if(meter >= 30 && light_attack_pressed){
 			action = "Recall Clone";
-			meter -= 30;
+			meter -= 25;
 			
 			sprite_index = Spr_Katana_Spawn_Clone_startup;
 			image_index = 0;

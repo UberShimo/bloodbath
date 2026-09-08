@@ -129,6 +129,16 @@ function save_target_run_time(){
 			global.shield_tr_achievement = true;
 		}
 	}
+	else if(room == Zombie_Target_Run){
+		if(Obj_Target_Run_Manager.timer_count < global.zombie_TR_record){
+			global.zombie_TR_record = Obj_Target_Run_Manager.timer_count;
+			ini_write_real("save", "zombie TR record", global.zombie_TR_record);
+		}
+		if(Obj_Target_Run_Manager.timer_count < ten_seconds){
+			update_steam_achievement("ZOMBIE_TR_10_SEC");
+			global.zombie_tr_achievement = true;
+		}
+	}
 	
 	ini_close();
 }

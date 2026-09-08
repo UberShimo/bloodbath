@@ -87,3 +87,9 @@ else if(Obj_Dojo_Manager.student.object_index == Obj_Shield){
 	input_spr = Spr_Diagonal_Input;
 	sprite_index = Spr_Special_Diagonal_B_Control;
 }
+else if(Obj_Dojo_Manager.student.object_index == Obj_Zombie){
+	bonus_text = "Down + Forward > Y\nTo spit acid!";
+	button_spr = Spr_Y;
+	input_spr = Spr_DF;
+	sprite_index = Spr_Special_DF_B_Control;
+}

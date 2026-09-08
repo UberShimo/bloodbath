@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ecb7221d-075c-4569-a610-849534e81588",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b9b0b265-29d9-4a10-95a5-73965a823408",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"32bbc003-be34-4c9e-829c-16c9c3766a9e",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"46c78f7d-b9e1-44b3-9bf1-04ce8cc2e019",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"50729a92-3316-4d29-8d97-9fef6fb6cd6d",},
   ],
@@ -48,7 +49,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 4.0,
+    "length": 5.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -61,8 +62,9 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ecb7221d-075c-4569-a610-849534e81588","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"96dcd9af-a647-43cc-a070-fd13bc6befe9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b9b0b265-29d9-4a10-95a5-73965a823408","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"6bf9c081-c872-496e-8334-c42efcaefa9f","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"46c78f7d-b9e1-44b3-9bf1-04ce8cc2e019","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"0402a14d-f44c-44a2-8380-3d5c84695b2b","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"50729a92-3316-4d29-8d97-9fef6fb6cd6d","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"e66dd96d-36ca-455b-9a00-f9f9fbbe550b","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"32bbc003-be34-4c9e-829c-16c9c3766a9e","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"c177f1df-257e-4486-bade-891b26f3bf93","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"46c78f7d-b9e1-44b3-9bf1-04ce8cc2e019","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"0402a14d-f44c-44a2-8380-3d5c84695b2b","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"50729a92-3316-4d29-8d97-9fef6fb6cd6d","path":"sprites/Spr_Zombie_Flipswing_startup/Spr_Zombie_Flipswing_startup.yy",},},},"Disabled":false,"id":"e66dd96d-36ca-455b-9a00-f9f9fbbe550b","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
