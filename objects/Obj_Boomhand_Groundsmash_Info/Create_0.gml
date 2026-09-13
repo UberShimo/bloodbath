@@ -2,6 +2,8 @@ hitbox = Obj_Boomhand_Groundsmash_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Boomhand_Groundsmash_startup);
+recovery = generate_sprite_frames(Spr_Boomhand_Groundsmash_recovery);
 air_ok = true;
 air_only = false;
 info = "Dive down with a shocking effect!\nHold to go through platforms.";

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Zombie_Spit_startup);
-recovery = generate_sprite_frames(Spr_Zombie_Spit_recovery);
-
 damage = 8;
 hit_stun = global.light_hitstun;
 hit_push = 0;

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Boomhand_Shockwave_Punch_startup);
-recovery = generate_sprite_frames(Spr_Boomhand_Shockwave_Punch_recovery);
-
 damage = 3;
 hit_stun = global.light_hitstun;
 hit_push = 0;

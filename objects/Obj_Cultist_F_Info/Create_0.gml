@@ -2,6 +2,8 @@ hitbox = Obj_Cultist_F_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Cultist_F_startup);
+recovery = generate_sprite_frames(Spr_Cultist_F_recovery);
 air_ok = true;
 air_only = false;
 info = "";

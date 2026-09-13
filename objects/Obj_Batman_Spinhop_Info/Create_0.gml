@@ -2,6 +2,8 @@ hitbox = Obj_Batman_Spinhop_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Batman_Spinhop_startup);
+recovery = generate_sprite_frames(Spr_Batman_Spinhop_recovery);
 air_ok = true;
 air_only = false;
 hold_ok = true;

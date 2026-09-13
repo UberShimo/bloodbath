@@ -2,6 +2,8 @@ hitbox = Obj_Scythe_Glide_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Scythe_Glide_startup);
+recovery = generate_sprite_frames(Spr_Scythe_Glide_recovery);
 air_ok = true;
 air_only = false;
 hold_ok = true;

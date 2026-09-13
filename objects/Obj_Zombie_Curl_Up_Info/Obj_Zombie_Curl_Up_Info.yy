@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Bow_Frog_Bite_hitbox",
+  "name": "Obj_Zombie_Curl_Up_Info",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Hitboxes",
-    "path": "folders/Objects/Characters/Bow/Hitboxes.yy",
+    "name": "Zombie",
+    "path": "folders/Objects/DOJO/Action Infos/Zombie.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Attack",
-    "path": "objects/Parent_Attack/Parent_Attack.yy",
+    "name": "Parent_Action_Info",
+    "path": "objects/Parent_Action_Info/Parent_Action_Info.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,9 +31,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Bow_Frog_Bite_hitbox",
-    "path": "sprites/Spr_Bow_Frog_Bite_hitbox/Spr_Bow_Frog_Bite_hitbox.yy",
+    "name": "Spr_Action_Info_Frame",
+    "path": "sprites/Spr_Action_Info_Frame/Spr_Action_Info_Frame.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

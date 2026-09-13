@@ -81,6 +81,13 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_R1_recovery);
 #endregion
 
 // Zombie stuff
+original_character_width = character_width;
+original_character_height = character_height;
+curl_up_character_width = sprite_get_width(Spr_Zombie_Curl_Up)-8;
+curl_up_character_height = sprite_get_height(Spr_Zombie_Curl_Up)-8;
+curl_up_recovery = 4;
+curl_up_bounce = 0.9;
+curl_up_angle = 0;
 ULTRA_r_punch = true;
 
 action_trigger = function(){
@@ -126,8 +133,6 @@ action_trigger = function(){
 	else if(action == "8L"){
 		attack = instance_create_depth(x, y, 0, Obj_Zombie_8L_hitbox);
 		attack.initiate(self);
-		back = instance_create_depth(x, y, 0, Obj_Zombie_8L_back_hitbox);
-		back.initiate(self);
 		
 		sprite_index = Spr_Zombie_8L_recovery;
 		image_index = 0;
@@ -142,10 +147,12 @@ action_trigger = function(){
 		recover_alarm = recovery_frames_2L;
 	}
 	else if(action == "5L"){
+		blink_h(8*image_xscale);
+		
 		attack = instance_create_depth(x, y, 0, Obj_Zombie_5L_hitbox);
 		attack.initiate(self);
 		
-		h_velocity += 3*image_xscale;
+		h_velocity += 4*image_xscale;
 		
 		sprite_index = Spr_Zombie_5L_recovery;
 		image_index = 0;
@@ -202,7 +209,7 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Zombie_Flipswing_hitbox);
 		attack.initiate(self);
 		
-		v_velocity = 0;
+		v_velocity = 2;
 		
 		sprite_index = Spr_Zombie_Flipswing_recovery;
 		image_index = 0;

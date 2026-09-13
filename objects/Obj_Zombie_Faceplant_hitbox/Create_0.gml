@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Zombie_Faceplant_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Zombie_Faceplant_recovery); // 100% informational not used in logic
-
 damage = 11;
 hit_stun = global.medium_hitstun;
 hit_push = 2;

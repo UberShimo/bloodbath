@@ -2,6 +2,8 @@ hitbox = Obj_Boomhand_Shockwave;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Boomhand_Shockwave_Punch_startup);
+recovery = generate_sprite_frames(Spr_Boomhand_Shockwave_Punch_recovery);
 air_ok = false;
 air_only = false;
 info = "Send a shockwave.";

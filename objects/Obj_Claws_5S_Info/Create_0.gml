@@ -2,6 +2,8 @@ hitbox = Obj_Claws_5S_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Claws_5S_startup);
+recovery = generate_sprite_frames(Spr_Claws_5S_recovery);
 air_ok = false;
 air_only = false;
 info = "Spin like a beauty!.\nCan move during spin.";

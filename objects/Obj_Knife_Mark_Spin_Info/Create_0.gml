@@ -2,6 +2,8 @@ hitbox = Obj_Knife_Mark_Spin_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Knife_Mark_Spin_startup);
+recovery = generate_sprite_frames(Spr_Knife_Mark_Spin_recovery);
 air_ok = true;
 air_only = false;
 info = "Spin toward MARKED enemy.\nMARK is removed.\nHold to go through platforms.";

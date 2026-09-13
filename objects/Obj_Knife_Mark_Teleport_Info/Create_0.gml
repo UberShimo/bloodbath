@@ -2,6 +2,8 @@ hitbox = Obj_Blank_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Knife_Mark_Teleport_startup);
+recovery = generate_sprite_frames(Spr_Knife_Mark_Teleport_recovery);
 air_ok = true;
 air_only = false;
 info = "Teleport behind MARKED enemy.\nMARK is removed.";

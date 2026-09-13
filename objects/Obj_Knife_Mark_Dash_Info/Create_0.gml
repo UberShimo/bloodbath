@@ -2,6 +2,8 @@ hitbox = Obj_Knife_Mark_Dash_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Knife_Mark_Dash_startup);
+recovery = generate_sprite_frames(Spr_Knife_Mark_Dash_recovery);
 air_ok = true;
 air_only = false;
 info = "A dash that MARKS enemy.";

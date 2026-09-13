@@ -2,6 +2,8 @@ hitbox = Obj_Cultist_Blast_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Cultist_Blast_startup);
+recovery = generate_sprite_frames(Spr_Cultist_Blast_recovery);
 air_ok = true;
 air_only = false;
 info = "Create a blast that push\nyourself backwards!";

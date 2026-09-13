@@ -2,6 +2,8 @@ hitbox = Obj_Bow_Spear;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Bow_Spearthrow_startup);
+recovery = generate_sprite_frames(Spr_Bow_Spearthrow_recovery);
 air_ok = true;
 air_only = false;
 hold_ok = true;

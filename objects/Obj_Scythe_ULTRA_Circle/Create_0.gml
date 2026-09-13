@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Scythe_ULTRA_startup);
-recovery = generate_sprite_frames(Spr_Scythe_ULTRA_recovery);
-
 damage = 0;
 hit_stun = 0;
 hit_push = 0;

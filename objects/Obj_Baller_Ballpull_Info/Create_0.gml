@@ -2,6 +2,8 @@ hitbox = Obj_Baller_Ball_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Baller_Ballpull_startup);
+recovery = generate_sprite_frames(Spr_Baller_Ballpull_recovery);
 air_ok = true;
 air_only = false;
 info = "If you dont have BALL you\npull it back.";

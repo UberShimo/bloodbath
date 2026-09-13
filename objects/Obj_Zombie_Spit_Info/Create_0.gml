@@ -2,6 +2,8 @@ hitbox = Obj_Zombie_Spit;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Zombie_Spit_startup);
+recovery = generate_sprite_frames(Spr_Zombie_Spit_recovery);
 air_ok = true;
 air_only = false;
 info = "Spit 3 acid balls. Hurts :'(";

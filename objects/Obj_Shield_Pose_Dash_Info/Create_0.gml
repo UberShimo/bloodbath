@@ -2,6 +2,8 @@ hitbox = Obj_Blank_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Shield_Pose_Dash_startup);
+startup = generate_sprite_frames(Spr_Shield_Pose_Dash_recovery);
 air_ok = true;
 air_only = false;
 info = "Dash through nearby POSE and\nTRIGGER it!";
@@ -12,6 +14,3 @@ frame = 0;
 
 meter_cost = 10;
 is_cancelable = true;
-
-startup = 0;
-startup = generate_sprite_frames(Spr_Shield_Pose_Dash_recovery);

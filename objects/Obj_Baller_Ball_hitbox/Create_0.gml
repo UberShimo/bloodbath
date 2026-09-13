@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Baller_5S_startup);
-startup = generate_sprite_frames(Spr_Baller_5S_recovery);
-
 damage = 13;
 hit_stun = 8;
 hit_push = 0;

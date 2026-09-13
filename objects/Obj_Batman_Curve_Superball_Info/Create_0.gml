@@ -2,6 +2,8 @@ hitbox = Obj_Batman_Superball;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Batman_Pitch_startup);
+recovery = generate_sprite_frames(Spr_Batman_Pitch_recovery);
 air_ok = false;
 air_only = false;
 info = "Pitch a ball that bounces!\nAnd curves back to you!";

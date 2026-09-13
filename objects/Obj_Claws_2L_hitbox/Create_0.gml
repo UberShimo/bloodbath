@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Claws_8L_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Claws_8L_recovery); // 100% informational not used in logic
-
 damage = 9;
 hit_stun = global.heavy_hitstun;
 hit_push = 3;

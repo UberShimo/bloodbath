@@ -2,6 +2,8 @@ hitbox = Obj_Shield_Cool_Shot;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Shield_Cool_Shot_startup);
+recovery = generate_sprite_frames(Spr_Shield_Cool_Shot_recovery);
 air_ok = true;
 air_only = false;
 info = "Fire a cool shot that can\nTRIGGER POSES!";

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Greatsword_5S_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Greatsword_5S_recovery); // 100% informational not used in logic
-
 damage = 12;
 hit_stun = 40;
 hit_push = 5;

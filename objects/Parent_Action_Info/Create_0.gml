@@ -3,8 +3,8 @@
 hr = instance_create_depth(x, y, 0, hitbox); // Hitbox Reference
 
 damage = hr.damage;
-startup = hr.startup;
-recovery = hr.recovery;
+startup = 0;
+recovery = 0;
 hit_stun = hr.hit_stun+hr.extra_freeze_duration;
 is_projectile = hr.is_projectile;
 is_parryable = hr.is_parryable;

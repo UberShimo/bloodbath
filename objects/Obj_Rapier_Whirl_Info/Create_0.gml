@@ -2,6 +2,8 @@ hitbox = Obj_Rapier_Whirl_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Rapier_Whirl_startup);
+recovery = generate_sprite_frames(Spr_Rapier_Whirl_recovery);
 air_ok = true;
 air_only = false;
 info = "Whirl your rapier upward!\nHitting 3 times.";

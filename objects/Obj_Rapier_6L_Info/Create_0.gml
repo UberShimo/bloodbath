@@ -2,6 +2,8 @@ hitbox = Obj_Rapier_6L_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Rapier_6L_startup);
+recovery = generate_sprite_frames(Spr_Rapier_6L_recovery);
 air_ok = false;
 air_only = false;
 info = "";

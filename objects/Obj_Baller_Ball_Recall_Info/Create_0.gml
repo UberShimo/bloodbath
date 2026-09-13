@@ -1,4 +1,4 @@
-hitbox = Obj_Baller_Ball_Explosion_hitbox;
+hitbox = Obj_Baller_Ball_hitbox;
 
 event_inherited();
 

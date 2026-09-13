@@ -2,6 +2,8 @@ hitbox = Obj_Greatsword_5S_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Greatsword_5S_startup);
+recovery = generate_sprite_frames(Spr_Greatsword_5S_recovery);
 air_ok = false;
 air_only = false;
 info = "Spank of the century.";

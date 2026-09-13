@@ -2,6 +2,8 @@ hitbox = Obj_Dojo_L_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Dojo_L_startup);
+recovery = generate_sprite_frames(Spr_Dojo_L_recovery);
 air_ok = true;
 air_only = false;
 info = "";

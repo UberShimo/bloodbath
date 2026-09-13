@@ -2,6 +2,8 @@ hitbox = Obj_Shield_5L_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Shield_5L_startup);
+recovery = generate_sprite_frames(Spr_Shield_5L_recovery);
 air_ok = false;
 air_only = false;
 info = "Swings you forward.";

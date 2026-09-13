@@ -2,7 +2,8 @@ hitbox = Obj_Rapier_2F_hitbox;
 
 event_inherited();
 
-air_ok = false;
+startup = generate_sprite_frames(Spr_Rapier_2F_startup);
+recovery = generate_sprite_frames(Spr_Rapier_2F_recovery);
 air_only = false;
 info = "";
 movement_input = Spr_D;

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Bow_Aim_Up_startup);
-recovery = generate_sprite_frames(Spr_Bow_Aim_Up_recovery);
-
 damage = 9;
 hit_stun = 8;
 hit_push = 3;

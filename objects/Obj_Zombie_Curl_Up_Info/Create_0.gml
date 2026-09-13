@@ -4,11 +4,13 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Boost yourself up.\nCan be done during other moves..\n";
+hold_ok = true;
+info = "Curl up into a ball and bounce.\nHold Y to stay curled up.\nDrains meter.";
 button_input = Spr_RB_Y;
-image = Spr_Zombie_Ascend;
+image = Spr_Zombie_Curl_Up;
 frame = 0;
 extra_image = Spr_Whirl;
 extra_image_color = c_lime;
+extra_image_scale = 0.5;
 
-meter_cost = 15;
+meter_cost = 5;

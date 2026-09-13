@@ -2,6 +2,8 @@ hitbox = Obj_Claws_Skyring;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Claws_Skyring_startup);
+recovery = generate_sprite_frames(Spr_Claws_Skyring_recovery);
 air_ok = false;
 air_only = false;
 info = "Launch horizontal ring.\nHit it to gain HYPERACTIVE burst!";

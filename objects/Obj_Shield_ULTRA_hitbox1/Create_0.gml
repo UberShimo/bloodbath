@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Shield_ULTRA_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Shield_ULTRA_whiff); // 100% informational not used in logic
-
 damage = 0;
 hit_stun = 24;
 hit_push = 0;

@@ -2,6 +2,8 @@ hitbox = Obj_Claws_Dive_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Claws_Dive_startup);
+recovery = generate_sprite_frames(Spr_Claws_Dive_recovery);
 air_ok = true;
 air_only = false;
 info = "Dive from vertical ring.\nHold to dive through platforms.";

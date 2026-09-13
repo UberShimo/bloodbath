@@ -2,6 +2,8 @@ hitbox = Obj_Cultist_Circle_Pullback_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Cultist_Circlepull_startup);
+recovery = generate_sprite_frames(Spr_Cultist_Circlepull_recovery);
 air_ok = true;
 air_only = false;
 info = "Pull CIRCLES back to you dramaticly.";

@@ -2,6 +2,8 @@ hitbox = Obj_Knife_Dagger;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Knife_Mark_Dagger_startup);
+recovery = generate_sprite_frames(Spr_Knife_Mark_Dagger_recovery);
 air_ok = true;
 air_only = false;
 info = "Throw a dagger that MARKS enemy.";

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Bow_8F_startup);
-recovery = generate_sprite_frames(Spr_Bow_8F_recovery);
-
 damage = 5;
 hit_stun = global.light_hitstun;
 hit_push = 4;

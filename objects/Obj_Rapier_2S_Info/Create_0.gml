@@ -2,6 +2,8 @@ hitbox = Obj_Rapier_2S_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Rapier_2S_startup);
+recovery = generate_sprite_frames(Spr_Rapier_2S_recovery);
 air_ok = false;
 air_only = false;
 info = "Does a small jump during startup.";

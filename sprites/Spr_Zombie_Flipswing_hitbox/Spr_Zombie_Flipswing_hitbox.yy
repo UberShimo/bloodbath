@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Spr_Zombie_Flipswing_hitbox",
   "bbox_bottom": 103,
-  "bbox_left": 45,
+  "bbox_left": 49,
   "bbox_right": 112,
   "bbox_top": 19,
   "bboxMode": 0,

@@ -2,6 +2,8 @@ hitbox = Obj_Dojo_Projectile;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Dojo_Stab_Projectile_startup);
+recovery = generate_sprite_frames(Spr_Dojo_Stab_Projectile_recovery);
 air_ok = true;
 air_only = false;
 info = "A stab that fire a projectile.";

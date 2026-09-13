@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Scythe_5S_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Scythe_5S_recovery); // 100% informational not used in logic
-
 damage = 13;
 hit_stun = global.heavy_hitstun;
 hit_push = -8;

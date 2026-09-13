@@ -2,6 +2,8 @@ hitbox = Obj_Knife_Potion_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Knife_Potion_Lob_startup);
+recovery = generate_sprite_frames(Spr_Knife_Potion_Lob_recovery);
 air_ok = true;
 air_only = false;
 hold_ok = true;

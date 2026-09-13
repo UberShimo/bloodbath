@@ -68,6 +68,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 				image_xscale = -object_scale;
 			}
 			action = "Shockwave Punch";
+			shake_amount = launcher_shake_amount;
 			sprite_index = Spr_Boomhand_Shockwave_Punch_startup;
 			image_index = 0;
 			action_alarm = startup_frames_shockwave_punch;

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Rapier_Gun_startup);
-recovery = generate_sprite_frames(Spr_Rapier_Gun_recovery);
-
 damage = 13;
 hit_stun = global.light_hitstun;
 hit_push = 1;

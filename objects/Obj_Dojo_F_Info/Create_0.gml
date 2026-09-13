@@ -2,6 +2,8 @@ hitbox = Obj_Dojo_F_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Dojo_F_startup);
+recovery = generate_sprite_frames(Spr_Dojo_F_recovery);
 air_ok = true;
 air_only = false;
 info = "Is an infinite combo.";

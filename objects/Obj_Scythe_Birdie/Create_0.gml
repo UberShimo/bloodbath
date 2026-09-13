@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Scythe_Birdie_startup);
-recovery = generate_sprite_frames(Spr_Scythe_Birdie_recovery);
-
 damage = 12;
 hit_stun = 16;
 hit_push = 0;

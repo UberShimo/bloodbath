@@ -2,6 +2,8 @@ hitbox = Obj_Blank_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Bow_Metertwist_startup);
+recovery = generate_sprite_frames(Spr_Bow_Metertwist_recovery);
 air_ok = true;
 air_only = false;
 info = "Do a twist with INVINCIBLE startup!";

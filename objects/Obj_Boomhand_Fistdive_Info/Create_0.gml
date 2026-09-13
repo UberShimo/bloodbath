@@ -2,6 +2,8 @@ hitbox = Obj_Boomhand_BackstepBOOM_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Boomhand_Fistdive_startup);
+recovery = generate_sprite_frames(Spr_Boomhand_Fistdive_recovery);
 air_ok = false;
 air_only = true;
 info = "Hold to go through platforms.";

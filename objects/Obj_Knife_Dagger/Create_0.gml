@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Knife_Mark_Dagger_startup);
-recovery = generate_sprite_frames(Spr_Knife_Mark_Dagger_recovery);
-
 damage = 2;
 hit_stun = 4;
 hit_push = 0;

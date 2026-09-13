@@ -2,6 +2,8 @@ hitbox = Obj_Rapier_Lunge_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Rapier_8S_startup);
+recovery = generate_sprite_frames(Spr_Rapier_8S_recovery);
 air_ok = true;
 air_only = false;
 info = "Lunge forward! Effect depend on input.\nX: Quick but not cancelable.\nY: Normal\nB: Leaves a delayed stab.";

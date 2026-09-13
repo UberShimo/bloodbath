@@ -2,6 +2,8 @@ hitbox = Obj_Baller_Ball_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Baller_5S_startup);
+startup = generate_sprite_frames(Spr_Baller_5S_recovery);
 air_ok = false;
 air_only = false;
 hold_ok = false;

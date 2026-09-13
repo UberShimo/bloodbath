@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Knife_Grenade_Lob_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Knife_Grenade_Lob_recovery); // 100% informational not used in logic
-
 depth = -3;
 
 is_projectile = true;

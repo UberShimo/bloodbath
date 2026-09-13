@@ -2,6 +2,8 @@ hitbox = Obj_Knife_ULTRA_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Knife_ULTRA_startup);
+recovery = generate_sprite_frames(Spr_Knife_ULTRA_recovery);
 air_ok = false;
 air_only = false;
 info = "Jump and spin like crazy!\nYou have some control during ULTRA.\nCancel ULTRA into anything.";

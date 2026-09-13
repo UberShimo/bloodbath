@@ -2,6 +2,8 @@ hitbox = Obj_Rapier_Spin_Back_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Rapier_Spin_Back_startup);
+recovery = generate_sprite_frames(Spr_Rapier_Spin_Back_recovery);
 air_ok = false;
 air_only = false;
 info = "Spin rapier and step back.";

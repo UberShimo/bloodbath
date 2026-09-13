@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Rapier_8S_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Rapier_8S_recovery); // 100% informational not used in logic
-
 damage = 8;
 hit_stun = global.heavy_hitstun;
 hit_push = 2;

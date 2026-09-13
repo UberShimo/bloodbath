@@ -2,6 +2,8 @@ hitbox = Obj_Katana_5S_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Katana_5S_startup);
+recovery = generate_sprite_frames(Spr_Katana_5S_recovery);
 air_ok = false;
 air_only = false;
 info = "Startup can be canceled.";

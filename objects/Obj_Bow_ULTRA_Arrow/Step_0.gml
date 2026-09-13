@@ -51,6 +51,10 @@ if(instance_exists(target)){
 		v_velocity = 0;
 	}
 }
+// Arrow has turned at least once but the target is gone. DELETE!
+else if(turns > 0){
+	instance_destroy();
+}
 
 image_angle = point_direction(0, 0, h_velocity, v_velocity);
 

@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Greatsword_Wavekick_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Greatsword_Wavekick_recovery); // 100% informational not used in logic
-
 damage = 0;
 hit_stun = 0;
 hit_push = 0;

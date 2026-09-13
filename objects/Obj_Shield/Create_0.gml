@@ -247,7 +247,7 @@ action_trigger = function(){
 		recover_alarm = recovery_frames_surf;
 	}
 	else if(action == "Spawn Ice"){
-		attack = instance_create_depth(x, y, 0, Obj_Shield_Ice_Spawner);
+		attack = instance_create_depth(x+4*image_xscale, y, 0, Obj_Shield_Ice_Spawner);
 		attack.initiate(self);
 		attack.h_velocity = 8*image_xscale;
 		

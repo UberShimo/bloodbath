@@ -2,6 +2,8 @@ hitbox = Obj_Greatsword_Wave;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Greatsword_Wavekick_startup);
+recovery = generate_sprite_frames(Spr_Greatsword_Wavekick_recovery);
 air_ok = false;
 air_only = false;
 info = "Spawn a WAVE that drags players.\nWAVE can be bumped by PILLAR.";

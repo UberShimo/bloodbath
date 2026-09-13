@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Shield_Cool_Shot_startup);
-recovery = generate_sprite_frames(Spr_Shield_Cool_Shot_recovery);
-
 damage = 2;
 hit_stun = 90;
 hit_push = 0;

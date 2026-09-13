@@ -2,6 +2,8 @@ hitbox = Obj_Boomhand_2F_hitbox;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Boomhand_2F_startup);
+recovery = generate_sprite_frames(Spr_Boomhand_2F_recovery);
 air_ok = false;
 air_only = false;
 info = "";

@@ -2,6 +2,8 @@ hitbox = Obj_Shield_ULTRA_hitbox2;
 
 event_inherited();
 
+startup = generate_sprite_frames(Spr_Shield_ULTRA_startup);
+recovery = generate_sprite_frames(Spr_Shield_ULTRA_whiff);
 air_ok = true;
 air_only = false;
 hold_ok = false;

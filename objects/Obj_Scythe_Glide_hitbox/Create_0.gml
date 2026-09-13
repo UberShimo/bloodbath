@@ -1,8 +1,5 @@
 event_inherited();
 
-startup = generate_sprite_frames(Spr_Scythe_Glide_startup); // 100% informational not used in logic
-recovery = generate_sprite_frames(Spr_Scythe_Glide_recovery); // 100% informational not used in logic
-
 damage = 0;
 hit_stun = global.medium_hitstun;
 hit_push = 0;

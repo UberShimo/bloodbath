@@ -1,4 +1,4 @@
-function spawn_effect(x_val, y_val, amount, effect, alpha = 1, fade = 0.01, color = c_white, min_scale = 1, max_scale = 1, grow = 0, min_angle = 0, max_angle = 360, random_position_amount = 0, depth_val = -2, h_velocity = 0, v_velocity = 0){
+function spawn_effect(x_val, y_val, amount, effect, alpha = 1, fade = 0.01, color = c_white, min_scale = 1, max_scale = 1, grow = 0, min_angle = 0, max_angle = 360, random_position_amount = 0, depth_val = -2, mirror_effect = false){
 	repeat(amount){
 		if(random_position_amount > 0){
 			dir = random_range(0, 360);
@@ -15,8 +15,7 @@ function spawn_effect(x_val, y_val, amount, effect, alpha = 1, fade = 0.01, colo
 		eff.image_yscale *= scale;
 		eff.grow = grow;
 		eff.image_angle = random_range(min_angle, max_angle);
-		eff.h_velocity = h_velocity;
-		eff.v_velocity = v_velocity;
+		eff.is_mirrored = mirror_effect;
 	}
 	
 	if(amount == 1){
