@@ -41,6 +41,9 @@ if(is_controllable){
 	
 		if(rng == 1){ // 25% chance to jump
 			jump_pressed = buffer_duration;
+			if(irandom_range(1, 2) == 1){ // 50% change full jump
+				jump_hold = true;
+			}
 		}
 		else if(rng == 2){ // 33& chance to crouch
 			down_hold = true;

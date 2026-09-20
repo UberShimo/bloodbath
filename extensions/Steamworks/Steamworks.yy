@@ -13,7 +13,7 @@
   "author": "",
   "classname": "",
   "ConfigValues": {},
-  "copyToTargets": 66,
+  "copyToTargets": 0,
   "date": "2026-01-08T15:44:24.8066226+01:00",
   "description": "",
   "exportToGame": true,

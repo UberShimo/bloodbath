@@ -218,17 +218,14 @@ action_trigger = function(){
 	else if(action == "Quickdraw Clone" || action == "Recall Clone"){
 		can_cancel = true;
 		
-		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
+		clone = instance_create_depth(x, y, 0, Obj_Katana_Meter_Clone);
 		clone.initiate(self);
 		clone.sprite_index = Spr_Katana_Clone_Quickdraw_startup;
 		clone.action_alarm = clone_action_delay;
 		clone.life_span = 0;
-		clone.weight = 0;
-		clone.shake_amount = 2;
 		clone.image_blend = c_lime;
 		clone.image_alpha = 0;
 		clone.alpha_increase = 1/clone_action_delay;
-		clone.draw_mini_ui = false; // No need for UI on those bastards.
 	
 		if(action == "Quickdraw Clone" ){
 			clone.action = "Quickdraw";
@@ -237,6 +234,7 @@ action_trigger = function(){
 			clone.action = "Teleport Spawner";
 			clone.spawner = self;
 		}
+		action = "Clone Spawned";
 		sprite_index = Spr_Katana_Spawn_Clone_recovery;
 		image_index = 0;
 		recover_alarm = recovery_frames_clone;

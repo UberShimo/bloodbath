@@ -1,6 +1,6 @@
 event_inherited();
 
-damage = 15;
+damage = 12;
 hit_stun = global.medium_hitstun;
 hit_push = 0;
 freeze_duration = global.heavy_freeze_duration;
@@ -17,5 +17,5 @@ hit_effect_scale = 2;
 hit_effect_color = c_red;
 
 extra_hit_logic = function(target){
-	spawner.HP += damage;
+	spawner.HP += damage/2;
 }

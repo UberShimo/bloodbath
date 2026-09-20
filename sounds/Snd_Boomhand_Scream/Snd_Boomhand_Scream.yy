@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "Snd_Boomhand_Scream.mp3",
   "type": 0,
-  "volume": 0.8,
+  "volume": 0.15,
 }

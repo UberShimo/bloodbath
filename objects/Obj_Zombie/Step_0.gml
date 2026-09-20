@@ -1,7 +1,12 @@
 
 // Curl Up logic. Needs to be before other logic!
-if(action == "Curl Up" && meter > 0 && medium_attack_hold){
-	meter -= max_meter/360*logic_time; // Max duration 6 sec kinda
+if(is_curled_up && meter > 0 && medium_attack_hold && HP > 0){
+	drain = curl_up_meter_drain*logic_time;
+	// Loose extra meter if curling while stunned
+	if(action == "Stunned"){
+		drain *= 4;
+	}
+	meter -= drain;
 	goes_through_platforms = true;
 	
 	mirror = false;
@@ -10,8 +15,9 @@ if(action == "Curl Up" && meter > 0 && medium_attack_hold){
 	}
 	spawn_effect(x, y, 1, Eff_Zombie_Whirl, 0.5, 0.02, c_lime, 0.5, 0.5, -0.02, 0, 360, 0, depth+1, mirror);
 	
+	// Bounce logic
 	if(check_collision(h_velocity, 0)){
-		// Snap to ground
+		// Snap to wall
 		x_check = 1;
 		if(h_velocity < 0){
 			x_check = -1;
@@ -33,12 +39,17 @@ if(action == "Curl Up" && meter > 0 && medium_attack_hold){
 		}
 		v_velocity *= -curl_up_bounce;
 	}
-	
-	recover_alarm = curl_up_recovery;
+	if(recover_alarm < recovery_frames_curl_up){
+		recover_alarm = recovery_frames_curl_up;
+	}
+}
+// No more curl. recover_alarm <= 1 smoothes out animations after curl ._. Kinda wierd.
+else if(meter <= 0 || recover_alarm <= 1 || HP <= 0 || (!medium_attack_hold && action == noone)){
+	is_curled_up = false;
 }
 
 // Fix curl up collision
-if(action = "Curl Up"){
+if(is_curled_up){
 	character_width = curl_up_character_width;
 	character_height = curl_up_character_height;
 }
@@ -50,8 +61,14 @@ else{
 event_inherited();
 
 // ACTION!
-if(action != "Stunned" && meter_hold && meter >= 10 && light_attack_pressed){
-	meter -= 10;
+if((meter > 35 || (action != "Stunned" &&  meter >= 10))
+&& meter_hold && light_attack_pressed){
+	if(action == "Stunned"){
+		meter -= 35;
+	}
+	else{
+		meter -= 10;
+	}
 	
 	repeat(6){
 		y_pos = y+random_range(-character_height/2*object_scale, character_height/2*object_scale);
@@ -62,15 +79,18 @@ if(action != "Stunned" && meter_hold && meter >= 10 && light_attack_pressed){
 	
 	reset_buffers();
 }
-else if(action == noone && meter_hold && meter >= 5 && medium_attack_hold){
-	meter -= 5;
-	action = "Curl Up";
-	curl_up_angle = 0;
-	
-	recover_alarm = curl_up_recovery;
+else if(meter_hold && meter > 0 && medium_attack_hold && !is_curled_up && time_reset_alarm <= 0){ // Cant be done to cancel freeze frames
 	reset_physics();
 	reset_buffers();
+	cancels = 0;
+	is_curled_up = true;
+	if(action != "Stunned"){
+		action = "Curl Up";
+	}
+	// Add on current recovery! Unique B)
+	recover_alarm += recovery_frames_curl_up;
 }
+
 
 if(action_button_pressed() && (action == noone || check_for_cancel())){
 	save_current_state();
@@ -253,7 +273,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 }
 
 // Fix curl up sprite
-if(action == "Curl Up"){
+if(is_curled_up){
 	sprite_index = Spr_Zombie_Curl_Up;
 	curl_up_angle -= h_velocity;
 	image_angle = curl_up_angle;

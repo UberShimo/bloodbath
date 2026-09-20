@@ -50,40 +50,6 @@ cant_be_focused = true;
 dash_forward = false;
 dash_backward = false;
 
-action_trigger = function(){
-	if(action == "Quickdraw"){
-		attack = instance_create_depth(x, y, 0, Obj_Katana_Quickdraw_hitbox);
-		attack.initiate(self);
-		
-		sprite_index = Spr_Katana_Quickdraw_recovery;
-		image_index = 0;
-		image_blend = c_white;
-		image_alpha = 1;
-		
-		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 0.2);
-		life_span = 32;
-		recover_alarm = 32;
-		
-		// Achievement update
-		if(instance_exists(Obj_Immortal_Dummy)){
-			Obj_Immortal_Dummy.katana_has_used_clone = true;
-		}
-	}
-	else if(action == "Teleport Spawner"){
-		if(instance_exists(spawner)){
-			instance_create_depth(spawner.x, spawner.y, 0, Eff_Clone_Dissapear);
-			spawner.x = x;
-			spawner.y = y;
-		}
-		spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0, 0, 0.2);
-		// Achievement update
-		if(instance_exists(Obj_Immortal_Dummy)){
-			Obj_Immortal_Dummy.katana_has_used_clone = true;
-		}
-		instance_destroy();
-	}
-}
-
 initiate = function(initiator){
 	HP = initiator.HP;
 	meter = initiator.meter;

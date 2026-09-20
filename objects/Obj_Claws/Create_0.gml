@@ -213,9 +213,10 @@ action_trigger = function(){
 		ring1 = instance_create_depth(x, y, 0, Obj_Claws_Skyring);
 		ring1.initiate(self);
 		ring1.h_velocity = -3*image_xscale;
-		ring1.h_acceleration *= image_xscale;
+		ring1.h_acceleration = 0.04*image_xscale;
 		ring1.v_velocity = -1.5;
-		ring1.weight *= 0.3;
+		ring1.weight = 0.008;
+		ring1.h_max_speed = 3;
 		
 		sprite_index = Spr_Claws_Skyring_recovery;
 		image_index = 0;
@@ -230,8 +231,9 @@ action_trigger = function(){
 		ring2.initiate(self);
 		ring2.h_velocity = -1*image_xscale;
 		ring2.h_acceleration *= 0.5*image_xscale;
-		ring2.v_velocity = -3;
-		ring2.max_speed = 2;
+		ring2.v_velocity = -2.8;
+		ring2.weight = 0.025;
+		ring2.h_max_speed = 1;
 		ring2.image_angle = 90;
 		
 		sprite_index = Spr_Claws_Skyring_recovery;

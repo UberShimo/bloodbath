@@ -22,8 +22,8 @@ face = Spr_Zombie_Faces;
 #endregion
 
 #region Stats
-max_speed = 5;
-acceleration = 0.75;
+max_speed = 4.5;
+acceleration = 0.5;
 grip = global.standard_grip;
 air_control = 0.15;
 dash_speed = 10;
@@ -76,6 +76,7 @@ startup_frames_spit = generate_sprite_frames(Spr_Zombie_Spit_startup);
 recovery_frames_spit = generate_sprite_frames(Spr_Zombie_Spit_recovery);
 startup_frames_bite = generate_sprite_frames(Spr_Zombie_Bite_startup);
 recovery_frames_bite = generate_sprite_frames(Spr_Zombie_Bite_recovery);
+recovery_frames_curl_up = 16;
 startup_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_startup);
 recovery_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_R1_recovery);
 #endregion
@@ -83,11 +84,12 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_R1_recovery);
 // Zombie stuff
 original_character_width = character_width;
 original_character_height = character_height;
+is_curled_up = false;
 curl_up_character_width = sprite_get_width(Spr_Zombie_Curl_Up)-8;
 curl_up_character_height = sprite_get_height(Spr_Zombie_Curl_Up)-8;
-curl_up_recovery = 4;
-curl_up_bounce = 0.9;
+curl_up_bounce = 0.99;
 curl_up_angle = 0;
+curl_up_meter_drain = max_meter/480; // Max duration 8 sec kinda
 ULTRA_r_punch = true;
 
 action_trigger = function(){

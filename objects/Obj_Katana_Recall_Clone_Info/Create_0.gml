@@ -4,7 +4,7 @@ event_inherited();
 
 air_ok = true;
 air_only = false;
-info = "Leave a clone that teleports\nyou back to it.";
+info = "Leave a clone that teleports\nyou back to it.\nCan cancel into itself.";
 button_input = Spr_RB_X;
 image = Spr_Katana_Spawn_Clone_recovery;
 frame = 0;

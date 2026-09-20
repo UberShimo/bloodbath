@@ -11,4 +11,4 @@ v_launch = -3;
 is_sticky = true;
 hit_effect_y = -8;
 
-hit_sound = Snd_Smack;
+hit_sound = Snd_Small_Smack;

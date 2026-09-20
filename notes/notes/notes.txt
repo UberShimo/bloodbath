@@ -1,5 +1,4 @@
 TODO{
-	Make a silent smack sound? For Zombie Faceplant, 5S, etc...
 	Why do you hear Swing sound when you start a match?
 	
 	Ta tumen ur röven och börje the BIG projects.

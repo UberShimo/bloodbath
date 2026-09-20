@@ -35,7 +35,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
 			audio_play_sound(Snd_Manly_Tensing, 0, false);
 		}
-		else if(meter >= 30 && medium_attack_pressed){
+		else if(meter >= 25 && medium_attack_pressed){
 			action = "Quickdraw Clone";
 			meter -= 25;
 			
@@ -43,7 +43,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_clone;
 		}
-		else if(meter >= 30 && light_attack_pressed){
+		else if(meter >= 25 && light_attack_pressed){
 			action = "Recall Clone";
 			meter -= 25;
 			

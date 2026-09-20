@@ -1,6 +1,6 @@
 event_inherited();
 
-damage = 11;
+damage = 9;
 hit_stun = global.medium_hitstun;
 hit_push = 2;
 freeze_duration = global.medium_freeze_duration;
@@ -10,5 +10,5 @@ v_launch = 3;
 
 is_sticky = true;
 
-swing_sound = Snd_Smack;
+swing_sound = Snd_Small_Smack;
 hit_sound = Snd_Hit2;

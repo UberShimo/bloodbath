@@ -1,6 +1,6 @@
 event_inherited();
 
-damage = 20
+damage = 15;
 hit_stun = global.heavy_hitstun;
 hit_push = 0
 freeze_duration = global.heavy_freeze_duration;
