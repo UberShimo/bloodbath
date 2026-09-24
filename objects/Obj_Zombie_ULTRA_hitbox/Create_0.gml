@@ -9,6 +9,7 @@ h_launch = 3;
 v_launch = 1;
 
 is_sticky = true;
+meter_gain_multiplier = 0;
 
 swing_sound = Snd_Quick_Swing;
 hit_sound = Snd_Hit1;
