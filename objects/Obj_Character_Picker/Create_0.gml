@@ -31,6 +31,14 @@ d_held = false;
 d_hold = false;
 d_pressed = false;
 
+pick_pressed = false;
+back_pressed = false;
+back_hold = false;
+change_team_pressed1 = false;
+change_team_pressed2 = false;
+show_move_list_pressed = false;
+start_match_pressed = false;
+
 check_if_all_players_ready = function(){
 	player_count = 0;
 	

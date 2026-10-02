@@ -8,7 +8,7 @@ air_ok = true;
 air_only = false;
 info = "Is an infinite combo.";
 movement_input = Spr_EMPTY;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Dojo_F_recovery;
 frame = 0;
 

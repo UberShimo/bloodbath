@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Quick swing forward.";
 movement_input = Spr_EMPTY;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Zombie_6F_recovery;
 frame = 0;

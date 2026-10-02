@@ -32,3 +32,15 @@ if(jump_pressed){
 if(gamepad_button_check_pressed(controller_index, gp_face2)){
 	room_goto(global.character_select);
 }
+
+// Camera logic
+camera_y_destination = y-view_height/2;
+
+if(camera_y < camera_y_destination-camera_y_speed){
+	camera_y += camera_y_speed;
+}
+else if(camera_y > camera_y_destination+camera_y_speed){
+	camera_y -= camera_y_speed;
+}
+
+camera_set_view_pos(view_camera[0], 0, floor(camera_y));

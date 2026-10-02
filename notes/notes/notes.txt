@@ -1,6 +1,10 @@
 TODO{
-	Ta tumen ur röven och börje the BIG projects.
-	Custom tags med custom key binds...
+	Se till att tutorial anpassass efter keybindings också.
+	Gör det tydligt i main menu att psace och num 0 är det man väljer med.
+	Tutorial måste snpassas efter keyboard manneeeen!!!
+	Lägg till pause i Dojo mode / dojo manager.
+	Man ska kunna ändra keybinding i character select!
+	Ändra menyer control hints så att dom byter till keyboard input emellan åt!
 	Och online...
 	Med hjälp av AI!?
 	
@@ -101,6 +105,8 @@ Hurtbox = sprite collision
 Attack collision = purple sprites
 We are not using particles since we cant manipulate it good enough. Slow mo, scaling per dmg etc...
 Dont fuck with image angle on attacks...
+controller_index 9 = keyboard 1
+controller_index 10 = keyboard 2
 
 Checklist on new character:
 Sprites.

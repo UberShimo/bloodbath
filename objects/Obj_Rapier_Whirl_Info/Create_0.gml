@@ -8,7 +8,7 @@ air_ok = true;
 air_only = false;
 info = "Whirl your rapier upward!\nHitting 3 times.";
 movement_input = Spr_EMPTY;
-button_input = Spr_RB_X;
+button_input = Spr_M_L;
 image = Spr_Rapier_Whirl_recovery;
 frame = 1;
 

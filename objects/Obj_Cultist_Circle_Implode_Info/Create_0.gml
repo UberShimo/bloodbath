@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "Implode CIRCLES after delay.";
 movement_input = Spr_DD;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Cultist_Circle_Pinch_recovery;
 frame = 0;

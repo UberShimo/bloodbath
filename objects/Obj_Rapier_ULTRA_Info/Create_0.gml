@@ -9,7 +9,7 @@ air_only = false;
 hold_ok = true;
 info = "Dissapear and reappear with a stab!\nHold B to delay stab.\nCan be cast ANY time.";
 movement_input = Spr_EMPTY;
-button_input = Spr_RB_B;
+button_input = Spr_M_H;
 image = Spr_Rapier_ULTRA_recovery;
 frame = 0;
 

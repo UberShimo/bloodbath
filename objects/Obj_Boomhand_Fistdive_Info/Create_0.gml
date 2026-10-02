@@ -8,6 +8,6 @@ air_ok = false;
 air_only = true;
 info = "Hold to go through platforms.";
 movement_input = Spr_DF;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Boomhand_Fistdive_recovery;
 frame = 0;

@@ -312,171 +312,314 @@ find_closest_enemy = function(){
 }
 
 read_input = function(){
-	if(is_controllable){
-		// Facing right
-		if(image_xscale > 0){
-			forward_held = forward_hold;
-			forward_hold = gamepad_button_check(controller_index, gp_padr)
-			|| gamepad_axis_value(controller_index, gp_axislh) > 0.5;
-		
-			if(!forward_held && forward_hold){
-				forward_pressed = buffer_duration;
-			}
-		
-			backward_held = backward_hold;
-			backward_hold = gamepad_button_check(controller_index, gp_padl)
-			|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
-		
-			if(!backward_held && backward_hold){
-				backward_pressed = buffer_duration;
-			}
-		}
-		// Facing left
-		else{
-			forward_held = forward_hold;
-			forward_hold = gamepad_button_check(controller_index, gp_padl)
-			|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
-		
-			if(!forward_held && forward_hold){
-				forward_pressed = buffer_duration;
-			}
-		
-			backward_held = backward_hold;
-			backward_hold = gamepad_button_check(controller_index, gp_padr)
-			|| gamepad_axis_value(controller_index, gp_axislh) > 0.5;
-		
-			if(!backward_held && backward_hold){
-				backward_pressed = buffer_duration;
-			}
-		}
-		// Right pressed
-		if(gamepad_button_check(controller_index, gp_padr) || gamepad_axis_value(controller_index, gp_axislh) > 0.5){
-			right_pressed = buffer_duration;
-			left_pressed = 0;
-		}
-		
-		// Left pressed
-		if(gamepad_button_check(controller_index, gp_padl) || gamepad_axis_value(controller_index, gp_axislh) < -0.5){
-			left_pressed = buffer_duration;
-			right_pressed = 0;
-		}
-		
-		// Down
-		down_held = down_hold;
-		down_hold = gamepad_button_check(controller_index, gp_padd)
-		|| gamepad_axis_value(controller_index, gp_axislv) > 0.5;
-	
-		// Double down
-		if(down_pressed > 0 && !down_held && down_hold){
-			double_down_pressed = buffer_duration;
-		}
-		
-		if(!down_held && down_hold){
-			down_pressed = buffer_duration;
-		}
-	
-		// Up hold
-		up_hold = gamepad_button_check(controller_index, gp_padu)
-		|| gamepad_axis_value(controller_index, gp_axislv) < -0.5;
-	
-		// Faceback hold
-		faceback_hold = gamepad_button_check(controller_index, gp_shoulderlb);
-	
-		// Cancel prevent hold 
-		cancel_prevent_hold = gamepad_button_check(controller_index, gp_shoulderrb);
-
-		// Jump
-		if(gamepad_button_check_pressed(controller_index, gp_face1) && !select_hold){ // No jumping while holding select!
-			jump_pressed = buffer_duration;
-		}
-		jump_hold = gamepad_button_check(controller_index, gp_face1);
-	
-		// Action buttons
-		if(gamepad_button_check_pressed(controller_index, gp_face2)){
-			heavy_attack_pressed = buffer_duration;
-		}
-		heavy_attack_hold = gamepad_button_check(controller_index, gp_face2);
-	
-		if(gamepad_button_check_pressed(controller_index, gp_face3)){
-			light_attack_pressed = buffer_duration;
-		}
-		light_attack_hold = gamepad_button_check(controller_index, gp_face3);
-	
-		if(gamepad_button_check_pressed(controller_index, gp_face4)){
-			medium_attack_pressed = buffer_duration;
-		}
-		medium_attack_hold = gamepad_button_check(controller_index, gp_face4);
-	
-		if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
-			meter_pressed = buffer_duration;
-		}
-		meter_hold = gamepad_button_check(controller_index, gp_shoulderr);
-	
-		if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
-			dash_pressed = buffer_duration;
-		}
-		dash_hold = gamepad_button_check(controller_index, gp_shoulderl);
-	
-		// Platdrop (this is one special since it doesnt use the buffer_duration)
-		if(down_hold && gamepad_button_check_pressed(controller_index, gp_shoulderl)){
-			platdrop_pressed = true;
-		}
-		else{
-			platdrop_pressed = false;
-		}
-		if(dash_hold && down_hold){
-			platdrop_hold = true;
-		}
-		else{
-			platdrop_hold = false;
-		}
-	
-		// Special inputs
-		if(down_pressed && !down_hold && forward_pressed){
-			down_forward_pressed = buffer_duration;
-			down_pressed = 0;
-		}
-		if(down_pressed && !down_hold && backward_pressed){
-			down_backward_pressed = buffer_duration;
-			down_pressed = 0;
-		}
-		if(forward_pressed && !forward_hold && down_pressed){
-			forward_down_pressed = buffer_duration;
-			forward_pressed = 0;
-		}
-		if(backward_pressed && !backward_hold && down_pressed){
-			backward_down_pressed = buffer_duration;
-			backward_pressed = 0;
-		}
-		if(forward_down_pressed && !down_hold && backward_pressed){
-			half_circle_backward_pressed = buffer_duration;
-			forward_down_pressed = 0;
-			down_pressed = 0;
-		}
-		if(backward_down_pressed && !down_hold && forward_pressed){
-			half_circle_forward_pressed = buffer_duration;
-			backward_down_pressed = 0;
-			down_pressed = 0;
-		}
-		if(down_hold && (forward_hold || backward_hold)){
-			diagonal_input_hold = true;
-		}
-		else{
-			diagonal_input_hold = false;
-		}
+	if(controller_index < 0){ // No CPUs in this code block!
+		exit;
 	}
-	// Inputs that read outside of controllability!
 	
-	// Start
-	start_hold = gamepad_button_check(controller_index, gp_start);
-	// Select
-	select_hold = gamepad_button_check(controller_index, gp_select);
+	if(controller_index >= 9){ // keyboard
+		#region keyboard input read
+		if(controller_index == 9){
+			map = global.k1_bindings;
+		}
+		else{
+			map = global.k2_bindings;
+		}
+			
+		if(is_controllable){
+			// Facing right
+			if(image_xscale > 0){
+				forward_held = forward_hold;
+				forward_hold = keyboard_check(ds_map_find_value(map, "right"));
+		
+				if(!forward_held && forward_hold){
+					forward_pressed = buffer_duration;
+				}
+		
+				backward_held = backward_hold;
+				backward_hold = keyboard_check(ds_map_find_value(map, "left"));
+		
+				if(!backward_held && backward_hold){
+					backward_pressed = buffer_duration;
+				}
+			}
+			// Facing left
+			else{
+				forward_held = forward_hold;
+				forward_hold = keyboard_check(ds_map_find_value(map, "left"));
+		
+				if(!forward_held && forward_hold){
+					forward_pressed = buffer_duration;
+				}
+		
+				backward_held = backward_hold;
+				backward_hold = keyboard_check(ds_map_find_value(map, "right"));
+		
+				if(!backward_held && backward_hold){
+					backward_pressed = buffer_duration;
+				}
+			}
+		
+			// Right pressed
+			if(keyboard_check(ds_map_find_value(map, "right"))){
+				right_pressed = buffer_duration;
+				left_pressed = 0;
+			}
+		
+			// Left pressed
+			if(keyboard_check(ds_map_find_value(map, "left"))){
+				left_pressed = buffer_duration;
+				right_pressed = 0;
+			}
+		
+			// Down
+			down_held = down_hold;
+			down_hold = keyboard_check(ds_map_find_value(map, "down"));
 	
-	// Right stick input
-	rs_up = gamepad_axis_value(controller_index, gp_axisrv) < -0.5;
-	rs_down = gamepad_axis_value(controller_index, gp_axisrv) > 0.5;
-	rs_right = gamepad_axis_value(controller_index, gp_axisrh) > 0.5;
-	rs_left = gamepad_axis_value(controller_index, gp_axisrh) < -0.5;
+			// Double down
+			if(down_pressed > 0 && !down_held && down_hold){
+				double_down_pressed = buffer_duration;
+			}
+		
+			if(!down_held && down_hold){
+				down_pressed = buffer_duration;
+			}
+	
+			// Up hold
+			up_hold = keyboard_check(ds_map_find_value(map, "up"));
+	
+			// Faceback hold
+			faceback_hold = keyboard_check(ds_map_find_value(map, "faceback"));
+	
+			// Cancel prevent hold 
+			cancel_prevent_hold = keyboard_check(ds_map_find_value(map, "no cancel"));
+
+			// Jump
+			if(keyboard_check_pressed(ds_map_find_value(map, "jump")) && !select_hold){ // No jumping while holding select!
+				jump_pressed = buffer_duration;
+			}
+			jump_hold = keyboard_check(ds_map_find_value(map, "jump"));
+	
+			// Action buttons
+			if(keyboard_check_pressed(ds_map_find_value(map, "light attack"))){
+				light_attack_pressed = buffer_duration;
+			}
+			light_attack_hold = keyboard_check(ds_map_find_value(map, "light attack"));
+	
+			if(keyboard_check_pressed(ds_map_find_value(map, "medium attack"))){
+				medium_attack_pressed = buffer_duration;
+			}
+			medium_attack_hold = keyboard_check(ds_map_find_value(map, "medium attack"));
+	
+			if(keyboard_check_pressed(ds_map_find_value(map, "heavy attack"))){
+				heavy_attack_pressed = buffer_duration;
+			}
+			heavy_attack_hold = keyboard_check(ds_map_find_value(map, "heavy attack"));
+			
+			if(keyboard_check_pressed(ds_map_find_value(map, "meter"))){
+				meter_pressed = buffer_duration;
+			}
+			meter_hold = keyboard_check(ds_map_find_value(map, "meter"));
+	
+			if(keyboard_check_pressed(ds_map_find_value(map, "dash"))){
+				dash_pressed = buffer_duration;
+			}
+			dash_hold = keyboard_check(ds_map_find_value(map, "dash"));
+	
+			// Platdrop (this is one special since it doesnt use the buffer_duration)
+			if(down_hold && keyboard_check_pressed(ds_map_find_value(map, "dash"))){
+				platdrop_pressed = true;
+			}
+			else{
+				platdrop_pressed = false;
+			}
+			if(dash_hold && down_hold){
+				platdrop_hold = true;
+			}
+			else{
+				platdrop_hold = false;
+			}
+		}
+		// Inputs that read outside of controllability!
+	
+		// Start
+		start_hold = keyboard_check(ds_map_find_value(map, "start"));
+		// Select
+		select_hold =  keyboard_check(ds_map_find_value(map, "select"));
+		#endregion
+	}
+	// Controller
+	else{
+		#region controller input read
+		map = global.controller_bindings[controller_index];
+		
+		if(is_controllable){
+			// Facing right
+			if(image_xscale > 0){
+				forward_held = forward_hold;
+				forward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "right"))
+				|| gamepad_axis_value(controller_index, gp_axislh) > 0.5;
+		
+				if(!forward_held && forward_hold){
+					forward_pressed = buffer_duration;
+				}
+		
+				backward_held = backward_hold;
+				backward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "left"))
+				|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
+		
+				if(!backward_held && backward_hold){
+					backward_pressed = buffer_duration;
+				}
+			}
+			// Facing left
+			else{
+				forward_held = forward_hold;
+				forward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "left"))
+				|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
+		
+				if(!forward_held && forward_hold){
+					forward_pressed = buffer_duration;
+				}
+		
+				backward_held = backward_hold;
+				backward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "right"))
+				|| gamepad_axis_value(controller_index, gp_axislh) > 0.5;
+		
+				if(!backward_held && backward_hold){
+					backward_pressed = buffer_duration;
+				}
+			}
+		
+			// Right pressed
+			if(gamepad_button_check(controller_index, ds_map_find_value(map, "right")) || gamepad_axis_value(controller_index, gp_axislh) > 0.5){
+				right_pressed = buffer_duration;
+				left_pressed = 0;
+			}
+		
+			// Left pressed
+			if(gamepad_button_check(controller_index, ds_map_find_value(map, "left")) || gamepad_axis_value(controller_index, gp_axislh) < -0.5){
+				left_pressed = buffer_duration;
+				right_pressed = 0;
+			}
+		
+			// Down
+			down_held = down_hold;
+			down_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "down"))
+			|| gamepad_axis_value(controller_index, gp_axislv) > 0.5;
+	
+			// Double down
+			if(down_pressed > 0 && !down_held && down_hold){
+				double_down_pressed = buffer_duration;
+			}
+		
+			if(!down_held && down_hold){
+				down_pressed = buffer_duration;
+			}
+	
+			// Up hold
+			up_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "up"))
+			|| gamepad_axis_value(controller_index, gp_axislv) < -0.5;
+	
+			// Faceback hold
+			faceback_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "faceback"));
+	
+			// Cancel prevent hold 
+			cancel_prevent_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "no cancel"));
+
+			// Jump
+			if(gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "jump")) && !select_hold){ // No jumping while holding select!
+				jump_pressed = buffer_duration;
+			}
+			jump_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "jump"));
+	
+			// Action buttons
+			if(gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "light attack"))){
+				light_attack_pressed = buffer_duration;
+			}
+			light_attack_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "light attack"));
+	
+			if(gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "medium attack"))){
+				medium_attack_pressed = buffer_duration;
+			}
+			medium_attack_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "medium attack"));
+	
+			if(gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "heavy attack"))){
+				heavy_attack_pressed = buffer_duration;
+			}
+			heavy_attack_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "heavy attack"));
+	
+			if(gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "meter"))){
+				meter_pressed = buffer_duration;
+			}
+			meter_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "meter"));
+	
+			if(gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "dash"))){
+				dash_pressed = buffer_duration;
+			}
+			dash_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "dash"));
+	
+			// Platdrop (this is one special since it doesnt use the buffer_duration)
+			if(down_hold && gamepad_button_check_pressed(controller_index, ds_map_find_value(map, "dash"))){
+				platdrop_pressed = true;
+			}
+			else{
+				platdrop_pressed = false;
+			}
+			if(dash_hold && down_hold){
+				platdrop_hold = true;
+			}
+			else{
+				platdrop_hold = false;
+			}
+		}
+		// Inputs that read outside of controllability!
+	
+		// Start
+		start_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "start"));
+		// Select
+		select_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "select"));
+	
+		// Right stick input
+		rs_up = gamepad_axis_value(controller_index, gp_axisrv) < -0.5;
+		rs_down = gamepad_axis_value(controller_index, gp_axisrv) > 0.5;
+		rs_right = gamepad_axis_value(controller_index, gp_axisrh) > 0.5;
+		rs_left = gamepad_axis_value(controller_index, gp_axisrh) < -0.5;
+		#endregion
+	}
+	
+	// Special inputs
+	if(down_pressed && !down_hold && forward_pressed){
+		down_forward_pressed = buffer_duration;
+		down_pressed = 0;
+	}
+	if(down_pressed && !down_hold && backward_pressed){
+		down_backward_pressed = buffer_duration;
+		down_pressed = 0;
+	}
+	if(forward_pressed && !forward_hold && down_pressed){
+		forward_down_pressed = buffer_duration;
+		forward_pressed = 0;
+	}
+	if(backward_pressed && !backward_hold && down_pressed){
+		backward_down_pressed = buffer_duration;
+		backward_pressed = 0;
+	}
+	if(forward_down_pressed && !down_hold && backward_pressed){
+		half_circle_backward_pressed = buffer_duration;
+		forward_down_pressed = 0;
+		down_pressed = 0;
+	}
+	if(backward_down_pressed && !down_hold && forward_pressed){
+		half_circle_forward_pressed = buffer_duration;
+		backward_down_pressed = 0;
+		down_pressed = 0;
+	}
+	if(down_hold && (forward_hold || backward_hold)){
+		diagonal_input_hold = true;
+	}
+	else{
+		diagonal_input_hold = false;
+	}
 }
 	
 reset_physics = function(){

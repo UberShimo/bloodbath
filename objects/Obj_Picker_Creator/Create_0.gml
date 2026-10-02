@@ -18,3 +18,13 @@ if(global.priority_controller_index != -1){
 	picker.controller_index = global.priority_controller_index;
 	global.controller_indexes[0] = global.priority_controller_index;
 }
+
+k1_spawned = false;
+if(global.priority_controller_index == 9){
+	k1_spawned = true;
+}
+
+k2_spawned = false;
+if(global.priority_controller_index == 10){
+	k2_spawned = true;
+}

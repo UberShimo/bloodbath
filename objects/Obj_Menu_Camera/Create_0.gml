@@ -18,7 +18,7 @@ for(i = 0; i < 8; i++){
 // Shake the main menu
 if(room == Main_Menu){
 	if(global.game_just_started){
-		instance_create_depth(0, 0, -1000, Eff_Start_Black_Screen);
+		instance_create_depth(0, 0, -100, Eff_Start_Black_Screen);
 		global.game_just_started = false;
 	}
 	

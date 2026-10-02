@@ -8,7 +8,7 @@ air_ok = true;
 air_only = false;
 info = "Dash through nearby POSE and\nTRIGGER it!";
 movement_input = Spr_EMPTY;
-button_input = Spr_RB_X;
+button_input = Spr_M_L;
 image = Spr_Shield_Pose_Dash_recovery;
 frame = 0;
 

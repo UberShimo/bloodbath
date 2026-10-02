@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "Spin toward MARKED enemy.\nMARK is removed.\nHold to go through platforms.";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Knife_Mark_Spin_recovery;
 frame = 1;

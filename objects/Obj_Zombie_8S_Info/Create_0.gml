@@ -8,6 +8,6 @@ air_ok = false;
 air_only = true;
 info = "";
 movement_input = Spr_EMPTY;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Zombie_8S_recovery;
 frame = 0;

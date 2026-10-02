@@ -8,7 +8,7 @@ air_ok = true;
 air_only = false;
 info = "Pull CIRCLES back to you dramaticly.";
 movement_input = Spr_DD;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Cultist_Circlepull_recovery;
 frame = 0;
 

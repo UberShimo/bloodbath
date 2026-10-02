@@ -9,6 +9,6 @@ air_only = false;
 hold_ok = true;
 info = "Glide forward! Consumes a extra jump.\nAngle with LEFT and RIGHT.\nHold to keep gliding.\nDamage depends on speed.";
 movement_input = Spr_DF;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Scythe_Glide_recovery;
 frame = 0;

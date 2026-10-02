@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Glide forward!";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Claws_Penguin_recovery;
 frame = 0;

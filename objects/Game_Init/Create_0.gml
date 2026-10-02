@@ -3,9 +3,13 @@ steam_init();
 // Trying to fix bad pixelation
 gpu_set_texfilter(false);
 
+// Font time!
+draw_set_font(Game_Font);
+
 #region load save
 ini_open("save.ini");
 
+// Character unlocks
 global.dojo_unlocked = ini_read_real("save", "dojo unlocked", true);
 global.katana_unlocked = ini_read_real("save", "katana unlocked", true);
 global.claws_unlocked = ini_read_real("save", "claws unlocked", true);
@@ -21,6 +25,7 @@ global.shield_unlocked = ini_read_real("save", "shield unlocked", true);
 global.scythe_unlocked = ini_read_real("save", "scythe unlocked", true);
 global.zombie_unlocked = ini_read_real("save", "zombie unlocked", true);
 
+// Target Run records
 global.dojo_TR_record = ini_read_real("save", "dojo TR record", 60*60);
 global.katana_TR_record = ini_read_real("save", "katana TR record", 60*60);
 global.claws_TR_record = ini_read_real("save", "claws TR record", 60*60);
@@ -36,10 +41,11 @@ global.shield_TR_record = ini_read_real("save", "shield TR record", 60*60);
 global.scythe_TR_record = ini_read_real("save", "scythe TR record", 60*60);
 global.zombie_TR_record = ini_read_real("save", "zombie TR record", 60*60);
 
+// Music volume
 global.max_music_volume = 0.25;
 global.music_volume = ini_read_real("save", "music volume", global.max_music_volume);
 
-// achievements
+// Achievements
 global.katana_learned = ini_read_real("save", "katana learned", false);
 global.claws_learned = ini_read_real("save", "claws learned", false);
 global.boomhand_learned = ini_read_real("save", "boomhand learned", false);
@@ -71,6 +77,67 @@ global.zombie_tr_achievement = ini_read_real("save", "zombie TR achievement", fa
 ini_close();
 #endregion
 
+#region Input bindings
+global.k1_bindings = ds_map_create();
+global.k2_bindings = ds_map_create();
+global.controller_bindings[0] = ds_map_create();
+global.controller_bindings[1] = ds_map_create();
+global.controller_bindings[2] = ds_map_create();
+global.controller_bindings[3] = ds_map_create();
+global.controller_bindings[4] = ds_map_create();
+global.controller_bindings[5] = ds_map_create();
+global.controller_bindings[6] = ds_map_create();
+global.controller_bindings[7] = ds_map_create();
+
+ds_map_add(global.k1_bindings, "left", ord("A"));
+ds_map_add(global.k1_bindings, "right", ord("D"));
+ds_map_add(global.k1_bindings, "up", ord("W"));
+ds_map_add(global.k1_bindings, "down", ord("S"));
+ds_map_add(global.k1_bindings, "jump", vk_space);
+ds_map_add(global.k1_bindings, "dash", vk_shift);
+ds_map_add(global.k1_bindings, "meter", vk_control);
+ds_map_add(global.k1_bindings, "start", vk_enter);
+ds_map_add(global.k1_bindings, "select", vk_backspace);
+ds_map_add(global.k1_bindings, "light attack", ord("H"));
+ds_map_add(global.k1_bindings, "medium attack", ord("J"));
+ds_map_add(global.k1_bindings, "heavy attack", ord("K"));
+ds_map_add(global.k1_bindings, "no cancel", ord("Q"));
+ds_map_add(global.k1_bindings, "faceback", ord("E"));
+
+ds_map_add(global.k2_bindings, "left", vk_left);
+ds_map_add(global.k2_bindings, "right", vk_right);
+ds_map_add(global.k2_bindings, "up", vk_up);
+ds_map_add(global.k2_bindings, "down", vk_down);
+ds_map_add(global.k2_bindings, "jump", vk_numpad5);
+ds_map_add(global.k2_bindings, "dash", vk_numpad6);
+ds_map_add(global.k2_bindings, "meter", vk_numpad0);
+ds_map_add(global.k2_bindings, "start", vk_numpad9);
+ds_map_add(global.k2_bindings, "select", vk_numpad8);
+ds_map_add(global.k2_bindings, "light attack", vk_numpad1);
+ds_map_add(global.k2_bindings, "medium attack", vk_numpad2);
+ds_map_add(global.k2_bindings, "heavy attack", vk_numpad3);
+ds_map_add(global.k2_bindings, "no cancel", vk_numpad4);
+ds_map_add(global.k2_bindings, "faceback", vk_numpad7);
+
+// Controllers
+for(i = 0; i < 7; i++){
+	ds_map_add(global.controller_bindings[i], "left", gp_padl);
+	ds_map_add(global.controller_bindings[i], "right", gp_padr);
+	ds_map_add(global.controller_bindings[i], "up", gp_padu);
+	ds_map_add(global.controller_bindings[i], "down", gp_padd);
+	ds_map_add(global.controller_bindings[i], "jump", gp_face1);
+	ds_map_add(global.controller_bindings[i], "dash", gp_shoulderl);
+	ds_map_add(global.controller_bindings[i], "meter", gp_shoulderr);
+	ds_map_add(global.controller_bindings[i], "start", gp_start);
+	ds_map_add(global.controller_bindings[i], "select", gp_select);
+	ds_map_add(global.controller_bindings[i], "light attack", gp_face3);
+	ds_map_add(global.controller_bindings[i], "medium attack", gp_face4);
+	ds_map_add(global.controller_bindings[i], "heavy attack", gp_face2);
+	ds_map_add(global.controller_bindings[i], "no cancel", gp_shoulderrb);
+	ds_map_add(global.controller_bindings[i], "faceback", gp_shoulderlb);
+}
+#endregion
+
 #region settings ish
 global.FPS = 60;
 global.game_time = 1;
@@ -89,10 +156,9 @@ global.max_players = 8; // Actually max controller index check
 global.dojo_level = 0; // 0:freeform 1:Basic tutorial 2:Advanced tutorial
 global.priority_controller_index = -1;
 global.game_just_started = true;
+global.k1_used = false;
+global.k2_used = false;
 #endregion
-
-// Font time!
-draw_set_font(Game_Font);
 
 #region Stats / Colors
 global.cancelable_recovery_frames = 22;
@@ -133,14 +199,6 @@ global.p_colors[5] = make_color_rgb(255, 0, 255);
 global.p_colors[6] = make_color_rgb(0, 0, 255);
 global.p_colors[7] = make_color_rgb(180, 180, 180);
 #endregion
-
-// Initiate arrays
-for(i = 0; i < 8; i++){
-	global.picked_characters[i] = noone;
-	global.controller_indexes[i] = -1;
-	global.is_CPU[i] = false;
-	global.team_change_value[i] = 0;
-}
 
 #region Music list
 global.music_list = [
@@ -236,11 +294,21 @@ global.arena_images = [
 global.arena_index = 1;
 #endregion
 
+// Initiate arrays
+for(i = 0; i < 8; i++){
+	global.picked_characters[i] = noone;
+	global.controller_indexes[i] = -1;
+	global.is_CPU[i] = false;
+	global.team_change_value[i] = 0;
+}
+
 // Methods
 global.reset_controllers = function(){
 	for(i = 0; i < 8; i++){
 		global.picked_characters[i] = noone;
 		global.controller_indexes[i] = -1;
+		global.is_k1[i] = false;
+		global.is_k2[i] = false;
 	}
 }
 

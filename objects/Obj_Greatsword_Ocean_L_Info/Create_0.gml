@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "During OCEAN stance.";
 movement_input = Spr_EMPTY;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Greatsword_Ocean_L_recovery;
 frame = 0;

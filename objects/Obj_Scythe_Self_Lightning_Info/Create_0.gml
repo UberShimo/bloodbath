@@ -5,7 +5,7 @@ event_inherited();
 air_ok = false;
 air_only = false;
 info = "Call lightning upon yourself,\ncharging you up.\nAfter delay you will release a lightning!";
-movement_input = Spr_RB_X;
+movement_input = Spr_M_L;
 image = Spr_Scythe_Self_Lightning_recovery;
 frame = 0;
 

@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "";
 movement_input = Spr_EMPTY;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Scythe_L_recovery;
 frame = 0;

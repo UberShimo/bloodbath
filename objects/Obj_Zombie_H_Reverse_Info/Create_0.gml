@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Reverse your horizontal momentum.\nCost more meter if done during hitstun.";
-button_input = Spr_RB_X;
+button_input = Spr_M_L;
 image = Spr_Zombie_Dash_Backward;
 frame = 0;
 extra_image = Spr_Whirl;

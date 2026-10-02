@@ -6,7 +6,7 @@ air_ok = false;
 air_only = false;
 info = "Send a clone.";
 movement_input = Spr_DF;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Katana_Stand;
 frame = 0;
 

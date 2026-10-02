@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "Dash then spin.";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Bow_Crosspin_recovery;
 frame = 0;

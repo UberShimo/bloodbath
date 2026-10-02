@@ -8,6 +8,6 @@ air_ok = false;
 air_only = true;
 info = "Grab enemy above then\nthrow them down!";
 movement_input = Spr_EMPTY;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Shield_8F_whiff;
 frame = 0;

@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "";
 movement_input = Spr_EMPTY;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Boomhand_5L_recovery;
 frame = 1;

@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Spank of the century.";
 movement_input = Spr_EMPTY;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Greatsword_5S_recovery;
 frame = 1;

@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "Dive from vertical ring.\nHold to dive through platforms.";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Claws_Dive_recovery;
 frame = 0;

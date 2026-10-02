@@ -1,6 +1,6 @@
-max_pickers = global.max_players;
 blink_timer = 20;
 show_text = true;
+picker_spawned = false;
 
 global.reset_controllers();
 global.game_time = 1;
@@ -13,4 +13,5 @@ if(global.priority_controller_index != -1){
 	picker.index = 0;
 	picker.controller_index = global.priority_controller_index;
 	global.controller_indexes[0] = global.priority_controller_index;
+	picker_spawned = true;
 }

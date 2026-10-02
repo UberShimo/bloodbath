@@ -277,6 +277,8 @@ action_trigger = function(){
 	else if(action == "Ball Whack Attack Start"){
 		action = "Ball Whack Attack";
 
+		sprite_index = Spr_Baller_Whack_recovery;
+		image_index = 0;
 		recover_alarm = recovery_frames_whack_attack; // Max duration 5 sec
 	}
 	// Meter moves

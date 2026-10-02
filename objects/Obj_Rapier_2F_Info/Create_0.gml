@@ -7,6 +7,6 @@ recovery = generate_sprite_frames(Spr_Rapier_2F_recovery);
 air_only = false;
 info = "";
 movement_input = Spr_D;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Rapier_2F_recovery;
 frame = 0;

@@ -72,7 +72,7 @@ if(global.is_debugging && object_index != Obj_Immortal_Dummy){ // Dont want that
 		action_text = "none";
 	}
 	val = "";
-	draw_text(x, y-character_height-80, "" + val);
+	draw_text(x, y-character_height-80, "backhold:" + string(backward_hold));
 	draw_text(x, y-character_height-64, "cancels:  " + string(cancels));
 	draw_text(x, y-character_height-48, "velocity:  " + string(get_velocity()));
 	draw_text(x, y-character_height-32, "startup:  " + string(action_alarm));

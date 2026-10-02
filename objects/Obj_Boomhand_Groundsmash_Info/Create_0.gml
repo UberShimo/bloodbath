@@ -8,5 +8,5 @@ air_ok = true;
 air_only = false;
 info = "Dive down with a shocking effect!\nHold to go through platforms.";
 movement_input = Spr_DD;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Boomhand_Groundsmash_recovery;

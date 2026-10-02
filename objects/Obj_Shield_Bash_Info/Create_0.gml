@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "Block in a direction then\nbash forward!";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Shield_Bash_recovery;
 frame = 0;

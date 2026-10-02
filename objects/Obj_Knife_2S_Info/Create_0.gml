@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Swing you forward alot!";
 movement_input = Spr_D;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Knife_2S_recovery;
 frame = 1;

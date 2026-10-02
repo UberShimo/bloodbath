@@ -7,7 +7,7 @@ recovery = generate_sprite_frames(Spr_Greatsword_Wavekick_recovery);
 air_ok = false;
 air_only = false;
 info = "Spawn a WAVE that drags players.\nWAVE can be bumped by PILLAR.";
-button_input = Spr_RB_Y;
+button_input = Spr_M_M;
 image = Spr_Greatsword_Wavekick_startup;
 frame = 2;
 

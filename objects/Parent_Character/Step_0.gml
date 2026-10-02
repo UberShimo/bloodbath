@@ -134,7 +134,6 @@ if(respawn_alarm > 0){
 		
 		reset_physics();
 		face_closest_enemy();
-		read_input();
 		
 		ugly_down = gamepad_button_check(controller_index, gp_padd)
 		|| gamepad_axis_value(controller_index, gp_axislv) > 0.5;
@@ -617,12 +616,11 @@ else if(meter_hold && dash_pressed > 0 && (action == noone || check_for_cancel()
 // Dash
 // Awful amount of checks just to be able to pay cancels when dashing in air
 else if(dash_pressed > 0 && !platdrop_hold && (forward_hold || backward_hold) && (
-	(action == noone && grounded) ||
-	(action == "ULTRA" && action_alarm > 0) ||
-	(action == noone && !grounded && cancels > 0) ||
-	check_for_cancel()
+(action == noone && grounded) ||
+(action == "ULTRA" && action_alarm > 0) ||
+(action == noone && !grounded && cancels > 0) ||
+check_for_cancel()
 )){
-	read_input();
 	dash_pressed = 0; // Just reset LB buffer
 	is_unstoppable = false; // Actually just for Boomhand ultra cancel...
 	

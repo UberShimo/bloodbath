@@ -39,15 +39,14 @@ if(!option.is_list_option){
 #endregion
 
 // Click an option
-if(gamepad_button_check_pressed(controller_index, gp_face1)
-&& place_meeting(x, y, Parent_Character_Select_Option)){
+if(pick_pressed && place_meeting(x, y, Parent_Character_Select_Option)){
 	option = instance_place(x, y, Parent_Character_Select_Option);
 	option.clicked(self);
 	audio_play_sound(Snd_Character_Select_Interact, 0, false);
 }
 
 // Unpick character
-if(gamepad_button_check_pressed(controller_index, gp_face2)){
+if(back_pressed){
 	if(global.picked_characters[index] != noone && !global.is_CPU[index]){
 		global.picked_characters[index] = noone;
 		if(tag != noone){
@@ -60,7 +59,7 @@ if(gamepad_button_check_pressed(controller_index, gp_face2)){
 #region Change team
 if(global.teams_mode){
 	// -
-	if(gamepad_button_check_pressed(controller_index, gp_shoulderl)){
+	if(change_team_pressed1){
 		// Change for CPU
 		if(place_meeting(x, y, Obj_CPU_Option)){
 			option = instance_place(x, y, Obj_CPU_Option);
@@ -87,7 +86,7 @@ if(global.teams_mode){
 		}
 	}
 	// +
-	else if(gamepad_button_check_pressed(controller_index, gp_shoulderr)){
+	else if(change_team_pressed2){
 		// Change for CPU
 		if(place_meeting(x, y, Obj_CPU_Option)){
 			option = instance_place(x, y, Obj_CPU_Option);
@@ -117,7 +116,7 @@ if(global.teams_mode){
 #endregion
 
 // Return to Main menu
-if(gamepad_button_check(controller_index, gp_face2)){
+if(back_hold){
 	exit_count += 1;
 	
 	if(exit_count > exit_count_goal){
@@ -129,16 +128,14 @@ else{
 }
 
 // Show move list
-if(gamepad_button_check_pressed(controller_index, gp_face4)
-&& place_meeting(x, y, Parent_Character_Option)
-&& room == Character_Select_Dojo){
+if(show_move_list_pressed && place_meeting(x, y, Parent_Character_Option) && room == Character_Select_Dojo){
 	option = instance_place(x, y, Parent_Character_Option);
 	global.priority_controller_index = controller_index;
 	room_goto(option.move_list_room);
 }
 
 #region Start the action
-if(gamepad_button_check_pressed(controller_index, gp_start)){
+if(start_match_pressed){
 	if(check_if_all_players_ready()){
 		// Dojo
 		if(global.dojo_mode){

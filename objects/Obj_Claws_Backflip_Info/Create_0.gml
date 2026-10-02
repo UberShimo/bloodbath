@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Do a backflip!";
 movement_input = Spr_DF;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Claws_Backflip_recovery;
 frame = 1;

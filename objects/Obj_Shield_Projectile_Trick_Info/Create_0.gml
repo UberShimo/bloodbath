@@ -8,6 +8,6 @@ air_ok = true;
 air_only = false;
 info = "Do a trick that leaves a POSE!\nTRIGGER it to spawn a projectile.";
 movement_input = Spr_DF;
-button_input = Spr_Y;
+button_input = Spr_M;
 image = Spr_Shield_Projectile_Trick_recovery;
 frame = 0;

@@ -19,3 +19,5 @@ u_pressed = false;
 d_held = false;
 d_hold = false;
 d_pressed = false;
+
+pick_pressed = false;

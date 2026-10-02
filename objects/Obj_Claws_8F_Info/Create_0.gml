@@ -8,6 +8,6 @@ air_ok = false;
 air_only = true;
 info = "Hits twice";
 movement_input = Spr_EMPTY;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Claws_8F_recovery;
 frame = 0;

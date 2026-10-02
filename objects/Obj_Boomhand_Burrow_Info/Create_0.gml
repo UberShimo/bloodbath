@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Uppercut from underground!";
 movement_input = Spr_Diagonal_Input;
-button_input = Spr_B;
+button_input = Spr_H;
 image = Spr_Boomhand_Burrow_recovery;
 frame = 0;

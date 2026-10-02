@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Put your BALL in place\nfor a short duration.";
-button_input = Spr_RB_X;
+button_input = Spr_M_L;
 image = Spr_Baller_Ball;
 extra_image = Spr_Circle;
 extra_image_color = c_lime;

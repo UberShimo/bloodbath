@@ -8,6 +8,7 @@ if(is_curled_up && meter > 0 && medium_attack_hold && HP > 0){
 	}
 	meter -= drain;
 	goes_through_platforms = true;
+	is_collidable = false;
 	
 	mirror = false;
 	if(image_xscale < 0){

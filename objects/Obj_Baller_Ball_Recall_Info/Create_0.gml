@@ -5,7 +5,7 @@ event_inherited();
 air_ok = true;
 air_only = false;
 info = "Recall BALL after short delay.";
-button_input = Spr_RB_Y;
+button_input = Spr_M_M;
 image = Spr_Baller_Ball;
 extra_image = Spr_Baller_Ball_Meter_Recall;
 frame = 0;

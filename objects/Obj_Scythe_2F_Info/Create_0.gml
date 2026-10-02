@@ -8,6 +8,6 @@ air_ok = false;
 air_only = false;
 info = "Greatly boost you forward.";
 movement_input = Spr_D;
-button_input = Spr_X;
+button_input = Spr_L;
 image = Spr_Scythe_2F_recovery;
 frame = 0;
