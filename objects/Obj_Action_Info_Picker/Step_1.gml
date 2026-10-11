@@ -52,5 +52,5 @@ else{
 	}
 	
 	info_toggle_pressed = gamepad_button_check_pressed(controller_index, gp_face1);
-	back_pressed = gamepad_button_check_pressed(controller_index, gp_face2);
+	back_pressed = gamepad_button_check_pressed(controller_index, gp_face2) || keyboard_check_pressed(vk_escape);
 }

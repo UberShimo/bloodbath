@@ -30,7 +30,7 @@ if(info_toggle_pressed){
 
 // Go back
 if(back_pressed){
-	room_goto(global.character_select);
+	room_goto(global.temp_room_save);
 }
 
 // Camera logic

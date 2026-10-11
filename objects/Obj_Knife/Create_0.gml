@@ -83,6 +83,7 @@ startup_frames_ULTRA = generate_sprite_frames(Spr_Knife_ULTRA_startup);
 #endregion
 
 // Knife stuff
+move_list = Knife_Move_List;
 marked_target = noone;
 visibility_change = 0;
 invisibility_duration = 120; // 2 sec

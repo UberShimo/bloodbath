@@ -82,6 +82,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_R1_recovery);
 #endregion
 
 // Zombie stuff
+move_list = Zombie_Move_List;
 original_character_width = character_width;
 original_character_height = character_height;
 is_curled_up = false;

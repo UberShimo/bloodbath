@@ -92,6 +92,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Greatsword_ULTRA_recovery);
 #endregion
 
 // Greatsword stuff
+move_list = Greatsword_Move_List;
 pillar_distance = 0;
 earth_parry_success = false;
 ULTRA_hold_max = 60;

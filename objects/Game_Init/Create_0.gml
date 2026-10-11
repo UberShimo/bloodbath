@@ -151,6 +151,7 @@ global.infinite_cancels_mode = false;
 global.target_run_mode = false;
 global.heart_amount = 4;
 global.character_select = Character_Select_1v1;
+global.temp_room_save = global.character_select;
 global.min_players = 2;
 global.max_players = 8; // Actually max controller index check
 global.dojo_level = 0; // 0:freeform 1:Basic tutorial 2:Advanced tutorial

@@ -85,6 +85,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Cultist_ULTRA_recovery);
 #endregion
 
 // Cultist stuff
+move_list = Cultist_Move_List;
 circle_dashing_backward = false;
 throw_star_up = false;
 throw_star_down = false;

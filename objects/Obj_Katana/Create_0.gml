@@ -75,6 +75,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Katana_ULTRA_recovery);
 #endregion
 
 // Katana stuff
+move_list = Katana_Move_List;
 send_clone_backward = false;
 clone_action_delay = 150; // 2.5 sec
 

@@ -7,5 +7,7 @@ text = "SELECT + X:\n"+
 "SELECT + B:\n"+
 "        Toggle debug\n"+
 "SELECT + A:\n"+
-"        Toggle jumping";
+"        Toggle jumping\n"+
+"SELECT + RB:\n"+
+"        Show move list";
 text_scale = 0.7;

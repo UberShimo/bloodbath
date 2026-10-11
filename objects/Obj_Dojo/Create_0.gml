@@ -56,6 +56,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Dojo_ULTRA_recovery)*4;
 #endregion
 
 // Dojo specific
+move_list = Dojo_Move_List;
 HP = 180;
 max_HP = HP;
 

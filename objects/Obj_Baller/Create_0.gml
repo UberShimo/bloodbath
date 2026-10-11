@@ -78,6 +78,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Baller_ULTRA_recovery);
 #endregion
 
 // Baller related
+move_list = Baller_Move_List;
 is_holding_ball = true;
 whack_velocity = 9;
 whack_rotation_speed = 30;

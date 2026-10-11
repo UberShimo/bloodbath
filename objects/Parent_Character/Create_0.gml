@@ -35,6 +35,7 @@ meter_channel_draw_change_amount = 0.05;
 meter_channel_max_draw_amount = 0.5;
 is_meter_stunned = false;
 cant_be_focused = false; // Makes it so opponent wont turn toward you
+move_list = Dojo_Move_List;
 #endregion
 
 #region Initialize input values / buffers

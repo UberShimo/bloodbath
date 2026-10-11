@@ -79,6 +79,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Scythe_ULTRA_recovery);
 #endregion
 
 // Scythe stuff
+move_list = Scythe_Move_List;
 glide_start_speed = 8;
 glide_speed = 0;
 glide_angle = 0;

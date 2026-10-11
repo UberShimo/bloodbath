@@ -83,6 +83,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Boomhand_ULTRA_recovery);
 #endregion
 
 // Boomhand stuff
+move_list = Boomhand_Move_List;
 roar_power = 0;
 roar_power_decrease = 1/(60*8); // 1/(60* [100%>0% in seconds] )... Takes 8 sec to fully cooldown atm...
 hook_charge = 0; // Actually not a hook tho...

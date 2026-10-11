@@ -87,6 +87,7 @@ recovery_frames_ULTRA_hit = generate_sprite_frames(Spr_Shield_ULTRA_hit);
 #endregion
 
 // Shield stuff
+move_list = Shield_Move_List;
 perform_pose_dash = false;
 pose_dash_min_distance = 64;
 targeted_pose = noone;

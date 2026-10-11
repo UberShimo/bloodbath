@@ -78,6 +78,7 @@ startup_frames_rewind = generate_sprite_frames(Spr_Claws_Teleport_startup);
 #endregion
 
 // Claws related
+move_list = Claws_Move_List;
 spin_movement_speed = 3;
 is_spinning = false;
 ring1 = noone;

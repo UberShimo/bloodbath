@@ -87,6 +87,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Rapier_ULTRA_recovery);
 #endregion
 
 // Rapier stuff
+move_list = Rapier_Move_List;
 HP = 100;
 max_HP = HP;
 lunge_type = 0; // 0: quick, 1: normal, 2: magic

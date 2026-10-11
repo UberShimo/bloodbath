@@ -131,6 +131,7 @@ else{
 if(show_move_list_pressed && place_meeting(x, y, Parent_Character_Option) && room == Character_Select_Dojo){
 	option = instance_place(x, y, Parent_Character_Option);
 	global.priority_controller_index = controller_index;
+	global.temp_room_save = global.character_select;
 	room_goto(option.move_list_room);
 }
 

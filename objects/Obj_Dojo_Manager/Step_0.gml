@@ -90,4 +90,10 @@ if(global.dojo_level == 0){
 	else if(!student.jump_hold){
 		toggle_jump_pressed = false;
 	}
+	
+	// Goto move list
+	if(student.meter_hold && student.select_hold){
+		global.temp_room_save = Dojo_Place;
+		room_goto(student.move_list);
+	}
 }

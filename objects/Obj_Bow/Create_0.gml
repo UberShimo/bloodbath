@@ -80,6 +80,7 @@ recovery_frames_ULTRA = generate_sprite_frames(Spr_Bow_ULTRA_recovery);
 #endregion
 
 // Bow related
+move_list = Bow_Move_List;
 has_boomerang = true;
 throw_boomerang_up = false;
 throw_boomerang_down = false;

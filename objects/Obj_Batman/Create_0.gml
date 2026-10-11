@@ -78,6 +78,9 @@ startup_frames_ULTRA = generate_sprite_frames(Spr_Batman_ULTRA_startup);
 recovery_frames_ULTRA = generate_sprite_frames(Spr_Batman_ULTRA_recovery);
 #endregion
 
+// Batman stuff
+move_list = Batman_Move_List;
+
 action_trigger = function(){
 	shake_amount = 0;
 	
