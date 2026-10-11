@@ -22,8 +22,12 @@ exit_count = 0;
 exit_count_goal = 180;
 player_color = c_white;
 draw_mini_ui = global.chaos_mode;
-exit_text_x = -16;
-exit_text_y = 0;
+mini_ui_y = 0;
+exit_text_x = -22;
+exit_text_y = -24;
+if(global.chaos_mode){
+	exit_text_y = -52;
+}
 meter_shake_amount = 12;
 meter_shake = 0;
 meter_channel_draw_amount = 0;

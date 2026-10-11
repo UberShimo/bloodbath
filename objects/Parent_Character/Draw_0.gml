@@ -24,21 +24,22 @@ if(meter_hold){
 if(draw_mini_ui && !place_meeting(x, y, Obj_Boomhand_Smoke)){ // Smoke is suppose to hide you
 	hp_bar_x = x-sprite_get_width(Spr_Mini_HP_Bar)/2;
 	meter_bar_x = x-sprite_get_width(Spr_Mini_Meter_Bar)/2;
+	mini_ui_y = y-character_height/2-40;
 	
 	// HP bar
-	draw_sprite_ext(Spr_Mini_HP_Bar, 1, hp_bar_x, y-character_height+16, HP/max_HP, 1, 0, c_white, image_alpha);
-	draw_sprite_ext(Spr_Mini_HP_Bar, 0, hp_bar_x, y-character_height+16, 1, 1, 0, c_white, image_alpha);
+	draw_sprite_ext(Spr_Mini_HP_Bar, 1, hp_bar_x, mini_ui_y+16, HP/max_HP, 1, 0, c_white, image_alpha);
+	draw_sprite_ext(Spr_Mini_HP_Bar, 0, hp_bar_x, mini_ui_y+16, 1, 1, 0, c_white, image_alpha);
 	// Meter bar
-	draw_sprite_ext(Spr_Mini_Meter_Bar, 1, meter_bar_x, y-character_height+24, meter/max_meter, 1, 0, c_white, image_alpha);
-	draw_sprite_ext(Spr_Mini_Meter_Bar, 0, meter_bar_x, y-character_height+24, 1, 1, 0, c_white, image_alpha);
+	draw_sprite_ext(Spr_Mini_Meter_Bar, 1, meter_bar_x, mini_ui_y+24, meter/max_meter, 1, 0, c_white, image_alpha);
+	draw_sprite_ext(Spr_Mini_Meter_Bar, 0, meter_bar_x, mini_ui_y+24, 1, 1, 0, c_white, image_alpha);
 	// Hearts
 	if(hearts < 6){
 		for(i = 0; i < hearts; i++){
-			draw_sprite_ext(Spr_Heart, 0, x-32+16*i, y-character_height+10, 0.3, 0.3, 0, c_white, image_alpha);
+			draw_sprite_ext(Spr_Heart, 0, x-32+16*i, mini_ui_y+10, 0.3, 0.3, 0, c_white, image_alpha);
 		}
 	}
 	else{
-		draw_sprite_ext(Spr_Heart, 0, x-32+16, y-character_height+10, 0.3, 0.3, 0, c_white, image_alpha);
+		draw_sprite_ext(Spr_Heart, 0, x-32+16, mini_ui_y+10, 0.3, 0.3, 0, c_white, image_alpha);
 		draw_set_alpha(image_alpha);
 		draw_text(x-32+24, y-character_height, " x  " + string(hearts));
 		draw_set_alpha(1);
@@ -56,13 +57,14 @@ if(action == "Meter Pull" && instance_exists(meter_pull_target)){
 if(exit_count > 0){
 	a = exit_count/exit_count_goal;
 	c = c_black;
+	draw_y = y-character_height/2+exit_text_y;
 	// Draw white outline kinda
-	draw_text_color(x+exit_text_x+1, y-character_height+exit_text_y, "EXIT", c, c, c, c, a/2);
-	draw_text_color(x+exit_text_x-1, y-character_height+exit_text_y, "EXIT", c, c, c, c, a/2);
-	draw_text_color(x+exit_text_x, y-character_height+exit_text_y+1, "EXIT", c, c, c, c, a/2);
-	draw_text_color(x+exit_text_x, y-character_height+exit_text_y-1, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x+1, draw_y, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x-1, draw_y, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x, draw_y+1, "EXIT", c, c, c, c, a/2);
+	draw_text_color(x+exit_text_x, draw_y-1, "EXIT", c, c, c, c, a/2);
 	c = c_red;
-	draw_text_color(x+exit_text_x, y-character_height+exit_text_y, "EXIT", c, c, c, c, a);
+	draw_text_color(x+exit_text_x, draw_y, "EXIT", c, c, c, c, a);
 }
 
 // DEBUG

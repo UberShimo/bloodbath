@@ -3,4 +3,3 @@ r_pressed = false;
 l_pressed = false;
 u_pressed = false;
 d_pressed = false;
-jump_pressed = false;

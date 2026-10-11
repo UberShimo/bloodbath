@@ -37,34 +37,6 @@ back_hold = false;
 change_team_pressed1 = false;
 change_team_pressed2 = false;
 show_move_list_pressed = false;
+show_controls_pressed = false;
 start_match_pressed = false;
 
-check_if_all_players_ready = function(){
-	player_count = 0;
-	
-	for(i = 0; i < global.max_players; i++){
-		if(global.picked_characters[i] != noone){
-			player_count += 1;
-		}
-	}
-	
-	if(player_count < global.min_players){
-		return false;
-	}
-	
-	// Check if all player are not on same team
-	if(global.teams_mode){
-		found_different_team = false;
-		for(i = 0; i < global.max_players; i++){
-			if(global.picked_characters[i] != noone){
-				if(i+global.team_change_value[i] != index+team_change){ // loop through other index+teamchange and compare it to your own
-					found_different_team = true;
-				}
-			}
-		}
-		if(!found_different_team){
-			return false;
-		}
-	}
-	return true;
-}

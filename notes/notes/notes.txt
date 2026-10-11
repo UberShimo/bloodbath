@@ -1,7 +1,4 @@
 TODO{
-	Se till att tutorial anpassass efter keybindings också.
-	Gör det tydligt i main menu att psace och num 0 är det man väljer med.
-	Tutorial måste snpassas efter keyboard manneeeen!!!
 	Lägg till pause i Dojo mode / dojo manager.
 	Man ska kunna ändra keybinding i character select!
 	Ändra menyer control hints så att dom byter till keyboard input emellan åt!

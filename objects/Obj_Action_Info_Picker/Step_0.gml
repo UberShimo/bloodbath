@@ -24,12 +24,12 @@ else if(d_pressed){
 	y = closest_action_info.y+64;
 }
 
-if(jump_pressed){
+if(info_toggle_pressed){
 	show_info = !show_info;
 }
 
 // Go back
-if(gamepad_button_check_pressed(controller_index, gp_face2)){
+if(back_pressed){
 	room_goto(global.character_select);
 }
 

@@ -1,3 +1,3 @@
 event_inherited();
 
-text = "Move with:";
+text = "MOVE: Stick / Dpad";

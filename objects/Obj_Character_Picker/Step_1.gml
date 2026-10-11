@@ -7,12 +7,13 @@ if(controller_index == 9){ // k1
 	d_pressed = keyboard_check_pressed(ord("S"));
 	
 	pick_pressed = keyboard_check_pressed(vk_space);
-	back_pressed = keyboard_check_pressed(vk_shift);
-	back_hold = keyboard_check(vk_shift);
+	back_pressed = keyboard_check_pressed(ord("H"));
+	back_hold = keyboard_check(ord("H"));
 	
-	change_team_pressed1 = keyboard_check_pressed(ord("E"));
-	change_team_pressed2 = keyboard_check_pressed(ord("Q"));
-	show_move_list_pressed = keyboard_check_pressed(vk_control);
+	change_team_pressed1 = keyboard_check_pressed(ord("Q"));
+	change_team_pressed2 = keyboard_check_pressed(ord("E"));
+	show_move_list_pressed = keyboard_check_pressed(vk_shift);
+	show_controls_pressed = keyboard_check_pressed(ord("J"));
 	start_match_pressed = keyboard_check_pressed(vk_enter);
 }
 else if(controller_index == 10){ // k2
@@ -22,12 +23,13 @@ else if(controller_index == 10){ // k2
 	d_pressed = keyboard_check_pressed(vk_down);
 	
 	pick_pressed = keyboard_check_pressed(vk_numpad0);
-	back_pressed = keyboard_check_pressed(vk_numpad1) || keyboard_check_pressed(vk_numpad2);
-	back_hold = keyboard_check(vk_numpad1) || keyboard_check(vk_numpad2);
+	back_pressed = keyboard_check_pressed(vk_numpad1);
+	back_hold = keyboard_check(vk_numpad1);
 	
 	change_team_pressed1 = keyboard_check_pressed(vk_numpad4);
 	change_team_pressed2 = keyboard_check_pressed(vk_numpad5);
-	show_move_list_pressed = keyboard_check_pressed(vk_shift);
+	show_move_list_pressed = keyboard_check_pressed(vk_numpad6);
+	show_controls_pressed = keyboard_check_pressed(vk_numpad2);
 	start_match_pressed = keyboard_check_pressed(vk_enter);
 }
 else{
@@ -70,5 +72,6 @@ else{
 	change_team_pressed1 = gamepad_button_check_pressed(controller_index, gp_shoulderl);
 	change_team_pressed2 = gamepad_button_check_pressed(controller_index, gp_shoulderr);
 	show_move_list_pressed = gamepad_button_check_pressed(controller_index, gp_face4);
+	show_controls_pressed = gamepad_button_check_pressed(controller_index, gp_face3);
 	start_match_pressed = gamepad_button_check_pressed(controller_index, gp_start);
 }

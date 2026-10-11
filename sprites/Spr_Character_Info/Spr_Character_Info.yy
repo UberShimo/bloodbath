@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Character Infos",
-    "path": "folders/Sprites/DOJO/Character Infos.yy",
+    "name": "DOJO",
+    "path": "folders/Sprites/DOJO.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

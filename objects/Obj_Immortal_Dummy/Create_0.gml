@@ -33,7 +33,7 @@ recovery_frames_S = generate_sprite_frames(Spr_Dojo_S_recovery);
 #endregion
 
 // Immortal Dummy stuff
-is_doing_F_loop = false;
+is_doing_combo_loop = false;
 is_jumping = false;
 is_dumbly_attacking = false;
 
@@ -76,6 +76,11 @@ action_trigger = function(){
 		sprite_index = Spr_Dojo_S_recovery;
 		image_index = 0;
 		recover_alarm = recovery_frames_S;
+		if(is_doing_combo_loop){
+			recover_alarm = 16;
+			attack.damage = 1;
+			attack.hit_stun = 60;
+		}
 	}
 	else{
 		action = noone;

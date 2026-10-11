@@ -1,0 +1,1 @@
+draw_sprite(sprite_index, image_index, x+random_range(-1, 1), y+random_range(-1, 1));

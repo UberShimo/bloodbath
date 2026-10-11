@@ -134,9 +134,16 @@ if(show_move_list_pressed && place_meeting(x, y, Parent_Character_Option) && roo
 	room_goto(option.move_list_room);
 }
 
+// Show controls
+if(show_controls_pressed){
+	global.priority_controller_index = controller_index;
+	room_goto(Standard_Controls);
+}
+
+
 #region Start the action
 if(start_match_pressed){
-	if(check_if_all_players_ready()){
+	if(global.check_if_all_players_ready()){
 		// Dojo
 		if(global.dojo_mode){
 			room_goto(Dojo_Place);

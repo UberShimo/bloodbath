@@ -93,9 +93,9 @@ ds_map_add(global.k1_bindings, "left", ord("A"));
 ds_map_add(global.k1_bindings, "right", ord("D"));
 ds_map_add(global.k1_bindings, "up", ord("W"));
 ds_map_add(global.k1_bindings, "down", ord("S"));
-ds_map_add(global.k1_bindings, "jump", vk_space);
+ds_map_add(global.k1_bindings, "jump", ord("W"));
 ds_map_add(global.k1_bindings, "dash", vk_shift);
-ds_map_add(global.k1_bindings, "meter", vk_control);
+ds_map_add(global.k1_bindings, "meter", vk_space);
 ds_map_add(global.k1_bindings, "start", vk_enter);
 ds_map_add(global.k1_bindings, "select", vk_backspace);
 ds_map_add(global.k1_bindings, "light attack", ord("H"));
@@ -108,7 +108,7 @@ ds_map_add(global.k2_bindings, "left", vk_left);
 ds_map_add(global.k2_bindings, "right", vk_right);
 ds_map_add(global.k2_bindings, "up", vk_up);
 ds_map_add(global.k2_bindings, "down", vk_down);
-ds_map_add(global.k2_bindings, "jump", vk_numpad5);
+ds_map_add(global.k2_bindings, "jump", vk_up);
 ds_map_add(global.k2_bindings, "dash", vk_numpad6);
 ds_map_add(global.k2_bindings, "meter", vk_numpad0);
 ds_map_add(global.k2_bindings, "start", vk_numpad9);
@@ -310,6 +310,38 @@ global.reset_controllers = function(){
 		global.is_k1[i] = false;
 		global.is_k2[i] = false;
 	}
+}
+
+global.check_if_all_players_ready = function(){
+	player_count = 0;
+	
+	for(i = 0; i < global.max_players; i++){
+		if(global.picked_characters[i] != noone){
+			player_count += 1;
+		}
+	}
+	
+	if(player_count < global.min_players){
+		return false;
+	}
+	
+	// Check if all player are not on same team
+	if(global.teams_mode){
+		found_different_team = false;
+		for(i = 0; i < global.max_players; i++){
+			if(global.picked_characters[i] != noone){
+				for(j = 0; j < player_count; j++){
+					if(i+global.team_change_value[i] != j+global.team_change_value[j]){ // loop through index+teamchange and compare it
+						found_different_team = true;
+					}
+				}
+			}
+		}
+		if(!found_different_team){
+			return false;
+		}
+	}
+	return true;
 }
 
 room_goto(Main_Menu);

@@ -1,5 +1,5 @@
-// Really wierd and ugly way of checking if players are ready but...
-if(Obj_Character_Picker.check_if_all_players_ready()){
+
+if(global.check_if_all_players_ready()){
 	draw_self();
 }
 // Player are not ready...

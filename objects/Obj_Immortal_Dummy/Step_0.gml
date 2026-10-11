@@ -45,6 +45,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		sprite_index = Spr_Dojo_S_startup;
 		image_index = 0;
 		action_alarm = startup_frames_S;
+		if(is_doing_combo_loop){
+			action_alarm = 4;
+		}
 	}
 	reset_buffers();
 	
@@ -96,4 +99,14 @@ if(instance_exists(Obj_Dojo_Manager)){
 // Rapier stab achievement shit
 if(rapier_1_sec_countdown > 0){
 	rapier_1_sec_countdown -= 1;
+}
+
+if(is_doing_combo_loop){
+	jump_pressed = 0;
+	if(Obj_Dojo_Manager.student.x > x+8){
+		Obj_Dojo_Manager.student.x -= 2*logic_time;
+	}
+	else if(Obj_Dojo_Manager.student.x < x-8){
+		Obj_Dojo_Manager.student.x += 2*logic_time;
+	}
 }

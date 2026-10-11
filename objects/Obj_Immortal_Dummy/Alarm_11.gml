@@ -1,15 +1,15 @@
 event_inherited();
 
-if(is_doing_F_loop){
+if(is_doing_combo_loop){
 	reset_buffers();
-	light_attack_pressed = buffer_duration;
-	meter = 10;
+	heavy_attack_pressed = buffer_duration;
+	jump_pressed = 0;
 }
 else if(is_jumping){
 	reset_buffers();
 	jump_pressed = buffer_duration;
 	jump_hold = true;
-	alarm[11] = 38;
+	alarm[11] = 120;
 }
 else if(is_dumbly_attacking){
 	reset_buffers();

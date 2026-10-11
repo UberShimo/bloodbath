@@ -1,29 +1,24 @@
 event_inherited();
 
-// Stick ball to you if holdign it
-if(is_holding_ball){
+// Special ball manipulation so it looks good when launching off ball when headbutting!
+if(is_holding_ball && action == "Headbutt"){
+	ball.x = x-12*image_xscale;
+	ball.y = y+12;
+}
+// Stick ball to you if holding it
+else if(is_holding_ball){
 	ball.x = x;
 	ball.y = y;
 	ball.h_velocity = 0;
 	ball.v_velocity = 0;
 	ball.weight = ball.original_weight;
 	ball.reset_physics_alarm = 0;
+	weight = global.heavy_weight;
 }
-	
-// Weight manipulation
-if(action == noone){
-	if(is_holding_ball){
-		weight = global.heavy_weight;
-	}
-	else{
-		weight = global.light_weight;
-	}
+else{
+	weight = global.light_weight;
 }
-// Special ball manipulation so it looks good when launching off ball when headbutting!
-else if(is_holding_ball && action == "Headbutt"){
-	ball.x = x-12*image_xscale;
-	ball.y = y+12;
-}
+
 
 // ACTION!
 // Many checks...

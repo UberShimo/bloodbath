@@ -27,4 +27,5 @@ d_held = false;
 d_hold = false;
 d_pressed = false;
 
-jump_pressed = false;
+info_toggle_pressed = false;
+back_pressed = false;

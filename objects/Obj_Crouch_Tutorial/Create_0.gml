@@ -1,3 +1,3 @@
 event_inherited();
 
-text = "Crouch with:";
+text = "CROUCH: Stick / Dpad";
