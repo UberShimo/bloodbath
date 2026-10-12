@@ -5,6 +5,7 @@ show_text = true;
 picker_spawned = false;
 
 global.reset_controllers();
+global.set_standard_controls();
 global.game_time = 1;
 
 alarm[0] = blink_timer*6; // Delay blink start since there is a blackscreen first right?

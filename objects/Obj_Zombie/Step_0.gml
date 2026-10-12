@@ -62,25 +62,7 @@ else{
 event_inherited();
 
 // ACTION!
-if((meter > 35 || (action != "Stunned" &&  meter >= 10))
-&& meter_hold && light_attack_pressed){
-	if(action == "Stunned"){
-		meter -= 35;
-	}
-	else{
-		meter -= 10;
-	}
-	
-	repeat(6){
-		y_pos = y+random_range(-character_height/2*object_scale, character_height/2*object_scale);
-		eff = spawn_effect(x, y_pos, 1, Eff_Zombie_Whirl, 1, 0.02, c_lime, 0.2, 0.5, 0, 0, 360, 16, depth+1);
-		eff.h_velocity = h_velocity*0.2;
-	}
-	h_velocity *= -1;
-	
-	reset_buffers();
-}
-else if(meter_hold && meter > 0 && medium_attack_hold && !is_curled_up && time_reset_alarm <= 0){ // Cant be done to cancel freeze frames
+if(meter_hold && meter > 0 && medium_attack_hold && !is_curled_up && time_reset_alarm <= 0){ // Cant be done to cancel freeze frames
 	reset_physics();
 	reset_buffers();
 	cancels = 0;
@@ -113,6 +95,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			global.game_time = 0.25;
 			action_alarm = startup_frames_ULTRA;
 			Obj_Match_Manager.global_time_reset_alarm = action_alarm*4;
+		}
+		else if(meter >= 15 && light_attack_pressed){
+			action = "Snatch";
+			meter -= 15;
+			
+			sprite_index = Spr_Zombie_Snatch_startup;
+			image_index = 0;
+			action_alarm = startup_frames_snatch;
 		}
 		else{
 			meter_shake = meter_shake_amount;

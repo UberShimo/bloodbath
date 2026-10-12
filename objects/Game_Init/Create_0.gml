@@ -77,7 +77,7 @@ global.zombie_tr_achievement = ini_read_real("save", "zombie TR achievement", fa
 ini_close();
 #endregion
 
-#region Input bindings
+#region Input binding maps
 global.k1_bindings = ds_map_create();
 global.k2_bindings = ds_map_create();
 global.controller_bindings[0] = ds_map_create();
@@ -88,54 +88,6 @@ global.controller_bindings[4] = ds_map_create();
 global.controller_bindings[5] = ds_map_create();
 global.controller_bindings[6] = ds_map_create();
 global.controller_bindings[7] = ds_map_create();
-
-ds_map_add(global.k1_bindings, "left", ord("A"));
-ds_map_add(global.k1_bindings, "right", ord("D"));
-ds_map_add(global.k1_bindings, "up", ord("W"));
-ds_map_add(global.k1_bindings, "down", ord("S"));
-ds_map_add(global.k1_bindings, "jump", ord("W"));
-ds_map_add(global.k1_bindings, "dash", vk_shift);
-ds_map_add(global.k1_bindings, "meter", vk_space);
-ds_map_add(global.k1_bindings, "start", vk_enter);
-ds_map_add(global.k1_bindings, "select", vk_backspace);
-ds_map_add(global.k1_bindings, "light attack", ord("H"));
-ds_map_add(global.k1_bindings, "medium attack", ord("J"));
-ds_map_add(global.k1_bindings, "heavy attack", ord("K"));
-ds_map_add(global.k1_bindings, "no cancel", ord("Q"));
-ds_map_add(global.k1_bindings, "faceback", ord("E"));
-
-ds_map_add(global.k2_bindings, "left", vk_left);
-ds_map_add(global.k2_bindings, "right", vk_right);
-ds_map_add(global.k2_bindings, "up", vk_up);
-ds_map_add(global.k2_bindings, "down", vk_down);
-ds_map_add(global.k2_bindings, "jump", vk_up);
-ds_map_add(global.k2_bindings, "dash", vk_numpad6);
-ds_map_add(global.k2_bindings, "meter", vk_numpad0);
-ds_map_add(global.k2_bindings, "start", vk_numpad9);
-ds_map_add(global.k2_bindings, "select", vk_numpad8);
-ds_map_add(global.k2_bindings, "light attack", vk_numpad1);
-ds_map_add(global.k2_bindings, "medium attack", vk_numpad2);
-ds_map_add(global.k2_bindings, "heavy attack", vk_numpad3);
-ds_map_add(global.k2_bindings, "no cancel", vk_numpad4);
-ds_map_add(global.k2_bindings, "faceback", vk_numpad7);
-
-// Controllers
-for(i = 0; i < 7; i++){
-	ds_map_add(global.controller_bindings[i], "left", gp_padl);
-	ds_map_add(global.controller_bindings[i], "right", gp_padr);
-	ds_map_add(global.controller_bindings[i], "up", gp_padu);
-	ds_map_add(global.controller_bindings[i], "down", gp_padd);
-	ds_map_add(global.controller_bindings[i], "jump", gp_face1);
-	ds_map_add(global.controller_bindings[i], "dash", gp_shoulderl);
-	ds_map_add(global.controller_bindings[i], "meter", gp_shoulderr);
-	ds_map_add(global.controller_bindings[i], "start", gp_start);
-	ds_map_add(global.controller_bindings[i], "select", gp_select);
-	ds_map_add(global.controller_bindings[i], "light attack", gp_face3);
-	ds_map_add(global.controller_bindings[i], "medium attack", gp_face4);
-	ds_map_add(global.controller_bindings[i], "heavy attack", gp_face2);
-	ds_map_add(global.controller_bindings[i], "no cancel", gp_shoulderrb);
-	ds_map_add(global.controller_bindings[i], "faceback", gp_shoulderlb);
-}
 #endregion
 
 #region settings ish
@@ -344,5 +296,109 @@ global.check_if_all_players_ready = function(){
 	}
 	return true;
 }
+
+global.set_standard_controls = function(controller_index = -1){
+	// Set all
+	if(controller_index == -1){
+		ds_map_add(global.k1_bindings, "left", ord("A"));
+		ds_map_add(global.k1_bindings, "right", ord("D"));
+		ds_map_add(global.k1_bindings, "up", ord("W"));
+		ds_map_add(global.k1_bindings, "down", ord("S"));
+		ds_map_add(global.k1_bindings, "jump", ord("W"));
+		ds_map_add(global.k1_bindings, "dash", vk_shift);
+		ds_map_add(global.k1_bindings, "meter", vk_space);
+		ds_map_add(global.k1_bindings, "start", vk_enter);
+		ds_map_add(global.k1_bindings, "select", vk_backspace);
+		ds_map_add(global.k1_bindings, "light attack", ord("H"));
+		ds_map_add(global.k1_bindings, "medium attack", ord("J"));
+		ds_map_add(global.k1_bindings, "heavy attack", ord("K"));
+		ds_map_add(global.k1_bindings, "no cancel", ord("Q"));
+		ds_map_add(global.k1_bindings, "faceback", ord("E"));
+
+		ds_map_add(global.k2_bindings, "left", vk_left);
+		ds_map_add(global.k2_bindings, "right", vk_right);
+		ds_map_add(global.k2_bindings, "up", vk_up);
+		ds_map_add(global.k2_bindings, "down", vk_down);
+		ds_map_add(global.k2_bindings, "jump", vk_up);
+		ds_map_add(global.k2_bindings, "dash", vk_numpad6);
+		ds_map_add(global.k2_bindings, "meter", vk_numpad0);
+		ds_map_add(global.k2_bindings, "start", vk_numpad9);
+		ds_map_add(global.k2_bindings, "select", vk_numpad8);
+		ds_map_add(global.k2_bindings, "light attack", vk_numpad1);
+		ds_map_add(global.k2_bindings, "medium attack", vk_numpad2);
+		ds_map_add(global.k2_bindings, "heavy attack", vk_numpad3);
+		ds_map_add(global.k2_bindings, "no cancel", vk_numpad4);
+		ds_map_add(global.k2_bindings, "faceback", vk_numpad7);
+
+		// Controllers
+		for(i = 0; i < 7; i++){
+			ds_map_add(global.controller_bindings[i], "left", gp_padl);
+			ds_map_add(global.controller_bindings[i], "right", gp_padr);
+			ds_map_add(global.controller_bindings[i], "up", gp_padu);
+			ds_map_add(global.controller_bindings[i], "down", gp_padd);
+			ds_map_add(global.controller_bindings[i], "jump", gp_face1);
+			ds_map_add(global.controller_bindings[i], "dash", gp_shoulderl);
+			ds_map_add(global.controller_bindings[i], "meter", gp_shoulderr);
+			ds_map_add(global.controller_bindings[i], "start", gp_start);
+			ds_map_add(global.controller_bindings[i], "select", gp_select);
+			ds_map_add(global.controller_bindings[i], "light attack", gp_face3);
+			ds_map_add(global.controller_bindings[i], "medium attack", gp_face4);
+			ds_map_add(global.controller_bindings[i], "heavy attack", gp_face2);
+			ds_map_add(global.controller_bindings[i], "no cancel", gp_shoulderrb);
+			ds_map_add(global.controller_bindings[i], "faceback", gp_shoulderlb);
+		}
+	}
+	else if(controller_index == 9){
+		ds_map_add(global.k1_bindings, "left", ord("A"));
+		ds_map_add(global.k1_bindings, "right", ord("D"));
+		ds_map_add(global.k1_bindings, "up", ord("W"));
+		ds_map_add(global.k1_bindings, "down", ord("S"));
+		ds_map_add(global.k1_bindings, "jump", ord("W"));
+		ds_map_add(global.k1_bindings, "dash", vk_shift);
+		ds_map_add(global.k1_bindings, "meter", vk_space);
+		ds_map_add(global.k1_bindings, "start", vk_enter);
+		ds_map_add(global.k1_bindings, "select", vk_backspace);
+		ds_map_add(global.k1_bindings, "light attack", ord("H"));
+		ds_map_add(global.k1_bindings, "medium attack", ord("J"));
+		ds_map_add(global.k1_bindings, "heavy attack", ord("K"));
+		ds_map_add(global.k1_bindings, "no cancel", ord("Q"));
+		ds_map_add(global.k1_bindings, "faceback", ord("E"));
+	}
+	else if(controller_index == 10){
+		ds_map_add(global.k2_bindings, "left", vk_left);
+		ds_map_add(global.k2_bindings, "right", vk_right);
+		ds_map_add(global.k2_bindings, "up", vk_up);
+		ds_map_add(global.k2_bindings, "down", vk_down);
+		ds_map_add(global.k2_bindings, "jump", vk_up);
+		ds_map_add(global.k2_bindings, "dash", vk_numpad6);
+		ds_map_add(global.k2_bindings, "meter", vk_numpad0);
+		ds_map_add(global.k2_bindings, "start", vk_numpad9);
+		ds_map_add(global.k2_bindings, "select", vk_numpad8);
+		ds_map_add(global.k2_bindings, "light attack", vk_numpad1);
+		ds_map_add(global.k2_bindings, "medium attack", vk_numpad2);
+		ds_map_add(global.k2_bindings, "heavy attack", vk_numpad3);
+		ds_map_add(global.k2_bindings, "no cancel", vk_numpad4);
+		ds_map_add(global.k2_bindings, "faceback", vk_numpad7);
+	}
+	else{
+		ds_map_add(global.controller_bindings[controller_index], "left", gp_padl);
+		ds_map_add(global.controller_bindings[controller_index], "right", gp_padr);
+		ds_map_add(global.controller_bindings[controller_index], "up", gp_padu);
+		ds_map_add(global.controller_bindings[controller_index], "down", gp_padd);
+		ds_map_add(global.controller_bindings[controller_index], "jump", gp_face1);
+		ds_map_add(global.controller_bindings[controller_index], "dash", gp_shoulderl);
+		ds_map_add(global.controller_bindings[controller_index], "meter", gp_shoulderr);
+		ds_map_add(global.controller_bindings[controller_index], "start", gp_start);
+		ds_map_add(global.controller_bindings[controller_index], "select", gp_select);
+		ds_map_add(global.controller_bindings[controller_index], "light attack", gp_face3);
+		ds_map_add(global.controller_bindings[controller_index], "medium attack", gp_face4);
+		ds_map_add(global.controller_bindings[controller_index], "heavy attack", gp_face2);
+		ds_map_add(global.controller_bindings[controller_index], "no cancel", gp_shoulderrb);
+		ds_map_add(global.controller_bindings[controller_index], "faceback", gp_shoulderlb);
+	}
+}
+
+// Then also set controls...
+global.set_standard_controls();
 
 room_goto(Main_Menu);

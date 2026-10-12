@@ -22,7 +22,7 @@ face = Spr_Zombie_Faces;
 #endregion
 
 #region Stats
-max_speed = 4.5;
+max_speed = 4;
 acceleration = 0.5;
 grip = global.standard_grip;
 air_control = 0.15;
@@ -30,9 +30,9 @@ dash_speed = 10;
 dash_blink = 0;
 dash_duration = 24;
 dash_grip = 0.25;
-jump_power = 11;
+jump_power = 10.5;
 mini_jump_power = 0.5; // % based
-extra_jump_strength = 0.7; // % based
+extra_jump_strength = 0.75; // % based
 extra_jumps = 1;
 extra_jumps_left = extra_jumps;
 jump_control = 1.5;
@@ -76,6 +76,8 @@ startup_frames_spit = generate_sprite_frames(Spr_Zombie_Spit_startup);
 recovery_frames_spit = generate_sprite_frames(Spr_Zombie_Spit_recovery);
 startup_frames_bite = generate_sprite_frames(Spr_Zombie_Bite_startup);
 recovery_frames_bite = generate_sprite_frames(Spr_Zombie_Bite_recovery);
+startup_frames_snatch = generate_sprite_frames(Spr_Zombie_Snatch_startup);
+recovery_frames_snatch = generate_sprite_frames(Spr_Zombie_Snatch_recovery);
 recovery_frames_curl_up = 16;
 startup_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_startup);
 recovery_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_R1_recovery);
@@ -245,6 +247,14 @@ action_trigger = function(){
 		recover_alarm = recovery_frames_bite;
 	}
 	// Meter moves
+	else if(action == "Snatch"){
+		attack = instance_create_depth(x, y, 0, Obj_Zombie_Snatch_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Zombie_Snatch_recovery;
+		image_index = 0;
+		recover_alarm = recovery_frames_snatch;
+	}
 	else if(action == "ULTRA"){
 		if(meter >= 10){
 			meter -= 10;

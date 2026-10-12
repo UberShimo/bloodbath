@@ -1,18 +1,22 @@
 // Initiate character select
 
-// Reset arrays
+// Spawn initiated pickers
 for(i = 0; i < 8; i++){
-	global.picked_characters[i] = noone;
-	global.controller_indexes[i] = -1;
-	global.is_CPU[i] = false;
+	if(global.controller_indexes[i] != -1){
+		picker = instance_create_depth(x, y, 0, Obj_Character_Picker);
+		picker.index = instance_number(Obj_Character_Picker);
+		picker.controller_index = i;
+		
+		if(picker.index == 0){ // First picker
+			global.priority_controller_index = i;
+		}
+	}
 }
 
 max_pickers = global.max_players;
 
-global.reset_controllers();
-
-// Spawn initial character picker
-if(global.priority_controller_index != -1){
+// Spawn priority inhdex picker if no picker is spawned
+if(instance_number(Obj_Character_Picker) < 1){
 	picker = instance_create_depth(x, y, 0, Obj_Character_Picker);
 	picker.index = 0;
 	picker.controller_index = global.priority_controller_index;

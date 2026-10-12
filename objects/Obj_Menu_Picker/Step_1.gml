@@ -27,3 +27,10 @@ if((!d_held && d_hold)
 
 pick_pressed = gamepad_button_check_pressed(controller_index, gp_face1)
 || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_numpad0);
+
+if(keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)){
+	controller_index = 9;
+}
+else if(keyboard_check_pressed(vk_numpad0)){
+	controller_index = 10;
+}
