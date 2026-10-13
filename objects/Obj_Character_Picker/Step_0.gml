@@ -166,6 +166,20 @@ if(start_match_pressed){
 }
 #endregion
 
+// Disconnect picker
+if(disconnect_pressed){
+	global.reset_controllers(index);
+	
+	if(controller_index == 9 && instance_exists(Obj_Picker_Creator)){
+		Obj_Picker_Creator.k1_spawned = false;
+	}
+	else if(controller_index == 10 && instance_exists(Obj_Picker_Creator)){
+		Obj_Picker_Creator.k2_spawned = false;
+	}
+	
+	instance_destroy();
+}
+
 #region Potrait stuff
 // Change portrait
 if(place_meeting(x, y, Parent_Character_Option)){

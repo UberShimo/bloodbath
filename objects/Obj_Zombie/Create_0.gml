@@ -78,7 +78,7 @@ startup_frames_bite = generate_sprite_frames(Spr_Zombie_Bite_startup);
 recovery_frames_bite = generate_sprite_frames(Spr_Zombie_Bite_recovery);
 startup_frames_snatch = generate_sprite_frames(Spr_Zombie_Snatch_startup);
 recovery_frames_snatch = generate_sprite_frames(Spr_Zombie_Snatch_recovery);
-recovery_frames_curl_up = 16;
+recovery_frames_curl_up = 8;
 startup_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_startup);
 recovery_frames_ULTRA = generate_sprite_frames(Spr_Zombie_ULTRA_R1_recovery);
 #endregion
@@ -93,6 +93,7 @@ curl_up_character_height = sprite_get_height(Spr_Zombie_Curl_Up)-8;
 curl_up_bounce = 0.99;
 curl_up_angle = 0;
 curl_up_meter_drain = max_meter/480; // Max duration 8 sec kinda
+medium_attack_released = false;
 ULTRA_r_punch = true;
 
 action_trigger = function(){

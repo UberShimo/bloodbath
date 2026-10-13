@@ -15,6 +15,7 @@ if(controller_index == 9){ // k1
 	show_move_list_pressed = keyboard_check_pressed(vk_shift);
 	show_controls_pressed = keyboard_check_pressed(ord("J"));
 	start_match_pressed = keyboard_check_pressed(vk_enter);
+	disconnect_pressed = keyboard_check_pressed(vk_backspace);
 }
 else if(controller_index == 10){ // k2
 	r_pressed = keyboard_check_pressed(vk_right);
@@ -31,6 +32,7 @@ else if(controller_index == 10){ // k2
 	show_move_list_pressed = keyboard_check_pressed(vk_numpad6);
 	show_controls_pressed = keyboard_check_pressed(vk_numpad2);
 	start_match_pressed = keyboard_check_pressed(vk_enter);
+	disconnect_pressed = keyboard_check_pressed(vk_numpad8);
 }
 else{
 	r_held = r_hold;
@@ -74,4 +76,5 @@ else{
 	show_move_list_pressed = gamepad_button_check_pressed(controller_index, gp_face4);
 	show_controls_pressed = gamepad_button_check_pressed(controller_index, gp_face3);
 	start_match_pressed = gamepad_button_check_pressed(controller_index, gp_start);
+	disconnect_pressed = gamepad_button_check_pressed(controller_index, gp_select);
 }

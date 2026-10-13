@@ -1,4 +1,4 @@
-Reallyindex = -1;
+index = -1; // More like player slot
 controller_index = -1;
 team_change = 0;
 cpu_index = -1;
@@ -40,3 +40,11 @@ show_move_list_pressed = false;
 show_controls_pressed = false;
 start_match_pressed = false;
 
+save_global_indexes = function(index){
+	global.controller_indexes[index] = controller_index;
+	global.team_change_value[index] = team_change;
+}
+
+load_global_indexes = function(index){
+	
+}

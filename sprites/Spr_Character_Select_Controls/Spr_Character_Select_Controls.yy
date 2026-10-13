@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Spr_Character_Select_Controls",
-  "bbox_bottom": 105,
+  "bbox_bottom": 125,
   "bbox_left": 10,
   "bbox_right": 244,
   "bbox_top": 13,

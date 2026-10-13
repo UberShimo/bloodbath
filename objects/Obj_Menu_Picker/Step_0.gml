@@ -26,6 +26,8 @@ else if(d_pressed){
 if(pick_pressed){
 	// Origin of sprite is upper left corner where there is no collision box
 	if(position_meeting(x+16, y+16, Parent_Menu_Option)){
+		global.reset_controllers();
+		global.set_standard_controls();
 		global.priority_controller_index = controller_index;
 		option = instance_position(x+16, y+16, Parent_Menu_Option);
 		option.gets_picked();

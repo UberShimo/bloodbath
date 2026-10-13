@@ -1,5 +1,4 @@
 TODO{
-	Alla kontroller skall ej disconecta när man kommer till character select
 	Man ska kunna ändra keybinding i character select!
 	Och online...
 	Med hjälp av AI!?
