@@ -1,6 +1,5 @@
 TODO{
-	Man ska kunna ändra keybinding i character select!
-	Och online...
+	Online...
 	Med hjälp av AI!?
 	
 	Make ITEMS mode!

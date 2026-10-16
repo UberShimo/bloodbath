@@ -10,11 +10,13 @@ exit_text_y = 2;
 exit_count = 0;
 exit_count_goal = 60;
 target_run_room = Dojo_Target_Run;
+is_changing_controls = false;
+player_preview = noone;
 
 move_distance_x = sprite_get_width(sprite_index);
 move_distance_y = sprite_get_height(sprite_index);
 
-// Init input variables
+#region input variables
 r_held = false;
 r_hold = false;
 r_pressed = false;
@@ -39,6 +41,40 @@ change_team_pressed2 = false;
 show_move_list_pressed = false;
 show_controls_pressed = false;
 start_match_pressed = false;
+change_controls_pressed = false;
+disconnect_pressed = false;
+#endregion
+
+#region Change control related
+is_setting_new_input = false;
+control_text_x = 4*image_xscale;
+control_text_x_distance = 96*image_xscale;
+control_text_spacing = 20*image_yscale;
+control_text_x_scale = 0.8;
+control_text_color = c_white;
+// 15 slots
+control_text_list = [ // [menu text, key to binding]
+	["CLOSE", ""],
+	["RESET", ""],
+	["CLEAR", ""],
+	["Left:", "left"],
+	["Right:", "right"],
+	["Up:", "up"],
+	["Down:", "down"],
+	["Jump:", "jump"],
+	["Dash:", "dash"],
+	["Charge meter:", "meter"],
+	["Light attack:", "light attack"],
+	["Medium attack:", "medium attack"],
+	["Heavy attack:", "heavy attack"],
+	// ["Start:", "start"], NO ACCESS
+	// ["Select:", "select"], NO ACCESS
+	["Prevent cancel:", "no cancel"],
+	["Face backward:", "faceback"]
+]
+control_text_index = 0;
+
+#endregion
 
 save_global_indexes = function(index){
 	global.controller_indexes[index] = controller_index;
