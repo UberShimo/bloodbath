@@ -7,7 +7,7 @@ if(is_hypermode){
 }
 
 if(action == "Dive"){
-	if(light_attack_hold || medium_attack_hold){
+	if(light_attack_hold || medium_attack_hold || heavy_attack_hold){
 		goes_through_platforms = true;
 	}
 	else{
@@ -72,6 +72,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Dive";
 			instance_create_depth(x, y, depth, Eff_Claws_Teleport);
+			h_velocity = 0;
+			v_velocity = 0;
 			weight = 0;
 			x = ring1.x;
 			y = ring1.y;
@@ -81,8 +83,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_dive;
 		}
-		else if((down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
+		else if((down_right_pressed || down_left_pressed)){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -123,6 +125,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Dive";
 			instance_create_depth(x, y, depth, Eff_Claws_Teleport);
+			h_velocity = 0;
+			v_velocity = 0;
 			weight = 0;
 			x = ring2.x;
 			y = ring2.y;
@@ -132,8 +136,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_dive;
 		}
-		else if((down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
+		else if((down_right_pressed || down_left_pressed)){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -168,7 +172,22 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(heavy_attack_pressed){
-		if(diagonal_input_hold && grounded){
+		if(diagonal_input_hold && !grounded){
+			if(right_pressed){
+				image_xscale = object_scale;
+			}
+			else{
+				image_xscale = -object_scale;
+			}
+			action = "Dive";
+			h_velocity = 0;
+			v_velocity = 0;
+			weight = 0;
+			sprite_index = Spr_Claws_Dive_startup;
+			image_index = 0;
+			action_alarm = startup_frames_forced_dive;
+		}
+		else if(diagonal_input_hold){
 			if(right_pressed){
 				image_xscale = object_scale;
 			}
@@ -187,8 +206,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_8S;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -198,6 +217,13 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			sprite_index = Spr_Claws_Backflip_startup;
 			image_index = 0;
 			action_alarm = startup_frames_backflip;
+		}
+		else if(double_down_pressed){
+			action = "Spinneroo";
+			sprite_index = Spr_Claws_Spinneroo_startup;
+			image_index = 0;
+			action_alarm = startup_frames_spinneroo;
+			multi_hit_action_index = 0;
 		}
 		else if(down_hold){
 			action = "2S";
@@ -229,7 +255,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 	doing_action_by_canceling = false;
 }
 
-// 5S movement
+// Spinneroo movement
 if(is_spinning){
 	is_collidable = false;
 	weight = 0;
@@ -247,7 +273,7 @@ if(is_spinning){
 	}
 }
 // Safety
-if(action != "5S"){
+if(action != "Spinneroo"){
 	is_spinning = false;
 }
 

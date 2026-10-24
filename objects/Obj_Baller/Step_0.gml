@@ -70,7 +70,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(light_attack_pressed){
-		if((down_forward_pressed || down_backward_pressed) && !is_holding_ball){
+		if((down_right_pressed || down_left_pressed) && !is_holding_ball){
 			// Pick up ball
 			if(place_meeting(x, y, ball)){
 				is_holding_ball = true;
@@ -113,8 +113,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(medium_attack_pressed){
-		if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -149,8 +149,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(heavy_attack_pressed){
-		if((down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
+		if((down_right_pressed || down_left_pressed)){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

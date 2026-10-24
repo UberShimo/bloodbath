@@ -40,17 +40,32 @@ if(is_controllable){
 	}
 	// Earth stance
 	else if(rng < 0.3){ // 20%
-		down_forward_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		light_attack_pressed = buffer_duration;
 	}
 	// Ocean stance
 	else if(rng < 0.5){ // 20%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Dunk
 	else if(rng < 0.6){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration;
 	}
 	

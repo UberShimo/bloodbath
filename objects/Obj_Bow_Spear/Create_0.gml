@@ -23,6 +23,7 @@ att_y_dist = 0;
 original_xscale = 1; // Simply needs to be 1... Not quite sure why
 att_original_xscale = 0;
 att_angle_diff = 0;
+pickup_radius = 48;
 hitbox_list = ds_list_create();
 
 collide = function(){

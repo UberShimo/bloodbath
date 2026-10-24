@@ -62,8 +62,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(light_attack_pressed){
-		if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -113,8 +113,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_3L;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -177,8 +177,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_spin_back;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

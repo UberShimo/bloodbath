@@ -19,11 +19,11 @@ is_controllable = false;
 is_respawning = false;
 is_CPU = false;
 exit_count = 0;
-exit_count_goal = 180;
+exit_count_goal = 120;
 player_color = c_white;
 draw_mini_ui = global.chaos_mode;
 mini_ui_y = 0;
-exit_text_x = -22;
+exit_text_x = -20;
 exit_text_y = -24;
 if(global.chaos_mode){
 	exit_text_y = -52;
@@ -68,12 +68,8 @@ rs_up = false;
 rs_down = false;
 rs_right = false;
 rs_left = false;
-down_forward_pressed = 0;
-backward_down_pressed = 0;
-half_circle_forward_pressed = 0;
-down_backward_pressed = 0;
-forward_down_pressed = 0;
-half_circle_backward_pressed = 0;
+down_right_pressed = 0;
+down_left_pressed = 0;
 double_down_pressed = 0;
 diagonal_input_hold = false;
 platdrop_pressed = false;
@@ -260,10 +256,8 @@ reset_buffers = function(){
 	medium_attack_pressed = 0;
 	dash_pressed = 0;
 	meter_pressed = 0;
-	down_forward_pressed = 0;
-	half_circle_forward_pressed = 0;
-	down_backward_pressed = 0;
-	half_circle_backward_pressed = 0;
+	down_right_pressed = 0;
+	down_left_pressed = 0;
 	double_down_pressed = 0;
 }
 
@@ -275,12 +269,13 @@ face_closest_enemy = function(){
 	if(!global.chaos_mode
 	&& !global.target_run_mode
 	&& instance_number(Parent_Character) > 1){
+		current_xscale = image_xscale;
 		
 		if(x < closest_enemy.x){
-			image_xscale = 1;
+			image_xscale = object_scale;
 		}
 		else{
-			image_xscale = -1;
+			image_xscale = -object_scale;
 		}
 	
 		if(faceback_hold){
@@ -452,8 +447,7 @@ read_input = function(){
 		select_hold =  keyboard_check(ds_map_find_value(map, "select"));
 		#endregion
 	}
-	// Controller
-	else{
+	else{ // Controller
 		#region controller input read
 		map = global.controller_bindings[controller_index];
 		
@@ -593,30 +587,12 @@ read_input = function(){
 	}
 	
 	// Special inputs
-	if(down_pressed && !down_hold && forward_pressed){
-		down_forward_pressed = buffer_duration;
+	if(down_pressed && !down_hold && right_pressed){
+		down_right_pressed = buffer_duration;
 		down_pressed = 0;
 	}
-	if(down_pressed && !down_hold && backward_pressed){
-		down_backward_pressed = buffer_duration;
-		down_pressed = 0;
-	}
-	if(forward_pressed && !forward_hold && down_pressed){
-		forward_down_pressed = buffer_duration;
-		forward_pressed = 0;
-	}
-	if(backward_pressed && !backward_hold && down_pressed){
-		backward_down_pressed = buffer_duration;
-		backward_pressed = 0;
-	}
-	if(forward_down_pressed && !down_hold && backward_pressed){
-		half_circle_backward_pressed = buffer_duration;
-		forward_down_pressed = 0;
-		down_pressed = 0;
-	}
-	if(backward_down_pressed && !down_hold && forward_pressed){
-		half_circle_forward_pressed = buffer_duration;
-		backward_down_pressed = 0;
+	if(down_pressed && !down_hold && left_pressed){
+		down_left_pressed = buffer_duration;
 		down_pressed = 0;
 	}
 	if(down_hold && (forward_hold || backward_hold)){

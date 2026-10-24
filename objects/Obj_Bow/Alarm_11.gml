@@ -18,7 +18,12 @@ if(is_controllable){
 	}
 	// Boomerang
 	else if(rng < 0.2){ // 20%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		
 		if(irandom_range(0, 1)){ // 50% angled throw
 			if(y < closest_enemy.y){

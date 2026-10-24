@@ -84,8 +84,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_aim;
 		}
-		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
-			if(right_pressed){
+		else if((down_right_pressed || down_left_pressed) && has_boomerang){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -138,8 +138,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_aim;
 		}
-		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
-			if(right_pressed){
+		else if((down_right_pressed || down_left_pressed) && has_boomerang){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -192,8 +192,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_crosspin;
 		}
-		else if((down_forward_pressed || down_backward_pressed) && has_boomerang){
-			if(right_pressed){
+		else if((down_right_pressed || down_left_pressed) && has_boomerang){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

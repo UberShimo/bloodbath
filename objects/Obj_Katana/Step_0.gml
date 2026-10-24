@@ -63,14 +63,14 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_8F;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
+		else if(down_right_pressed || down_left_pressed){
 			send_clone_backward = false;
-			action = "Send Clone";
-			action_alarm = 1;
-			
-			if(down_backward_pressed){
+			if((down_left_pressed && image_xscale > 0) || (down_right_pressed && image_xscale < 0)){
 				send_clone_backward = true;
 			}
+			
+			action = "Send Clone";
+			action_alarm = 1;
 		}
 		else if(down_hold){
 			action = "2F";
@@ -86,8 +86,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 	}
 	else if(medium_attack_pressed){
-		if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -127,8 +127,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_8S;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

@@ -420,6 +420,7 @@ else{
 	// Land
 	else{
 		if(is_unstable){
+			reset_physics();
 			action = "Unstable Landing";
 			sprite_index = land_spr;
 			recover_alarm += action_alarm+1;
@@ -541,15 +542,10 @@ light_attack_pressed--;
 medium_attack_pressed--;
 dash_pressed--;
 meter_pressed--;
-down_forward_pressed--;
-forward_down_pressed--;
-half_circle_forward_pressed--;
-down_backward_pressed--;
-backward_down_pressed--;
-half_circle_backward_pressed--;
+down_right_pressed--;
+down_left_pressed--;
 double_down_pressed--;
 #endregion
-
 
 #region universal moves V-----V
 // Meter dash

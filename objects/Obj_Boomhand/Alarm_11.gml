@@ -25,12 +25,17 @@ if(is_controllable){
 	}
 	// Punch move
 	else if(rng < 0.25){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Groundsmash
 	else if(rng < 0.35){ // 10%
-		diagonal_input_hold = true;
+		double_down_pressed = buffer_duration;
 		medium_attack_pressed = buffer_duration;
 	}
 	// Burrow

@@ -34,8 +34,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		action_alarm = startup_frames_F;
 	}
 	else if(medium_attack_pressed){
-		if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

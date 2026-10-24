@@ -74,27 +74,37 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_star_throw;
 		}
-		else if(down_forward_pressed){
+		else if(down_right_pressed){
 			action = "Circle Dash";
 			
 			h_velocity = 0;
 			v_velocity = 0;
 			weight = 0;
-			circle_dashing_backward = false;
-			
-			sprite_index = Spr_Cultist_Circledash_Forward_startup;
+			if(image_xscale > 0){
+				circle_dashing_backward = false;
+				sprite_index = Spr_Cultist_Circledash_Forward_startup;
+			}
+			else{
+				circle_dashing_backward = true;
+				sprite_index = Spr_Cultist_Circledash_Backward_startup;
+			}
 			image_index = 0;
 			action_alarm = startup_frames_circle_dash;
 		}
-		else if(down_backward_pressed){
+		else if(down_left_pressed){
 			action = "Circle Dash";
 			
 			h_velocity = 0;
 			v_velocity = 0;
 			weight = 0;
-			circle_dashing_backward = true;
-			
-			sprite_index = Spr_Cultist_Circledash_Backward_startup;
+			if(image_xscale < 0){
+				circle_dashing_backward = false;
+				sprite_index = Spr_Cultist_Circledash_Forward_startup;
+			}
+			else{
+				circle_dashing_backward = true;
+				sprite_index = Spr_Cultist_Circledash_Backward_startup;
+			}
 			image_index = 0;
 			action_alarm = startup_frames_circle_dash;
 		}
@@ -187,8 +197,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_star_throw;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

@@ -14,8 +14,6 @@ if(instance_exists(circle)){
 		dir = point_direction(x, y, circle.x, circle.y);
 		h_velocity += lengthdir_x(step, dir);
 		v_velocity += lengthdir_y(step, dir);
-		h_acc = 0;
-		v_acc = 0;
 	}
 	if(point_distance(x, y, circle.x, circle.y) < circle_trigger_distance){
 		circle.implode();

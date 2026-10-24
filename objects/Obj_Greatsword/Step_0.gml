@@ -67,15 +67,18 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_8F;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
+				h_velocity = 4;
+			}
+			else{
+				h_velocity = -4;
+			}
 			action = "Earth Start";
 			grip = 0.2;
-			h_velocity = 4*image_xscale;
-			if(down_backward_pressed){
-				h_velocity = -4*image_xscale;
-			}
 			is_parrying = true;
 			shake_amount = 2;
+			
 			sprite_index = Spr_Greatsword_Earth_startup;
 			image_index = 0;
 			action_alarm = startup_frames_earth;
@@ -114,8 +117,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_5L;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -162,8 +165,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_8S;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

@@ -11,7 +11,7 @@ for(i = 0; i < 8; i++){
 		picker.controller_index = global.controller_indexes[i];
 		
 		if(picker.index == 0){ // First picker
-			global.priority_controller_index = i;
+			global.priority_controller_index = picker.controller_index;
 		}
 	}
 }

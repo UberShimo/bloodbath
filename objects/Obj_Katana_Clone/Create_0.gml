@@ -60,10 +60,18 @@ initiate = function(initiator){
 	outline_color = initiator.outline_color;
 	image_xscale = initiator.image_xscale;
 	
+	grip = initiator.grip;
 	dash_speed = initiator.dash_speed;
 	dash_blink = initiator.dash_blink;
 	dash_duration = initiator.dash_duration;
 	dash_grip = initiator.dash_grip;
 	grip = initiator.grip;
 	weight = initiator.weight;
+	character_width = initiator.character_width;
+	character_height = initiator.character_height;
+}
+
+// Highjack function since it can make clone act wierd when Katana faces the wrong way
+face_closest_enemy = function(){
+	// Nothing
 }

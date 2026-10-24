@@ -24,7 +24,12 @@ if(is_controllable){
 			diagonal_input_hold = true;
 		}
 		else{
-			diagonal_input_hold = true;
+			if(image_xscale > 0){
+				down_right_pressed = buffer_duration;
+			}
+			else{
+				down_left_pressed = buffer_duration;
+			}
 		}
 		light_attack_pressed = buffer_duration;
 		if(irandom_range(0, 1) == 0){ // 50%
@@ -33,12 +38,22 @@ if(is_controllable){
 	}
 	// Spinhop
 	else if(rng < 0.2){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Dropkick
 	else if(rng < 0.3){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration;
 	}
 	// Headbutt

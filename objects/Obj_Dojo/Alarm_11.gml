@@ -8,10 +8,10 @@ if(is_controllable){
 	// Projectile
 	if(rng < 0.25){ // 25%
 		if(irandom_range(0, 1)){ // 50%
-			down_forward_pressed = buffer_duration;
+			down_right_pressed = buffer_duration;
 		}
 		else{
-			down_backward_pressed = buffer_duration;
+			down_left_pressed = buffer_duration;
 		}
 		medium_attack_pressed = buffer_duration;
 	}

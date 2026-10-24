@@ -27,3 +27,11 @@ if(instance_exists(attachment)){
 if(is_active){
 	image_angle = point_direction(0, 0, h_velocity, v_velocity);
 }
+
+// Pick up spear logic
+if(!is_active && point_distance(x, y, spawner.x, spawner.y) < pickup_radius){
+	spawn_effect(x, y, 1, Eff_Ring, 1, 0.1, c_lime, 0.25, 0.25, 0.2);
+	spawn_effect(spawner.x, spawner.y, 6, Eff_Spark, 1, 0.1, c_lime, 2, 3, 0);
+	spawner.meter += 25;
+	instance_destroy();
+}

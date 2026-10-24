@@ -26,10 +26,10 @@ if(is_controllable){
 		}
 		else{
 			if(irandom_range(0, 1) == 0){ // 50%
-				down_forward_pressed = buffer_duration;
+				down_right_pressed = buffer_duration;
 			}
 			else{
-				down_backward_pressed = buffer_duration;
+				down_left_pressed = buffer_duration;
 			}
 			light_attack_pressed = buffer_duration;
 		}
@@ -51,7 +51,12 @@ if(is_controllable){
 	}
 	// Blast
 	else if(rng < 0.45){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration
 	}
 	// Meter teleport

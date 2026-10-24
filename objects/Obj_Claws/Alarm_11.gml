@@ -15,12 +15,12 @@ if(is_controllable){
 	}
 	// H ring
 	else if(rng < 0.1){ // 10%
-		if(instance_exists(ring1)){
+		if(!instance_exists(ring1)){
 			if(irandom_range(0, 1) == 0){
-				down_backward_pressed = buffer_duration;
+				down_right_pressed = buffer_duration;
 			}
 			else{
-				down_forward_pressed = buffer_duration;
+				down_left_pressed = buffer_duration;
 			}
 		}
 		else{
@@ -30,12 +30,12 @@ if(is_controllable){
 	}
 	// V ring
 	else if(rng < 0.2){ // 10%
-		if(instance_exists(ring2)){
+		if(!instance_exists(ring2)){
 			if(irandom_range(0, 1) == 0){
-				down_backward_pressed = buffer_duration;
+				down_right_pressed = buffer_duration;
 			}
 			else{
-				down_forward_pressed = buffer_duration;
+				down_left_pressed = buffer_duration;
 			}
 		}
 		else{
@@ -43,14 +43,24 @@ if(is_controllable){
 		}
 		medium_attack_pressed = buffer_duration;
 	}
-	// Penguin!
+	// Penguin / Forced dive
 	else if(rng < 0.35){ // 15%
 		diagonal_input_hold = buffer_duration;
 		heavy_attack_pressed = buffer_duration;
 	}
 	// Backflip!
 	else if(rng < 0.5){ // 15%
-		down_forward_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
+		heavy_attack_pressed = buffer_duration;
+	}
+	// Spinneroo
+	else if(rng < 0.55){ // 5%
+		double_down_pressed = buffer_duration;
 		heavy_attack_pressed = buffer_duration;
 	}
 	

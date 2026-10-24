@@ -1,14 +1,11 @@
 event_inherited();
 
-damage = 4;
-hit_stun = global.light_hitstun;
+damage = 11;
+hit_stun = global.medium_hitstun;
 hit_push = 3;
-freeze_duration = 4;
+freeze_duration = global.medium_freeze_duration;
 shake_impact = global.medium_shake_impact;
-h_launch = 1;
-v_launch = -4;
+h_launch = 2;
+v_launch = 5;
 
-is_sticky = true;
-is_side_relevant = true;
-
-swing_sound = Snd_Quick_Swing;
+effect = Obj_Claws_5S_hit_eff;

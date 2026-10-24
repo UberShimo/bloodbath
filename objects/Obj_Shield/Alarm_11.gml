@@ -16,7 +16,12 @@ if(is_controllable){
 	}
 	// Pose
 	else if(rng < 0.1){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		rng = irandom_range(1, 3);
 		
 		if(rng == 1){ // 33%

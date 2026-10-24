@@ -19,22 +19,27 @@ if(is_controllable){
 	}
 	// Ball dash
 	else if(rng < 0.2){ // 10%
-		down_forward_pressed = buffer_duration;
+		down_right_pressed = buffer_duration;
 		light_attack_pressed = buffer_duration;
 	}
 	// Whip
-	else if(rng < 0.3){ // 10%
-		down_forward_pressed = buffer_duration;
+	else if(rng < 0.35){ // 15%
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
-	// Flipkick
-	else if(rng < 0.4){ // 10%
-		down_forward_pressed = buffer_duration;
-		medium_attack_pressed = buffer_duration;
-	}
-	// Headbutt
-	else if(rng < 0.5){ // 10%
-		diagonal_input_hold = true;
+	// Headbutt / Whack attack
+	else if(rng < 0.5){ // 15%
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration;
 	}
 	

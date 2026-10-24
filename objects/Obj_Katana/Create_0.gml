@@ -194,17 +194,7 @@ action_trigger = function(){
 		can_cancel = true;
 		
 		clone = instance_create_depth(x, y, 0, Obj_Katana_Clone);
-		clone.initiate(self);
-		// Give clone your stats
-		clone.player_number = player_number;
-		clone.outline_color = outline_color;
-		clone.grip = grip;
-		clone.dash_speed = dash_speed;
-		clone.dash_blink = dash_blink;
-		clone.dash_duration = dash_duration;
-		clone.weight = 0;
-		clone.character_width = character_width;
-		clone.character_height = character_height;
+		clone.initiate(self); // This copies initiator stats
 		
 		if(send_clone_backward){
 			clone.dash_backward = true;

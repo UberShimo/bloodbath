@@ -11,3 +11,5 @@ movement_input = Spr_DF;
 button_input = Spr_H;
 image = Spr_Claws_Backflip_recovery;
 frame = 1;
+
+is_cancelable = true;

@@ -6,8 +6,10 @@ startup = generate_sprite_frames(Spr_Claws_5S_startup);
 recovery = generate_sprite_frames(Spr_Claws_5S_recovery);
 air_ok = false;
 air_only = false;
-info = "Spin like a beauty!.\nCan move during spin.";
+info = "Slash and glide back.";
 movement_input = Spr_EMPTY;
 button_input = Spr_H;
 image = Spr_Claws_5S_recovery;
 frame = 0;
+
+extra_image = Spr_Claws_5S_hit_eff;

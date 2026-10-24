@@ -17,21 +17,31 @@ if(is_controllable){
 	// Send clone
 	else if(rng < 0.2){ // 20%
 		if(irandom_range(0, 1)){ // 50%
-			down_forward_pressed = buffer_duration;
+			down_right_pressed = buffer_duration;
 		}
 		else{
-			down_backward_pressed = buffer_duration;
+			down_left_pressed = buffer_duration;
 		}
 		light_attack_pressed = buffer_duration;
 	}
 	// Quickslash
 	else if(rng < 0.35){ // 15%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Sweep
 	else if(rng < 0.50){ // 15&
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration;
 	}
 	

@@ -16,17 +16,32 @@ if(is_controllable){
 	}
 	// Flight
 	else if(rng < 0.15){ // 15%
-		down_forward_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		light_attack_pressed = buffer_duration;
 	}
 	// Birdie
 	else if(rng < 0.3){ // 15%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Reap
 	else if(rng < 0.45){ // 15&
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration;
 	}
 	// Lightning

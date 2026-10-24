@@ -17,7 +17,12 @@ if(is_controllable){
 	}
 	// Mark dash
 	else if(rng < 0.1){ // 10%
-		down_forward_pressed = buffer_duration;
+		if(irandom_range(0, 1) == 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		light_attack_pressed = buffer_duration;
 	}
 	// Mark teleport
@@ -27,7 +32,12 @@ if(is_controllable){
 	}
 	// Mark dagger
 	else if(rng < 0.4){ // 20&
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Mark spin
@@ -37,7 +47,12 @@ if(is_controllable){
 	}
 	// Grenade
 	else if(rng < 0.7 && !grounded){ // 15%
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		heavy_attack_pressed = buffer_duration;
 		
 		// Hold?

@@ -122,8 +122,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_groundsmash;
 		}
-		else if(!grounded && (down_forward_pressed || down_backward_pressed)){
-			if(right_pressed){
+		else if(!grounded && (down_right_pressed || down_left_pressed)){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -151,8 +151,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			image_index = 0;
 			action_alarm = startup_frames_8L;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

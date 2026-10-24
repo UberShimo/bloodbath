@@ -82,8 +82,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			image_index = 0;
 			action_alarm = startup_frames_mark_teleport;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -136,8 +136,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 			image_index = 0;
 			action_alarm = startup_frames_mark_spin;
 		}
-		else if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		else if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{
@@ -170,8 +170,8 @@ if(action_button_pressed() && (action == noone || check_for_cancel() || action =
 		}
 	}
 	else if(heavy_attack_pressed){
-		if(down_forward_pressed || down_backward_pressed){
-			if(right_pressed){
+		if(down_right_pressed || down_left_pressed){
+			if(down_right_pressed){
 				image_xscale = object_scale;
 			}
 			else{

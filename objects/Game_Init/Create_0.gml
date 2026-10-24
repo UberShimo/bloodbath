@@ -114,8 +114,8 @@ ds_map_add(global.k2_bindings, "meter", vk_numpad0);
 ds_map_add(global.k2_bindings, "light attack", vk_numpad1);
 ds_map_add(global.k2_bindings, "medium attack", vk_numpad2);
 ds_map_add(global.k2_bindings, "heavy attack", vk_numpad3);
-ds_map_add(global.k2_bindings, "start", vk_numpad9);
-ds_map_add(global.k2_bindings, "select", vk_numpad8);
+ds_map_add(global.k2_bindings, "start", vk_enter);
+ds_map_add(global.k2_bindings, "select", vk_backspace);
 ds_map_add(global.k2_bindings, "no cancel", vk_numpad4);
 ds_map_add(global.k2_bindings, "faceback", vk_numpad7);
 // Controllers
@@ -370,8 +370,6 @@ global.set_standard_controls = function(index = -1){
 		ds_map_replace(global.k1_bindings, "light attack", ord("H"));
 		ds_map_replace(global.k1_bindings, "medium attack", ord("J"));
 		ds_map_replace(global.k1_bindings, "heavy attack", ord("K"));
-		ds_map_replace(global.k1_bindings, "start", vk_enter);
-		ds_map_replace(global.k1_bindings, "select", vk_backspace);
 		ds_map_replace(global.k1_bindings, "no cancel", ord("Q"));
 		ds_map_replace(global.k1_bindings, "faceback", ord("E"));
 
@@ -385,8 +383,6 @@ global.set_standard_controls = function(index = -1){
 		ds_map_replace(global.k2_bindings, "light attack", vk_numpad1);
 		ds_map_replace(global.k2_bindings, "medium attack", vk_numpad2);
 		ds_map_replace(global.k2_bindings, "heavy attack", vk_numpad3);
-		ds_map_replace(global.k2_bindings, "start", vk_numpad9);
-		ds_map_replace(global.k2_bindings, "select", vk_numpad8);
 		ds_map_replace(global.k2_bindings, "no cancel", vk_numpad4);
 		ds_map_replace(global.k2_bindings, "faceback", vk_numpad7);
 
@@ -402,8 +398,6 @@ global.set_standard_controls = function(index = -1){
 			ds_map_replace(global.controller_bindings[i], "light attack", gp_face3);
 			ds_map_replace(global.controller_bindings[i], "medium attack", gp_face4);
 			ds_map_replace(global.controller_bindings[i], "heavy attack", gp_face2);
-			ds_map_replace(global.controller_bindings[i], "start", gp_start);
-			ds_map_replace(global.controller_bindings[i], "select", gp_select);
 			ds_map_replace(global.controller_bindings[i], "no cancel", gp_shoulderrb);
 			ds_map_replace(global.controller_bindings[i], "faceback", gp_shoulderlb);
 		}
@@ -419,8 +413,6 @@ global.set_standard_controls = function(index = -1){
 		ds_map_replace(global.k1_bindings, "light attack", ord("H"));
 		ds_map_replace(global.k1_bindings, "medium attack", ord("J"));
 		ds_map_replace(global.k1_bindings, "heavy attack", ord("K"));
-		ds_map_replace(global.k1_bindings, "start", vk_enter);
-		ds_map_replace(global.k1_bindings, "select", vk_backspace);
 		ds_map_replace(global.k1_bindings, "no cancel", ord("Q"));
 		ds_map_replace(global.k1_bindings, "faceback", ord("E"));
 	}
@@ -435,8 +427,6 @@ global.set_standard_controls = function(index = -1){
 		ds_map_replace(global.k2_bindings, "light attack", vk_numpad1);
 		ds_map_replace(global.k2_bindings, "medium attack", vk_numpad2);
 		ds_map_replace(global.k2_bindings, "heavy attack", vk_numpad3);
-		ds_map_replace(global.k2_bindings, "start", vk_numpad9);
-		ds_map_replace(global.k2_bindings, "select", vk_numpad8);
 		ds_map_replace(global.k2_bindings, "no cancel", vk_numpad4);
 		ds_map_replace(global.k2_bindings, "faceback", vk_numpad7);
 	}
@@ -451,8 +441,6 @@ global.set_standard_controls = function(index = -1){
 		ds_map_replace(global.controller_bindings[index], "light attack", gp_face3);
 		ds_map_replace(global.controller_bindings[index], "medium attack", gp_face4);
 		ds_map_replace(global.controller_bindings[index], "heavy attack", gp_face2);
-		ds_map_replace(global.controller_bindings[index], "start", gp_start);
-		ds_map_replace(global.controller_bindings[index], "select", gp_select);
 		ds_map_replace(global.controller_bindings[index], "no cancel", gp_shoulderrb);
 		ds_map_replace(global.controller_bindings[index], "faceback", gp_shoulderlb);
 	}
@@ -470,8 +458,6 @@ global.clear_controls = function(index = -1){
 		ds_map_replace(global.k1_bindings, "light attack", -1);
 		ds_map_replace(global.k1_bindings, "medium attack", -1);
 		ds_map_replace(global.k1_bindings, "heavy attack", -1);
-		ds_map_replace(global.k1_bindings, "start", -1);
-		ds_map_replace(global.k1_bindings, "select", -1);
 		ds_map_replace(global.k1_bindings, "no cancel", -1);
 		ds_map_replace(global.k1_bindings, "faceback", -1);
 	}
@@ -486,8 +472,6 @@ global.clear_controls = function(index = -1){
 		ds_map_replace(global.k2_bindings, "light attack", -1);
 		ds_map_replace(global.k2_bindings, "medium attack", -1);
 		ds_map_replace(global.k2_bindings, "heavy attack", -1);
-		ds_map_replace(global.k2_bindings, "start", -1);
-		ds_map_replace(global.k2_bindings, "select", -1);
 		ds_map_replace(global.k2_bindings, "no cancel", -1);
 		ds_map_replace(global.k2_bindings, "faceback", -1);
 	}
@@ -502,8 +486,6 @@ global.clear_controls = function(index = -1){
 		ds_map_replace(global.controller_bindings[index], "light attack", -1);
 		ds_map_replace(global.controller_bindings[index], "medium attack", -1);
 		ds_map_replace(global.controller_bindings[index], "heavy attack", -1);
-		ds_map_replace(global.controller_bindings[index], "start", -1);
-		ds_map_replace(global.controller_bindings[index], "select", -1);
 		ds_map_replace(global.controller_bindings[index], "no cancel", -1);
 		ds_map_replace(global.controller_bindings[index], "faceback", -1);
 	}

@@ -234,7 +234,7 @@ action_trigger = function(){
 		action = "Surf";
 		
 		if(grounded){
-			h_velocity += 8*image_xscale;
+			h_velocity += 9*image_xscale;
 		}
 		grip = original_grip/2;
 		// Regain cancels baby!

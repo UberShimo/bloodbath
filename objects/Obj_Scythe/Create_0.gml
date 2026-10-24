@@ -107,7 +107,17 @@ action_trigger = function(){
 		attack = instance_create_depth(x, y, 0, Obj_Scythe_2F_hitbox);
 		attack.initiate(self);
 		
-		h_velocity += 7*image_xscale;
+		h_velocity += 3*image_xscale;
+		
+		sprite_index = Spr_Scythe_2F_recovery;
+		image_index = 0;
+		recover_alarm = recovery_frames_2F;
+	}
+	else if(action == "3F"){
+		attack = instance_create_depth(x, y, 0, Obj_Scythe_2F_hitbox);
+		attack.initiate(self);
+		
+		h_velocity = 8*image_xscale;
 		
 		sprite_index = Spr_Scythe_2F_recovery;
 		image_index = 0;

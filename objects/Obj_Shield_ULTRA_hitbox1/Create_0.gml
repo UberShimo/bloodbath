@@ -1,11 +1,11 @@
 event_inherited();
 
 damage = 0;
-hit_stun = 24;
+hit_stun = 48;
 hit_push = 0;
 freeze_duration = 24;
 extra_freeze_duration = 24;
-shake_impact = global.heavy_shake_impact;
+shake_impact = global.light_shake_impact;
 h_launch = 0;
 v_launch = 0;
 
@@ -42,7 +42,7 @@ extra_hit_logic = function(target){
 	spawner.action = "ULTRA Hit";
 	spawner.sprite_index = Spr_Shield_ULTRA_hit;
 	spawner.image_index = 0;
-	spawner.action_alarm = 24;
+	spawner.action_alarm = 40;
 	spawner.recover_alarm = spawner.recovery_frames_ULTRA_hit;
 	spawner.shake_amount = 8;
 }

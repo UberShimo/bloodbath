@@ -17,7 +17,12 @@ if(is_controllable){
 	// Lunge
 	else if(rng < 0.25){ // 25%
 		rng = irandom_range(0, 2);
-		down_forward_pressed = buffer_duration;
+		if(image_xscale > 0){
+			down_right_pressed = buffer_duration;
+		}
+		else{
+			down_left_pressed = buffer_duration;
+		}
 		if(rng == 0){ // 33%
 			light_attack_pressed = buffer_duration;
 		}
@@ -35,7 +40,7 @@ if(is_controllable){
 	}
 	// Gooch impaler
 	else if(rng < 0.40){ // 5%
-		down_forward_pressed = buffer_duration;
+		double_down_pressed = buffer_duration;
 		medium_attack_pressed = buffer_duration;
 	}
 	// Back spin

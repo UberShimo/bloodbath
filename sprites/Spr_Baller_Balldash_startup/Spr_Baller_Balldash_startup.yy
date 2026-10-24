@@ -14,6 +14,8 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b77d83d4-f01a-4c94-82ff-8a0efc38694f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"94bdf81a-d962-43ff-b34d-a243301c8232",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3fa803c2-f63f-46d7-a3cb-8850163e2d3d",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -45,7 +47,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +59,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b77d83d4-f01a-4c94-82ff-8a0efc38694f","path":"sprites/Spr_Baller_Balldash_startup/Spr_Baller_Balldash_startup.yy",},},},"Disabled":false,"id":"8d5ab677-b692-4e9e-94f4-2d88e8eaefdf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"94bdf81a-d962-43ff-b34d-a243301c8232","path":"sprites/Spr_Baller_Balldash_startup/Spr_Baller_Balldash_startup.yy",},},},"Disabled":false,"id":"ac2fbb6b-6010-4b28-b14a-9b1e4bcbc06c","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3fa803c2-f63f-46d7-a3cb-8850163e2d3d","path":"sprites/Spr_Baller_Balldash_startup/Spr_Baller_Balldash_startup.yy",},},},"Disabled":false,"id":"af769952-38dd-4101-8ced-4400dcef2283","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

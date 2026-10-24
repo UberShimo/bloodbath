@@ -67,11 +67,14 @@ recovery_frames_8S = generate_sprite_frames(Spr_Claws_8S_recovery);
 startup_frames_skyring = generate_sprite_frames(Spr_Claws_Skyring_startup);
 recovery_frames_skyring = generate_sprite_frames(Spr_Claws_Skyring_recovery);
 startup_frames_dive = generate_sprite_frames(Spr_Claws_Dive_startup);
+startup_frames_forced_dive = generate_sprite_frames(Spr_Claws_Dive_startup)*2;
 recovery_frames_dive = generate_sprite_frames(Spr_Claws_Dive_recovery);
 startup_frames_penguin = generate_sprite_frames(Spr_Claws_Penguin_startup);
 recovery_frames_penguin = generate_sprite_frames(Spr_Claws_Penguin_recovery);
 startup_frames_backflip = generate_sprite_frames(Spr_Claws_Backflip_startup);
 recovery_frames_backflip = generate_sprite_frames(Spr_Claws_Backflip_recovery);
+startup_frames_spinneroo = generate_sprite_frames(Spr_Claws_Spinneroo_startup);
+recovery_frames_spinneroo = generate_sprite_frames(Spr_Claws_Spinneroo_recovery);
 startup_frames_spikerise = generate_sprite_frames(Spr_Claws_Spikerise_startup);
 recovery_frames_spikerise = generate_sprite_frames(Spr_Claws_Spikerise_recovery);
 startup_frames_rewind = generate_sprite_frames(Spr_Claws_Teleport_startup);
@@ -179,31 +182,14 @@ action_trigger = function(){
 		recover_alarm = recovery_frames_2S;
 	}
 	else if(action == "5S"){
-		if(multi_hit_action_index == 0){
-			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
-			attack.initiate(self);
-			
-			is_spinning = true;
-			
-			sprite_index = Spr_Claws_5S_recovery;
-			image_index = 0;
-			recover_alarm = recovery_frames_5S;
-			action_alarm = 9;
-			multi_hit_action_index += 1;
-		}
-		else if(multi_hit_action_index < 4){
-			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
-			attack.initiate(self);
+		h_velocity = -6*image_xscale;
 		
-			action_alarm = 9;
-			multi_hit_action_index += 1;
-		}
-		else{
-			attack = instance_create_depth(x, y, 0, Obj_Claws_5S_finish_hitbox);
-			attack.initiate(self);
-			reset_physics();
-			is_spinning = false;
-		}
+		attack = instance_create_depth(x, y, 0, Obj_Claws_5S_hitbox);
+		attack.initiate(self);
+		
+		sprite_index = Spr_Claws_5S_recovery;
+		image_index = 0;
+		recover_alarm = recovery_frames_5S;
 	}
 	// Special moves
 	else if(action == "H Skyring"){
@@ -268,10 +254,38 @@ action_trigger = function(){
 	else if(action == "Backflip"){
 		h_velocity = -5*image_xscale;
 		v_velocity = -9;
+		can_cancel = true;
 		
 		sprite_index = Spr_Claws_Backflip_recovery;
 		image_index = 0;
 		recover_alarm = recovery_frames_backflip;
+	}
+	else if(action == "Spinneroo"){
+		if(multi_hit_action_index == 0){
+			attack = instance_create_depth(x, y, 0, Obj_Claws_Spinneroo_hitbox);
+			attack.initiate(self);
+			
+			is_spinning = true;
+			
+			sprite_index = Spr_Claws_Spinneroo_recovery;
+			image_index = 0;
+			recover_alarm = recovery_frames_spinneroo;
+			action_alarm = 9;
+			multi_hit_action_index += 1;
+		}
+		else if(multi_hit_action_index < 4){
+			attack = instance_create_depth(x, y, 0, Obj_Claws_Spinneroo_hitbox);
+			attack.initiate(self);
+		
+			action_alarm = 9;
+			multi_hit_action_index += 1;
+		}
+		else{
+			attack = instance_create_depth(x, y, 0, Obj_Claws_Spinneroo_finish_hitbox);
+			attack.initiate(self);
+			reset_physics();
+			is_spinning = false;
+		}
 	}
 	// Meter moves
 	else if(action == "Spikerise"){
