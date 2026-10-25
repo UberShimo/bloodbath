@@ -47,8 +47,10 @@ down_hold = false;
 up_hold = false;
 forward_pressed = 0;
 backward_pressed = 0;
-right_pressed = 0; // Works very special. Also works as "hold"
-left_pressed = 0; // Works very special. Also works as "hold"
+right_pressed = 0;
+left_pressed = 0;
+right_hold = false;
+left_hold = false;
 down_pressed = 0;
 jump_pressed = 0;
 jump_hold = false;
@@ -370,6 +372,22 @@ read_input = function(){
 				left_pressed = buffer_duration;
 				right_pressed = 0;
 			}
+			
+			// Right hold
+			if(keyboard_check(ds_map_find_value(map, "right"))){
+				right_hold = true;
+			}
+			else{
+				right_hold = false;
+			}
+		
+			// Left hold
+			if(keyboard_check(ds_map_find_value(map, "left"))){
+				left_hold = true;
+			}
+			else{
+				left_hold = false;
+			}
 		
 			// Down
 			down_hold = keyboard_check(ds_map_find_value(map, "down"));
@@ -485,6 +503,22 @@ read_input = function(){
 			if(gamepad_button_check(controller_index, ds_map_find_value(map, "left")) || gamepad_axis_value(controller_index, gp_axislh) < -0.5){
 				left_pressed = buffer_duration;
 				right_pressed = 0;
+			}
+			
+			// Right hold
+			if(gamepad_button_check(controller_index, ds_map_find_value(map, "right")) || gamepad_axis_value(controller_index, gp_axislh) > 0.5){
+				right_hold = true;
+			}
+			else{
+				right_hold = false;
+			}
+		
+			// Left hold
+			if(gamepad_button_check(controller_index, ds_map_find_value(map, "left")) || gamepad_axis_value(controller_index, gp_axislh) < -0.5){
+				left_hold = true;
+			}
+			else{
+				left_hold = false;
 			}
 		
 			// Down

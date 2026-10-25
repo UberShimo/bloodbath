@@ -550,14 +550,14 @@ double_down_pressed--;
 #region universal moves V-----V
 // Meter dash
 if(meter_hold && dash_pressed > 0
-&& (right_pressed || left_pressed)){
+&& (right_hold || left_hold)){
 	if(meter >= 50){
 		reset_buffers();
 		meter -= 50;
 		cancels = 0;
 	
 		is_dashing_backward = false;
-		if((left_pressed && image_xscale > 0) || (right_pressed && image_xscale < 0)){
+		if((left_hold && image_xscale > 0) || (right_hold && image_xscale < 0)){
 			is_dashing_backward = true;
 		}
 		
@@ -616,7 +616,7 @@ else if(meter_hold && dash_pressed > 0 && (action == noone || check_for_cancel()
 }
 // Dash
 // Awful amount of checks just to be able to pay cancels when dashing in air
-else if(dash_pressed > 0 && !platdrop_hold && (left_pressed || right_pressed) && (
+else if(dash_pressed > 0 && !platdrop_hold && (left_hold || right_hold) && (
 (action == noone && grounded) ||
 (action == "ULTRA" && action_alarm > 0) ||
 (action == noone && !grounded && cancels > 0) ||
@@ -631,7 +631,7 @@ check_for_cancel()
 	}
 	
 	is_dashing_backward = false;
-	if((left_pressed && image_xscale > 0) || (right_pressed && image_xscale < 0)){
+	if((left_hold && image_xscale > 0) || (right_hold && image_xscale < 0)){
 		is_dashing_backward = true;
 	}
 	
