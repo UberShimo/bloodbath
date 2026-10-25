@@ -14,7 +14,6 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"646a8257-9d8b-49de-b279-b8fa48016984",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"99d1e611-c989-40d0-b224-a3c82572d835",},
   ],
   "gridX": 32,
   "gridY": 32,
@@ -45,7 +44,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 1.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,7 +56,6 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"646a8257-9d8b-49de-b279-b8fa48016984","path":"sprites/Spr_Greatsword_Earth_F_startup/Spr_Greatsword_Earth_F_startup.yy",},},},"Disabled":false,"id":"3aebf533-a165-4d43-8339-cdf9d7459d5c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"99d1e611-c989-40d0-b224-a3c82572d835","path":"sprites/Spr_Greatsword_Earth_F_startup/Spr_Greatsword_Earth_F_startup.yy",},},},"Disabled":false,"id":"a39f3d35-c05f-44ac-8562-a90efb263041","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -20,6 +20,12 @@ if(is_controllable){
 	}
 	// Shockwave punch
 	else if(rng < 0.15){ // 5%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		light_attack_pressed = buffer_duration;
 	}
@@ -40,6 +46,12 @@ if(is_controllable){
 	}
 	// Burrow
 	else if(rng < 0.45){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}

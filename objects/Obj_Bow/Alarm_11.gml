@@ -50,6 +50,12 @@ if(is_controllable){
 	}
 	// Shoot arrow
 	else if(rng < 0.4){ // 20%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		if(irandom_range(1, 3) < 3){ // 66%
 			light_attack_pressed = buffer_duration;
@@ -65,6 +71,12 @@ if(is_controllable){
 	}
 	// Crosspin
 	else if(rng < 0.5){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}

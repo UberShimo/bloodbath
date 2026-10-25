@@ -35,6 +35,12 @@ if(is_controllable){
 	}
 	// Toe pick
 	else if(rng < 0.35){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		medium_attack_pressed = buffer_duration;
 	}
@@ -45,6 +51,12 @@ if(is_controllable){
 	}
 	// Back spin
 	else if(rng < 0.55 && !grounded){ // 15%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}

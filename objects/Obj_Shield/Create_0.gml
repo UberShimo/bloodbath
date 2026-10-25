@@ -209,6 +209,7 @@ action_trigger = function(){
 	else if(action == "Cancel Trick"){
 		pose = instance_create_depth(x, y, 0, Obj_Shield_Cancel_Pose);
 		pose.initiate(self);
+		goes_through_platforms = false;
 		
 		sprite_index = Spr_Shield_Cancel_Trick_recovery;
 		image_index = 0;
@@ -217,6 +218,7 @@ action_trigger = function(){
 	else if(action == "Projectile Trick"){
 		pose = instance_create_depth(x, y, 0, Obj_Shield_Projectile_Pose);
 		pose.initiate(self);
+		goes_through_platforms = false;
 		
 		sprite_index = Spr_Shield_Projectile_Trick_recovery;
 		image_index = 0;
@@ -225,6 +227,7 @@ action_trigger = function(){
 	else if(action == "Unstoppable Trick"){
 		pose = instance_create_depth(x, y, 0, Obj_Shield_Unstoppable_Pose);
 		pose.initiate(self);
+		goes_through_platforms = false;
 		
 		sprite_index = Spr_Shield_Unstoppable_Trick_recovery;
 		image_index = 0;

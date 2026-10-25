@@ -24,6 +24,12 @@ if(is_controllable){
 			}
 		}
 		else{
+			if(image_xscale > 0){
+				right_pressed = buffer_duration;
+			}
+			else{
+				left_pressed = buffer_duration;
+			}
 			diagonal_input_hold = true;
 		}
 		light_attack_pressed = buffer_duration;
@@ -39,12 +45,24 @@ if(is_controllable){
 			}
 		}
 		else{
+			if(image_xscale > 0){
+				right_pressed = buffer_duration;
+			}
+			else{
+				left_pressed = buffer_duration;
+			}
 			diagonal_input_hold = true;
 		}
 		medium_attack_pressed = buffer_duration;
 	}
 	// Penguin / Forced dive
 	else if(rng < 0.35){ // 15%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = buffer_duration;
 		heavy_attack_pressed = buffer_duration;
 	}

@@ -15,6 +15,12 @@ if(is_controllable){
 	}
 	// Stomp
 	else if(rng == 0.1){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = buffer_duration;
 		
 		rng = irandom_range(1, 3);

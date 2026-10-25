@@ -14,8 +14,19 @@ if(is_controllable){
 			medium_attack_pressed = buffer_duration;
 		}
 	}
+	// Glide
+	else if(rng < 0.05){ // 5%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
+		diagonal_input_hold = true;
+		light_attack_pressed = buffer_duration;
+	}
 	// Flight
-	else if(rng < 0.15){ // 15%
+	else if(rng < 0.15){ // 10%
 		if(irandom_range(0, 1) == 0){
 			down_right_pressed = buffer_duration;
 		}

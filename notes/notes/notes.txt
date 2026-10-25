@@ -177,7 +177,7 @@ Rapier{
 }
 
 Shield{
-	Shield CPU wont pop his poses. Cant make him manually dash for some fucking reason... Forward input gets eliminatied before dash check somehow?
+	
 }
 
 CHRISTIAN{
@@ -189,11 +189,11 @@ Black steel Greathammer. Armored skirt. Bright round helmet with red ponytail RE
 	
 	5S: Slam hammer down. Can be canceled into itself. Costs a cancel obviously...
 	
-	vvF: REV your hammer making your hammer moves faster. Rev dissapears over time.
+	vvF: REV your hammer making your next hammer move faster.
 	v>F: Boost forward. Spend REV. More REV = more boost.
 	
 	RB+X: Gain full REV!
-	RB+Y: 
+	RB+Y: Gain a decaying shield.
 }
 
 

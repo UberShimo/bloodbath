@@ -5,6 +5,7 @@ pose = Spr_Shield_Cancel_Trick_Pose;
 
 activate = function(){
 	spawner.cancels = spawner.max_cancels;
+	spawner.meter += 5;
 	effect = instance_create_depth(spawner.x, spawner.y, 1, Eff_Cancel);
 	effect.initiate(spawner);
 	effect.image_angle = spawner.image_angle;

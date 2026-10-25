@@ -1,6 +1,6 @@
 event_inherited();
 
-info = "Has a slippy dash.\nSuffers HP to perform great moves!\nBite opponent to get some back...";
+info = "Has a slippy dash.\nSuffers HP to perform great moves!\nBite opponent to get some back.\nCan barely crouch...";
 preview1 = Spr_Zombie_Stand;
 preview2 = Spr_Zombie_Pose1;
 preview3 = Spr_Zombie_Pose2;

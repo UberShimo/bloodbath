@@ -103,6 +103,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Cancel Trick";
 			is_unstable = true;
+			goes_through_platforms = true;
 			
 			h_velocity = 3*image_xscale;
 			v_velocity = -trick_jump_power;
@@ -154,6 +155,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Projectile Trick";
 			is_unstable = true;
+			goes_through_platforms = true;
 			
 			h_velocity = 3*image_xscale;
 			v_velocity = -trick_jump_power;
@@ -209,6 +211,7 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			}
 			action = "Unstoppable Trick";
 			is_unstable = true;
+			goes_through_platforms = true;
 			
 			h_velocity = 3*image_xscale;
 			v_velocity = -trick_jump_power;

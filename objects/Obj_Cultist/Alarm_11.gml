@@ -36,6 +36,12 @@ if(is_controllable){
 	}
 	// Star
 	else if(rng < 0.35){ // 20%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		
 		rng = irandom_range(0, 2)

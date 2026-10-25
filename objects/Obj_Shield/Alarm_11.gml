@@ -4,7 +4,7 @@ if(is_controllable){
 	// Special moves
 	rng = random_range(0, 1);
 
-	// Meter clone
+	// Meter moves
 	if(meter >= 20 && irandom_range(1, 8) == 1){ // 12.5%
 		meter_hold = true;
 		if(irandom_range(0, 1)){ // 50%
@@ -15,7 +15,7 @@ if(is_controllable){
 		}
 	}
 	// Pose
-	else if(rng < 0.1){ // 10%
+	else if(rng < 0.15){ // 15%
 		if(irandom_range(0, 1) == 0){
 			down_right_pressed = buffer_duration;
 		}
@@ -35,12 +35,35 @@ if(is_controllable){
 		}
 	}
 	// Surf
-	else if(rng < 0.25){ // 15%
+	else if(rng < 0.25){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		light_attack_pressed = buffer_duration;
 	}
+	// Ice
+	else if(rng < 0.35){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
+		diagonal_input_hold = true;
+		medium_attack_pressed = buffer_duration;
+	}
 	// Bash
-	else if(rng < 0.40){ // 15&
+	else if(rng < 0.50){ // 15&
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}

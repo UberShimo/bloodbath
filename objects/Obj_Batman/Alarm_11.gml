@@ -21,6 +21,12 @@ if(is_controllable){
 	// Pitch ball
 	else if(rng < 0.1){ // 10%
 		if(irandom_range(0, 1)){ // 50%
+			if(image_xscale > 0){
+				right_pressed = buffer_duration;
+			}
+			else{
+				left_pressed = buffer_duration;
+			}
 			diagonal_input_hold = true;
 		}
 		else{
@@ -58,6 +64,12 @@ if(is_controllable){
 	}
 	// Headbutt
 	else if(rng < 0.4){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}

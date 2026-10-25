@@ -154,7 +154,6 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 		}
 		else{
 			action = "5S";
-			can_cancel = true;
 			sprite_index = Spr_Katana_5S_startup;
 			image_index = 0;
 			action_alarm = startup_frames_5S;

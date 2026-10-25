@@ -21,11 +21,23 @@ if(is_controllable){
 	}
 	// Faceplant
 	else if(rng < 0.15){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		medium_attack_pressed = buffer_duration;
 	}
 	// Arm rip
 	else if(rng < 0.25){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		heavy_attack_pressed = buffer_duration;
 	}

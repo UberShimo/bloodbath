@@ -27,11 +27,17 @@ if(is_controllable){
 	}
 	// Mark teleport
 	else if(rng < 0.2){ // 10%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		light_attack_pressed = buffer_duration;
 	}
 	// Mark dagger
-	else if(rng < 0.4){ // 20&
+	else if(rng < 0.35){ // 15&
 		if(image_xscale > 0){
 			down_right_pressed = buffer_duration;
 		}
@@ -41,12 +47,18 @@ if(is_controllable){
 		medium_attack_pressed = buffer_duration;
 	}
 	// Mark spin
-	else if(rng < 0.55 && !grounded){ // 15%
+	else if(rng < 0.50 && !grounded){ // 15%
+		if(image_xscale > 0){
+			right_pressed = buffer_duration;
+		}
+		else{
+			left_pressed = buffer_duration;
+		}
 		diagonal_input_hold = true;
 		medium_attack_pressed = buffer_duration;
 	}
 	// Grenade
-	else if(rng < 0.7 && !grounded){ // 15%
+	else if(rng < 0.65 && !grounded){ // 15%
 		if(image_xscale > 0){
 			down_right_pressed = buffer_duration;
 		}

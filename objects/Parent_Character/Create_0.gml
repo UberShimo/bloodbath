@@ -315,6 +315,10 @@ read_input = function(){
 	if(controller_index < 0){ // No CPUs in this code block!
 		exit;
 	}
+	// Held variables
+	forward_held = forward_hold;
+	backward_held = backward_hold;
+	down_held = down_hold;
 	
 	if(controller_index >= 9){ // keyboard
 		#region keyboard input read
@@ -328,14 +332,12 @@ read_input = function(){
 		if(is_controllable){
 			// Facing right
 			if(image_xscale > 0){
-				forward_held = forward_hold;
 				forward_hold = keyboard_check(ds_map_find_value(map, "right"));
 		
 				if(!forward_held && forward_hold){
 					forward_pressed = buffer_duration;
 				}
 		
-				backward_held = backward_hold;
 				backward_hold = keyboard_check(ds_map_find_value(map, "left"));
 		
 				if(!backward_held && backward_hold){
@@ -344,14 +346,12 @@ read_input = function(){
 			}
 			// Facing left
 			else{
-				forward_held = forward_hold;
 				forward_hold = keyboard_check(ds_map_find_value(map, "left"));
 		
 				if(!forward_held && forward_hold){
 					forward_pressed = buffer_duration;
 				}
 		
-				backward_held = backward_hold;
 				backward_hold = keyboard_check(ds_map_find_value(map, "right"));
 		
 				if(!backward_held && backward_hold){
@@ -372,17 +372,7 @@ read_input = function(){
 			}
 		
 			// Down
-			down_held = down_hold;
 			down_hold = keyboard_check(ds_map_find_value(map, "down"));
-	
-			// Double down
-			if(down_pressed > 0 && !down_held && down_hold){
-				double_down_pressed = buffer_duration;
-			}
-		
-			if(!down_held && down_hold){
-				down_pressed = buffer_duration;
-			}
 	
 			// Up hold
 			up_hold = keyboard_check(ds_map_find_value(map, "up"));
@@ -454,7 +444,6 @@ read_input = function(){
 		if(is_controllable){
 			// Facing right
 			if(image_xscale > 0){
-				forward_held = forward_hold;
 				forward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "right"))
 				|| gamepad_axis_value(controller_index, gp_axislh) > 0.5;
 		
@@ -462,7 +451,6 @@ read_input = function(){
 					forward_pressed = buffer_duration;
 				}
 		
-				backward_held = backward_hold;
 				backward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "left"))
 				|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
 		
@@ -472,7 +460,6 @@ read_input = function(){
 			}
 			// Facing left
 			else{
-				forward_held = forward_hold;
 				forward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "left"))
 				|| gamepad_axis_value(controller_index, gp_axislh) < -0.5;
 		
@@ -480,7 +467,6 @@ read_input = function(){
 					forward_pressed = buffer_duration;
 				}
 		
-				backward_held = backward_hold;
 				backward_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "right"))
 				|| gamepad_axis_value(controller_index, gp_axislh) > 0.5;
 		
@@ -502,18 +488,8 @@ read_input = function(){
 			}
 		
 			// Down
-			down_held = down_hold;
 			down_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "down"))
 			|| gamepad_axis_value(controller_index, gp_axislv) > 0.5;
-	
-			// Double down
-			if(down_pressed > 0 && !down_held && down_hold){
-				double_down_pressed = buffer_duration;
-			}
-		
-			if(!down_held && down_hold){
-				down_pressed = buffer_duration;
-			}
 	
 			// Up hold
 			up_hold = gamepad_button_check(controller_index, ds_map_find_value(map, "up"))
@@ -586,15 +562,24 @@ read_input = function(){
 		#endregion
 	}
 	
-	// Special inputs
+	// Down forward
 	if(down_pressed && !down_hold && right_pressed){
 		down_right_pressed = buffer_duration;
-		down_pressed = 0;
 	}
 	if(down_pressed && !down_hold && left_pressed){
 		down_left_pressed = buffer_duration;
-		down_pressed = 0;
 	}
+	// Double down
+	if(down_pressed > 0 && !down_held && down_hold){
+		// Reset some other buffers
+		down_right_pressed = 0;
+		down_left_pressed = 0;
+		double_down_pressed = buffer_duration;
+	}
+	if(!down_held && down_hold){
+		down_pressed = buffer_duration;
+	}
+	// Diagonal
 	if(down_hold && (forward_hold || backward_hold)){
 		diagonal_input_hold = true;
 	}
