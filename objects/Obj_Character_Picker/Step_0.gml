@@ -161,12 +161,12 @@ if(!is_changing_controls){
 			}
 			// Normal fight
 			else{
-				index = global.arena_index;
+				arena_index = global.arena_index;
 				// Random stage
 				if(global.arena_index == 0){
-					index = irandom_range(1, array_length(global.arena_list)-1);
+					arena_index = irandom_range(1, array_length(global.arena_list)-1);
 				}
-				room_goto(global.arena_list[index]);
+				room_goto(global.arena_list[arena_index]);
 			}
 		}
 	}
