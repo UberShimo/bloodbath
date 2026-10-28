@@ -13,10 +13,20 @@ else if(is_holding_ball){
 	ball.v_velocity = 0;
 	ball.weight = ball.original_weight;
 	ball.reset_physics_alarm = 0;
-	weight = global.heavy_weight;
+}
+
+// Weight manipulation
+if(action == "Stunned"){
+	is_holding_ball = false;
+	ball.cant_hurt_alarm = 12; // Ball should not hurt when you get hit ._.
 }
 else{
-	weight = global.light_weight;
+	if(is_holding_ball){
+		weight = global.heavy_weight;
+	}
+	else{
+		weight = global.light_weight;
+	}
 }
 
 

@@ -22,6 +22,7 @@ else if(d_pressed){
 	audio_play_sound(Snd_Click_1, 0, false);
 }
 
+
 // Pick
 if(pick_pressed){
 	// Origin of sprite is upper left corner where there is no collision box

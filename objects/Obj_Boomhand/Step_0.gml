@@ -110,11 +110,9 @@ if(action_button_pressed() && (action == noone || check_for_cancel())){
 			ready_to_spawn_groundsmash_shockwave = true;
 			
 			if(grounded){
-				h_velocity = 6*image_xscale;
 				v_velocity = -6;
 			}
 			else{
-				h_velocity = 0;
 				v_velocity = -2;
 			}
 			
@@ -270,8 +268,9 @@ if(roar_power > 0){
 if(ready_to_spawn_groundsmash_shockwave && grounded && action_alarm <= 0){
 	ready_to_spawn_groundsmash_shockwave = false;
 	
-	attack = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_Shockwave_hitbox);
-	attack.initiate(self);
+	eff = instance_create_depth(x, y, 0, Obj_Boomhand_Groundsmash_land_eff);
+	eff.initiate(self);
+	audio_play_sound(Snd_Knack, 0, false);
 }
 else if(action != "Groundsmash"){
 	ready_to_spawn_groundsmash_shockwave = false;

@@ -1,6 +1,6 @@
 
 // Curl Up logic. Needs to be before other logic!
-if(is_curled_up && meter > 0 && medium_attack_hold && !medium_attack_released && HP > 0){
+if(is_curled_up){
 	drain = curl_up_meter_drain*logic_time;
 	// Loose extra meter if curling while stunned
 	if(action == "Stunned"){
@@ -45,11 +45,13 @@ if(is_curled_up && meter > 0 && medium_attack_hold && !medium_attack_released &&
 	}
 }
 // No more curl. recover_alarm <= 1 smoothes out animations after curl ._. Kinda wierd.
-else if(meter <= 0 || recover_alarm <= 1 || HP <= 0 || (!medium_attack_hold && action == noone)){
+if(is_curled_up && (meter <= 0 || HP <= 0 || (!medium_attack_hold && action != "Stunned"))){
 	is_curled_up = false;
-}
-else if(!medium_attack_hold){
-	medium_attack_released = true;
+	
+	// Snap up to ground
+	while(place_meeting(x, y+original_character_height/2*image_yscale, Parent_Collision)){
+		y -= 1;
+	}
 }
 
 // Fix curl up collision
@@ -70,7 +72,6 @@ if(meter_hold && meter > 0 && medium_attack_hold && !is_curled_up && time_reset_
 	reset_buffers();
 	cancels = 0;
 	is_curled_up = true;
-	medium_attack_released = false;
 	if(action != "Stunned"){
 		action = "Curl Up";
 	}

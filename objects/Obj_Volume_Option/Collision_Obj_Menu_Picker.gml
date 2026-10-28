@@ -1,5 +1,5 @@
 /// @description adjust volume
-if(gamepad_button_check(other.controller_index, gp_padr) && global.music_volume < global.max_music_volume){
+if(other.r_hold && global.music_volume < global.max_music_volume){
 	global.music_volume += 0.005;
 	if(global.music_volume > global.max_music_volume){
 		global.music_volume = global.max_music_volume;
@@ -11,7 +11,7 @@ if(gamepad_button_check(other.controller_index, gp_padr) && global.music_volume 
 	ini_close();
 	
 }
-else if(gamepad_button_check(other.controller_index, gp_padl) && global.music_volume > 0){
+else if(other.l_hold && global.music_volume > 0){
 	global.music_volume -= 0.005;
 	if(global.music_volume <= 0){
 		global.music_volume = 0.0001; // if actually 0 the music stops...

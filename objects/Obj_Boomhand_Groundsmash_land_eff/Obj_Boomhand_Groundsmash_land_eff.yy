@@ -1,10 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Obj_Boomhand_Groundsmash_Shockwave_hitbox",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "Obj_Boomhand_Groundsmash_land_eff",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -12,8 +10,8 @@
     "path": "folders/Objects/Characters/Boomhand/Hitboxes.yy",
   },
   "parentObjectId": {
-    "name": "Parent_Attack",
-    "path": "objects/Parent_Attack/Parent_Attack.yy",
+    "name": "Parent_Hit_Effect",
+    "path": "objects/Parent_Hit_Effect/Parent_Hit_Effect.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Spr_Boomhand_Groundsmash_Shockwave_Hitbox",
-    "path": "sprites/Spr_Boomhand_Groundsmash_Shockwave_Hitbox/Spr_Boomhand_Groundsmash_Shockwave_Hitbox.yy",
+    "name": "Spr_Boomhand_Groundsmash_Shockwave",
+    "path": "sprites/Spr_Boomhand_Groundsmash_Shockwave/Spr_Boomhand_Groundsmash_Shockwave.yy",
   },
   "spriteMaskId": null,
   "visible": true,

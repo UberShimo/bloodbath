@@ -93,7 +93,6 @@ curl_up_character_height = sprite_get_height(Spr_Zombie_Curl_Up)-8;
 curl_up_bounce = 0.99;
 curl_up_angle = 0;
 curl_up_meter_drain = max_meter/480; // Max duration 8 sec kinda
-medium_attack_released = false;
 ULTRA_r_punch = true;
 
 action_trigger = function(){

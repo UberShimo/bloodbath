@@ -25,6 +25,16 @@ if((!d_held && d_hold)
 	d_pressed = true;
 }
 
+l_hold = gamepad_button_check(controller_index, gp_padl)
+|| gamepad_axis_value(controller_index, gp_axislh) < -0.5
+|| keyboard_check(ord("A"))
+|| keyboard_check(vk_left);
+
+r_hold = gamepad_button_check(controller_index, gp_padr)
+|| gamepad_axis_value(controller_index, gp_axislh) > 0.5
+|| keyboard_check(ord("D"))
+|| keyboard_check(vk_right);
+
 pick_pressed = gamepad_button_check_pressed(controller_index, gp_face1)
 || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_numpad0);
 

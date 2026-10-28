@@ -186,19 +186,34 @@ CHRISTIAN{
 
 NEW
 Black steel Greathammer. Armored skirt. Bright round helmet with red ponytail REBECCA{
+	is short and heavy. Has bad double jump.
 	
-	5S: Slam hammer down. Can be canceled into itself. Costs a cancel obviously...
+	5F: Headbutt. HOLD to hit x3 with 12f startup.
+	2F: Leg sweep and a spin. f startup.
+	8F: Lift hammer up hitting above.
+	v8L: Gain super weight and stomp down dealing more damage the higher velocity.
 	
-	vvF: REV your hammer making your next hammer move faster.
-	v>F: Boost forward. Spend REV. More REV = more boost.
+	5L: Swing hammer forward (REV gives forward momentum)
+	2L: Swing hammer up (REV lifts you aerial)
+	8L: Swing hammer below. (REV boost you upwards and forwards)
 	
-	RB+X: Gain full REV!
+	5S: Slam hammer down.
+	2S: Swing hammer up. Descently fast.
+	8S: Slam hammer down in air.
+	
+	vvF: REV your hammer making your next hammer move faster by 25%.
+	vvF + REV: REV your hammer and fire a FIREBALL up in air that can be hit with other moves. Hold left / right to change trajectory.
+	v>F: Roll forward. HOLD to spend REV and gain a boost! Cancelable.
+	v>L: Thrust hammer top forward! (REV makes you spin hammer and drill forward)
+	v>S: Do a REALLY hard hammer slam. Upper hitbox launch forward. Makes for a cool FIREBALL hit ;)
+	
+	RB+X: REV FAST! And fire a FIREBALL.
 	RB+Y: Gain a decaying shield.
 }
 
 
 NEW
-Headless and 2 shotels. Shoulder pads with mini scarfs hanging from them ROBIN{
+Star head and 2 shotels. Shoulder pads with mini scarfs hanging from them ROBIN{
 
 	5S: Short headcleaver move using both shotels. Deal huge dmg.
 	2S: Roll forward then kick yourself upwards back on your feet! Slightly faster launcher that normal.
@@ -216,7 +231,6 @@ Snake with loooong staff JOEL{
 	
 	8F: Swing staff forward below you pushing you slightly backward and upward on hit.
 	
-	
 	8L: Swing staff backward below you pushing you slightly forward and upward on hit.
 	
 	5S: Charge then stab in any of the 8 directions! If you hit dimension ball while holding B you teleport to it.
@@ -228,4 +242,21 @@ Snake with loooong staff JOEL{
 	
 	RB + X: Put out dimension ball slightly upward that can perform you 5S move! Can also bounce on opponent once.
 	RB + Y: Spawn a dimension ball that can perform you 5S move! Can also bounce on opponent once.
+}
+
+NEW
+Headless bleak guy with greataxe JOEL{
+	Starts with one HEAD on ground.
+	HEADS have 2 legs they walk around on and can kick opponent whenever they feel like. They have 20HP.
+	
+	
+	v>S: A CHARGE JUMP ATTACK! Hold to jump futher.
+	
+	vvF: Recall HEADS to you. Can be done ANYTIME.
+	vvL: HEADS will charge a bite attack toward closest opponent but must recover afterward. Can be done ANYTIME.
+	vvF: HEADS explode.
+	
+	RB + F:
+	RB + L:
+	RB + S:
 }
